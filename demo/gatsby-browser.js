@@ -12,17 +12,6 @@ export const onServiceWorkerUpdateReady = () => window.location.reload(true)
 
 export const wrapRootElement = ({ element }) => {
   return <MDXDataProvider>{element}</MDXDataProvider>
-  // return (
-  //   <div>
-  //     <MDXDataProvider>
-  //       <div>
-  //         <MdxDataContextProvider>
-  //           <div>{element}</div>
-  //         </MdxDataContextProvider>
-  //       </div>
-  //     </MDXDataProvider>
-  //   </div>
-  // )
 }
 wrapRootElement.propTypes = {
   element: propTypes.element.isRequired,
