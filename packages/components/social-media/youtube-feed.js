@@ -1,0 +1,200 @@
+import React, { useState } from 'react'
+import propTypes from 'prop-types'
+import styled from '@emotion/styled'
+import { graphql, useStaticQuery } from 'gatsby'
+import Image from 'gatsby-image'
+import useDeepCompareEffect from 'use-deep-compare-effect'
+
+import { useMDXDataDispatch } from '@gatsby-mdx-suite/contexts/mdx-data'
+import Youtube from './youtube-video'
+
+const YoutubeFeedWrapper = styled.div`
+  width: 100%;
+`
+
+const YoutubePlayerWrapper = styled.div`
+  position: relative;
+  margin: 0 auto ${({ theme }) => theme.spacing.s4}px;
+  max-width: 65vw;
+  @media (min-width: 1000px) {
+    max-width: none;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+  }
+
+  & iframe {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+`
+
+const YoutubeFeedThumbnails = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: ${({ theme }) => theme.spacing.s2}px;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  & a {
+    position: relative;
+    display: block;
+    flex: 1 0 50%;
+    justify-content: space-between;
+
+    @media (min-width: 600px) {
+      flex: 1 0 25%;
+    }
+  }
+`
+
+const ThumbnailLink = styled.a`
+  position: relative;
+  display: block;
+`
+const ThumbnailImageWrapper = styled.div`
+  z-index: 1;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+  }
+
+  & .gatsby-image-wrapper {
+    position: absolute !important;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+`
+const ThumbnailImage = styled(Image)``
+const ThumbnailTitle = styled.div`
+  position: absolute;
+  z-index: 2;
+  box-sizing: border-box;
+  height: 32px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 0.85em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  padding: 0 ${({ theme }) => theme.spacing.s2}px
+    ${({ theme }) => theme.spacing.s2}px;
+
+  transition: 0.15s all linear;
+
+  a:hover & {
+    height: 100%;
+    background: rgba(255, 195, 63, 0.92);
+    color: #000;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.1em;
+    padding: ${({ theme }) => theme.spacing.s2}px;
+    font-weight: bold;
+  }
+`
+
+export default function YoutubeFeed({ channelId, ...props }) {
+  const data = useStaticQuery(graphql`
+    query YoutubeFeed {
+      allYoutubeVideo(sort: { order: DESC, fields: publishedAt }, limit: 8) {
+        edges {
+          node {
+            channelId
+            videoId
+            title
+            publishedAt
+            localThumbnail {
+              childImageSharp {
+                sqip(mode: 4, numberOfPrimitives: 12) {
+                  dataURI
+                }
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  const videos = data.allYoutubeVideo.edges.map(({ node }) => node)
+  const [activeVideo, setActiveVideo] = useState(videos[0])
+
+  const mdxDataDispatch = useMDXDataDispatch()
+
+  useDeepCompareEffect(() => {
+    mdxDataDispatch({
+      type: 'add',
+      id: 'youtubeVideos',
+      data: videos,
+    })
+  }, [videos])
+
+  const handleThumbnailClick = (e) => {
+    e.preventDefault()
+    const { videoid } = e.currentTarget.dataset
+    const newActiveVideo = videos.find((video) => video.videoId === videoid)
+    setActiveVideo(newActiveVideo)
+  }
+
+  return (
+    <YoutubeFeedWrapper>
+      <YoutubePlayerWrapper>
+        <Youtube videoId={activeVideo.videoId} />
+      </YoutubePlayerWrapper>
+      <YoutubeFeedThumbnails>
+        {videos.map((video) => (
+          <ThumbnailLink
+            href="#"
+            key={video.videoId}
+            data-videoid={video.videoId}
+            onClick={handleThumbnailClick}
+          >
+            <ThumbnailImageWrapper>
+              <ThumbnailImage
+                fluid={{
+                  ...video.localThumbnail.childImageSharp.fluid,
+                  base64: video.localThumbnail.childImageSharp.sqip.dataURI,
+                }}
+                objectFit="cover"
+              />
+            </ThumbnailImageWrapper>
+            <ThumbnailTitle>{video.title}</ThumbnailTitle>
+          </ThumbnailLink>
+        ))}
+      </YoutubeFeedThumbnails>
+    </YoutubeFeedWrapper>
+  )
+}
+
+YoutubeFeed.propTypes = {
+  channelId: propTypes.string,
+}
