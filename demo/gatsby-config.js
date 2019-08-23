@@ -2,6 +2,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 const isStaging = !!process.env.STAGING
 
 module.exports = {
+  pathPrefix: `/gatsby-mdx-suite`,
   siteMetadata: {
     title: `VANA`,
     description: `Website for Vana`,

@@ -63,6 +63,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.0",
+    "gh-pages": "^2.1.1",
     "husky": "^3.0.4",
     "lint-staged": "^9.2.3",
     "nodemon": "^1.19.1",
@@ -79,7 +80,8 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "format": "prettier --write '{./**/*.{js,jsx},*.{js,json}}'",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "deploy": "gatsby clean && npm run build -- --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
