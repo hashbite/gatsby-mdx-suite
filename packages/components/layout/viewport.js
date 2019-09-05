@@ -93,7 +93,10 @@ export default function Viewport({
 
 Viewport.propTypes = {
   children: propTypes.node,
+  /** image id to display as background image */
   image: propTypes.string,
+  /** horizontal content alignment */
   horizontalAlign: propTypes.string,
+  /** vertical content alignment */
   verticalAlign: propTypes.string,
 }

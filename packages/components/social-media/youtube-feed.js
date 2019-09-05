@@ -168,7 +168,7 @@ export default function YoutubeFeed({ channelId, ...props }) {
   return (
     <YoutubeFeedWrapper>
       <YoutubePlayerWrapper>
-        <Youtube videoId={activeVideo.videoId} />
+        <Youtube id={activeVideo.videoId} />
       </YoutubePlayerWrapper>
       <YoutubeFeedThumbnails>
         {videos.map((video) => (
