@@ -31,10 +31,10 @@ export default function InstagramPost({
 InstagramPost.displayName = 'InstagramPost'
 
 InstagramPost.propTypes = {
-  /** id of the post to display */
+  /** id of the post to embed */
   id: propTypes.string.isRequired,
   /** hide the caption */
   hideCaption: propTypes.bool,
-  /** maximum width the post will be display as */
+  /** maximum width the post will be embedded as */
   maxWidth: propTypes.number,
 }
