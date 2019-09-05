@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { MDXDataProvider } from '@gatsby-mdx-suite/contexts/mdx-data'
-// import MdxDataContextProvider from './src/mdx-data-context-provider'
+import MdxDataContextProvider from './src/mdx-data-context-provider'
 
 import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
@@ -11,9 +11,16 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 // @todo really still needed with offline plugin v3? this can be pretty annoying
 export const onServiceWorkerUpdateReady = () => window.location.reload(true)
 
-export const wrapRootElement = ({ element }) => {
-  return <MDXDataProvider>{element}</MDXDataProvider>
+// @todo looks like we can do graphql query hooks only with wrapPageElement
+// but documentation says provider components should use wrapRootElement
+// maybe a gatsby bug????
+export const wrapPageElement = ({ element }) => {
+  return (
+    <MDXDataProvider>
+      <MdxDataContextProvider>{element}</MdxDataContextProvider>
+    </MDXDataProvider>
+  )
 }
-wrapRootElement.propTypes = {
+wrapPageElement.propTypes = {
   element: propTypes.element.isRequired,
 }

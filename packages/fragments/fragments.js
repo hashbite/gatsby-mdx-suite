@@ -30,6 +30,7 @@ export const gatsbyMdxSuiteInstagramWithSqip = graphql`
 `
 
 // Extending not existing node typed does not work yet :(
+// @todo try https://www.apollographql.com/docs/apollo-server/features/directives/ -> @skip(if: $nodeType) and  @include(if: $nodeType)
 // export const fooBarBuzzz = graphql`
 //   fragment FooBarBuzzz on iDontExist {
 //     tracedSVG

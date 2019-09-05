@@ -9,7 +9,6 @@ import useDeepCompareEffect from 'use-deep-compare-effect'
 
 import { useMDXDataDispatch } from '@gatsby-mdx-suite/contexts/mdx-data'
 import Layout from '../components/layout'
-import MdxDataContextProvider from '../mdx-data-context-provider'
 
 function PageTemplate({ data }) {
   const mdxDataDispatch = useMDXDataDispatch()
@@ -66,11 +65,9 @@ function PageTemplate({ data }) {
           },
         ].filter(Boolean)}
       />
-      <MdxDataContextProvider>
-        <MDXProvider>
-          <MDXRenderer>{content.childMdx.body}</MDXRenderer>
-        </MDXProvider>
-      </MdxDataContextProvider>
+      <MDXProvider>
+        <MDXRenderer>{content.childMdx.body}</MDXRenderer>
+      </MDXProvider>
     </Layout>
   )
 }

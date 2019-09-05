@@ -4,11 +4,20 @@ const isStaging = !!process.env.STAGING
 module.exports = {
   pathPrefix: `/gatsby-mdx-suite`,
   siteMetadata: {
-    title: `VANA`,
-    description: `Website for Vana`,
-    siteUrl: `https://vana.artist`,
+    title: `timelapsa`,
+    description: `high quality timelapse content`,
+    siteUrl: `https://axe312ger.github.io/gatsby-mdx-suite`,
   },
   plugins: [
+    {
+      resolve: `gatsby-theme-docz`,
+      options: {
+        filterComponents: false,
+        docgenConfig: {
+          searchPath: './node_modules/@gatsby-mdx-suite/components',
+        },
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
@@ -19,8 +28,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `VANA`,
-        short_name: `VANA`,
+        name: `timelapsa`,
+        short_name: `tmlps`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#000000`,
@@ -45,7 +54,7 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: `vanashafis`,
+        username: `timelapsa`,
       },
     },
     {
