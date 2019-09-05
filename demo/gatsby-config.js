@@ -12,10 +12,13 @@ module.exports = {
     {
       resolve: `gatsby-theme-docz`,
       options: {
-        filterComponents: false,
-        docgenConfig: {
-          searchPath: './node_modules/@gatsby-mdx-suite/components',
-        },
+        // filterComponents: (files) =>
+        //   files.filter((filepath) => /[w-]*.(js|jsx|ts|tsx)$/.test(filepath)),
+        // docgenConfig: {
+        //   searchPath: './node_modules/@gatsby-mdx-suite/components',
+        // },
+        // src: './node_modules/@gatsby-mdx-suite/components',
+        files: './docs/**/*.{md,markdown,mdx}',
       },
     },
     `gatsby-plugin-emotion`,
