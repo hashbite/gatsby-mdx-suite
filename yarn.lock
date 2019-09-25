@@ -8358,11 +8358,6 @@ gatsby-plugin-manifest@^2.2.14, gatsby-plugin-manifest@^2.2.3:
     semver "^5.7.1"
     sharp "^0.23.0"
 
-gatsby-plugin-matomo@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.7.2.tgz#c8588fff7267ddf121c37ee67f4d9d73810737c2"
-  integrity sha512-49KAdNhvkRWyJ/jHE4dOoXuYB9PDA01rPjWLmrmklsB3cl401Tm7tEvBd7sYrDy99fzeFUQt0qyDKLxW1hH0Hg==
-
 gatsby-plugin-mdx@^1.0.13, gatsby-plugin-mdx@^1.0.38, gatsby-plugin-mdx@^1.0.44:
   version "1.0.44"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.0.44.tgz#295d2d855518059367dcf0c7a603843778e0df45"
@@ -8732,9 +8727,9 @@ gatsby-theme-docz@2.0.0-rc.42, gatsby-theme-docz@^2.0.0-rc.42:
   dependencies:
     "@emotion/core" "^10.0.17"
     "@emotion/styled" "^10.0.17"
-    "@gatsby-mdx-suite/components" "file:../../../Library/Caches/Yarn/v4/npm-gatsby-theme-mdx-suite-0.0.1-c4f310b3-96ca-4caa-8f76-845dbe47aa39-1569416249516/node_modules/packages/components"
-    "@gatsby-mdx-suite/contexts" "file:../../../Library/Caches/Yarn/v4/npm-gatsby-theme-mdx-suite-0.0.1-c4f310b3-96ca-4caa-8f76-845dbe47aa39-1569416249516/node_modules/packages/contexts"
-    "@gatsby-mdx-suite/fragments" "file:../../../Library/Caches/Yarn/v4/npm-gatsby-theme-mdx-suite-0.0.1-c4f310b3-96ca-4caa-8f76-845dbe47aa39-1569416249516/node_modules/packages/fragments"
+    "@gatsby-mdx-suite/components" "file:../../../Library/Caches/Yarn/v4/npm-gatsby-theme-mdx-suite-0.0.1-6ef1d8a7-152b-4486-85d2-f759c6737c44-1569422677996/node_modules/packages/components"
+    "@gatsby-mdx-suite/contexts" "file:../../../Library/Caches/Yarn/v4/npm-gatsby-theme-mdx-suite-0.0.1-6ef1d8a7-152b-4486-85d2-f759c6737c44-1569422677996/node_modules/packages/contexts"
+    "@gatsby-mdx-suite/fragments" "file:../../../Library/Caches/Yarn/v4/npm-gatsby-theme-mdx-suite-0.0.1-6ef1d8a7-152b-4486-85d2-f759c6737c44-1569422677996/node_modules/packages/fragments"
     "@mdx-js/react" "^1.5.0"
     gatsby-plugin-mdx "^1.0.44"
     gatsby-plugin-theme-ui "^0.2.43"

@@ -15,6 +15,8 @@ const queue = new PQueue({
 // do we really need this? :(
 const sessionCache = {}
 
+// This was already extracted to https://github.com/axe312ger/gatsby-transformer-inline-svg but did not work for some reason
+// If you read this, its probably time to give it another try over there ;)
 exports.setFieldsOnGraphQLNodeType = ({ type, cache }) => {
   if (type.name === `ContentfulAsset`) {
     return {
