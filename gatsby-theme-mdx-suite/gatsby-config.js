@@ -1,7 +1,6 @@
 const path = require('path')
-const src = path.resolve('../packages/components')
-const files = './docs/' // path.relative(src, path.resolve('./docs'))
-console.log('docz source', { src, files })
+const src = path.resolve(__dirname, '../packages/components')
+const files = './docs/'
 
 module.exports = ({
   instagram = {
@@ -19,12 +18,6 @@ module.exports = ({
       resolve: `gatsby-theme-docz`,
       options: {
         filterComponents: false,
-        // filterComponents: (files) =>
-        //   files.filter((filepath) => /[w-]*.(js|jsx|ts|tsx)$/.test(filepath)),
-        // docgenConfig: {
-        //   searchPath: './node_modules/@gatsby-mdx-suite/components',
-        // },
-        // src: './node_modules/@gatsby-mdx-suite/components',
         src,
         files: `${files}/**/*.{md,markdown,mdx}`,
       },

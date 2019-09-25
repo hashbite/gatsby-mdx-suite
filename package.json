@@ -3,7 +3,7 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "demo",
+    "demos/*",
     "gatsby-theme-mdx-suite"
   ],
   "scripts": {

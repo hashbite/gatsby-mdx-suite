@@ -32,32 +32,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        spaceId: `11vxbw8ly851`,
-        ...(isProduction && !isStaging
-          ? {
-              accessToken: `S74T7D3ddNvCOjQa-e1Aj27QStF6x7ybiLVyvk7Y0oE`,
-            }
-          : {
-              host: `preview.contentful.com`,
-              accessToken: `7vfYQ71vlcsVa7nkTYII__Vq7OWelAofXtlJUqN8IvA`,
-            }),
+        name: `page`,
+        path: `${__dirname}/content/pages/`,
       },
     },
     `gatsby-plugin-sitemap`,
-    ...(isProduction && !isStaging
-      ? [
-          `gatsby-plugin-offline`,
-          {
-            resolve: 'gatsby-plugin-matomo',
-            options: {
-              siteId: '7',
-              matomoUrl: 'https://matomo.axe312.de',
-              siteUrl: 'https://vana.artist',
-            },
-          },
-        ]
-      : []),
+    ...(isProduction && !isStaging ? [`gatsby-plugin-offline`] : []),
   ].filter(Boolean),
 }
