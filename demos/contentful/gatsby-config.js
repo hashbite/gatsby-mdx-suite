@@ -2,7 +2,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 const isStaging = !!process.env.STAGING
 
 module.exports = {
-  pathPrefix: `/gatsby-mdx-suite`,
+  pathPrefix: `/gatsby-mdx-suite/contentful`,
   siteMetadata: {
     title: `timelapsa`,
     description: `high quality timelapse content`,
