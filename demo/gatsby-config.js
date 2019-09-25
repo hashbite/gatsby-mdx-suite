@@ -9,20 +9,11 @@ module.exports = {
     siteUrl: `https://axe312ger.github.io/gatsby-mdx-suite`,
   },
   plugins: [
+    `gatsby-plugin-theme-ui`,
     {
-      resolve: `gatsby-theme-docz`,
-      options: {
-        // filterComponents: (files) =>
-        //   files.filter((filepath) => /[w-]*.(js|jsx|ts|tsx)$/.test(filepath)),
-        // docgenConfig: {
-        //   searchPath: './node_modules/@gatsby-mdx-suite/components',
-        // },
-        // src: './node_modules/@gatsby-mdx-suite/components',
-        files: './docs/**/*.{md,markdown,mdx}',
-      },
+      resolve: `gatsby-theme-mdx-suite`,
     },
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-react-svg`,
     `gatsby-transformer-sharp`,
@@ -52,39 +43,6 @@ module.exports = {
               host: `preview.contentful.com`,
               accessToken: `7vfYQ71vlcsVa7nkTYII__Vq7OWelAofXtlJUqN8IvA`,
             }),
-      },
-    },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `timelapsa`,
-      },
-    },
-    {
-      resolve: `gatsby-source-youtube-v2`,
-      options: {
-        channelId: ['UCzHoow2Ps9DtKUZ8kIO7rjg'],
-        apiKey: 'AIzaSyAFm1L1Ay1iZMXU2FWT_c1L63jizyUK8uQ',
-        maxVideos: 12,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              inlineCodeMarker: '>',
-              showLineNumbers: true,
-              prompt: {
-                user: 'you',
-                host: 'localhost',
-                global: false,
-              },
-            },
-          },
-        ],
       },
     },
     `gatsby-plugin-sitemap`,

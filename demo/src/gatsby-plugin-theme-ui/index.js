@@ -1,6 +1,6 @@
 import typography from './typography'
 
-import defaultTheme from '@gatsby-mdx-suite/default-theme'
+import defaultTheme from 'gatsby-theme-mdx-suite/src/gatsby-plugin-theme-ui'
 
 const maxContentWidth = 960
 const sidebarWidth = 200
