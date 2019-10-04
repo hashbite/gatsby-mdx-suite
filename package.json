@@ -11,19 +11,19 @@
     "lint": "eslint packages && npx lerna exec 'npm run lint' --scope='gatsby-mdx-suite-demo-*'"
   },
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.3.0",
+    "eslint": "^6.2.1",
+    "eslint-config-prettier": "^6.1.0",
     "eslint-config-standard": "^14.0.0",
     "eslint-config-standard-react": "^9.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.15.1",
+    "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.1.1",
-    "husky": "^3.0.8",
+    "husky": "^3.0.4",
     "lerna": "^3.16.4",
-    "lint-staged": "^9.4.1",
+    "lint-staged": "^9.2.3",
     "prettier": "^1.18.2"
   },
   "husky": {

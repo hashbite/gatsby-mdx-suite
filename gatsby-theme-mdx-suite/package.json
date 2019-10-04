@@ -10,15 +10,15 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.20",
+    "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
     "@gatsby-mdx-suite/components": "file:../packages/components",
     "@gatsby-mdx-suite/contexts": "file:../packages/contexts",
     "@gatsby-mdx-suite/fragments": "file:../packages/fragments",
     "@mdx-js/react": "^1.5.0",
-    "gatsby-plugin-mdx": "^1.0.46",
+    "gatsby-plugin-mdx": "^1.0.44",
     "gatsby-plugin-theme-ui": "^0.2.43",
-    "gatsby-remark-prismjs": "^3.3.16",
+    "gatsby-remark-prismjs": "^3.3.14",
     "gatsby-source-instagram": "^0.5.1",
     "gatsby-source-youtube-v2": "^1.0.1",
     "gatsby-theme-docz": "^2.0.0-rc.42",
