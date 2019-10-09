@@ -2,7 +2,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 const isStaging = !!process.env.STAGING
 
 module.exports = {
-  pathPrefix: `/gatsby-mdx-suite/filesystem`,
+  pathPrefix: `/gatsby-mdx-suite/contentful`,
   siteMetadata: {
     title: `timelapsa`,
     description: `high quality timelapse content`,
@@ -12,16 +12,6 @@ module.exports = {
     `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-theme-mdx-suite`,
-      options: {
-        instagram: {
-          username: `timelapsa`,
-        },
-        youtube: {
-          channelId: ['UCzHoow2Ps9DtKUZ8kIO7rjg'],
-          apiKey: 'AIzaSyAFm1L1Ay1iZMXU2FWT_c1L63jizyUK8uQ',
-          maxVideos: 12,
-        },
-      },
     },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
@@ -42,10 +32,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        name: `page`,
-        path: `${__dirname}/content/pages/`,
+        spaceId: `11vxbw8ly851`,
+        ...(isProduction && !isStaging
+          ? {
+              accessToken: `S74T7D3ddNvCOjQa-e1Aj27QStF6x7ybiLVyvk7Y0oE`,
+            }
+          : {
+              host: `preview.contentful.com`,
+              accessToken: `7vfYQ71vlcsVa7nkTYII__Vq7OWelAofXtlJUqN8IvA`,
+            }),
       },
     },
     `gatsby-plugin-sitemap`,

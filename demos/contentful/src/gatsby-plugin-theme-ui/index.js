@@ -12,18 +12,22 @@ export default {
     sidebarWidth,
   },
   colors: {
-    text: '#0a0a0a',
-    background: '#ffc33f',
-    primary: '#ffc33f',
-    contrast: '#bb6414',
-    modes: {
-      dark: {
-        text: '#fff',
-        background: '#000',
-        primary: '#ffc33f',
-        contrast: '#bb6414',
-      },
-    },
+    // text: '#0a0a0a',
+    // background: '#ffc33f',
+    // primary: '#ffc33f',
+    // contrast: '#bb6414',
+    red: '#ef455d',
+    blue: '#bee7e0',
+    white: '#fff',
+    black: '#000',
+    // modes: {
+    //   dark: {
+    //     text: '#fff',
+    //     background: '#000',
+    //     primary: '#ffc33f',
+    //     contrast: '#bb6414',
+    //   },
+    // },
   },
   ...typography,
 }

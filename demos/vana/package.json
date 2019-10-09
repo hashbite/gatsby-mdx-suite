@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-mdx-suite-demo-filesystem",
+  "name": "gatsby-mdx-suite-demo-vana",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
@@ -21,6 +21,7 @@
     "gatsby-plugin-sharp": "^2.2.20",
     "gatsby-plugin-sitemap": "^2.2.10",
     "gatsby-plugin-theme-ui": "^0.2.41",
+    "gatsby-source-contentful": "^2.1.33",
     "gatsby-theme-mdx-suite": "link:../../gatsby-theme-mdx-suite",
     "gatsby-transformer-inline-svg": "^0.0.1",
     "gatsby-transformer-remark": "^2.6.21",

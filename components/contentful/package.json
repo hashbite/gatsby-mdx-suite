@@ -1,0 +1,25 @@
+{
+  "name": "@gatsby-mdx-suite/contentful",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Benedikt Rötsch <opensource@axe312.dev>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "directories": {
+    "lib": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@emotion/styled": "^10.0.15",
+    "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
+    "@gatsby-mdx-suite/media": "link:../media",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0"
+  }
+}

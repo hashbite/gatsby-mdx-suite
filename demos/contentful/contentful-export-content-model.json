@@ -1,0 +1,283 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "11vxbw8ly851"
+          }
+        },
+        "id": "page",
+        "type": "ContentType",
+        "createdAt": "2019-08-18T16:41:42.247Z",
+        "updatedAt": "2019-08-18T18:10:22.139Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 19,
+        "publishedAt": "2019-08-18T18:10:22.139Z",
+        "firstPublishedAt": "2019-08-18T16:41:43.385Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "publishedCounter": 10,
+        "version": 20,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Page",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "size": {
+                "max": 60
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "seoDescription",
+          "name": "SEO Description",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "max": 160
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "seoImage",
+          "name": "SEO Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkMimetypeGroup": ["image"]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "contentMedia",
+          "name": "Content Media",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkMimetypeGroup": ["image"]
+              }
+            ],
+            "linkType": "Asset"
+          }
+        }
+      ]
+    }
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "11vxbw8ly851",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 20,
+        "createdAt": "2019-08-18T16:41:43.539Z",
+        "createdBy": {
+          "sys": {
+            "id": "3A5WToEs9aUr4xbMQTyUcV",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2019-08-18T18:10:22.949Z",
+        "updatedBy": {
+          "sys": {
+            "id": "3A5WToEs9aUr4xbMQTyUcV",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "page",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "settings": {
+            "helpText": "The whole URL should have maximum 55-60 characters. This includes the domain name."
+          },
+          "widgetId": "slugEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "seoDescription",
+          "settings": {
+            "helpText": "Description shown when the website is shared on social media or on search engine result pages. Meta descriptions can be any length, but Google generally truncates snippets to ~155–160 characters."
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "seoImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "content",
+          "widgetId": "5mlUfw4MWj02N9552Bzce6",
+          "widgetNamespace": "extension"
+        },
+        {
+          "fieldId": "contentMedia",
+          "settings": {
+            "helpText": "Add media assets to make them available within the content"
+          },
+          "widgetId": "assetGalleryEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "locales": [
+    {
+      "name": "U.S. English",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "4JKpR3cHn8GV45RLSxfLcj",
+        "version": 2,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "11vxbw8ly851"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "createdAt": "2019-08-18T16:39:01Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "updatedAt": "2019-08-18T16:41:41Z"
+      }
+    }
+  ]
+}

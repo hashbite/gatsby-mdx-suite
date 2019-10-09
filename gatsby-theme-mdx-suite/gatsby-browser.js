@@ -14,11 +14,13 @@ export const onServiceWorkerUpdateReady = () => window.location.reload(true)
 // @todo looks like we can do graphql query hooks only with wrapPageElement
 // but documentation says provider components should use wrapRootElement
 // maybe a gatsby bug????
-export const wrapPageElement = ({ element, ...otherProps }, ...more) => {
-  console.log({ otherProps, more })
+export const wrapPageElement = ({ element, ...otherProps }, themeConfig) => {
+  console.log({ themeConfig })
   return (
     <MDXDataProvider>
-      <MdxDataContextProvider>{element}</MdxDataContextProvider>
+      <MdxDataContextProvider themeConfig={themeConfig}>
+        {element}
+      </MdxDataContextProvider>
     </MDXDataProvider>
   )
 }

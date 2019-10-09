@@ -1,0 +1,28 @@
+{
+  "name": "@gatsby-mdx-suite/youtube",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Benedikt Rötsch <opensource@axe312.dev>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "directories": {
+    "lib": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@emotion/styled": "^10.0.15",
+    "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
+    "gatsby": "^2.15.8",
+    "gatsby-image": "^2.2.17",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-youtube": "^7.9.0",
+    "use-deep-compare-effect": "^1.2.0"
+  }
+}

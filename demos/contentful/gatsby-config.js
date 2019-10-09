@@ -34,14 +34,14 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `11vxbw8ly851`,
+        spaceId: `6s3wp51d4yf7`,
         ...(isProduction && !isStaging
           ? {
-              accessToken: `S74T7D3ddNvCOjQa-e1Aj27QStF6x7ybiLVyvk7Y0oE`,
+              accessToken: `nzlbfzgSIlImAe8W86IMH05SLv3He45RbYQWY2zVO5c`,
             }
           : {
               host: `preview.contentful.com`,
-              accessToken: `7vfYQ71vlcsVa7nkTYII__Vq7OWelAofXtlJUqN8IvA`,
+              accessToken: `3rHiKY3RKlhhy36v3AiwiZhTKsOTLsobfFG4aXf83gs`,
             }),
       },
     },

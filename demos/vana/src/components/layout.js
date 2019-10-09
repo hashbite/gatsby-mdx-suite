@@ -8,11 +8,28 @@ import { Styled } from 'theme-ui'
 import ColorModeSwitcher from './color-mode-switcher'
 import Social from './social'
 
-const Main = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
+import VanaOutline01 from '../assets/logos/vana-outline-01.svg'
+
+const LogoBig = styled(VanaOutline01)`
+  position: absolute;
+  z-index: 15;
+  width: 69vw;
+  top: 0;
+  right: 0;
+
+  & path {
+    fill: ${({ theme }) => theme.colors.primary};
+  }
 `
 
+const LogoFloating = styled(VanaOutline01)`
+  position: fixed;
+  z-index: 100;
+  width: 36vw;
+  left: 0;
+  bottom: 0;
+  color: transparent;
+`
 const FloatingMenu = styled.div`
   display: flex;
   /* flex-direction: column; */
@@ -83,7 +100,9 @@ const Layout = ({ children }) => {
           }
         `}
       />
-      <Main>{children}</Main>
+      <main>{children}</main>
+      <LogoBig />
+      <LogoFloating />
       <FloatingMenu>
         <Social />
         <ColorModeSwitcher />
