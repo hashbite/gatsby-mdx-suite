@@ -6,37 +6,18 @@ import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
 
 import ColorModeSwitcher from './color-mode-switcher'
-import Social from './social'
 
 const Main = styled.div`
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.sizes.maxContentWidth}px;
+  padding: ${({ theme }) => theme.spacing.s1}px;
   margin: 0 auto;
 `
 
-const FloatingMenu = styled.div`
+const Header = styled.header`
   display: flex;
-  /* flex-direction: column; */
-  position: fixed;
-  z-index: 100;
-  right: 0;
-  bottom: 0;
-
-  & a {
-    display: block;
-    min-width: 16px;
-    width: 2vw;
-    padding: ${({ theme }) => theme.spacing.s1}px;
-    margin: 0;
-
-    @media (min-width: 600px) {
-      padding: ${({ theme }) => theme.spacing.s2}px;
-    }
-  }
-
-  & svg {
-    display: block;
-    width: 100%;
-  }
+  justify-content: space-between;
+  align-items: center;
+  padding: ${({ theme }) => theme.spacing.s2}px 0;
 `
 
 const Layout = ({ children }) => {
@@ -83,11 +64,13 @@ const Layout = ({ children }) => {
           }
         `}
       />
-      <Main>{children}</Main>
-      <FloatingMenu>
-        <Social />
-        <ColorModeSwitcher />
-      </FloatingMenu>
+      <Main>
+        <Header>
+          <h1>Gatsby MDX Suite Starter</h1>
+          <ColorModeSwitcher />
+        </Header>
+        {children}
+      </Main>
     </Styled.root>
   )
 }

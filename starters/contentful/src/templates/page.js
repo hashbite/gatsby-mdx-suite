@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import * as PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -9,6 +8,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect'
 
 import { useMDXDataDispatch } from '@gatsby-mdx-suite/contexts/mdx-data'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 
 function PageTemplate({ data }) {
   const mdxDataDispatch = useMDXDataDispatch()
@@ -30,40 +30,11 @@ function PageTemplate({ data }) {
 
   return (
     <Layout>
-      <Helmet
-        /**
-         * Meta information based on:
-         * https://moz.com/blog/meta-data-templates-123
-         * https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
-         */
+      <Seo
         title={title}
-        meta={[
-          {
-            name: 'viewport',
-            content:
-              'width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0',
-          },
-          {
-            property: 'og:title',
-            content: title,
-          },
-          {
-            name: 'description',
-            content: seoDescription,
-          },
-          {
-            property: 'og:description',
-            content: seoDescription,
-          },
-          seoImage && {
-            property: 'twitter:image:src',
-            content: `${seoImage.file.url}?w=1200&h=628&fit=fill`,
-          },
-          seoImage && {
-            property: 'og:image',
-            content: `${seoImage.file.url}?w=1200&h=630&fit=fill`,
-          },
-        ].filter(Boolean)}
+        description={seoDescription}
+        ogImage={`${seoImage.file.url}?w=1200&h=630&fit=fill`}
+        twitterImage={`${seoImage.file.url}?w=1200&h=628&fit=fill`}
       />
       <MDXProvider>
         <MDXRenderer>{content.childMdx.body}</MDXRenderer>

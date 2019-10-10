@@ -1,11 +1,15 @@
 const isProduction = process.env.NODE_ENV === 'production'
 const isStaging = !!process.env.STAGING
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   pathPrefix: `/gatsby-mdx-suite/contentful`,
   siteMetadata: {
-    title: `timelapsa`,
-    description: `high quality timelapse content`,
+    title: `Gatsby MDX Suite Contentful`,
+    description: `Gatsby MDX Suite starter using Contentful`,
     siteUrl: `https://axe312ger.github.io/gatsby-mdx-suite`,
   },
   plugins: [
@@ -34,14 +38,14 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `6s3wp51d4yf7`,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
         ...(isProduction && !isStaging
           ? {
-              accessToken: `nzlbfzgSIlImAe8W86IMH05SLv3He45RbYQWY2zVO5c`,
+              accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
             }
           : {
               host: `preview.contentful.com`,
-              accessToken: `3rHiKY3RKlhhy36v3AiwiZhTKsOTLsobfFG4aXf83gs`,
+              accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
             }),
       },
     },

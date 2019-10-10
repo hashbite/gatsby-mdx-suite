@@ -1,4 +1,5 @@
 .docz
+.env.*
 
 # Logs
 logs

@@ -8,6 +8,7 @@ import styled from '@emotion/styled'
 const SwitcherLink = styled.a`
   display: block;
   cursor: pointer;
+  width: 2em;
 
   svg {
     display: block;

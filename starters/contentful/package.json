@@ -1,15 +1,14 @@
 {
-  "name": "gatsby-mdx-suite-demo-contentful",
+  "name": "gatsby-starter-mdx-suite-contentful",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "author": "Benedikt Rötsch <info@benedikt.roetsch.de>",
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
     "@gatsby-mdx-suite/contentful": "link:../../components/contentful",
     "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
-    "@gatsby-mdx-suite/instagram": "link:../../components/instagram",
     "@gatsby-mdx-suite/layout": "link:../../components/layout",
     "@mdx-js/react": "^1.4.4",
     "@theme-ui/typography": "^0.2.34",
@@ -61,7 +60,9 @@
     "prettier": "^1.18.2"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "starter",
+    "mdx"
   ],
   "license": "MIT",
   "scripts": {

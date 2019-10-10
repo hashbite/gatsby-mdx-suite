@@ -4,25 +4,13 @@ const isStaging = !!process.env.STAGING
 module.exports = {
   pathPrefix: `/gatsby-mdx-suite/filesystem`,
   siteMetadata: {
-    title: `timelapsa`,
-    description: `high quality timelapse content`,
+    title: `Gatsby MDX Suite`,
+    description: `Gatsby MDX Suite starter using the file system`,
     siteUrl: `https://axe312ger.github.io/gatsby-mdx-suite`,
   },
   plugins: [
     `gatsby-plugin-theme-ui`,
-    {
-      resolve: `gatsby-theme-mdx-suite`,
-      options: {
-        instagram: {
-          username: `timelapsa`,
-        },
-        youtube: {
-          channelId: ['UCzHoow2Ps9DtKUZ8kIO7rjg'],
-          apiKey: 'AIzaSyAFm1L1Ay1iZMXU2FWT_c1L63jizyUK8uQ',
-          maxVideos: 12,
-        },
-      },
-    },
+    `gatsby-theme-mdx-suite`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-react-svg`,
