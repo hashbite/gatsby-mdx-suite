@@ -1,5 +1,5 @@
 const path = require('path')
-const src = path.resolve(__dirname, '../components')
+const src = path.resolve(__dirname, '../mdx')
 const files = './docs/'
 
 module.exports = ({ mdx }) => ({

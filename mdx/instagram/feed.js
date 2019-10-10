@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
-import MediaGallery from '@gatsby-mdx-suite/media/gallery'
+import MediaGallery from '@gatsby-mdx-suite/mdx-media/gallery'
 
 import InstagramPost from './post'
 

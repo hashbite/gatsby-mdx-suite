@@ -7,8 +7,9 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import useDeepCompareEffect from 'use-deep-compare-effect'
 
 import { useMDXDataDispatch } from '@gatsby-mdx-suite/contexts/mdx-data'
+import Seo from '@gatsby-mdx-suite/seo'
+
 import Layout from '../components/layout'
-import Seo from '../components/seo'
 
 function PageTemplate({ data }) {
   const mdxDataDispatch = useMDXDataDispatch()

@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
 import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
-import Image from '@gatsby-mdx-suite/media/gatsby-image'
+import Image from '@gatsby-mdx-suite/mdx-media/gatsby-image'
 
 // Shortcuts to ease up editor UX: start, end -> flex-start, flex-end; center -> center
 const extendPositionArgument = (value) =>

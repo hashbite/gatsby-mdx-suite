@@ -7,9 +7,10 @@
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
-    "@gatsby-mdx-suite/contentful": "link:../../components/contentful",
     "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
-    "@gatsby-mdx-suite/layout": "link:../../components/layout",
+    "@gatsby-mdx-suite/mdx-contentful": "link:../../mdx/contentful",
+    "@gatsby-mdx-suite/mdx-layout": "link:../../mdx/layout",
+    "@gatsby-mdx-suite/seo": "link:../../packages/seo",
     "@mdx-js/react": "^1.4.4",
     "@theme-ui/typography": "^0.2.34",
     "axios": "^0.19.0",

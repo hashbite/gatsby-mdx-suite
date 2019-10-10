@@ -1,5 +1,5 @@
 {
-  "name": "@gatsby-mdx-suite/layout",
+  "name": "@gatsby-mdx-suite/mdx-layout",
   "version": "0.0.1",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
@@ -19,7 +19,7 @@
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
     "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
-    "@gatsby-mdx-suite/media": "link:../media",
+    "@gatsby-mdx-suite/mdx-media": "link:../media",
     "prop-types": "^15.7.2",
     "react": "^16.9.0"
   }

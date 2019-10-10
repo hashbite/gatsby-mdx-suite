@@ -1088,32 +1088,32 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@gatsby-mdx-suite/contentful@link:components/contentful":
-  version "0.0.1"
-  dependencies:
-    "@emotion/styled" "^10.0.15"
-    "@gatsby-mdx-suite/contexts" "link:packages/contexts"
-    "@gatsby-mdx-suite/media" "link:components/media"
-    prop-types "^15.7.2"
-    react "^16.9.0"
-
 "@gatsby-mdx-suite/contexts@link:packages/contexts":
   version "0.0.1"
   dependencies:
     prop-types "^15.7.2"
     react "^16.9.0"
 
-"@gatsby-mdx-suite/layout@link:components/layout":
+"@gatsby-mdx-suite/mdx-contentful@link:mdx/contentful":
+  version "0.0.1"
+  dependencies:
+    "@emotion/styled" "^10.0.15"
+    "@gatsby-mdx-suite/contexts" "link:packages/contexts"
+    "@gatsby-mdx-suite/mdx-media" "link:mdx/media"
+    prop-types "^15.7.2"
+    react "^16.9.0"
+
+"@gatsby-mdx-suite/mdx-layout@link:mdx/layout":
   version "0.0.1"
   dependencies:
     "@emotion/core" "^10.0.16"
     "@emotion/styled" "^10.0.15"
     "@gatsby-mdx-suite/contexts" "link:packages/contexts"
-    "@gatsby-mdx-suite/media" "link:components/media"
+    "@gatsby-mdx-suite/mdx-media" "link:mdx/media"
     prop-types "^15.7.2"
     react "^16.9.0"
 
-"@gatsby-mdx-suite/media@link:components/media":
+"@gatsby-mdx-suite/mdx-media@link:mdx/media":
   version "0.0.1"
   dependencies:
     "@emotion/styled" "^10.0.15"
@@ -1122,6 +1122,12 @@
     prop-types "^15.7.2"
     react "^16.9.0"
     react-images "^1.0.0"
+
+"@gatsby-mdx-suite/seo@link:packages/seo":
+  version "0.0.1"
+  dependencies:
+    prop-types "^15.7.2"
+    react "^16.9.0"
 
 "@gatsbyjs/relay-compiler@2.0.0-printer-fix.4":
   version "2.0.0-printer-fix.4"

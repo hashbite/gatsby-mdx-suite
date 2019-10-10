@@ -1,5 +1,5 @@
 {
-  "name": "@gatsby-mdx-suite/instagram",
+  "name": "@gatsby-mdx-suite/mdx-instagram",
   "version": "0.0.1",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
@@ -18,7 +18,7 @@
   "dependencies": {
     "@emotion/styled": "^10.0.15",
     "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
-    "@gatsby-mdx-suite/media": "link:../media",
+    "@gatsby-mdx-suite/mdx-media": "link:../media",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-instagram-embed": "^1.5.0"

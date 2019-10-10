@@ -3,11 +3,11 @@ import { graphql } from 'gatsby'
 import * as PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 
+import Seo from '@gatsby-mdx-suite/seo'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from '../components/layout'
-import Seo from '../components/seo'
 
 const ContentArea = styled.div`
   margin: 5vh auto;

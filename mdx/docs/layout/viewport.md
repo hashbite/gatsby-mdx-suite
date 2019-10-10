@@ -5,7 +5,7 @@ menu: Layout
 ---
 import { Playground, Props } from 'docz'
 
-import Viewport from '@gatsby-mdx-suite/layout/viewport'
+import Viewport from '@gatsby-mdx-suite/mdx-layout/viewport'
 
 # Viewport
 

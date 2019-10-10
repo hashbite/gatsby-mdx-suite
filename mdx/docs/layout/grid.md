@@ -6,7 +6,7 @@ menu: Layout
 
 import { Playground, Props } from 'docz'
 
-import Grid from '@gatsby-mdx-suite/layout/grid'
+import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
 
 # Grid
 

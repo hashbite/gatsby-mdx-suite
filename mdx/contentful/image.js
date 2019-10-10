@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
-import Image from '@gatsby-mdx-suite/media/gatsby-image'
+import Image from '@gatsby-mdx-suite/mdx-media/gatsby-image'
 
 /* @todo move this to helpers */
 const parseCSSSize = (size) => (isNaN(size) ? size : `${size}px`)

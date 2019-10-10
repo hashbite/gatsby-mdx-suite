@@ -5,7 +5,7 @@ menu: Social media
 ---
 import { Playground, Props } from 'docz'
 
-import BandcampTrack from '@gatsby-mdx-suite/bandcamp/track'
+import BandcampTrack from '@gatsby-mdx-suite/mdx-bandcamp/track'
 
 # BandcampTrack
 

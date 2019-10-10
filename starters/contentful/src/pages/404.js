@@ -1,7 +1,8 @@
 import React from 'react'
 
+import Seo from '@gatsby-mdx-suite/seo'
+
 import Layout from '../components/layout'
-import Seo from '../components/seo'
 
 const NotFoundPage = () => (
   <Layout>
