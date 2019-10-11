@@ -1,5 +1,5 @@
-const { resolve } = require(`path`)
-const { createPath } = require(`./src/helpers`)
+const { resolve } = require('path')
+const createPath = require('@gatsby-mdx-suite/i18n/create-path')
 
 const crypto = require(`crypto`)
 
@@ -164,6 +164,7 @@ exports.createPages = async ({ graphql, actions }) => {
               node {
                 id
                 slug
+                node_locale
               }
             }
           }
@@ -176,17 +177,30 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     result.data.allContentfulPage.edges.map((edge) => {
-      const { slug, id } = edge.node
+      const { id, slug, node_locale: locale } = edge.node
 
-      const path = createPath({ slug })
+      const path = createPath({ slug, locale })
 
       createPage({
         path,
         component: resolve(`./src/templates/page.js`),
         context: {
           id: id,
+          locale,
         },
       })
+
+      // Make sure entry route is always available. Ensure you render cannocical links to avoid content duplication.
+      if (slug === 'index') {
+        createPage({
+          path: '/',
+          component: resolve(`./src/templates/page.js`),
+          context: {
+            id: id,
+            locale,
+          },
+        })
+      }
     })
   }
 

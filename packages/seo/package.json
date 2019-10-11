@@ -4,9 +4,6 @@
   "description": "> TODO: description",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
-  "files": [
-    "seo.js"
-  ],
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.9.0"

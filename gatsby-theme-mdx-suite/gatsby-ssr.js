@@ -1,9 +1,15 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import { MDXDataProvider } from '@gatsby-mdx-suite/contexts/mdx-data'
+
+import MdxSuiteContextProvider from '@gatsby-mdx-suite/contexts/provider'
 
 export const wrapRootElement = ({ element }, themeConfig) => {
-  return <MDXDataProvider>{element}</MDXDataProvider>
+  const { langs, defaultLocale } = themeConfig
+  return (
+    <MdxSuiteContextProvider langs={langs} defaultLocale={defaultLocale}>
+      {element}
+    </MdxSuiteContextProvider>
+  )
 }
 wrapRootElement.propTypes = {
   element: propTypes.element.isRequired,

@@ -16,6 +16,10 @@ module.exports = {
     `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-theme-mdx-suite`,
+      options: {
+        langs: ['en-US', 'de'],
+        defaultLocale: 'en-US',
+      },
     },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,

@@ -34,8 +34,8 @@ function PageTemplate({ data }) {
       <Seo
         title={title}
         description={seoDescription}
-        ogImage={`${seoImage.file.url}?w=1200&h=630&fit=fill`}
-        twitterImage={`${seoImage.file.url}?w=1200&h=628&fit=fill`}
+        ogImage={seoImage && `${seoImage.file.url}?w=1200&h=630&fit=fill`}
+        twitterImage={seoImage && `${seoImage.file.url}?w=1200&h=628&fit=fill`}
       />
       <MDXProvider>
         <MDXRenderer>{content.childMdx.body}</MDXRenderer>
