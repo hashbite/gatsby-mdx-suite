@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import * as PropTypes from 'prop-types'
+import * as propTypes from 'prop-types'
 
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -45,7 +45,7 @@ function PageTemplate({ data }) {
 }
 
 PageTemplate.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: propTypes.object.isRequired,
 }
 
 export default PageTemplate

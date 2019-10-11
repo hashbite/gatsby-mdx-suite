@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import * as PropTypes from 'prop-types'
+import * as propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 import Seo from '@gatsby-mdx-suite/seo'
@@ -33,7 +33,7 @@ function PageTemplate({ data }) {
 }
 
 PageTemplate.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: propTypes.object.isRequired,
 }
 
 export default PageTemplate
