@@ -21,13 +21,15 @@ function PageTemplate({ data }) {
     contentMedia,
   } = data.contentfulPage
 
-  useDeepCompareEffect(() => {
-    mdxDataDispatch({
-      type: 'add',
-      id: 'contentfulAssets',
-      data: contentMedia,
-    })
-  }, [contentMedia])
+  if (contentMedia) {
+    useDeepCompareEffect(() => {
+      mdxDataDispatch({
+        type: 'add',
+        id: 'contentfulAssets',
+        data: contentMedia,
+      })
+    }, [contentMedia])
+  }
 
   return (
     <Layout>

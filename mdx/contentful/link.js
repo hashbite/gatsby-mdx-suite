@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 
 import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
 import i18nContext from '@gatsby-mdx-suite/contexts/i18n'
+import createPath from '@gatsby-mdx-suite/i18n/create-path'
 
 export default function ContentfulLink({
   id,
@@ -31,20 +32,14 @@ export default function ContentfulLink({
   const { active: activeLocale } = useContext(i18nContext)
 
   if (!contentfulPages) {
-    console.warn(
-      `Unable to find any contentful page. Did you fill the context?`
-    )
     return null
   }
-
-  console.log({ contentfulPages, id, activeLocale })
 
   const page = contentfulPages.find(
     (page) => page.contentful_id === id && page.node_locale === activeLocale
   )
 
   // @todo merge page discovery logic with language selection component
-
   if (!page) {
     console.warn(
       `Unable to find contentful page with id ${id} and locale ${activeLocale}`
@@ -52,10 +47,14 @@ export default function ContentfulLink({
     return null
   }
 
-  const { path, title: pageTitle } = page
-  if (!path) {
+  const { slug, node_locale: locale, title: pageTitle } = page
+
+  if (!slug) {
     console.error({ page })
+    return null
   }
+
+  const path = createPath({ slug, locale })
   const to = [path, hash ? `#${hash}` : null].filter(Boolean).join('')
   return (
     <Link

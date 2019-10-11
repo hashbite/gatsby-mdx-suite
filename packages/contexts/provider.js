@@ -5,9 +5,7 @@ import i18n from 'i18next'
 import { MDXDataProvider } from './mdx-data'
 import I18nContext from './i18n'
 
-const MdxSuiteContextProvider = ({ element, defaultLocale, langs }) => {
-  console.log({ element, defaultLocale, langs })
-
+const MdxSuiteContextProvider = ({ children, defaultLocale, langs }) => {
   i18n.init({
     debug: process.env.NODE_ENV === 'development',
     fallbackLng: defaultLocale,
@@ -16,17 +14,6 @@ const MdxSuiteContextProvider = ({ element, defaultLocale, langs }) => {
       escapeValue: false, // react already safes from xss
     },
     react: { useSuspense: false },
-  })
-
-  console.log('render suite contx provider')
-
-  console.log({
-    i18ndata: {
-      i18n,
-      langs,
-      default: defaultLocale,
-      active: defaultLocale,
-    },
   })
 
   return (
@@ -38,15 +25,15 @@ const MdxSuiteContextProvider = ({ element, defaultLocale, langs }) => {
         active: defaultLocale,
       }}
     >
-      <MDXDataProvider>{element}</MDXDataProvider>
+      <MDXDataProvider>{children}</MDXDataProvider>
     </I18nContext.Provider>
   )
 }
 
 MdxSuiteContextProvider.propTypes = {
-  element: propTypes.element.isRequired,
+  children: propTypes.node.isRequired,
   defaultLocale: propTypes.string.isRequired,
   langs: propTypes.array.isRequired,
 }
 
-export default MDXDataProvider
+export default MdxSuiteContextProvider

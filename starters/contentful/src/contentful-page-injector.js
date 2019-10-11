@@ -6,7 +6,6 @@ import useDeepCompareEffect from 'use-deep-compare-effect'
 import { useMDXDataDispatch } from '@gatsby-mdx-suite/contexts/mdx-data'
 
 const ContentfulPageInjector = ({ children }) => {
-  console.log('render injector')
   const mdxDataDispatch = useMDXDataDispatch()
 
   const contentfulPagesResult = useStaticQuery(graphql`
@@ -14,9 +13,9 @@ const ContentfulPageInjector = ({ children }) => {
       allContentfulPage(limit: 1000) {
         edges {
           node {
-            id
-            slug
+            contentful_id
             node_locale
+            slug
             title
             menuTitle
           }
@@ -25,17 +24,17 @@ const ContentfulPageInjector = ({ children }) => {
     }
   `)
 
-  const contentfulPages = contentfulPagesResult.allContentfulPage.edges.map(
-    ({ node }) => node
-  )
-
   useDeepCompareEffect(() => {
+    const contentfulPages = contentfulPagesResult.allContentfulPage.edges.map(
+      ({ node }) => node
+    )
+
     mdxDataDispatch({
       type: 'add',
       id: 'contentfulPages',
       data: contentfulPages,
     })
-  }, [contentfulPages])
+  }, [contentfulPagesResult])
 
   return children
 }
