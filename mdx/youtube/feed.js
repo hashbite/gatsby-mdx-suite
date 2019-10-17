@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
-import useDeepCompareEffect from 'use-deep-compare-effect'
 
-import { useMDXDataDispatch } from '@gatsby-mdx-suite/contexts/mdx-data'
+import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
 import Youtube from './video'
 
 const YoutubeFeedWrapper = styled.div`
@@ -121,47 +119,15 @@ const ThumbnailTitle = styled.div`
 `
 
 export default function YoutubeFeed({ channelId, ...props }) {
-  const data = useStaticQuery(graphql`
-    query YoutubeFeed {
-      allYoutubeVideo(sort: { order: DESC, fields: publishedAt }, limit: 8) {
-        edges {
-          node {
-            channelId
-            videoId
-            title
-            publishedAt
-            localThumbnail {
-              childImageSharp {
-                sqip(mode: 4, numberOfPrimitives: 12) {
-                  dataURI
-                }
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid_withWebp_noBase64
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  const videos = data.allYoutubeVideo.edges.map(({ node }) => node)
-  const [activeVideo, setActiveVideo] = useState(videos[0])
-
-  const mdxDataDispatch = useMDXDataDispatch()
-
-  useDeepCompareEffect(() => {
-    mdxDataDispatch({
-      type: 'add',
-      id: 'youtubeVideos',
-      data: videos,
-    })
-  }, [videos])
+  const { youtubeVideos } = useMDXDataState()
+  const [activeVideo, setActiveVideo] = useState(youtubeVideos[0])
 
   const handleThumbnailClick = (e) => {
     e.preventDefault()
     const { videoid } = e.currentTarget.dataset
-    const newActiveVideo = videos.find((video) => video.videoId === videoid)
+    const newActiveVideo = youtubeVideos.find(
+      (video) => video.videoId === videoid
+    )
     setActiveVideo(newActiveVideo)
   }
 
@@ -171,7 +137,7 @@ export default function YoutubeFeed({ channelId, ...props }) {
         <Youtube id={activeVideo.videoId} />
       </YoutubePlayerWrapper>
       <YoutubeFeedThumbnails>
-        {videos.map((video) => (
+        {youtubeVideos.map((video) => (
           <ThumbnailLink
             href="#"
             key={video.videoId}
