@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import Image from 'gatsby-image'
@@ -120,7 +120,17 @@ const ThumbnailTitle = styled.div`
 
 export default function YoutubeFeed({ channelId, ...props }) {
   const { youtubeVideos } = useMDXDataState()
-  const [activeVideo, setActiveVideo] = useState(youtubeVideos[0])
+  const [activeVideo, setActiveVideo] = useState(null)
+
+  useEffect(() => {
+    if (youtubeVideos) {
+      setActiveVideo(youtubeVideos[0])
+    }
+  }, [youtubeVideos])
+
+  if (!youtubeVideos) {
+    return null
+  }
 
   const handleThumbnailClick = (e) => {
     e.preventDefault()
@@ -134,7 +144,7 @@ export default function YoutubeFeed({ channelId, ...props }) {
   return (
     <YoutubeFeedWrapper>
       <YoutubePlayerWrapper>
-        <Youtube id={activeVideo.videoId} />
+        {activeVideo && <Youtube id={activeVideo.videoId} />}
       </YoutubePlayerWrapper>
       <YoutubeFeedThumbnails>
         {youtubeVideos.map((video) => (
