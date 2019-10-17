@@ -16,7 +16,7 @@
     "src"
   ],
   "dependencies": {
-    "@emotion/core": "^10.0.16",
+    "@emotion/core": "^10.0.21",
     "@emotion/styled": "^10.0.15",
     "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
     "@gatsby-mdx-suite/mdx-media": "link:../media",
