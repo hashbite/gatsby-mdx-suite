@@ -6,13 +6,13 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "11vxbw8ly851"
+            "id": "c1ea8att6ykb"
           }
         },
         "id": "page",
         "type": "ContentType",
-        "createdAt": "2019-08-18T16:41:42.247Z",
-        "updatedAt": "2019-08-18T18:10:22.139Z",
+        "createdAt": "2019-10-11T09:58:19.097Z",
+        "updatedAt": "2019-10-11T12:21:04.559Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -21,8 +21,8 @@
           }
         },
         "publishedVersion": 19,
-        "publishedAt": "2019-08-18T18:10:22.139Z",
-        "firstPublishedAt": "2019-08-18T16:41:43.385Z",
+        "publishedAt": "2019-10-11T12:21:04.559Z",
+        "firstPublishedAt": "2019-10-11T09:58:22.593Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -55,7 +55,7 @@
           "id": "title",
           "name": "Title",
           "type": "Symbol",
-          "localized": false,
+          "localized": true,
           "required": true,
           "validations": [
             {
@@ -85,11 +85,50 @@
           "omitted": false
         },
         {
+          "id": "displayInMenu",
+          "name": "Display in Menu",
+          "type": "Boolean",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "menuWeight",
+          "name": "Menu Weight",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "range": {
+                "min": 0
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "menuTitle",
+          "name": "Menu Title",
+          "type": "Symbol",
+          "localized": true,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
           "id": "seoDescription",
           "name": "SEO Description",
           "type": "Symbol",
-          "localized": false,
-          "required": false,
+          "localized": true,
+          "required": true,
           "validations": [
             {
               "size": {
@@ -119,7 +158,7 @@
           "id": "content",
           "name": "Content",
           "type": "Text",
-          "localized": false,
+          "localized": true,
           "required": true,
           "validations": [],
           "disabled": false,
@@ -154,13 +193,13 @@
         "type": "EditorInterface",
         "space": {
           "sys": {
-            "id": "11vxbw8ly851",
+            "id": "c1ea8att6ykb",
             "type": "Link",
             "linkType": "Space"
           }
         },
         "version": 20,
-        "createdAt": "2019-08-18T16:41:43.539Z",
+        "createdAt": "2019-10-11T09:58:22.730Z",
         "createdBy": {
           "sys": {
             "id": "3A5WToEs9aUr4xbMQTyUcV",
@@ -168,7 +207,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2019-08-18T18:10:22.949Z",
+        "updatedAt": "2019-10-11T12:21:05.264Z",
         "updatedBy": {
           "sys": {
             "id": "3A5WToEs9aUr4xbMQTyUcV",
@@ -206,6 +245,31 @@
           "widgetNamespace": "builtin"
         },
         {
+          "fieldId": "displayInMenu",
+          "settings": {
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          },
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "menuWeight",
+          "settings": {
+            "helpText": "Menu items are sorted by their weight."
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "menuTitle",
+          "settings": {
+            "helpText": "This title will be used for the menu. If none is present, the original title will be used."
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
           "fieldId": "seoDescription",
           "settings": {
             "helpText": "Description shown when the website is shared on social media or on search engine result pages. Meta descriptions can be any length, but Google generally truncates snippets to ~155–160 characters."
@@ -220,18 +284,476 @@
         },
         {
           "fieldId": "content",
-          "widgetId": "5mlUfw4MWj02N9552Bzce6",
+          "widgetId": "5afPCZEAXVTJJWK76TybBH",
           "widgetNamespace": "extension"
         },
         {
           "fieldId": "contentMedia",
           "settings": {
-            "helpText": "Add media assets to make them available within the content"
+            "helpText": "Add media assets to make them available within the content."
           },
-          "widgetId": "assetGalleryEditor",
+          "widgetId": "assetLinksEditor",
           "widgetNamespace": "builtin"
         }
       ]
+    }
+  ],
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c1ea8att6ykb"
+          }
+        },
+        "id": "4dQSwoARbFhEv0gsBvgsrM",
+        "type": "Entry",
+        "createdAt": "2019-10-11T09:58:57.789Z",
+        "updatedAt": "2019-10-11T13:12:48.537Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 287,
+        "publishedAt": "2019-10-11T12:19:15.514Z",
+        "firstPublishedAt": "2019-10-11T10:24:01.486Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 336,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "page"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "MDX Suite Contentful"
+        },
+        "slug": {
+          "en-US": "index"
+        },
+        "displayInMenu": {
+          "en-US": true
+        },
+        "menuWeight": {
+          "en-US": 0
+        },
+        "menuTitle": {
+          "en-US": "Home"
+        },
+        "seoDescription": {
+          "en-US": "Gatsby MDX Suite - Quickstart your MDX experience"
+        },
+        "content": {
+          "en-US": "<Grid center>\n\n# Welcome to the <br/> Gatsby MDX Suite Contentful Starter\n\n</Grid>\n\nThe idea is to provide a bunch of components, ready to be embedded via MDX and compatible to the https://github.com/blocks/blocks editor.\n\nThey come with **very** barebone styling applied and allow custumization by following the theme-ui pattern, overwrite styling via emoted and replacing/shadowing single JSX nodes.\n\n## Build with\n\n<Grid>\n<div>\n\n### Gatsby.js & Markdown\n\n<Image id=\"4pRfYllvIrP3sLt9o1yiI1\" />\n\nExample: <Link id=\"6GoS77n4iwgU24QQQJNVAc\">Markdown demo</Link>\n\n</div>\n<div>\n\n### MDX\n\n<Image id=\"dGMO8ITw5Cfj21jCL55Rk\" />\n\nExample: <Link id=\"3RVJvx4cVMzZXwBF0Ps9U9\">MDX demo</Link>\n\n</div>\n<div>\n\n### docz\n\n<Image id=\"dB0vchiZ8RLI4YDd9OVmt\" />\n\nExample: [see /docs](/docs)\n\n</div>\n</Grid>"
+        },
+        "contentMedia": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "dGMO8ITw5Cfj21jCL55Rk"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "4pRfYllvIrP3sLt9o1yiI1"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "dB0vchiZ8RLI4YDd9OVmt"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c1ea8att6ykb"
+          }
+        },
+        "id": "6GoS77n4iwgU24QQQJNVAc",
+        "type": "Entry",
+        "createdAt": "2019-10-11T10:55:42.266Z",
+        "updatedAt": "2019-10-17T10:03:26.204Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 44,
+        "publishedAt": "2019-10-17T10:03:26.204Z",
+        "firstPublishedAt": "2019-10-11T10:56:36.950Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 45,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "page"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Basic Markdown Demo"
+        },
+        "slug": {
+          "en-US": "basic-markdown-demo"
+        },
+        "displayInMenu": {
+          "en-US": true
+        },
+        "menuWeight": {
+          "en-US": 2
+        },
+        "menuTitle": {
+          "en-US": "Basic Markdown"
+        },
+        "seoDescription": {
+          "en-US": "Demo of all basic markdown elements"
+        },
+        "content": {
+          "en-US": "# Basic Markdown Example\n\nThis is intended as a quick reference and showcase. Source: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\n\nFor more complete info, see [John Gruber's original spec](http://daringfireball.net/projects/markdown/) and the [Github-flavored Markdown info page](http://github.github.com/github-flavored-markdown/).\n\nNote that there is also a [Cheatsheet specific to Markdown Here](./Markdown-Here-Cheatsheet) if that's what you're looking for. You can also check out [more Markdown tools](./Other-Markdown-Tools).\n\n##### Table of Contents\n\n[Headers](#headers)  \n[Emphasis](#emphasis)  \n[Lists](#lists)  \n[Links](#links)  \n[Images](#images)  \n[Code and Syntax Highlighting](#code)  \n[Tables](#tables)  \n[Blockquotes](#blockquotes)  \n[Inline HTML](#html)  \n[Horizontal Rule](#hr)  \n[Line Breaks](#lines)  \n[YouTube Videos](#videos)\n\n<a name=\"headers\" />\n\n## Headers\n\n```no-highlight\n# H1\n## H2\n### H3\n#### H4\n##### H5\n###### H6\n\nAlternatively, for H1 and H2, an underline-ish style:\n\nAlt-H1\n======\n\nAlt-H2\n------\n```\n\n# H1\n\n## H2\n\n### H3\n\n#### H4\n\n##### H5\n\n###### H6\n\nAlternatively, for H1 and H2, an underline-ish style:\n\n# Alt-H1\n\n## Alt-H2\n\n<a name=\"emphasis\" />\n\n## Emphasis\n\n```no-highlight\nEmphasis, aka italics, with *asterisks* or _underscores_.\n\nStrong emphasis, aka bold, with **asterisks** or __underscores__.\n\nCombined emphasis with **asterisks and _underscores_**.\n\nStrikethrough uses two tildes. ~~Scratch this.~~\n```\n\nEmphasis, aka italics, with _asterisks_ or _underscores_.\n\nStrong emphasis, aka bold, with **asterisks** or **underscores**.\n\nCombined emphasis with **asterisks and _underscores_**.\n\nStrikethrough uses two tildes. ~~Scratch this.~~\n\n<a name=\"lists\" />\n\n## Lists\n\n(In this example, leading and trailing spaces are shown with with dots: ⋅)\n\n```no-highlight\n1. First ordered list item\n2. Another item\n⋅⋅* Unordered sub-list.\n1. Actual numbers don't matter, just that it's a number\n⋅⋅1. Ordered sub-list\n4. And another item.\n\n⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).\n\n⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅\n⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅\n⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)\n\n* Unordered list can use asterisks\n- Or minuses\n+ Or pluses\n```\n\n1. First ordered list item\n2. Another item\n\n- Unordered sub-list.\n\n1. Actual numbers don't matter, just that it's a number\n1. Ordered sub-list\n1. And another item.\n\n   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).\n\n   To have a line break without a paragraph, you will need to use two trailing spaces.  \n   Note that this line is separate, but within the same paragraph.  \n   (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)\n\n- Unordered list can use asterisks\n\n* Or minuses\n\n- Or pluses\n\n<a name=\"links\" />\n\n## Links\n\nThere are two ways to create links.\n\n```no-highlight\n[I'm an inline-style link](https://www.google.com)\n\n[I'm an inline-style link with title](https://www.google.com \"Google's Homepage\")\n\n[I'm a reference-style link][Arbitrary case-insensitive reference text]\n\n[I'm a relative reference to a repository file](../blob/master/LICENSE)\n\n[You can use numbers for reference-style link definitions][1]\n\nOr leave it empty and use the [link text itself].\n\nURLs and URLs in angle brackets will automatically get turned into links.\nhttp://www.example.com or <http://www.example.com> and sometimes\nexample.com (but not on Github, for example).\n\nSome text to show that the reference links can follow later.\n\n[arbitrary case-insensitive reference text]: https://www.mozilla.org\n[1]: http://slashdot.org\n[link text itself]: http://www.reddit.com\n```\n\n[I'm an inline-style link](https://www.google.com)\n\n[I'm an inline-style link with title](https://www.google.com \"Google's Homepage\")\n\n[I'm a reference-style link][arbitrary case-insensitive reference text]\n\n[I'm a relative reference to a repository file](../blob/master/LICENSE)\n\n[You can use numbers for reference-style link definitions][1]\n\nOr leave it empty and use the [link text itself].\n\nURLs and URLs in angle brackets will automatically get turned into links.\nhttp://www.example.com or <http://www.example.com> and sometimes\nexample.com (but not on Github, for example).\n\nSome text to show that the reference links can follow later.\n\n[arbitrary case-insensitive reference text]: https://www.mozilla.org\n[1]: http://slashdot.org\n[link text itself]: http://www.reddit.com\n\n<a name=\"images\" />\n\n## Images\n\n```no-highlight\nHere's our logo (hover to see the title text):\n\nInline-style:\n![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 1\")\n\nReference-style:\n![alt text][logo]\n\n[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 2\"\n```\n\nHere's our logo (hover to see the title text):\n\nInline-style:\n![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')\n\nReference-style:\n![alt text][logo]\n\n[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 2'\n\n<a name=\"code\" />\n\n## Code and Syntax Highlighting\n\nCode blocks are part of the Markdown spec, but syntax highlighting isn't. However, many renderers -- like Github's and _Markdown Here_ -- support syntax highlighting. Which languages are supported and how those language names should be written will vary from renderer to renderer. _Markdown Here_ supports highlighting for dozens of languages (and not-really-languages, like diffs and HTTP headers); to see the complete list, and how to write the language names, see the [highlight.js demo page](http://softwaremaniacs.org/media/soft/highlight/test.html).\n\n```no-highlight\nInline `code` has `back-ticks around` it.\n```\n\nInline `code` has `back-ticks around` it.\n\nBlocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.\n\n<pre lang=\"no-highlight\">\n  <code>\n    ```javascript var s = \"JavaScript syntax highlighting\"; alert(s); ```\n    ```python s = \"Python syntax highlighting\" print s ``` ``` No language\n    indicated, so no syntax highlighting. But let's throw in a\n    &lt;b&gt;tag&lt;/b&gt;. ```\n  </code>\n</pre>\n\n```javascript\nvar s = 'JavaScript syntax highlighting'\nalert(s)\n```\n\n```python\ns = \"Python syntax highlighting\"\nprint s\n```\n\n```\nNo language indicated, so no syntax highlighting in Markdown Here (varies on Github).\nBut let's throw in a <b>tag</b>.\n```\n\n<a name=\"tables\" />\n\n## Tables\n\nTables aren't part of the core Markdown spec, but they are part of GFM and _Markdown Here_ supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.\n\n```no-highlight\nColons can be used to align columns.\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |\n\nThere must be at least 3 dashes separating each header cell.\nThe outer pipes (|) are optional, and you don't need to make the\nraw Markdown line up prettily. You can also use inline Markdown.\n\nMarkdown | Less | Pretty\n--- | --- | ---\n*Still* | `renders` | **nicely**\n1 | 2 | 3\n```\n\nColons can be used to align columns.\n\n| Tables        |      Are      |   Cool |\n| ------------- | :-----------: | -----: |\n| col 3 is      | right-aligned | \\$1600 |\n| col 2 is      |   centered    |   \\$12 |\n| zebra stripes |   are neat    |    \\$1 |\n\nThere must be at least 3 dashes separating each header cell. The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.\n\n| Markdown | Less      | Pretty     |\n| -------- | --------- | ---------- |\n| _Still_  | `renders` | **nicely** |\n| 1        | 2         | 3          |\n\n<a name=\"blockquotes\" />\n\n## Blockquotes\n\n```no-highlight\n> Blockquotes are very handy in email to emulate reply text.\n> This line is part of the same quote.\n\nQuote break.\n\n> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.\n```\n\n> Blockquotes are very handy in email to emulate reply text.\n> This line is part of the same quote.\n\nQuote break.\n\n> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.\n\n<a name=\"html\" />\n\n## Inline HTML\n\nYou can also use raw HTML in your Markdown, and it'll mostly work pretty well.\n\n```no-highlight\n<dl>\n  <dt>Definition list</dt>\n  <dd>Is something people use sometimes.</dd>\n\n  <dt>Markdown in HTML</dt>\n  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>\n</dl>\n```\n\n<dl>\n  <dt>Definition list</dt>\n  <dd>Is something people use sometimes.</dd>\n\n  <dt>Markdown in HTML</dt>\n  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>\n</dl>\n\n<a name=\"hr\" />\n\n## Horizontal Rule\n\n```\nThree or more...\n\n---\n\nHyphens\n\n***\n\nAsterisks\n\n___\n\nUnderscores\n```\n\nThree or more...\n\n---\n\nHyphens\n\n---\n\nAsterisks\n\n---\n\nUnderscores\n\n<a name=\"lines\" />\n\n## Line Breaks\n\nMy basic recommendation for learning how line breaks work is to experiment and discover -- hit &lt;Enter&gt; once (i.e., insert one newline), then hit it twice (i.e., insert two newlines), see what happens. You'll soon learn to get what you want. \"Markdown Toggle\" is your friend.\n\nHere are some things to try out:\n\n```\nHere's a line for us to start with.\n\nThis line is separated from the one above by two newlines, so it will be a *separate paragraph*.\n\nThis line is also a separate paragraph, but...\nThis line is only separated by a single newline, so it's a separate line in the *same paragraph*.\n```\n\nHere's a line for us to start with.\n\nThis line is separated from the one above by two newlines, so it will be a _separate paragraph_.\n\nThis line is also begins a separate paragraph, but...  \nThis line is only separated by a single newline, so it's a separate line in the _same paragraph_.\n\n(Technical note: _Markdown Here_ uses GFM line breaks, so there's no need to use MD's two-space line breaks.)\n\n<a name=\"videos\" />\n\n## YouTube Videos\n\nThey can't be added directly but you can add an image with a link to the video like this:\n\n```no-highlight\n<a href=\"http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE\n\" target=\"_blank\"><img src=\"http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg\"\nalt=\"IMAGE ALT TEXT HERE\" width=\"240\" height=\"180\" border=\"10\" /></a>\n```\n\nOr, in pure Markdown, but losing the image sizing and border:\n\n```no-highlight\n[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)\n```\n\nReferencing a bug by #bugID in your git commit links it to the slip. For example #1.\n\n---\n\nLicense: [CC-BY](https://creativecommons.org/licenses/by/3.0/)"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c1ea8att6ykb"
+          }
+        },
+        "id": "3RVJvx4cVMzZXwBF0Ps9U9",
+        "type": "Entry",
+        "createdAt": "2019-10-11T10:56:40.871Z",
+        "updatedAt": "2019-10-17T10:03:05.760Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "firstPublishedAt": "2019-10-17T10:03:01.604Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 18,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "page"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "MDX Demo"
+        },
+        "slug": {
+          "en-US": "mdx-demo"
+        },
+        "displayInMenu": {
+          "en-US": true
+        },
+        "seoDescription": {
+          "en-US": "MDX Example"
+        },
+        "seoImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "dGMO8ITw5Cfj21jCL55Rk"
+            }
+          }
+        },
+        "content": {
+          "en-US": "# MDX Example\n\n## Grid\n\nA Grid is a very powerful tool to layout your content.\n\nIt's main purpose is to show content next to each other, while maintaining a reasonable size depending on the screen size.\n\n<Grid minWidth=\"100px\" maxWidth=\"180px\" center>\n\n![picture of a dog](https://source.unsplash.com/400x300/weekly?dog)\n\n![picture of a cat](https://source.unsplash.com/400x300/weekly?cat)\n\n![picture of a ape](https://source.unsplash.com/400x300/weekly?ape)\n\n![picture of a penguin](https://source.unsplash.com/400x300/weekly?penguin)\n\n![picture of a bird](https://source.unsplash.com/400x300/weekly?bird)\n\n![picture of a elephant](https://source.unsplash.com/400x300/weekly?elephant)\n\n![picture of a human](https://source.unsplash.com/400x300/weekly?human)\n\n</Grid>"
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c1ea8att6ykb"
+          }
+        },
+        "id": "dGMO8ITw5Cfj21jCL55Rk",
+        "type": "Asset",
+        "createdAt": "2019-10-11T10:02:37.418Z",
+        "updatedAt": "2019-10-11T10:03:28.387Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2019-10-11T10:03:28.387Z",
+        "firstPublishedAt": "2019-10-11T10:03:28.387Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "mdx-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c1ea8att6ykb/dGMO8ITw5Cfj21jCL55Rk/e6c694965ca67152d1004ed0312bdd6a/mdx-logo.svg",
+            "details": {
+              "size": 552,
+              "image": {
+                "width": 138,
+                "height": 57
+              }
+            },
+            "fileName": "mdx-logo.svg",
+            "contentType": "image/svg+xml"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c1ea8att6ykb"
+          }
+        },
+        "id": "4pRfYllvIrP3sLt9o1yiI1",
+        "type": "Asset",
+        "createdAt": "2019-10-11T10:02:37.421Z",
+        "updatedAt": "2019-10-11T10:03:28.379Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2019-10-11T10:03:28.379Z",
+        "firstPublishedAt": "2019-10-11T10:03:28.379Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Gatsby Logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c1ea8att6ykb/4pRfYllvIrP3sLt9o1yiI1/45f8419ac96b2e169e668d95843b4b78/Gatsby_Logo.png",
+            "details": {
+              "size": 37313,
+              "image": {
+                "width": 2000,
+                "height": 555
+              }
+            },
+            "fileName": "Gatsby_Logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c1ea8att6ykb"
+          }
+        },
+        "id": "dB0vchiZ8RLI4YDd9OVmt",
+        "type": "Asset",
+        "createdAt": "2019-10-11T10:03:04.328Z",
+        "updatedAt": "2019-10-11T10:03:20.526Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2019-10-11T10:03:20.526Z",
+        "firstPublishedAt": "2019-10-11T10:03:20.526Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "3A5WToEs9aUr4xbMQTyUcV"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "docz-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c1ea8att6ykb/dB0vchiZ8RLI4YDd9OVmt/cea16cc087224cd70b5130a4d00c6d91/docz-logo.svg",
+            "details": {
+              "size": 17552,
+              "image": {
+                "width": 385,
+                "height": 112
+              }
+            },
+            "fileName": "docz-logo.svg",
+            "contentType": "image/svg+xml"
+          }
+        }
+      }
     }
   ],
   "locales": [
@@ -245,13 +767,13 @@
       "optional": false,
       "sys": {
         "type": "Locale",
-        "id": "4JKpR3cHn8GV45RLSxfLcj",
+        "id": "43KhWWHwRPKePjXAfJOznK",
         "version": 2,
         "space": {
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "11vxbw8ly851"
+            "id": "c1ea8att6ykb"
           }
         },
         "environment": {
@@ -268,7 +790,7 @@
             "id": "3A5WToEs9aUr4xbMQTyUcV"
           }
         },
-        "createdAt": "2019-08-18T16:39:01Z",
+        "createdAt": "2019-10-11T09:57:55Z",
         "updatedBy": {
           "sys": {
             "type": "Link",
@@ -276,7 +798,7 @@
             "id": "3A5WToEs9aUr4xbMQTyUcV"
           }
         },
-        "updatedAt": "2019-08-18T16:41:41Z"
+        "updatedAt": "2019-10-11T09:58:18Z"
       }
     }
   ]
