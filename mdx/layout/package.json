@@ -21,6 +21,6 @@
     "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
     "@gatsby-mdx-suite/mdx-media": "link:../media",
     "prop-types": "^15.7.2",
-    "react": "^16.9.0"
+    "react": "^16.10.2"
   }
 }
