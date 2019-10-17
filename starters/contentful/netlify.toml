@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build"
+  environment = { NODE_ENV = "production" }
+[context.deploy-preview]
+  environment = { NODE_ENV = "production", STAGING = "true" }
+[context.staging]
+  environment = { NODE_ENV = "production", STAGING = "true" }
+
+[[redirects]]
+  from = "/"
+  to = "/de/"
+  status = 302
+  force = true
+  conditions = {Language = ["de"]}
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  force = true
