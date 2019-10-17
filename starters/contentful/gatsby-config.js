@@ -42,8 +42,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `timelapsa`,
-        short_name: `tmlps`,
+        name: `Gatsby MDX Suite`,
+        short_name: `mdx`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#000000`,
