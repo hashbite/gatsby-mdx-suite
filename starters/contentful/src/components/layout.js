@@ -4,6 +4,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
+import { useTranslation } from 'react-i18next'
 
 import ColorModeSwitcher from './color-mode-switcher'
 
@@ -20,7 +21,11 @@ const Header = styled.header`
   padding: ${({ theme }) => theme.spacing.s2}px 0;
 `
 
+const Content = styled.div``
+const Footer = styled.footer``
+
 const Layout = ({ children }) => {
+  const { t } = useTranslation()
   return (
     <Styled.root>
       <Global
@@ -69,7 +74,8 @@ const Layout = ({ children }) => {
           <h1>Gatsby MDX Suite Starter</h1>
           <ColorModeSwitcher />
         </Header>
-        {children}
+        <Content>{children}</Content>
+        <Footer>{t('copyright', { year: new Date().getFullYear() })}</Footer>
       </Main>
     </Styled.root>
   )
