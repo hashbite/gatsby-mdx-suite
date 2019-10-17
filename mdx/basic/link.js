@@ -2,9 +2,12 @@ import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
-import i18nContext from '@gatsby-mdx-suite/contexts/i18n'
-import createPath from '@gatsby-mdx-suite/i18n/create-path'
+import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
+import LocationContext from '@gatsby-mdx-suite/contexts/location'
+import {
+  generatePageMap,
+  getPageWithFallback,
+} from '@gatsby-mdx-suite/i18n/helpers'
 
 export default function ContentfulLink({
   id,
@@ -28,18 +31,22 @@ export default function ContentfulLink({
     )
   }
 
-  const { contentfulPages } = useMDXDataState()
-  const { active: activeLocale } = useContext(i18nContext)
+  const { pages } = useContext(LocationContext)
+  const { active: activeLocale, default: defaultLocale } = useContext(
+    I18nContext
+  )
 
-  if (!contentfulPages) {
+  if (!pages) {
     return null
   }
 
-  const page = contentfulPages.find(
-    (page) => page.contentful_id === id && page.node_locale === activeLocale
-  )
+  const pageMap = generatePageMap({ pages, pageId: id })
+  const page = getPageWithFallback({
+    pageMap,
+    locale: activeLocale,
+    defaultLocale,
+  })
 
-  // @todo merge page discovery logic with language selection component
   if (!page) {
     console.warn(
       `Unable to find contentful page with id ${id} and locale ${activeLocale}`
@@ -47,15 +54,14 @@ export default function ContentfulLink({
     return null
   }
 
-  const { slug, node_locale: locale, title: pageTitle } = page
+  const { slug, title: pageTitle, menuTitle } = page
 
   if (!slug) {
     console.error({ page })
     return null
   }
 
-  const path = createPath({ slug, locale })
-  const to = [path, hash ? `#${hash}` : null].filter(Boolean).join('')
+  const to = [page.path, hash ? `#${hash}` : null].filter(Boolean).join('')
   return (
     <Link
       type={type}
@@ -65,7 +71,7 @@ export default function ContentfulLink({
       target={target}
       {...linkProps}
     >
-      {children || title || pageTitle}
+      {children || title || menuTitle || pageTitle}
     </Link>
   )
 }

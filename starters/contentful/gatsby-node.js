@@ -1,5 +1,5 @@
 const { resolve } = require('path')
-const createPath = require('@gatsby-mdx-suite/i18n/create-path')
+const { createPath } = require('@gatsby-mdx-suite/i18n/helpers')
 
 const crypto = require(`crypto`)
 
@@ -163,6 +163,7 @@ exports.createPages = async ({ graphql, actions }) => {
             edges {
               node {
                 id
+                contentful_id
                 slug
                 node_locale
               }
@@ -177,7 +178,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     result.data.allContentfulPage.edges.map((edge) => {
-      const { id, slug, node_locale: locale } = edge.node
+      const { id, contentful_id: pageId, slug, node_locale: locale } = edge.node
 
       const path = createPath({ slug, locale })
 
@@ -185,7 +186,8 @@ exports.createPages = async ({ graphql, actions }) => {
         path,
         component: resolve(`./src/templates/page.js`),
         context: {
-          id: id,
+          id,
+          pageId,
           locale,
         },
       })
@@ -196,7 +198,8 @@ exports.createPages = async ({ graphql, actions }) => {
           path: '/',
           component: resolve(`./src/templates/page.js`),
           context: {
-            id: id,
+            id,
+            pageId,
             locale,
           },
         })

@@ -1,12 +1,14 @@
-// import React from 'react'
+import React, { useContext, useState } from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import useDeepCompareEffect from 'use-deep-compare-effect'
 
-import { useMDXDataDispatch } from '@gatsby-mdx-suite/contexts/mdx-data'
+import LocationContext from '@gatsby-mdx-suite/contexts/location'
+import { createPath } from '@gatsby-mdx-suite/i18n/helpers'
 
 const ContentfulPageInjector = ({ children }) => {
-  const mdxDataDispatch = useMDXDataDispatch()
+  const [pages, setPages] = useState(null)
+  const locationData = useContext(LocationContext)
 
   const contentfulPagesResult = useStaticQuery(graphql`
     {
@@ -25,18 +27,37 @@ const ContentfulPageInjector = ({ children }) => {
   `)
 
   useDeepCompareEffect(() => {
-    const contentfulPages = contentfulPagesResult.allContentfulPage.edges.map(
-      ({ node }) => node
+    setPages(
+      contentfulPagesResult.allContentfulPage.edges.map(
+        ({
+          node: {
+            contentful_id: id,
+            node_locale: locale,
+            slug,
+            title,
+            menuTitle,
+          },
+        }) => ({
+          id,
+          locale,
+          slug,
+          title,
+          menuTitle,
+          path: createPath({ locale, slug }),
+        })
+      )
     )
-
-    mdxDataDispatch({
-      type: 'add',
-      id: 'contentfulPages',
-      data: contentfulPages,
-    })
   }, [contentfulPagesResult])
 
-  return children
+  if (!pages) {
+    return null
+  }
+
+  return (
+    <LocationContext.Provider value={{ ...locationData, pages }}>
+      {children}
+    </LocationContext.Provider>
+  )
 }
 ContentfulPageInjector.propTypes = {
   children: propTypes.node.isRequired,
