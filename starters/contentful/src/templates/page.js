@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 import * as propTypes from 'prop-types'
 
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import useDeepCompareEffect from 'use-deep-compare-effect'
+import { useTranslation } from 'react-i18next'
 
 import { useMDXDataDispatch } from '@gatsby-mdx-suite/contexts/mdx-data'
 import Seo from '@gatsby-mdx-suite/seo'
 
 import Layout from '../components/layout'
 
-function PageTemplate({ data }) {
+function PageTemplate({ data, pathContext }) {
+  const { i18n } = useTranslation()
   const mdxDataDispatch = useMDXDataDispatch()
+
   const {
     title,
     seoDescription,
@@ -20,7 +23,16 @@ function PageTemplate({ data }) {
     content,
     contentMedia,
   } = data.contentfulPage
+  const { locale } = pathContext
 
+  // Set current i18next translation language based on page locale
+  useEffect(() => {
+    if (locale !== i18n.language) {
+      i18n.changeLanguage(locale)
+    }
+  }, [locale])
+
+  // Inject media attachted to the content into the MDX context
   if (contentMedia) {
     useDeepCompareEffect(() => {
       mdxDataDispatch({
@@ -48,6 +60,7 @@ function PageTemplate({ data }) {
 
 PageTemplate.propTypes = {
   data: propTypes.object.isRequired,
+  pathContext: propTypes.object.isRequired,
 }
 
 export default PageTemplate

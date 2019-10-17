@@ -17,8 +17,20 @@ module.exports = {
     {
       resolve: `gatsby-theme-mdx-suite`,
       options: {
-        langs: ['en-US', 'de'],
-        defaultLocale: 'en-US',
+        langs: ['en', 'de'],
+        defaultLocale: 'en',
+        translations: {
+          en: {
+            translation: {
+              copyright: '© Copyright {{year}}. All rights reserved.',
+            },
+          },
+          de: {
+            translation: {
+              copyright: '© Copyright {{year}}. Alle Rechte vorbehalten.',
+            },
+          },
+        },
       },
     },
     `gatsby-plugin-emotion`,
