@@ -191,19 +191,6 @@ exports.createPages = async ({ graphql, actions }) => {
           locale,
         },
       })
-
-      // Make sure entry route is always available. Ensure you render cannocical links to avoid content duplication.
-      if (slug === 'index') {
-        createPage({
-          path: '/',
-          component: resolve(`./src/templates/page.js`),
-          context: {
-            id,
-            pageId,
-            locale,
-          },
-        })
-      }
     })
   }
 

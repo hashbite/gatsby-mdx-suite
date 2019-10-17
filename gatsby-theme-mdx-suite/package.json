@@ -10,11 +10,11 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.17",
+    "@emotion/core": "^10.0.21",
     "@emotion/styled": "^10.0.17",
     "@gatsby-mdx-suite/contexts": "link:../packages/contexts",
-    "@mdx-js/react": "^1.5.0",
-    "gatsby-plugin-mdx": "^1.0.44",
+    "@mdx-js/react": "^1.5.1",
+    "gatsby-plugin-mdx": "^1.0.52",
     "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-theme-docz": "^2.0.0-rc.42",
     "theme-ui": "^0.2.43"
