@@ -5,8 +5,10 @@ import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'gatsby'
 
-import ColorModeSwitcher from './color-mode-switcher'
+import ColorModeSwitch from './color-mode-switch'
+import LanguageSwitch from '@gatsby-mdx-suite/i18n/language-switch'
 
 const Main = styled.div`
   max-width: ${({ theme }) => theme.sizes.maxContentWidth}px;
@@ -71,8 +73,11 @@ const Layout = ({ children }) => {
       />
       <Main>
         <Header>
-          <h1>Gatsby MDX Suite Starter</h1>
-          <ColorModeSwitcher />
+          <h1>
+            <Link to="/">Gatsby MDX Suite Starter</Link>
+          </h1>
+          <ColorModeSwitch />
+          <LanguageSwitch />
         </Header>
         <Content>{children}</Content>
         <Footer>{t('copyright', { year: new Date().getFullYear() })}</Footer>

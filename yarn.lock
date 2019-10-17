@@ -1246,6 +1246,14 @@
   version "0.0.0"
   uid ""
 
+"@gatsby-mdx-suite/mdx-basic@link:mdx/basic":
+  version "0.0.1"
+  dependencies:
+    "@emotion/styled" "^10.0.15"
+    "@gatsby-mdx-suite/contexts" "link:packages/contexts"
+    prop-types "^15.7.2"
+    react "^16.9.0"
+
 "@gatsby-mdx-suite/mdx-contentful@link:mdx/contentful":
   version "0.0.1"
   dependencies:
