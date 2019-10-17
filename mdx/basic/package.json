@@ -19,6 +19,6 @@
     "@emotion/styled": "^10.0.15",
     "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
     "prop-types": "^15.7.2",
-    "react": "^16.9.0"
+    "react": "^16.10.2"
   }
 }
