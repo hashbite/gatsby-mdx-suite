@@ -15,7 +15,7 @@ import Seo from '@gatsby-mdx-suite/seo'
 
 import Layout from '../components/layout'
 
-function PageTemplate({ data, pathContext }) {
+function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
   const mdxDataDispatch = useMDXDataDispatch()
   const locationData = useContext(LocationContext)
@@ -28,7 +28,7 @@ function PageTemplate({ data, pathContext }) {
     content,
     contentMedia,
   } = data.contentfulPage
-  const { locale, pageId } = pathContext
+  const { locale, pageId } = pageContext
 
   // Set current i18next translation language based on page locale
   useEffect(() => {
@@ -78,7 +78,7 @@ function PageTemplate({ data, pathContext }) {
 
 PageTemplate.propTypes = {
   data: propTypes.object.isRequired,
-  pathContext: propTypes.object.isRequired,
+  pageContext: propTypes.object.isRequired,
 }
 
 export default PageTemplate
