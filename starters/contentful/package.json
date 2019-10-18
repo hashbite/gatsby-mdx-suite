@@ -2,7 +2,7 @@
   "name": "gatsby-starter-mdx-suite-contentful",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "author": "Benedikt Rötsch <info@benedikt.roetsch.de>",
   "dependencies": {
     "@emotion/core": "^10.0.21",
