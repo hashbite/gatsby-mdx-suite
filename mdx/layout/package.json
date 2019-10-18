@@ -8,12 +8,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "directories": {
-    "lib": "src"
-  },
+  "keywords": [
+    "gatsby-mdx-suite",
+    "gatsby",
+    "mdx"
+  ],
   "files": [
-    "src"
+    "index.js",
+    "box.js",
+    "boxes.js",
+    "grid.js",
+    "viewport.js"
   ],
   "dependencies": {
     "@emotion/core": "^10.0.21",
