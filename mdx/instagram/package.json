@@ -20,8 +20,8 @@
   ],
   "dependencies": {
     "@emotion/styled": "^10.0.15",
-    "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
-    "@gatsby-mdx-suite/mdx-media": "link:../media",
+    "@gatsby-mdx-suite/contexts": "^0.0.1-alpha.42",
+    "@gatsby-mdx-suite/mdx-media": "^0.0.1-alpha.42",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-instagram-embed": "^1.5.0"

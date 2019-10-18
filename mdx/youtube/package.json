@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@emotion/styled": "^10.0.15",
-    "@gatsby-mdx-suite/contexts": "link:../../packages/contexts",
+    "@gatsby-mdx-suite/contexts": "^0.0.1-alpha.42",
     "gatsby": "^2.16.4",
     "gatsby-image": "^2.2.29",
     "prop-types": "^15.7.2",

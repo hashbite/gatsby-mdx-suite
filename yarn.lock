@@ -1047,58 +1047,25 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@gatsby-mdx-suite/contexts@link:packages/contexts":
-  version "0.0.1"
+"@gatsby-mdx-suite/contexts@^0.0.1-alpha.42", "@gatsby-mdx-suite/contexts@^0.0.1-alpha.42+6875510":
+  version "0.0.1-alpha.42"
+  resolved "https://registry.yarnpkg.com/@gatsby-mdx-suite/contexts/-/contexts-0.0.1-alpha.42.tgz#1f090efe3f48af75ebd214e6e0d8af3428ea4663"
+  integrity sha512-A6E8RUisylO2JvEQh8N70CugXMyl7vaUVLxO2oSAtCyOxBD7//21DwcMDar+JSVgXQmnmdeH4T/DPIlSY/7+Bw==
   dependencies:
     prop-types "^15.7.2"
     react "^16.10.2"
 
-"@gatsby-mdx-suite/i18n@link:packages/i18n":
-  version "0.0.0"
-  uid ""
-
-"@gatsby-mdx-suite/mdx-basic@link:mdx/basic":
-  version "0.0.1"
+"@gatsby-mdx-suite/mdx-media@^0.0.1-alpha.42":
+  version "0.0.1-alpha.42"
+  resolved "https://registry.yarnpkg.com/@gatsby-mdx-suite/mdx-media/-/mdx-media-0.0.1-alpha.42.tgz#9ce453d5eceecacd9582ae01d028409fcfb714b4"
+  integrity sha512-x3FdU8r66vCd0jLMque07YQR3jkeIyrHgPhp+B9M18QdwSdQObDcwcs578dcnd/Ydx0KmboiZ+vnz7tP+xmkWw==
   dependencies:
     "@emotion/styled" "^10.0.15"
-    "@gatsby-mdx-suite/contexts" "link:packages/contexts"
-    prop-types "^15.7.2"
-    react "^16.10.2"
-
-"@gatsby-mdx-suite/mdx-contentful@link:mdx/contentful":
-  version "0.0.1"
-  dependencies:
-    "@emotion/styled" "^10.0.15"
-    "@gatsby-mdx-suite/contexts" "link:packages/contexts"
-    "@gatsby-mdx-suite/mdx-media" "link:mdx/media"
-    prop-types "^15.7.2"
-    react "^16.10.2"
-
-"@gatsby-mdx-suite/mdx-layout@link:mdx/layout":
-  version "0.0.1"
-  dependencies:
-    "@emotion/core" "^10.0.21"
-    "@emotion/styled" "^10.0.15"
-    "@gatsby-mdx-suite/contexts" "link:packages/contexts"
-    "@gatsby-mdx-suite/mdx-media" "link:mdx/media"
-    prop-types "^15.7.2"
-    react "^16.10.2"
-
-"@gatsby-mdx-suite/mdx-media@link:mdx/media":
-  version "0.0.1"
-  dependencies:
-    "@emotion/styled" "^10.0.15"
-    "@gatsby-mdx-suite/contexts" "link:packages/contexts"
+    "@gatsby-mdx-suite/contexts" "^0.0.1-alpha.42+6875510"
     gatsby-image "^2.2.29"
     prop-types "^15.7.2"
     react "^16.10.2"
     react-images "^1.0.0"
-
-"@gatsby-mdx-suite/seo@link:packages/seo":
-  version "0.0.1"
-  dependencies:
-    prop-types "^15.7.2"
-    react "^16.10.2"
 
 "@gatsbyjs/relay-compiler@2.0.0-printer-fix.4":
   version "2.0.0-printer-fix.4"
@@ -8517,18 +8484,6 @@ gatsby-theme-docz@2.0.0-rc.57, gatsby-theme-docz@^2.0.0-rc.42:
     typescript "3.5.3"
     typography-theme-moraga "^0.16.19"
     yargs "^13.3.0"
-
-"gatsby-theme-mdx-suite@link:gatsby-theme-mdx-suite":
-  version "0.0.1"
-  dependencies:
-    "@emotion/core" "^10.0.21"
-    "@emotion/styled" "^10.0.17"
-    "@gatsby-mdx-suite/contexts" "link:packages/contexts"
-    "@mdx-js/react" "^1.5.1"
-    gatsby-plugin-mdx "^1.0.52"
-    gatsby-plugin-theme-ui "^0.2.43"
-    gatsby-theme-docz "^2.0.0-rc.42"
-    theme-ui "^0.2.44"
 
 gatsby-transformer-inline-svg@^0.0.1:
   version "0.0.1"
