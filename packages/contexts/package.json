@@ -4,8 +4,10 @@
   "description": "> TODO: description",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
-  "files": [
-    "mdx-data.js"
+  "keywords": [
+    "gatsby-mdx-suite",
+    "gatsby",
+    "mdx"
   ],
   "dependencies": {
     "prop-types": "^15.7.2",
