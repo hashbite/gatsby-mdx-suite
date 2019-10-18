@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'gatsby'
+import Link from 'gatsby-link'
 import styled from '@emotion/styled'
 
 import LocationContext from '@gatsby-mdx-suite/contexts/location'
