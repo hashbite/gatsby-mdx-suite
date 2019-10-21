@@ -5,7 +5,6 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
 const BoxWrapper = styled.div`
-  ${(props) => console.log({ props })}
   ${({ height }) =>
     height &&
     height > 1 &&
