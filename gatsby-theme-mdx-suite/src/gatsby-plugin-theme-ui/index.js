@@ -37,6 +37,8 @@ export default {
   colors: {
     text: '#000',
     background: '#fff',
+    black: '#000',
+    white: '#fff',
     primary: '#f1be25',
     contrast: '#add1c7',
     modes: {
