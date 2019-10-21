@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.0.5...gatsby-theme-mdx-suite@0.0.6) (2019-10-21)
+
+
+### Bug Fixes
+
+* **build:** temporary remove docz theme dependency as well ([0d79362](https://github.com/axe312ger/gatsby-mdx-suite/commit/0d793628c5aa62463930f666c0b6aa38edeb43c4))
+
+
+
+
+
 ## [0.0.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.0.4...gatsby-theme-mdx-suite@0.0.5) (2019-10-21)
 
 
