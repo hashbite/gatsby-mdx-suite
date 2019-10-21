@@ -13,11 +13,6 @@
     "gatsby",
     "mdx"
   ],
-  "files": [
-    "index.js",
-    "gatsby-image.js",
-    "link.js"
-  ],
   "dependencies": {
     "@emotion/styled": "^10.0.15",
     "@gatsby-mdx-suite/contexts": "^0.0.2",

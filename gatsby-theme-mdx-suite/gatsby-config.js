@@ -1,6 +1,5 @@
 const path = require('path')
-const src = path.resolve(__dirname, '../mdx')
-const files = './docs/'
+const src = path.resolve(process.cwd(), 'node_modules/@gatsby-mdx-suite')
 
 module.exports = ({ mdx }) => ({
   plugins: [
@@ -8,9 +7,9 @@ module.exports = ({ mdx }) => ({
     {
       resolve: `gatsby-theme-docz`,
       options: {
-        filterComponents: false,
-        src,
-        files: `${files}/**/*.{md,markdown,mdx}`,
+        filterComponents: (modules) => modules,
+        src: src,
+        files: `**/docs/*.{md,markdown,mdx}`,
       },
     },
     {
