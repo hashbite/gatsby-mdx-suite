@@ -17,6 +17,7 @@
     "index.js",
     "box.js",
     "boxes.js",
+    "box-content.js",
     "grid.js",
     "viewport.js"
   ],

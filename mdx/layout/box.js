@@ -29,16 +29,8 @@ const BoxWrapper = styled.div`
     `}
 `
 
-const BoxContent = styled.div`
-  padding: 32px;
-`
-
 const Box = ({ children, ...props }) => {
-  return (
-    <BoxWrapper {...props}>
-      <BoxContent>{children}</BoxContent>
-    </BoxWrapper>
-  )
+  return <BoxWrapper {...props}>{children}</BoxWrapper>
 }
 
 Box.defaultProps = {
