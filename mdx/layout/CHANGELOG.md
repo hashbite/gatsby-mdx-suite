@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.0.7...@gatsby-mdx-suite/mdx-layout@0.0.8) (2019-10-21)
+
+
+### Bug Fixes
+
+* **docs:** move docs into mdx modules ([029723f](https://github.com/axe312ger/gatsby-mdx-suite/commit/029723fbe0a1630b91ac480e419e1479459ad472))
+
+
+
+
+
 ## [0.0.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.0.6...@gatsby-mdx-suite/mdx-layout@0.0.7) (2019-10-21)
 
 
