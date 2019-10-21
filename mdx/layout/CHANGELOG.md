@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.0.6...@gatsby-mdx-suite/mdx-layout@0.0.7) (2019-10-21)
+
+
+### Bug Fixes
+
+* **mdx-layout:** introduce box content mdx component ([7e3aff0](https://github.com/axe312ger/gatsby-mdx-suite/commit/7e3aff0157b19bd8086dcbc4be70dca183b790a7))
+
+
+
+
+
 ## [0.0.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.0.5...@gatsby-mdx-suite/mdx-layout@0.0.6) (2019-10-21)
 
 
