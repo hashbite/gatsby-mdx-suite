@@ -20,6 +20,8 @@
   ],
   "dependencies": {
     "@emotion/styled": "^10.0.15",
+    "@gatsby-mdx-suite/mdx-layout": "^0.0.2",
+    "@gatsby-mdx-suite/mdx-basic": "^0.0.2",
     "@gatsby-mdx-suite/contexts": "^0.0.2",
     "gatsby-image": "^2.2.29",
     "prop-types": "^15.7.2",

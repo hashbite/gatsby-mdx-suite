@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import Image from 'gatsby-image'
 
 import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
+import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
+
 import Youtube from './video'
 
 const YoutubeFeedWrapper = styled.div`

@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import propTypes from 'prop-types'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import styled from '@emotion/styled'
-import Image from 'gatsby-image'
 
 import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
-import Grid from '../layout/grid'
+import Grid from '@gatsby-mdx-suite/mdx-layout'
+import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
 
 const MediaGalleryWrapper = styled(Grid)`
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
