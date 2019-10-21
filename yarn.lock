@@ -1047,26 +1047,6 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@gatsby-mdx-suite/contexts@^0.0.1-alpha.42", "@gatsby-mdx-suite/contexts@^0.0.1-alpha.42+6875510":
-  version "0.0.1-alpha.42"
-  resolved "https://registry.yarnpkg.com/@gatsby-mdx-suite/contexts/-/contexts-0.0.1-alpha.42.tgz#1f090efe3f48af75ebd214e6e0d8af3428ea4663"
-  integrity sha512-A6E8RUisylO2JvEQh8N70CugXMyl7vaUVLxO2oSAtCyOxBD7//21DwcMDar+JSVgXQmnmdeH4T/DPIlSY/7+Bw==
-  dependencies:
-    prop-types "^15.7.2"
-    react "^16.10.2"
-
-"@gatsby-mdx-suite/mdx-media@^0.0.1-alpha.42":
-  version "0.0.1-alpha.42"
-  resolved "https://registry.yarnpkg.com/@gatsby-mdx-suite/mdx-media/-/mdx-media-0.0.1-alpha.42.tgz#9ce453d5eceecacd9582ae01d028409fcfb714b4"
-  integrity sha512-x3FdU8r66vCd0jLMque07YQR3jkeIyrHgPhp+B9M18QdwSdQObDcwcs578dcnd/Ydx0KmboiZ+vnz7tP+xmkWw==
-  dependencies:
-    "@emotion/styled" "^10.0.15"
-    "@gatsby-mdx-suite/contexts" "^0.0.1-alpha.42+6875510"
-    gatsby-image "^2.2.29"
-    prop-types "^15.7.2"
-    react "^16.10.2"
-    react-images "^1.0.0"
-
 "@gatsbyjs/relay-compiler@2.0.0-printer-fix.4":
   version "2.0.0-printer-fix.4"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/relay-compiler/-/relay-compiler-2.0.0-printer-fix.4.tgz#4b06aeb4f2ceea5878b5832a2ced1bff9abb62bd"

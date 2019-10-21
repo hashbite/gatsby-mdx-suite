@@ -22,7 +22,6 @@
     "@gatsby-mdx-suite/contexts": "^0.0.2",
     "@gatsby-mdx-suite/mdx-basic": "^0.0.4",
     "@gatsby-mdx-suite/mdx-layout": "^0.0.4",
-    "gatsby-image": "^2.2.29",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-images": "^1.0.0"
