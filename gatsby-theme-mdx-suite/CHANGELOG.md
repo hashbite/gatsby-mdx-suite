@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.0.6...gatsby-theme-mdx-suite@0.0.7) (2019-10-21)
+
+
+### Bug Fixes
+
+* **theme:** add missing mdx dependency ([611d83d](https://github.com/axe312ger/gatsby-mdx-suite/commit/611d83d59b892307423ee80039fd7596f0d1530a))
+
+
+
+
+
 ## [0.0.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.0.5...gatsby-theme-mdx-suite@0.0.6) (2019-10-21)
 
 
