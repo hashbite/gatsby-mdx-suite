@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-basic@0.0.4...@gatsby-mdx-suite/mdx-basic@0.0.5) (2019-10-21)
+
+
+### Bug Fixes
+
+* **mdx-basic:** add missing gatsby-image dependency ([557c02c](https://github.com/axe312ger/gatsby-mdx-suite/commit/557c02c120cc28686935590ddcf652926f6ea843))
+
+
+
+
+
 ## [0.0.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-basic@0.0.3...@gatsby-mdx-suite/mdx-basic@0.0.4) (2019-10-21)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-basic
