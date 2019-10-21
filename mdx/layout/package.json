@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-layout",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "@emotion/core": "^10.0.21",
     "@emotion/styled": "^10.0.15",
     "@gatsby-mdx-suite/contexts": "^0.0.2",
-    "@gatsby-mdx-suite/mdx-basic": "^0.0.2",
+    "@gatsby-mdx-suite/mdx-basic": "^0.0.3",
     "prop-types": "^15.7.2",
     "react": "^16.10.2"
   },
