@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.1.0...@gatsby-mdx-suite/mdx-layout@0.1.1) (2019-10-22)
+
+
+### Bug Fixes
+
+* **boxes:** dont break when background images are not available yet ([d3ec137](https://github.com/axe312ger/gatsby-mdx-suite/commit/d3ec13729b8f2d10b79bc6381cba208618df2fbf))
+
+
+
+
+
 # [0.1.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.0.8...@gatsby-mdx-suite/mdx-layout@0.1.0) (2019-10-22)
 
 
