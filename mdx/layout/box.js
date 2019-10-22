@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
+import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
+import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
 
 const BoxWrapper = styled.div`
   ${({ height }) =>
@@ -29,16 +32,33 @@ const BoxWrapper = styled.div`
     `}
 `
 
-const Box = ({ children, ...props }) => {
-  return <BoxWrapper {...props}>{children}</BoxWrapper>
+const Box = ({ children, backgroundImage, ...props }) => {
+  const { contentfulAssets } = useMDXDataState()
+  const { active: activeLocale } = useContext(I18nContext)
+  let imageContainer = null
+  if (backgroundImage) {
+    const asset = contentfulAssets.filter(
+      ({ contentful_id: cid, node_locale: locale }) =>
+        cid === backgroundImage && locale === activeLocale
+    )
+    imageContainer = <Image {...asset} />
+  }
+  return (
+    <BoxWrapper {...props}>
+      {children}
+      {imageContainer}
+    </BoxWrapper>
+  )
 }
 
 Box.defaultProps = {
   children: null,
+  backgroundImage: null,
 }
 
 Box.propTypes = {
   children: propTypes.node,
+  backgroundImage: propTypes.string,
 }
 
 export default Box
