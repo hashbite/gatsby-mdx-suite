@@ -35,13 +35,17 @@ const BoxWrapper = styled.div`
 const Box = ({ children, backgroundImage, ...props }) => {
   const { contentfulAssets } = useMDXDataState()
   const { active: activeLocale } = useContext(I18nContext)
+
   let imageContainer = null
-  if (backgroundImage) {
-    const asset = contentfulAssets.filter(
+  if (contentfulAssets && backgroundImage) {
+    const asset = contentfulAssets.find(
       ({ contentful_id: cid, node_locale: locale }) =>
         cid === backgroundImage && locale === activeLocale
     )
-    imageContainer = <Image {...asset} />
+
+    if (asset) {
+      imageContainer = <Image {...asset} />
+    }
   }
   return (
     <BoxWrapper {...props}>
