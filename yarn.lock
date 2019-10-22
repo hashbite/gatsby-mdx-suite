@@ -1341,16 +1341,16 @@
     read-package-tree "^5.1.6"
     semver "^6.2.0"
 
-"@lerna/changed@3.18.0":
-  version "3.18.0"
-  resolved "https://registry.yarnpkg.com/@lerna/changed/-/changed-3.18.0.tgz#2175163861170dd6ecf82cd424152770bdf1832d"
-  integrity sha512-caur6qjNXIZmBwJts6gkWfl5A1MlSq4/p8lAABuZ7fsEIkgoeoTVvMIDvEcYiVSGdVV/WJZGgG3kU+MTBIv/Bg==
+"@lerna/changed@3.18.2":
+  version "3.18.2"
+  resolved "https://registry.yarnpkg.com/@lerna/changed/-/changed-3.18.2.tgz#4d7c2cd5de92808064891f99fb7c29711439deb9"
+  integrity sha512-xVnFuj4A6Avxem+8R+KOuKDxfnxp1S5tM5nwsh7n3IhCN5Ga7YINV/JgPhrwgcpqPCVBvAowkilghT/I0r6wUw==
   dependencies:
     "@lerna/collect-updates" "3.18.0"
     "@lerna/command" "3.18.0"
     "@lerna/listable" "3.18.0"
     "@lerna/output" "3.13.0"
-    "@lerna/version" "3.18.0"
+    "@lerna/version" "3.18.2"
 
 "@lerna/check-working-tree@3.16.5":
   version "3.16.5"
@@ -1783,10 +1783,10 @@
     inquirer "^6.2.0"
     npmlog "^4.1.2"
 
-"@lerna/publish@3.18.1":
-  version "3.18.1"
-  resolved "https://registry.yarnpkg.com/@lerna/publish/-/publish-3.18.1.tgz#8d27ae4f3b72824c8c7afbdc35bfb494a5f7168e"
-  integrity sha512-3u65cMBkq24U8l7pQaZgdIAh2NO1Iw/sladW6/VBwFMcACwBBwEWm2LnrGStsB5Yijg3f+0NK1sT72xrzBpbag==
+"@lerna/publish@3.18.2":
+  version "3.18.2"
+  resolved "https://registry.yarnpkg.com/@lerna/publish/-/publish-3.18.2.tgz#96f65f2d5ecf8cc7803050482b2d144e768b994d"
+  integrity sha512-lLQOjoaFv/gc9HtOCMRsOK6NIub8eHnnvmQARjXY/HayA8GuLaD2Px9xOu1L7il+Q0LlMU3wASB9Khy/CiHJUQ==
   dependencies:
     "@evocateur/libnpmaccess" "^3.1.2"
     "@evocateur/npm-registry-fetch" "^4.0.0"
@@ -1809,7 +1809,7 @@
     "@lerna/run-lifecycle" "3.16.2"
     "@lerna/run-topologically" "3.18.0"
     "@lerna/validation-error" "3.13.0"
-    "@lerna/version" "3.18.0"
+    "@lerna/version" "3.18.2"
     figgy-pudding "^3.5.1"
     fs-extra "^8.1.0"
     npm-package-arg "^6.1.0"
@@ -1921,10 +1921,10 @@
   dependencies:
     npmlog "^4.1.2"
 
-"@lerna/version@3.18.0":
-  version "3.18.0"
-  resolved "https://registry.yarnpkg.com/@lerna/version/-/version-3.18.0.tgz#81657c913f12eceee1ae499349365fed55440a36"
-  integrity sha512-mGw5EoQ8wXyofJIHEWNsNWqnTsXlgVvsqePyKkUZTZCsG54ez0ZKpU87EgirxXvj+QDyKgB7X5Dz1hftaX5PSw==
+"@lerna/version@3.18.2":
+  version "3.18.2"
+  resolved "https://registry.yarnpkg.com/@lerna/version/-/version-3.18.2.tgz#f2b54aed7f41d293d0fc5f79baf5cba166bc7e34"
+  integrity sha512-nmCJpw3A2DoNGbjmvI5UB3ZwTQUayI8M/b3rOA6ZzYeGmoQmm2QBKun05aBRasqTuUo4XjSuas5CqHN+x4f8Ww==
   dependencies:
     "@lerna/check-working-tree" "3.16.5"
     "@lerna/child-process" "3.16.5"
@@ -1941,6 +1941,7 @@
     "@lerna/validation-error" "3.13.0"
     chalk "^2.3.1"
     dedent "^0.7.0"
+    load-json-file "^5.3.0"
     minimatch "^3.0.4"
     npmlog "^4.1.2"
     p-map "^2.1.0"
@@ -1950,6 +1951,7 @@
     semver "^6.2.0"
     slash "^2.0.0"
     temp-write "^3.4.0"
+    write-json-file "^3.2.0"
 
 "@lerna/write-log-file@3.13.0":
   version "3.13.0"
@@ -7600,10 +7602,10 @@ gatsby-cli@^2.7.39:
     ink "^2.3.0"
     ink-spinner "^3.0.1"
 
-gatsby-cli@^2.8.2:
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.8.2.tgz#a1fd7dbeecf2a3abcccf430501aa0bf4a6fc7e2f"
-  integrity sha512-++SIGHjFLoZvW7hx8z1cq3TjghXNNXUAmWFtsSIVCDEXezfE39FuOkNQIRuvJHUCA44oqyj3uM4PZll0Ofh/Pg==
+gatsby-cli@^2.8.3:
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.8.3.tgz#42d147b345712ec0486649137f8647760a83475e"
+  integrity sha512-HJUIuRz9CR2q/Yxm79ps79Kh5dtuUDytnGdPlsO8HiYVO7vZUxDEUW/5rYxBpiLqL17uUL/UFFuLfhm/F/xuCQ==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/runtime" "^7.6.3"
@@ -8045,10 +8047,10 @@ gatsby-transformer-remark@^2.6.30:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.4.1"
 
-gatsby-transformer-sharp@^2.2.23:
-  version "2.2.23"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.2.23.tgz#225050f3bf23ea13a9da46667cc7980ce4090e65"
-  integrity sha512-Xd2Ydn6vrfpyElfRtiFqidHWhbXI28NS/sm9olOS1AJzSvonJ/UdQKQFhoGkgZ+JyWlo+yZfFmXMCSDr7pyVpQ==
+gatsby-transformer-sharp@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.3.0.tgz#15fed043a73a43d8b7e7512a6de72614ed28b11b"
+  integrity sha512-AW8Ds4CiJEcqKjCjbKfnrqRcwRAX2scybe5Lvv+9klSZcSTlDtsB4sSpKQbBOrLeMOmrRan4zoC0vPc1Ccut9g==
   dependencies:
     "@babel/runtime" "^7.6.3"
     bluebird "^3.7.0"
@@ -8208,10 +8210,10 @@ gatsby@^2.13.11:
     xstate "^4.6.7"
     yaml-loader "^0.5.0"
 
-gatsby@^2.16.4:
-  version "2.16.4"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.16.4.tgz#90d51740cf5a923e7d8dcc4b7b91497cc3ac0781"
-  integrity sha512-UhURO/F/o5XkwAmszdiPhA5SWxD13T/JJQ0xOKNS5xGCix4S4GrfpmR1N+NM7g/nW38/5s1yZ/s+oDPPNgKimw==
+gatsby@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.17.0.tgz#f4a0dbe4d6897f32df3019d33ef4dee5d30b5aab"
+  integrity sha512-bi+Hv6nLj6u1eH/qNR8Df7yjSSNWje4GuP3IKS0l/dBH+a4WDZTuh8OR4oby9M06lwXfi8kfUlRStDzzjthfQA==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.6.4"
@@ -8273,7 +8275,7 @@ gatsby@^2.16.4:
     flat "^4.1.0"
     fs-exists-cached "1.0.0"
     fs-extra "^8.1.0"
-    gatsby-cli "^2.8.2"
+    gatsby-cli "^2.8.3"
     gatsby-core-utils "^1.0.15"
     gatsby-graphiql-explorer "^0.2.25"
     gatsby-link "^2.2.22"
@@ -9454,10 +9456,10 @@ hyphenate-style-name@^1.0.2:
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.3.tgz#097bb7fa0b8f1a9cf0bd5c734cf95899981a9b48"
   integrity sha512-EcuixamT82oplpoJ2XU4pDtKGWQ7b00CD9f1ug9IaQ3p1bkHMiKCZ9ut9QDI6qsa6cpUuB+A/I+zLtdNK4n2DQ==
 
-i18next@^17.2.0:
-  version "17.2.0"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-17.2.0.tgz#d1ac5a817b7e2aaf4bd0374ef689a7e64f5bcef1"
-  integrity sha512-ltl4LSzCEAPBbHRJ6R8diJCnxCbVkf6cxH3k1B4CjB0YFGoISm3/Jxgw3noELe9TP+C/x8fEostuJcGVUeYwdw==
+i18next@^17.3.0:
+  version "17.3.0"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-17.3.0.tgz#6223799605303607243ce7c4c9846b205c14cd9c"
+  integrity sha512-4sJ6CHhLu/+xOEo3wresVl7jhC92bXhBkZYigJRzXCljzlgdayNhP/+0K+76GHmFTlL/OHg/hw04Praph9SJsA==
   dependencies:
     "@babel/runtime" "^7.3.1"
 
@@ -10844,14 +10846,14 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
-lerna@^3.16.4, lerna@^3.18.1:
-  version "3.18.1"
-  resolved "https://registry.yarnpkg.com/lerna/-/lerna-3.18.1.tgz#ddc3b68fbba09cb71e3d893500ade787e794b828"
-  integrity sha512-+EAAEgGl+oNeI1TBBW2btHp7NtpCrsRQET/NNCMRyVsl9/8a322t/WcpO9sCsAyEAITBXfhlRVB9rYifFQ6gNA==
+lerna@^3.18.2:
+  version "3.18.2"
+  resolved "https://registry.yarnpkg.com/lerna/-/lerna-3.18.2.tgz#a7bdcd4f0989723044d705da74d573a1e7249237"
+  integrity sha512-XznkKk2LY9HxaH+AtqyNZq7A0f9mMuv1OUeJBjJdl2oEZQPedWrmZNK6DuJNcyjjRJk6B9Xvb8eqIpe5aCHy1w==
   dependencies:
     "@lerna/add" "3.18.0"
     "@lerna/bootstrap" "3.18.0"
-    "@lerna/changed" "3.18.0"
+    "@lerna/changed" "3.18.2"
     "@lerna/clean" "3.18.0"
     "@lerna/cli" "3.18.0"
     "@lerna/create" "3.18.0"
@@ -10861,9 +10863,9 @@ lerna@^3.16.4, lerna@^3.18.1:
     "@lerna/init" "3.18.0"
     "@lerna/link" "3.18.0"
     "@lerna/list" "3.18.0"
-    "@lerna/publish" "3.18.1"
+    "@lerna/publish" "3.18.2"
     "@lerna/run" "3.18.0"
-    "@lerna/version" "3.18.0"
+    "@lerna/version" "3.18.2"
     import-local "^2.0.0"
     npmlog "^4.1.2"
 
