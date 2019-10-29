@@ -28,7 +28,10 @@ export default function ContentfulImage({
   )
 
   if (!imageData) {
-    console.error(new Error(`Unable to locate image data for ${id}`))
+    console.error(
+      new Error(`Unable to locate image data for ${id} in ${contextKey}`)
+    )
+    return null
   }
 
   if (imageData.sqip) {
