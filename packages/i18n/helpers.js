@@ -18,6 +18,10 @@ function generatePageMap({ pages, pageId }) {
 }
 
 function getPageWithFallback({ pageMap, locale, defaultLocale }) {
+  if (!Object.keys(pageMap).length) {
+    return null
+  }
+
   let page
   // Generate path to translated version
   if (pageMap[locale]) {
