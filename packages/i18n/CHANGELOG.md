@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.4...@gatsby-mdx-suite/i18n@0.0.5) (2019-10-29)
+
+
+### Bug Fixes
+
+* **page lookup:** if page does not exist in context, return nothing ([f82b630](https://github.com/axe312ger/gatsby-mdx-suite/commit/f82b6302018c1a3e681736c3334c44f4b36bd2a6))
+
+
+
+
+
 ## [0.0.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.3...@gatsby-mdx-suite/i18n@0.0.4) (2019-10-29)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/i18n

@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-contentful",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "dependencies": {
     "@emotion/styled": "^10.0.15",
     "@gatsby-mdx-suite/contexts": "^0.0.3",
-    "@gatsby-mdx-suite/mdx-basic": "^0.0.7",
+    "@gatsby-mdx-suite/mdx-basic": "^0.0.8",
     "prop-types": "^15.7.2",
     "react": "^16.10.2"
   },
