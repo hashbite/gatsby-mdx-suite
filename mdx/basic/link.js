@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
-import { Link } from 'gatsby'
+import { Link as GatsbyLink } from 'gatsby'
 
 import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
 import LocationContext from '@gatsby-mdx-suite/contexts/location'
@@ -9,7 +9,7 @@ import {
   getPageWithFallback,
 } from '@gatsby-mdx-suite/i18n/helpers'
 
-export default function ContentfulLink({
+export default function Link({
   id,
   href,
   target = null,
@@ -48,9 +48,7 @@ export default function ContentfulLink({
   })
 
   if (!page) {
-    console.warn(
-      `Unable to find contentful page with id ${id} and locale ${activeLocale}`
-    )
+    console.warn(`Unable to find page with id ${id} and locale ${activeLocale}`)
     return null
   }
 
@@ -63,7 +61,7 @@ export default function ContentfulLink({
 
   const to = [page.path, hash ? `#${hash}` : null].filter(Boolean).join('')
   return (
-    <Link
+    <GatsbyLink
       type={type}
       className={className}
       activeClassName="active"
@@ -72,11 +70,11 @@ export default function ContentfulLink({
       {...linkProps}
     >
       {children || title || menuTitle || pageTitle}
-    </Link>
+    </GatsbyLink>
   )
 }
 
-ContentfulLink.propTypes = {
+Link.propTypes = {
   id: propTypes.string,
   href: propTypes.string,
   className: propTypes.string,
