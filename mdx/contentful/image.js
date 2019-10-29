@@ -11,6 +11,12 @@ const parseCSSSize = (size) => (isNaN(size) ? size : `${size}px`)
 const ContentfulImageWrapper = styled.div`
   max-width: ${({ maxWidth }) => parseCSSSize(maxWidth)};
   width: 100%;
+
+  img,
+  svg {
+    width: 100%;
+    height: auto;
+  }
 `
 
 export default function ContentfulImage({
