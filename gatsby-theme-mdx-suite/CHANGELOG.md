@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.0.8...gatsby-theme-mdx-suite@0.0.9) (2019-10-29)
+
+
+### Bug Fixes
+
+* **docz:** add missing docz theme dependency ([db54947](https://github.com/axe312ger/gatsby-mdx-suite/commit/db54947468b9d616f45405756c51c7c37d34b8a1))
+
+
+
+
+
 ## [0.0.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.0.7...gatsby-theme-mdx-suite@0.0.8) (2019-10-29)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite
