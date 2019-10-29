@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-contentful@0.1.1...@gatsby-mdx-suite/mdx-contentful@0.1.2) (2019-10-29)
+
+
+### Bug Fixes
+
+* **contentful:** ensure img and svg width is based on container ([a433fb1](https://github.com/axe312ger/gatsby-mdx-suite/commit/a433fb1f5beb33f9dc523b9c09ce748656961dee))
+
+
+
+
+
 ## [0.1.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-contentful@0.1.0...@gatsby-mdx-suite/mdx-contentful@0.1.1) (2019-10-29)
 
 
