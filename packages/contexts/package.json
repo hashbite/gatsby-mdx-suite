@@ -10,8 +10,10 @@
     "mdx"
   ],
   "dependencies": {
+    "i18next": "^18.0.1",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2"
+    "react": "^16.10.2",
+    "react-i18next": "^11.0.0"
   },
   "publishConfig": {
     "access": "public"
