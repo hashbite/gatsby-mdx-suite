@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.0.9...gatsby-theme-mdx-suite@0.0.10) (2019-10-29)
+
+
+### Bug Fixes
+
+* **spacing:** properly set defaults for spacing unit generator ([deeb749](https://github.com/axe312ger/gatsby-mdx-suite/commit/deeb7492eba5226ee1b200a62d69b2f8c43d6e21))
+
+
+
+
+
 ## [0.0.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.0.8...gatsby-theme-mdx-suite@0.0.9) (2019-10-29)
 
 
