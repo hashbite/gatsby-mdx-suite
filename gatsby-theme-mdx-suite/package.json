@@ -17,6 +17,7 @@
     "@mdx-js/react": "^1.5.1",
     "gatsby-plugin-mdx": "^1.0.53",
     "gatsby-plugin-theme-ui": "^0.2.43",
+    "gatsby-theme-docz": "^2.0.0-rc.65",
     "theme-ui": "^0.2.44"
   }
 }
