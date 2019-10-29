@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-contentful@0.1.0...@gatsby-mdx-suite/mdx-contentful@0.1.1) (2019-10-29)
+
+
+### Bug Fixes
+
+* **contentful:** return null when image data is not available ([b69ec9e](https://github.com/axe312ger/gatsby-mdx-suite/commit/b69ec9e7e881cfa21915469da6e93aa78c9de5ad))
+
+
+
+
+
 # [0.1.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-contentful@0.0.8...@gatsby-mdx-suite/mdx-contentful@0.1.0) (2019-10-29)
 
 
