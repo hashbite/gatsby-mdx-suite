@@ -13,12 +13,19 @@ const ContentfulImageWrapper = styled.div`
   width: 100%;
 `
 
-export default function ContentfulImage({ id, maxWidth = '100%', ...props }) {
-  const { contentfulAssets } = useMDXDataState()
-  if (!contentfulAssets) {
+export default function ContentfulImage({
+  id,
+  maxWidth = '100%',
+  contextKey = 'contentfulAssets',
+  ...props
+}) {
+  const mdxData = useMDXDataState()
+  if (!mdxData[contextKey]) {
     return null
   }
-  const imageData = contentfulAssets.find((asset) => asset.contentful_id === id)
+  const imageData = mdxData[contextKey].find(
+    (asset) => asset.contentful_id === id
+  )
 
   if (!imageData) {
     console.error(new Error(`Unable to locate image data for ${id}`))
@@ -39,5 +46,6 @@ ContentfulImage.displayName = 'ContentfulImage'
 
 ContentfulImage.propTypes = {
   id: propTypes.string.isRequired,
+  contextKey: propTypes.string,
   maxWidth: propTypes.string,
 }
