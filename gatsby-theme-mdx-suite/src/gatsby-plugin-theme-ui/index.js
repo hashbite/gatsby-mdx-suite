@@ -1,6 +1,6 @@
 // Generates kinda-logarithmic spacing map inspired by Refactor-UI recommendations.
 // Usage: spacing.s1 = 14, spacing[s0.25] = 3 ...
-export function generateSpacingUnits({ spacingUnit, multipliers }) {
+export function generateSpacingUnits({ spacingUnit, multipliers } = {}) {
   spacingUnit = spacingUnit || 14
   multipliers = multipliers || [
     0.25,
