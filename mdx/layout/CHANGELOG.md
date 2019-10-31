@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.1.3...@gatsby-mdx-suite/mdx-layout@0.1.4) (2019-10-31)
+
+
+### Bug Fixes
+
+* **layout:** ensure boxes keep correct aspect ratio ([dd2af9d](https://github.com/axe312ger/gatsby-mdx-suite/commit/dd2af9d60090d50ee91f57a1601e56a2cb64d5a0))
+
+
+
+
+
 ## [0.1.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.1.2...@gatsby-mdx-suite/mdx-layout@0.1.3) (2019-10-29)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
