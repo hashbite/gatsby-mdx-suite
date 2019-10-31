@@ -7,7 +7,7 @@ const Boxes = styled.div`
     auto-fill,
     minmax(${({ theme }) => theme.sizes.gridColumnWidth || 128}px, 1fr)
   );
-  grid-auto-rows: ${({ theme }) => theme.sizes.gridColumnWidth || 128}px;
+  grid-auto-rows: 1fr;
 `
 
 export default Boxes
