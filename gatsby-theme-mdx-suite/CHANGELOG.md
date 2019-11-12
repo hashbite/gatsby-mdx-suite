@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.0.11...gatsby-theme-mdx-suite@0.1.0) (2019-11-12)
+
+
+### Features
+
+* **config:** allow passing of custom docz src folder ([8faef2d](https://github.com/axe312ger/gatsby-mdx-suite/commit/8faef2d06b70c648afcacea13a44113b0e22d40e))
+
+
+
+
+
 ## [0.0.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.0.10...gatsby-theme-mdx-suite@0.0.11) (2019-10-29)
 
 
