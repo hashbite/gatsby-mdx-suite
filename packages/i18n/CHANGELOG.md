@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.5...@gatsby-mdx-suite/i18n@0.0.6) (2019-11-21)
+
+
+### Bug Fixes
+
+* **language-switch:** don't break rendering if page for locale could not be found ([e55a2eb](https://github.com/axe312ger/gatsby-mdx-suite/commit/e55a2eb9e25b40e71ad8728ab7e302283a770cdc))
+
+
+
+
+
 ## [0.0.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.4...@gatsby-mdx-suite/i18n@0.0.5) (2019-10-29)
 
 
