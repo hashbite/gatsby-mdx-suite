@@ -51,9 +51,11 @@ export default function LanguageSwitch() {
     <List>
       {langsMenu.map(({ page, locale }) => (
         <ListItem key={locale}>
-          <SwitcherLink to={page.path} hidden={page.locale === activeLocale}>
-            {locale}
-          </SwitcherLink>
+          {page && page.path && (
+            <SwitcherLink to={page.path} hidden={page.locale === activeLocale}>
+              {locale}
+            </SwitcherLink>
+          )}
         </ListItem>
       ))}
     </List>
