@@ -15,6 +15,7 @@ module.exports = ({ mdx, doczSrc, forceDocs = false }) => ({
         filterComponents: (modules) => modules,
         src: doczSrc || 'src',
         files: `**/docs/*.{md,markdown,mdx}`,
+        noRootRoute: true,
       },
     },
     {
