@@ -1,9 +1,3 @@
-const path = require('path')
-const defaultDoczSrc = path.resolve(
-  process.cwd(),
-  'node_modules/@gatsby-mdx-suite'
-)
-
 module.exports = ({ mdx, doczSrc }) => ({
   plugins: [
     'gatsby-plugin-theme-ui',
@@ -11,7 +5,7 @@ module.exports = ({ mdx, doczSrc }) => ({
       resolve: `gatsby-theme-docz`,
       options: {
         filterComponents: (modules) => modules,
-        src: doczSrc || defaultDoczSrc,
+        src: doczSrc || 'src',
         files: `**/docs/*.{md,markdown,mdx}`,
       },
     },

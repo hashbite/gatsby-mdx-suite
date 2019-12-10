@@ -19,6 +19,7 @@
     "gatsby-plugin-mdx": "^1.0.61",
     "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-theme-docz": "^2.2.0-alpha.8",
+    "lodash": "^4.17.15",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "theme-ui": "^0.2.49"
