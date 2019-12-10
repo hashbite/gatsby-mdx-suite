@@ -14,11 +14,11 @@
     "mdx"
   ],
   "dependencies": {
-    "@emotion/styled": "^10.0.15",
+    "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.0.3",
     "@gatsby-mdx-suite/mdx-basic": "^0.0.8",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2"
+    "react": "^16.12.0"
   },
   "publishConfig": {
     "access": "public"
