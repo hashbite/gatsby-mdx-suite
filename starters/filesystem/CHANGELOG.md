@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.26](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-filesystem@0.0.25...gatsby-starter-mdx-suite-filesystem@0.0.26) (2019-12-10)
+
+**Note:** Version bump only for package gatsby-starter-mdx-suite-filesystem
+
+
+
+
+
 ## [0.0.25](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-filesystem@0.0.24...gatsby-starter-mdx-suite-filesystem@0.0.25) (2019-12-10)
 
 
