@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.29](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.0.28...gatsby-starter-mdx-suite-contentful@0.0.29) (2019-12-10)
+
+
+### Bug Fixes
+
+* **svg integration:** remove custom inline svg renderer ([17b4bae](https://github.com/axe312ger/gatsby-suite-mdx/commit/17b4bae4f10908b51ef12f183c00b253778971fd))
+* **svg integration:** use correct data pattern of community inline svg renderer ([566daaf](https://github.com/axe312ger/gatsby-suite-mdx/commit/566daaf43ae7edafc030572500562fe6a478d61f))
+
+
+
+
+
 ## [0.0.28](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.0.27...gatsby-starter-mdx-suite-contentful@0.0.28) (2019-12-10)
 
 **Note:** Version bump only for package gatsby-starter-mdx-suite-contentful

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.1.2...gatsby-theme-mdx-suite@0.2.0) (2019-12-10)
+
+
+### Features
+
+* **Documentation:** do not render docs on production for build and client performance reasons ([f1056ef](https://github.com/axe312ger/gatsby-mdx-suite/commit/f1056efe584b46ac697aa99da2266bc42be8b2bd))
+
+
+
+
+
 ## [0.1.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.1.1...gatsby-theme-mdx-suite@0.1.2) (2019-12-10)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite

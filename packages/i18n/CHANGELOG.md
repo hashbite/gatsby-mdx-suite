@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.8...@gatsby-mdx-suite/i18n@0.0.9) (2019-12-10)
+
+
+### Bug Fixes
+
+* **Language Switch:** remove visual jumping when switching language ([148c085](https://github.com/axe312ger/gatsby-mdx-suite/commit/148c085924fe66e19c5dfe8a71bff85df8ce351a))
+
+
+
+
+
 ## [0.0.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.7...@gatsby-mdx-suite/i18n@0.0.8) (2019-12-10)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/i18n

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-basic@0.0.10...@gatsby-mdx-suite/mdx-basic@0.0.11) (2019-12-10)
+
+
+### Bug Fixes
+
+* **svg integration:** use correct data pattern of community inline svg renderer ([566daaf](https://github.com/axe312ger/gatsby-mdx-suite/commit/566daaf43ae7edafc030572500562fe6a478d61f))
+
+
+
+
+
 ## [0.0.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-basic@0.0.9...@gatsby-mdx-suite/mdx-basic@0.0.10) (2019-12-10)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-basic
