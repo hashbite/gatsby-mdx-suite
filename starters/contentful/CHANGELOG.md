@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.27](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.0.26...gatsby-starter-mdx-suite-contentful@0.0.27) (2019-12-10)
+
+
+### Bug Fixes
+
+* **docs:** properly render docs again with latest docz ([41990e0](https://github.com/axe312ger/gatsby-suite-mdx/commit/41990e07aa4a5cf6544be21a26041e13b6583b2f))
+
+
+
+
+
 ## [0.0.26](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.0.25...gatsby-starter-mdx-suite-contentful@0.0.26) (2019-11-21)
 
 **Note:** Version bump only for package gatsby-starter-mdx-suite-contentful

@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-suite",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/contexts": "^0.0.3",
+    "@gatsby-mdx-suite/contexts": "^0.0.4",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "docz": "^2.2.0-alpha.8",
