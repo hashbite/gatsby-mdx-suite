@@ -13,7 +13,6 @@ module.exports = {
     siteUrl: `https://axe312ger.github.io/gatsby-mdx-suite`,
   },
   plugins: [
-    `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-theme-mdx-suite`,
       options: {
@@ -33,12 +32,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-react-svg`,
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-sqip`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -65,6 +58,11 @@ module.exports = {
             }),
       },
     },
+    `gatsby-plugin-react-svg`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-sqip`,
+    `gatsby-transformer-inline-svg`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
     ...(isProduction && !isStaging ? [`gatsby-plugin-offline`] : []),
   ].filter(Boolean),

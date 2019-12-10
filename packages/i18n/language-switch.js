@@ -4,10 +4,7 @@ import styled from '@emotion/styled'
 
 import LocationContext from '@gatsby-mdx-suite/contexts/location'
 import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
-import {
-  generatePageMap,
-  getPageWithFallback,
-} from '@gatsby-mdx-suite/i18n/helpers'
+import { generatePageMap, getPageWithFallback } from './helpers'
 
 const List = styled.ul({
   display: 'flex',

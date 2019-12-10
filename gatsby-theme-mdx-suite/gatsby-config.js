@@ -1,6 +1,9 @@
 module.exports = ({ mdx, doczSrc }) => ({
   plugins: [
+    // Styling
     'gatsby-plugin-theme-ui',
+    `gatsby-plugin-emotion`,
+    // Docs
     {
       resolve: `gatsby-theme-docz`,
       options: {
@@ -13,5 +16,7 @@ module.exports = ({ mdx, doczSrc }) => ({
       resolve: `gatsby-plugin-mdx`,
       options: mdx,
     },
+    // SEO
+    `gatsby-plugin-react-helmet`,
   ].filter(Boolean),
 })

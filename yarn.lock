@@ -9124,7 +9124,7 @@ gatsby-plugin-compile-es6-packages@^2.0.0:
     "@babel/runtime" "^7.0.0"
     regex-escape "^3.4.8"
 
-gatsby-plugin-emotion@^4.1.16:
+gatsby-plugin-emotion@^4.1.16, gatsby-plugin-emotion@^4.1.18:
   version "4.1.18"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-4.1.18.tgz#c68ca726332f9b41538290759118e5a16d04fbc1"
   integrity sha512-dre13SQvb95uzZGuut6NoJskWPo8sDsU67Hkd99fPUaw1/LfymfE1wugEaI6lsUZravykrP9ZVetc8qBVuPHcQ==
@@ -9291,7 +9291,7 @@ gatsby-plugin-react-helmet-async@^1.0.5:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet-async/-/gatsby-plugin-react-helmet-async-1.0.12.tgz#e1e89cdc0417dfa83bb9451a55ef8a2bf31dfa57"
   integrity sha512-J56cratd2zYSTpjREB1R7ox6aZ9VlN8V+YMzquE4eFmAxpqeZ3gBVX8Lt8EmtLTharcxcGvUUxhO7Br3cQouGA==
 
-gatsby-plugin-react-helmet@^3.1.16:
+gatsby-plugin-react-helmet@^3.1.16, gatsby-plugin-react-helmet@^3.1.18:
   version "3.1.18"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.1.18.tgz#093b5d92e50dafa837ae97ac2672d79a96feb201"
   integrity sha512-wwKH6Z5NK0Gl2hDfMnWNGE41GjWpZGq0eKczPydTJc/1SbPykBFCBrjYgrAPB2ZrRnA8AV06cRwPddJC0mY7sw==
