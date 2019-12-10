@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.2.1...gatsby-theme-mdx-suite@0.2.2) (2019-12-10)
+
+
+### Bug Fixes
+
+* **Build Process:** workaround a bug in GatsbyJS/Docz ([d04afda](https://github.com/axe312ger/gatsby-mdx-suite/commit/d04afda4ab0063ac8fe359d05c20b0cbec4c5c34))
+
+
+
+
+
 ## [0.2.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.2.0...gatsby-theme-mdx-suite@0.2.1) (2019-12-10)
 
 

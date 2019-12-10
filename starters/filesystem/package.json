@@ -2,7 +2,7 @@
   "name": "gatsby-starter-mdx-suite-filesystem",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "author": "Benedikt Rötsch <info@benedikt.roetsch.de>",
   "dependencies": {
     "@emotion/core": "^10.0.22",
@@ -24,7 +24,7 @@
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-sitemap": "^2.2.22",
     "gatsby-plugin-theme-ui": "^0.2.41",
-    "gatsby-theme-mdx-suite": "^0.2.1",
+    "gatsby-theme-mdx-suite": "^0.2.2",
     "gatsby-transformer-inline-svg": "^0.0.3",
     "gatsby-transformer-remark": "^2.6.39",
     "gatsby-transformer-sharp": "^2.3.7",
