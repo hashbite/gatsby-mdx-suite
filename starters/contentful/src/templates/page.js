@@ -112,7 +112,9 @@ export const pageQuery = graphql`
             }
           }
         }
-        svgContent
+        svg {
+          content
+        }
         sqip(mode: 8, numberOfPrimitives: 42, blur: 0) {
           dataURI
         }
