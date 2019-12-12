@@ -1,7 +1,11 @@
+// const annotationResolver = require('./resolver')
+
 const isProduction = process.env.NODE_ENV === 'production'
 const isStaging = !!process.env.STAGING
 
 const renderDocs = isStaging || !isProduction
+
+// const tmpSrc = process.cwd()
 
 module.exports = ({ mdx, doczSrc, forceDocs = false }) => ({
   plugins: [
@@ -13,9 +17,19 @@ module.exports = ({ mdx, doczSrc, forceDocs = false }) => ({
       resolve: `gatsby-theme-docz`,
       options: {
         filterComponents: (modules) => modules,
-        src: doczSrc || 'src',
-        files: `**/docs/*.{md,markdown,mdx}`,
+        // src: tmpSrc || doczSrc || 'src',
+        files: [
+          `src/components/mdx/**/docs/*.{md,markdown,mdx}`,
+          `node_modules/@gatsby-mdx-suite/*/docs/*.{md,markdown,mdx}`,
+          `../../node_modules/@gatsby-mdx-suite/*/docs/*.{md,markdown,mdx}`,
+        ],
         noRootRoute: true,
+        // docgenConfig: { resolver: annotationResolver },
+        customPattern: [
+          'src/components/mdx/**/*.{js,jsx,mjs}',
+          '../../node_modules/@gatsby-mdx-suite/**/*.{js,jsx,mjs}',
+          '!**/doczrc.js',
+        ],
       },
     },
     {

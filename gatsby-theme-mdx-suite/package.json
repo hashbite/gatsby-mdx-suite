@@ -13,6 +13,7 @@
     "@gatsby-mdx-suite/contexts": "^0.0.4",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
+    "ast-types": "^0.13.2",
     "docz": "^2.2.0-alpha.8",
     "gatsby": "^2.18.10",
     "gatsby-plugin-emotion": "^4.1.18",
@@ -23,6 +24,8 @@
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-docgen": "^5.0.0",
+    "react-docgen-annotation-resolver": "^2.0.0",
     "react-dom": "^16.12.0",
     "theme-ui": "^0.2.49"
   }
