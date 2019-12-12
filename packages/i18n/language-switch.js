@@ -15,10 +15,11 @@ const List = styled.ul({
 })
 
 const ListItem = styled.li({
-  padding: '0.25rem',
+  margin: 0,
 })
 
 const SwitcherLink = styled(Link)`
+  padding: 0.25rem;
   transition: 0.3s opacity linear;
 
   &:hover {
