@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.10...@gatsby-mdx-suite/i18n@0.0.11) (2019-12-12)
+
+
+### Bug Fixes
+
+* **i18n:** further increase tap target for language switch links ([40d3470](https://github.com/axe312ger/gatsby-mdx-suite/commit/40d34707955ecdb1f6688ec295a8aa48da7b2a02))
+
+
+
+
+
 ## [0.0.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.9...@gatsby-mdx-suite/i18n@0.0.10) (2019-12-12)
 
 
