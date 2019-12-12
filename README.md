@@ -25,14 +25,7 @@
 ### ![Upcoming features](https://img.shields.io/badge/Status-Upcoming-orange?style=flat)
 
 * GDPR/DSGVO compatability
-
-## Some ToDos, should be tickets :D
-
-* other solution for background images, there is a new gatsby image thingy
-* i18n path mapping to allow sindle language pages with out locale prefix in path
-* remove box content and integrate with box. if you need more complex, overwrite the style
-* some theme-ui features are not yet integrated in all components
-* the image integration with contentful shoudl be merged since it gets the data now from a flexible context key and had a generic structure anyways
+* This whole thing is still alpha, so more to come and anything might change.
 
 ## Core dependencies
 
@@ -72,7 +65,7 @@ Or wait till somebody found time to write a tutorial how to do it.
 
 ## Automated documentation
 
-The documentation is generated via the amazing docz project. The new version uses GatsbyJS as main renderer. A perfect match. This documentation serves multiple purposes:
+The documentation is generated via the amazing docz project. The new version uses GatsbyJS as main renderer. A perfect match. This generated documentation will serve multiple purposes:
 
 * Provide a introduction to Markdown and MDX to support new users
 * Give an overview of all components integrated into the project
@@ -82,15 +75,36 @@ The documentation is generated via the amazing docz project. The new version use
   * Any extra information on how to alter and customize the components.
   * ...?
 
-
 ## The problem of availability of data within MDX
 
-@todo
+- Data needs to be available within MDX but is queried via static graphQL (https://github.com/axe312ger/gatsby-mdx-suite/issues/7)
+- The data layer needs to provide information which assets/data is used within MDX (https://github.com/axe312ger/gatsby-mdx-suite/issues/8)
 
-## i18n integration, creating paths, using the LocationContext to create menus and more
+## Configuration
 
-@todo
+The most accurate documentation are the starters. Especially https://github.com/axe312ger/gatsby-mdx-suite/tree/master/starters/contentful.
+
+### Integrate into your project
+
+This is just a quick listing, the whole readme will be improved soon and a getting starting guide provided.
+
+* Add `gatsby-theme-mdx-suite`
+* Configure it https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/gatsby-config.js#L17
+* Load data (especially images) from GraphQL and it them available to MDX
+  * https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/gatsby-browser.js
+  * https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/gatsby-node.js
+  * https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/src/contentful-page-injector.js
+  * https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/gatsby-browser.js
+  * https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/src/templates/page.js#L40-L49
+* configure your theme: https://github.com/axe312ger/gatsby-mdx-suite/tree/master/starters/contentful/src/gatsby-plugin-theme-ui
+* @todo demo how to add paths to the context for menu & link generation
 
 ## How to alter the design
 
-@todo
+The idea is to support these options to alter the design:
+
+* provide your own theme configuraton via theme-ui
+* provide several attributes to alter styling
+* wrap/extend existing components with your own logic
+* replace whole components (even copy& paste might be the right way some times)
+* shadow components via theme-ui or overwrite components (still to be tested)
