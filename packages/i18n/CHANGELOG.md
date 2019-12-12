@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.9...@gatsby-mdx-suite/i18n@0.0.10) (2019-12-12)
+
+
+### Bug Fixes
+
+* **i18n:** increase tap target for language switch and add aria label ([55e87f5](https://github.com/axe312ger/gatsby-mdx-suite/commit/55e87f584678756c674bc19cbf86f26fa42ce242))
+
+
+
+
+
 ## [0.0.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.8...@gatsby-mdx-suite/i18n@0.0.9) (2019-12-10)
 
 
