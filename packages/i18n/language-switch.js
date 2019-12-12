@@ -15,7 +15,7 @@ const List = styled.ul({
 })
 
 const ListItem = styled.li({
-  margin: '0.25rem',
+  padding: '0.25rem',
 })
 
 const SwitcherLink = styled(Link)`
@@ -49,7 +49,12 @@ export default function LanguageSwitch() {
       {langsMenu.map(({ page, locale }) => (
         <ListItem key={locale} hidden={page.locale === activeLocale}>
           {page && page.path && (
-            <SwitcherLink to={page.path}>{locale}</SwitcherLink>
+            <SwitcherLink
+              to={page.path}
+              aria-label={`Switch language to ${locale}`}
+            >
+              {locale}
+            </SwitcherLink>
           )}
         </ListItem>
       ))}
