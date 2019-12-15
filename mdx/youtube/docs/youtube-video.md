@@ -5,7 +5,7 @@ menu: Social media
 ---
 import { Playground, Props } from 'docz'
 
-import YoutubeVideo from '@gatsby-mdx-suite/mdx-youtube/video'
+import YoutubeVideo from '@gatsby-mdx-suite/mdx-youtube/youtube-video'
 
 # YoutubeVideo
 
