@@ -1,12 +1,12 @@
 ---
 name: Images
-route: /docs/basics/images
-menu: Basics
+route: /docs/contentful/images
+menu: Contentful
 ---
 
 import { Playground, Props } from 'docz'
 
-import Image from '../Image'
+import Image from '../contentful-image'
 
 # Images
 

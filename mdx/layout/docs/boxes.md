@@ -1,7 +1,7 @@
 ---
 name: Box
-route: /docs/blocks/box
-menu: Boxes
+route: /docs/layout/box
+menu: Layout
 ---
 
 import { Playground, Props } from 'docz'

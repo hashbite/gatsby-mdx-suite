@@ -1,6 +1,6 @@
 ---
-name: test
-route: /docs/test
+name: Emotion Test
+route: /docs/test-emotion
 menu: Test
 ---
 
@@ -14,7 +14,7 @@ This page should remain till the following props are rendered properly:
 
 <Props of={EmotionComponent} />
 
-## Images
+## Playground demo
 
 <Playground>
   <EmotionComponent>I should be red</EmotionComponent>

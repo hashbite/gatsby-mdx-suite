@@ -6,7 +6,7 @@ menu: Basics
 
 import { Playground, Props } from 'docz'
 
-import Link from '../Link'
+import Link from '../link'
 
 # Link
 
