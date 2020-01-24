@@ -20,7 +20,9 @@ const ListItem = styled.li({
 })
 
 const SwitcherLink = styled(Link)`
-  padding: 0.25rem;
+  width: 48px;
+  line-height: 48px;
+  text-align: center;
   transition: 0.3s opacity linear;
 
   &:hover {
