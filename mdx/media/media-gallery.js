@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import propTypes from 'prop-types'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import styled from '@emotion/styled'
 
-import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
+import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
 import Grid from '@gatsby-mdx-suite/mdx-layout'
 import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
 
@@ -152,7 +152,7 @@ const mediaParsers = {
 export default function MediaGallery({ children }) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const mdxData = useMDXDataState()
+  const mdxData = useContext(MdxDataContext)
 
   const showItem = (index) => {
     setSelectedIndex(index)

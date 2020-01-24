@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
-import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
+import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
 import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
 
 import Youtube from './youtube-video'
@@ -120,7 +120,8 @@ const ThumbnailTitle = styled.div`
 `
 
 export default function YoutubeFeed({ channelId, ...props }) {
-  const { youtubeVideos } = useMDXDataState()
+  const {youtubeVideos} = useContext(MdxDataContext)
+
   const [activeVideo, setActiveVideo] = useState(null)
 
   useEffect(() => {

@@ -3,7 +3,6 @@ import propTypes from 'prop-types'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-import { MDXDataProvider } from './mdx-data'
 import I18nContext from './i18n'
 
 const MdxSuiteContextProvider = ({
@@ -36,7 +35,7 @@ const MdxSuiteContextProvider = ({
         active: defaultLocale,
       }}
     >
-      <MDXDataProvider>{children}</MDXDataProvider>
+      {children}
     </I18nContext.Provider>
   )
 }

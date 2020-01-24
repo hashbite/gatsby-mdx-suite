@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
+import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
 import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
 import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
 
@@ -33,7 +33,7 @@ const BoxWrapper = styled.div`
 `
 
 const Box = ({ children, backgroundImage, ...props }) => {
-  const { contentfulAssets } = useMDXDataState()
+  const { contentfulAssets } = useContext(MdxDataContext)
   const { active: activeLocale } = useContext(I18nContext)
 
   let imageContainer = null
