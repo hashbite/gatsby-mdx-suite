@@ -14,7 +14,7 @@ function createPath({ slug, locale, pageType, config }) {
 
 function generatePageMap({ pages, activePageId }) {
   return pages
-    .filter(({ context: { pageId } }) => pageId === activePageId)
+    .filter(({ context }) => context && context.pageId === activePageId)
     .reduce(
       (map, page) => ({
         ...map,
@@ -45,13 +45,10 @@ function getPageWithFallback({ pageMap, locale, defaultLocale }) {
     page = pageMap[Object.keys(pageMap)[0]]
   }
 
-  // Unable to locate any page. This should not happen. Throw an error.
+  // Unable to locate any page.
+  // Either it is a generic gatsby page or the created page is missing context information.
   if (!page) {
-    throw new Error(
-      `Unable to generate language selector link for ${
-        pageMap[Object.keys(pageMap)[0]].id
-      } with locale ${locale}. Did you register your pages properly with Gatsby?`
-    )
+    return null
   }
 
   return page
