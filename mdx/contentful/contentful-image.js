@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
-import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
+import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
 import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
 
 /* @todo move this to helpers */
@@ -25,7 +25,7 @@ export default function ContentfulImage({
   contextKey = 'contentfulAssets',
   ...props
 }) {
-  const mdxData = useMDXDataState()
+  const mdxData = useContext(MdxDataContext)
   if (!mdxData[contextKey]) {
     return null
   }

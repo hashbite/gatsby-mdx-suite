@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
+import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
 import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
 
 // Shortcuts to ease up editor UX: start, end -> flex-start, flex-end; center -> center
@@ -66,8 +66,8 @@ export default function Viewport({
 }) {
   let backgroundImage = null
   if (image) {
-    const contentMedia = useMDXDataState()
-    const imageData = contentMedia[image]
+    const mdxData = useContext(MdxDataContext)
+    const imageData = mdxData[image]
     if (imageData) {
       backgroundImage = <Image {...imageData} objectFit="cover" />
     }

@@ -4,12 +4,11 @@ import * as propTypes from 'prop-types'
 
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import useDeepCompareEffect from 'use-deep-compare-effect'
 import { useTranslation } from 'react-i18next'
 
-import { useMDXDataDispatch } from '@gatsby-mdx-suite/contexts/mdx-data'
 import LocationContext from '@gatsby-mdx-suite/contexts/location'
 import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
+import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
 
 import Seo from '@gatsby-mdx-suite/seo'
 
@@ -17,7 +16,7 @@ import Layout from '../components/layout'
 
 function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
-  const mdxDataDispatch = useMDXDataDispatch()
+  // const mdxDataDispatch = useMDXDataDispatch()
   const locationData = useContext(LocationContext)
   const i18nData = useContext(I18nContext)
 
@@ -37,17 +36,6 @@ function PageTemplate({ data, pageContext }) {
     }
   }, [locale])
 
-  // Inject media attached to the content into the MDX context
-  if (contentMedia) {
-    useDeepCompareEffect(() => {
-      mdxDataDispatch({
-        type: 'add',
-        id: 'contentfulAssets',
-        data: contentMedia,
-      })
-    }, [contentMedia])
-  }
-
   return (
     <I18nContext.Provider
       value={{
@@ -58,19 +46,21 @@ function PageTemplate({ data, pageContext }) {
       <LocationContext.Provider
         value={{ ...locationData, activePageId: pageId }}
       >
-        <Layout>
-          <Seo
-            title={title}
-            description={seoDescription}
-            ogImage={seoImage && `${seoImage.file.url}?w=1200&h=630&fit=fill`}
-            twitterImage={
-              seoImage && `${seoImage.file.url}?w=1200&h=628&fit=fill`
-            }
-          />
-          <MDXProvider>
-            <MDXRenderer>{content.childMdx.body}</MDXRenderer>
-          </MDXProvider>
-        </Layout>
+        <MdxDataContext.Provider value={{ contentfulAssets: contentMedia }}>
+          <Layout>
+            <Seo
+              title={title}
+              description={seoDescription}
+              ogImage={seoImage && `${seoImage.file.url}?w=1200&h=630&fit=fill`}
+              twitterImage={
+                seoImage && `${seoImage.file.url}?w=1200&h=628&fit=fill`
+              }
+            />
+            <MDXProvider>
+              <MDXRenderer>{content.childMdx.body}</MDXRenderer>
+            </MDXProvider>
+          </Layout>
+        </MdxDataContext.Provider>
       </LocationContext.Provider>
     </I18nContext.Provider>
   )
