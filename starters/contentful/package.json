@@ -39,7 +39,7 @@
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-mdx": "^1.0.67",
     "gatsby-plugin-offline": "^3.0.27",
-    "gatsby-plugin-react-svg": "^2.1.2",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-sitemap": "^2.2.22",
     "gatsby-source-contentful": "^2.1.67",
