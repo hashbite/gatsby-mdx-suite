@@ -6,7 +6,7 @@ require('dotenv').config({
 })
 
 module.exports = {
-  pathPrefix: `/gatsby-mdx-suite/contentful`,
+  pathPrefix: `/gatsby-mdx-suite`,
   siteMetadata: {
     title: `Gatsby MDX Suite Contentful`,
     description: `Gatsby MDX Suite starter using Contentful`,

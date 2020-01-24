@@ -20,6 +20,7 @@ const ListItem = styled.li({
 })
 
 const SwitcherLink = styled(Link)`
+  display: block;
   width: 48px;
   line-height: 48px;
   text-align: center;
