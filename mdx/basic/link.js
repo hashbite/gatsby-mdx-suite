@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
-import { Link as GatsbyLink } from 'gatsby'
+import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
 
 import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
-import LocationContext from '@gatsby-mdx-suite/contexts/location'
 import {
   generatePageMap,
   getPageWithFallback,
@@ -31,7 +30,24 @@ export default function Link({
     )
   }
 
-  const { pages } = useContext(LocationContext)
+  const result = useStaticQuery(graphql`
+    {
+      allSitePage {
+        nodes {
+          path
+          context {
+            pageId
+            locale
+            menuTitle
+            title
+          }
+        }
+      }
+    }
+  `)
+
+  const pages = result.allSitePage.nodes
+
   const { active: activeLocale, default: defaultLocale } = useContext(
     I18nContext
   )
@@ -40,7 +56,8 @@ export default function Link({
     return null
   }
 
-  const pageMap = generatePageMap({ pages, pageId: id })
+  const pageMap = generatePageMap({ pages, activePageId: id })
+
   const page = getPageWithFallback({
     pageMap,
     locale: activeLocale,
@@ -48,18 +65,21 @@ export default function Link({
   })
 
   if (!page) {
-    console.warn(`Unable to find page with id ${id} and locale ${activeLocale}`)
+    console.warn(
+      `Unable to find page with id ${id} and locale ${activeLocale} including fallbacks`,
+      pageMap
+    )
     return null
   }
 
-  const { slug, title: pageTitle, menuTitle } = page
+  const { path, title: pageTitle, menuTitle } = page
 
-  if (!slug) {
-    console.error({ page })
+  if (!path) {
+    console.error('Found page does not have any path to link to', page)
     return null
   }
 
-  const to = [page.path, hash ? `#${hash}` : null].filter(Boolean).join('')
+  const to = [path, hash ? `#${hash}` : null].filter(Boolean).join('')
   return (
     <GatsbyLink
       type={type}
