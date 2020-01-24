@@ -1,4 +1,5 @@
 import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
+import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
 import Viewport from '@gatsby-mdx-suite/mdx-layout/viewport'
 import Image from '@gatsby-mdx-suite/mdx-contentful/contentful-image'
 import Link from '@gatsby-mdx-suite/mdx-basic/link'
@@ -7,6 +8,7 @@ import Box from '@gatsby-mdx-suite/mdx-layout/box'
 
 export default {
   Grid,
+  Columns,
   Viewport,
   Image,
   Link,
