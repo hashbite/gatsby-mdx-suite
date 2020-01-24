@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, title, ogImage, twitterImage }) {
+function SEO({ description, lang, meta, title, ogImage, twitterImage, url }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -11,6 +11,7 @@ function SEO({ description, lang, meta, title, ogImage, twitterImage }) {
           siteMetadata {
             title
             description
+            siteUrl
           }
         }
       }
@@ -18,6 +19,7 @@ function SEO({ description, lang, meta, title, ogImage, twitterImage }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaUrl = url || site.siteMetadata.siteUrl
 
   return (
     <Helmet
@@ -43,6 +45,10 @@ function SEO({ description, lang, meta, title, ogImage, twitterImage }) {
           property: `og:type`,
           content: `website`,
         },
+        {
+          property: 'og:url',
+          content: `${metaUrl}/${location.pathname}`,
+        },
         ogImage && {
           property: 'og:image',
           content: ogImage,
@@ -65,8 +71,19 @@ function SEO({ description, lang, meta, title, ogImage, twitterImage }) {
         },
         {
           name: 'viewport',
-          content:
-            'width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0',
+          content: 'width=device-width, initial-scale=1',
+        },
+        {
+          name: 'apple-mobile-web-app-capable',
+          content: 'yes',
+        },
+        {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: 'black-translucent',
+        },
+        {
+          name: 'format-detection',
+          content: 'telephone=no',
         },
       ]
         .filter(Boolean)
