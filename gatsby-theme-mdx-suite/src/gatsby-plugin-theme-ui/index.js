@@ -29,23 +29,125 @@ export function generateSpacingUnits({ spacingUnit, multipliers } = {}) {
   )
 }
 
+// Spacing config
+const spacingUnit = 16
+const maxContentWidth = 1400
+const gridColumnWidth = 140
+const gridGutter = 16
+const spacing = generateSpacingUnits({ spacingUnit })
+const space = [
+  0,
+  spacing['s0.25'],
+  spacing['s0.5'],
+  spacing.s1,
+  spacing.s2,
+  spacing.s3,
+  spacing.s4,
+  spacing.s6,
+  spacing.s8,
+]
+
+// Theme-ui colors (https://theme-ui.com/theme-spec/#color)
+const text = '#000'
+const background = '#fff'
+const primary = '#07c'
+const secondary = '#05a'
+const muted = '#f6f6f6f'
+
+// Example for project specific colors
+const transparent = 'transparent'
+const white = '#fff'
+const black = '#000'
+const ash = '#333'
+const tomato = '#F00'
+const orange = '#FFA500'
+const lemon = '#FF0'
+const lime = '#0F0'
+const water = '#00F'
+
 export default {
   initialColorMode: 'light',
+  sizes: {
+    maxContentWidth,
+    gridColumnWidth,
+    gridGutter,
+  },
+  breakpoints: ['576px', '768px', '992px'],
+  spacing,
+  space,
   colors: {
-    text: '#000',
-    background: '#fff',
-    black: '#000',
-    white: '#fff',
-    primary: '#f1be25',
-    contrast: '#add1c7',
+    text,
+    background,
+    primary,
+    secondary,
+    muted,
+    white,
+    black,
+    tomato,
+    orange,
+    lemon,
+    lime,
+    water,
     modes: {
       dark: {
-        text: '#fff',
-        background: '#000',
-        primary: '#6ad6e7',
-        contrast: '#51e57a',
+        // Dont just invert colors for dark mode. This is just a demo.
+        text: background,
+        background: text,
+        primary: secondary,
+        secondary: primary,
+      },
+    },
+    sets: {
+      default: {
+        background: transparent,
+        primary: black,
+        secondary: black,
+      },
+      transparent: {
+        background: transparent,
+        primary: white,
+        secondary: white,
+      },
+      transparentInverted: {
+        background: transparent,
+        primary: ash,
+        secondary: ash,
+      },
+      white: {
+        background: white,
+        primary: ash,
+        secondary: ash,
+      },
+      ash: {
+        background: ash,
+        primary: white,
+        secondary: white,
+      },
+      tomato: {
+        background: tomato,
+        primary: white,
+        secondary: white,
+      },
+      orange: {
+        background: orange,
+        primary: ash,
+        secondary: ash,
+      },
+      lemon: {
+        background: lemon,
+        primary: ash,
+        secondary: ash,
+      },
+      lime: {
+        background: lime,
+        primary: ash,
+        secondary: ash,
+      },
+      water: {
+        background: water,
+        primary: white,
+        secondary: white,
       },
     },
   },
-  spacing: generateSpacingUnits(),
 }
