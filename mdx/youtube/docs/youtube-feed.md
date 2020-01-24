@@ -5,7 +5,7 @@ menu: Social media
 ---
 import { Playground, Props } from 'docz'
 
-import YoutubeFeed from '@gatsby-mdx-suite/mdx-youtube/feed'
+import YoutubeFeed from '@gatsby-mdx-suite/mdx-youtube/youtube-feed'
 
 # YoutubeFeed
 

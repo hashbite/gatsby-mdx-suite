@@ -5,7 +5,7 @@ menu: Social media
 ---
 import { Playground, Props } from 'docz'
 
-import InstagramPost from '@gatsby-mdx-suite/mdx-instagram/post'
+import InstagramPost from '@gatsby-mdx-suite/mdx-instagram/instagram-post'
 
 # InstagramPost
 

@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
 import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
 
-import Youtube from './video'
+import Youtube from './youtube-video'
 
 const YoutubeFeedWrapper = styled.div`
   width: 100%;

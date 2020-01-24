@@ -14,8 +14,8 @@
     "mdx"
   ],
   "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.23",
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
     "@gatsby-mdx-suite/contexts": "^0.0.4",
     "@gatsby-mdx-suite/mdx-basic": "^0.0.13",
     "prop-types": "^15.7.2",

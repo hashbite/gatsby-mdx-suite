@@ -3,9 +3,9 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 import { useMDXDataState } from '@gatsby-mdx-suite/contexts/mdx-data'
-import MediaGallery from '@gatsby-mdx-suite/mdx-media/gallery'
+import MediaGallery from '@gatsby-mdx-suite/mdx-media/media-gallery'
 
-import InstagramPost from './post'
+import InstagramPost from './instagram-post'
 
 const InstagramFeedWrapper = styled.div`
   width: 100%;
