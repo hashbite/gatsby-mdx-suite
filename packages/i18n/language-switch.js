@@ -60,11 +60,18 @@ export default function LanguageSwitch() {
   // Array representing the language switcher menu
   const langsMenu = langs.map((locale) => {
     const page = getPageWithFallback({ pageMap, locale, defaultLocale })
+    if (!page) {
+      return null
+    }
     return {
       locale,
       page,
     }
-  })
+  }).filter(Boolean)
+
+  if (!langsMenu.length) {
+    return null
+  }
 
   return (
     <List>
