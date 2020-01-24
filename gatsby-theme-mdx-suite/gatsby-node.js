@@ -1,6 +1,16 @@
 /**
- * This whole file is a workaround to prevent docz from failing when the
+ * Allow all plugins and the actual page access the theme config
+ */
+exports.onPreBootstrap = async ({ getCache }, themeConfig) => {
+  const cache = getCache()
+  await cache.set('mdx-suite', { config: themeConfig })
+}
+
+/**
+ * The following part is a workaround to prevent docz from failing when the
  * dependency is installed but gatsby-theme-docz is excluded in the gatsby-config.js
+ *
+ * This happens because we dont render the docs on production to speed up build times and reduce bundle sizes
  *
  * Maybe related: https://github.com/doczjs/docz/issues/994
  */

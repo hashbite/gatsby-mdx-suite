@@ -1,17 +1,24 @@
-function createPath({ slug, locale, prefix = null }) {
+function createPath({ slug, locale, pageType, config }) {
+  const { localeMap, pageTypeMap } = config
+
+  const pageTypePrefix = pageTypeMap[pageType]
+  const localePrefix = localeMap[locale]
+
   return (
     '/' +
-    [locale, prefix, slug === 'index' ? null : slug].filter(Boolean).join('/')
+    [localePrefix, pageTypePrefix, slug === 'index' ? null : slug]
+      .filter(Boolean)
+      .join('/')
   )
 }
 
-function generatePageMap({ pages, pageId }) {
+function generatePageMap({ pages, activePageId }) {
   return pages
-    .filter(({ id }) => id === pageId)
+    .filter(({ context: { pageId } }) => pageId === activePageId)
     .reduce(
       (map, page) => ({
         ...map,
-        [page.locale]: page,
+        [page.context.locale]: { path: page.path, ...page.context },
       }),
       {}
     )
@@ -23,7 +30,7 @@ function getPageWithFallback({ pageMap, locale, defaultLocale }) {
   }
 
   let page
-  // Generate path to translated version
+  // Lookup path to translated version
   if (pageMap[locale]) {
     page = pageMap[locale]
   }
@@ -33,15 +40,17 @@ function getPageWithFallback({ pageMap, locale, defaultLocale }) {
     page = pageMap[defaultLocale]
   }
 
-  // Fallback if no version with default locale is available
+  // Fallback to first available versio if none with default locale is available
   if (!page && pageMap.length) {
     page = pageMap[Object.keys(pageMap)[0]]
   }
 
-  // Unable to locate any page. This should not happen.
+  // Unable to locate any page. This should not happen. Throw an error.
   if (!page) {
     throw new Error(
-      `Unable to generate language selector link for ${pageMap[Object.keys(pageMap)[0]].id} with locale ${locale}`
+      `Unable to generate language selector link for ${
+        pageMap[Object.keys(pageMap)[0]].id
+      } with locale ${locale}. Did you register your pages properly with Gatsby?`
     )
   }
 

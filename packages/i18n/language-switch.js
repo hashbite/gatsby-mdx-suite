@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import styled from '@emotion/styled'
 
-import LocationContext from '@gatsby-mdx-suite/contexts/location'
 import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
+import LocationContext from '@gatsby-mdx-suite/contexts/location'
 import { generatePageMap, getPageWithFallback } from './helpers'
 
 const List = styled.ul({
@@ -32,9 +33,29 @@ export default function LanguageSwitch() {
   const { langs, default: defaultLocale, active: activeLocale } = useContext(
     I18nContext
   )
-  const { pages, activePageId } = useContext(LocationContext)
+  const { activePageId } = useContext(LocationContext)
 
-  const pageMap = generatePageMap({ pages, pageId: activePageId })
+  const result = useStaticQuery(graphql`
+    {
+      allSitePage {
+        nodes {
+          path
+          context {
+            pageId
+            locale
+            menuTitle
+            title
+          }
+        }
+      }
+    }
+  `)
+
+  // Generate a language based map of sub pages relating to the current content
+  const pageMap = generatePageMap({
+    pages: result.allSitePage.nodes,
+    activePageId,
+  })
 
   // Array representing the language switcher menu
   const langsMenu = langs.map((locale) => {

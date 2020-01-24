@@ -1,8 +1,9 @@
 const { resolve } = require('path')
 const { createPath } = require('@gatsby-mdx-suite/i18n/helpers')
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, getCache }) => {
   const { createPage } = actions
+  const { config } = await getCache().get('mdx-suite')
 
   async function createPages() {
     const result = await graphql(
@@ -13,8 +14,10 @@ exports.createPages = async ({ graphql, actions }) => {
               node {
                 id
                 contentful_id
-                slug
                 node_locale
+                slug
+                title
+                menuTitle
               }
             }
           }
@@ -27,9 +30,16 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     result.data.allContentfulPage.edges.map((edge) => {
-      const { id, contentful_id: pageId, slug, node_locale: locale } = edge.node
+      const {
+        id,
+        contentful_id: pageId,
+        node_locale: locale,
+        slug,
+        title,
+        menuTitle,
+      } = edge.node
 
-      const path = createPath({ slug, locale })
+      const path = createPath({ slug, locale, config })
 
       createPage({
         path,
@@ -38,6 +48,8 @@ exports.createPages = async ({ graphql, actions }) => {
           id,
           pageId,
           locale,
+          title,
+          menuTitle,
         },
       })
     })

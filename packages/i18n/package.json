@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.0.4",
+    "gatsby": "^2.19.5",
     "gatsby-link": "^2.2.27",
     "react": "^16.12.0"
   },

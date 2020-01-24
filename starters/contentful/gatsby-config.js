@@ -18,6 +18,14 @@ module.exports = {
       options: {
         langs: ['en', 'de'],
         defaultLocale: 'en',
+        localeMap: {
+          en: 'en',
+          de: null,
+        },
+        pageTypeMap: {
+          page: null,
+          blogPost: 'blog',
+        },
         translations: {
           en: {
             translation: {
