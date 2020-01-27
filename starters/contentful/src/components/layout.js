@@ -8,7 +8,10 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'gatsby'
 
 import ColorModeSwitch from './color-mode-switch'
+
 import LanguageSwitch from '@gatsby-mdx-suite/i18n/language-switch'
+import MenuRecursive from '@gatsby-mdx-suite/menu/menu-recursive'
+import MenuLevel from '@gatsby-mdx-suite/menu/menu-level'
 
 const Main = styled.div`
   max-width: ${({ theme }) => theme.sizes.maxContentWidth}px;
@@ -23,11 +26,19 @@ const Header = styled.header`
   padding: ${({ theme }) => theme.spacing.s2}px 0;
 `
 
+const Navigation = styled.nav``
 const Content = styled.div``
 const Footer = styled.footer``
+const FooterMenu = styled.nav``
+const FooterCopy = styled.div`
+  font-size: 0.9em;
+  text-align: center;
+  padding: ${({ theme }) => theme.spacing.s1}px;
+`
 
 const Layout = ({ children }) => {
   const { t } = useTranslation()
+
   return (
     <Styled.root>
       <Global
@@ -42,6 +53,10 @@ const Layout = ({ children }) => {
 
               :visited {
                 color: inherit;
+              }
+
+              &.active {
+                font-weight: bold;
               }
             }
 
@@ -79,8 +94,19 @@ const Layout = ({ children }) => {
           <ColorModeSwitch />
           <LanguageSwitch />
         </Header>
+        <Navigation>
+          <MenuLevel rootMenuItemId="6Id378BoElgMsJJd81IyP3" />
+          <MenuLevel rootMenuItemId="6Id378BoElgMsJJd81IyP3" level={2} />
+        </Navigation>
         <Content>{children}</Content>
-        <Footer>{t('copyright', { year: new Date().getFullYear() })}</Footer>
+        <Footer>
+          <FooterMenu>
+            <MenuRecursive rootMenuItemId="74X6wG8uRwdlBSDFxmhTt5" />
+          </FooterMenu>
+          <FooterCopy>
+            {t('copyright', { year: new Date().getFullYear() })}
+          </FooterCopy>
+        </Footer>
       </Main>
     </Styled.root>
   )

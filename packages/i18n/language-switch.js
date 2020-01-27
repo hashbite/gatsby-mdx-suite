@@ -46,7 +46,6 @@ export default function LanguageSwitch() {
           context {
             pageId
             locale
-            menuTitle
             title
           }
         }
