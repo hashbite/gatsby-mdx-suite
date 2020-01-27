@@ -4,7 +4,7 @@ import Carousel, { Modal, ModalGateway } from 'react-images'
 import styled from '@emotion/styled'
 
 import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
-import Grid from '@gatsby-mdx-suite/mdx-layout'
+import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
 import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
 
 const MediaGalleryWrapper = styled(Grid)`
