@@ -16,18 +16,18 @@ module.exports = {
     {
       resolve: `gatsby-theme-mdx-suite`,
       options: {
-        langs: ['en', 'de'],
-        defaultLocale: 'en',
+        langs: ['en-US', 'de'],
+        defaultLocale: 'en-US',
         localeMap: {
-          en: 'en',
-          de: null,
+          'en-US': 'en',
+          de: 'de',
         },
         pageTypeMap: {
           page: null,
           blogPost: 'blog',
         },
         translations: {
-          en: {
+          'en-US': {
             translation: {
               copyright: '© Copyright {{year}}. All rights reserved.',
             },
