@@ -14,11 +14,13 @@
 * Starters & a theme for fast integration into your GatsbyJS project
 * Full i18n integration with helpers to easily create menus and language switchers
 * No crazy magic. The components code are pretty simple and very common dependencies are used
+* Automated generation of documentation of all components used within the system. Provides basic information about Markdown and MDX as well.
+* Components to render Menus, Links, Language Switch & more
 
 ### ![Work in progress features](https://img.shields.io/badge/Status-Work_in_progress-yellowgreen?style=flat)
 
 * Upcomming support of WYSIWYG editors. Waiting for https://github.com/blocks/blocks to get more progress, in the meanwhile https://github.com/Ionaru/easy-markdown-editor is being used.
-* Automated generation of documentation of all components used within the system. Provides basic information about Markdown and MDX as well.
+* Automatic parsing of MDX content to create graphql relations to used assets like images, videos & others.
 * More components to come
 
 
@@ -52,6 +54,7 @@
   * Contexts: Important and required package. Provides the contexts to get data available within MDX
   * i18n: Helpers to generate paths and render language switch component
   * seo: SEO helper components
+  * menu: generate single menu levels or whole menu trees
 * Starters: `./starters/*` or `gatsby-starter-mdx-suite-*`
   * Get quickly started, should be used as example implementations as well
 
@@ -88,23 +91,33 @@ The most accurate documentation are the starters. Especially https://github.com/
 
 This is just a quick listing, the whole readme will be improved soon and a getting starting guide provided.
 
-* Add `gatsby-theme-mdx-suite`
-* Configure it https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/gatsby-config.js#L17
-* Load data (especially images) from GraphQL and it them available to MDX
-  * https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/gatsby-browser.js
-  * https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/gatsby-node.js
-  * https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/src/contentful-page-injector.js
-  * https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/gatsby-browser.js
-  * https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/src/templates/page.js#L40-L49
-* configure your theme: https://github.com/axe312ger/gatsby-mdx-suite/tree/master/starters/contentful/src/gatsby-plugin-theme-ui
-* @todo demo how to add paths to the context for menu & link generation
+* `npm i gatsby-theme-mdx-suite`
+* Add `gatsby-theme-mdx-suite` to your `gatsby-config.js`
+* Configure the theme.
+  * Example: https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/gatsby-config.js#L16-L42
+* When creating your sub-pages, ensure to pass all required data to it. This is required to properly render links, menu items and the language switcher.
+  * Example: https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/gatsby-node.js#L45-L50
+* Query all required data in your gatsby page template. Pass it down to the `MdxDataContext`
+  * Example: https://github.com/axe312ger/gatsby-mdx-suite/blob/master/starters/contentful/src/templates/page.js#L18-L48
+  * Related Context: https://github.com/axe312ger/gatsby-mdx-suite/blob/master/packages/contexts/mdx-data.js
+* Adjust the theme to your design preferences via theme-ui.
+  * Example: https://github.com/axe312ger/gatsby-mdx-suite/tree/master/starters/contentful/src/gatsby-plugin-theme-ui
+
 
 ## How to alter the design
 
 The idea is to support these options to alter the design:
 
-* provide your own theme configuraton via theme-ui
-* provide several attributes to alter styling
-* wrap/extend existing components with your own logic
-* replace whole components (even copy& paste might be the right way some times)
-* shadow components via theme-ui or overwrite components (still to be tested)
+### Currently possible
+
+* Provide your own theme configuraton via theme-ui
+* Wrap and extend existing components with your own styles & logic
+* Replace whole components (even copy & paste might be the right way some times)
+* You can use emotion to wrap any component and then target other components within your custom styles.
+  * https://emotion.sh/docs/styled#styling-any-component
+  * https://emotion.sh/docs/styled#targeting-another-emotion-component
+
+### In consideration
+
+* We might provide several attributes to alter styling
+* Shadow components via theme-ui or overwrite components by passing them to the root component (should work, still to be tested, might be a bad idea)
