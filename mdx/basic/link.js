@@ -38,7 +38,6 @@ export default function Link({
           context {
             pageId
             locale
-            menuTitle
             title
           }
         }
@@ -72,7 +71,7 @@ export default function Link({
     return null
   }
 
-  const { path, title: pageTitle, menuTitle } = page
+  const { path, title: pageTitle } = page
 
   if (!path) {
     console.error('Found page does not have any path to link to', page)
@@ -89,7 +88,7 @@ export default function Link({
       target={target}
       {...linkProps}
     >
-      {children || title || menuTitle || pageTitle}
+      {children || title || pageTitle}
     </GatsbyLink>
   )
 }

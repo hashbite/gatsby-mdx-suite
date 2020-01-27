@@ -16,16 +16,15 @@ import Layout from '../components/layout'
 
 function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
-  // const mdxDataDispatch = useMDXDataDispatch()
   const locationData = useContext(LocationContext)
   const i18nData = useContext(I18nContext)
 
   const {
     title,
-    seoDescription,
-    seoImage,
+    metaDescription,
+    metaImage,
     content,
-    contentMedia,
+    imagesContent,
   } = data.contentfulPage
   const { locale, pageId } = pageContext
 
@@ -46,14 +45,16 @@ function PageTemplate({ data, pageContext }) {
       <LocationContext.Provider
         value={{ ...locationData, activePageId: pageId }}
       >
-        <MdxDataContext.Provider value={{ contentfulAssets: contentMedia }}>
+        <MdxDataContext.Provider value={{ contentfulAssets: imagesContent }}>
           <Layout>
             <Seo
               title={title}
-              description={seoDescription}
-              ogImage={seoImage && `${seoImage.file.url}?w=1200&h=630&fit=fill`}
+              description={metaDescription}
+              ogImage={
+                metaImage && `${metaImage.file.url}?w=1200&h=630&fit=fill`
+              }
               twitterImage={
-                seoImage && `${seoImage.file.url}?w=1200&h=628&fit=fill`
+                metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
               }
             />
             <MDXProvider>
@@ -80,8 +81,8 @@ export const pageQuery = graphql`
       contentful_id
       slug
       title
-      seoDescription
-      seoImage {
+      metaDescription
+      metaImage {
         file {
           url
         }
@@ -91,7 +92,7 @@ export const pageQuery = graphql`
           body
         }
       }
-      contentMedia {
+      imagesContent {
         contentful_id
         file {
           contentType

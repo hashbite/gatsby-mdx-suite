@@ -17,7 +17,6 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
                 node_locale
                 slug
                 title
-                menuTitle
               }
             }
           }
@@ -36,7 +35,6 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
         node_locale: locale,
         slug,
         title,
-        menuTitle,
       } = edge.node
 
       const path = createPath({ slug, locale, config })
@@ -49,7 +47,6 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
           pageId,
           locale,
           title,
-          menuTitle,
         },
       })
     })
