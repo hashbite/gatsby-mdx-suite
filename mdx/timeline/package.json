@@ -1,0 +1,25 @@
+{
+  "name": "@gatsby-mdx-suite/mdx-timeline",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Benedikt Rötsch <opensource@axe312.dev>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gatsby-mdx-suite",
+    "gatsby",
+    "mdx"
+  ],
+  "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
