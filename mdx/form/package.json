@@ -1,0 +1,27 @@
+{
+  "name": "@gatsby-mdx-suite/mdx-form",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Benedikt Rötsch <opensource@axe312.dev>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gatsby-mdx-suite",
+    "gatsby",
+    "mdx"
+  ],
+  "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
+    "@gatsby-mdx-suite/contexts": "^0.0.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-i18next": "^11.3.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
