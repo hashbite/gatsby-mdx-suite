@@ -1,0 +1,15 @@
+{
+  "name": "@gatsby-mdx-suite/helpers",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "Benedikt Rötsch <opensource@axe312.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.23",
+    "@gatsby-mdx-suite/mdx-basic": "^0.0.13"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

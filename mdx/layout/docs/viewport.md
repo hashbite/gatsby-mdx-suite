@@ -6,6 +6,8 @@ menu: Layout
 import { Playground, Props } from 'docz'
 
 import Viewport from '@gatsby-mdx-suite/mdx-layout/viewport'
+import Content from '@gatsby-mdx-suite/mdx-layout/content'
+import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
 
 # Viewport
 
@@ -17,22 +19,23 @@ A viewport is always as big as the browser window of the user.
 
 <Playground>
   <Viewport>
-
-  # Very important headline
-
+  <Content>
+    This content will be centered within an area, which has the exact height of your screen.
+    The `<Content />` wrapper will ensure the content is aligned to the main content column.
+  </Content>
   </Viewport>
-  <Viewport>
+  <Viewport colorSet="tomato">
+  <Content>
+  ## Nec totas solitis
 
-## Nec totas solitis
-
-@todo seems like MDX rendering within viewports broken in the demo
-
+  Some more content
+  </Content>
   </Viewport>
   <Viewport horizontalAlign="end" verticalAlign="end">
 
-  @todo: make sure images resize itself
+  This content is horizontally and vertically aligned to the end.
 
-  ![Foo](https://source.unsplash.com/random?2)
+  <Image src="https://source.unsplash.com/random?2" width="200" />
 
   </Viewport>
 </Playground>

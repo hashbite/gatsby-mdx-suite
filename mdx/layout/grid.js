@@ -28,7 +28,9 @@ const GridWrapper = styled.div`
   grid-gap: ${({ theme }) => theme.spacing.s2}px;
 
   /* Ensure all images are responsive within the grid. */
-  & img {
+  img,
+  svg,
+  video {
     max-width: 100%;
     height: auto;
   }

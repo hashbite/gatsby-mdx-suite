@@ -100,5 +100,5 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
 
 MenuLevel.propTypes = {
   rootMenuItemId: propTypes.string.isRequired,
-  level: propTypes.number.isRequired,
+  level: propTypes.number,
 }

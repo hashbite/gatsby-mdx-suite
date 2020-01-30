@@ -23,6 +23,14 @@ const Columns = styled.div(
         grid-column-end: span 2;
       }
     }
+
+    /* Ensure all images are responsive within the grid. */
+    img,
+    svg,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
   `
 )
 

@@ -1,31 +1,39 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
 import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
 import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
+import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
 // Shortcuts to ease up editor UX: start, end -> flex-start, flex-end; center -> center
+// @todo move to helpers
 const extendPositionArgument = (value) =>
   value === 'center' ? value : `flex-${value}`
 
-const ViewportWrapper = styled.section`
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: ${({ horizontalAlign }) =>
-    extendPositionArgument(horizontalAlign)};
-  justify-content: ${({ verticalAlign }) =>
-    extendPositionArgument(verticalAlign)};
+const ViewportWrapper = styled.div(
+  ({ horizontalAlign, verticalAlign, ...restProps }) => {
+    return css`
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: ${extendPositionArgument(horizontalAlign)};
+      justify-content: ${extendPositionArgument(verticalAlign)};
 
-  ${({ hasImage }) =>
-    hasImage &&
-    css`
-      color: #fff;
-    `}
-`
+      ${applyColorSet({ ...restProps })}
+
+      /* Ensure all images are responsive within the viewport. */
+      img,
+      svg,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+    `
+  }
+)
 
 const ViewportContent = styled.div`
   box-sizing: border-box;
@@ -33,8 +41,6 @@ const ViewportContent = styled.div`
   z-index: 10;
   max-width: 900px;
   width: 100%;
-  padding: ${({ theme }) => theme.spacing.s12}px
-    ${({ theme }) => theme.spacing.s2}px;
   display: flex;
   flex-direction: column;
   align-items: ${({ horizontalAlign }) =>
@@ -60,14 +66,15 @@ const BackgroundImageWrapper = styled.div`
 
 export default function Viewport({
   children,
-  image,
+  backgroundImageId,
   horizontalAlign = 'center',
   verticalAlign = 'center',
+  ...restProps
 }) {
   let backgroundImage = null
-  if (image) {
+  if (backgroundImageId) {
     const mdxData = useContext(MdxDataContext)
-    const imageData = mdxData[image]
+    const imageData = mdxData[backgroundImageId]
     if (imageData) {
       backgroundImage = <Image {...imageData} objectFit="cover" />
     }
@@ -75,9 +82,10 @@ export default function Viewport({
 
   return (
     <ViewportWrapper
-      hasImage={!!image}
+      hasImage={!!backgroundImageId}
       verticalAlign={verticalAlign}
       horizontalAlign={horizontalAlign}
+      {...restProps}
     >
       {children && (
         <ViewportContent horizontalAlign={horizontalAlign}>
@@ -94,9 +102,17 @@ export default function Viewport({
 Viewport.propTypes = {
   children: propTypes.node,
   /** image id to display as background image */
-  image: propTypes.string,
+  backgroundImageId: propTypes.string,
   /** horizontal content alignment */
   horizontalAlign: propTypes.string,
   /** vertical content alignment */
   verticalAlign: propTypes.string,
+  /* Apply color set to this element and all children */
+  colorSet: propTypes.string,
+  /* Set background color for this element */
+  backgroundColor: propTypes.string,
+  /* Set primary color for this element and all children */
+  primaryColor: propTypes.string,
+  /* Set secondary color for this element and all children */
+  secondaryColor: propTypes.string,
 }
