@@ -12,6 +12,7 @@ const VideoTag = styled.video`
   margin: ${({ theme }) => theme.spacing.s2}px auto;
 `
 
+// @todo have only a single videoId property and render sources depending on context data
 export default function Video({
   h264Id,
   h265Id,
@@ -21,16 +22,15 @@ export default function Video({
   posterImageId,
   ...props
 }) {
-  // @todo properly integrate with context
   const { videos, images } = useContext(MdxDataContext)
   const refVideo = useRef(null)
   const [wasPaused, setWasPaused] = useState(false)
 
   const posterImage = images.find(
-    ({ contentful_id: cid }) => cid === posterImageId
+    ({ imageId }) => imageId === posterImageId
   )
-  const videoH264 = videos.find(({ contentful_id: cid }) => cid === h264Id)
-  const videoH265 = videos.find(({ contentful_id: cid }) => cid === h265Id)
+  const videoH264 = videos.find(({ videoId }) => videoId === h264Id)
+  const videoH265 = videos.find(({ videoId }) => videoId === h265Id)
 
   if (!videoH264) {
     console.error(`Unable to locate video with id ${videoH264}`)
