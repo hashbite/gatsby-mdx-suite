@@ -20,13 +20,14 @@ function PageTemplate({ data, pageContext }) {
   const i18nData = useContext(I18nContext)
 
   const {
+    pageId,
     title,
     metaDescription,
     metaImage,
     content,
     imagesContent,
   } = data.contentfulPage
-  const { locale, pageId } = pageContext
+  const { locale } = pageContext
 
   // Set current i18next translation language based on page locale
   useEffect(() => {
@@ -78,7 +79,7 @@ export const pageQuery = graphql`
   query pageQuery($id: String!) {
     contentfulPage(id: { eq: $id }) {
       id
-      contentful_id
+      pageId: contentful_id
       slug
       title
       metaDescription
@@ -93,7 +94,7 @@ export const pageQuery = graphql`
         }
       }
       imagesContent {
-        contentful_id
+        imageId: contentful_id
         file {
           contentType
           details {

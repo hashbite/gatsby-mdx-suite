@@ -77,8 +77,8 @@ const Box = ({
   let imageContainer = null
   if (contentfulAssets && backgroundImageId) {
     const asset = contentfulAssets.find(
-      ({ contentful_id: cid, node_locale: locale }) =>
-        cid === backgroundImageId && locale === activeLocale
+      ({ imageId, locale }) =>
+        imageId === backgroundImageId && locale === activeLocale
     )
 
     if (asset) {

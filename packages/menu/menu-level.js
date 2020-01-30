@@ -59,7 +59,7 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
     currentLevel++
 
     const result = currentRoot.subitems.find(
-      (item) => item.contentful_id === destination
+      (item) => item.pageId === destination
     )
 
     if (result) {
@@ -74,9 +74,8 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
   return (
     <MenuUl>
       {currentRoot.subitems.map((child) => {
-        const { title } = child
-        const linkedPage = child.linkedPage || child.linkedApp
-        const isActive = activeTrail.includes(child.contentful_id)
+        const { title, linkedPage } = child
+        const isActive = activeTrail.includes(child.pageId)
 
         return (
           <MenuLi

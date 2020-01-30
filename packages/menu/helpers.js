@@ -2,7 +2,7 @@ export function findActiveTrail({ id, subTree }) {
   for (const item of subTree) {
     const linkedPage = item.linkedPage || item.linkedApp
     if (linkedPage && id === linkedPage.cid) {
-      return [item.contentful_id]
+      return [item.pageId]
     }
     if (item.subitems) {
       const subTreeResult = findActiveTrail({
@@ -10,7 +10,7 @@ export function findActiveTrail({ id, subTree }) {
         subTree: item.subitems
       })
       if (subTreeResult.length) {
-        return [item.contentful_id, ...subTreeResult]
+        return [item.pageId, ...subTreeResult]
       }
     }
   }

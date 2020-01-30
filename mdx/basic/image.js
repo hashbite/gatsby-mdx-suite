@@ -26,7 +26,7 @@ export default function Image({
 
   if (id) {
     imageData = mdxData[contextKey].find(
-      (asset) => asset.contentful_id === id
+      (asset) => asset.imageId === id
     )
 
     if (!imageData) {

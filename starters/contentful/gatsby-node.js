@@ -13,8 +13,8 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
             edges {
               node {
                 id
-                contentful_id
-                node_locale
+                pageId: contentful_id
+                locale: node_locale
                 slug
                 title
               }
@@ -31,8 +31,8 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
     result.data.allContentfulPage.edges.map((edge) => {
       const {
         id,
-        contentful_id: pageId,
-        node_locale: locale,
+        pageId,
+        locale,
         slug,
         title,
       } = edge.node
