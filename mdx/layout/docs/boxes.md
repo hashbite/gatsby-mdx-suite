@@ -8,7 +8,6 @@ import { Playground, Props } from 'docz'
 
 import Boxes from '../boxes'
 import Box from '../box'
-import BoxContent from '../box-content'
 
 
 ## Boxes Grid
@@ -42,9 +41,7 @@ Wrap all boxes in a `<Boxes/>` tag to enable a 8 column grid. A single box can h
 <Playground>
   <Boxes>
     <Box width="3" height="3" colorSet="almond">
-      <BoxContent>
-        Custom Colored Box Content
-      </BoxContent>
+      Custom Colored Box
     </Box>
   </Boxes>
 </Playground>

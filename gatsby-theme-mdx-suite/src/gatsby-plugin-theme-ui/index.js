@@ -92,9 +92,16 @@ export default {
       dark: {
         // Dont just invert colors for dark mode. This is just a demo.
         text: background,
-        background: text,
+        background: ash,
         primary: secondary,
         secondary: primary,
+        sets: {
+          ash: {
+            background: white,
+            primary: ash,
+            secondary: ash,
+          }
+        }
       },
     },
     sets: {
