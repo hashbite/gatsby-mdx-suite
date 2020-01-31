@@ -3,51 +3,77 @@ import propTypes from 'prop-types'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 
-const GridWrapper = styled.div`
-  /* ensure full width when within viewport/flex box container */
-  width: 100%;
+const GridWrapper = styled.div(
+  ({ minWidth, maxWidth, center, theme }) => css`
+    /* ensure full width when within viewport/flex box container */
+    width: 100%;
 
-  /* Fallback grid based on flexbox */
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
+    /* Fallback grid based on flexbox */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
 
-  & > * {
-    flex: 0 0 auto;
-  }
+    & > * {
+      flex: 0 0 auto;
+    }
 
-  /* Actual grid */
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(
-      ${({ minWidth = '280px' }) => minWidth},
-      ${({ maxWidth = '1fr' }) => maxWidth}
-    )
-  );
-  grid-gap: ${({ theme }) => theme.spacing.s2}px;
+    /* Actual grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(${minWidth}, ${maxWidth}));
+    grid-gap: ${theme.spacing.s2}px;
 
-  /* Ensure all images are responsive within the grid. */
-  img,
-  svg,
-  video {
-    max-width: 100%;
-    height: auto;
-  }
+    /* Ensure all images are responsive within the grid. */
+    img,
+    svg,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
 
-  /* Center items */
-  ${({ center }) =>
-    center &&
-    css`
-      justify-content: center;
-    `}
-`
+    /* Center items */
+    ${center &&
+      css`
+    align-items: center;
+    justify-content: center;
+      `}
+  `
+)
+
+const GridItem = styled.div(
+  ({ center }) => css`
+    ${center &&
+      css`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > * {
+          width: 100%;
+        }
+      `}
+  `
+)
 
 export default function Grid({ children, ...props }) {
+  if (!children || !children.length) {
+    return null
+  }
+
+  children = children.map((child, i) => (
+    <GridItem key={i} center={props.center}>
+      {child}
+    </GridItem>
+  ))
+
   return <GridWrapper {...props}>{children}</GridWrapper>
 }
 
 Grid.displayName = 'Grid'
+
+Grid.defaultProps = {
+  minWidth: '280px',
+  maxWidth: '1fr',
+}
 
 Grid.propTypes = {
   /** Minimum width for every grid column. Defaults to 280px */
