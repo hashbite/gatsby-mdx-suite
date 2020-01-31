@@ -6,7 +6,6 @@ menu: Layout
 import { Playground, Props } from 'docz'
 
 import Viewport from '@gatsby-mdx-suite/mdx-layout/viewport'
-import Content from '@gatsby-mdx-suite/mdx-layout/content'
 import Image from '@gatsby-mdx-suite/mdx-basic/image'
 
 # Viewport
@@ -19,17 +18,17 @@ A viewport is always as big as the browser window of the user.
 
 <Playground>
   <Viewport>
-  <Content>
+  <Section>
     This content will be centered within an area, which has the exact height of your screen.
-    The `<Content />` wrapper will ensure the content is aligned to the main content column.
-  </Content>
+    The `<Section />` wrapper will ensure the content is aligned to the main content column.
+  </Section>
   </Viewport>
   <Viewport colorSet="tomato">
-  <Content>
+  <Section>
   ## Nec totas solitis
 
   Some more content
-  </Content>
+  </Section>
   </Viewport>
   <Viewport horizontalAlign="end" verticalAlign="end">
 

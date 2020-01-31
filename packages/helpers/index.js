@@ -43,8 +43,9 @@ export const applyColorSet = (props) => {
 export const centerToContentColumn = ({
   theme: { sizes, breakpoints },
 }) => css`
+  box-sizing: content-box;
   margin: 0 auto;
-  max-width: ${sizes.maxContentWidth + sizes.gridGutter * 2}px;
+  max-width: ${sizes.maxContentWidth}px;
 
   /* Gradually increase horizontal content padding based on viewport width */
   padding: 0 2vw;

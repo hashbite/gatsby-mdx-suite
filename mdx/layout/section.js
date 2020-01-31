@@ -4,28 +4,25 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
 import Image from '@gatsby-mdx-suite/mdx-basic/image'
-import { applyColorSet } from '@gatsby-mdx-suite/helpers'
+import { applyColorSet, centerToContentColumn } from '@gatsby-mdx-suite/helpers'
 
-import Content from './content'
+const SectionWrapper = styled.section`
+  position: relative;
+  ${applyColorSet}
+`
 
-const SectionWrapper = styled.section(
+const SectionContentWrapper = styled.div(
   (props) => css`
-    position: relative;
+    ${centerToContentColumn(props)}
 
-    ${applyColorSet({ ...props })}
-  `
-)
-
-const SectionContentWrapper = styled(Content)(
-  ({ theme }) => css`
     position: relative;
     z-index: 2;
-    padding-top: ${theme.spacing.s1}px;
-    padding-bottom: ${theme.spacing.s1}px;
+    padding-top: ${props.theme.spacing.s1}px;
+    padding-bottom: ${props.theme.spacing.s1}px;
 
-    @media (min-width: ${theme.breakpoints[0]}) {
-      padding-top: ${theme.spacing.s3}px;
-      padding-bottom: ${theme.spacing.s3}px;
+    @media (min-width: ${props.theme.breakpoints[0]}) {
+      padding-top: ${props.theme.spacing.s3}px;
+      padding-bottom: ${props.theme.spacing.s3}px;
     }
   `
 )

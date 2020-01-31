@@ -12,7 +12,7 @@ import Link from '@gatsby-mdx-suite/mdx-basic/link'
 const BlogPostListingWrapper = styled.div(
   ({
     theme: {
-      sizes: { gridGutter, maxContentWidth },
+      sizes: { gridGutter },
       breakpoints,
     },
   }) => css`
