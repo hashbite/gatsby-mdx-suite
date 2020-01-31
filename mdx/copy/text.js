@@ -10,15 +10,16 @@ const TextWrapper = styled.div(
     fontType,
     fontSize,
     fontWeight,
+    fontStyle,
     lineHeight,
     align,
-    theme: { fonts },
+    theme: { fonts, colors },
   }) => css`
     font-family: ${fonts[fontType]};
 
     ${color &&
       css`
-        color: ${color};
+        color: ${colors[color] || color};
       `}
     ${fontSize &&
       css`
@@ -28,6 +29,11 @@ const TextWrapper = styled.div(
       css`
         font-weight: ${fontWeight};
       `}
+    ${fontStyle &&
+      css`
+        font-style: ${fontStyle};
+      `}
+
     ${lineHeight &&
       css`
         line-height: ${lineHeight};
@@ -45,6 +51,7 @@ const Text = ({
   color,
   fontSize,
   fontWeight,
+  fontStyle,
   lineHeight,
   align,
 }) => {
@@ -54,6 +61,7 @@ const Text = ({
       fontSize={fontSize}
       fontWeight={fontWeight}
       fontType={fontType}
+      fontStyle={fontStyle}
       lineHeight={lineHeight}
       align={align}
     >
@@ -67,6 +75,7 @@ Text.propTypes = {
   color: propTypes.string,
   fontSize: propTypes.string,
   fontWeight: propTypes.string,
+  fontStyle: propTypes.string,
   lineHeight: propTypes.string,
   align: propTypes.string,
   fontType: propTypes.string,
