@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 
 import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
 import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
-import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
+import Image from '@gatsby-mdx-suite/mdx-basic/image'
 
 const MediaGalleryWrapper = styled(Grid)`
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -128,19 +128,9 @@ const mediaParsers = {
       content: element,
     }
   },
-  ContentfulImage: ({ element, props, mdxData }) => {
+  Image: ({ element, props, mdxData }) => {
     const { id } = props
-    const { contentfulAssets } = mdxData
 
-    if (!contentfulAssets) {
-      return {
-        id,
-        thumbnail: null,
-        content: null,
-      }
-    }
-
-    // const asset = contentfulAssets.find((asset) => asset.id === id)
     return {
       id,
       thumbnail: element,

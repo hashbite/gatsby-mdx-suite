@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-import Image from '@gatsby-mdx-suite/mdx-contentful/contentful-image'
+import Image from '@gatsby-mdx-suite/mdx-basic/image'
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
 import Content from './content'

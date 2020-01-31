@@ -5,10 +5,10 @@ menu: Media
 ---
 import { Playground, Props } from 'docz'
 
-import MediaGallery from '@gatsby-mdx-suite/mdx-media/media-gallery'
+import MediaGallery from '@gatsby-mdx-suite/mdx-media-gallery'
 import InstagramPost from '@gatsby-mdx-suite/mdx-instagram/instagram-post'
 import YoutubeVideo from '@gatsby-mdx-suite/mdx-youtube/youtube-video'
-import ContentfulImage from '@gatsby-mdx-suite/mdx-contentful/contentful-image'
+import ContentfulImage from '@gatsby-mdx-suite/mdx-basic/image'
 
 # MediaGallery
 
