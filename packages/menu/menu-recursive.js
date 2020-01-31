@@ -33,10 +33,10 @@ export default function MenuRecursive({ rootMenuItemId }) {
       }
     }
   `)
-  
+
   const { activePageId: id } = useContext(LocationContext)
   const { active: activeLocale } = useContext(I18nContext)
-  
+
   const menuRoot = queryResult.allContentfulMenuItem.nodes.find(
     ({ locale, pageId }) => pageId === rootMenuItemId && locale === activeLocale
   )
@@ -61,12 +61,11 @@ function RecursiveMenu({ children, activeTrail, depth = 0 }) {
   return (
     <MenuUl className={`depth-${depth}`}>
       {children.map((child) => {
-        const { title, subitems, linkedPage, hiddenOnMobile } = child
+        const { title, subitems, linkedPage } = child
 
         return (
           <MenuLi
             key={title}
-            hiddenOnMobile={hiddenOnMobile}
             className={activeTrail.includes(child.pageId) ? 'active' : null}
           >
             <MenuTitle>
