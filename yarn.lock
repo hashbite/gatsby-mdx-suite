@@ -1150,19 +1150,6 @@
     prop-types "^15.7.2"
     react "^16.12.0"
 
-"@gatsby-mdx-suite/mdx-media@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@gatsby-mdx-suite/mdx-media/-/mdx-media-0.0.19.tgz#9af475cea8db949713d898003a2edb0b8bd6510f"
-  integrity sha512-oiI6FbuRw8OCR6yAj2/5oQrfR0KxRHgnhBXsJB7dkQkie6gE6R4rH/eqKE8qfPj9mPf2aqOLgCuFFMxBcVhLLg==
-  dependencies:
-    "@emotion/styled" "^10.0.23"
-    "@gatsby-mdx-suite/contexts" "^0.0.4"
-    "@gatsby-mdx-suite/mdx-basic" "^0.0.13"
-    "@gatsby-mdx-suite/mdx-layout" "^0.1.10"
-    prop-types "^15.7.2"
-    react "^16.12.0"
-    react-images "^1.0.0"
-
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
