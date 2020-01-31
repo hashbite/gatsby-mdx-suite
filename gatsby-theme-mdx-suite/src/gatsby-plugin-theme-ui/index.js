@@ -57,6 +57,7 @@ const muted = '#f6f6f6f'
 // Example for project specific colors
 const transparent = 'transparent'
 const white = '#fff'
+const lightGrey = '#ccc'
 const black = '#000'
 const ash = '#333'
 const tomato = '#F00'
@@ -83,6 +84,7 @@ export default {
     muted,
     white,
     black,
+    lightGrey,
     tomato,
     orange,
     lemon,
