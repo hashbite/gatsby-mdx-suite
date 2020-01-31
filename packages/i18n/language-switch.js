@@ -13,6 +13,7 @@ const List = styled.ul({
   padding: 0,
   listStyleType: 'none',
   textTransform: 'uppercase',
+  whiteSpace: 'nowrap'
 })
 
 const ListItem = styled.li({
