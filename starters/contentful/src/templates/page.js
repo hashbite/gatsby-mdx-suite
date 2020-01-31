@@ -46,7 +46,7 @@ function PageTemplate({ data, pageContext }) {
     >
       <LocationContext.Provider value={{ activePageId: pageId }}>
         <MdxDataContext.Provider
-          value={{ images: imagesContent, images: imagesBackground }}
+          value={{ images: imagesContent, background: imagesBackground }}
         >
           <Layout>
             <Seo
