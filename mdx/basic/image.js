@@ -52,7 +52,13 @@ export default function Image({
 
     if (!imageData) {
       console.error(
-        new Error(`Unable to locate image data for ${id} in ${contextKey}`)
+        new Error(
+          `Unable to locate image data for the following image:\n\n${JSON.stringify(
+            arguments[0],
+            null,
+            2
+          )}`
+        )
       )
       return null
     }
