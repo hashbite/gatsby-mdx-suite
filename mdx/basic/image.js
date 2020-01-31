@@ -1,8 +1,25 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
-import Img from 'gatsby-image'
+import GatsbyImage from 'gatsby-image'
+import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
+
+const parseCssValue = (v) => (isNaN(v) ? v : `${v}px`)
+
+const ImageWrapper = styled.div(
+  ({ width, height }) => css`
+    ${width &&
+      css`
+        width: ${parseCssValue(width)};
+      `}
+    ${height &&
+      css`
+        width: ${parseCssValue(width)};
+      `}
+  `
+)
 
 export default function Image({
   id,
@@ -24,14 +41,14 @@ export default function Image({
 
     if (!mdxData[contextKey]) {
       console.error(
-        new Error(`Unable to locate images in mdx data context in ${contextKey}`)
+        new Error(
+          `Unable to locate images in mdx data context in ${contextKey}`
+        )
       )
       return null
     }
 
-    imageData = mdxData[contextKey].find(
-      (asset) => asset.imageId === id
-    )
+    imageData = mdxData[contextKey].find((asset) => asset.imageId === id)
 
     if (!imageData) {
       console.error(
@@ -69,14 +86,18 @@ export default function Image({
 
   // Render actual image
   if (src) {
-    return <img {...imgProps} {...dimensionProps} src={src} />
+    return (
+      <ImageWrapper {...dimensionProps}>
+        <img {...imgProps} {...dimensionProps} src={src} />
+      </ImageWrapper>
+    )
   }
 
   if (file.contentType === 'image/svg+xml') {
     if (svg) {
       // Inlined SVGs
       return (
-        <div
+        <ImageWrapper
           {...dimensionProps}
           dangerouslySetInnerHTML={{ __html: svg.content }}
         />
@@ -84,15 +105,23 @@ export default function Image({
     }
 
     // SVGs that can/should not be inlined
-    return <img {...imgProps} {...dimensionProps} src={file.url} />
+    return (
+      <ImageWrapper {...dimensionProps}>
+        <img {...imgProps} {...dimensionProps} src={file.url} />
+      </ImageWrapper>
+    )
   }
 
   // Non SVG images
-  return <Img {...imgProps} {...dimensionProps} fluid={fluid} />
+  return (
+    <ImageWrapper {...dimensionProps}>
+      <GatsbyImage {...imgProps} {...dimensionProps} fluid={fluid} />
+    </ImageWrapper>
+  )
 }
 
 Image.defaultProps = {
-  contextKey: 'images'
+  contextKey: 'images',
 }
 
 Image.propTypes = {
@@ -109,7 +138,7 @@ Image.propTypes = {
    *
    * Can be generated via:
    * https://www.gatsbyjs.org/packages/gatsby-transformer-inline-svg/
-  */
+   */
   svg: propTypes.object,
   /**
    * Data to render the image via Gatsby Image as fluid/responsive image.
