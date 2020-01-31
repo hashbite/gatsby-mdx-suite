@@ -16,15 +16,19 @@ export default function Image({
   previewDataURI,
   file,
 }) {
-  // Fetch data from context when an id was passen
-  const mdxData = useContext(MdxDataContext)
-  if (!mdxData[contextKey]) {
-    return null
-  }
-
+  // Fetch data from context when an id was passed
   let imageData = {}
 
   if (id) {
+    const mdxData = useContext(MdxDataContext)
+
+    if (!mdxData[contextKey]) {
+      console.error(
+        new Error(`Unable to locate images in mdx data context in ${contextKey}`)
+      )
+      return null
+    }
+
     imageData = mdxData[contextKey].find(
       (asset) => asset.imageId === id
     )
@@ -85,6 +89,10 @@ export default function Image({
 
   // Non SVG images
   return <Img {...imgProps} {...dimensionProps} fluid={fluid} />
+}
+
+Image.defaultProps = {
+  contextKey: 'images'
 }
 
 Image.propTypes = {

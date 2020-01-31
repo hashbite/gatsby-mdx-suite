@@ -7,7 +7,7 @@ import { Playground, Props } from 'docz'
 
 import Viewport from '@gatsby-mdx-suite/mdx-layout/viewport'
 import Content from '@gatsby-mdx-suite/mdx-layout/content'
-import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
+import Image from '@gatsby-mdx-suite/mdx-basic/image'
 
 # Viewport
 

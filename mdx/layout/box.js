@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import MdxDataState from '@gatsby-mdx-suite/contexts/mdx-data'
 import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
-import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
+import Image from '@gatsby-mdx-suite/mdx-basic/image'
 
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
@@ -71,12 +71,12 @@ const Box = ({
   backgroundImageId,
   ...restProps
 }) => {
-  const { contentfulAssets } = useContext(MdxDataState)
+  const { backgroundImages } = useContext(MdxDataState)
   const { active: activeLocale } = useContext(I18nContext)
 
   let imageContainer = null
-  if (contentfulAssets && backgroundImageId) {
-    const asset = contentfulAssets.find(
+  if (backgroundImages && backgroundImageId) {
+    const asset = backgroundImages.find(
       ({ imageId, locale }) =>
         imageId === backgroundImageId && locale === activeLocale
     )

@@ -1139,6 +1139,30 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
+"@gatsby-mdx-suite/mdx-contentful@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@gatsby-mdx-suite/mdx-contentful/-/mdx-contentful-0.1.7.tgz#75ebc86dbf020d17de96cae2e1fe404dcd4a27c1"
+  integrity sha512-tY/vCxNtMguat7NsMRj7LUD2g9MWDDxMwYIv7gs5/2bsmy2xTIJO5RJR/AtH5uernJ1N3b4PzCSWFhdlZI9zIQ==
+  dependencies:
+    "@emotion/styled" "^10.0.23"
+    "@gatsby-mdx-suite/contexts" "^0.0.4"
+    "@gatsby-mdx-suite/mdx-basic" "^0.0.13"
+    prop-types "^15.7.2"
+    react "^16.12.0"
+
+"@gatsby-mdx-suite/mdx-media@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@gatsby-mdx-suite/mdx-media/-/mdx-media-0.0.19.tgz#9af475cea8db949713d898003a2edb0b8bd6510f"
+  integrity sha512-oiI6FbuRw8OCR6yAj2/5oQrfR0KxRHgnhBXsJB7dkQkie6gE6R4rH/eqKE8qfPj9mPf2aqOLgCuFFMxBcVhLLg==
+  dependencies:
+    "@emotion/styled" "^10.0.23"
+    "@gatsby-mdx-suite/contexts" "^0.0.4"
+    "@gatsby-mdx-suite/mdx-basic" "^0.0.13"
+    "@gatsby-mdx-suite/mdx-layout" "^0.1.10"
+    prop-types "^15.7.2"
+    react "^16.12.0"
+    react-images "^1.0.0"
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -9891,13 +9915,6 @@ hyphenate-style-name@^1.0.2:
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.3.tgz#097bb7fa0b8f1a9cf0bd5c734cf95899981a9b48"
   integrity sha512-EcuixamT82oplpoJ2XU4pDtKGWQ7b00CD9f1ug9IaQ3p1bkHMiKCZ9ut9QDI6qsa6cpUuB+A/I+zLtdNK4n2DQ==
 
-i18next@^19.0.1:
-  version "19.1.0"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-19.1.0.tgz#fe1a1da3d208872946307c7d2d115da45d46159f"
-  integrity sha512-ISbmukX4L6Dz0QoH9+EW1AnBw7j+NRLoMu9uLPMaNSSTP9Eie9/oUL0dOyWX15baB3gYOpkHJpGZRHOqcnl0ew==
-  dependencies:
-    "@babel/runtime" "^7.3.1"
-
 i18next@^19.0.3:
   version "19.0.3"
   resolved "https://registry.yarnpkg.com/i18next/-/i18next-19.0.3.tgz#31fd3165762d9802e08a2a86932db4eff5c862e9"
@@ -15026,7 +15043,7 @@ react-hot-loader@^4.12.18:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
-react-i18next@^11.2.5, react-i18next@^11.3.1:
+react-i18next@^11.3.1:
   version "11.3.1"
   resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.3.1.tgz#9269282c3f566015f0bdf8fdbf46782bbe50f5a7"
   integrity sha512-S/CWHcnew1lXo8HeniGhBU5kTmPhZ4w4rtA4m/gDN07soCtKKYSAcLNm7zhwjI2OSR4Skd0vOtzNp/FzEEjxIw==

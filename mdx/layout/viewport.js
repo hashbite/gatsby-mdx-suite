@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
 import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
-import Image from '@gatsby-mdx-suite/mdx-basic/gatsby-image'
+import Image from '@gatsby-mdx-suite/mdx-basic/image'
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
 // Shortcuts to ease up editor UX: start, end -> flex-start, flex-end; center -> center

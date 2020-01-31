@@ -23,7 +23,5 @@ Internal pages use the `id` attribute.
 </Playground>
 
 <Playground>
-<Link id="contentfulId">Internal link to some sub page of the website</Link>
+<Link id="pageId">Internal link to some sub page of the website</Link>
 </Playground>
-
-

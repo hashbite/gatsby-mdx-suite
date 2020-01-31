@@ -26,6 +26,7 @@ function PageTemplate({ data, pageContext }) {
     metaImage,
     content,
     imagesContent,
+    imagesBackground,
   } = data.contentfulPage
   const { locale } = pageContext
 
@@ -43,10 +44,10 @@ function PageTemplate({ data, pageContext }) {
         active: locale,
       }}
     >
-      <LocationContext.Provider
-        value={{ ...locationData, activePageId: pageId }}
-      >
-        <MdxDataContext.Provider value={{ contentfulAssets: imagesContent }}>
+      <LocationContext.Provider value={{ activePageId: pageId }}>
+        <MdxDataContext.Provider
+          value={{ images: imagesContent, images: imagesBackground }}
+        >
           <Layout>
             <Seo
               title={title}
@@ -94,6 +95,27 @@ export const pageQuery = graphql`
         }
       }
       imagesContent {
+        imageId: contentful_id
+        file {
+          contentType
+          details {
+            image {
+              height
+              width
+            }
+          }
+        }
+        svg {
+          content
+        }
+        sqip(mode: 8, numberOfPrimitives: 42, blur: 0) {
+          dataURI
+        }
+        fluid(maxWidth: 1400) {
+          ...GatsbyContentfulFluid_withWebp_noBase64
+        }
+      }
+      imagesBackground: imagesContent {
         imageId: contentful_id
         file {
           contentType
