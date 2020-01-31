@@ -7,6 +7,7 @@ const maxContentWidth = 960
 export default {
   ...defaultTheme,
   sizes: {
+    ...defaultTheme.sizes,
     maxContentWidth,
   },
   ...typography,
