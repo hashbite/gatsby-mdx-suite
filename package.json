@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "format": "prettier --write '{./**/*.{js,jsx},*.{js,json}}'",
-    "lint": "eslint packages && npx lerna exec 'npm run lint' --scope='gatsby-mdx-suite-demo-*'"
+    "lint": "eslint . && npx lerna exec 'npm run lint' --scope='gatsby-starter-mdx-suite-*'"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
