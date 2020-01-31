@@ -30,11 +30,15 @@ module.exports = {
           'en-US': {
             translation: {
               copyright: '© Copyright {{year}}. All rights reserved.',
+              newsReadMore: 'Read more...',
+              newsTimeToRead: '{{minutes}} min. to read',
             },
           },
           de: {
             translation: {
               copyright: '© Copyright {{year}}. Alle Rechte vorbehalten.',
+              newsReadMore: 'Weiterlesen...',
+              newsTimeToRead: '{{minutes}} Min. Lesezeit',
             },
           },
         },
