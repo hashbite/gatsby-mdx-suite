@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
 import Image from '@gatsby-mdx-suite/mdx-basic/image'
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
@@ -71,14 +70,7 @@ export default function Viewport({
   verticalAlign = 'center',
   ...restProps
 }) {
-  let backgroundImage = null
-  if (backgroundImageId) {
-    const mdxData = useContext(MdxDataContext)
-    const imageData = mdxData[backgroundImageId]
-    if (imageData) {
-      backgroundImage = <Image {...imageData} objectFit="cover" />
-    }
-  }
+  const backgroundImage = backgroundImageId && <Image id={backgroundImageId} contextKey="background" objectFit="cover" />
 
   return (
     <ViewportWrapper

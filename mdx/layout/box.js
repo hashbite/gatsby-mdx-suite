@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import MdxDataState from '@gatsby-mdx-suite/contexts/mdx-data'
-import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
 import Image from '@gatsby-mdx-suite/mdx-basic/image'
 
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
@@ -71,27 +69,14 @@ const Box = ({
   backgroundImageId,
   ...restProps
 }) => {
-  const { backgroundImages } = useContext(MdxDataState)
-  const { active: activeLocale } = useContext(I18nContext)
-
-  let imageContainer = null
-  if (backgroundImages && backgroundImageId) {
-    const asset = backgroundImages.find(
-      ({ imageId, locale }) =>
-        imageId === backgroundImageId && locale === activeLocale
-    )
-
-    if (asset) {
-      imageContainer = (
-        <BackgroundImageWrapper
-          scale={scale}
-          backgroundImageFit={backgroundImageFit}
-        >
-          <Image {...asset} />
-        </BackgroundImageWrapper>
-      )
-    }
-  }
+  const imageContainer = backgroundImageId && (
+    <BackgroundImageWrapper
+      scale={scale}
+      backgroundImageFit={backgroundImageFit}
+    >
+      <Image id="backgroundImageId" contextKey="background" />
+    </BackgroundImageWrapper>
+  )
   return (
     <BoxWrapper {...restProps} hideOnMobile={hideOnMobile}>
       {children}
