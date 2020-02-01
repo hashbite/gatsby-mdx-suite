@@ -7,7 +7,7 @@ import { css } from '@emotion/core'
 const TextWrapper = styled.div(
   ({
     color,
-    fontType,
+    fontFamily,
     fontSize,
     fontWeight,
     fontStyle,
@@ -15,8 +15,10 @@ const TextWrapper = styled.div(
     align,
     theme: { fonts, colors },
   }) => css`
-    font-family: ${fonts[fontType]};
-
+    ${fontFamily &&
+      css`
+        font-family: ${fonts[fontFamily] || fontFamily};
+      `}
     ${color &&
       css`
         color: ${colors[color] || color};
@@ -47,7 +49,7 @@ const TextWrapper = styled.div(
 
 const Text = ({
   children,
-  fontType,
+  fontFamily,
   color,
   fontSize,
   fontWeight,
@@ -60,7 +62,7 @@ const Text = ({
       color={color}
       fontSize={fontSize}
       fontWeight={fontWeight}
-      fontType={fontType}
+      fontFamily={fontFamily}
       fontStyle={fontStyle}
       lineHeight={lineHeight}
       align={align}
@@ -78,11 +80,11 @@ Text.propTypes = {
   fontStyle: propTypes.string,
   lineHeight: propTypes.string,
   align: propTypes.string,
-  fontType: propTypes.string,
+  fontFamily: propTypes.string,
 }
 
 Text.defaultProps = {
-  fontType: 'heading',
+  fontFamily: 'heading',
 }
 
 export default Text
