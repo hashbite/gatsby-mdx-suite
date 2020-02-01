@@ -54,7 +54,6 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-i18next": "^11.3.1",
-    "svg-icon": "^0.8.2",
     "theme-ui": "^0.3.1",
     "typeface-inter": "^3.11.2",
     "typography-theme-grand-view": "^0.16.19"
