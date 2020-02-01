@@ -9,7 +9,6 @@ const ResponsiveTextWrapper = styled.div(
     theme: {
       sizes: { maxContentWidth },
       fonts: { heading },
-      colors,
     },
     fontSizeMin,
     fontSizeMax,
@@ -20,11 +19,10 @@ const ResponsiveTextWrapper = styled.div(
     line-height: ${lineHeightMin};
     font-family: ${heading};
     font-weight: bold;
-    color: ${colors.ash};
 
     @media screen and (min-width: 300px) {
       font-size: calc(
-        ${fontSizeMin} + (${parseInt(fontSizeMax) - parseInt(fontSizeMin)}) *
+        ${fontSizeMin} + (${parseFloat(fontSizeMax) - parseFloat(fontSizeMin)}) *
           ((100vw - 300px) / ${maxContentWidth - 300})
       );
       line-height: calc(
@@ -36,6 +34,16 @@ const ResponsiveTextWrapper = styled.div(
     @media screen and (min-width: ${maxContentWidth}px) {
       font-size: ${fontSizeMax};
       line-height: ${lineHeightMax};
+    }
+
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+      font-size: inherit;
+      line-height: inherit;
     }
   `
 )
@@ -69,7 +77,7 @@ ResponsiveText.propTypes = {
 
 ResponsiveText.defaultProps = {
   fontSizeMin: '26px',
-  fontSizeMax: '82px',
+  fontSizeMax: '64px',
   lineHeightMin: '1.4em',
   lineHeightMax: '1.1em',
 }
