@@ -12,7 +12,7 @@ const extendPositionArgument = (value) =>
   value === 'center' ? value : `flex-${value}`
 
 const ViewportWrapper = styled.div(
-  ({ horizontalAlign, verticalAlign, ...restProps }) => {
+  ({ horizontalAlign, verticalAlign, hasBackgroundImage, ...restProps }) => {
     return css`
       position: relative;
       min-height: 100vh;
@@ -22,6 +22,11 @@ const ViewportWrapper = styled.div(
       justify-content: ${extendPositionArgument(verticalAlign)};
 
       ${applyColorSet({ ...restProps })}
+
+      ${hasBackgroundImage &&
+        css`
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+        `}
 
       /* Ensure all images are responsive within the viewport. */
       img,
@@ -70,13 +75,16 @@ export default function Viewport({
   verticalAlign = 'center',
   ...restProps
 }) {
-  const backgroundImage = backgroundImageId && <Image id={backgroundImageId} contextKey="background" objectFit="cover" />
+  const backgroundImage = backgroundImageId && (
+    <Image id={backgroundImageId} contextKey="background" objectFit="cover" />
+  )
 
   return (
     <ViewportWrapper
       hasImage={!!backgroundImageId}
       verticalAlign={verticalAlign}
       horizontalAlign={horizontalAlign}
+      hasBackgroundImage={!!backgroundImageId}
       {...restProps}
     >
       {children && (

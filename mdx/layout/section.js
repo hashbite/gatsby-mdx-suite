@@ -17,13 +17,18 @@ const SectionContentWrapper = styled.div(
 
     position: relative;
     z-index: 2;
-    padding-top: ${props.theme.spacing.s1}px;
-    padding-bottom: ${props.theme.spacing.s1}px;
+    padding-top: ${props.theme.spacing.s2}px;
+    padding-bottom: ${props.theme.spacing.s2}px;
 
     @media (min-width: ${props.theme.breakpoints[0]}) {
-      padding-top: ${props.theme.spacing.s3}px;
-      padding-bottom: ${props.theme.spacing.s3}px;
+      padding-top: ${props.theme.spacing.s4}px;
+      padding-bottom: ${props.theme.spacing.s4}px;
     }
+
+    ${props.hasBackgroundImage &&
+      css`
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+      `}
   `
 )
 
@@ -45,21 +50,17 @@ const BackgroundImageWrapper = styled.div`
   }
 `
 
-export default function Section({
-  children,
-  backgroundImageId,
-  ...restProps
-}) {
+export default function Section({ children, backgroundImageId, ...restProps }) {
   return (
-    <SectionWrapper
-      {...restProps}
-    >
+    <SectionWrapper {...restProps}>
       {backgroundImageId && (
         <BackgroundImageWrapper>
-          <Image contextKey="imagesBackground" id={backgroundImageId} />
+          <Image contextKey="background" id={backgroundImageId} />
         </BackgroundImageWrapper>
       )}
-      <SectionContentWrapper>{children}</SectionContentWrapper>
+      <SectionContentWrapper hasBackgroundImage={!!backgroundImageId}>
+        {children}
+      </SectionContentWrapper>
     </SectionWrapper>
   )
 }
