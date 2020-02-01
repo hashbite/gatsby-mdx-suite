@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from 'theme-ui'
 
-import IconLight from 'svg-icon/dist/svg/weather/day-sunny.svg'
-import IconDark from 'svg-icon/dist/svg/weather/night-clear.svg'
 import styled from '@emotion/styled'
 
 const SwitcherLink = styled.a`
@@ -37,7 +35,7 @@ export default (props) => {
         setMode(next)
       }}
     >
-      {mode === 'dark' ? <IconLight /> : <IconDark />}
+      {mode === 'dark' ? '🔆' : '🌙'}
     </SwitcherLink>
   )
 }
