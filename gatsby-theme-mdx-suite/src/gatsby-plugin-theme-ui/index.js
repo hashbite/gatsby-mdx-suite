@@ -85,6 +85,7 @@ export default {
     white,
     black,
     lightGrey,
+    ash,
     tomato,
     orange,
     lemon,
