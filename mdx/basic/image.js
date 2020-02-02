@@ -139,6 +139,8 @@ export default function Image({
   )
 }
 
+Image.displayName = 'Image'
+
 Image.defaultProps = {
   contextKey: 'images',
 }
