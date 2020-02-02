@@ -10,8 +10,9 @@ export const Timeline = styled.div(
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: ${theme.spacing.s4}px 0;
 
-    @media (min-width: ${theme.breakpoints[3]}) {
+    @media (min-width: ${theme.breakpoints[1]}) {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       grid-gap: ${theme.sizes.gridGutter}px;
@@ -26,7 +27,7 @@ const TimelineEntryWrapper = styled.div(
   box-sizing: border-box;
   position: relative;
   padding: 0 ${bubbleSize + theme.spacing.s1}px
-    ${theme.spacingUnit * 2}px 0;
+    ${theme.spacing.s2}px 0;
 
   ${TimelineEntryLabel} {
     position: absolute;
@@ -37,14 +38,12 @@ const TimelineEntryWrapper = styled.div(
     width: ${bubbleSize}px;
     height: ${bubbleSize}px;
     border-radius: 100%;
-    border: 2px solid ${theme.colors.blue};
-    font-size: 20px;
-    color: ${theme.colors.blue};
+    border: 2px solid ${theme.colors.ash};
+    font-size: 0.85em;
+    color: ${theme.colors.ash};
 
     /* Ensure visually centered text */
-    letter-spacing: -0.15em;
-    box-sizing: border-box;
-    padding-right: 3px;
+    letter-spacing: -0.05em;
     line-height: 52px;
     text-align: center;
   }
@@ -59,7 +58,7 @@ const TimelineEntryWrapper = styled.div(
     bottom: calc(50% + ${bubbleSize / 2 + 12}px);
     width: 2px;
     height: auto;
-    background: ${theme.colors.blue};
+    background: ${theme.colors.ash};
     opacity: 0.3;
   }
 
@@ -71,12 +70,12 @@ const TimelineEntryWrapper = styled.div(
   }
 
 
-  @media (min-width: ${theme.breakpoints[1]}) and (max-width: calc(${
-    theme.breakpoints[3]
+  @media (min-width: ${theme.breakpoints[0]}) and (max-width: calc(${
+    theme.breakpoints[1]
   } - 1px)) {
     width: 50%;
-    padding: 0 ${theme.spacingUnit * 5}px
-      ${theme.spacingUnit * 2}px;
+    padding: 0 ${theme.spacing.s4}px
+      ${theme.spacing.s2}px;
     text-align: right;
 
     ${TimelineEntryLabel} {
@@ -105,8 +104,10 @@ const TimelineEntryWrapper = styled.div(
     }
   }
 
-  @media (min-width: ${theme.breakpoints[3]}) {
-    padding: ${bubbleSize}px ${theme.spacing.s1}px ${theme.spacing.s1}px;
+  @media (min-width: ${theme.breakpoints[1]}) {
+    padding: ${bubbleSize + theme.spacing.s2}px ${theme.spacing.s1}px ${
+    theme.spacing.s1
+  }px;
     width: auto;
     margin: 0;
 
@@ -153,5 +154,5 @@ export function TimelineEntry({ label, children }) {
 
 TimelineEntry.propTypes = {
   label: propTypes.string,
-  children: propTypes.node.isRequired
+  children: propTypes.node.isRequired,
 }

@@ -103,8 +103,8 @@ export default {
             background: white,
             primary: ash,
             secondary: ash,
-          }
-        }
+          },
+        },
       },
     },
     sets: {
