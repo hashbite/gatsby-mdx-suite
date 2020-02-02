@@ -31,5 +31,5 @@ export default {
   ResponsiveText,
   Text,
   BlogPostListing,
-  Header
+  Header,
 }

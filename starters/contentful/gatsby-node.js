@@ -29,13 +29,7 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
     }
 
     result.data.allContentfulPage.edges.map((edge) => {
-      const {
-        id,
-        pageId,
-        locale,
-        slug,
-        title,
-      } = edge.node
+      const { id, pageId, locale, slug, title } = edge.node
 
       const path = createPath({ slug, locale, config })
 

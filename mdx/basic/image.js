@@ -42,7 +42,11 @@ export default function Image({
     if (!mdxData[contextKey]) {
       console.error(
         new Error(
-          `Unable to locate images in mdx data context in ${contextKey}`
+          `Unable to locate images in mdx data context in ${contextKey}:\n\n${JSON.stringify(
+            arguments[0],
+            null,
+            2
+          )}`
         )
       )
       return null
@@ -67,6 +71,15 @@ export default function Image({
     fluid = fluid || imageData.fluid
     previewDataURI = previewDataURI || imageData.previewDataURI
     file = file || imageData.file
+  }
+
+  if (!file) {
+    console.error(
+      new Error(
+        `No data located for image:\n\n${JSON.stringify(arguments[0], null, 2)}`
+      )
+    )
+    return null
   }
 
   // Enhance data

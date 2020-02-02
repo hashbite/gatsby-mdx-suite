@@ -122,7 +122,10 @@ export default function BlogPostListing() {
         {blogPost.image && <Image {...blogPost.image} />}
         <BlogPostTeaserHeadline>{blogPost.title}</BlogPostTeaserHeadline>
         <BlogPostTeaserMeta>
-          {Intl.DateTimeFormat(activeLocale).format(new Date(blogPost.publishingDate))} -{' '}
+          {Intl.DateTimeFormat(activeLocale).format(
+            new Date(blogPost.publishingDate)
+          )}{' '}
+          -{' '}
           {t('newsTimeToRead', {
             minutes: blogPost.content.childMdx.timeToRead,
           })}
