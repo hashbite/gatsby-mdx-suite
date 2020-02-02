@@ -13,6 +13,11 @@ import Gap from '@gatsby-mdx-suite/mdx-layout/gap'
 import ResponsiveText from '@gatsby-mdx-suite/mdx-copy/responsive-text'
 import Text from '@gatsby-mdx-suite/mdx-copy/text'
 
+import {
+  Timeline,
+  TimelineEntry,
+} from '@gatsby-mdx-suite/mdx-timeline/timeline'
+
 // Project specific components
 import BlogPostListing from '../components/mdx/blog-post-listing'
 import Header from '../components/mdx/header'
@@ -30,6 +35,8 @@ export default {
   Gap,
   ResponsiveText,
   Text,
+  Timeline,
+  TimelineEntry,
   BlogPostListing,
   Header,
 }

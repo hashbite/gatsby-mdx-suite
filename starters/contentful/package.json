@@ -33,6 +33,7 @@
     "@gatsby-mdx-suite/mdx-contentful": "^0.1.7",
     "@gatsby-mdx-suite/mdx-copy": "^0.0.1",
     "@gatsby-mdx-suite/mdx-layout": "^0.1.10",
+    "@gatsby-mdx-suite/mdx-timeline": "^0.0.1",
     "@gatsby-mdx-suite/menu": "^0.0.1",
     "@gatsby-mdx-suite/seo": "^0.0.4",
     "@mdx-js/react": "^1.5.5",

@@ -51,7 +51,10 @@ const Layout = ({ children }) => {
           h4,
           h5,
           h6,
-          p {
+          p,
+          ul,
+          ol,
+          li {
             &:last-child {
               margin-bottom: 0;
             }
