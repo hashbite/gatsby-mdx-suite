@@ -155,7 +155,10 @@ export default function MediaGallery({ children }) {
     const parserId = type.displayName
     const parser = mediaParsers[parserId]
     if (!parser) {
-      throw new Error(`Unable to render media gallery item of type ${parserId}`)
+      console.error(
+        new Error(`Unable to render media gallery item of type ${parserId}`)
+      )
+      return null
     }
     return parser({ element, props, mdxData })
   })
