@@ -40,9 +40,7 @@ export const applyColorSet = (props) => {
   `
 }
 
-export const centerToContentColumn = ({
-  theme: { sizes, breakpoints },
-}) => css`
+export const centerToContentColumn = ({ theme: { sizes, breakpoints } }) => css`
   box-sizing: content-box;
   margin: 0 auto;
   max-width: ${sizes.maxContentWidth}px;
