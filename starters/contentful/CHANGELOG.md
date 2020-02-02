@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.0.33...gatsby-starter-mdx-suite-contentful@0.1.0) (2020-02-02)
+
+
+### Bug Fixes
+
+* **contexts:** use plain context API for mdx data to fix SSR ([9388696](https://github.com/axe312ger/gatsby-suite-mdx/commit/93886969ac565384653f754b7488f95c2a26b3d6))
+* **starters/contentful:** change locale mappings to match new content ([7fafca0](https://github.com/axe312ger/gatsby-suite-mdx/commit/7fafca0f242667220a79ed25697ad954dc23a06f))
+* **starters/contentful:** fix deployment ([51245fc](https://github.com/axe312ger/gatsby-suite-mdx/commit/51245fce1d38a2b68535e473b2c42dbece01606c))
+* **starters/contentful:** readd functionallity to header ([9584dc0](https://github.com/axe312ger/gatsby-suite-mdx/commit/9584dc0d1de6f03b822b4309d444466208cbe90a))
+* **starters/contentful:** replace svg-icon for color mode switch with emojis for license reasons ([c26d764](https://github.com/axe312ger/gatsby-suite-mdx/commit/c26d7641a30cc7a9c13e594b9f3e4a7a407996be))
+
+
+### Features
+
+* **mdx/timeline:** fix styling and integrate into starter ([0aa217e](https://github.com/axe312ger/gatsby-suite-mdx/commit/0aa217ec77a2dca7c853981a20b0dc8935ddf606))
+* **starters/contentful:** first header style intereation ([28a7376](https://github.com/axe312ger/gatsby-suite-mdx/commit/28a7376f1e18b46fc6501da6afffb31ccbdc5362))
+* enhance 'Mdx' node type with 'media' field ([5607fa6](https://github.com/axe312ger/gatsby-suite-mdx/commit/5607fa6e2ca525eeb027af7aa3e0438982d55fa1))
+* **gatsby-starter-mdx-suite-contentful:** add blog post listing ([1996d12](https://github.com/axe312ger/gatsby-suite-mdx/commit/1996d12d61c74e5ee56f8b3aad53fa02bfba805f))
+* **mdx:** simplify background image implementation ([28de179](https://github.com/axe312ger/gatsby-suite-mdx/commit/28de179c687fcf530f6db13fbeee75142ed51f3a))
+* **mdx-layout:** add Columns component ([4d07ab1](https://github.com/axe312ger/gatsby-suite-mdx/commit/4d07ab11ac140afa9ab4f1c9cb91a46596ea9d92))
+* **menu:** introduce flexible menu components including proper contentful export ([3af361d](https://github.com/axe312ger/gatsby-suite-mdx/commit/3af361d019cd9c4c5a5d54971b986e9696f690d5))
+* **starters/contentful:** integrate last changes into layout ([f3221fd](https://github.com/axe312ger/gatsby-suite-mdx/commit/f3221fd3a82854a5b6b095bb2bc6d976f673da6c))
+
+
+
+
+
 ## [0.0.33](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.0.32...gatsby-starter-mdx-suite-contentful@0.0.33) (2019-12-12)
 
 **Note:** Version bump only for package gatsby-starter-mdx-suite-contentful

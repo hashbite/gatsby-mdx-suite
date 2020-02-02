@@ -1,0 +1,13 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.1.0 (2020-02-02)
+
+
+### Features
+
+* **Layouting:** add more layout elements and color set ([245eacc](https://github.com/axe312ger/gatsby-mdx-suite/commit/245eaccc617a5a2fd061ad399da68829672687c3))
+* **mdx/basic:** improve image not found error message ([ad77a87](https://github.com/axe312ger/gatsby-mdx-suite/commit/ad77a87dd5baccf02d0bd5fbc8998a4b7657909f))
+* **starters/contentful:** first header style intereation ([28a7376](https://github.com/axe312ger/gatsby-mdx-suite/commit/28a7376f1e18b46fc6501da6afffb31ccbdc5362))
