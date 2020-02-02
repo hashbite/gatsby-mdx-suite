@@ -20,7 +20,9 @@ const Header = ({ children, backgroundImageId }) => {
       <LanguageSwitch />
       <ColorModeSwitch />
       <HeaderContent>{children}</HeaderContent>
-      {backgroundImageId && <Image id={backgroundImageId} />}
+      {backgroundImageId && (
+        <Image id={backgroundImageId} contextKey="background" />
+      )}
     </header>
   )
 }

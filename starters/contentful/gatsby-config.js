@@ -42,6 +42,21 @@ module.exports = {
             },
           },
         },
+        mediaCollections: {
+          background: {
+            selector:
+              'section[backgroundimageid],viewport[backgroundimageid],header[backgroundimageid]',
+            attribute: 'backgroundimageid',
+          },
+          images: {
+            selector: 'image[id]',
+            attribute: 'id',
+          },
+          floating: {
+            selector: 'floatingimage[imageid]',
+            attribute: 'imageid',
+          },
+        },
       },
     },
     {

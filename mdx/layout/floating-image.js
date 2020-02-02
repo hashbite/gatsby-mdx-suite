@@ -105,7 +105,7 @@ export default function FloatingImage({ children, imageId, reverseOrder }) {
         <Content>{children}</Content>
       </ContentWrapper>
       <ImageWrapper reverseOrder={reverseOrder}>
-        <Image id={imageId} />
+        <Image id={imageId} contextKey="floating" />
       </ImageWrapper>
     </Wrapper>
   )
