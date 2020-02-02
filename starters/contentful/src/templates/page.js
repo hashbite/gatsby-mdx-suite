@@ -25,8 +25,6 @@ function PageTemplate({ data, pageContext }) {
     metaDescription,
     metaImage,
     content,
-    imagesContent,
-    imagesBackground,
   } = data.contentfulPage
   const { locale } = pageContext
 
@@ -46,7 +44,11 @@ function PageTemplate({ data, pageContext }) {
     >
       <LocationContext.Provider value={{ activePageId: pageId }}>
         <MdxDataContext.Provider
-          value={{ images: imagesContent, background: imagesBackground }}
+          value={{
+            images: content.childMdx.images,
+            background: content.childMdx.background,
+            floating: content.childMdx.floating,
+          }}
         >
           <Layout>
             <Seo
@@ -92,48 +94,69 @@ export const pageQuery = graphql`
       content {
         childMdx {
           body
-        }
-      }
-      imagesContent {
-        imageId: contentful_id
-        file {
-          contentType
-          details {
-            image {
-              height
-              width
+          images: media(collectionType: "images") {
+            imageId: contentful_id
+            file {
+              contentType
+              details {
+                image {
+                  height
+                  width
+                }
+              }
+            }
+            svg {
+              content
+            }
+            sqip(mode: 8, numberOfPrimitives: 12, blur: 0) {
+              dataURI
+            }
+            fluid(maxWidth: 1400) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
-        }
-        svg {
-          content
-        }
-        sqip(mode: 8, numberOfPrimitives: 42, blur: 0) {
-          dataURI
-        }
-        fluid(maxWidth: 1400) {
-          ...GatsbyContentfulFluid_withWebp_noBase64
-        }
-      }
-      imagesBackground: imagesContent {
-        imageId: contentful_id
-        file {
-          contentType
-          details {
-            image {
-              height
-              width
+          background: media(collectionType: "background") {
+            imageId: contentful_id
+            file {
+              contentType
+              details {
+                image {
+                  height
+                  width
+                }
+              }
+            }
+            svg {
+              content
+            }
+            sqip(mode: 8, numberOfPrimitives: 42, blur: 0) {
+              dataURI
+            }
+            fluid(maxWidth: 1920) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
-        }
-        svg {
-          content
-        }
-        sqip(mode: 8, numberOfPrimitives: 42, blur: 0) {
-          dataURI
-        }
-        fluid(maxWidth: 1920) {
-          ...GatsbyContentfulFluid_withWebp_noBase64
+          floating: media(collectionType: "floating") {
+            imageId: contentful_id
+            file {
+              contentType
+              details {
+                image {
+                  height
+                  width
+                }
+              }
+            }
+            svg {
+              content
+            }
+            sqip(mode: 8, numberOfPrimitives: 22, blur: 0) {
+              dataURI
+            }
+            fluid(maxWidth: 1024) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+          }
         }
       }
     }

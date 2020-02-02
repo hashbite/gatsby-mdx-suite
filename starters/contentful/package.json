@@ -37,6 +37,7 @@
     "@gatsby-mdx-suite/seo": "^0.0.4",
     "@mdx-js/react": "^1.5.5",
     "@theme-ui/typography": "^0.3.0",
+    "cheerio": "^0.22.0",
     "gatsby": "^2.18.11",
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-mdx": "^1.0.67",

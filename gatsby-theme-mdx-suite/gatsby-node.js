@@ -1,3 +1,5 @@
+const cheerio = require('cheerio')
+
 /**
  * Allow all plugins and the actual page access the theme config
  */
@@ -68,4 +70,38 @@ exports.sourceNodes = ({ actions, createNodeId }, { forceDocs = false }) => {
   }
 
   createNode(node)
+}
+
+exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
+  const resolvers = {
+    Mdx: {
+      media: {
+        type: ['ContentfulAsset'],
+        args: {
+          collectionType: 'String!',
+        },
+        async resolve(source, args, context, info) {
+          const { selector, attribute } = mediaCollections[args.collectionType]
+
+          const $ = cheerio.load(source.rawBody)
+          const cheerioResult = $(selector)
+          const mediaIds = cheerioResult
+            .map((i, el) => $(el).attr(attribute))
+            .get()
+
+          const result = await context.nodeModel.runQuery({
+            query: {
+              filter: {
+                contentful_id: { in: mediaIds },
+              },
+            },
+            type: 'ContentfulAsset',
+          })
+
+          return result
+        },
+      },
+    },
+  }
+  createResolvers(resolvers)
 }
