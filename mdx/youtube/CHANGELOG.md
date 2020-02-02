@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.16](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.0.15...@gatsby-mdx-suite/mdx-youtube@0.0.16) (2020-02-02)
+
+
+### Bug Fixes
+
+* **contexts:** use plain context API for mdx data to fix SSR ([9388696](https://github.com/axe312ger/gatsby-mdx-suite/commit/93886969ac565384653f754b7488f95c2a26b3d6))
+
+
+
+
+
 ## [0.0.15](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.0.14...@gatsby-mdx-suite/mdx-youtube@0.0.15) (2019-12-12)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube

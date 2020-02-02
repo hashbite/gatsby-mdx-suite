@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.1.10...@gatsby-mdx-suite/mdx-layout@0.2.0) (2020-02-02)
+
+
+### Bug Fixes
+
+* **contexts:** use plain context API for mdx data to fix SSR ([9388696](https://github.com/axe312ger/gatsby-mdx-suite/commit/93886969ac565384653f754b7488f95c2a26b3d6))
+
+
+### Features
+
+* enhance 'Mdx' node type with 'media' field ([5607fa6](https://github.com/axe312ger/gatsby-mdx-suite/commit/5607fa6e2ca525eeb027af7aa3e0438982d55fa1))
+* **Layouting:** add more layout elements and color set ([245eacc](https://github.com/axe312ger/gatsby-mdx-suite/commit/245eaccc617a5a2fd061ad399da68829672687c3))
+* **mdx:** add plenty of new components ([56b0359](https://github.com/axe312ger/gatsby-mdx-suite/commit/56b0359f33c6fde7170ca17787ccddf72117e653))
+* **mdx:** simplify background image implementation ([28de179](https://github.com/axe312ger/gatsby-mdx-suite/commit/28de179c687fcf530f6db13fbeee75142ed51f3a))
+* **mdx-layout:** add Columns component ([4d07ab1](https://github.com/axe312ger/gatsby-mdx-suite/commit/4d07ab11ac140afa9ab4f1c9cb91a46596ea9d92))
+* **mdx-layout:** rework grid component ([842f0c6](https://github.com/axe312ger/gatsby-mdx-suite/commit/842f0c6346d24f2791404453aa562f0ce2510c1a))
+* **mdx/layout:** improve FloatingImage, Section and Viewport components ([c82ff24](https://github.com/axe312ger/gatsby-mdx-suite/commit/c82ff2424f85617727811ac07fd6a8c2bef0ad1a))
+
+
+
+
+
 ## [0.1.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.1.9...@gatsby-mdx-suite/mdx-layout@0.1.10) (2019-12-12)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout

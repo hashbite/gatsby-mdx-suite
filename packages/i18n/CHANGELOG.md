@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.11...@gatsby-mdx-suite/i18n@0.1.0) (2020-02-02)
+
+
+### Bug Fixes
+
+* **i18n:** avoid hidden language selector when language fallback is active ([5b78d7c](https://github.com/axe312ger/gatsby-mdx-suite/commit/5b78d7cbe72f009ddaa171c887da9b3019c066b8))
+* **i18n:** ensure generic gatsby pages dont break build process ([d9d1e98](https://github.com/axe312ger/gatsby-mdx-suite/commit/d9d1e9863f0203e99ebdffd9b2a81e4d9f96443a))
+* **i18n:** ensure language switch title does not wrap ([e2657fd](https://github.com/axe312ger/gatsby-mdx-suite/commit/e2657fda7c7e7065e9a95c7d191561eaeddbf7cd))
+* **i18n:** ensure the tap target of the switcher link is big enough ([cc7b534](https://github.com/axe312ger/gatsby-mdx-suite/commit/cc7b5348c5ba1811ce429fbadbe2962d3494a1d0))
+* **starters/contentful:** fix deployment ([51245fc](https://github.com/axe312ger/gatsby-mdx-suite/commit/51245fce1d38a2b68535e473b2c42dbece01606c))
+
+
+### Features
+
+* **menu:** introduce flexible menu components including proper contentful export ([3af361d](https://github.com/axe312ger/gatsby-mdx-suite/commit/3af361d019cd9c4c5a5d54971b986e9696f690d5))
+
+
+
+
+
 ## [0.0.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.10...@gatsby-mdx-suite/i18n@0.0.11) (2019-12-12)
 
 
