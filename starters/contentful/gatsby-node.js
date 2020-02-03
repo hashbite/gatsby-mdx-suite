@@ -38,6 +38,7 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
         component: resolve(`./src/templates/page.js`),
         context: {
           id,
+          /* Add this when creating pages to allow proper generation of page urls */
           pageId,
           locale,
           title,
@@ -45,6 +46,9 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
       })
     })
   }
+
+  /** Add a redirect from to your default language if your won't serve / */
+  // createRedirect({ fromPath: '/', toPath: '/de', isPermanent: true })
 
   await createPages()
 }
