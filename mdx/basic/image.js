@@ -35,44 +35,17 @@ export default function Image({
   previewDataURI,
   file,
 }) {
-  // Fetch data from context when an id was passed
-  let imageData = {}
+  const mdxData = useContext(MdxDataContext)
+  if (id && mdxData[contextKey]) {
+    // Fetch data from context when an id was passed
+    const imageData = mdxData[contextKey].find((asset) => asset.imageId === id)
 
-  if (id) {
-    const mdxData = useContext(MdxDataContext)
-
-    if (!mdxData[contextKey]) {
-      console.error(
-        new Error(
-          `Unable to locate images in mdx data context in ${contextKey}:\n\n${JSON.stringify(
-            arguments[0],
-            null,
-            2
-          )}`
-        )
-      )
-      return null
+    if (imageData) {
+      svg = svg || imageData.svg
+      fluid = fluid || imageData.fluid
+      previewDataURI = previewDataURI || imageData.previewDataURI
+      file = file || imageData.file
     }
-
-    imageData = mdxData[contextKey].find((asset) => asset.imageId === id)
-
-    if (!imageData) {
-      console.error(
-        new Error(
-          `Unable to locate image data for the following image:\n\n${JSON.stringify(
-            arguments[0],
-            null,
-            2
-          )}`
-        )
-      )
-      return null
-    }
-
-    svg = svg || imageData.svg
-    fluid = fluid || imageData.fluid
-    previewDataURI = previewDataURI || imageData.previewDataURI
-    file = file || imageData.file
   }
 
   if (!file) {
@@ -145,6 +118,7 @@ Image.displayName = 'Image'
 
 Image.defaultProps = {
   contextKey: 'images',
+  width: '100%',
 }
 
 Image.propTypes = {
