@@ -19,7 +19,7 @@ module.exports = {
         langs: ['en-US', 'de'],
         defaultLocale: 'en-US',
         localeMap: {
-          'en-US': 'en',
+          'en-US': '',
           de: 'de',
         },
         pageTypeMap: {
