@@ -10,6 +10,8 @@ const parseCssValue = (v) => (isNaN(v) ? v : `${v}px`)
 
 const ImageWrapper = styled.div(
   ({ width, height }) => css`
+    display: inline-block;
+
     ${width &&
       css`
         width: ${parseCssValue(width)};
