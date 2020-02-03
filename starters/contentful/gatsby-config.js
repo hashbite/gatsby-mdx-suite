@@ -1,9 +1,7 @@
 const isProduction = process.env.NODE_ENV === 'production'
 const isStaging = !!process.env.STAGING
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require('dotenv').config({ path: `.env` })
 
 module.exports = {
   pathPrefix: ``,
