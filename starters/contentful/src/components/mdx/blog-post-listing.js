@@ -79,7 +79,6 @@ export default function BlogPostListing() {
           title
           publishingDate
           image {
-            imageId: contentful_id
             description
             file {
               contentType
@@ -93,11 +92,11 @@ export default function BlogPostListing() {
             svg {
               content
             }
-            sqip(numberOfPrimitives: 16, blur: 12) {
+            sqip(width: 960, height: 412, numberOfPrimitives: 16, blur: 12) {
               dataURI
             }
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
+            fluid(maxWidth: 960, maxHeight: 360) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
           content {
