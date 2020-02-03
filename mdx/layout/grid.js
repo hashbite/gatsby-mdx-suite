@@ -26,15 +26,15 @@ const GridWrapper = styled.div(
     img,
     svg,
     video {
-      max-width: 100%;
+      width: 100%;
       height: auto;
     }
 
     /* Center items */
     ${center &&
       css`
-    align-items: center;
-    justify-content: center;
+        align-items: center;
+        justify-content: center;
       `}
   `
 )
@@ -46,6 +46,7 @@ const GridItem = styled.div(
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
 
         > * {
           width: 100%;
