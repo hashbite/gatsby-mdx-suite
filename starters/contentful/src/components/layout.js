@@ -9,17 +9,28 @@ import { useTranslation } from 'react-i18next'
 import MenuRecursive from '@gatsby-mdx-suite/menu/menu-recursive'
 import { centerToContentColumn } from '@gatsby-mdx-suite/helpers'
 
-const Main = styled.main``
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
+const Content = styled.div`
+  width: 100%;
+`
 
 const Footer = styled.footer`
   ${centerToContentColumn}
+  width: 100%;
+
   padding-top: ${({ theme }) => theme.spacing.s4}px;
 `
 const FooterMenu = styled.nav``
 const FooterCopy = styled.div`
-  font-size: 0.9em;
+  font-size: 0.85em;
   text-align: center;
-  padding: ${({ theme }) => theme.spacing.s1}px;
+  padding: ${({ theme }) => theme.spacing.s2}px
+    ${({ theme }) => theme.spacing.s1}px ${({ theme }) => theme.spacing.s1}px;
 `
 
 const Layout = ({ children }) => {
@@ -62,7 +73,7 @@ const Layout = ({ children }) => {
         `}
       />
       <Main>
-        {children}
+        <Content>{children}</Content>
         <Footer>
           <FooterMenu>
             <MenuRecursive rootMenuItemId="74X6wG8uRwdlBSDFxmhTt5" />
