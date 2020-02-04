@@ -7,6 +7,9 @@ import { Styled } from 'theme-ui'
 import { useTranslation } from 'react-i18next'
 
 import MenuRecursive from '@gatsby-mdx-suite/menu/menu-recursive'
+import MenuUl from '@gatsby-mdx-suite/menu/menu-ul'
+import MenuLi from '@gatsby-mdx-suite/menu/menu-li'
+import MenuTitle from '@gatsby-mdx-suite/menu/menu-title'
 import { centerToContentColumn } from '@gatsby-mdx-suite/helpers'
 
 const Main = styled.main`
@@ -22,10 +25,25 @@ const Content = styled.div`
 const Footer = styled.footer`
   ${centerToContentColumn}
   width: 100%;
-
-  padding-top: ${({ theme }) => theme.spacing.s4}px;
 `
-const FooterMenu = styled.nav``
+const FooterMenu = styled.nav`
+  padding-top: ${({ theme }) => theme.spacing.s4}px;
+  justify-content: space-between;
+
+  & > ${MenuUl} {
+    & > li > ${MenuTitle} {
+      font-weight: bold;
+      opacity: 0.6;
+      padding-bottom: ${({ theme }) => theme.spacing.s1}px;
+    }
+    & ${MenuUl} {
+      flex-direction: column;
+      ${MenuLi} {
+        padding: 0;
+      }
+    }
+  }
+`
 const FooterCopy = styled.div`
   font-size: 0.85em;
   text-align: center;
