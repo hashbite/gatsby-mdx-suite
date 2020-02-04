@@ -16,19 +16,12 @@ export default function Link({
   className = null,
   hash,
   children,
-  type,
   ...linkProps
 }) {
-  if (type) {
-    className = [className, `nohover`].filter(Boolean).join(' ')
-  }
-  if (href) {
-    return (
-      <a type={type} className={className} href={href} target={target}>
-        {children || title}
-      </a>
-    )
-  }
+  const {
+    themeConfig: { defaultLocale },
+    pageContext: { locale },
+  } = useContext(MdxSuiteContext)
 
   const result = useStaticQuery(graphql`
     {
@@ -45,12 +38,17 @@ export default function Link({
     }
   `)
 
-  const pages = result.allSitePage.nodes
+  // Render a normal anchor when a href is given
+  if (href) {
+    return (
+      <a className={className} href={href} target={target}>
+        {children || title}
+      </a>
+    )
+  }
 
-  const {
-    themeConfig: { defaultLocale },
-    pageContext: { locale },
-  } = useContext(MdxSuiteContext)
+  // Locate fitting page when (page) id is given
+  const pages = result.allSitePage.nodes
 
   if (!pages) {
     return null
@@ -79,10 +77,11 @@ export default function Link({
     return null
   }
 
+  // Extend path by hash if given
   const to = [path, hash ? `#${hash}` : null].filter(Boolean).join('')
+
   return (
     <GatsbyLink
-      type={type}
       className={className}
       activeClassName="active"
       to={to}
@@ -102,5 +101,4 @@ Link.propTypes = {
   title: propTypes.string,
   target: propTypes.string,
   children: propTypes.node,
-  type: propTypes.string,
 }
