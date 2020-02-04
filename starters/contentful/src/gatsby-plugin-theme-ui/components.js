@@ -4,6 +4,7 @@ import Link from '@gatsby-mdx-suite/mdx-basic/link'
 
 // Layout
 import Gap from '@gatsby-mdx-suite/mdx-layout/gap'
+import Center from '@gatsby-mdx-suite/mdx-layout/center'
 import Section from '@gatsby-mdx-suite/mdx-layout/section'
 import Viewport from '@gatsby-mdx-suite/mdx-layout/viewport'
 import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
@@ -37,6 +38,7 @@ export default {
   Boxes,
   Box,
   Gap,
+  Center,
   ResponsiveText,
   Text,
   Timeline,
