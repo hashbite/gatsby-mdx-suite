@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
@@ -6,7 +6,9 @@ import { initReactI18next } from 'react-i18next'
 import MdxSuiteContext from './mdx-suite'
 
 const MdxSuiteContextProvider = ({ children, themeConfig }) => {
+  const MdxSuiteData = useContext(MdxSuiteContext)
   const { translations, langs, defaultLocale } = themeConfig
+
   i18n
     // pass the i18n instance to react-i18next.
     .use(initReactI18next)
@@ -26,6 +28,7 @@ const MdxSuiteContextProvider = ({ children, themeConfig }) => {
   return (
     <MdxSuiteContext.Provider
       value={{
+        ...MdxSuiteData,
         themeConfig,
       }}
     >
