@@ -4,6 +4,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
+import tw from 'tailwind.macro'
 import { useTranslation } from 'react-i18next'
 
 import MenuRecursive from '@gatsby-mdx-suite/menu/menu-recursive'
@@ -16,6 +17,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  ${({ theme }) => console.log({ theme })}
 `
 
 const Content = styled.div`
@@ -45,10 +47,7 @@ const FooterMenu = styled.nav`
   }
 `
 const FooterCopy = styled.div`
-  font-size: 0.85em;
-  text-align: center;
-  padding: ${({ theme }) => theme.spacing.s2}px
-    ${({ theme }) => theme.spacing.s1}px ${({ theme }) => theme.spacing.s1}px;
+  ${tw`text-sm text-center px-1 pt-2`}
 `
 
 const Layout = ({ children }) => {

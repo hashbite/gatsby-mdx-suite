@@ -115,6 +115,24 @@ module.exports = {
     `gatsby-transformer-inline-svg`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    // move it!!
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require('postcss-import'),
+          require('tailwindcss')(process.cwd() + '/tailwind.config.js'),
+          require('postcss-preset-env')({
+            autoprefixer: { grid: true },
+            features: {
+              'nesting-rules': true,
+            },
+            // browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'],
+          }),
+        ],
+      },
+    },
+    // move it!!
     ...(isProduction && !isStaging ? [`gatsby-plugin-offline`] : []),
   ].filter(Boolean),
 }
