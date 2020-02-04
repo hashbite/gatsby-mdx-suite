@@ -20,6 +20,7 @@ const MdxSuiteContextProvider = ({
       debug: process.env.NODE_ENV === 'development',
       lng: defaultLocale,
       fallbackLng: defaultLocale,
+      load: 'currentOnly',
       keySeparator: false, // we do not use keys in form messages.welcome
       interpolation: {
         escapeValue: false, // react already safes from xss
