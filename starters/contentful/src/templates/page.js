@@ -77,16 +77,7 @@ export const pageQuery = graphql`
         childMdx {
           body
           images: media(collectionType: "images") {
-            imageId: contentful_id
-            file {
-              contentType
-              details {
-                image {
-                  height
-                  width
-                }
-              }
-            }
+            ...MdxSuiteContentfulAsset
             svg {
               content
             }
@@ -98,16 +89,7 @@ export const pageQuery = graphql`
             }
           }
           background: media(collectionType: "background") {
-            imageId: contentful_id
-            file {
-              contentType
-              details {
-                image {
-                  height
-                  width
-                }
-              }
-            }
+            ...MdxSuiteContentfulAsset
             svg {
               content
             }
@@ -119,16 +101,7 @@ export const pageQuery = graphql`
             }
           }
           floating: media(collectionType: "floating") {
-            imageId: contentful_id
-            file {
-              contentType
-              details {
-                image {
-                  height
-                  width
-                }
-              }
-            }
+            ...MdxSuiteContentfulAsset
             svg {
               content
             }
