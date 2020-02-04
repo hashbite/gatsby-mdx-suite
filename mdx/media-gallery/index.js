@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import styled from '@emotion/styled'
 
-import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
 import Image from '@gatsby-mdx-suite/mdx-basic/image'
 
@@ -58,9 +58,9 @@ View.propTypes = {
 }
 
 const mediaParsers = {
-  InstagramPost: ({ element, props, mdxData }) => {
+  InstagramPost: ({ element, props, data }) => {
     const { id } = props
-    const { instagramPosts } = mdxData
+    const { instagramPosts } = data
 
     if (!instagramPosts) {
       return {
@@ -93,9 +93,9 @@ const mediaParsers = {
       content: element,
     }
   },
-  YoutubeVideo: ({ element, props, mdxData }) => {
+  YoutubeVideo: ({ element, props, data }) => {
     const { id } = props
-    const { youtubeVideos } = mdxData
+    const { youtubeVideos } = data
 
     if (!youtubeVideos) {
       return {
@@ -128,7 +128,7 @@ const mediaParsers = {
       content: element,
     }
   },
-  Image: ({ element, props, mdxData }) => {
+  Image: ({ element, props }) => {
     const { id } = props
 
     return {
@@ -142,7 +142,7 @@ const mediaParsers = {
 export default function MediaGallery({ children }) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const mdxData = useContext(MdxDataContext)
+  const { data } = useContext(MdxSuiteContext)
 
   const showItem = (index) => {
     setSelectedIndex(index)
@@ -160,7 +160,7 @@ export default function MediaGallery({ children }) {
       )
       return null
     }
-    return parser({ element, props, mdxData })
+    return parser({ element, props, data })
   })
 
   return (

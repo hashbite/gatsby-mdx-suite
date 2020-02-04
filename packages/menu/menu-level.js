@@ -3,8 +3,7 @@ import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Link from '@gatsby-mdx-suite/mdx-basic/link'
-import LocationContext from '@gatsby-mdx-suite/contexts/location'
-import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 import MenuUl from './menu-ul'
 import MenuLi from './menu-li'
@@ -34,8 +33,9 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
     }
   `)
 
-  const { activePageId: id } = useContext(LocationContext)
-  const { active: activeLocale } = useContext(I18nContext)
+  const {
+    pageContext: { pageId, locale: activeLocale },
+  } = useContext(MdxSuiteContext)
 
   const menuRoot = queryResult.allContentfulMenuItem.nodes.find(
     ({ locale, pageId }) => pageId === rootMenuItemId && locale === activeLocale
@@ -46,7 +46,7 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
   }
 
   const activeTrail = findActiveTrail({
-    id,
+    pageId,
     subTree: [menuRoot],
   })
 

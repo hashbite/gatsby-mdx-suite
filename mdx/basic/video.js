@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import Observer from '@researchgate/react-intersection-observer'
 
-import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 const VideoTag = styled.video`
   display: block;
@@ -22,13 +22,13 @@ export default function Video({
   posterImageId,
   ...props
 }) {
-  const { videos, images } = useContext(MdxDataContext)
+  const {
+    data: { videos, images },
+  } = useContext(MdxSuiteContext)
   const refVideo = useRef(null)
   const [wasPaused, setWasPaused] = useState(false)
 
-  const posterImage = images.find(
-    ({ imageId }) => imageId === posterImageId
-  )
+  const posterImage = images.find(({ imageId }) => imageId === posterImageId)
   const videoH264 = videos.find(({ videoId }) => videoId === h264Id)
   const videoH265 = videos.find(({ videoId }) => videoId === h265Id)
 
@@ -87,7 +87,7 @@ Video.defaultProps = {
   maxWidth: '600px',
   controls: true,
   autoplay: true,
-  preload: 'metadata'
+  preload: 'metadata',
 }
 
 Video.propTypes = {
@@ -97,5 +97,5 @@ Video.propTypes = {
   maxWidth: propTypes.string,
   preload: propTypes.string,
   autoplay: propTypes.bool,
-  controls: propTypes.bool
+  controls: propTypes.bool,
 }

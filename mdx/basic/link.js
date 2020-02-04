@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
 
-import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import {
   generatePageMap,
   getPageWithFallback,
@@ -47,9 +47,10 @@ export default function Link({
 
   const pages = result.allSitePage.nodes
 
-  const { active: activeLocale, default: defaultLocale } = useContext(
-    I18nContext
-  )
+  const {
+    themeConfig: { defaultLocale },
+    pageContext: { locale },
+  } = useContext(MdxSuiteContext)
 
   if (!pages) {
     return null
@@ -59,13 +60,13 @@ export default function Link({
 
   const page = getPageWithFallback({
     pageMap,
-    locale: activeLocale,
+    locale,
     defaultLocale,
   })
 
   if (!page) {
     console.warn(
-      `Unable to find page with id ${id} and locale ${activeLocale} including fallbacks`,
+      `Unable to find page with id ${id} and locale ${locale} including fallbacks`,
       pageMap
     )
     return null
