@@ -1,14 +1,14 @@
 {
   "name": "@gatsby-mdx-suite/menu",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "> TODO: description",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.23",
-    "@gatsby-mdx-suite/contexts": "^0.0.5",
-    "@gatsby-mdx-suite/mdx-basic": "^0.1.0",
+    "@gatsby-mdx-suite/contexts": "^0.0.6",
+    "@gatsby-mdx-suite/mdx-basic": "^0.2.0",
     "gatsby": "^2.19.12",
     "prop-types": "^15.7.2",
     "react": "^16.12.0"

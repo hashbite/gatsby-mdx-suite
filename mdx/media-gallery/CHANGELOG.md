@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.3 (2020-02-04)
+
+
+### Bug Fixes
+
+* **contexts:** simplify contexts to one single context ([d26c412](https://github.com/axe312ger/gatsby-mdx-suite/commit/d26c412b7f7b88840c594b45d25520251d0baef2))
+* **mdx/media-gallery:** properly integrate Image component ([8d4f860](https://github.com/axe312ger/gatsby-mdx-suite/commit/8d4f8603d3c4ab7fa19e81a5e2dad09a8a39117c))
+
+
+
+
+
 ## 0.0.2 (2020-02-02)
 
 

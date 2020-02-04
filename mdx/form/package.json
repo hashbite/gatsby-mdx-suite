@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-form",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
-    "@gatsby-mdx-suite/contexts": "^0.0.5",
+    "@gatsby-mdx-suite/contexts": "^0.0.6",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-i18next": "^11.3.1"

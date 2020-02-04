@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.2.2...gatsby-theme-mdx-suite@0.4.0) (2020-02-04)
+
+
+### Bug Fixes
+
+* **contexts:** simplify contexts to one single context ([d26c412](https://github.com/axe312ger/gatsby-mdx-suite/commit/d26c412b7f7b88840c594b45d25520251d0baef2))
+* **docs:** workaround to ensure playgrounds render.. in most cases... ([c4794a5](https://github.com/axe312ger/gatsby-mdx-suite/commit/c4794a5c5773b6ce89db9c979ba9f367aaa6a8ed))
+
+
+### Features
+
+* **assets:** add graphql fragment for required contentful asset data ([28124b6](https://github.com/axe312ger/gatsby-mdx-suite/commit/28124b64adf412e74fc0a1e5c6f067f1b6dbb3c8))
+* **mdx/timeline:** fix styling and integrate into starter ([32137e6](https://github.com/axe312ger/gatsby-mdx-suite/commit/32137e6220c1ba5f9af8fbd1e2b988d02e18e590))
+* enhance 'Mdx' node type with 'media' field ([092eab6](https://github.com/axe312ger/gatsby-mdx-suite/commit/092eab611a96e76d1bbbb5c29519e14f48fb7550))
+* **gatsby-starter-mdx-suite-contentful:** add blog post listing ([1996d12](https://github.com/axe312ger/gatsby-mdx-suite/commit/1996d12d61c74e5ee56f8b3aad53fa02bfba805f))
+* **gatsby-theme-mdx-suite:** improve default config ([ec24e69](https://github.com/axe312ger/gatsby-mdx-suite/commit/ec24e69360a477c6c328c234672f5c263a22cac7))
+* **Layouting:** add more layout elements and color set ([245eacc](https://github.com/axe312ger/gatsby-mdx-suite/commit/245eaccc617a5a2fd061ad399da68829672687c3))
+* **starters/contentful:** integrate last changes into layout ([32d40c7](https://github.com/axe312ger/gatsby-mdx-suite/commit/32d40c76cfcceafe4205a60a9704444bb129bab4))
+
+
+
+
+
 # [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.2.2...gatsby-theme-mdx-suite@0.3.0) (2020-02-02)
 
 

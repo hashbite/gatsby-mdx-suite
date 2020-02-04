@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.22](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.0.20...@gatsby-mdx-suite/mdx-instagram@0.0.22) (2020-02-04)
+
+
+### Bug Fixes
+
+* **contexts:** simplify contexts to one single context ([d26c412](https://github.com/axe312ger/gatsby-mdx-suite/commit/d26c412b7f7b88840c594b45d25520251d0baef2))
+* **contexts:** use plain context API for mdx data to fix SSR ([9388696](https://github.com/axe312ger/gatsby-mdx-suite/commit/93886969ac565384653f754b7488f95c2a26b3d6))
+
+
+
+
+
 ## [0.0.21](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.0.20...@gatsby-mdx-suite/mdx-instagram@0.0.21) (2020-02-02)
 
 

@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-basic@0.0.13...@gatsby-mdx-suite/mdx-basic@0.2.0) (2020-02-04)
+
+
+### Bug Fixes
+
+* **contexts:** simplify contexts to one single context ([d26c412](https://github.com/axe312ger/gatsby-mdx-suite/commit/d26c412b7f7b88840c594b45d25520251d0baef2))
+* **mdx/basic:** allow proper sizing of images ([db77376](https://github.com/axe312ger/gatsby-mdx-suite/commit/db77376c7dba365439e012860d5369039d361ad0))
+* **mdx/image:** improve image and grid centering behaviour ([04af439](https://github.com/axe312ger/gatsby-mdx-suite/commit/04af43921b6d87c1ceb39cef247c3d6ff7d51dcb))
+* **mdx/media-gallery:** properly integrate Image component ([8d4f860](https://github.com/axe312ger/gatsby-mdx-suite/commit/8d4f8603d3c4ab7fa19e81a5e2dad09a8a39117c))
+
+
+### Features
+
+* **mdx/basic:** improve image rendering behavior ([f8a0b71](https://github.com/axe312ger/gatsby-mdx-suite/commit/f8a0b7187fabcf31ea75678d5582b76e30b218ab))
+* enhance 'Mdx' node type with 'media' field ([092eab6](https://github.com/axe312ger/gatsby-mdx-suite/commit/092eab611a96e76d1bbbb5c29519e14f48fb7550))
+* **mdx:** add plenty of new components ([56b0359](https://github.com/axe312ger/gatsby-mdx-suite/commit/56b0359f33c6fde7170ca17787ccddf72117e653))
+* **mdx-basic:** add CTA component ([68384e9](https://github.com/axe312ger/gatsby-mdx-suite/commit/68384e9d44c2c07aa2053e4f0e83c90db8b0c3b2))
+* **mdx-basic:** Image can now external images as well ([d7b5421](https://github.com/axe312ger/gatsby-mdx-suite/commit/d7b5421adf6a2d3c2bbbcc832feb789fddfbca4e))
+* **mdx/basic:** improve image not found error message ([50c9577](https://github.com/axe312ger/gatsby-mdx-suite/commit/50c95773c4f4c37ac6db3292a3043146c3c6db80))
+* **menu:** introduce flexible menu components including proper contentful export ([3af361d](https://github.com/axe312ger/gatsby-mdx-suite/commit/3af361d019cd9c4c5a5d54971b986e9696f690d5))
+
+
+
+
+
 # [0.1.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-basic@0.0.13...@gatsby-mdx-suite/mdx-basic@0.1.0) (2020-02-02)
 
 
