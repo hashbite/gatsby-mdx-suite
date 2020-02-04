@@ -34,11 +34,12 @@ export default function MenuRecursive({ rootMenuItemId }) {
   `)
 
   const {
-    pageContext: { pageId, locale: activeLocale },
+    pageContext: { pageId: activePageId, locale: activeLocale },
   } = useContext(MdxSuiteContext)
 
   const menuRoot = queryResult.allContentfulMenuItem.nodes.find(
-    ({ locale, pageId }) => pageId === rootMenuItemId && locale === activeLocale
+    ({ locale, pageId }) =>
+      pageId === rootMenuItemId && (!activeLocale || locale === activeLocale)
   )
 
   if (!menuRoot) {
@@ -46,7 +47,7 @@ export default function MenuRecursive({ rootMenuItemId }) {
   }
 
   const activeTrail = findActiveTrail({
-    pageId,
+    activePageId,
     subTree: [menuRoot],
   })
 
