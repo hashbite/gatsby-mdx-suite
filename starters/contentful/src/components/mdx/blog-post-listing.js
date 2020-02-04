@@ -81,16 +81,7 @@ export default function BlogPostListing() {
           title
           publishingDate
           image {
-            description
-            file {
-              contentType
-              details {
-                image {
-                  height
-                  width
-                }
-              }
-            }
+            ...MdxSuiteContentfulAsset
             svg {
               content
             }
