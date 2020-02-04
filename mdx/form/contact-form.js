@@ -2,8 +2,13 @@ import React, { useState, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
+import { useStaticQuery } from 'gatsby'
 
-import LocationContext from '@gatsby-mdx-suite/contexts/location'
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
+import {
+  generatePageMap,
+  getPageWithFallback,
+} from '@gatsby-mdx-suite/i18n/helpers'
 
 import Columns from './Columns'
 
@@ -72,16 +77,42 @@ const Submit = styled.input`
 `
 
 export default function ContactForm({ successPageId }) {
-  const { pages } = useContext(LocationContext)
+  const [t] = useTranslation()
+  const result = useStaticQuery(graphql`
+    {
+      allSitePage {
+        nodes {
+          path
+          context {
+            pageId
+            locale
+            title
+          }
+        }
+      }
+    }
+  `)
+
+  const pages = result.allSitePage.nodes
+
+  const {
+    themeConfig: { defaultLocale, pageId },
+    pageContext: { locale },
+  } = useContext(MdxSuiteContext)
+
+  const pageMap = generatePageMap({ pages, activePageId: pageId })
+
+  const successPage = getPageWithFallback({
+    pageMap,
+    locale,
+    defaultLocale,
+  })
 
   const [salt] = useState(
     Math.random()
       .toString(36)
       .substr(2, 5)
   )
-  const [t] = useTranslation()
-
-  const successPage = pages.find(({ id }) => id === successPageId)
 
   return (
     <Form
@@ -156,5 +187,5 @@ export default function ContactForm({ successPageId }) {
 }
 
 ContactForm.propTypes = {
-  successPageId: propTypes.string
+  successPageId: propTypes.string,
 }

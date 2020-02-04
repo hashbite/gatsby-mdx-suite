@@ -1,8 +1,7 @@
-import React, {useContext} from 'react'
-import propTypes from 'prop-types'
+import React, { useContext } from 'react'
 import styled from '@emotion/styled'
 
-import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import MediaGallery from '@gatsby-mdx-suite/mdx-media-gallery'
 
 import InstagramPost from './instagram-post'
@@ -45,11 +44,13 @@ const InstagramFeedWrapper = styled.div`
   }
 `
 
-export default function InstagramFeed({ account, ...props }) {
-  const mdxData = useContext(MdxDataContext)
-  const { instagramPosts } = mdxData
+export default function InstagramFeed() {
+  const {
+    data: { instagramPosts },
+  } = useContext(MdxSuiteContext)
 
   if (!instagramPosts) {
+    console.warn(`No instagram posts found.`)
     return null
   }
 
@@ -64,6 +65,4 @@ export default function InstagramFeed({ account, ...props }) {
   )
 }
 
-InstagramFeed.propTypes = {
-  account: propTypes.string,
-}
+InstagramFeed.propTypes = {}

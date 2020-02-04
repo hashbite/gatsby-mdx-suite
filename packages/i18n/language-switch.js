@@ -3,8 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import styled from '@emotion/styled'
 
-import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
-import LocationContext from '@gatsby-mdx-suite/contexts/location'
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import { generatePageMap, getPageWithFallback } from './helpers'
 
 const List = styled.ul({
@@ -13,7 +12,7 @@ const List = styled.ul({
   padding: 0,
   listStyleType: 'none',
   textTransform: 'uppercase',
-  whiteSpace: 'nowrap'
+  whiteSpace: 'nowrap',
 })
 
 const ListItem = styled.li({
@@ -34,10 +33,10 @@ const SwitcherLink = styled(Link)`
 `
 
 export default function LanguageSwitch() {
-  const { langs, default: defaultLocale, active: activeLocale } = useContext(
-    I18nContext
-  )
-  const { activePageId } = useContext(LocationContext)
+  const {
+    pageContext: { pageId, locale: activeLocale },
+    themeConfig: { langs, defaultLocale },
+  } = useContext(MdxSuiteContext)
 
   const result = useStaticQuery(graphql`
     {
@@ -57,20 +56,22 @@ export default function LanguageSwitch() {
   // Generate a language based map of sub pages relating to the current content
   const pageMap = generatePageMap({
     pages: result.allSitePage.nodes,
-    activePageId,
+    pageId,
   })
 
   // Array representing the language switcher menu
-  const langsMenu = langs.map((locale) => {
-    const page = getPageWithFallback({ pageMap, locale, defaultLocale })
-    if (!page) {
-      return null
-    }
-    return {
-      locale,
-      page,
-    }
-  }).filter(Boolean)
+  const langsMenu = langs
+    .map((locale) => {
+      const page = getPageWithFallback({ pageMap, locale, defaultLocale })
+      if (!page) {
+        return null
+      }
+      return {
+        locale,
+        page,
+      }
+    })
+    .filter(Boolean)
 
   if (!langsMenu.length) {
     return null

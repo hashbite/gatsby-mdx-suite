@@ -4,7 +4,7 @@ import GatsbyImage from 'gatsby-image'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 const parseCssValue = (v) => (isNaN(v) ? v : `${v}px`)
 
@@ -35,10 +35,10 @@ export default function Image({
   previewDataURI,
   file,
 }) {
-  const mdxData = useContext(MdxDataContext)
-  if (id && mdxData[contextKey]) {
+  const { data } = useContext(MdxSuiteContext)
+  if (id && data[contextKey]) {
     // Fetch data from context when an id was passed
-    const imageData = mdxData[contextKey].find((asset) => asset.imageId === id)
+    const imageData = data[contextKey].find((asset) => asset.imageId === id)
 
     if (imageData) {
       svg = svg || imageData.svg

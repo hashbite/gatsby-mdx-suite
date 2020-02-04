@@ -5,9 +5,9 @@ import { css } from '@emotion/core'
 import { useTranslation } from 'react-i18next'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
 import Image from '@gatsby-mdx-suite/mdx-basic/image'
 import Link from '@gatsby-mdx-suite/mdx-basic/link'
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 const BlogPostListingWrapper = styled.div(
   ({
@@ -67,7 +67,9 @@ const BlogPostTeaserMeta = styled.span`
 `
 
 export default function BlogPostListing() {
-  const { active: activeLocale } = useContext(I18nContext)
+  const {
+    pageContext: { locale: activeLocale },
+  } = useContext(MdxSuiteContext)
   const { t } = useTranslation()
 
   const result = useStaticQuery(graphql`

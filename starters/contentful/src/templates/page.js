@@ -6,68 +6,50 @@ import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { useTranslation } from 'react-i18next'
 
-import LocationContext from '@gatsby-mdx-suite/contexts/location'
-import I18nContext from '@gatsby-mdx-suite/contexts/i18n'
-import MdxDataContext from '@gatsby-mdx-suite/contexts/mdx-data'
-
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import Seo from '@gatsby-mdx-suite/seo'
 
 import Layout from '../components/layout'
 
 function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
-  const locationData = useContext(LocationContext)
-  const i18nData = useContext(I18nContext)
+  const MdxSuiteData = useContext(MdxSuiteContext)
 
-  const {
-    pageId,
-    title,
-    metaDescription,
-    metaImage,
-    content,
-  } = data.contentfulPage
-  const { locale } = pageContext
+  const { title, metaDescription, metaImage, content } = data.contentfulPage
 
   // Set current i18next translation language based on page locale
   useEffect(() => {
-    if (locale !== i18n.language) {
-      i18n.changeLanguage(locale)
+    if (pageContext.locale !== i18n.language) {
+      i18n.changeLanguage(pageContext.locale)
     }
-  }, [locale])
+  }, [pageContext.locale])
 
   return (
-    <I18nContext.Provider
+    <MdxSuiteContext.Provider
       value={{
-        ...i18nData,
-        active: locale,
+        ...MdxSuiteData,
+        pageContext,
+        data: {
+          images: content.childMdx.images,
+          background: content.childMdx.background,
+          floating: content.childMdx.floating,
+        },
       }}
     >
-      <LocationContext.Provider value={{ activePageId: pageId }}>
-        <MdxDataContext.Provider
-          value={{
-            images: content.childMdx.images,
-            background: content.childMdx.background,
-            floating: content.childMdx.floating,
-          }}
-        >
-          <Layout>
-            <Seo
-              title={title}
-              description={metaDescription}
-              ogImage={
-                metaImage && `${metaImage.file.url}?w=1200&h=630&fit=fill`
-              }
-              twitterImage={
-                metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
-              }
-            />
-            <MDXProvider>
-              <MDXRenderer>{content.childMdx.body}</MDXRenderer>
-            </MDXProvider>
-          </Layout>
-        </MdxDataContext.Provider>
-      </LocationContext.Provider>
-    </I18nContext.Provider>
+      <Layout>
+        <Seo
+          title={title}
+          description={metaDescription}
+          ogImage={metaImage && `${metaImage.file.url}?w=1200&h=630&fit=fill`}
+          twitterImage={
+            metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
+          }
+        />
+        <MDXProvider>
+          <MDXRenderer>{content.childMdx.body}</MDXRenderer>
+        </MDXProvider>
+      </Layout>
+    </MdxSuiteContext.Provider>
   )
 }
 

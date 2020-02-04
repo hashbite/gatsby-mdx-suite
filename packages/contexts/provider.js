@@ -3,14 +3,10 @@ import propTypes from 'prop-types'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-import I18nContext from './i18n'
+import MdxSuiteContext from './mdx-suite'
 
-const MdxSuiteContextProvider = ({
-  children,
-  defaultLocale,
-  langs,
-  translations,
-}) => {
+const MdxSuiteContextProvider = ({ children, themeConfig }) => {
+  const { translations, langs, defaultLocale } = themeConfig
   i18n
     // pass the i18n instance to react-i18next.
     .use(initReactI18next)
@@ -28,24 +24,19 @@ const MdxSuiteContextProvider = ({
     })
 
   return (
-    <I18nContext.Provider
+    <MdxSuiteContext.Provider
       value={{
-        i18n,
-        langs,
-        default: defaultLocale,
-        active: defaultLocale,
+        themeConfig,
       }}
     >
       {children}
-    </I18nContext.Provider>
+    </MdxSuiteContext.Provider>
   )
 }
 
 MdxSuiteContextProvider.propTypes = {
   children: propTypes.node.isRequired,
-  defaultLocale: propTypes.string.isRequired,
-  langs: propTypes.array.isRequired,
-  translations: propTypes.object.isRequired,
+  themeConfig: propTypes.object.isRequired,
 }
 
 export default MdxSuiteContextProvider
