@@ -1,9 +1,4 @@
-const isProduction = process.env.NODE_ENV === `production`
-const isStaging = !!process.env.STAGING
-
-const renderDocs = isStaging || !isProduction
-
-module.exports = ({ mdx, forceDocs = false }) => ({
+module.exports = ({ mdx }) => ({
   plugins: [
     // Styling
     `gatsby-plugin-theme-ui`,
