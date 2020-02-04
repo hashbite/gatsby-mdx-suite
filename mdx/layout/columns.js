@@ -4,12 +4,14 @@ import { css } from '@emotion/core'
 const Columns = styled.div(
   ({
     theme: {
+      spacing,
       sizes: { gridGutter },
       breakpoints,
     },
   }) => css`
     display: grid;
     grid-gap: ${gridGutter || 16}px;
+    margin: ${spacing.s4}px 0;
 
     grid-template-columns: repeat(6, 1fr);
     > * {

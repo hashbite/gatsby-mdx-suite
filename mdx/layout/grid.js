@@ -5,6 +5,8 @@ import styled from '@emotion/styled'
 
 const GridWrapper = styled.div(
   ({ minWidth, maxWidth, center, theme }) => css`
+    margin: ${theme.spacing.s4}px 0;
+
     /* ensure full width when within viewport/flex box container */
     width: 100%;
 
@@ -50,6 +52,10 @@ const GridItem = styled.div(
 
         > * {
           width: 100%;
+
+          > * {
+            margin: 0 auto;
+          }
         }
       `}
   `
