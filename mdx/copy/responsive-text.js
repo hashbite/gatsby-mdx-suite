@@ -6,32 +6,40 @@ import { css } from '@emotion/core'
 
 const ResponsiveTextWrapper = styled.div(
   ({
-    theme: {
-      sizes: { maxContentWidth },
-      fonts: { heading },
-    },
+    theme: { breakpoints, fonts },
     fontSizeMin,
     fontSizeMax,
     lineHeightMin,
     lineHeightMax,
+    minBreakpoint,
+    maxBreakpoint,
+    fontFamily,
   }) => css`
     font-size: ${fontSizeMin};
     line-height: ${lineHeightMin};
-    font-family: ${heading};
+    font-family: ${fonts[fontFamily]};
     font-weight: bold;
 
-    @media screen and (min-width: 300px) {
+    @media screen and (min-width: ${breakpoints[minBreakpoint]}) {
       font-size: calc(
         ${fontSizeMin} + (${parseFloat(fontSizeMax) - parseFloat(fontSizeMin)}) *
-          ((100vw - 300px) / ${maxContentWidth - 300})
+          (
+            (100vw - ${breakpoints[minBreakpoint]}) /
+              ${parseFloat(breakpoints[maxBreakpoint]) -
+                parseFloat(breakpoints[minBreakpoint])}
+          )
       );
       line-height: calc(
         ${lineHeightMin} +
           (${parseFloat(lineHeightMax) - parseFloat(lineHeightMin)}) *
-          ((100vw - 300px) / ${maxContentWidth - 300})
+          (
+            (100vw - ${breakpoints[minBreakpoint]}) /
+              ${parseFloat(breakpoints[maxBreakpoint]) -
+                parseFloat(breakpoints[minBreakpoint])}
+          )
       );
     }
-    @media screen and (min-width: ${maxContentWidth}px) {
+    @media screen and (min-width: ${breakpoints[maxBreakpoint]}) {
       font-size: ${fontSizeMax};
       line-height: ${lineHeightMax};
     }
@@ -52,15 +60,21 @@ const ResponsiveText = ({
   children,
   fontSizeMin,
   fontSizeMax,
+  fontFamily,
   lineHeightMin,
   lineHeightMax,
+  minBreakpoint,
+  maxBreakpoint,
 }) => {
   return (
     <ResponsiveTextWrapper
       fontSizeMin={fontSizeMin}
       fontSizeMax={fontSizeMax}
+      fontFamily={fontFamily}
       lineHeightMin={lineHeightMin}
       lineHeightMax={lineHeightMax}
+      minBreakpoint={minBreakpoint}
+      maxBreakpoint={maxBreakpoint}
     >
       {children}
     </ResponsiveTextWrapper>
@@ -68,18 +82,24 @@ const ResponsiveText = ({
 }
 
 ResponsiveText.propTypes = {
-  children: propTypes.node,
+  children: propTypes.node.isRequired,
   fontSizeMin: propTypes.string,
   fontSizeMax: propTypes.string,
+  fontFamily: propTypes.string,
   lineHeightMin: propTypes.string,
   lineHeightMax: propTypes.string,
+  minBreakpoint: propTypes.number,
+  maxBreakpoint: propTypes.number,
 }
 
 ResponsiveText.defaultProps = {
   fontSizeMin: '26px',
   fontSizeMax: '64px',
+  fontFamily: 'heading',
   lineHeightMin: '1.4em',
   lineHeightMax: '1.1em',
+  minBreakpoint: 0,
+  maxBreakpoint: 2,
 }
 
 export default ResponsiveText
