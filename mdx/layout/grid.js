@@ -66,6 +66,10 @@ export default function Grid({ children, ...props }) {
     return null
   }
 
+  if (!Array.isArray(children)) {
+    children = [children]
+  }
+
   children = children.map((child, i) => (
     <GridItem key={i} center={props.center}>
       {child}
