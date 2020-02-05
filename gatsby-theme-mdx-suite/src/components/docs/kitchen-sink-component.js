@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import loadable from '@loadable/component'
+import tw from 'tailwind.macro'
 
 const MDX = loadable(() => import('@mdx-js/runtime'))
 
@@ -18,10 +19,7 @@ const AceEditor = loadable(async () => {
 const KitchenSinkComponentWrapper = styled.section``
 const KitchenSinkComponentHeader = styled.header``
 const KitchenSinkComponentTitle = styled.h1`
-  margin-top: 4rem;
-  padding-top: 4rem;
-  margin-bottom: 0;
-  border-top: 1px dashed black;
+  ${tw`bg-gray-800 text-white mt-5 pt-5 px-2 mb-0`}
 `
 const KitchenSinkComponentPreview = styled.div`
   display: flex;
@@ -109,7 +107,7 @@ function generateDefaultExample({ displayName, componentProps }) {
   const props = requiredProps.length ? ` ${requiredProps.join(' ')}` : ''
 
   if (hasRequiredChildren) {
-    return `<${displayName}${props}></${displayName}>`
+    return `<${displayName}${props}>¯\\_(ツ)_/¯</${displayName}>`
   }
 
   return `<${displayName}${props} />`
