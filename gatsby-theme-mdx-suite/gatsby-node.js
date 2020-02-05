@@ -1,5 +1,8 @@
 const cheerio = require('cheerio')
 
+/**
+ * Ensure @mdx-js dependencies build via webpack
+ */
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     node: {
