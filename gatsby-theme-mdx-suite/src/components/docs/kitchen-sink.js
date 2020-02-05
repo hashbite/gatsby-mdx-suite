@@ -1,16 +1,14 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { useThemeUI } from 'theme-ui'
 import styled from '@emotion/styled'
-
-import components from 'gatsby-theme-mdx-suite/src/gatsby-plugin-theme-ui/components'
-
 import { useMDXComponents } from '@mdx-js/react'
 
+import KitchenSinkComponent from './kitchen-sink-component'
+
 const KitchenSinkWrapper = styled.div``
+const KitchenSinkList = styled.div``
 
 function KitchenSink() {
-  const context = useThemeUI()
   const mdxComponents = useMDXComponents()
 
   const result = useStaticQuery(graphql`
@@ -35,22 +33,24 @@ function KitchenSink() {
     }
   `)
 
-  console.log({ result, components, context, mdxComponents })
-
   const availableComponents = Object.keys(mdxComponents)
 
-  const ourComponents = result.allComponentMetadata.nodes.filter(
-    ({ displayName }) => availableComponents.includes(displayName)
-  )
+  const enabledComponents = result.allComponentMetadata.nodes
+    .filter(({ displayName }) => availableComponents.includes(displayName))
+    .map((componentData) => ({
+      ...componentData,
+      component: mdxComponents[componentData.displayName],
+    }))
+    .filter((d) => d.displayName === 'Image')
 
   return (
     <KitchenSinkWrapper>
       <h1>Kitchen Sink</h1>
-      <ul>
-        {ourComponents.map((component) => (
-          <li key={component.id}>{component.displayName}</li>
+      <KitchenSinkList>
+        {enabledComponents.map((component) => (
+          <KitchenSinkComponent key={component.id} {...component} />
         ))}
-      </ul>
+      </KitchenSinkList>
     </KitchenSinkWrapper>
   )
 }

@@ -1,5 +1,13 @@
 const cheerio = require('cheerio')
 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: 'empty',
+    },
+  })
+}
+
 /**
  * Allow all plugins and the actual page access the theme config
  */
