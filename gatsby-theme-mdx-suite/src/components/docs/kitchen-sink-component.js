@@ -113,7 +113,7 @@ function KitchenSinkComponent({ id, displayName, componentProps, component }) {
   const [rawValue, setRawValue] = useDebounce(editorValue, 1000)
   const [error, setError] = useState()
 
-  console.log(arguments)
+  const isSSR = typeof window === 'undefined'
 
   useEffect(() => {
     async function parseMdx() {
@@ -189,22 +189,26 @@ function KitchenSinkComponent({ id, displayName, componentProps, component }) {
         </KitchenSinkComponentError>
       )}
       <KitchenSinkComponentEditor>
-        <AceEditor
-          mode="markdown"
-          theme="github"
-          onChange={setEditorValue}
-          name={`docs-ace-editor-${id}`}
-          debounceChangePeriod={300}
-          editorProps={{
-            $blockScrolling: true,
-            // Do we get these working?
-            // enableBasicAutocompletion: true,
-            // enableLiveAutocompletion: true,
-          }}
-          value={editorValue}
-          width="100%"
-          height="220px"
-        />
+        {!isSSR && (
+          <React.Suspense fallback={<div />}>
+            <AceEditor
+              mode="markdown"
+              theme="github"
+              onChange={setEditorValue}
+              name={`docs-ace-editor-${id}`}
+              debounceChangePeriod={300}
+              editorProps={{
+                $blockScrolling: true,
+                // Do we get these working?
+                // enableBasicAutocompletion: true,
+                // enableLiveAutocompletion: true,
+              }}
+              value={editorValue}
+              width="100%"
+              height="220px"
+            />
+          </React.Suspense>
+        )}
       </KitchenSinkComponentEditor>
     </KitchenSinkComponentWrapper>
   )
