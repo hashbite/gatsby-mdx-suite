@@ -11,7 +11,12 @@ import 'ace-builds/src-noconflict/mode-markdown'
 
 const KitchenSinkComponentWrapper = styled.section``
 const KitchenSinkComponentHeader = styled.header``
-const KitchenSinkComponentTitle = styled.h1``
+const KitchenSinkComponentTitle = styled.h1`
+  margin-top: 4rem;
+  padding-top: 4rem;
+  margin-bottom: 0;
+  border-top: 1px dashed black;
+`
 const KitchenSinkComponentPreview = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,6 +26,7 @@ const KitchenSinkComponentPreview = styled.div`
   width: 100%;
   max-height: 60vh;
   overflow: scroll;
+  margin: 2rem 0;
 `
 const KitchenSinkComponentPreviewContainer = styled.div``
 const KitchenSinkComponentError = styled.div`
@@ -60,8 +66,48 @@ const KitchenSinkComponentEditor = styled.div(
   `
 )
 
-function KitchenSinkComponent({ component, id, displayName }) {
-  const initialValue = component.example || `<${displayName} />`
+const KitchenSinkComponentProps = styled.table`
+  margin: 2rem 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+  width: 80%;
+  max-width: 600px;
+`
+const KitchenSinkComponentProp = styled.tr`
+  &:nth-child(2n) {
+    background-color: #f0f0f0;
+  }
+
+  td {
+    padding: 0.25rem 0.5rem;
+  }
+`
+
+function generateDefaultExample({ displayName, componentProps }) {
+  let hasRequiredChildren = false
+  const requiredProps = componentProps
+    .filter(({ required }) => required)
+    .filter(({ name }) => {
+      if (name === 'children') {
+        hasRequiredChildren = true
+        return false
+      }
+      return true
+    })
+    .map(({ name }) => `${name}=""`)
+
+  const props = requiredProps.length ? ` ${requiredProps.join(' ')}` : ''
+
+  if (hasRequiredChildren) {
+    return `<${displayName}${props}></${displayName}>`
+  }
+
+  return `<${displayName}${props} />`
+}
+
+function KitchenSinkComponent({ id, displayName, componentProps, component }) {
+  const initialValue =
+    component.example || generateDefaultExample({ displayName, componentProps })
 
   const [editorValue, setEditorValue] = useState(initialValue)
   const [rawValue, setRawValue] = useDebounce(editorValue, 1000)
@@ -92,6 +138,43 @@ function KitchenSinkComponent({ component, id, displayName }) {
       <KitchenSinkComponentHeader>
         <KitchenSinkComponentTitle>{displayName}</KitchenSinkComponentTitle>
       </KitchenSinkComponentHeader>
+      {!!componentProps.length && (
+        <KitchenSinkComponentProps>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {componentProps.map((propData) => {
+              // return <pre>{JSON.stringify(propData, null, 2)}</pre>
+              const {
+                name,
+                type,
+                required,
+                defaultValue,
+                description,
+              } = propData
+              return (
+                <KitchenSinkComponentProp key={name}>
+                  <td>
+                    <strong>
+                      {name}
+                      {required && ' (required)'}
+                    </strong>
+                  </td>
+                  <td>{type && type.name}</td>
+                  <td>{defaultValue && defaultValue.value}</td>
+                  <td>{description && description.text}</td>
+                </KitchenSinkComponentProp>
+              )
+            })}
+          </tbody>
+        </KitchenSinkComponentProps>
+      )}
       <KitchenSinkComponentPreview>
         <KitchenSinkComponentPreviewContainer>
           <MDX>{rawValue}</MDX>
@@ -129,6 +212,7 @@ function KitchenSinkComponent({ component, id, displayName }) {
 
 KitchenSinkComponent.propTypes = {
   component: propTypes.object.isRequired,
+  componentProps: propTypes.array.isRequired,
   id: propTypes.string.isRequired,
   displayName: propTypes.string.isRequired,
 }

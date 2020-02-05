@@ -16,13 +16,17 @@ function KitchenSink() {
       allComponentMetadata {
         nodes {
           displayName
-          props {
+          componentProps: props {
             name
             description {
               text
             }
             defaultValue {
               value
+            }
+            required
+            type {
+              name
             }
           }
           description {
@@ -41,7 +45,6 @@ function KitchenSink() {
       ...componentData,
       component: mdxComponents[componentData.displayName],
     }))
-    .filter((d) => d.displayName === 'Image')
 
   return (
     <KitchenSinkWrapper>
