@@ -1,6 +1,13 @@
+const { existsSync } = require('fs')
 const { handler, resolver } = require('react-docgen-styled-resolver')
 
-module.exports = ({ mdx }) => ({
+const defaultComponentPaths = [
+  `src/components/mdx/`,
+  `node_modules/@gatsby-mdx-suite/`,
+  `../../node_modules/@gatsby-mdx-suite/`,
+]
+
+module.exports = ({ mdx, componentPaths = defaultComponentPaths }) => ({
   plugins: [
     // Styling
     `gatsby-plugin-theme-ui`,
@@ -13,24 +20,19 @@ module.exports = ({ mdx }) => ({
     // SEO
     `gatsby-plugin-react-helmet`,
     // Docs
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `src/components/mdx/`,
-      },
-    },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `node_modules/@gatsby-mdx-suite/`,
-    //   },
-    // },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `../../node_modules/@gatsby-mdx-suite/`,
-      },
-    },
+    ...componentPaths
+      .map((componentPath) => {
+        if (existsSync(componentPath)) {
+          return {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+              path: componentPath,
+            },
+          }
+        }
+        return false
+      })
+      .filter(Boolean),
     {
       resolve: `gatsby-transformer-react-docgen`,
       options: {
