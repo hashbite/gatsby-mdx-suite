@@ -3,11 +3,17 @@ import { useDebounce } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import MDX from '@mdx-js/runtime'
 import mdx from '@mdx-js/mdx'
-import AceEditor from 'react-ace'
+import loadable from '@loadable/component'
 
-import 'ace-builds/src-noconflict/mode-markdown'
+const MDX = loadable(() => import('@mdx-js/runtime'))
+
+const AceEditor = loadable(async () => {
+  const ace = await import('react-ace')
+  await import('ace-builds/src-noconflict/mode-markdown')
+  await import('ace-builds/src-noconflict/theme-github')
+  return ace
+})
 
 const KitchenSinkComponentWrapper = styled.section``
 const KitchenSinkComponentHeader = styled.header``
@@ -39,20 +45,24 @@ const KitchenSinkComponentError = styled.div`
 `
 const KitchenSinkComponentEditor = styled.div(
   ({ theme }) => css`
-    .ace_markup {
-      &.ace_heading {
-        font-weight: bold;
-        font-family: ${theme.fonts.heading};
-      }
+    .ace_heading {
+      font-weight: bold;
+      font-family: ${theme.fonts.heading};
+      color: dodgerblue;
     }
 
     .ace_xml {
       &.ace_punctuation,
       &.ace_tag-name {
         font-weight: bold;
+        color: seagreen;
       }
 
       &.ace_attribute-name {
+        color: tomato;
+      }
+
+      &.ace_attribute-value {
         color: crimson;
       }
     }
@@ -109,11 +119,9 @@ function KitchenSinkComponent({ id, displayName, componentProps, component }) {
   const initialValue =
     component.example || generateDefaultExample({ displayName, componentProps })
 
-  const [editorValue, setEditorValue] = useState(initialValue)
+  const [editorValue, setEditorValue] = useDebounce(initialValue, 100)
   const [rawValue, setRawValue] = useDebounce(editorValue, 1000)
   const [error, setError] = useState()
-
-  const isSSR = typeof window === 'undefined'
 
   useEffect(() => {
     async function parseMdx() {
@@ -189,26 +197,21 @@ function KitchenSinkComponent({ id, displayName, componentProps, component }) {
         </KitchenSinkComponentError>
       )}
       <KitchenSinkComponentEditor>
-        {!isSSR && (
-          <React.Suspense fallback={<div />}>
-            <AceEditor
-              mode="markdown"
-              theme="github"
-              onChange={setEditorValue}
-              name={`docs-ace-editor-${id}`}
-              debounceChangePeriod={300}
-              editorProps={{
-                $blockScrolling: true,
-                // Do we get these working?
-                // enableBasicAutocompletion: true,
-                // enableLiveAutocompletion: true,
-              }}
-              value={editorValue}
-              width="100%"
-              height="220px"
-            />
-          </React.Suspense>
-        )}
+        <AceEditor
+          mode="markdown"
+          theme="github"
+          onChange={setEditorValue}
+          name={`docs-ace-editor-${id}`}
+          editorProps={{
+            $blockScrolling: true,
+            // Do we get these working?
+            // enableBasicAutocompletion: true,
+            // enableLiveAutocompletion: true,
+          }}
+          value={editorValue}
+          width="100%"
+          height="220px"
+        />
       </KitchenSinkComponentEditor>
     </KitchenSinkComponentWrapper>
   )

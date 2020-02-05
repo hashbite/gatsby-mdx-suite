@@ -17,8 +17,9 @@ module.exports = ({ mdx, componentPaths = defaultComponentPaths }) => ({
       resolve: `gatsby-plugin-mdx`,
       options: mdx,
     },
-    // SEO
+    // SEO & Performance
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-bundle-stats`,
     // Docs
     ...componentPaths
       .map((componentPath) => {
