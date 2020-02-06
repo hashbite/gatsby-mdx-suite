@@ -12,6 +12,22 @@ module.exports = ({ mdx, componentPaths = defaultComponentPaths }) => ({
     // Styling
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require('postcss-import'),
+          require('tailwindcss')(process.cwd() + '/tailwind.config.js'),
+          require('postcss-preset-env')({
+            autoprefixer: { grid: true },
+            features: {
+              'nesting-rules': true,
+            },
+            // browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'],
+          }),
+        ],
+      },
+    },
     // MDX
     {
       resolve: `gatsby-plugin-mdx`,
