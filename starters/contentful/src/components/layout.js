@@ -4,6 +4,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
+import tw from 'tailwind.macro'
 import { useTranslation } from 'react-i18next'
 
 import MenuRecursive from '@gatsby-mdx-suite/menu/menu-recursive'
@@ -46,7 +47,7 @@ const FooterMenu = styled.nav`
   }
 `
 const FooterCopy = styled.div`
-  ${`text-sm text-center px-1 pt-2`}
+  ${tw`text-sm text-center px-1 pt-2`}
 `
 
 const Layout = ({ children }) => {

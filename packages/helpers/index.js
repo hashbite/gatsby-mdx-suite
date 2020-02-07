@@ -2,6 +2,8 @@ import { css } from '@emotion/core'
 
 import Cta from '@gatsby-mdx-suite/mdx-basic/cta'
 
+import tw from 'tailwind.macro'
+
 export const applyColorSet = (props) => {
   const { theme, hasImage } = props
   let { backgroundColor, primaryColor, secondaryColor } = props
@@ -41,5 +43,5 @@ export const applyColorSet = (props) => {
 }
 
 export const centerToContentColumn = () => css`
-  ${`mx-auto max-w-full lg:max-w-5xl`}
+  ${tw`mx-auto max-w-full lg:max-w-5xl`}
 `

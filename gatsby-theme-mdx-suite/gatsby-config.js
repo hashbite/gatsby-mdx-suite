@@ -17,7 +17,7 @@ module.exports = ({ mdx, componentPaths = defaultComponentPaths }) => ({
       options: {
         postCssPlugins: [
           require('postcss-import'),
-          // require('tailwindcss')(process.cwd() + '/tailwind.config.js'),
+          require('tailwindcss')(process.cwd() + '/tailwind.config.js'),
           require('postcss-preset-env')({
             autoprefixer: { grid: true },
             features: {
