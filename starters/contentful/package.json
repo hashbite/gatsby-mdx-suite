@@ -40,7 +40,6 @@
     "@mdx-js/react": "^1.5.5",
     "@theme-ui/tailwind": "^0.3.0",
     "@theme-ui/typography": "^0.3.0",
-    "babel-preset-gatsby": "^0.2.28",
     "cheerio": "^0.22.0",
     "gatsby": "^2.19.12",
     "gatsby-plugin-manifest": "^2.2.41",
