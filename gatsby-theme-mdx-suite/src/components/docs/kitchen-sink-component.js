@@ -5,9 +5,24 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import loadable from '@loadable/component'
-import tw from 'tailwind.macro'
+
+import classNames from 'classnames'
 
 const MDX = loadable(() => import('@mdx-js/runtime'))
+
+export function withClassNames(additionalClassNames, Component) {
+  const ComponentWithCustomClass = React.forwardRef((origProps, ref) => {
+    const newProps = {
+      ...origProps,
+      className: classNames(origProps.className, additionalClassNames),
+      ref,
+    }
+    const ToRender = Component
+    return React.createElement(ToRender, Object.assign({}, newProps))
+  })
+  ComponentWithCustomClass.displayName = 'ComponentWithCustomClass'
+  return ComponentWithCustomClass
+}
 
 const AceEditor = loadable(async () => {
   const ace = await import('react-ace')
@@ -18,9 +33,8 @@ const AceEditor = loadable(async () => {
 
 const KitchenSinkComponentWrapper = styled.section``
 const KitchenSinkComponentHeader = styled.header``
-const KitchenSinkComponentTitle = styled.h1`
-  ${tw`bg-gray-800 text-white mt-5 pt-5 px-2 mb-0`}
-`
+const KitchenSinkComponentTitle = withClassNames('foo font-mono', styled.h1``)
+
 const KitchenSinkComponentPreview = styled.div`
   display: flex;
   flex-direction: column;
