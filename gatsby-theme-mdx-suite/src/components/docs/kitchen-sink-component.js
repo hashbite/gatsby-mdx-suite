@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import Link from 'gatsby-link'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import tw from 'tailwind.macro'
 
 import LiveEditor from './live-editor'
 import Props from './props'
@@ -10,9 +11,7 @@ import Props from './props'
 const KitchenSinkComponentWrapper = styled.section``
 const KitchenSinkComponentHeader = styled.header``
 const KitchenSinkComponentTitle = styled.h1`
-  margin-top: 4rem;
-  padding-top: 4rem;
-  border-top: 1px dashed black;
+  ${tw`mt-32 p-4 bg-gray-400`}
 `
 
 function KitchenSinkComponent({

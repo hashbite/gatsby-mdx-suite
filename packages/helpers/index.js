@@ -1,4 +1,5 @@
 import { css } from '@emotion/core'
+import tw from 'tailwind.macro'
 
 import Cta from '@gatsby-mdx-suite/mdx-link/cta'
 
@@ -41,19 +42,5 @@ export const applyColorSet = (props) => {
 }
 
 export const centerToContentColumn = ({ theme: { sizes, breakpoints } }) => css`
-  box-sizing: content-box;
-  margin: 0 auto;
-  max-width: ${sizes.maxContentWidth}px;
-
-  /* Gradually increase horizontal content padding based on viewport width */
-  padding: 0 2vw;
-  @media (min-width: ${breakpoints[0]}) {
-    padding: 0 4vw;
-  }
-  @media (min-width: ${breakpoints[1]}) {
-    padding: 0 8vw;
-  }
-  @media (min-width: ${breakpoints[2]}) {
-    padding: 0 15vw;
-  }
+  ${tw`mx-auto max-w-full lg:max-w-5xl`}
 `

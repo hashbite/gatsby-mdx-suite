@@ -1,11 +1,12 @@
 import React from 'react'
 
 import KitchenSink from '../components/docs/kitchen-sink'
+import Layout from '../components/docs/layout'
 
 const DocsPage = () => (
-  <div>
+  <Layout>
     <KitchenSink />
-  </div>
+  </Layout>
 )
 
 export default DocsPage

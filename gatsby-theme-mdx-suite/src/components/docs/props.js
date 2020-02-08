@@ -1,22 +1,22 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import tw from 'tailwind.macro'
 
 const PropsWrapper = styled.table`
-  margin: 2rem 0;
-  padding: 1rem;
-  border: 1px solid black;
-  width: 100%;
-  font-size: 0.8em;
-`
+  ${tw`w-10/12 my-8 mx-auto p-0 border border-solid border-gray-400 bg-gray-100`}
 
+  th {
+    ${tw`text-gray-800 bg-gray-200`}
+  }
+`
 const PropWrapper = styled.tr`
   &:nth-child(2n) {
-    background-color: #f0f0f0;
+    ${tw`bg-gray-200`}
   }
 
   td {
-    padding: 0.25rem 0.5rem;
+    ${tw`py-1 px-2`}
   }
 `
 

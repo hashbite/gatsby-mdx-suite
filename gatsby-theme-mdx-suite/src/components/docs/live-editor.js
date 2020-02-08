@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import loadable from '@loadable/component'
+import tw from 'tailwind.macro'
 
 const MDX = loadable(() => import('@mdx-js/runtime'))
 
@@ -41,24 +42,20 @@ const AceEditor = loadable(async () => {
 
 const LiveEditorWrapper = styled.section``
 const LiveEditorPreview = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #f7f7f7;
-  width: 100%;
-  max-height: 60vh;
-  overflow: scroll;
-  margin: 2rem 0;
+  ${tw`relative flex flex-col content-center items-center mt-8 w-full bg-gray-100 overflow-scroll`}
+  min-height: 20vh;
+
+  &:before {
+    ${tw`font-serif text-gray-200 text-6xl absolute`}
+    content: 'Preview';
+    pointer-events: none;
+    top: 0;
+    left: 1rem;
+  }
 `
 const LiveEditorPreviewContainer = styled.div``
 const LiveEditorError = styled.div`
-  font-size: 0.85rem;
-  padding: 2rem;
-  margin: 2rem;
-  background: firebrick;
-  border: 4px dashed tomato;
-  color: white;
+  ${tw`p-4 m-4 border-4 border-dashed border-red-400 bg-red-700 text-sm text-white`}
 `
 const LiveEditorEditor = styled.div(
   ({ theme }) => css`
