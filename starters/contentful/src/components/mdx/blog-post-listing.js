@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { useTranslation } from 'react-i18next'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import tw from 'tailwind.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import Link from '@gatsby-mdx-suite/mdx-link/link'
@@ -16,6 +17,7 @@ const BlogPostListingWrapper = styled.div(
       breakpoints,
     },
   }) => css`
+    // display grid not yet supported by tailwind.macro
     display: grid;
     grid-gap: ${gridGutter}px;
 
@@ -35,35 +37,26 @@ const BlogPostListingWrapper = styled.div(
   `
 )
 
-const BlogPostTeaser = styled.article(
-  ({ theme: { colors, spacing } }) => css`
-    position: relative;
-    padding: ${spacing.s2}px ${spacing.s2}px ${spacing.s4}px;
-    background: ${colors.lightGrey};
-  `
-)
+const BlogPostTeaser = styled.article`
+  ${tw`relative p-8 pb-16 bg-gray-200`}
+`
 
-const BlogPostTeaserHeadline = styled.h1(
-  ({ theme: { spacing } }) => css`
-    font-size: 1.2em;
-    margin: ${spacing.s2}px 0;
-  `
-)
+const BlogPostTeaserHeadline = styled.h1`
+  ${tw`mt-8 mb-0 text-xl`}
+`
+
 const BlogPostTeaserDescription = styled.div``
 const BlogPostTeaserFooter = styled.div(
   ({ theme: { spacing } }) => css`
-    position: absolute;
+    ${tw`absolute flex justify-between text-sm`}
+    // @todo merge tailwind & theme-ui theme
     bottom: ${spacing.s2}px;
     left: ${spacing.s2}px;
     right: ${spacing.s2}px;
-    display: flex;
-    font-size: 12px;
-    justify-content: space-between;
   `
 )
-const BlogPostTeaserMeta = styled.span`
-  font-size: 0.9em;
-  opacity: 0.8;
+const BlogPostTeaserMeta = styled.div`
+  ${tw`text-sm text-gray-700 mb-6`}
 `
 
 export default function BlogPostListing() {
