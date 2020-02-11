@@ -2,35 +2,25 @@ import React, { useContext } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import styled from '@emotion/styled'
+import tw from 'tailwind.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import { generatePageMap, getPageWithFallback } from './helpers'
 
-const List = styled.ul({
-  display: 'flex',
-  margin: 0,
-  padding: 0,
-  listStyleType: 'none',
-  textTransform: 'uppercase',
-  whiteSpace: 'nowrap',
-})
+const List = styled.ul`
+  ${tw`flex m-0 p-0 list-none uppercase whitespace-no-wrap`}
+`
 
-const ListItem = styled.li({
-  margin: 0,
-})
+const ListItem = styled.li`
+  ${tw`m-0`}
+`
 
 const SwitcherLink = styled(Link)`
-  display: block;
-  min-width: 48px;
-  padding: 0 0.6em;
-  line-height: 48px;
-  text-align: center;
-  transition: 0.3s opacity linear;
+  ${tw`block m-0 px-4 text-center`}
 
-  &:hover {
-    opacity: 0.8;
-    text-decoration: none;
-  }
+  // https://web.dev/tap-targets/
+  min-width: 48px;
+  line-height: 48px;
 `
 
 export default function LanguageSwitch() {

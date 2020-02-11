@@ -1,11 +1,8 @@
 import styled from '@emotion/styled'
+import tw from 'tailwind.macro'
 
 const MenuUl = styled.ul`
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  ${tw`flex flex-no-wrap m-0 p-0 list-none`}
 `
 
 export default MenuUl
