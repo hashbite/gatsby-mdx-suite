@@ -21,7 +21,8 @@ const ListItem = styled.li({
 
 const SwitcherLink = styled(Link)`
   display: block;
-  width: 48px;
+  min-width: 48px;
+  padding: 0 0.6em;
   line-height: 48px;
   text-align: center;
   transition: 0.3s opacity linear;
@@ -56,7 +57,7 @@ export default function LanguageSwitch() {
   // Generate a language based map of sub pages relating to the current content
   const pageMap = generatePageMap({
     pages: result.allSitePage.nodes,
-    pageId,
+    activePageId: pageId,
   })
 
   // Array representing the language switcher menu
