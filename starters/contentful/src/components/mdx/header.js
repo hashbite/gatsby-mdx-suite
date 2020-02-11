@@ -1,7 +1,9 @@
 import React from 'react'
 import propTypes from 'prop-types'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import tw from 'tailwind.macro'
 
 import MenuLevel from '@gatsby-mdx-suite/menu/menu-level'
 import LanguageSwitch from '@gatsby-mdx-suite/i18n/language-switch'
@@ -10,11 +12,10 @@ import { centerToContentColumn, applyColorSet } from '@gatsby-mdx-suite/helpers'
 
 import LogoSVG from '../../assets/logo.svg'
 import ColorModeSwitch from '../color-mode-switch'
-import { useStaticQuery, graphql, Link } from 'gatsby'
 
 const HeaderWrapper = styled.div(
   ({ hasBackgroundImage, ...restProps }) => css`
-    position: relative;
+    ${tw`relative`}
 
     ${hasBackgroundImage
       ? css`
@@ -29,39 +30,31 @@ const HeaderWrapper = styled.div(
 
 const HeaderContainer = styled.div(
   ({ theme }) => css`
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    padding: ${theme.spacing.s1}px;
-    align-items: center;
+    ${tw`absolute z-10 inset-x-0 top-0 flex p-1 items-center`}
 
     & > * {
-      flex: 0 0 auto;
+      ${tw`flex-none px-2`}
 
       &:not(:first-child):not(:last-child) {
-        flex: 1 1 auto;
-        justify-content: center;
+        ${tw`flex-auto justify-center`}
       }
     }
   `
 )
 
 const HeaderTitle = styled.h1`
-  margin: 0;
+  ${tw`m-0`}
+
   & svg {
-    width: 32px;
+    ${tw`w-8`}
   }
 `
 
 const HeaderMenuControls = styled.div`
-  display: flex;
-  align-items: center;
+  ${tw`flex items-center`}
 
   & > * {
-    padding: 0 1em;
+    ${tw`py-4`}
   }
 `
 
@@ -74,43 +67,23 @@ const BackgroundImage = styled(Image)`
 `
 
 const HeaderBackgroundImageWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -3;
+  ${tw`absolute top-0 left-0 w-full h-full z-0`}
 
   & .gatsby-image-wrapper {
+    ${tw`top-0 left-0 w-full h-full z-1`}
     position: absolute !important;
-    z-index: -2;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
   }
 
   &:before {
+    ${tw`block absolute left-0 top-0 w-full h-full z-2 bg-black`}
     content: '';
-    display: block;
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
     opacity: 0.12;
   }
 `
 
 const HeaderContent = styled.div`
-  position: relative;
-  min-height: 16rem;
-  height: 42vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  ${tw`relative flex flex-col justify-center`}
+  min-height: 42vh;
   ${centerToContentColumn}
 
   > *:first-child {
