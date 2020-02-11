@@ -76,6 +76,7 @@ export default {
   spacing,
   space,
   colors: {
+    transparent,
     text,
     background,
     primary,

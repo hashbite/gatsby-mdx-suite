@@ -1,25 +1,13 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import { useMDXComponents } from '@mdx-js/react'
-import tw from 'tailwind.macro'
 
 import KitchenSinkComponent from './kitchen-sink-component'
 
-const KitchenSinkWrapper = styled.div`
-  ${tw`pt-40`}
-`
+const KitchenSinkWrapper = styled.div``
 const KitchenSinkList = styled.div``
-const KitchenSinkIntro = styled.div`
-  ${tw`px-4`}
-`
-const KitchenSinkHeader = styled.div`
-  ${tw`fixed px-4 bg-gray-800 text-white left-0 top-0 right-0 z-50 shadow-lg`}
-
-  h1 {
-    ${tw`my-2`}
-  }
-`
+const KitchenSinkIntro = styled.div``
 
 function KitchenSink() {
   const mdxComponents = useMDXComponents()
@@ -55,11 +43,6 @@ function KitchenSink() {
 
   return (
     <KitchenSinkWrapper>
-      <KitchenSinkHeader>
-        <Link to="/">
-          <h1>Kitchen Sink</h1>
-        </Link>
-      </KitchenSinkHeader>
       <KitchenSinkIntro>
         This page currently has {enabledComponents.length} MDX components
         enabled. This is an overview of all these components.
