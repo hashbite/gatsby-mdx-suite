@@ -1,0 +1,16 @@
+name: reviewdog
+on: [pull_request]
+jobs:
+  linter_name:
+    name: LanguageTool
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: reviewdog/action-languagetool@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
+          reporter: github-pr-review
+          # Change reporter level if you need.
+          level: info
+          patterns: '**/*.md **/*.mdx'
