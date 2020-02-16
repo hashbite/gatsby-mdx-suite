@@ -34,7 +34,6 @@
 * React using mostly the hooks API & contexts
 * GatsbyJS with themes -> EmotionJS, theme-ui, styled systems
 * Pretty plain integration of i18next
-* Documentation is generated via docz
 
 ## Project structure
 
@@ -68,9 +67,9 @@ Or wait till somebody found time to write a tutorial how to do it.
 
 ## Automated documentation
 
-The documentation is generated via the amazing docz project. The new version uses GatsbyJS as main renderer. A perfect match. This generated documentation will serve multiple purposes:
+Within the `/docs` route a documentation apge will be generated. This provides:
 
-* Provide a introduction to Markdown and MDX to support new users
+* Provide an introduction to Markdown and MDX to help new users getting into editing
 * Give an overview of all components integrated into the project
 * Renders interactive playgrounds for all components, including a list of available attributes.
 * Provides further information for developers:
