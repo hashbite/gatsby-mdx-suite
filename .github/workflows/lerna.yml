@@ -18,3 +18,9 @@ jobs:
       run: |
         sh get-lerna-changes.sh
       id: lerna_bumps
+    - name: Create comment
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue-number: 36
+        body: "{{ steps.lerna_bumps.outputs.lerna_bumps }}"
