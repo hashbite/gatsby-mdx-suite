@@ -14,8 +14,7 @@ jobs:
         node-version: '12.x'
     - run: yarn install
     - name: get lerna changes
-      run: >
-        output=$(yarn --silent run lerna changed --json | jq '[.[] | "- [`\(.name)`](\(.location)): v\(.version)"] | join("\\n") | @sh "::set-output name=lerna_bumps::\(.)"' --raw-output);
-        echo "::debug file=app.js,line=1::$output";
-        echo "$output";
+      shell: bash
+      run: |
+        sh get-lerna-changes.sh
       id: lerna_bumps
