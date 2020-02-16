@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.2.0...gatsby-starter-mdx-suite-contentful@0.3.0) (2020-02-16)
+
+
+### Bug Fixes
+
+* **docs:** remove docz as it causes problems with our own MDX rendering ([e7189f7](https://github.com/axe312ger/gatsby-suite-mdx/commit/e7189f774ac98f5de3f0e30f79f02c827b1132a0))
+
+
+### Features
+
+* **mdx/layout:** add Center component ([91ce5d4](https://github.com/axe312ger/gatsby-suite-mdx/commit/91ce5d47bd4a8d07f9e5dbb2156652915cc6377c))
+* **starters/contentful:** add redirect for /index and default language ([03c4f40](https://github.com/axe312ger/gatsby-suite-mdx/commit/03c4f405e46409211d22d07fb66cb9de8920dd8c))
+
+
+
+
+
 # [0.2.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.0.33...gatsby-starter-mdx-suite-contentful@0.2.0) (2020-02-04)
 
 

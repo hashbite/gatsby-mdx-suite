@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.0.3...@gatsby-mdx-suite/mdx-media-gallery@0.0.4) (2020-02-16)
+
+
+### Bug Fixes
+
+* **mdx/media-gallery:** remove circular dependency ([83389ba](https://github.com/axe312ger/gatsby-mdx-suite/commit/83389bab8acb1724a4dc5da906077bd9a8dcb53c))
+
+
+
+
+
 ## 0.0.3 (2020-02-04)
 
 

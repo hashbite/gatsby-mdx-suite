@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-basic@0.2.0...@gatsby-mdx-suite/mdx-basic@0.2.1) (2020-02-16)
+
+
+### Bug Fixes
+
+* **mdx/layout:** improve image rendering behavior ([062fa91](https://github.com/axe312ger/gatsby-mdx-suite/commit/062fa91a257fbc14f42864a4e82cdf95bfacb932))
+
+
+
+
+
 # [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-basic@0.0.13...@gatsby-mdx-suite/mdx-basic@0.2.0) (2020-02-04)
 
 

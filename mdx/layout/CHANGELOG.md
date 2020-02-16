@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.3.0...@gatsby-mdx-suite/mdx-layout@0.4.0) (2020-02-16)
+
+
+### Bug Fixes
+
+* **mdx/layout:** improve image rendering behavior ([062fa91](https://github.com/axe312ger/gatsby-mdx-suite/commit/062fa91a257fbc14f42864a4e82cdf95bfacb932))
+* **mdx/layout:** support grids with single items ([84c2289](https://github.com/axe312ger/gatsby-mdx-suite/commit/84c2289e6460a6286807ebe20be19ffae88ed7a8))
+
+
+### Features
+
+* **mdx/layout:** add Center component ([91ce5d4](https://github.com/axe312ger/gatsby-mdx-suite/commit/91ce5d47bd4a8d07f9e5dbb2156652915cc6377c))
+
+
+
+
+
 # [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.1.10...@gatsby-mdx-suite/mdx-layout@0.3.0) (2020-02-04)
 
 

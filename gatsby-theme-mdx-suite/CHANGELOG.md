@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.4.0...gatsby-theme-mdx-suite@0.5.0) (2020-02-16)
+
+
+### Bug Fixes
+
+* **docs:** remove docz as it causes problems with our own MDX rendering ([e7189f7](https://github.com/axe312ger/gatsby-mdx-suite/commit/e7189f774ac98f5de3f0e30f79f02c827b1132a0))
+
+
+### Features
+
+* **gatsby-theme-mdx-suite:** automatic kitchen sink style docs generation ([099a8cd](https://github.com/axe312ger/gatsby-mdx-suite/commit/099a8cdb644cc1dd6b7797e8e6f6c2d143e671e6))
+
+
+
+
+
 # [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.2.2...gatsby-theme-mdx-suite@0.4.0) (2020-02-04)
 
 

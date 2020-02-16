@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.2.0...@gatsby-mdx-suite/i18n@0.2.1) (2020-02-16)
+
+
+### Bug Fixes
+
+* **i18n:** properly generate page map for language switch ([c5c3a32](https://github.com/axe312ger/gatsby-mdx-suite/commit/c5c3a3261ac740c5571dcbfaba618c7091463a73))
+
+
+
+
+
 # [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.0.11...@gatsby-mdx-suite/i18n@0.2.0) (2020-02-04)
 
 
