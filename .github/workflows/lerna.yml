@@ -1,0 +1,35 @@
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  lerna-package-bumps:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: yarn install
+    - name: get lerna changes
+      run: |
+        echo "::set-output name=lerna_changed_packages::$(yarn --silent run lerna changed --json)"
+      id: lerna_changes
+    - uses: actions/github-script@0.5.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        lerna-changes: ${{ steps.lerna_changes.outputs.lerna_changed_packages }}
+        script: |
+          const lernaJson = JSON.parse(core.getInput('lerna-changes', { required: true }));
+          const packageLines = lernaJson.map((p) => `- [${p.name}](${p.location}): v${version}`)
+
+          const body = packageLines.join('\n')
+
+          github.pulls.createComment({
+            pull_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body
+          })
