@@ -913,15 +913,15 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bundle-stats/html-templates@^1.15.6":
-  version "1.15.6"
-  resolved "https://registry.yarnpkg.com/@bundle-stats/html-templates/-/html-templates-1.15.6.tgz#f19d277024c60494bc2384ca3f85114b1c814395"
-  integrity sha512-KPvyxFYoi4lNGfnnThRfMhf8U4NdRQWOb795ngDj7dtyU7whEv0ZPBBB6bn1Gc0Uk3mm+2+v+hCD+0ostiOMgA==
+"@bundle-stats/html-templates@^1.15.7":
+  version "1.15.7"
+  resolved "https://registry.yarnpkg.com/@bundle-stats/html-templates/-/html-templates-1.15.7.tgz#a932ca4c268f288a581a43ef77b7038dce2da3ed"
+  integrity sha512-6Kq4htSHzM2lcf5FNKh0zuoqqW/KICGP8uqQr37R5eFhKMyaZnYSQLrLC0mMMnRpBUURuZKoRasQU+S+VbzjeQ==
 
-"@bundle-stats/utils@^1.15.6":
-  version "1.15.6"
-  resolved "https://registry.yarnpkg.com/@bundle-stats/utils/-/utils-1.15.6.tgz#c1fc05d2b360a67cc9799dff1f9194ddb6c4244c"
-  integrity sha512-A0ERXikaSrWyRAeHn9cBPMGQxnZ8VeDkcgZefFQ4Uj2LrpD9fhZxD/Br8iHmnV6meC2H7b9YaAWNzNnoaI4sBw==
+"@bundle-stats/utils@^1.15.7":
+  version "1.15.7"
+  resolved "https://registry.yarnpkg.com/@bundle-stats/utils/-/utils-1.15.7.tgz#d228a2666094afff95b76d05620c6e235821ed26"
+  integrity sha512-Ti5JguRcIcON+zWuddZscBgyi3TZDKlkORhDZmINcL4V+TTR9PMIrhJ3R3Y5oJ4cbskx/axv+bpJV5T72drnbQ==
   dependencies:
     convert-units "^2.3.4"
     core-js "^3.1.4"
@@ -4083,13 +4083,13 @@ builtins@^1.0.3:
   resolved "https://registry.yarnpkg.com/builtins/-/builtins-1.0.3.tgz#cb94faeb61c8696451db36534e1422f94f0aee88"
   integrity sha1-y5T662HIaWRR2zZTThQi+U8K7og=
 
-bundle-stats@^1.15.6:
-  version "1.15.6"
-  resolved "https://registry.yarnpkg.com/bundle-stats/-/bundle-stats-1.15.6.tgz#6841cac6085c3cebe3dd89f6f2978f48c3c9ce67"
-  integrity sha512-fgAc/2GrA/505fwF41wxgiUPu5yFz3OZmy61yRauklddLPNh24H9/Wf+wjiz/JOFiOhF6Waz83sL58vG0qPhvA==
+bundle-stats@^1.15.7:
+  version "1.15.7"
+  resolved "https://registry.yarnpkg.com/bundle-stats/-/bundle-stats-1.15.7.tgz#08a5fab7623a6400595b45546ab62445021803cc"
+  integrity sha512-R73sivsyS5jfMc8ub8oac1XCkCUsNQ1XPX0k+E6L/P+gn6ViP3QTFhKKcl18U7ccBB4tFWYWRto96qsmhUELuA==
   dependencies:
-    "@bundle-stats/html-templates" "^1.15.6"
-    "@bundle-stats/utils" "^1.15.6"
+    "@bundle-stats/html-templates" "^1.15.7"
+    "@bundle-stats/utils" "^1.15.7"
     core-js "^3.1.4"
     find-cache-dir "3.2.0"
     fs-extra "8.1.0"
@@ -7675,11 +7675,11 @@ gatsby-page-utils@^0.0.39:
     micromatch "^3.1.10"
 
 gatsby-plugin-bundle-stats@^1.15.6:
-  version "1.15.6"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-bundle-stats/-/gatsby-plugin-bundle-stats-1.15.6.tgz#26804dbe62453209b1f8ec964fe760cd9604479b"
-  integrity sha512-RUlradbhDKwB4JoPlEf+j0Mb8LmaL5ZKYsunKGn3zADlIOUJL7CxwRgxj5GbSNJ8O7PsyXho42sQb5ShrXmwdg==
+  version "1.15.7"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-bundle-stats/-/gatsby-plugin-bundle-stats-1.15.7.tgz#3dba830ff1403a23099e8043ac1333c4c6f5416a"
+  integrity sha512-J7HVCcVPsQV3NrUVn2kbAWskaXlU1fis1nzB8icuLef+jn98tMjcbhCVqx0EMI+9XVU580lotLJFLepKWMci1A==
   dependencies:
-    bundle-stats "^1.15.6"
+    bundle-stats "^1.15.7"
 
 gatsby-plugin-emotion@^4.1.22:
   version "4.1.22"
