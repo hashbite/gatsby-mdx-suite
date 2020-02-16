@@ -1,7 +1,6 @@
 lerna-debug.log
 yarn-error.log
 packages/*/dist
-.docz
 gh-pages-demos
 
 # Created by https://www.gitignore.io/api/osx,node,code,linux,windows
