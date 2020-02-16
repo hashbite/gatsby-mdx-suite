@@ -18,5 +18,5 @@ jobs:
         echo "::set-output name=lerna_changed_packages::$(yarn --silent run lerna changed --json)"
       id: lerna_changes
     - run: |
-        yarn --silent run lerna changed --json | jq '[.[] | "- [`\(.name)`](\(.location)): v\(.version)"] | join("\\n") | @sh "::set-output name=lerna_bumps::\(.)"' --raw-output
+        echo $(yarn --silent run lerna changed --json | jq '[.[] | "- [`\(.name)`](\(.location)): v\(.version)"] | join("\\n") | @sh "::set-output name=lerna_bumps::\(.)"' --raw-output)
       id: lerna_bumps
