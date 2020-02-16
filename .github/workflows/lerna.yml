@@ -22,6 +22,7 @@ jobs:
         github-token: ${{secrets.GITHUB_TOKEN}}
         lerna-changes: ${{ steps.lerna_changes.outputs.lerna_changed_packages }}
         script: |
+          const core = require('@actions/core')
           const lernaJson = JSON.parse(core.getInput('lerna-changes', { required: true }));
           const packageLines = lernaJson.map((p) => `- [${p.name}](${p.location}): v${version}`)
 
