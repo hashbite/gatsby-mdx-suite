@@ -17,20 +17,6 @@ jobs:
       run: |
         echo "::set-output name=lerna_changed_packages::$(yarn --silent run lerna changed --json)"
       id: lerna_changes
-    - uses: actions/github-script@0.5.0
-      with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
-        lerna-changes: ${{ steps.lerna_changes.outputs.lerna_changed_packages }}
-        script: |
-          const core = require('@actions/core')
-          const lernaJson = JSON.parse(core.getInput('lerna-changes', { required: true }));
-          const packageLines = lernaJson.map((p) => `- [${p.name}](${p.location}): v${version}`)
-
-          const body = packageLines.join('\n')
-
-          github.pulls.createComment({
-            pull_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body
-          })
+    - run: |
+        yarn --silent run lerna changed --json | jq '[.[] | "- [`\(.name)`](\(.location)): v\(.version)"] | join("\\n") | @sh "::set-output name=lerna_bumps::\(.)"' --raw-output
+      id: lerna_bumps
