@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Link from '@gatsby-mdx-suite/mdx-basic/link'
+import Link from '@gatsby-mdx-suite/mdx-link/link'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 import MenuUl from './menu-ul'

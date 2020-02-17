@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-import Image from '@gatsby-mdx-suite/mdx-basic/image'
+import Image from '@gatsby-mdx-suite/mdx-image/image'
 import { applyColorSet, centerToContentColumn } from '@gatsby-mdx-suite/helpers'
 
 const SectionWrapper = styled.section`

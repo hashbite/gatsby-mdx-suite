@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-import Image from '@gatsby-mdx-suite/mdx-basic/image'
+import Image from '@gatsby-mdx-suite/mdx-image/image'
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
 // Shortcuts to ease up editor UX: start, end -> flex-start, flex-end; center -> center

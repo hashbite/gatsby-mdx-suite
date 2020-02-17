@@ -1,6 +1,6 @@
-import Link from './link'
 import styled from '@emotion/styled'
 
+import Link from './link'
 
 const CTA = styled(Link)`
   outline: 1px dashed tomato;

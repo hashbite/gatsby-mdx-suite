@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
-import Image from '@gatsby-mdx-suite/mdx-basic/image'
+import Image from '@gatsby-mdx-suite/mdx-image/image'
 
 const MediaGalleryWrapper = styled(Grid)`
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));

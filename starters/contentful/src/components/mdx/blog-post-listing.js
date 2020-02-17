@@ -5,8 +5,8 @@ import { css } from '@emotion/core'
 import { useTranslation } from 'react-i18next'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Image from '@gatsby-mdx-suite/mdx-basic/image'
-import Link from '@gatsby-mdx-suite/mdx-basic/link'
+import Image from '@gatsby-mdx-suite/mdx-image/image'
+import Link from '@gatsby-mdx-suite/mdx-link/link'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 const BlogPostListingWrapper = styled.div(

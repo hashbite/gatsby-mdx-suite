@@ -5,7 +5,7 @@ import { css } from '@emotion/core'
 
 import MenuLevel from '@gatsby-mdx-suite/menu/menu-level'
 import LanguageSwitch from '@gatsby-mdx-suite/i18n/language-switch'
-import Image from '@gatsby-mdx-suite/mdx-basic/image'
+import Image from '@gatsby-mdx-suite/mdx-image/image'
 import { centerToContentColumn, applyColorSet } from '@gatsby-mdx-suite/helpers'
 
 import LogoSVG from '../../assets/logo.svg'

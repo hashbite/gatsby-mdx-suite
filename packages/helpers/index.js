@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 
-import Cta from '@gatsby-mdx-suite/mdx-basic/cta'
+import Cta from '@gatsby-mdx-suite/mdx-link/cta'
 
 export const applyColorSet = (props) => {
   const { theme, hasImage } = props
