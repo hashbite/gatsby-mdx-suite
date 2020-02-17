@@ -1,4 +1,7 @@
 const cheerio = require('cheerio')
+const Debug = require('debug')
+
+const debug = Debug('gatsby-theme-mdx-suite')
 
 /**
  * Ensure @mdx-js dependencies build via webpack
@@ -28,13 +31,23 @@ exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
           collectionType: 'String!',
         },
         async resolve(source, args, context, info) {
-          const { selector, attribute } = mediaCollections[args.collectionType]
+          const { collectionType } = args
+          const { selector, attribute } = mediaCollections[collectionType]
 
           const $ = cheerio.load(source.rawBody)
           const cheerioResult = $(selector)
+
           const mediaIds = cheerioResult
-            .map((i, el) => $(el).attr(attribute))
+            .map((i, el) =>
+              $(el).attr(
+                typeof attribute === 'function' ? attribute(el) : attribute
+              )
+            )
             .get()
+
+          debug(
+            `Found ${mediaIds.length} assets for ${collectionType} in ${source.fileAbsolutePath} (${source.id})`
+          )
 
           const result = await context.nodeModel.runQuery({
             query: {
