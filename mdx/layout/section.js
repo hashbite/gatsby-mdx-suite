@@ -17,12 +17,12 @@ const SectionContentWrapper = styled.div(
 
     position: relative;
     z-index: 2;
-    padding-top: ${props.theme.spacing.s2}px;
-    padding-bottom: ${props.theme.spacing.s2}px;
+    margin-top: ${props.theme.spacing.s2}px;
+    margin-bottom: ${props.theme.spacing.s2}px;
 
     @media (min-width: ${props.theme.breakpoints[0]}) {
-      padding-top: ${props.theme.spacing.s4}px;
-      padding-bottom: ${props.theme.spacing.s4}px;
+      margin-top: ${props.theme.spacing.s4}px;
+      margin-bottom: ${props.theme.spacing.s4}px;
     }
 
     ${props.hasBackgroundImage &&
