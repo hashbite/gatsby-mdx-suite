@@ -8339,12 +8339,13 @@ gatsby-transformer-sqip@^2.1.64:
     p-queue "^2.4.2"
     sqip "^0.3.3"
 
-gatsby-transformer-video@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-video/-/gatsby-transformer-video-0.1.5.tgz#53b47b75fff2c986742ae1dc724c0108cea2d747"
-  integrity sha512-YEP71RBJ6+ppVflWaYwfwGokvBcY84YI8fU2LW76mFM8zegIBi6lmsrpyXd2dp07I4D0OFQly5J+dU2L/bIbww==
+gatsby-transformer-video@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-video/-/gatsby-transformer-video-0.1.11.tgz#c1103072c45f3c5de627171378c805cffe0bf8b8"
+  integrity sha512-q4S9Db18aoVRBmzwN4KwP+IA9NvI+9Vwh9zjySnoCF3VaFyQ9GhG9sJAyvJgjlTB07ZIIp4QfJgc+enKDVb0wA==
   dependencies:
     "@babel/runtime" "^7.0.0"
+    execa "^4.0.0"
     fast-glob "^3.1.1"
     fluent-ffmpeg "^2.1.2"
     fs-extra "^8.1.0"
@@ -12492,11 +12493,6 @@ mkdirp@*, mkdirp@0.5.1, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.1:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
-
-mkdirp@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.3.tgz#4cf2e30ad45959dddea53ad97d518b6c8205e1ea"
-  integrity sha512-6uCP4Qc0sWsgMLy1EOqqS/3rjDHOEnsStVr/4vtAIK2Y5i2kA7lFFejYrpIyiN9w0pYf4ckeCYT9f1r1P9KX5g==
 
 modify-values@^1.0.0:
   version "1.0.1"
