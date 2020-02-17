@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.5.0...gatsby-theme-mdx-suite@0.6.0) (2020-02-17)
+
+
+### Bug Fixes
+
+* **gatsby-theme-mdx-suite:** prepare theme config for new mdx-boxes package ([88f1459](https://github.com/axe312ger/gatsby-mdx-suite/commit/88f1459acb8e446d029a150073062353e14d0b6c))
+
+
+### Features
+
+* **asset-parser:** id attribute config can now be a function as well ([e8cc26c](https://github.com/axe312ger/gatsby-mdx-suite/commit/e8cc26ca2b9e01544b2c802e14756ebbc0d8be5f))
+* **mdx-video:** add Video component and gatsby-transformer-video ([fde95f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/fde95f43956265d2ec4454d8be15cc11190df929))
+
+
+
+
+
 # [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.4.0...gatsby-theme-mdx-suite@0.5.0) (2020-02-16)
 
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.2.1...@gatsby-mdx-suite/i18n@0.2.2) (2020-02-17)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/i18n
+
+
+
+
+
 ## [0.2.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.2.0...@gatsby-mdx-suite/i18n@0.2.1) (2020-02-16)
 
 

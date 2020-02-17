@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.3.0...gatsby-starter-mdx-suite-contentful@0.4.0) (2020-02-17)
+
+
+### Bug Fixes
+
+* **starters/contentful:** do not break build when no videos have been found ([02437ef](https://github.com/axe312ger/gatsby-suite-mdx/commit/02437ef776a7f9880da2c308d182fee9d3ee2f90))
+* **starters/contentful:** style adjustments ([5811680](https://github.com/axe312ger/gatsby-suite-mdx/commit/58116800fec30150adb899bc272ace9928455e96))
+
+
+### Features
+
+* **asset-parser:** id attribute config can now be a function as well ([e8cc26c](https://github.com/axe312ger/gatsby-suite-mdx/commit/e8cc26ca2b9e01544b2c802e14756ebbc0d8be5f))
+* **mdx-video:** add Video component and gatsby-transformer-video ([fde95f4](https://github.com/axe312ger/gatsby-suite-mdx/commit/fde95f43956265d2ec4454d8be15cc11190df929))
+
+
+
+
+
 # [0.3.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.2.0...gatsby-starter-mdx-suite-contentful@0.3.0) (2020-02-16)
 
 

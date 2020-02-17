@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.4.0...@gatsby-mdx-suite/mdx-layout@0.4.1) (2020-02-17)
+
+
+### Bug Fixes
+
+* **mdx-layout:** create Gap with height instead of margin ([95868db](https://github.com/axe312ger/gatsby-mdx-suite/commit/95868db8bf8d5bc6daf0077b901ec92ca7cc342a))
+* **starters/contentful:** style adjustments ([5811680](https://github.com/axe312ger/gatsby-mdx-suite/commit/58116800fec30150adb899bc272ace9928455e96))
+
+
+
+
+
 # [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.3.0...@gatsby-mdx-suite/mdx-layout@0.4.0) (2020-02-16)
 
 

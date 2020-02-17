@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.0.18...@gatsby-mdx-suite/mdx-youtube@0.0.19) (2020-02-17)
+
+
+### Bug Fixes
+
+* **mdx/youtube:** properly use MdxDataContext ([dde127c](https://github.com/axe312ger/gatsby-mdx-suite/commit/dde127ccf930ea27a2366f4bb935e4b19138dab3))
+
+
+
+
+
 ## [0.0.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.0.17...@gatsby-mdx-suite/mdx-youtube@0.0.18) (2020-02-16)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
