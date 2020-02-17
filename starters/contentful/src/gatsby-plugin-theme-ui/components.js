@@ -1,6 +1,8 @@
 // Basics
-import Image from '@gatsby-mdx-suite/mdx-basic/image'
-import Link from '@gatsby-mdx-suite/mdx-basic/link'
+import Image from '@gatsby-mdx-suite/mdx-image/image'
+import CTA from '@gatsby-mdx-suite/mdx-link/cta'
+import Link from '@gatsby-mdx-suite/mdx-link/link'
+import Video from '@gatsby-mdx-suite/mdx-video/video'
 
 // Layout
 import Gap from '@gatsby-mdx-suite/mdx-layout/gap'
@@ -45,4 +47,6 @@ export default {
   TimelineEntry,
   BlogPostListing,
   Header,
+  CTA,
+  Video,
 }

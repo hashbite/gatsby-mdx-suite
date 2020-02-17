@@ -42,7 +42,6 @@ export default function Image({
   alt,
   width,
   height,
-  svg,
   fluid,
   previewDataURI,
   file,
@@ -54,7 +53,6 @@ export default function Image({
     const imageData = data[contextKey].find((asset) => asset.assetId === id)
 
     if (imageData) {
-      svg = svg || imageData.svg
       fluid = fluid || imageData.fluid
       previewDataURI = previewDataURI || imageData.previewDataURI
       file = file || imageData.file
@@ -91,38 +89,21 @@ export default function Image({
     dimensionProps.height = height
   }
 
-  // Render actual image
-  if (src) {
+  // Images with fluid data from gatsby-transformer-sharp
+  if (fluid) {
     return (
       <ImageWrapper {...dimensionProps} {...restProps}>
-        <img {...imgProps} {...dimensionProps} src={src} />
+        <GatsbyImage {...imgProps} {...dimensionProps} fluid={fluid} />
       </ImageWrapper>
     )
   }
 
-  if (file.contentType === 'image/svg+xml') {
-    if (svg) {
-      // Inlined SVGs
-      return (
-        <ImageWrapper
-          {...dimensionProps}
-          dangerouslySetInnerHTML={{ __html: svg.content }}
-        />
-      )
-    }
+  const imageSrc = src || file.url
 
-    // SVGs that can/should not be inlined
-    return (
-      <ImageWrapper {...dimensionProps} {...restProps}>
-        <img {...imgProps} {...dimensionProps} src={file.url} />
-      </ImageWrapper>
-    )
-  }
-
-  // Non SVG images
+  // SVGs and images without fluid data
   return (
     <ImageWrapper {...dimensionProps} {...restProps}>
-      <GatsbyImage {...imgProps} {...dimensionProps} fluid={fluid} />
+      <img {...imgProps} {...dimensionProps} src={imageSrc} />
     </ImageWrapper>
   )
 }

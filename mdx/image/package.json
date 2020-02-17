@@ -1,7 +1,7 @@
 {
-  "name": "@gatsby-mdx-suite/mdx-form",
-  "version": "0.2.0",
-  "description": "",
+  "name": "@gatsby-mdx-suite/mdx-image",
+  "version": "0.0.0",
+  "description": "Render a image from an internal or external source",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
   "main": "index.js",
@@ -11,17 +11,20 @@
   "keywords": [
     "gatsby-mdx-suite",
     "gatsby",
-    "mdx"
+    "mdx",
+    "image",
+    "images",
+    "media"
   ],
   "dependencies": {
     "@emotion/core": "^10.0.27",
+    "@emotion/is-prop-valid": "^0.8.6",
     "@emotion/styled": "^10.0.27",
     "@gatsby-mdx-suite/contexts": "^0.0.6",
-    "@gatsby-mdx-suite/i18n": "^0.2.1",
     "gatsby": "^2.19.18",
+    "gatsby-image": "^2.2.41",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-i18next": "^11.3.1"
+    "react": "^16.12.0"
   },
   "publishConfig": {
     "access": "public"

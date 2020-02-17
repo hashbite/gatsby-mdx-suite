@@ -8,7 +8,7 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.0.6",
-    "@gatsby-mdx-suite/mdx-basic": "^0.2.1",
+    "@gatsby-mdx-suite/mdx-link": "^0.0.0",
     "gatsby": "^2.19.12",
     "prop-types": "^15.7.2",
     "react": "^16.12.0"

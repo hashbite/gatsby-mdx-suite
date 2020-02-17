@@ -1,7 +1,7 @@
 {
-  "name": "@gatsby-mdx-suite/mdx-basic",
-  "version": "0.2.1",
-  "description": "",
+  "name": "@gatsby-mdx-suite/mdx-link",
+  "version": "0.0.0",
+  "description": "Render a link to an internal or external site",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
   "main": "index.js",
@@ -11,14 +11,17 @@
   "keywords": [
     "gatsby-mdx-suite",
     "gatsby",
-    "mdx"
+    "mdx",
+    "link",
+    "links",
+    "hyperlink"
   ],
   "dependencies": {
+    "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "@gatsby-mdx-suite/contexts": "^0.0.6",
     "@gatsby-mdx-suite/i18n": "^0.2.1",
-    "gatsby": "^2.19.12",
-    "gatsby-image": "^2.2.40",
+    "gatsby": "^2.19.17",
     "prop-types": "^15.7.2",
     "react": "^16.12.0"
   },

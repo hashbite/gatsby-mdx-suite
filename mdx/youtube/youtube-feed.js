@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
-import Image from '@gatsby-mdx-suite/mdx-basic/image'
+import Image from '@gatsby-mdx-suite/mdx-image/image'
 
 import Youtube from './youtube-video'
 
