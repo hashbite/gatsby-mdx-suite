@@ -1,5 +1,17 @@
+const { resolve } = require('path')
+const { platform, arch } = require('os')
+
 const isProduction = process.env.NODE_ENV === 'production'
 const isStaging = !!process.env.STAGING
+
+const ffmpegBinDir = resolve(
+  __dirname,
+  'node_modules',
+  '.cache',
+  'gatsby-transformer-video-bins',
+  arch(),
+  platform()
+)
 
 require('dotenv').config({ path: `.env` })
 
@@ -79,6 +91,10 @@ module.exports = {
             selector: 'floatingimage[imageid]',
             attribute: 'imageid',
           },
+          videos: {
+            selector: 'video[id],boxvideo[videoid]',
+            attribute: (el) => (el.name === 'video' ? 'id' : 'videoid'),
+          },
         },
       },
     },
@@ -107,6 +123,13 @@ module.exports = {
               host: `preview.contentful.com`,
               accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
             }),
+      },
+    },
+    {
+      resolve: `gatsby-transformer-video`,
+      options: {
+        ffmpegPath: resolve(ffmpegBinDir, 'ffmpeg'),
+        ffprobePath: resolve(ffmpegBinDir, 'ffprobe'),
       },
     },
     `gatsby-plugin-react-svg`,

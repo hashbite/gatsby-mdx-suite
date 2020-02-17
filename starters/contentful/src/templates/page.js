@@ -33,6 +33,11 @@ function PageTemplate({ data, pageContext }) {
           images: content.childMdx.images,
           background: content.childMdx.background,
           floating: content.childMdx.floating,
+          videos: content.childMdx.videos.map(({ id, videoH264 }) => ({
+            id,
+            h264: videoH264.path,
+            screenshots: videoH264.screenshots.map(({ path }) => path),
+          })),
         },
       }}
     >
@@ -110,6 +115,15 @@ export const pageQuery = graphql`
             }
             fluid(maxWidth: 1024) {
               ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+          }
+          videos: media(collectionType: "videos") {
+            ...MdxSuiteContentfulAsset
+            videoH264(screenshots: "0") {
+              path
+              screenshots {
+                path
+              }
             }
           }
         }

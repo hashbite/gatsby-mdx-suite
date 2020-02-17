@@ -3,12 +3,19 @@ import propTypes from 'prop-types'
 import GatsbyImage from 'gatsby-image'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import isPropValid from '@emotion/is-prop-valid'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 const parseCssValue = (v) => (isNaN(v) ? v : `${v}px`)
 
-const ImageWrapper = styled.div(
+export const ImageWrapper = styled('div', {
+  shouldForwardProp: (prop) =>
+    isPropValid(prop) &&
+    !['id', 'src', 'alt', 'width', 'height', 'svg', 'fluid', 'file'].includes(
+      prop
+    ),
+})(
   ({ width, height }) => css`
     display: block;
 
@@ -39,11 +46,12 @@ export default function Image({
   fluid,
   previewDataURI,
   file,
+  ...restProps
 }) {
   const { data } = useContext(MdxSuiteContext)
   if (id && data[contextKey]) {
     // Fetch data from context when an id was passed
-    const imageData = data[contextKey].find((asset) => asset.imageId === id)
+    const imageData = data[contextKey].find((asset) => asset.assetId === id)
 
     if (imageData) {
       svg = svg || imageData.svg
@@ -86,7 +94,7 @@ export default function Image({
   // Render actual image
   if (src) {
     return (
-      <ImageWrapper {...dimensionProps}>
+      <ImageWrapper {...dimensionProps} {...restProps}>
         <img {...imgProps} {...dimensionProps} src={src} />
       </ImageWrapper>
     )
@@ -105,7 +113,7 @@ export default function Image({
 
     // SVGs that can/should not be inlined
     return (
-      <ImageWrapper {...dimensionProps}>
+      <ImageWrapper {...dimensionProps} {...restProps}>
         <img {...imgProps} {...dimensionProps} src={file.url} />
       </ImageWrapper>
     )
@@ -113,7 +121,7 @@ export default function Image({
 
   // Non SVG images
   return (
-    <ImageWrapper {...dimensionProps}>
+    <ImageWrapper {...dimensionProps} {...restProps}>
       <GatsbyImage {...imgProps} {...dimensionProps} fluid={fluid} />
     </ImageWrapper>
   )
