@@ -120,7 +120,9 @@ const ThumbnailTitle = styled.div`
 `
 
 export default function YoutubeFeed({ channelId, ...props }) {
-  const { youtubeVideos } = useContext(MdxDataContext)
+  const {
+    data: { youtubeVideos },
+  } = useContext(MdxSuiteContext)
 
   const [activeVideo, setActiveVideo] = useState(null)
 
