@@ -16,11 +16,14 @@ const HeaderWrapper = styled.div(
   ({ hasBackgroundImage, ...restProps }) => css`
     position: relative;
 
-    ${hasBackgroundImage &&
-      css`
-        ${applyColorSet(restProps)}
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
-      `}
+    ${hasBackgroundImage
+      ? css`
+          ${applyColorSet(restProps)}
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+        `
+      : css`
+          background: #f7fafc;
+        `}
   `
 )
 
@@ -95,11 +98,16 @@ const HeaderBackgroundImageWrapper = styled.div`
 
 const HeaderContent = styled.div`
   position: relative;
-  min-height: 42vh;
+  min-height: 16rem;
+  height: 42vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   ${centerToContentColumn}
+
+  > *:first-child {
+    padding-top: 4rem;
+  }
 `
 
 const Header = ({ children, backgroundImageId }) => {
