@@ -1,0 +1,30 @@
+{
+  "name": "@gatsby-mdx-suite/mdx-boxes",
+  "version": "0.0.0",
+  "description": "Create layouts with grid of square boxes",
+  "author": "Benedikt Rötsch <opensource@axe312.dev>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gatsby-mdx-suite",
+    "gatsby",
+    "mdx",
+    "video"
+  ],
+  "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@emotion/is-prop-valid": "^0.8.6",
+    "@emotion/styled": "^10.0.27",
+    "@gatsby-mdx-suite/helpers": "^0.2.1",
+    "@gatsby-mdx-suite/mdx-image": "^0.0.0",
+    "@gatsby-mdx-suite/mdx-video": "^0.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -12,8 +12,11 @@ import Viewport from '@gatsby-mdx-suite/mdx-layout/viewport'
 import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
 import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
 import FloatingImage from '@gatsby-mdx-suite/mdx-layout/floating-image'
-import Boxes from '@gatsby-mdx-suite/mdx-layout/boxes'
-import Box from '@gatsby-mdx-suite/mdx-layout/box'
+
+// Boxes
+import Boxes from '@gatsby-mdx-suite/mdx-boxes/boxes'
+import Box from '@gatsby-mdx-suite/mdx-boxes/box'
+import BoxVideo from '@gatsby-mdx-suite/mdx-boxes/box-video'
 
 // Copy
 import ResponsiveText from '@gatsby-mdx-suite/mdx-copy/responsive-text'
@@ -39,6 +42,7 @@ export default {
   Link,
   Boxes,
   Box,
+  BoxVideo,
   Gap,
   Center,
   ResponsiveText,
