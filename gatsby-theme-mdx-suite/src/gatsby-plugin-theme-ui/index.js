@@ -32,8 +32,7 @@ export function generateSpacingUnits({ spacingUnit, multipliers } = {}) {
 // Spacing config
 const spacingUnit = 16
 const maxContentWidth = 1400
-const gridColumnWidth = 140
-const gridGutter = 16
+const gridGutter = '16px'
 const spacing = generateSpacingUnits({ spacingUnit })
 const space = [
   0,
@@ -65,12 +64,12 @@ const orange = '#FFA500'
 const lemon = '#FF0'
 const lime = '#0F0'
 const water = '#00F'
+const blue = '#4299E1'
 
 export default {
   initialColorMode: 'light',
   sizes: {
     maxContentWidth,
-    gridColumnWidth,
     gridGutter,
   },
   breakpoints: ['576px', '768px', '992px'],
@@ -91,6 +90,7 @@ export default {
     lemon,
     lime,
     water,
+    blue,
     modes: {
       dark: {
         // Dont just invert colors for dark mode. This is just a demo.
@@ -156,6 +156,11 @@ export default {
       water: {
         background: water,
         primary: white,
+        secondary: white,
+      },
+      blue: {
+        background: blue,
+        primary: orange,
         secondary: white,
       },
     },
