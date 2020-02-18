@@ -27,18 +27,23 @@ const BoxVideo = ({
   controls,
   autoplay,
   loop,
+  muted,
+  pauseOnHover,
   ...restProps
 }) => {
+  const videoProps = {
+    id: videoId,
+    videoFit,
+    videoPosition,
+    controls,
+    autoplay,
+    muted,
+    loop,
+    pauseOnHover,
+  }
   return (
     <BaseBox {...restProps}>
-      <StyledVideo
-        id={videoId}
-        videoFit={videoFit}
-        videoPosition={videoPosition}
-        controls={controls}
-        autoplay={autoplay}
-        loop={loop}
-      />
+      <StyledVideo {...videoProps} />
     </BaseBox>
   )
 }
@@ -50,7 +55,9 @@ BoxVideo.defaultProps = {
   videoPosition: 'center center',
   controls: true,
   autoplay: true,
+  muted: true,
   loop: true,
+  pauseOnHover: true,
 }
 
 BoxVideo.propTypes = {
@@ -88,8 +95,18 @@ BoxVideo.propTypes = {
    */
   videoPosition: propTypes.string,
   controls: propTypes.bool,
+  /**
+   * Set if the video start playing as soon it is visible. Mutes audio due to browser limitations.
+   */
   autoplay: propTypes.bool,
+  /**
+   * Set if the video should run as loop.
+   */
   loop: propTypes.bool,
+  /**
+   * Mute audio. Always true when autoplay is enabled.
+   */
+  muted: propTypes.bool,
 }
 
 export default BoxVideo

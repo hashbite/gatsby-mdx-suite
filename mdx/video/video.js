@@ -16,6 +16,8 @@ export default function Video({
   controls,
   autoplay,
   preload,
+  muted,
+  pauseOnHover,
   ...props
 }) {
   const {
@@ -69,6 +71,17 @@ export default function Video({
     return null
   }
 
+  const handleVideoMouseEnter = () => {
+    if (autoplay && pauseOnHover) {
+      refVideo.current.pause()
+    }
+  }
+  const handleVideoMouseLeave = () => {
+    if (autoplay && pauseOnHover) {
+      refVideo.current.play()
+    }
+  }
+
   return (
     <Observer
       treshold={0.33}
@@ -78,8 +91,11 @@ export default function Video({
       <VideoTag
         ref={refVideo}
         onPause={handleVideoPaused}
+        onMouseEnter={handleVideoMouseEnter}
+        onMouseLeave={handleVideoMouseLeave}
         controls={controls}
         preload={preload}
+        muted={autoplay || muted}
         poster={video.screenshots && video.screenshots[screenshotIndex]}
         {...props}
       >
@@ -92,7 +108,9 @@ export default function Video({
 Video.defaultProps = {
   screenshotIndex: 0,
   controls: true,
-  autoplay: true,
+  autoplay: false,
+  muted: false,
+  pauseOnHover: false,
   preload: 'metadata',
 }
 
@@ -102,4 +120,6 @@ Video.propTypes = {
   preload: propTypes.string,
   autoplay: propTypes.bool,
   controls: propTypes.bool,
+  muted: propTypes.bool,
+  pauseOnHover: propTypes.bool,
 }
