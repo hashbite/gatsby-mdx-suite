@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.4.0...gatsby-starter-mdx-suite-contentful@0.5.0) (2020-02-18)
+
+
+### Bug Fixes
+
+* **mdx/image:** image components are now static till fit property is set ([33f8d06](https://github.com/axe312ger/gatsby-suite-mdx/commit/33f8d0632b4d1a8afa6620d12cfdbf309fc90f85))
+
+
+### Features
+
+* **mdx/boxes:** add BoxCarousel component ([856c217](https://github.com/axe312ger/gatsby-suite-mdx/commit/856c2173a39385d331c115e181190796f78d062f))
+
+
+
+
+
 # [0.4.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.3.0...gatsby-starter-mdx-suite-contentful@0.4.0) (2020-02-17)
 
 

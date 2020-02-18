@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.1.0...@gatsby-mdx-suite/mdx-video@0.2.0) (2020-02-18)
+
+
+### Bug Fixes
+
+* **mdx/video:** restart video when autoplay is active ([c8f5f56](https://github.com/axe312ger/gatsby-mdx-suite/commit/c8f5f5672cd525bba1141f7ed25c8a4e6230650e))
+
+
+### Features
+
+* **mdx/boxes:** Autoplay box videos and pause on hover ([64122fd](https://github.com/axe312ger/gatsby-mdx-suite/commit/64122fd322f876e2d706d3d547f550a62bdb4858))
+
+
+
+
+
 # 0.1.0 (2020-02-17)
 
 
