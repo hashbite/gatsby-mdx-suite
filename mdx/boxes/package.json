@@ -1,7 +1,7 @@
 {
   "name": "@gatsby-mdx-suite/mdx-boxes",
   "version": "0.0.1",
-  "description": "Create layouts with grid of square boxes",
+  "description": "Create layouts with grid of boxes",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
   "main": "index.js",
