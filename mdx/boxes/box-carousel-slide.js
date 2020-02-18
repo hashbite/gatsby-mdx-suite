@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import isPropValid from '@emotion/is-prop-valid'
 
+import Link from '@gatsby-mdx-suite/mdx-link/link'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
@@ -44,10 +45,15 @@ const BoxCarouselSlide = ({
   backgroundImageFit,
   backgroundImageId,
   backgroundImagePosition,
+  linkId,
+  href,
+  hash,
+  title,
   ...slideProps
 }) => {
-  return (
-    <StyledSlide {...slideProps}>
+  const linkProps = { id: linkId, href, hash, title }
+  const slideContent = (
+    <>
       {children && <SlideContent>{children}</SlideContent>}
       {backgroundImageId && (
         <SlideBackgroundImageWrapper
@@ -60,6 +66,15 @@ const BoxCarouselSlide = ({
             position={backgroundImagePosition}
           />
         </SlideBackgroundImageWrapper>
+      )}
+    </>
+  )
+  return (
+    <StyledSlide {...slideProps}>
+      {linkId || href ? (
+        <Link {...linkProps}>{slideContent}</Link>
+      ) : (
+        slideContent
       )}
     </StyledSlide>
   )
@@ -113,6 +128,14 @@ BoxCarouselSlide.propTypes = {
   primaryColor: propTypes.string,
   /* Set secondary color for this element and all children */
   secondaryColor: propTypes.string,
+  /* Id of an internal page to link to */
+  linkId: propTypes.string,
+  /* URI of an external page to link to */
+  href: propTypes.string,
+  /* Option hash to attach to the link href */
+  hash: propTypes.string,
+  /* Optional title. Should be set for a11y and seo reasons when link has non-text content. */
+  title: propTypes.string,
 }
 
 export default BoxCarouselSlide

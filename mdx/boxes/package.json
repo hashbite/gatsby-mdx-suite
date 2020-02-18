@@ -20,6 +20,7 @@
     "@emotion/styled": "^10.0.27",
     "@gatsby-mdx-suite/helpers": "^0.2.2",
     "@gatsby-mdx-suite/mdx-image": "^0.0.1",
+    "@gatsby-mdx-suite/mdx-link": "^0.0.1",
     "@gatsby-mdx-suite/mdx-video": "^0.1.0",
     "prop-types": "^15.7.2",
     "pure-react-carousel": "^1.25.2",

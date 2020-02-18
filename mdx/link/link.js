@@ -11,7 +11,6 @@ import {
 export default function Link({
   id,
   href,
-  target = null,
   title,
   className = null,
   hash,
@@ -41,7 +40,7 @@ export default function Link({
   // Render a normal anchor when a href is given
   if (href) {
     return (
-      <a className={className} href={href} target={target}>
+      <a className={className} href={href} title={title} {...linkProps}>
         {children || title}
       </a>
     )
@@ -85,7 +84,6 @@ export default function Link({
       className={className}
       activeClassName="active"
       to={to}
-      target={target}
       {...linkProps}
     >
       {children || title || pageTitle}
@@ -94,11 +92,15 @@ export default function Link({
 }
 
 Link.propTypes = {
+  /* Id of an internal page to link to */
   id: propTypes.string,
+  /* URI of an external page to link to */
   href: propTypes.string,
-  className: propTypes.string,
+  /* Option hash to attach to the link href */
   hash: propTypes.string,
+  /* Optional title. Should be set for a11y and seo reasons when link has non-text content. */
   title: propTypes.string,
-  target: propTypes.string,
+  /* Optional link class */
+  className: propTypes.string,
   children: propTypes.node,
 }
