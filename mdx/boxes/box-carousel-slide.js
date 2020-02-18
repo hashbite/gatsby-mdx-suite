@@ -8,75 +8,49 @@ import isPropValid from '@emotion/is-prop-valid'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
-import BaseBox from './base-box'
+import { Slide } from 'pure-react-carousel'
 
-const StyledBaseBox = styled(BaseBox, {
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
-})(applyColorSet)
+const StyledSlide = styled(Slide)(applyColorSet)
 
-const BoxContent = styled('div', {
+const SlideContent = styled('div', {
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
 })(
-  ({ scale, theme: { breakpoints }, minSize }) => css`
+  () => css`
     position: absolute;
     z-index: 2;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: ${minSize >= 12 ? '2rem' : '1rem'};
-    overflow: hidden;
-
-    @media screen and (min-width: ${breakpoints[0]}) {
-      ${scale &&
-        scale !== 1 &&
-        css`
-          transform: scale(${scale});
-        `}
-    }
+    padding: 2rem;
   `
 )
 
-const BackgroundImageWrapper = styled('div', {
+const SlideBackgroundImageWrapper = styled('div', {
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
 })(
-  ({ scale }) => css`
+  () => css`
     position: absolute;
     z-index: 1;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-
-    ${scale &&
-      scale !== 1 &&
-      css`
-        transform: scale(${scale});
-      `}
   `
 )
 
-const Box = ({
+const BoxCarouselSlide = ({
   children,
-  scale,
   backgroundImageFit,
   backgroundImageId,
   backgroundImagePosition,
-  ...boxProps
+  ...slideProps
 }) => {
-  const minSize = Math.min(
-    ...[boxProps.width, boxProps.height].filter((size) => size > 0)
-  )
   return (
-    <StyledBaseBox {...boxProps}>
-      {children && (
-        <BoxContent scale={scale} minSize={minSize}>
-          {children}
-        </BoxContent>
-      )}
+    <StyledSlide {...slideProps}>
+      {children && <SlideContent>{children}</SlideContent>}
       {backgroundImageId && (
-        <BackgroundImageWrapper
-          scale={scale}
+        <SlideBackgroundImageWrapper
           backgroundImageFit={backgroundImageFit}
           backgroundImagePosition={backgroundImagePosition}
         >
@@ -85,24 +59,20 @@ const Box = ({
             fit={backgroundImageFit}
             position={backgroundImagePosition}
           />
-        </BackgroundImageWrapper>
+        </SlideBackgroundImageWrapper>
       )}
-    </StyledBaseBox>
+    </StyledSlide>
   )
 }
 
-Box.defaultProps = {
-  ...BaseBox.defaultProps,
+BoxCarouselSlide.defaultProps = {
   backgroundImageId: null,
   backgroundImageFit: 'cover',
   backgroundImagePosition: 'center center',
-  scale: 1,
 }
 
-Box.propTypes = {
-  ...BaseBox.propTypes,
-  // Scale factor of the content & background image of the box. Usually a value between 0.1 and 2.
-  scale: propTypes.number,
+BoxCarouselSlide.propTypes = {
+  children: propTypes.node.isRequired,
   // Id of the background image
   backgroundImageId: propTypes.string,
   /**
@@ -145,4 +115,4 @@ Box.propTypes = {
   secondaryColor: propTypes.string,
 }
 
-export default Box
+export default BoxCarouselSlide

@@ -72,16 +72,16 @@ module.exports = {
             attribute: 'backgroundimageid',
           },
           images: {
-            selector: 'image[id],box[backgroundimageid],boximage[imageid]',
+            selector:
+              'image[id],box[backgroundimageid],boxcarouselslide[backgroundimageid]',
             /**
              * @param el See: https://github.com/cheeriojs/cheerio#the-dom-node-object
              */
             attribute: (el) => {
               switch (el.name) {
                 case 'box':
+                case 'boxcarouselslide':
                   return 'backgroundimageid'
-                case 'boximage':
-                  return 'imageid'
                 default:
                   return 'id'
               }

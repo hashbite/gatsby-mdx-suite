@@ -17,6 +17,8 @@ import FloatingImage from '@gatsby-mdx-suite/mdx-layout/floating-image'
 import Boxes from '@gatsby-mdx-suite/mdx-boxes/boxes'
 import Box from '@gatsby-mdx-suite/mdx-boxes/box'
 import BoxVideo from '@gatsby-mdx-suite/mdx-boxes/box-video'
+import BoxCarousel from '@gatsby-mdx-suite/mdx-boxes/box-carousel'
+import BoxCarouselSlide from '@gatsby-mdx-suite/mdx-boxes/box-carousel-slide'
 
 // Copy
 import ResponsiveText from '@gatsby-mdx-suite/mdx-copy/responsive-text'
@@ -53,4 +55,6 @@ export default {
   Header,
   CTA,
   Video,
+  BoxCarousel,
+  BoxCarouselSlide,
 }
