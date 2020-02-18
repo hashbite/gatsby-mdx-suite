@@ -65,6 +65,14 @@ const HeaderMenuControls = styled.div`
   }
 `
 
+const BackgroundImage = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`
+
 const HeaderBackgroundImageWrapper = styled.div`
   position: absolute;
   top: 0;
@@ -141,7 +149,11 @@ const Header = ({ children, backgroundImageId }) => {
       <HeaderContent>{children}</HeaderContent>
       {backgroundImageId && (
         <HeaderBackgroundImageWrapper>
-          <Image id={backgroundImageId} contextKey="background" />
+          <BackgroundImage
+            id={backgroundImageId}
+            contextKey="background"
+            fit="cover"
+          />
         </HeaderBackgroundImageWrapper>
       )}
     </HeaderWrapper>

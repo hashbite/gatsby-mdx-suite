@@ -24,8 +24,13 @@ export const ImageWrapper = styled('div', {
       'position',
     ].includes(prop),
 })(
-  ({ width, height }) => css`
+  ({ width, height, fitsParent }) => css`
     display: block;
+
+    ${!fitsParent &&
+      css`
+        position: relative;
+      `}
 
     img {
       display: block;
@@ -112,10 +117,12 @@ export default function Image({
     dimensionProps.height = height
   }
 
+  const fitsParent = fit || fit === 'none'
+
   // Images with fluid data from gatsby-transformer-sharp
   if (fluid) {
     return (
-      <ImageWrapper {...dimensionProps} {...restProps}>
+      <ImageWrapper fitsParent={fitsParent} {...dimensionProps} {...restProps}>
         <GatsbyImage
           fluid={fluid}
           style={{ position: 'static' }}
@@ -132,7 +139,7 @@ export default function Image({
 
   // Images without fluid data
   return (
-    <ImageWrapper {...dimensionProps} {...restProps}>
+    <ImageWrapper fitsParent={fitsParent} {...dimensionProps} {...restProps}>
       <StyledImage
         src={imageSrc}
         {...imgProps}
