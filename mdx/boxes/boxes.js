@@ -17,6 +17,7 @@ const StyledBoxes = styled.div(
       grid-template-columns: repeat(48, 1fr);
     }
 
+    // Ensure square base grid
     &:before {
       content: '';
       width: 0;
@@ -28,6 +29,11 @@ const StyledBoxes = styled.div(
     > *:first-child {
       grid-row-start: 1;
       grid-column-start: 1;
+    }
+
+    // Allow stacking of boxes components
+    & + & {
+      margin-top: ${sizes.gridGutter || '1rem'};
     }
   `
 )
