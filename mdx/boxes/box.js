@@ -10,16 +10,21 @@ import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
 import BaseBox from './base-box'
 
-const StyledBaseBox = styled(BaseBox)(applyColorSet)
+const StyledBaseBox = styled(BaseBox, {
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
+})(applyColorSet)
 
 const BoxContent = styled('div', {
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
 })(
-  ({ scale, theme: { breakpoints } }) => css`
-    position: relative;
+  ({ scale, theme: { breakpoints }, minSize }) => css`
+    position: absolute;
     z-index: 2;
-    padding: 1rem;
-    margin-top: -100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: ${minSize >= 12 ? '2rem' : '1rem'};
 
     @media screen and (min-width: ${breakpoints[0]}) {
       ${scale &&
@@ -34,7 +39,7 @@ const BoxContent = styled('div', {
 const BackgroundImageWrapper = styled('div', {
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
 })(
-  ({ scale, backgroundImageFit, backgroundImagePosition }) => css`
+  ({ scale }) => css`
     position: absolute;
     z-index: 1;
     top: 0;
@@ -47,22 +52,6 @@ const BackgroundImageWrapper = styled('div', {
       css`
         transform: scale(${scale});
       `}
-
-    img {
-      height: 100%;
-      object-fit: ${backgroundImageFit} !important;
-      object-position: ${backgroundImagePosition} !important;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      bottom: 100%;
-    }
-
-    /* Hack gatsby-image to act as background image */
-    & .gatsby-image-wrapper {
-      position: static !important;
-    }
   `
 )
 
@@ -72,18 +61,29 @@ const Box = ({
   backgroundImageFit,
   backgroundImageId,
   backgroundImagePosition,
-  ...restProps
+  ...boxProps
 }) => {
+  const minSize = Math.min(
+    ...[boxProps.width, boxProps.height].filter((size) => size > 0)
+  )
   return (
-    <StyledBaseBox {...restProps}>
-      {children && <BoxContent scale={scale}>{children}</BoxContent>}
+    <StyledBaseBox {...boxProps}>
+      {children && (
+        <BoxContent scale={scale} minSize={minSize}>
+          {children}
+        </BoxContent>
+      )}
       {backgroundImageId && (
         <BackgroundImageWrapper
           scale={scale}
           backgroundImageFit={backgroundImageFit}
           backgroundImagePosition={backgroundImagePosition}
         >
-          <Image id={backgroundImageId} />
+          <Image
+            id={backgroundImageId}
+            fit={backgroundImageFit}
+            position={backgroundImagePosition}
+          />
         </BackgroundImageWrapper>
       )}
     </StyledBaseBox>
@@ -93,7 +93,7 @@ const Box = ({
 Box.defaultProps = {
   ...BaseBox.defaultProps,
   backgroundImageId: null,
-  backgroundImageFit: 'contain',
+  backgroundImageFit: 'cover',
   backgroundImagePosition: 'center center',
   scale: 1,
 }

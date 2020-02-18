@@ -16,8 +16,8 @@ const BaseBox = styled('div', {
   // Default to square aspect ratio
   let { width, height } = props
   if (!width && !height) {
-    width = 16
-    height = 16
+    width = 24
+    height = 24
   }
   if (!width) {
     width = height
@@ -28,14 +28,8 @@ const BaseBox = styled('div', {
 
   return css`
     position: relative;
-
-    grid-area: span ${height} / span ${width};
-
-    &:before {
-      content: '';
-      display: block;
-      padding-bottom: ${Math.round((height / width) * 100, 2)}%;
-    }
+    grid-row-end: span ${height};
+    grid-column-end: span ${width};
 
     ${hideOnMobile &&
       css`
