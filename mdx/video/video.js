@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext } from 'react'
+import React, { useRef, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import Observer from '@researchgate/react-intersection-observer'
@@ -36,13 +36,10 @@ export default function Video({
   }
 
   const refVideo = useRef(null)
-  const [wasPaused, setWasPaused] = useState(false)
-
-  const handleVideoPaused = (event) => setWasPaused(true)
 
   const handleVideoIntersection = async (event) => {
     try {
-      if (!wasPaused && event.isIntersecting && refVideo.current) {
+      if (autoplay && event.isIntersecting && refVideo.current) {
         await refVideo.current.play()
       }
       if (!event.isIntersecting && refVideo.current) {
@@ -90,7 +87,6 @@ export default function Video({
     >
       <VideoTag
         ref={refVideo}
-        onPause={handleVideoPaused}
         onMouseEnter={handleVideoMouseEnter}
         onMouseLeave={handleVideoMouseLeave}
         controls={controls}
