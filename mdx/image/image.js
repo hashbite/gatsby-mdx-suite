@@ -12,15 +12,22 @@ const parseCssValue = (v) => (isNaN(v) ? v : `${v}px`)
 export const ImageWrapper = styled('div', {
   shouldForwardProp: (prop) =>
     isPropValid(prop) &&
-    !['id', 'src', 'alt', 'width', 'height', 'svg', 'fluid', 'file'].includes(
-      prop
-    ),
+    ![
+      'id',
+      'src',
+      'alt',
+      'width',
+      'height',
+      'fluid',
+      'file',
+      'fit',
+      'position',
+    ].includes(prop),
 })(
   ({ width, height }) => css`
     display: block;
 
-    img,
-    svg {
+    img {
       display: block;
     }
 
@@ -30,21 +37,37 @@ export const ImageWrapper = styled('div', {
       `}
     ${height &&
       css`
-        width: ${parseCssValue(width)};
+        height: ${parseCssValue(height)};
       `}
   `
+)
+
+const StyledImage = styled.img(
+  ({ fit, position }) =>
+    fit &&
+    css`
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: ${fit};
+      object-position: ${position};
+    `
 )
 
 export default function Image({
   id,
   contextKey,
-  src,
-  alt,
   width,
   height,
-  fluid,
+  fit,
+  position,
+  src,
+  alt,
   previewDataURI,
   file,
+  fluid,
   ...restProps
 }) {
   const { data } = useContext(MdxSuiteContext)
@@ -93,17 +116,30 @@ export default function Image({
   if (fluid) {
     return (
       <ImageWrapper {...dimensionProps} {...restProps}>
-        <GatsbyImage {...imgProps} {...dimensionProps} fluid={fluid} />
+        <GatsbyImage
+          fluid={fluid}
+          style={{ position: 'static' }}
+          {...imgProps}
+          {...dimensionProps}
+          objectFit={fit}
+          objectPosition={position}
+        />
       </ImageWrapper>
     )
   }
 
   const imageSrc = src || file.url
 
-  // SVGs and images without fluid data
+  // Images without fluid data
   return (
     <ImageWrapper {...dimensionProps} {...restProps}>
-      <img {...imgProps} {...dimensionProps} src={imageSrc} />
+      <StyledImage
+        src={imageSrc}
+        {...imgProps}
+        {...dimensionProps}
+        fit={fit}
+        position={position}
+      />
     </ImageWrapper>
   )
 }
@@ -113,38 +149,92 @@ Image.displayName = 'Image'
 Image.defaultProps = {
   contextKey: 'images',
   width: '100%',
+  fit: null,
+  position: 'center center',
 }
 
 Image.propTypes = {
-  // Author related
+  /**
+   * Id of the internal image
+   */
   id: propTypes.string,
+  /**
+   * URI of the external image
+   */
   src: propTypes.string,
+  /**
+   * Set the width of the image.
+   *
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/width
+   */
   alt: propTypes.string,
+  /**
+   * Set the width of the image.
+   *
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/width
+   */
   width: propTypes.string,
+  /**
+   * Set the height of the image.
+   *
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/height
+   */
   height: propTypes.string,
-  // Developer related
+  /**
+   * Set how the image should be fit into the container.
+   *
+   * Possible options:
+   *
+   * * fill
+   * * contain
+   * * cover
+   * * none
+   * * scale-down
+   *
+   * Live demo and more details:
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
+   */
+  fit: propTypes.string,
+  /**
+   * Set how the image should be positioned within its container.
+   *
+   * Takes two values, one for the horizontal and one for the vertical axis.
+   *
+   * Example values:
+   *
+   * * center bottom
+   * * 2rem center
+   * * top right
+   *
+   * Live demo and more details:
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/object-position
+   */
+  position: propTypes.string,
+  /**
+   * Defines which image variant / context is used to locate the image data.
+   */
   contextKey: propTypes.string,
   /**
-   * SVG file content
+   * Overwrite the embedded image preview with your own value.
    *
-   * Can be generated via:
-   * https://www.gatsbyjs.org/packages/gatsby-transformer-inline-svg/
+   * Will overwrite the value in fluid.base64
+   *
+   * For example via https://www.gatsbyjs.org/packages/gatsby-transformer-sqip/
    */
-  svg: propTypes.object,
+  previewDataURI: propTypes.object,
+  /**
+   * Used to render this component without context data.
+   */
+  file: propTypes.object,
   /**
    * Data to render the image via Gatsby Image as fluid/responsive image.
    * Usually generated via a gatsby-transformer-sharp fragment.
+   *
+   * Requires file property to be set.
    *
    * See:
    * * https://www.gatsbyjs.org/docs/gatsby-image/#images-that-stretch-across-a-fluid-container
    * * https://www.gatsbyjs.org/docs/gatsby-image/#common-fragments-with-gatsby-transformer-sharp
    */
   fluid: propTypes.object,
-  /**
-   * Overwrite the embedded image preview with your own value.
-   *
-   * For example via https://www.gatsbyjs.org/packages/gatsby-transformer-sqip/
-   */
-  previewDataURI: propTypes.object,
-  file: propTypes.object,
 }
