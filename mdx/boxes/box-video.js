@@ -53,7 +53,7 @@ BoxVideo.defaultProps = {
   videoId: null,
   videoFit: 'cover',
   videoPosition: 'center center',
-  controls: true,
+  controls: false,
   autoplay: true,
   muted: true,
   loop: true,
