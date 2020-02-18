@@ -22,6 +22,7 @@
     "@gatsby-mdx-suite/mdx-image": "^0.0.1",
     "@gatsby-mdx-suite/mdx-video": "^0.1.0",
     "prop-types": "^15.7.2",
+    "pure-react-carousel": "^1.25.2",
     "react": "^16.12.0"
   },
   "publishConfig": {
