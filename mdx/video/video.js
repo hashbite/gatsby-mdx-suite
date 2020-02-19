@@ -11,7 +11,7 @@ const VideoTag = styled.video`
 `
 
 export default function Video({
-  videoId,
+  id,
   screenshotIndex,
   controls,
   autoplay,
@@ -24,7 +24,7 @@ export default function Video({
     data: { videos = [] },
   } = useContext(MdxSuiteContext)
 
-  const video = videos.find((video) => video.assetId === videoId)
+  const video = videos.find((video) => video.assetId === id)
 
   if (!video) {
     console.error(
@@ -111,7 +111,7 @@ Video.defaultProps = {
 }
 
 Video.propTypes = {
-  videoId: propTypes.string.isRequired,
+  id: propTypes.string.isRequired,
   screenshotIndex: propTypes.number,
   preload: propTypes.string,
   autoplay: propTypes.bool,

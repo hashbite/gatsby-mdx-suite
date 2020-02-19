@@ -33,11 +33,14 @@ function PageTemplate({ data, pageContext }) {
           images: content.childMdx.images || [],
           background: content.childMdx.background || [],
           floating: content.childMdx.floating || [],
-          videos: (content.childMdx.videos || []).map(({ id, videoH264 }) => ({
-            id,
-            h264: videoH264.path,
-            screenshots: videoH264.screenshots.map(({ path }) => path),
-          })),
+          videos: (content.childMdx.videos || []).map(
+            ({ assetId, locale, videoH264 }) => ({
+              assetId,
+              locale,
+              h264: videoH264.path,
+              screenshots: videoH264.screenshots.map(({ path }) => path),
+            })
+          ),
         },
       }}
     >
