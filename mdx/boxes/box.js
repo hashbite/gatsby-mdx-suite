@@ -26,7 +26,6 @@ const BoxContent = styled('div', {
     left: 0;
     right: 0;
     padding: ${minSize >= 12 ? '2rem' : '1rem'};
-    overflow: hidden;
 
     @media screen and (min-width: ${breakpoints[0]}) {
       ${scale &&
