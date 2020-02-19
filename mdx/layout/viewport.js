@@ -67,7 +67,13 @@ const BackgroundImageWrapper = styled.div`
     height: 100%;
   }
 `
-
+/**
+ * A viewport is always as big as the browser window of the user.
+ *
+ * By default, given content will be centered vertically and horizontally.
+ *
+ * Supports background images.
+ */
 export default function Viewport({
   children,
   backgroundImageId,

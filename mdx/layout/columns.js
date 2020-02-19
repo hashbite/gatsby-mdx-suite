@@ -1,7 +1,8 @@
+import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-const Columns = styled.div(
+const StyledColumns = styled.div(
   ({
     theme: {
       spacing,
@@ -35,5 +36,12 @@ const Columns = styled.div(
     }
   `
 )
+
+/**
+ * Renders each children as a column.
+ *
+ * Will have 3 columns on big screens, 2 on medium screens and 1 on small screens.
+ */
+const Columns = (props) => <StyledColumns {...props} />
 
 export default Columns

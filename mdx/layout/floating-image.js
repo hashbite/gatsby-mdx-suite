@@ -98,6 +98,12 @@ const ImageWrapper = styled.div(
   `
 )
 
+/**
+ * Renders an image next to the given content.
+ *
+ * The image will span from the edge of the screen to the content center.
+ * The Content will span from the content center to the edge of the content column.
+ */
 export default function FloatingImage({ children, imageId, reverseOrder }) {
   return (
     <Wrapper>

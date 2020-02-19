@@ -8,6 +8,9 @@ import {
   getPageWithFallback,
 } from '@gatsby-mdx-suite/i18n/helpers'
 
+/**
+ * Link either an internal or external page.
+ */
 export default function Link({
   id,
   href,

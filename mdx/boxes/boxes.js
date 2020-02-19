@@ -1,12 +1,10 @@
+import React from 'react'
 import propTypes from 'prop-types'
 
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-/**
- * Creates a 48 column grid layout.
- */
-const Boxes = styled.div(
+const StyledBoxes = styled.div(
   ({ theme: { sizes, breakpoints }, mobileColumns }) => css`
     position: relative;
     display: grid;
@@ -33,6 +31,11 @@ const Boxes = styled.div(
     }
   `
 )
+
+/**
+ * Creates a 48 column grid layout.
+ */
+const Boxes = (props) => <StyledBoxes {...props} />
 
 Boxes.defaultProps = {
   mobileColumns: 24,

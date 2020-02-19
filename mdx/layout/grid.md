@@ -1,27 +1,15 @@
----
-name: Columns
-route: /docs/layout/columns
-menu: Layout
----
+# Grid
 
-import { Playground, Props } from 'docz'
-
-import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
-
-# Columns
-
-A Columns is a very powerful tool to layout your content.
+A Grid is a very powerful tool to layout your content.
 
 It's main purpose is to show content next to each other, while maintaining a reasonable size depending on the screen size.
 
 You can use it to center a single item as well. See below
 
-<Props of={Columns} />
-
 ## Images
 
-<Playground>
-  <Columns>
+```mdx
+  <Grid minWidth="100px" maxWidth="180px" center>
 
 ![picture of a dog](https://source.unsplash.com/400x300/weekly?dog)
 
@@ -37,13 +25,13 @@ You can use it to center a single item as well. See below
 
 ![picture of a human](https://source.unsplash.com/400x300/weekly?human)
 
-  </Columns>
-</Playground>
+  </Grid>
+```
 
 ## Complex content
 
-<Playground>
-  <Columns>
+```mdx
+  <Grid>
   <div>
 
 ![architecture](https://source.unsplash.com/800x600/weekly?architecture)
@@ -62,5 +50,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et harum quidem rerum f
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et harum quidem rerum facilis est et expedita distinctio. Huius, Lyco, oratione locuples, rebus ipsis ielunior. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. Fortasse id optimum, sed ubi illud: Plus semper voluptatis?
 
   </div>
-  </Columns>
-</Playground>
+  </Grid>
+```

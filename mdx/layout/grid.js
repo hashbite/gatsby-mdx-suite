@@ -61,6 +61,11 @@ const GridItem = styled.div(
   `
 )
 
+/**
+ * Renders a grid with a dynamic number of columns.
+ *
+ * The column width and count depends on a given minimum and maximum column width.
+ */
 export default function Grid({ children, ...props }) {
   if (!children || !children.length) {
     return null
