@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.5.0...gatsby-starter-mdx-suite-contentful@0.6.0) (2020-02-19)
+
+
+### Features
+
+* **docs:** improve kitchen-sink and render detail pages ([22abae2](https://github.com/axe312ger/gatsby-suite-mdx/commit/22abae27ee2aaab5d6ead0c5957a1b27b379b223))
+
+
+
+
+
 # [0.5.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.4.0...gatsby-starter-mdx-suite-contentful@0.5.0) (2020-02-18)
 
 

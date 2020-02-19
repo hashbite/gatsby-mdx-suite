@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.0.6...@gatsby-mdx-suite/mdx-media-gallery@0.1.0) (2020-02-19)
+
+
+### Features
+
+* **docs:** improve kitchen-sink and render detail pages ([22abae2](https://github.com/axe312ger/gatsby-mdx-suite/commit/22abae27ee2aaab5d6ead0c5957a1b27b379b223))
+
+
+
+
+
 ## [0.0.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.0.5...@gatsby-mdx-suite/mdx-media-gallery@0.0.6) (2020-02-18)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
