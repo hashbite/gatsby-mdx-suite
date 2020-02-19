@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import { generatePageMap, getPageWithFallback } from './helpers'

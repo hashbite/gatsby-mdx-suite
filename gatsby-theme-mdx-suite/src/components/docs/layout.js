@@ -4,7 +4,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 const DocsHeader = styled.div`
   ${tw`fixed left-0 top-0 right-0 z-50`}

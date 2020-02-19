@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 import MenuLevel from '@gatsby-mdx-suite/menu/menu-level'
 import LanguageSwitch from '@gatsby-mdx-suite/i18n/language-switch'

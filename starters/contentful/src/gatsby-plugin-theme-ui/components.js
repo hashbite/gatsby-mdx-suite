@@ -1,40 +1,39 @@
 // Basics
-import Image from '@gatsby-mdx-suite/mdx-image/image'
-import CTA from '@gatsby-mdx-suite/mdx-link/cta'
-import Link from '@gatsby-mdx-suite/mdx-link/link'
-import Video from '@gatsby-mdx-suite/mdx-video/video'
+const Image = require('@gatsby-mdx-suite/mdx-image/image')
+const CTA = require('@gatsby-mdx-suite/mdx-link/cta')
+const Link = require('@gatsby-mdx-suite/mdx-link/link')
+const Video = require('@gatsby-mdx-suite/mdx-video/video')
 
 // Layout
-import Gap from '@gatsby-mdx-suite/mdx-layout/gap'
-import Center from '@gatsby-mdx-suite/mdx-layout/center'
-import Section from '@gatsby-mdx-suite/mdx-layout/section'
-import Viewport from '@gatsby-mdx-suite/mdx-layout/viewport'
-import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
-import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
-import FloatingImage from '@gatsby-mdx-suite/mdx-layout/floating-image'
+const Gap = require('@gatsby-mdx-suite/mdx-layout/gap')
+const Center = require('@gatsby-mdx-suite/mdx-layout/center')
+const Section = require('@gatsby-mdx-suite/mdx-layout/section')
+const Viewport = require('@gatsby-mdx-suite/mdx-layout/viewport')
+const Columns = require('@gatsby-mdx-suite/mdx-layout/columns')
+const Grid = require('@gatsby-mdx-suite/mdx-layout/grid')
+const FloatingImage = require('@gatsby-mdx-suite/mdx-layout/floating-image')
 
 // Boxes
-import Boxes from '@gatsby-mdx-suite/mdx-boxes/boxes'
-import Box from '@gatsby-mdx-suite/mdx-boxes/box'
-import BoxVideo from '@gatsby-mdx-suite/mdx-boxes/box-video'
-import BoxCarousel from '@gatsby-mdx-suite/mdx-boxes/box-carousel'
-import BoxCarouselSlide from '@gatsby-mdx-suite/mdx-boxes/box-carousel-slide'
+const Boxes = require('@gatsby-mdx-suite/mdx-boxes/boxes')
+const Box = require('@gatsby-mdx-suite/mdx-boxes/box')
+const BoxVideo = require('@gatsby-mdx-suite/mdx-boxes/box-video')
+const BoxCarousel = require('@gatsby-mdx-suite/mdx-boxes/box-carousel')
+const BoxCarouselSlide = require('@gatsby-mdx-suite/mdx-boxes/box-carousel-slide')
 
 // Copy
-import ResponsiveText from '@gatsby-mdx-suite/mdx-copy/responsive-text'
-import Text from '@gatsby-mdx-suite/mdx-copy/text'
+const ResponsiveText = require('@gatsby-mdx-suite/mdx-copy/responsive-text')
+const Text = require('@gatsby-mdx-suite/mdx-copy/text')
 
 // Special components
-import {
-  Timeline,
-  TimelineEntry,
-} from '@gatsby-mdx-suite/mdx-timeline/timeline'
+const Timeline = require('@gatsby-mdx-suite/mdx-timeline/timeline').Timeline
+const TimelineEntry = require('@gatsby-mdx-suite/mdx-timeline/timeline')
+  .TimelineEntry
 
 // Project specific components
-import BlogPostListing from '../components/mdx/blog-post-listing'
-import Header from '../components/mdx/header'
+const BlogPostListing = require('../components/mdx/blog-post-listing')
+const Header = require('../components/mdx/header')
 
-export default {
+module.exports = {
   Columns,
   Grid,
   Section,

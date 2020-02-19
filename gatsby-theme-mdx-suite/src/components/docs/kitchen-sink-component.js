@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import Link from 'gatsby-link'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 import LiveEditor from './live-editor'
 import Props from './props'

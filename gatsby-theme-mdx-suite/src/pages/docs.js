@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Styled } from 'theme-ui'
 import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 import Layout from '../components/docs/layout'
 

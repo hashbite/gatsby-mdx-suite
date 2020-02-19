@@ -1,10 +1,10 @@
-import typography from './typography'
+const typography = require('./typography')
 
-import defaultTheme from 'gatsby-theme-mdx-suite/src/gatsby-plugin-theme-ui'
+const defaultTheme = require('gatsby-theme-mdx-suite/src/gatsby-plugin-theme-ui')
 
 const maxContentWidth = 960
 
-export default {
+module.exports = {
   ...defaultTheme,
   sizes: {
     ...defaultTheme.sizes,

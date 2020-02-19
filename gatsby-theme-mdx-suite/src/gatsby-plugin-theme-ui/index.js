@@ -1,6 +1,15 @@
+const theme = require('@theme-ui/preset-tailwind')
+
+module.exports = {
+  ...theme,
+  styles: {
+    ...theme,
+  },
+}
+
 // Generates kinda-logarithmic spacing map inspired by Refactor-UI recommendations.
 // Usage: spacing.s1 = 14, spacing[s0.25] = 3 ...
-export function generateSpacingUnits({ spacingUnit, multipliers } = {}) {
+function generateSpacingUnits({ spacingUnit, multipliers } = {}) {
   spacingUnit = spacingUnit || 14
   multipliers = multipliers || [
     0.25,
@@ -66,7 +75,7 @@ const lime = '#0F0'
 const water = '#00F'
 const blue = '#4299E1'
 
-export default {
+const foo = {
   initialColorMode: 'light',
   sizes: {
     maxContentWidth,
@@ -167,3 +176,7 @@ export default {
     },
   },
 }
+
+console.log('old theme:')
+console.log(foo)
+console.log('---old theme')

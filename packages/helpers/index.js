@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 import Cta from '@gatsby-mdx-suite/mdx-link/cta'
 

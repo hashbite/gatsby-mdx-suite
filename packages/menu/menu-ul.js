@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 const MenuUl = styled.ul`
   ${tw`flex flex-no-wrap m-0 p-0 list-none`}

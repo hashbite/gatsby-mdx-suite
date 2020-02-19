@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { useTranslation } from 'react-i18next'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import Link from '@gatsby-mdx-suite/mdx-link/link'
@@ -17,7 +17,7 @@ const BlogPostListingWrapper = styled.div(
       breakpoints,
     },
   }) => css`
-    // display grid not yet supported by tailwind.macro
+    // display grid not yet supported by twin.macro
     display: grid;
     grid-gap: ${gridGutter}px;
 

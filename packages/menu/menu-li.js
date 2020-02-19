@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 import MenuTitle from './menu-title'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 const PropsWrapper = styled.table`
   ${tw`w-10/12 my-8 mx-auto p-0 border border-solid border-gray-400 bg-gray-100`}

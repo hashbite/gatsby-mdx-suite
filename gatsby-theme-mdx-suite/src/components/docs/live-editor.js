@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import loadable from '@loadable/component'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 const MDX = loadable(() => import('@mdx-js/runtime'))
 

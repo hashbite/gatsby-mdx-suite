@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 import { useThemeUI, Styled } from 'theme-ui'
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
