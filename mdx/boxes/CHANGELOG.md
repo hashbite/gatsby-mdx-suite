@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.2.0...@gatsby-mdx-suite/mdx-boxes@0.3.0) (2020-02-19)
+
+
+### Bug Fixes
+
+* **mdx/boxes:** allow box content to extend the box ([29e9e26](https://github.com/axe312ger/gatsby-mdx-suite/commit/29e9e26b6debe37ff3e916fdffdb981b1bb0f3fb))
+
+
+### Features
+
+* **mdx/boxes:** allow boxes to be stacked ([bb8f699](https://github.com/axe312ger/gatsby-mdx-suite/commit/bb8f69966a5d52b1260965c4a6895349008662f8))
+
+
+
+
+
 # [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.1.0...@gatsby-mdx-suite/mdx-boxes@0.2.0) (2020-02-19)
 
 

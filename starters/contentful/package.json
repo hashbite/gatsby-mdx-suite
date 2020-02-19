@@ -2,7 +2,7 @@
   "name": "gatsby-starter-mdx-suite-contentful",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "author": "Benedikt Rötsch <info@benedikt.roetsch.de>",
   "scripts": {
     "build": "gatsby build",
@@ -30,7 +30,7 @@
     "@gatsby-mdx-suite/contexts": "^0.0.7",
     "@gatsby-mdx-suite/helpers": "^0.2.4",
     "@gatsby-mdx-suite/i18n": "^0.2.2",
-    "@gatsby-mdx-suite/mdx-boxes": "^0.2.0",
+    "@gatsby-mdx-suite/mdx-boxes": "^0.3.0",
     "@gatsby-mdx-suite/mdx-copy": "^0.2.0",
     "@gatsby-mdx-suite/mdx-image": "^0.2.0",
     "@gatsby-mdx-suite/mdx-layout": "^0.5.0",
