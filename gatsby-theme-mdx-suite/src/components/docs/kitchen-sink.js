@@ -5,7 +5,14 @@ import { useMDXComponents } from '@mdx-js/react'
 
 import KitchenSinkComponent from './kitchen-sink-component'
 
-const KitchenSinkWrapper = styled.div``
+const KitchenSinkWrapper = styled.div`
+  max-width: 1200px;
+  padding: 1vw;
+  margin: 2rem auto;
+`
+const KitchenSinkHeader = styled.div`
+  margin-bottom: 4rem;
+`
 const KitchenSinkList = styled.div``
 
 function KitchenSink() {
@@ -13,24 +20,18 @@ function KitchenSink() {
 
   const result = useStaticQuery(graphql`
     query KitchenSinkQuery {
-      allComponentMetadata {
+      allComponentMetadata(sort: { fields: displayName }) {
         nodes {
+          id
           displayName
+          path
           componentProps: props {
-            name
-            description {
-              text
-            }
-            defaultValue {
-              value
-            }
-            required
-            type {
-              name
-            }
+            ...ComponentProps
           }
           description {
-            text
+            childMdx {
+              body
+            }
           }
         }
       }
@@ -48,7 +49,10 @@ function KitchenSink() {
 
   return (
     <KitchenSinkWrapper>
-      <h1>Kitchen Sink</h1>
+      <KitchenSinkHeader>
+        <h1>Kitchen Sink</h1>
+        <p>A list of all components of this website.</p>
+      </KitchenSinkHeader>
       <KitchenSinkList>
         {enabledComponents.map((component) => (
           <KitchenSinkComponent key={component.id} {...component} />

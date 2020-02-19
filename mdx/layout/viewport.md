@@ -1,22 +1,10 @@
----
-name: Viewport
-route: /docs/layout/viewport
-menu: Layout
----
-import { Playground, Props } from 'docz'
-
-import Viewport from '@gatsby-mdx-suite/mdx-layout/viewport'
-import Image from '@gatsby-mdx-suite/mdx-image/image'
-
 # Viewport
 
 A viewport is always as big as the browser window of the user.
 
-<Props of={Viewport} />
-
 ## Images
 
-<Playground>
+```mdx
   <Viewport>
   <Section>
     This content will be centered within an area, which has the exact height of your screen.
@@ -37,4 +25,4 @@ A viewport is always as big as the browser window of the user.
   <Image src="https://source.unsplash.com/random?2" width="200" />
 
   </Viewport>
-</Playground>
+```

@@ -17,7 +17,9 @@ const NarrowSectionContent = styled.div(
     max-width: ${maxWidth};
   `
 )
-
+/**
+ * Reduces the width of the content column to a given value. Centers the content by default.
+ */
 const NarrowSection = ({ children, justify, maxWidth }) => {
   return (
     <NarrowSectionWrapper justify={justify}>

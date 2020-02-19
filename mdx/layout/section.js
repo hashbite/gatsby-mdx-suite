@@ -49,7 +49,13 @@ const BackgroundImageWrapper = styled.div`
     height: 100%;
   }
 `
-
+/**
+ * Sections are content seperators and serve multiple purposes:
+ *
+ * * Ensures the given content is rendered within the content column
+ * * Adds a gap between multiple sections
+ * * They can be colored and supports background images
+ */
 export default function Section({ children, backgroundImageId, ...restProps }) {
   return (
     <SectionWrapper {...restProps}>

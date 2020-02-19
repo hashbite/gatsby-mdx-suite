@@ -1,23 +1,10 @@
----
-name: Section
-route: /docs/layout/section
-menu: Layout
----
-
-import { Playground, Props } from 'docz'
-
-import Section from '@gatsby-mdx-suite/mdx-layout/section'
-import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
-
 # Section
 
 A Section is used to split up your content into multiple parts.
 
-<Props of={Section} />
-
 ## Example
 
-<Playground>
+```mdx
 <Section>
 
 # Doggy
@@ -74,4 +61,4 @@ On a section with a background image
 
 </Columns>
 </Section>
-</Playground>
+```

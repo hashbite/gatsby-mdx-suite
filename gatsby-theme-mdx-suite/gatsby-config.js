@@ -7,7 +7,10 @@ const defaultComponentPaths = [
   `../../node_modules/@gatsby-mdx-suite/`,
 ]
 
-module.exports = ({ mdx, componentPaths = defaultComponentPaths }) => ({
+module.exports = ({
+  mdx = { extensions: [`.mdx`, `.md`] },
+  componentPaths = defaultComponentPaths,
+}) => ({
   plugins: [
     // Styling
     `gatsby-plugin-theme-ui`,
