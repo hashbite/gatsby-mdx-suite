@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.2.0...@gatsby-mdx-suite/mdx-video@0.2.1) (2020-02-19)
+
+
+### Bug Fixes
+
+* **mdx/video:** use id instead of videoId ([ba2da62](https://github.com/axe312ger/gatsby-mdx-suite/commit/ba2da62ef80543d8f90bdaaa44544e92801c84e7))
+
+
+
+
+
 # [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.1.0...@gatsby-mdx-suite/mdx-video@0.2.0) (2020-02-18)
 
 

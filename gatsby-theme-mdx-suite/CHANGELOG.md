@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.7.0...gatsby-theme-mdx-suite@0.7.1) (2020-02-19)
+
+
+### Bug Fixes
+
+* **assets:** add locale to asset fragment ([7f2b502](https://github.com/axe312ger/gatsby-mdx-suite/commit/7f2b502b2106b8fc48479267f65bd341cbd8c484))
+
+
+
+
+
 # [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.6.0...gatsby-theme-mdx-suite@0.7.0) (2020-02-19)
 
 
