@@ -4,67 +4,30 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { useTranslation } from 'react-i18next'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import Link from '@gatsby-mdx-suite/mdx-link/link'
+import CTA from '@gatsby-mdx-suite/mdx-link/cta'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
-const BlogPostListingWrapper = styled.div(
-  ({
-    theme: {
-      sizes: { gridGutter },
-      breakpoints,
-    },
-  }) => css`
-    display: grid;
-    grid-gap: ${gridGutter}px;
+const BlogPostListingWrapper = styled.div`
+  ${tw`grid gap-8 grid-cols-4`}
 
-    grid-template-columns: repeat(4, 1fr);
+  > * {
+    ${tw`col-span-4 sm:col-span-2`}
 
-    > * {
-      grid-column-end: span 4;
-
-      @media (min-width: ${breakpoints[2]}) {
-        grid-column-end: span 2;
-
-        &:first-child {
-          grid-column-end: span 4;
-        }
-      }
+    &:first-child {
+      ${tw`sm:col-span-4`}
     }
-  `
-)
-
-const BlogPostTeaser = styled.article(
-  ({ theme: { colors, spacing } }) => css`
-    position: relative;
-    padding: ${spacing.s2}px ${spacing.s2}px ${spacing.s4}px;
-    background: ${colors.lightGrey};
-  `
-)
-
-const BlogPostTeaserHeadline = styled.h1(
-  ({ theme: { spacing } }) => css`
-    font-size: 1.2em;
-    margin: ${spacing.s2}px 0;
-  `
-)
-const BlogPostTeaserDescription = styled.div``
-const BlogPostTeaserFooter = styled.div(
-  ({ theme: { spacing } }) => css`
-    position: absolute;
-    bottom: ${spacing.s2}px;
-    left: ${spacing.s2}px;
-    right: ${spacing.s2}px;
-    display: flex;
-    font-size: 12px;
-    justify-content: space-between;
-  `
-)
-const BlogPostTeaserMeta = styled.span`
-  font-size: 0.9em;
-  opacity: 0.8;
+  }
 `
+
+const BlogPostTeaser = tw.article`relative pt-8 px-8 pb-24 bg-gray-300`
+
+const BlogPostTeaserHeadline = tw.h1`mt-8 mb-0`
+const BlogPostTeaserMeta = tw.div`text-sm text-gray-800 mb-6`
+const BlogPostTeaserDescription = tw.div``
+const BlogPostTeaserFooter = tw.div`absolute inset-x-0 bottom-0 px-8 pb-8 flex justify-between text-sm`
 
 export default function BlogPostListing() {
   const {
@@ -128,7 +91,7 @@ export default function BlogPostListing() {
           </BlogPostTeaserDescription>
         )}
         <BlogPostTeaserFooter>
-          <Link id={blogPost.pageId}>{t('newsReadMore')}</Link>
+          <CTA href="#todo">{t('newsReadMore')}</CTA>
         </BlogPostTeaserFooter>
       </BlogPostTeaser>
     ))

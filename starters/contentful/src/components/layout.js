@@ -12,19 +12,19 @@ import MenuLi from '@gatsby-mdx-suite/menu/menu-li'
 import MenuTitle from '@gatsby-mdx-suite/menu/menu-title'
 import { centerToContentColumn } from '@gatsby-mdx-suite/helpers'
 
+import tw from 'twin.macro'
+
 const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  ${tw`flex flex-col min-h-screen`}
 `
 
 const Content = styled.div`
-  width: 100%;
+  flex: 1 1 auto;
 `
 
 const Footer = styled.footer`
+  flex: 0 0 auto;
   ${centerToContentColumn}
-  width: 100%;
 `
 const FooterMenu = styled.nav`
   padding-top: ${({ theme }) => theme.spacing.s4}px;
