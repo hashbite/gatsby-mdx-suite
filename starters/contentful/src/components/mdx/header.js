@@ -2,6 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import tw from 'twin.macro'
 
 import MenuLevel from '@gatsby-mdx-suite/menu/menu-level'
 import LanguageSwitch from '@gatsby-mdx-suite/i18n/language-switch'
@@ -14,7 +15,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 
 const HeaderWrapper = styled.div(
   ({ hasBackgroundImage, ...restProps }) => css`
-    position: relative;
+    ${tw`relative`}
 
     ${hasBackgroundImage
       ? css`
@@ -22,99 +23,49 @@ const HeaderWrapper = styled.div(
           text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
         `
       : css`
-          background: #f7fafc;
+          ${tw`bg-gray-300`}
         `}
   `
 )
 
-const HeaderContainer = styled.div(
-  ({ theme }) => css`
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    padding: ${theme.spacing.s1}px;
-    align-items: center;
-
-    & > * {
-      flex: 0 0 auto;
-
-      &:not(:first-child):not(:last-child) {
-        flex: 1 1 auto;
-        justify-content: center;
-      }
-    }
-  `
-)
+const HeaderContainer = tw.div`absolute z-20 inset-x-0 flex p-4 items-center justify-between`
 
 const HeaderTitle = styled.h1`
-  margin: 0;
+  ${tw`m-0`}
+
   & svg {
     width: 32px;
   }
 `
 
 const HeaderMenuControls = styled.div`
-  display: flex;
-  align-items: center;
+  ${tw`flex items-center`}
 
   & > * {
-    padding: 0 1em;
-  }
-`
-
-const BackgroundImage = styled(Image)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`
-
-const HeaderBackgroundImageWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -3;
-
-  & .gatsby-image-wrapper {
-    position: absolute !important;
-    z-index: -2;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0.12;
+    ${tw`py-4`}
   }
 `
 
 const HeaderContent = styled.div`
-  position: relative;
-  min-height: 16rem;
-  height: 42vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  ${centerToContentColumn}
+  ${tw`relative z-10 py-8 flex flex-col justify-center`}
+  min-height: 32vh;
 
-  > *:first-child {
-    padding-top: 4rem;
+  ${centerToContentColumn}
+`
+
+const BackgroundImage = tw(Image)`absolute inset-0`
+
+const HeaderBackgroundImageWrapper = styled.div`
+  ${tw`absolute inset-0 z-0`}
+
+  & .img {
+    ${tw`z-10`}
+  }
+
+  &:before {
+    ${tw`block absolute z-20 inset-0 bg-black`}
+    content: '';
+    opacity: 0.12;
   }
 `
 
@@ -153,6 +104,7 @@ const Header = ({ children, backgroundImageId }) => {
             id={backgroundImageId}
             contextKey="background"
             fit="cover"
+            style={{ position: 'static' }}
           />
         </HeaderBackgroundImageWrapper>
       )}
