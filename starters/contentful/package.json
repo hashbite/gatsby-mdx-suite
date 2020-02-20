@@ -40,6 +40,8 @@
     "@gatsby-mdx-suite/menu": "^0.2.4",
     "@gatsby-mdx-suite/seo": "^0.0.7",
     "@mdx-js/react": "^1.5.5",
+    "@theme-ui/preset-tailwind": "^0.3.0",
+    "@theme-ui/tailwind": "^0.3.0",
     "@theme-ui/typography": "^0.3.0",
     "gatsby": "^2.19.18",
     "gatsby-plugin-manifest": "^2.2.41",

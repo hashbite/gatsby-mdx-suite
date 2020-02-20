@@ -19,37 +19,29 @@ const Main = styled.main`
 `
 
 const Content = styled.div`
-  flex: 1 1 auto;
+  ${tw`flex-auto`}
 `
 
 const Footer = styled.footer`
-  flex: 0 0 auto;
   ${centerToContentColumn}
 `
 const FooterMenu = styled.nav`
-  padding-top: ${({ theme }) => theme.spacing.s4}px;
-  justify-content: space-between;
+  ${tw`pt-16 justify-between`}
 
   & > ${MenuUl} {
     & > li > ${MenuTitle} {
-      font-weight: bold;
-      opacity: 0.6;
-      padding-bottom: ${({ theme }) => theme.spacing.s1}px;
+      ${tw`pb-4 font-bold text-gray-600`}
     }
     & ${MenuUl} {
+      ${tw`flex-col`}
       flex-direction: column;
       ${MenuLi} {
-        padding: 0;
+        ${tw`p-0`}
       }
     }
   }
 `
-const FooterCopy = styled.div`
-  font-size: 0.85em;
-  text-align: center;
-  padding: ${({ theme }) => theme.spacing.s2}px
-    ${({ theme }) => theme.spacing.s1}px ${({ theme }) => theme.spacing.s1}px;
-`
+const FooterCopy = tw.div`text-sm text-center pt-8 px-4 pb-4`
 
 const Layout = ({ children }) => {
   const { t } = useTranslation()

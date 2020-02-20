@@ -31,7 +31,7 @@ const HeaderWrapper = styled.div(
 const HeaderContainer = tw.div`absolute z-20 inset-x-0 flex p-4 items-center justify-between`
 
 const HeaderTitle = styled.h1`
-  ${tw`m-0`}
+  ${tw`m-1`}
 
   & svg {
     width: 32px;
