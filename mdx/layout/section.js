@@ -2,12 +2,13 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import { applyColorSet, centerToContentColumn } from '@gatsby-mdx-suite/helpers'
 
 const SectionWrapper = styled.section`
-  position: relative;
+  ${tw`relative`}
   ${applyColorSet}
 `
 
@@ -15,15 +16,7 @@ const SectionContentWrapper = styled.div(
   (props) => css`
     ${centerToContentColumn(props)}
 
-    position: relative;
-    z-index: 2;
-    margin-top: ${props.theme.spacing.s2}px;
-    margin-bottom: ${props.theme.spacing.s2}px;
-
-    @media (min-width: ${props.theme.breakpoints[0]}) {
-      margin-top: ${props.theme.spacing.s4}px;
-      margin-bottom: ${props.theme.spacing.s4}px;
-    }
+    ${tw`relative z-10 my-8 sm:my-16`}
 
     ${props.hasBackgroundImage &&
       css`

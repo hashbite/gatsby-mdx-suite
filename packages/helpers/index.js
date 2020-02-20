@@ -41,7 +41,11 @@ export const applyColorSet = (props) => {
   `
 }
 
-export const centerToContentColumn = ({ theme: { sizes, breakpoints } }) => css`
+export const centerToContentColumn = ({
+  theme: {
+    config: { contentColumnMaxWidth },
+  },
+}) => css`
   ${tw`box-content mx-auto w-full px-8`}
-  max-width: ${sizes.maxContentWidth}px;
+  max-width: ${contentColumnMaxWidth};
 `
