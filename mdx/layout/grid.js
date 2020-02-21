@@ -2,42 +2,32 @@ import React from 'react'
 import propTypes from 'prop-types'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
+import tw from 'twin.macro'
 
 const GridWrapper = styled.div(
   ({ minWidth, maxWidth, center, theme }) => css`
-    margin: ${theme.spacing.s4}px 0;
+    ${tw`my-16`}
 
     /* ensure full width when within viewport/flex box container */
-    width: 100%;
+    ${tw`w-full`}
 
     /* Fallback grid based on flexbox */
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-
-    & > * {
-      flex: 0 0 auto;
-    }
+    ${tw`flex flex-wrap items-stretch`}
 
     /* Actual grid */
-    display: grid;
+    ${tw`grid`}
+    grid-gap: ${theme.config.gridDefaultGap};
     grid-template-columns: repeat(auto-fit, minmax(${minWidth}, ${maxWidth}));
-    grid-gap: ${theme.spacing.s2}px;
 
     /* Ensure all images are responsive within the grid. */
     img,
     svg,
     video {
-      width: 100%;
-      height: auto;
+      ${tw`w-full h-auto`}
     }
 
     /* Center items */
-    ${center &&
-      css`
-        align-items: center;
-        justify-content: center;
-      `}
+    ${center && tw`items-center justify-center`}
   `
 )
 
@@ -45,16 +35,13 @@ const GridItem = styled.div(
   ({ center }) => css`
     ${center &&
       css`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        ${tw`flex flex-col items-center text-center`}
 
         > * {
-          width: 100%;
+          ${tw`w-full`}
 
           > * {
-            margin: 0 auto;
+            ${tw`my-auto`}
           }
         }
       `}

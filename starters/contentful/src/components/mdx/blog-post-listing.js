@@ -10,17 +10,20 @@ import Image from '@gatsby-mdx-suite/mdx-image/image'
 import CTA from '@gatsby-mdx-suite/mdx-link/cta'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
-const BlogPostListingWrapper = styled.div`
-  ${tw`grid gap-8 grid-cols-4`}
+const BlogPostListingWrapper = styled.div(
+  ({ theme }) => css`
+    ${tw`grid grid-cols-4`}
+    grid-gap: ${theme.config.gridDefaultGap};
 
-  > * {
-    ${tw`col-span-4 sm:col-span-2`}
+    > * {
+      ${tw`col-span-4 sm:col-span-2`}
 
-    &:first-child {
-      ${tw`sm:col-span-4`}
+      &:first-child {
+        ${tw`sm:col-span-4`}
+      }
     }
-  }
-`
+  `
+)
 
 const BlogPostTeaser = tw.article`relative pt-8 px-8 pb-24 bg-gray-300`
 

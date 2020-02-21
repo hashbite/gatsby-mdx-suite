@@ -87,7 +87,6 @@ export default function Viewport({
 
   return (
     <ViewportWrapper
-      hasImage={!!backgroundImageId}
       verticalAlign={verticalAlign}
       horizontalAlign={horizontalAlign}
       hasBackgroundImage={!!backgroundImageId}

@@ -1,38 +1,22 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import tw from 'twin.macro'
 
 const StyledColumns = styled.div(
-  ({
-    theme: {
-      spacing,
-      sizes: { gridGutter },
-      breakpoints,
-    },
-  }) => css`
-    display: grid;
-    grid-gap: ${gridGutter || 16}px;
-    margin: ${spacing.s4}px 0;
+  ({ theme }) => css`
+    ${tw`grid my-16 grid-cols-6`}
+    grid-gap: ${theme.config.gridDefaultGap};
 
-    grid-template-columns: repeat(6, 1fr);
     > * {
-      grid-column-end: span 6;
-
-      @media (min-width: ${breakpoints[0]}) {
-        grid-column-end: span 3;
-      }
-
-      @media (min-width: ${breakpoints[2]}) {
-        grid-column-end: span 2;
-      }
+      ${tw`col-span-6 sm:col-span-3 md:col-span-2`}
     }
 
     /* Ensure all images are responsive within the grid. */
     img,
     svg,
     video {
-      max-width: 100%;
-      height: auto;
+      ${tw`w-full h-auto`}
     }
   `
 )

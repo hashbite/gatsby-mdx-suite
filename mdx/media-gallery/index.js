@@ -151,6 +151,10 @@ export default function MediaGallery({ children }) {
   const toggleModal = () => setModalIsOpen(!modalIsOpen)
 
   const views = React.Children.map(children, (element) => {
+    if (typeof element !== 'object') {
+      return null
+    }
+
     const { props, type } = element
     const parserId = type.displayName
     const parser = mediaParsers[parserId]
@@ -161,7 +165,7 @@ export default function MediaGallery({ children }) {
       return null
     }
     return parser({ element, props, data })
-  })
+  }).filter(Boolean)
 
   return (
     <MediaGalleryWrapper>
