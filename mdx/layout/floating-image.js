@@ -2,43 +2,29 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 
 import Section from './section'
 
-const Wrapper = styled.div`
-  position: relative;
-  margin: ${({ theme }) => theme.spacing.s2} 0;
-`
+const Wrapper = tw.div`relative my-8`
 
 const ContentWrapper = styled(Section)(
-  ({ theme, reverseOrder }) => css`
-    @media (min-width: ${theme.breakpoints[1]}) {
-      position: relative;
-      z-index: 2;
+  ({ reverseOrder }) => css`
+  ${tw`md:relative z-10`}
 
-      > div {
-        display: flex;
-        ${reverseOrder &&
-          css`
-            flex-direction: row-reverse;
-          `}
-      }
+  > div {
+    ${tw`md:flex`}
+    ${reverseOrder && tw`flex-row-reverse`}
+  }
 
-      ${Content} {
-        box-sizing: border-box;
-        width: 50%;
+  ${Content} {
+    ${tw`md:w-1/2`}
+    // box-sizing: border-box;
 
-        ${reverseOrder
-          ? css`
-              padding-left: ${theme.spacing.s2}px;
-            `
-          : css`
-              padding-right: ${theme.spacing.s2}px;
-            `}
-      }
-    }
+    ${reverseOrder ? tw`md:pl-8` : tw`md:pr-8`}
+  }
   `
 )
 
@@ -46,34 +32,30 @@ const Content = styled.div``
 
 const ImageWrapper = styled.div(
   ({ theme, reverseOrder }) => css`
-    padding-bottom: ${theme.spacing.s2}px;
+    ${tw`pb-8`}
 
-    @media (min-width: ${theme.breakpoints[1]}) {
-      position: absolute;
-      z-index: 1;
+    @media (min-width: ${theme.breakpoints[2]}) {
+      ${tw`absolute z-0 flex flex-col justify-center pb-0`}
       top: 0;
-      bottom: ${theme.spacing.s2}px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      bottom: ${theme.sizes['2']}px;
 
-      padding-bottom: 0;
-
-      ${reverseOrder
-        ? css`
-            right: calc(50% + ${theme.spacing.s2}px);
-            left: 0;
-            & img {
-              object-position: center right !important;
-            }
-          `
-        : css`
-            left: calc(50% + ${theme.spacing.s2}px);
-            right: 0;
-            & img {
-              object-position: center left !important;
-            }
-          `}
+      ${
+        reverseOrder
+          ? css`
+              right: calc(50% + ${theme.sizes['2']}px);
+              left: 0;
+              & img {
+                object-position: center right !important;
+              }
+            `
+          : css`
+              left: calc(50% + ${theme.sizes['2']}px);
+              right: 0;
+              & img {
+                object-position: center left !important;
+              }
+            `
+      }
 
       & .gatsby-image-wrapper {
         left: 0;

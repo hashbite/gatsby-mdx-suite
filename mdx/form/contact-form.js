@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
 import { useStaticQuery } from 'gatsby'
+import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import {
@@ -10,38 +11,18 @@ import {
   getPageWithFallback,
 } from '@gatsby-mdx-suite/i18n/helpers'
 
-import Columns from './Columns'
+import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
 
-const Form = styled.form`
-  max-width: 600px;
-  margin: 0 auto;
-`
+const Form = tw.form`max-w-4xl mx-auto`
 
-const FormItem = styled.div``
+const FormItem = tw.div``
 
-const Label = styled.label`
-  font-size: 12px;
-  text-transform: uppercase;
-  font-family: ${({ theme }) => theme.fonts.heading};
-  color: ${({ theme }) => theme.colors.grey000};
-`
+const Label = tw.label`block text-gray-700 text-sm font-bold mb-2`
 
-const TextInput = styled.input`
-  display: block;
-  width: 100%;
-  border-radius: 2px;
-  height: 20px;
-  line-height: 20px;
-  border: 1px solid ${({ theme }) => theme.colors.grey000};
-  border-radius: 3px;
-  margin-bottom: ${({ theme }) => theme.spacing.s1}px;
-`
+const TextInput = tw.input`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`
 
-const CheckBox = styled.input``
-const CheckBoxLabel = styled.label`
-  font-size: 14px;
-  margin-left: ${({ theme }) => theme.spacing.s1}px;
-`
+const CheckBox = tw.input``
+const CheckBoxLabel = tw.label`text-sm ml-4`
 
 // Sweet === Honeypot
 const SweetInput = styled(TextInput)`
@@ -57,24 +38,9 @@ const FormColumns = styled(Columns)`
   margin: 0;
 `
 
-const SubmitWrapper = styled.div`
-  margin: ${({ theme }) => theme.spacing.s2}px 0;
-  text-align: center;
-`
+const SubmitWrapper = tw.div`my-8 text-center`
 
-const Submit = styled.input`
-  display: inline-block;
-  padding: 0 5em;
-  text-align: center;
-  text-transform: uppercase;
-  background: ${({ theme }) => theme.colors.blue};
-  color: ${({ theme }) => theme.colors.white};
-  /* font-family: ${({ theme }) => theme.fonts.heading}; */
-  border-radius: 32px;
-  font-size: 12px;
-  line-height: 32px;
-  cursor: pointer;
-`
+const Submit = tw.input`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`
 
 export default function ContactForm({ successPageId }) {
   const [t] = useTranslation()

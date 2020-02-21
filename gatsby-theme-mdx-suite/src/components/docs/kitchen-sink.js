@@ -5,15 +5,9 @@ import { useMDXComponents } from '@mdx-js/react'
 
 import KitchenSinkComponent from './kitchen-sink-component'
 
-const KitchenSinkWrapper = styled.div`
-  max-width: 1200px;
-  padding: 1vw;
-  margin: 2rem auto;
-`
-const KitchenSinkHeader = styled.div`
-  margin-bottom: 4rem;
-`
+const KitchenSinkWrapper = styled.div``
 const KitchenSinkList = styled.div``
+const KitchenSinkIntro = styled.div``
 
 function KitchenSink() {
   const mdxComponents = useMDXComponents()
@@ -49,10 +43,10 @@ function KitchenSink() {
 
   return (
     <KitchenSinkWrapper>
-      <KitchenSinkHeader>
-        <h1>Kitchen Sink</h1>
-        <p>A list of all components of this website.</p>
-      </KitchenSinkHeader>
+      <KitchenSinkIntro>
+        This page currently has {enabledComponents.length} MDX components
+        enabled. This is an overview of all these components.
+      </KitchenSinkIntro>
       <KitchenSinkList>
         {enabledComponents.map((component) => (
           <KitchenSinkComponent key={component.id} {...component} />

@@ -2,20 +2,17 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import tw from 'twin.macro'
 
 const bubbleSize = 56
 
 export const Timeline = styled.div(
   ({ theme }) => css`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: ${theme.spacing.s4}px 0;
+    ${tw`flex flex-col w-full py-16 sm:grid`}
 
     @media (min-width: ${theme.breakpoints[1]}) {
-      display: grid;
+      grid-gap: ${theme.config.gridDefaultGap};
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      grid-gap: ${theme.sizes.gridGutter}px;
     }
   `
 )
@@ -23,43 +20,32 @@ export const Timeline = styled.div(
 const TimelineEntryLabel = styled.div(({ theme, label = '' }) => css``)
 
 const TimelineEntryWrapper = styled.div(
-  ({ theme, label = '1.' }) => css`
-  box-sizing: border-box;
-  position: relative;
-  padding: 0 ${bubbleSize + theme.spacing.s1}px
-    ${theme.spacing.s2}px 0;
+  ({ theme }) => css`
+  ${tw`relative pr-4 pb-2`}
 
   ${TimelineEntryLabel} {
-    position: absolute;
-    z-index: 2;
+    ${tw`absolute z-10 border border-gray-500 rounded-full`}
+    ${tw`text-sm text-gray-500 text-center`}
+
     top: 50%;
     right: 0;
     transform: translateY(-50%);
     width: ${bubbleSize}px;
     height: ${bubbleSize}px;
-    border-radius: 100%;
-    border: 2px solid ${theme.colors.ash};
-    font-size: 0.85em;
-    color: ${theme.colors.ash};
 
     /* Ensure visually centered text */
     letter-spacing: -0.05em;
-    line-height: 52px;
-    text-align: center;
+    line-height: ${bubbleSize - 4}px;
   }
 
   &:not(:first-child):before,
   &:not(:last-child):after {
     content: '';
-    position: absolute;
-    z-index: 1;
+    ${tw`absolute z-0 block h-auto bg-gray-500 opacity-25`}
     right: ${bubbleSize / 2 - 1}px;
     top: calc(50% + ${bubbleSize / 2 + 12}px);
     bottom: calc(50% + ${bubbleSize / 2 + 12}px);
     width: 2px;
-    height: auto;
-    background: ${theme.colors.ash};
-    opacity: 0.3;
   }
 
   &:not(:first-child):before {
@@ -73,10 +59,7 @@ const TimelineEntryWrapper = styled.div(
   @media (min-width: ${theme.breakpoints[0]}) and (max-width: calc(${
     theme.breakpoints[1]
   } - 1px)) {
-    width: 50%;
-    padding: 0 ${theme.spacing.s4}px
-      ${theme.spacing.s2}px;
-    text-align: right;
+    ${tw`w-1/2 px-16 pb-8 text-right`}
 
     ${TimelineEntryLabel} {
       right: -${bubbleSize / 2}px;
@@ -88,8 +71,8 @@ const TimelineEntryWrapper = styled.div(
     }
 
     &:nth-of-type(2n) {
+      ${tw`text-left`}
       margin-left: 50%;
-      text-align: left;
 
       ${TimelineEntryLabel} {
         left: -${bubbleSize / 2}px;
@@ -105,11 +88,10 @@ const TimelineEntryWrapper = styled.div(
   }
 
   @media (min-width: ${theme.breakpoints[1]}) {
-    padding: ${bubbleSize + theme.spacing.s2}px ${theme.spacing.s1}px ${
-    theme.spacing.s1
-  }px;
-    width: auto;
-    margin: 0;
+    padding: ${bubbleSize + theme.sizes['8']} ${theme.sizes['4']} ${
+    theme.sizes['4']
+  };
+    ${tw`w-auto m-0`}
 
     ${TimelineEntryLabel} {
       top: 0;
@@ -127,18 +109,17 @@ const TimelineEntryWrapper = styled.div(
     }
 
     &:not(:first-child):before {
-      left: ${(theme.sizes.gridGutter / 2) * -1}px;
+      left: calc(${theme.config.gridDefaultGap});
     }
     &:not(:last-child):after  {
-      right: ${(theme.sizes.gridGutter / 2) * -1}px;
+      right: calc(${theme.config.gridDefaultGap});
     }
   }
 
   /* ensure bullet points are next to the text*/
   & ul,
   & ol {
-    display: inline-block;
-    text-align: left;
+    ${tw`inline-block text-left`}
   }
 `
 )

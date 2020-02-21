@@ -2,32 +2,26 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import tw from 'twin.macro'
 
-const ListWrapper = styled.div``
-const ListTitle = styled.h3`
-  margin-top: ${({ theme }) => theme.spacing.s1}px;
-  font-weight: 500;
-  font-size: 12px;
-  color: ${({ theme }) => theme.colors.grey000};
-  text-transform: uppercase;
-  opacity: 0.5;
-`
+const ListWrapper = tw.div``
+const ListTitle = tw.h3`mt-5 font-bold text-sm text-gray-400 uppercase`
 
 export const ListItem = styled.li`
-  list-style: none;
-  padding-left: ${({ theme }) => theme.spacing.s2}px;
-  background-repeat: no-repeat;
+  ${tw`list-none pl-8 bg-no-repeat font-bold`}
   background-position: left center;
   background-size: 1em auto;
-  font-weight: bold;
 `
 
 const ActualList = styled.ul(({ theme, type, colorSet }) => {
-  const color = theme.colors.sets[colorSet].bg.replace('#', '%23')
+  const colorSetData = theme.colors.sets[colorSet]
+  const color =
+    colorSetData && colorSetData.bg
+      ? colorSetData.bg.replace('#', '%23')
+      : 'currentColor'
 
   return css`
-    margin: ${theme.spacing.s1}px 0 ${theme.spacing.s2}px;
-    padding: 0;
+    ${tw`mt-4 mb-8 p-0`}
 
     ${ListItem} {
       ${type === 'checkmark'
@@ -41,7 +35,7 @@ const ActualList = styled.ul(({ theme, type, colorSet }) => {
   `
 })
 
-export function List({ type, title, children, colorSet }) {
+export default function List({ type, title, children, colorSet }) {
   return (
     <ListWrapper>
       {title && <ListTitle>{title}</ListTitle>}
@@ -54,12 +48,12 @@ export function List({ type, title, children, colorSet }) {
 
 List.defaultProps = {
   type: 'bulletpoint',
-  colorSet: 'blue'
+  colorSet: 'blue',
 }
 
 List.propTypes = {
   title: propTypes.string,
   type: propTypes.string,
   colorSet: propTypes.string,
-  children: propTypes.node.isRequired
+  children: propTypes.node.isRequired,
 }

@@ -1,10 +1,9 @@
 const preset = require('@theme-ui/preset-tailwind')
 
-console.log(JSON.stringify())
-
 module.exports = {
   config: {
     contentColumnMaxWidth: preset.sizes['6xl'],
+    gridDefaultGap: '2rem',
   },
   ...preset,
   colors: {
@@ -22,54 +21,54 @@ module.exports = {
         secondary: preset.colors.white,
       },
       gray: {
-        background: preset.colors.gray,
-        primary: preset.colors.text,
-        secondary: preset.colors.textMuted,
+        background: preset.colors.gray[7],
+        primary: preset.colors.gray[1],
+        secondary: preset.colors.white,
       },
       red: {
-        background: preset.colors.red,
-        primary: preset.colors.text,
-        secondary: preset.colors.textMuted,
+        background: preset.colors.red[7],
+        primary: preset.colors.red[1],
+        secondary: preset.colors.white,
       },
       orange: {
-        background: preset.colors.orange,
-        primary: preset.colors.text,
-        secondary: preset.colors.textMuted,
+        background: preset.colors.orange[7],
+        primary: preset.colors.orange[1],
+        secondary: preset.colors.white,
       },
       yellow: {
-        background: preset.colors.yellow,
-        primary: preset.colors.text,
-        secondary: preset.colors.textMuted,
+        background: preset.colors.yellow[7],
+        primary: preset.colors.yellow[1],
+        secondary: preset.colors.white,
       },
       green: {
-        background: preset.colors.green,
-        primary: preset.colors.text,
-        secondary: preset.colors.textMuted,
+        background: preset.colors.green[7],
+        primary: preset.colors.green[1],
+        secondary: preset.colors.white,
       },
       teal: {
-        background: preset.colors.teal,
-        primary: preset.colors.text,
-        secondary: preset.colors.textMuted,
+        background: preset.colors.teal[7],
+        primary: preset.colors.teal[1],
+        secondary: preset.colors.white,
       },
       blue: {
-        background: preset.colors.blue,
-        primary: preset.colors.text,
-        secondary: preset.colors.textMuted,
+        background: preset.colors.blue[7],
+        primary: preset.colors.blue[1],
+        secondary: preset.colors.white,
       },
       indigo: {
-        background: preset.colors.indigo,
-        primary: preset.colors.text,
-        secondary: preset.colors.textMuted,
+        background: preset.colors.indigo[7],
+        primary: preset.colors.indigo[1],
+        secondary: preset.colors.white,
       },
       purple: {
-        background: preset.colors.purple,
-        primary: preset.colors.text,
-        secondary: preset.colors.textMuted,
+        background: preset.colors.purple[7],
+        primary: preset.colors.purple[1],
+        secondary: preset.colors.white,
       },
       pink: {
-        background: preset.colors.pink,
-        primary: preset.colors.text,
-        secondary: preset.colors.textMuted,
+        background: preset.colors.pink[7],
+        primary: preset.colors.pink[1],
+        secondary: preset.colors.white,
       },
     },
   },
