@@ -44,5 +44,8 @@ module.exports = ({
         handlers: [handler],
       },
     },
+    {
+      resolve: `gatsby-transformer-documentationjs`,
+    },
   ].filter(Boolean),
 })

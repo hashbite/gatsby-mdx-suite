@@ -28,6 +28,7 @@
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-documentationjs": "^4.1.24",
     "gatsby-transformer-react-docgen": "^5.0.29",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

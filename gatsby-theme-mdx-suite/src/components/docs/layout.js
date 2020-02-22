@@ -13,7 +13,7 @@ const DocsHeader = tw.div`
 
 const DocsTitle = tw.h1`m-0`
 
-const DocsWrapper = tw.div`pt-32`
+const DocsWrapper = tw.div`pt-24`
 
 const MenuLink = tw(Link)`px-4`
 

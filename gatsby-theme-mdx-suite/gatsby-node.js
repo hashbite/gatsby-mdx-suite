@@ -145,6 +145,31 @@ exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
           return parent.name
         },
       },
+      // Examples extracted out of the components description via JSDoc @example doclet
+      examples: {
+        type: ['String'],
+        async resolve(source, args, context, info) {
+          const DocumentationJsNode = await context.nodeModel.runQuery({
+            query: {
+              filter: {
+                memberof: { eq: null },
+                level: { eq: 0 },
+                name: { eq: source.displayName },
+              },
+            },
+            type: 'DocumentationJs',
+            firstOnly: true,
+          })
+
+          console.log({ DocumentationJsNode })
+
+          if (!DocumentationJsNode) {
+            return null
+          }
+
+          return DocumentationJsNode.examples.map(({ raw }) => raw)
+        },
+      },
     },
   }
   createResolvers(resolvers)
