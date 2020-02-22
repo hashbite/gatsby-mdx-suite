@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useDebounce } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import loadable from '@loadable/component'
 import tw from 'twin.macro'
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 const MDX = loadable(() => import('@mdx-js/runtime'))
 
@@ -64,7 +64,8 @@ const LiveEditorEditor = styled.div`
     ${tw`font-bold font-heading text-blue-600`}
   }
 
-  .ace_xml {
+  .ace_xml,
+  .ace_html {
     &.ace_punctuation,
     &.ace_tag-name {
       ${tw`font-bold text-green-600`}
@@ -91,16 +92,32 @@ function LiveEditor({ editorId, initialValue }) {
   const [editorValue, setEditorValue] = useDebounce(initialValue || '', 100)
   const [rawValue, setRawValue] = useDebounce(editorValue, 1000)
   const [error, setError] = useState()
+  const {
+    data: { images, videos },
+  } = useContext(MdxSuiteContext)
 
   useEffect(() => {
     async function parseMdx() {
       try {
+        // Replace tokens with asset ids
+        const processedValue = editorValue
+          .replace(
+            /"randomImageId"/gi,
+            () =>
+              `"${images[Math.floor(Math.random() * images.length)].assetId}"`
+          )
+          .replace(
+            /"randomVideoId"/gi,
+            () =>
+              `"${videos[Math.floor(Math.random() * videos.length)].assetId}"`
+          )
+
         // Validate mdx by parsing it
-        await mdx(editorValue)
+        await mdx(processedValue)
 
         // Set valid raw value
         setError(null)
-        setRawValue(editorValue)
+        setRawValue(processedValue)
       } catch (error) {
         console.error(error)
         setError(error)
@@ -113,6 +130,14 @@ function LiveEditor({ editorId, initialValue }) {
   return (
     <LiveEditorWrapper>
       <LiveEditorPreview>
+        {error && (
+          <LiveEditorError>
+            <p>
+              <strong>Oops, something went wrong:</strong>
+            </p>
+            <pre>{JSON.stringify(error.message)}</pre>
+          </LiveEditorError>
+        )}
         <LiveEditorPreviewContainer>
           <MDXErrorBoundary>
             <MDX>{rawValue}</MDX>
@@ -135,14 +160,6 @@ function LiveEditor({ editorId, initialValue }) {
           width="100%"
           height="220px"
         />
-        {error && (
-          <LiveEditorError>
-            <p>
-              <strong>Oops, something went wrong:</strong>
-            </p>
-            <pre>{JSON.stringify(error.message)}</pre>
-          </LiveEditorError>
-        )}
       </LiveEditorEditor>
     </LiveEditorWrapper>
   )

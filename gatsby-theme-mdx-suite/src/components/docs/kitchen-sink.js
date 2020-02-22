@@ -130,24 +130,17 @@ function KitchenSink() {
                 : packageName}
             </KitchenSinkMenuPackageName>
             <ul>
-              {componentsByPackage[packageName].map(
-                (component) =>
-                  console.log({
-                    component,
-                    hash,
-                    res: component.slug === hash,
-                  }) || (
-                    <li key={component.id}>
-                      <KitchenSinkMenuLink
-                        active={component.slug === hash}
-                        href={`#${component.slug}`}
-                        onClick={handleLinkClick}
-                      >
-                        {component.displayName}
-                      </KitchenSinkMenuLink>
-                    </li>
-                  )
-              )}
+              {componentsByPackage[packageName].map((component) => (
+                <li key={component.id}>
+                  <KitchenSinkMenuLink
+                    active={component.slug === hash}
+                    href={`#${component.slug}`}
+                    onClick={handleLinkClick}
+                  >
+                    {component.displayName}
+                  </KitchenSinkMenuLink>
+                </li>
+              ))}
             </ul>
           </KitchenSinkMenuPackage>
         ))}
