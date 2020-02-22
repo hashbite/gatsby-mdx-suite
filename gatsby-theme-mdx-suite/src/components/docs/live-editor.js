@@ -60,32 +60,29 @@ const LiveEditorError = styled.div`
 const LiveEditorEditor = styled.div(
   ({ theme }) => css`
     .ace_heading {
-      font-weight: bold;
-      font-family: ${theme.fonts.heading};
-      color: dodgerblue;
+      ${tw`font-bold font-heading text-blue-600`}
     }
 
     .ace_xml {
       &.ace_punctuation,
       &.ace_tag-name {
-        font-weight: bold;
-        color: seagreen;
+        ${tw`font-bold text-green-600`}
       }
 
       &.ace_attribute-name {
-        color: tomato;
+        ${tw`font-bold text-red-600`}
       }
 
       &.ace_attribute-value {
-        color: crimson;
+        ${tw`font-bold text-orange-600`}
       }
     }
 
     .ace_emphasis {
-      font-style: italic;
+      ${tw`italic`}
     }
     .ace_strong {
-      font-weight: bold;
+      ${tw`font-bold`}
     }
   `
 )
