@@ -5,7 +5,6 @@ import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Link from 'gatsby-link'
 import styled from '@emotion/styled'
-
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 import Props from '../components/docs/props'
