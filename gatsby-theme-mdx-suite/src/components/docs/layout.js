@@ -22,7 +22,7 @@ const Menu = tw.nav`flex content-center`
 const Layout = ({ children }) => (
   <Styled.root>
     <Global
-      styles={(theme) => css`
+      styles={() => css`
         body {
           margin: 0;
           overflow-x: hidden;
@@ -30,14 +30,6 @@ const Layout = ({ children }) => (
         a {
           color: inherit;
           text-decoration: none;
-
-          :visited {
-            color: inherit;
-          }
-
-          &.active {
-            font-weight: bold;
-          }
         }
         h1,
         h2,

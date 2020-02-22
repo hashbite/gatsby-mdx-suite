@@ -25,6 +25,12 @@ exports.onPreBootstrap = async ({ getCache }, themeConfig) => {
   await cache.set('mdx-suite', { config: themeConfig })
 }
 
+const generateComponentSlug = ({ packageName, parentName }) =>
+  encodeURIComponent([packageName, parentName].filter((v) => !!v).join('/'))
+    .replace(/%2F/g, '/')
+    .replace(/%40/g, '')
+    .toLowerCase()
+
 exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
   const resolvers = {
     Mdx: {
@@ -126,14 +132,27 @@ exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
           )
           const packageName = typeResult ? typeResult[1] : null
 
-          const unencodedPath = `/docs/component/${[packageName, parent.name]
-            .filter((v) => !!v)
-            .join('/')}`
+          return `/docs/component/${generateComponentSlug({
+            packageName,
+            parentName: parent.name,
+          })}`
+        },
+      },
+      // Generate slug as human readable component id
+      slug: {
+        type: 'String',
+        async resolve(source, args, context, info) {
+          const parent = await context.nodeModel.findRootNodeAncestor(source)
 
-          return encodeURIComponent(unencodedPath)
-            .replace(/%2F/g, '/')
-            .replace(/%40/g, '')
-            .toLowerCase()
+          const typeResult = parent.absolutePath.match(
+            REGEX_DEPENDENCY_COMPONENT
+          )
+          const packageName = typeResult ? typeResult[1] : null
+
+          return generateComponentSlug({
+            packageName,
+            parentName: parent.name,
+          })
         },
       },
       // Filename of the component source file
@@ -160,8 +179,6 @@ exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
             type: 'DocumentationJs',
             firstOnly: true,
           })
-
-          console.log({ DocumentationJsNode })
 
           if (!DocumentationJsNode) {
             return null

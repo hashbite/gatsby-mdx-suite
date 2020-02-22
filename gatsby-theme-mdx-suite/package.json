@@ -21,6 +21,7 @@
     "ace-builds": "^1.4.8",
     "cheerio": "0.22.0",
     "debug": "^4.1.1",
+    "exenv": "^1.2.2",
     "gatsby": "^2.19.18",
     "gatsby-plugin-bundle-stats": "^1.15.7",
     "gatsby-plugin-emotion": "^4.1.22",
