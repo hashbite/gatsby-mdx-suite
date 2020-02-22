@@ -18,9 +18,9 @@ function KitchenSinkComponent({
   id,
   displayName,
   componentProps,
-  component,
   description,
   path,
+  examples,
 }) {
   return (
     <KitchenSinkComponentWrapper>
@@ -31,22 +31,21 @@ function KitchenSinkComponent({
       </KitchenSinkComponentHeader>
       {description && <MDXRenderer>{description.childMdx.body}</MDXRenderer>}
       <Props componentProps={componentProps} />
-      <LiveEditor
-        id={id}
-        displayName={displayName}
-        component={component}
-        componentProps={componentProps}
-      />
+      <LiveEditor editorId={id} initialValue={examples && examples[0]} />
     </KitchenSinkComponentWrapper>
   )
+}
+
+KitchenSinkComponent.defaulValue = {
+  examples: [],
 }
 
 KitchenSinkComponent.propTypes = {
   id: propTypes.string.isRequired,
   path: propTypes.string.isRequired,
   displayName: propTypes.string.isRequired,
-  component: propTypes.object.isRequired,
   componentProps: propTypes.array.isRequired,
+  examples: propTypes.array,
   description: propTypes.object,
 }
 

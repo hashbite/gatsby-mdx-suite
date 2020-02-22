@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 const PropsWrapper = styled.table`
@@ -10,15 +11,17 @@ const PropsWrapper = styled.table`
     ${tw`text-gray-800 bg-gray-200`}
   }
 `
-const PropWrapper = styled.tr`
-  &:nth-child(2n) {
-    ${tw`bg-gray-200`}
-  }
+const PropWrapper = styled.tr(
+  ({ odd }) => css`
+    ${tw`bg-gray-100`}
+    ${odd && tw`bg-gray-200`}
 
-  td {
-    ${tw`py-1 px-2`}
-  }
-`
+    td {
+      ${tw`py-1 px-2`}
+    }
+  `
+)
+const DescriptionWrapper = tw(PropWrapper)`text-sm`
 
 function Props({ componentProps }) {
   if (!componentProps.length) {
@@ -32,24 +35,30 @@ function Props({ componentProps }) {
           <th>Name</th>
           <th>Type</th>
           <th>Default Value</th>
-          <th>Description</th>
         </tr>
       </thead>
       <tbody>
-        {componentProps.map((propData) => {
+        {componentProps.map((propData, i) => {
           const { name, type, required, defaultValue, description } = propData
+          const odd = i % 2 !== 0
           return (
-            <PropWrapper key={name}>
-              <td>
-                <strong>
-                  {name}
-                  {required && ' (required)'}
-                </strong>
-              </td>
-              <td>{type && type.name}</td>
-              <td>{defaultValue && defaultValue.value}</td>
-              <td>{description && description.text}</td>
-            </PropWrapper>
+            <>
+              <PropWrapper key={name} odd={odd}>
+                <td>
+                  <strong>
+                    {name}
+                    {required && ' (required)'}
+                  </strong>
+                </td>
+                <td>{type && type.name}</td>
+                <td>{defaultValue && defaultValue.value}</td>
+              </PropWrapper>
+              {description && description.text && (
+                <DescriptionWrapper odd={odd}>
+                  <td colSpan={3}>{description.text}</td>
+                </DescriptionWrapper>
+              )}
+            </>
           )
         })}
       </tbody>
