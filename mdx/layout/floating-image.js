@@ -103,13 +103,13 @@ const ImageWrapper = styled.div(
  *
  * </FloatingImage>
  */
-export default function FloatingImage({ children, imageId, reverseOrder }) {
+export default function FloatingImage({ children, imageId, reverse }) {
   return (
     <Wrapper>
-      <ContentWrapper reverseOrder={reverseOrder}>
+      <ContentWrapper reverse={reverse}>
         <Content>{children}</Content>
       </ContentWrapper>
-      <ImageWrapper reverseOrder={reverseOrder}>
+      <ImageWrapper reverse={reverse}>
         <Image id={imageId} contextKey="floating" />
       </ImageWrapper>
     </Wrapper>
@@ -117,11 +117,11 @@ export default function FloatingImage({ children, imageId, reverseOrder }) {
 }
 
 FloatingImage.defaultProps = {
-  reverseOrder: false,
+  reverse: false,
 }
 
 FloatingImage.propTypes = {
   children: propTypes.node.isRequired,
   imageId: propTypes.string.isRequired,
-  reverseOrder: propTypes.bool,
+  reverse: propTypes.bool,
 }
