@@ -88,24 +88,34 @@ export default function Image({
   ...restProps
 }) {
   const { data } = useContext(MdxSuiteContext)
-  if (id && data[contextKey]) {
+
+  // Locate image data from context if id is passed
+  if (id) {
+    const images = data[contextKey]
+    if (!images) {
+      console.error(new Error(`No images available in context "${contextKey}"`))
+      return null
+    }
+
     // Fetch data from context when an id was passed
     const imageData = data[contextKey].find((asset) => asset.assetId === id)
 
-    if (imageData) {
-      fluid = fluid || imageData.fluid
-      previewDataURI = previewDataURI || imageData.previewDataURI
-      file = file || imageData.file
-    }
-  }
-
-  if (!file) {
-    console.error(
-      new Error(
-        `No data located for image:\n\n${JSON.stringify(arguments[0], null, 2)}`
+    if (!imageData) {
+      console.error(
+        new Error(
+          `No data located for image:\n\n${JSON.stringify(
+            arguments[0],
+            null,
+            2
+          )}`
+        )
       )
-    )
-    return null
+      return null
+    }
+
+    fluid = fluid || imageData.fluid
+    previewDataURI = previewDataURI || imageData.previewDataURI
+    file = file || imageData.file
   }
 
   // Enhance data
@@ -170,6 +180,7 @@ Image.defaultProps = {
   width: '100%',
   fit: null,
   position: 'center center',
+  file: {},
 }
 
 Image.propTypes = {

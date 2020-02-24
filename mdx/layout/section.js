@@ -7,31 +7,34 @@ import tw from 'twin.macro'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import { applyColorSet, centerToContentColumn } from '@gatsby-mdx-suite/helpers'
 
-const SectionWrapper = styled.section`
-  ${tw`relative`}
-  ${applyColorSet}
-`
+const SectionWrapper = styled.section(
+  ({ hasBackgroundImage, ...restProps }) => {
+    if (hasBackgroundImage && !restProps.colorSet) {
+      restProps.colorSet = 'transparent'
+    }
+    return css`
+      ${tw`relative`}
+
+      ${applyColorSet(restProps)}
+
+      ${hasBackgroundImage &&
+        css`
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+        `}
+    `
+  }
+)
 
 const SectionContentWrapper = styled.div(
   (props) => css`
     ${centerToContentColumn(props)}
 
-    ${tw`relative z-10 my-8 sm:my-16`}
-
-    ${props.hasBackgroundImage &&
-      css`
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
-      `}
+    ${tw`relative z-10 py-8 sm:py-16`}
   `
 )
 
 const BackgroundImageWrapper = styled.div`
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  ${tw`absolute z-0 inset-0`}
 
   /* Hack gatsby-image to act as background image */
   & .gatsby-image-wrapper {
@@ -99,7 +102,7 @@ export default function Section({ children, backgroundImageId, ...restProps }) {
     <SectionWrapper {...restProps}>
       {backgroundImageId && (
         <BackgroundImageWrapper>
-          <Image contextKey="background" id={backgroundImageId} />
+          <Image contextKey="background" id={backgroundImageId} fit="cover" />
         </BackgroundImageWrapper>
       )}
       <SectionContentWrapper hasBackgroundImage={!!backgroundImageId}>

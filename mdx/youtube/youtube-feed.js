@@ -169,11 +169,7 @@ export default function YoutubeFeed() {
           >
             <ThumbnailImageWrapper>
               <ThumbnailImage
-                fluid={{
-                  ...video.localThumbnail.childImageSharp.fluid,
-                  base64: video.localThumbnail.childImageSharp.sqip.dataURI,
-                }}
-                objectFit="cover"
+                fluid={enhanceFluid(video.localThumbnail.childImageSharp)}
               />
             </ThumbnailImageWrapper>
             <ThumbnailTitle>{video.title}</ThumbnailTitle>

@@ -40,11 +40,9 @@ import YoutubeFeed from '@gatsby-mdx-suite/mdx-youtube/youtube-feed'
 import YoutubeVideo from '@gatsby-mdx-suite/mdx-youtube/youtube-video'
 
 // Special use-case components
-import {
-  Timeline,
-  TimelineEntry,
-} from '@gatsby-mdx-suite/mdx-timeline/timeline'
-import MediaGallery from '@gatsby-mdx-suite/mdx-media-gallery'
+import Timeline from '@gatsby-mdx-suite/mdx-timeline/timeline'
+import TimelineEntry from '@gatsby-mdx-suite/mdx-timeline/timeline-entry'
+import MediaGallery from '@gatsby-mdx-suite/mdx-media-gallery/media-gallery'
 
 // Project specific components
 import BlogPostListing from '../components/mdx/blog-post-listing'

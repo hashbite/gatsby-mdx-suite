@@ -51,6 +51,8 @@
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-source-contentful": "^2.1.86",
+    "gatsby-source-instagram": "^0.6.1",
+    "gatsby-source-youtube-v2": "^1.0.1",
     "gatsby-theme-mdx-suite": "^0.7.1",
     "gatsby-transformer-inline-svg": "^0.0.6",
     "gatsby-transformer-sharp": "^2.3.14",
