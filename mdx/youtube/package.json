@@ -14,12 +14,15 @@
     "mdx"
   ],
   "dependencies": {
+    "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.0.7",
+    "@gatsby-mdx-suite/helpers": "^0.2.4",
     "@gatsby-mdx-suite/mdx-image": "^0.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-youtube": "^7.9.0"
+    "react-youtube": "^7.9.0",
+    "twin.macro": "^1.0.0-alpha.2"
   },
   "publishConfig": {
     "access": "public"

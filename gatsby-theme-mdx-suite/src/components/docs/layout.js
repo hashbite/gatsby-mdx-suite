@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useStaticQuery } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import propTypes from 'prop-types'
 import { Global, css } from '@emotion/core'

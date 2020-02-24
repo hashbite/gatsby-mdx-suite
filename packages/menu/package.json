@@ -9,9 +9,10 @@
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.0.7",
     "@gatsby-mdx-suite/mdx-link": "^0.2.0",
-    "gatsby": "^2.19.18",
+    "gatsby": "^2.19.20",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0"
+    "react": "^16.12.0",
+    "twin.macro": "^1.0.0-alpha.2"
   },
   "publishConfig": {
     "access": "public"
