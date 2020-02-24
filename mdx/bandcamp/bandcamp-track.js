@@ -22,7 +22,10 @@ const BandCampWrapper = styled.div`
     border: 0;
   }
 `
-
+/**
+ * Embed a track from bandcamp.com
+ * @example <BandcampTrack id="1505826681" />
+ */
 export default function BandcampTrack({ id }) {
   return (
     <BandCampWrapper>

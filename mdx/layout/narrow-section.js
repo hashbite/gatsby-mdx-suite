@@ -19,6 +19,20 @@ const NarrowSectionContent = styled.div(
 )
 /**
  * Reduces the width of the content column to a given value. Centers the content by default.
+ *
+ * @example
+ * <Section>
+ *
+ * # Normal behavior:
+ *
+ * <Boxes><Box /><Box /></Boxes>
+ *
+ * # With `<NarrowSection />`:
+ *
+ * <NarrowSection>
+ * <Boxes><Box /><Box /></Boxes>
+ * </NarrowSection>
+ * </Section>
  */
 const NarrowSection = ({ children, justify, maxWidth }) => {
   return (

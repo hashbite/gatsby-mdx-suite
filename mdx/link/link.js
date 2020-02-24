@@ -10,6 +10,13 @@ import {
 
 /**
  * Link either an internal or external page.
+ *
+ * Title will be automatically set for internal pages
+ *
+ * @example
+ * <Link href="https://google.com">External link to Google</Link>
+ * <Link id="randomPageId" />
+ * <Link id="randomPageId">Internal link with given title</Link>
  */
 export default function Link({
   id,

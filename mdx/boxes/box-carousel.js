@@ -28,7 +28,31 @@ const StyledDotGroup = styled(DotGroup)`
     }
   }
 `
-
+/**
+ * Creates a carousel within a Box. Must contain `<BoxCarouselSlide />` components.
+ *
+ * @example
+ * <Boxes>
+ * <BoxCarousel>
+ * <BoxCarouselSlide colorSet="blue">
+ *
+ * # Slide #1
+ *
+ * </BoxCarouselSlide>
+ * <BoxCarouselSlide colorSet="red">
+ *
+ * # Slide #2
+ *
+ * </BoxCarouselSlide>
+ * <BoxCarouselSlide colorSet="green">
+ *
+ * # Slide #3
+ *
+ * </BoxCarouselSlide>
+ * </BoxCarousel>
+ * <Box colorSet="yellow" />
+ * </Boxes>
+ */
 const BoxCarousel = ({
   children,
   controls,

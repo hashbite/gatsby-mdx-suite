@@ -57,7 +57,21 @@ const BackgroundImageWrapper = styled('div', {
 )
 
 /**
- * A `<Box />` has a defined size of width and height. It will be displayed within a `<Boxes />` grid, can have background images and can be colored.
+ * A `<Box />` has a defined size of width and height.
+ *
+ * It will be displayed within a `<Boxes />` grid, can have background images and can be colored.
+ *
+ * @example
+ * <Boxes>
+ *   <Box backgroundColor="tomato">
+ *
+ *   # This is a heading
+ *
+ *   with some example text
+ *
+ *   </Box>
+ *   <Box backgroundColor="tomato" />
+ * </Boxes>
  */
 const Box = ({
   children,
@@ -103,19 +117,6 @@ const Box = ({
     </StyledBaseBox>
   )
 }
-
-Box.example = `
-<Boxes>
-<Box backgroundColor="tomato">
-
-# This is a heading
-
-with some example text
-
-</Box>
-<Box backgroundColor="tomato" />
-</Boxes>
-`
 
 Box.defaultProps = {
   ...BaseBox.defaultProps,

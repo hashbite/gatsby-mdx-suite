@@ -8,7 +8,11 @@ const StyledInstagramEmbed = styled(InstagramEmbed)`
   min-width: 326px;
   max-width: ${({ maxWidth }) => maxWidth}px;
 `
-
+/**
+ * Display an Instagram post.
+ * @example
+ * <InstagramPost id="B16Tc2fBOMJ" />
+ */
 export default function InstagramPost({
   id,
   maxWidth = 600,

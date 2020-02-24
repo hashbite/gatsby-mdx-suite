@@ -22,6 +22,6 @@ You can skip the height if you want a square box, it will be automatically set g
 For this box
 
 </Box>
-<Box backgroundImageId={randomImageId} />
+<Box backgroundImageId="randomPictureId" />
 </Boxes>
 ```

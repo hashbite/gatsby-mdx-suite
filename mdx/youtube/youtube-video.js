@@ -9,7 +9,12 @@ const StyledReactYoutube = styled(ReactYoutube)`
   min-width: 326px;
   max-width: ${({ maxWidth }) => maxWidth}px;
 `
-
+/**
+ * Renders a video from YouTube. For internal videos use `<Video />`.
+ *
+ * @example
+ * <YoutubeVideo id="dQw4w9WgXcQ" />
+ */
 export default function YoutubeVideo({ id, maxWidth = '600px', ...props }) {
   if (!id) {
     return null

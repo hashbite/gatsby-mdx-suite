@@ -25,6 +25,25 @@ const StyledColumns = styled.div(
  * Renders each children as a column.
  *
  * Will have 3 columns on big screens, 2 on medium screens and 1 on small screens.
+ *
+ * @example
+ * <Columns>
+ * <div>
+ *
+ * # First column
+ *
+ * </div>
+ * <div>
+ *
+ * # Second column
+ *
+ * </div>
+ * <div>
+ *
+ * # Third column
+ *
+ * </div>
+ * </Columns>
  */
 const Columns = (props) => <StyledColumns {...props} />
 

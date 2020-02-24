@@ -48,6 +48,10 @@ const ResponsiveTextWrapper = styled.div(
   `
 )
 
+/**
+ * Let the font size grow from small to big screens.
+ * @example <ResponsiveText>I will be **huge** on desktop</ResponsiveText>
+ */
 const ResponsiveText = ({
   children,
   fontSizeMin,

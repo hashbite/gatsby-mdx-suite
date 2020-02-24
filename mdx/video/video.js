@@ -10,6 +10,14 @@ const VideoTag = styled.video`
   width: 100%;
 `
 
+/**
+ * Renders an internal video. For external videos use `<YoutubeVideo />` or similar.
+ *
+ * Autoplay will enforce audio mute due to browser limitations.
+ *
+ * @example
+ * <Video id="randomVideoId" />
+ */
 export default function Video({
   id,
   screenshotIndex,

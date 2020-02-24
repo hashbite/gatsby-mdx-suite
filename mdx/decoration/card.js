@@ -11,6 +11,34 @@ const CardSubline = tw.div`uppercase font-bold text-lg`
 const CardContent = tw.div`px-6 py-4`
 const CardImage = tw(Image)`w-full`
 
+/**
+ * Creates a common Card element. Should be within a `<Grid/>`, <Columns />` or similar.
+ *
+ * @example
+ * <Columns>
+ * <Card headline="My Headline" subline="Some additional subline" imageId="randomPictureId">
+ *
+ * I am the actual description for the card.
+ *
+ * Common **formatting** is supported.
+ *
+ * </Card>
+ * <Card headline="My Headline" subline="Some additional subline" imageId="randomPictureId">
+ *
+ * I am the actual description for the card.
+ *
+ * Common **formatting** is supported.
+ *
+ * </Card>
+ * <Card headline="My Headline" subline="Some additional subline" imageId="randomPictureId">
+ *
+ * I am the actual description for the card.
+ *
+ * Common **formatting** is supported.
+ *
+ * </Card>
+ * </Columns>
+ */
 export default function Card({ headline, subline, children, imageId }) {
   return (
     <CardWrapper>

@@ -52,6 +52,40 @@ const GridItem = styled.div(
  * Renders a grid with a dynamic number of columns.
  *
  * The column width and count depends on a given minimum and maximum column width.
+ *
+ * This is a powerful but complex Component. Usually `<Columns />` should be the choice.
+ *
+ * @example
+ * <Grid>
+ * <Image src="https://source.unsplash.com/random#1" />
+ * <Image src="https://source.unsplash.com/random#2" />
+ * </Grid>
+ * <Grid>
+ * <Image src="https://source.unsplash.com/random#1" />
+ * <Image src="https://source.unsplash.com/random#2" />
+ * <Image src="https://source.unsplash.com/random#3" />
+ * <Image src="https://source.unsplash.com/random#4" />
+ * </Grid>
+ * <Grid>
+ * <Image src="https://source.unsplash.com/random#1" />
+ * <Image src="https://source.unsplash.com/random#2" />
+ * <Image src="https://source.unsplash.com/random#3" />
+ * <Image src="https://source.unsplash.com/random#4" />
+ * <Image src="https://source.unsplash.com/random#5" />
+ * <Image src="https://source.unsplash.com/random#6" />
+ * <Image src="https://source.unsplash.com/random#7" />
+ * <Image src="https://source.unsplash.com/random#8" />
+ * </Grid>
+ * <Grid minWidth="1fr" maxWidth="420px">
+ * <Image src="https://source.unsplash.com/random#1" />
+ * <Image src="https://source.unsplash.com/random#2" />
+ * <Image src="https://source.unsplash.com/random#3" />
+ * <Image src="https://source.unsplash.com/random#4" />
+ * <Image src="https://source.unsplash.com/random#5" />
+ * <Image src="https://source.unsplash.com/random#6" />
+ * <Image src="https://source.unsplash.com/random#7" />
+ * <Image src="https://source.unsplash.com/random#8" />
+ * </Grid>
  */
 export default function Grid({ children, ...props }) {
   if (!children || !children.length) {
