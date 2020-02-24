@@ -68,7 +68,18 @@ const HeaderBackgroundImageWrapper = styled.div`
     opacity: 0.12;
   }
 `
-
+/**
+ * Renders the header including menu and hero element of the page.
+ *
+ * Can have a background image.
+ *
+ * @example
+ * <Header>
+ *
+ * # Some catching text
+ *
+ * </Header>
+ */
 const Header = ({ children, backgroundImageId }) => {
   const result = useStaticQuery(graphql`
     query HeaderQuery {
@@ -80,18 +91,6 @@ const Header = ({ children, backgroundImageId }) => {
     }
   `)
 
-  /**
-   * Renders the header including menu and hero element of the page.
-   *
-   * Can have a background image.
-   *
-   * @example
-   * <Header>
-   *
-   * # Some catching text
-   *
-   * </Header>
-   */
   return (
     <HeaderWrapper
       hasBackgroundImage={!!backgroundImageId}
