@@ -99,15 +99,13 @@ const BackgroundImageWrapper = styled.div`
  */
 export default function Section({ children, backgroundImageId, ...restProps }) {
   return (
-    <SectionWrapper {...restProps}>
+    <SectionWrapper {...restProps} hasBackgroundImage={!!backgroundImageId}>
       {backgroundImageId && (
         <BackgroundImageWrapper>
           <Image contextKey="background" id={backgroundImageId} fit="cover" />
         </BackgroundImageWrapper>
       )}
-      <SectionContentWrapper hasBackgroundImage={!!backgroundImageId}>
-        {children}
-      </SectionContentWrapper>
+      <SectionContentWrapper>{children}</SectionContentWrapper>
     </SectionWrapper>
   )
 }

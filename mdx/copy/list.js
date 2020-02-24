@@ -7,8 +7,8 @@ import tw from 'twin.macro'
 const ListWrapper = tw.div``
 const ListTitle = tw.h3`mt-5 font-bold text-sm text-gray-400 uppercase`
 
-export const ListItem = styled.li`
-  ${tw`list-none pl-8 bg-no-repeat font-bold`}
+const ListItem = styled.li`
+  ${tw`list-none pl-8 ml-4 bg-no-repeat font-bold`}
   background-position: left center;
   background-size: 1em auto;
 `

@@ -11,19 +11,19 @@ import Section from './section'
 const Wrapper = tw.div`relative my-8`
 
 const ContentWrapper = styled(Section)(
-  ({ reverseOrder }) => css`
+  ({ reverse }) => css`
   ${tw`md:relative z-10`}
 
   > div {
     ${tw`md:flex`}
-    ${reverseOrder && tw`flex-row-reverse`}
+    ${reverse && tw`flex-row-reverse`}
   }
 
   ${Content} {
     ${tw`md:w-1/2`}
     // box-sizing: border-box;
 
-    ${reverseOrder ? tw`md:pl-8` : tw`md:pr-8`}
+    ${reverse ? tw`md:pl-8` : tw`md:pr-8`}
   }
   `
 )
@@ -31,25 +31,25 @@ const ContentWrapper = styled(Section)(
 const Content = styled.div``
 
 const ImageWrapper = styled.div(
-  ({ theme, reverseOrder }) => css`
+  ({ theme, reverse }) => css`
     ${tw`pb-8`}
 
     @media (min-width: ${theme.breakpoints[2]}) {
       ${tw`absolute z-0 flex flex-col justify-center pb-0`}
       top: 0;
-      bottom: ${theme.sizes['2']}px;
+      bottom: ${theme.sizes['2']};
 
       ${
-        reverseOrder
+        reverse
           ? css`
-              right: calc(50% + ${theme.sizes['2']}px);
+              right: calc(50% + ${theme.sizes['2']});
               left: 0;
               & img {
                 object-position: center right !important;
               }
             `
           : css`
-              left: calc(50% + ${theme.sizes['2']}px);
+              left: calc(50% + ${theme.sizes['2']});
               right: 0;
               & img {
                 object-position: center left !important;
