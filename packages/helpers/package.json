@@ -6,7 +6,8 @@
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "^10.0.27",
-    "@gatsby-mdx-suite/mdx-link": "^0.2.0"
+    "@gatsby-mdx-suite/mdx-link": "^0.2.0",
+    "twin.macro": "^1.0.0-alpha.2"
   },
   "publishConfig": {
     "access": "public"
