@@ -5,7 +5,6 @@ import Link from 'gatsby-link'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import tw from 'twin.macro'
 import Observer from '@researchgate/react-intersection-observer'
-import { useStaticQuery, graphql } from 'gatsby'
 
 import LiveEditor from './live-editor'
 import Props from './props'

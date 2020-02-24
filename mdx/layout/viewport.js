@@ -1,10 +1,12 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import tw from 'twin.macro'
 import { css } from '@emotion/core'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
+import Section from './section'
 
 // Shortcuts to ease up editor UX: start, end -> flex-start, flex-end; center -> center
 // @todo move to helpers
@@ -17,10 +19,7 @@ const ViewportWrapper = styled.div(
       restProps.colorSet = 'transparent'
     }
     return css`
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    ${tw`relative min-h-screen flex flex-col`}
       align-items: ${extendPositionArgument(horizontalAlign)};
       justify-content: ${extendPositionArgument(verticalAlign)};
 
@@ -30,43 +29,25 @@ const ViewportWrapper = styled.div(
         css`
           text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
         `}
-
-      /* Ensure all images are responsive within the viewport. */
-      img,
-      svg,
-      video {
-        max-width: 100%;
-        height: auto;
-      }
     `
   }
 )
 
-const ViewportContent = styled.div`
-  box-sizing: border-box;
-  position: relative;
-  z-index: 10;
-  max-width: 900px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+const ViewportContent = styled(Section)`
+  ${tw`relative z-10 flex flex-col`}
   align-items: ${({ horizontalAlign }) =>
     extendPositionArgument(horizontalAlign)};
 `
 
 const BackgroundImageWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  ${tw`absolute z-0 inset-0`}
 
+  /* Hack gatsby-image to act as background image */
   & .gatsby-image-wrapper {
-    position: absolute !important;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: static !important;
+  }
+
+  & img {
     height: 100%;
   }
 `

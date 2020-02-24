@@ -57,14 +57,6 @@ const Layout = ({ children }) => {
           a {
             color: inherit;
             text-decoration: none;
-
-            :visited {
-              color: inherit;
-            }
-
-            &.active {
-              font-weight: bold;
-            }
           }
           h1,
           h2,

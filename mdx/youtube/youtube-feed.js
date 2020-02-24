@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react'
-import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
+import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
+import { enhanceFluid } from '@gatsby-mdx-suite/helpers/data'
 
 import Youtube from './youtube-video'
 
-const YoutubeFeedWrapper = styled.div`
-  width: 100%;
-`
+const YoutubeFeedWrapper = tw.div`w-full`
 
 const YoutubePlayerWrapper = styled.div`
-  position: relative;
-  margin: 0 auto ${({ theme }) => theme.spacing.s4}px;
+  ${tw`relative my-8`}
+
   max-width: 65vw;
   @media (min-width: 1000px) {
     max-width: none;
@@ -35,87 +35,32 @@ const YoutubePlayerWrapper = styled.div`
   }
 `
 
-const YoutubeFeedThumbnails = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+const YoutubeFeedThumbnails = styled.div(
+  ({ theme }) => css`
+    ${tw`flex flex-wrap grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3`}
+    grid-gap: ${theme.config.gridDefaultGap};
+  `
+)
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  grid-gap: ${({ theme }) => theme.spacing.s2}px;
-
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
-  @media (min-width: 1000px) {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
-
-  & a {
-    position: relative;
-    display: block;
-    flex: 1 0 50%;
-    justify-content: space-between;
-
-    @media (min-width: 600px) {
-      flex: 1 0 25%;
-    }
-  }
-`
-
-const ThumbnailLink = styled.a`
-  position: relative;
-  display: block;
-`
-const ThumbnailImageWrapper = styled.div`
-  z-index: 1;
-  &:before {
-    content: '';
-    display: block;
-    padding-top: 56.25%;
-  }
-
-  & .gatsby-image-wrapper {
-    position: absolute !important;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-`
+const ThumbnailLink = tw.a`block relative`
+const ThumbnailImageWrapper = tw.div`z-0 relative`
 const ThumbnailImage = styled(Image)``
 const ThumbnailTitle = styled.div`
-  position: absolute;
-  z-index: 2;
-  box-sizing: border-box;
-  height: 32px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.25);
-  color: #fff;
-  font-size: 0.85em;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: center;
-  padding: 0 ${({ theme }) => theme.spacing.s2}px
-    ${({ theme }) => theme.spacing.s2}px;
+  ${tw`
+    absolute z-20 bottom-0 left-0 right-0
+    px-4 py-2
+    text-white text-sm overflow-hidden whitespace-no-wrap text-center
+  `}
 
+  background: rgba(0, 0, 0, 0.25);
+  text-overflow: ellipsis;
   transition: 0.15s all linear;
 
   a:hover & {
-    height: 100%;
-    background: rgba(255, 195, 63, 0.92);
-    color: #000;
-    white-space: normal;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 1.1em;
-    padding: ${({ theme }) => theme.spacing.s2}px;
-    font-weight: bold;
+    ${tw`
+      flex flex-col justify-center
+      whitespace-normal
+    `}
   }
 `
 
@@ -178,8 +123,4 @@ export default function YoutubeFeed() {
       </YoutubeFeedThumbnails>
     </YoutubeFeedWrapper>
   )
-}
-
-YoutubeFeed.propTypes = {
-  channelId: propTypes.string,
 }

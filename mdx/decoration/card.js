@@ -4,7 +4,7 @@ import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 
-const CardWrapper = tw.div`rounded overflow-hidden shadow-lg`
+const CardWrapper = tw.div`rounded overflow-hidden shadow-lg bg-white`
 
 const CardHeadline = tw.div`font-heading text-3xl`
 const CardSubline = tw.div`uppercase font-bold text-lg`
