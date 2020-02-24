@@ -157,7 +157,20 @@ export default function Image({
     )
   }
 
-  const imageSrc = src || file.url
+  const imageSrc = src || (file && file.url)
+
+  if (!imageSrc) {
+    console.error(
+      new Error(
+        `Unable to locate src image:\n\n${JSON.stringify(
+          arguments[0],
+          null,
+          2
+        )}`
+      )
+    )
+    return null
+  }
 
   // Images without fluid data
   return (
@@ -180,7 +193,6 @@ Image.defaultProps = {
   width: '100%',
   fit: null,
   position: 'center center',
-  file: {},
 }
 
 Image.propTypes = {
