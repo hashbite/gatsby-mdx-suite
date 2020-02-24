@@ -10,7 +10,7 @@ const TextWrapper = styled.div(
     fontFamily,
     fontSize,
     fontWeight,
-    fontStyle,
+    italic,
     lineHeight,
     align,
     theme: { fonts, colors },
@@ -31,9 +31,9 @@ const TextWrapper = styled.div(
       css`
         font-weight: ${fontWeight};
       `}
-    ${fontStyle &&
+    ${italic &&
       css`
-        font-style: ${fontStyle};
+        font-style: italic;
       `}
 
     ${lineHeight &&
@@ -60,7 +60,7 @@ const Text = ({
   color,
   fontSize,
   fontWeight,
-  fontStyle,
+  italic,
   lineHeight,
   align,
 }) => {
@@ -70,7 +70,7 @@ const Text = ({
       fontSize={fontSize}
       fontWeight={fontWeight}
       fontFamily={fontFamily}
-      fontStyle={fontStyle}
+      italic={italic}
       lineHeight={lineHeight}
       align={align}
     >
@@ -84,14 +84,14 @@ Text.propTypes = {
   color: propTypes.string,
   fontSize: propTypes.string,
   fontWeight: propTypes.string,
-  fontStyle: propTypes.string,
+  italic: propTypes.bool,
   lineHeight: propTypes.string,
   align: propTypes.string,
   fontFamily: propTypes.string,
 }
 
 Text.defaultProps = {
-  fontFamily: 'heading',
+  italic: false,
 }
 
 export default Text
