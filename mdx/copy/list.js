@@ -66,6 +66,16 @@ const ActualList = styled.ul(({ theme, type, colorSet }) => {
  * </List>
  */
 export default function List({ type, title, children, colorSet }) {
+  if (!children) {
+    return null
+  }
+
+  if (!Array.isArray(children)) {
+    children = [children]
+  }
+
+  children = children.map((child, i) => <ListItem key={i}>{child}</ListItem>)
+
   return (
     <ListWrapper>
       {title && <ListTitle>{title}</ListTitle>}
