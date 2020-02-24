@@ -13,6 +13,9 @@ const extendPositionArgument = (value) =>
 
 const ViewportWrapper = styled.div(
   ({ horizontalAlign, verticalAlign, hasBackgroundImage, ...restProps }) => {
+    if (hasBackgroundImage && !restProps.colorSet) {
+      restProps.colorSet = 'transparent'
+    }
     return css`
       position: relative;
       min-height: 100vh;
@@ -92,10 +95,6 @@ export default function Viewport({
   verticalAlign = 'center',
   ...restProps
 }) {
-  const backgroundImage = backgroundImageId && (
-    <Image id={backgroundImageId} contextKey="background" objectFit="cover" />
-  )
-
   return (
     <ViewportWrapper
       verticalAlign={verticalAlign}
@@ -103,13 +102,15 @@ export default function Viewport({
       hasBackgroundImage={!!backgroundImageId}
       {...restProps}
     >
+      {backgroundImageId && (
+        <BackgroundImageWrapper>
+          <Image contextKey="background" id={backgroundImageId} fit="cover" />
+        </BackgroundImageWrapper>
+      )}
       {children && (
         <ViewportContent horizontalAlign={horizontalAlign}>
           {children}
         </ViewportContent>
-      )}
-      {backgroundImage && (
-        <BackgroundImageWrapper>{backgroundImage}</BackgroundImageWrapper>
       )}
     </ViewportWrapper>
   )

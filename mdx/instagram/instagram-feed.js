@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from '@emotion/styled'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
-import MediaGallery from '@gatsby-mdx-suite/mdx-media-gallery'
+import MediaGallery from '@gatsby-mdx-suite/mdx-media-gallery/media-gallery'
 
 import InstagramPost from './instagram-post'
 

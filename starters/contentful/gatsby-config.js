@@ -125,6 +125,20 @@ module.exports = {
             }),
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `gatsbyjs`,
+      },
+    },
+    {
+      resolve: `gatsby-source-youtube-v2`,
+      options: {
+        channelId: [`UCjnp770qk7ujOq8Q9wiC82w`],
+        apiKey: process.env.YOUTUBE_API_KEY,
+        maxVideos: 12,
+      },
+    },
     `gatsby-transformer-video`,
     `gatsby-plugin-react-svg`,
     `gatsby-transformer-sharp`,

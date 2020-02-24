@@ -90,11 +90,18 @@ const LiveEditorEditor = styled.div`
 
 function LiveEditor({ editorId, initialValue }) {
   const [editorValue, setEditorValue] = useDebounce(initialValue || '', 100)
-  const [rawValue, setRawValue] = useDebounce(editorValue, 1000)
+  const [rawValue, setRawValue] = useDebounce('', 1000)
   const [error, setError] = useState()
   const {
-    data: { images, videos },
+    data: { images, videos, youtubeVideos, instagramPosts },
   } = useContext(MdxSuiteContext)
+
+  const pictures = images.filter(
+    ({ file: { contentType } }) => contentType.indexOf('svg') === -1
+  )
+  const graphics = images.filter(
+    ({ file: { contentType } }) => contentType.indexOf('svg') !== -1
+  )
 
   useEffect(() => {
     async function parseMdx() {
@@ -107,9 +114,40 @@ function LiveEditor({ editorId, initialValue }) {
               `"${images[Math.floor(Math.random() * images.length)].assetId}"`
           )
           .replace(
+            /"randomPictureId"/gi,
+            () =>
+              `"${
+                pictures[Math.floor(Math.random() * pictures.length)].assetId
+              }"`
+          )
+          .replace(
+            /"randomGraphicId"/gi,
+            () =>
+              `"${
+                graphics[Math.floor(Math.random() * graphics.length)].assetId
+              }"`
+          )
+          .replace(
             /"randomVideoId"/gi,
             () =>
               `"${videos[Math.floor(Math.random() * videos.length)].assetId}"`
+          )
+          .replace(
+            /"randomInstagramPostId"/gi,
+            () =>
+              `"${
+                instagramPosts[
+                  Math.floor(Math.random() * instagramPosts.length)
+                ].id
+              }"`
+          )
+          .replace(
+            /"randomYoutubeVideoId"/gi,
+            () =>
+              `"${
+                youtubeVideos[Math.floor(Math.random() * youtubeVideos.length)]
+                  .videoId
+              }"`
           )
 
         // Validate mdx by parsing it

@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
         nodes {
           ...MdxSuiteContentfulAsset
           fluid(maxWidth: 1980) {
-            src
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -43,6 +43,33 @@ const Layout = ({ children }) => {
           ...MdxSuiteContentfulAsset
           videoH264(fps: 15, duration: 3) {
             path
+          }
+        }
+      }
+      youtubeVideos: allYoutubeVideo {
+        nodes {
+          videoId
+          title
+          localThumbnail {
+            url
+            childImageSharp {
+              fluid(maxWidth: 320, maxHeight: 280) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+      instagramPosts: allInstaNode {
+        nodes {
+          id
+          localFile {
+            url
+            childImageSharp {
+              fluid(maxWidth: 320, maxHeight: 320) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }
@@ -87,6 +114,10 @@ const Layout = ({ children }) => {
           ...MdxSuiteData,
           data: {
             images: assetResults.images.nodes || [],
+            floating: assetResults.images.nodes || [],
+            background: assetResults.images.nodes || [],
+            youtubeVideos: assetResults.youtubeVideos.nodes || [],
+            instagramPosts: assetResults.instagramPosts.nodes || [],
             videos: (assetResults.videos.nodes || []).map(
               ({ assetId, locale, videoH264 }) => ({
                 assetId,
