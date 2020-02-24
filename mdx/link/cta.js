@@ -9,6 +9,9 @@ export const StyledCTA = tw(
 
 /**
  * Renders a Link styled as a call to action button.
+ * @example
+ * <CTA href="https://www.google.com/">CTA to google.com</CTA>
+ * <CTA id="randomPageId" />
  */
 const CTA = (props) => <StyledCTA {...props} />
 

@@ -19,5 +19,6 @@ module.exports = {
   rules: {
     // 'react/require-optimization': 1,
     'import/no-unresolved': [2, { commonjs: true }],
+    'react/jsx-pascal-case': [2, { allowAllCaps: true }],
   },
 }

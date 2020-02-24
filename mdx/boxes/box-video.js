@@ -19,7 +19,17 @@ const StyledVideo = styled(Video)(
     object-position: ${videoPosition};
   `
 )
-
+/**
+ * Creates a box with a embedded video play.
+ *
+ * Can be used as visual element or as fully blown video player.
+ *
+ * @example
+ * <Boxes>
+ *   <BoxVideo videoId="randomVideoId" />
+ *   <BoxVideo videoId="randomVideoId" controls autoplay={false} />
+ * </Boxes>
+ */
 const BoxVideo = ({
   videoId,
   videoFit,

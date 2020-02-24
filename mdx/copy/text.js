@@ -47,6 +47,13 @@ const TextWrapper = styled.div(
   `
 )
 
+/**
+ * Applies certain text and font styles.
+ * @example
+ * <Text fontFamily="heading" italic fontSize="3rem" color="blue">
+ * This will be display in the same font as headlines
+ * </Text>
+ */
 const Text = ({
   children,
   fontFamily,

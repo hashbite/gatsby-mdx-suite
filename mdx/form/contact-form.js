@@ -42,6 +42,14 @@ const SubmitWrapper = tw.div`my-8 text-center`
 
 const Submit = tw.input`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`
 
+/**
+ * Creates a contact form with spam protection.
+ *
+ * @todo make fields configurable
+ *
+ * @example
+ * <ContactForm />
+ */
 export default function ContactForm({ successPageId }) {
   const [t] = useTranslation()
   const result = useStaticQuery(graphql`

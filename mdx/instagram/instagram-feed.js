@@ -6,44 +6,17 @@ import MediaGallery from '@gatsby-mdx-suite/mdx-media-gallery'
 
 import InstagramPost from './instagram-post'
 
-const InstagramFeedWrapper = styled.div`
-  width: 100%;
+const InstagramFeedWrapper = styled.div``
 
-  display: flex;
-  flex-wrap: wrap;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  grid-gap: ${({ theme }) => theme.spacing.s2}px;
-
-  @media (min-width: 800px) {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  }
-
-  & a {
-    position: relative;
-    display: block;
-    flex: 1 0 33%;
-    justify-content: space-between;
-
-    &:before {
-      content: '';
-      display: block;
-      padding-top: 100%;
-    }
-
-    & .gatsby-image-wrapper {
-      position: absolute !important;
-      z-index: 1;
-
-      top: ${({ theme }) => theme.spacing.s1}px;
-      left: ${({ theme }) => theme.spacing.s1}px;
-      right: ${({ theme }) => theme.spacing.s1}px;
-      bottom: ${({ theme }) => theme.spacing.s1}px;
-    }
-  }
-`
-
+/**
+ * A gallery of all imported instagram posts.
+ *
+ * Needs:
+ * https://www.gatsbyjs.org/packages/gatsby-source-instagram/
+ *
+ * @example
+ * <InstagramFeed />
+ */
 export default function InstagramFeed() {
   const {
     data: { instagramPosts },

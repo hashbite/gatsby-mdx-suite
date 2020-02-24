@@ -11,6 +11,13 @@ const StyledCenter = styled.div(
 
 /**
  * Centers anything inside of it to the horizontal center of the screen.
+ *
+ * @example
+ * <Center>
+ *
+ * I sooo centered
+ *
+ * </Center>
  */
 const Center = (props) => <StyledCenter {...props} />
 

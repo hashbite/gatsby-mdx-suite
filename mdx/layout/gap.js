@@ -11,6 +11,12 @@ const StyledGap = styled.div(
 
 /**
  * Creates a vertical gap between content.
+ * @example
+ * <Image id="randomPictureId" width="120" />
+ * <Gap />
+ * <Image id="randomPictureId" width="120" />
+ * <Gap gap="64"/>
+ * <Image id="randomPictureId" width="120" />
  */
 const Gap = (props) => <StyledGap {...props} />
 

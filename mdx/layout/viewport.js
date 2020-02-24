@@ -73,6 +73,17 @@ const BackgroundImageWrapper = styled.div`
  * By default, given content will be centered vertically and horizontally.
  *
  * Supports background images.
+ * @example
+ * <Viewport>
+ *
+ * # I'll stand out.
+ *
+ * </Viewport>
+ * <Viewport backgroundImageId="randomPictureId">
+ *
+ * # Well, then I'll stand out for sure.
+ *
+ * </Viewport>
  */
 export default function Viewport({
   children,

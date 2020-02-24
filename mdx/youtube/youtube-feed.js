@@ -119,7 +119,16 @@ const ThumbnailTitle = styled.div`
   }
 `
 
-export default function YoutubeFeed({ channelId, ...props }) {
+/**
+ * A gallery of all imported YouTube videos.
+ *
+ * Needs:
+ * https://www.gatsbyjs.org/packages/gatsby-source-youtube/
+ *
+ * @example
+ * <YoutubeFeed />
+ */
+export default function YoutubeFeed() {
   const {
     data: { youtubeVideos },
   } = useContext(MdxSuiteContext)

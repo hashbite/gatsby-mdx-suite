@@ -48,6 +48,51 @@ const BackgroundImageWrapper = styled.div`
  * * Ensures the given content is rendered within the content column
  * * Adds a gap between multiple sections
  * * They can be colored and supports background images
+ *
+ * @example
+ * <Section>
+ *
+ * # Doggy
+ *
+ * On a plain section, without any styling
+ *
+ * ![picture of a dog](https://source.unsplash.com/400x300/weekly?dog)
+ *
+ * </Section>
+ * <Section colorSet="teal">
+ *
+ * # Cats
+ *
+ * On a section with the color set `teal` applied.
+ *
+ * <Columns>
+ * <Image src="https://source.unsplash.com/400x300/weekly?cat" alt="Picture of a cat" />
+ * <Image src="https://source.unsplash.com/400x300/weekly?cat" alt="Picture of a cat" />
+ * </Columns>
+ * </Section>
+ *
+ * <Section backgroundColor="tomato" primaryColor="#48C9B0" secondaryColor="skyblue">
+ *
+ * # Parrots
+ *
+ * On a section with custom background, primary and secondary color
+ *
+ * <Columns>
+ * <Image src="https://source.unsplash.com/400x300/weekly?parrot" alt="Picture of a parrot" />
+ * <Image src="https://source.unsplash.com/400x300/weekly?parrot" alt="Picture of a parrot" />
+ * </Columns>
+ * </Section>
+ * <Section backgroundImageId="randomPictureId">
+ *
+ * # Ghosts
+ *
+ * On a section with a background image
+ *
+ * <Columns>
+ * <Image src="https://source.unsplash.com/400x300/weekly?ghost" alt="Picture of a ghost" />
+ * <Image src="https://source.unsplash.com/400x300/weekly?ghost" alt="Picture of a ghost" />
+ * </Columns>
+ * </Section>
  */
 export default function Section({ children, backgroundImageId, ...restProps }) {
   return (

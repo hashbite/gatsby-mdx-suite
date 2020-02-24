@@ -32,6 +32,11 @@ const BlogPostTeaserMeta = tw.div`text-sm text-gray-800 mb-6`
 const BlogPostTeaserDescription = tw.div``
 const BlogPostTeaserFooter = tw.div`absolute inset-x-0 bottom-0 px-8 pb-8 flex justify-between text-sm`
 
+/**
+ * A list of all blog posts of this site.
+ *
+ * @example <BlogPostListing />
+ */
 export default function BlogPostListing() {
   const {
     pageContext: { locale: activeLocale },

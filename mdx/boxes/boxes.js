@@ -40,6 +40,20 @@ const StyledBoxes = styled.div(
 
 /**
  * Creates a 48 column grid layout.
+ *
+ * @example
+ * <Boxes>
+ *   <Box backgroundColor="tomato" />
+ *   <Box backgroundColor="#BADA55" />
+ *   <Box width="8" height="4" colorSet="red" />
+ *   <Box height="4" colorSet="green" />
+ *   <Box width="8" height="12" colorSet="blue" />
+ * </Boxes>
+ * @example <caption>Hmm</caption>
+ * <Boxes>
+ *   <Box backgroundColor="tomato" />
+ *   <Box backgroundColor="#BADA55" />
+ * </Boxes>
  */
 const Boxes = (props) => <StyledBoxes {...props} />
 

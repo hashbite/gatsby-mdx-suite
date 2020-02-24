@@ -39,7 +39,25 @@ const SlideBackgroundImageWrapper = styled('div', {
     right: 0;
   `
 )
-
+/**
+ * Creates a carousel slide for. Must be within a `<BoxCarousel />` component.
+ *
+ * @example
+ * <Boxes>
+ * <BoxCarousel>
+ * <BoxCarouselSlide backgroundImageId="randomPictureId">
+ *
+ * # Wow
+ *
+ * Slides can have any content that fits. Just:
+ *
+ * Make sure to keep empty lines between MDX and MD.
+ *
+ * </BoxCarouselSlide>
+ * <BoxCarouselSlide backgroundImageId="randomPictureId" />
+ * </BoxCarousel>
+ * </Boxes>
+ */
 const BoxCarouselSlide = ({
   children,
   backgroundImageFit,

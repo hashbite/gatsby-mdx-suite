@@ -35,6 +35,36 @@ const ActualList = styled.ul(({ theme, type, colorSet }) => {
   `
 })
 
+/**
+ * Renders a list with an optional title and customizable bullet points.
+ *
+ * @example
+ * <List title="Very important information:">
+ *
+ * Every paragraph
+ * will become a new item
+ *
+ * Just make sure to have a empty line inbetween.
+ *
+ * <div>
+ *
+ * # Grouping
+ *
+ * Works with the `<div/>` element.
+ *
+ * </div>
+ *
+ * </List>
+ * <List type="checkmark">
+ *
+ * Lists easily become a checkmark list
+ *
+ * Just change the type
+ *
+ * And you are done
+ *
+ * </List>
+ */
 export default function List({ type, title, children, colorSet }) {
   return (
     <ListWrapper>
