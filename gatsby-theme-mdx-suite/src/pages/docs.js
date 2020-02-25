@@ -1,18 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { Styled } from 'theme-ui'
-import styled from '@emotion/styled'
-import tw from 'twin.macro'
 
-import Layout from '../components/docs/layout'
-
-const DocsOverviewWrapper = styled.div`
-  ${tw`m-auto max-w-xl`}
-`
+import Layout from '../components/docs/layout/layout'
+import LayoutMain from '../components/docs/layout/main'
+// import LayoutNav from '../components/docs/layout/nav'
 
 const DocsPage = () => (
   <Layout>
-    <DocsOverviewWrapper>
+    <LayoutMain>
       <Styled.h1>Welcome to the docs</Styled.h1>
       <Styled.p>
         This whole section of the page is automatically generated.
@@ -30,7 +26,7 @@ const DocsPage = () => (
           <Link to="/docs/theme">Theme documentation</Link>
         </Styled.li>
       </Styled.ul>
-    </DocsOverviewWrapper>
+    </LayoutMain>
   </Layout>
 )
 
