@@ -8,6 +8,7 @@ import Layout from './layout/layout'
 import LayoutMain from './layout/main'
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
+const ThemeWrapper = tw.div`mx-auto max-w-6xl px-4 pt-8`
 const ThemeRawWrapper = tw.pre`my-4 p-4 border border-color-gray-500 overflow-scroll bg-gray-200`
 const ColorSets = tw.div`flex flex-wrap mb-32`
 
@@ -35,49 +36,51 @@ function ThemeDocs() {
   const { theme, colorMode } = context
 
   return (
-    <Layout>
+    <Layout title="Theme">
       <LayoutMain>
-        <Styled.h1>Theme documentation</Styled.h1>
-        <Styled.h2>Color Sets</Styled.h2>
-        <ColorSets>
-          {Object.keys(theme.colors.sets).map((name) => {
-            const setData = theme.colors.sets[name]
-            const background = theme.colors.sets[name].background
-            const backgroundTransparent = [null, 'transparent'].includes(
-              background
-            )
+        <ThemeWrapper>
+          <Styled.h1>Theme documentation</Styled.h1>
+          <Styled.h2>Color Sets</Styled.h2>
+          <ColorSets>
+            {Object.keys(theme.colors.sets).map((name) => {
+              const setData = theme.colors.sets[name]
+              const background = theme.colors.sets[name].background
+              const backgroundTransparent = [null, 'transparent'].includes(
+                background
+              )
 
-            return (
-              <ColorSet
-                key={name}
-                colorSet={name}
-                backgroundTransparent={backgroundTransparent}
-              >
-                <ColorSetTitle>{name}</ColorSetTitle>
-                {Object.keys(setData).map((type, i) => {
-                  const value = setData[type]
-                  if (!value) {
-                    return null
-                  }
-                  return (
-                    <div key={i}>
-                      <strong>{type}:</strong>
-                      {value}
-                    </div>
-                  )
-                })}
-              </ColorSet>
-            )
-          })}
-        </ColorSets>
-        <Styled.h2>Raw processed theme config</Styled.h2>
-        <ThemeRawWrapper>
-          {JSON.stringify(
-            { keys: Object.keys(context), colorMode, theme },
-            null,
-            2
-          )}
-        </ThemeRawWrapper>
+              return (
+                <ColorSet
+                  key={name}
+                  colorSet={name}
+                  backgroundTransparent={backgroundTransparent}
+                >
+                  <ColorSetTitle>{name}</ColorSetTitle>
+                  {Object.keys(setData).map((type, i) => {
+                    const value = setData[type]
+                    if (!value) {
+                      return null
+                    }
+                    return (
+                      <div key={i}>
+                        <strong>{type}:</strong>
+                        {value}
+                      </div>
+                    )
+                  })}
+                </ColorSet>
+              )
+            })}
+          </ColorSets>
+          <Styled.h2>Raw processed theme config</Styled.h2>
+          <ThemeRawWrapper>
+            {JSON.stringify(
+              { keys: Object.keys(context), colorMode, theme },
+              null,
+              2
+            )}
+          </ThemeRawWrapper>
+        </ThemeWrapper>
       </LayoutMain>
     </Layout>
   )

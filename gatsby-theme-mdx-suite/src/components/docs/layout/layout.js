@@ -39,7 +39,7 @@ const Layout = ({ children, title }) => {
           </DocsTitle>
           <Menu>
             <MenuLink to="/docs/kitchen-sink">Kitchen Sink</MenuLink>
-            <MenuLink to="/docs/theme">theme</MenuLink>
+            <MenuLink to="/docs/theme">Theme</MenuLink>
             <MenuLink to="/">Back to the page</MenuLink>
           </Menu>
         </LayoutHeader>

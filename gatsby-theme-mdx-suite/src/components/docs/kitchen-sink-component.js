@@ -9,10 +9,21 @@ import { Styled } from 'theme-ui'
 
 import LiveEditor from './live-editor'
 
-const KitchenSinkComponentWrapper = styled.section``
+const KitchenSinkComponentWrapper = styled.section`
+  ${tw`mt-32`}
+  &:first-child {
+    ${tw`mt-0`}
+  }
+`
 const KitchenSinkComponentHeader = styled.header``
-const KitchenSinkComponentTitle = tw(Styled.h1)`mt-32 p-4 bg-gray-400`
-const KitchenSinkComponentDescription = tw.div`my-8 p-4`
+const KitchenSinkComponentTitle = tw(Styled.h1)`mt-0 p-4 bg-gray-400`
+const KitchenSinkComponentDescription = styled.div`
+  ${tw`my-8 p-4`}
+
+  & *:last-child {
+    ${tw`mb-0`}
+  }
+`
 
 function KitchenSinkComponent({
   id,

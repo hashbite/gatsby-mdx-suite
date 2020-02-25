@@ -40,11 +40,6 @@ const StyledNav = styled.nav(
           }
         `}
     grid-template-areas: "left right";
-
-    & a {
-      color: inherit;
-      text-decoration: underline;
-    }
   `
 )
 

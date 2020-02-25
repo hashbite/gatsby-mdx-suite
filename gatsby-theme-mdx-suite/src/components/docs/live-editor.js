@@ -36,32 +36,22 @@ class MDXErrorBoundary extends React.Component {
 const AceEditor = loadable(async () => {
   const ace = await import('react-ace')
   await import('ace-builds/src-noconflict/mode-markdown')
-  await import('ace-builds/src-noconflict/theme-github')
+  await import('ace-builds/src-noconflict/theme-dracula')
   return ace
 })
 
-const LiveEditorWrapper = tw.section`flex w-full flex-row-reverse`
-const LiveEditorPreview = styled.div`
-  ${tw`relative bg-gray-100 overflow-scroll`}
-  flex: 1 1 50%;
-
-  &:before {
-    ${tw`font-serif text-gray-200 text-6xl absolute`}
-    content: 'Preview';
-    pointer-events: none;
-    top: 0;
-    left: 1rem;
-  }
+const LiveEditorWrapper = styled.section`
+  ${tw`grid grid-rows-2`}
+  min-height: 60vh;
 `
+const LiveEditorPreview = tw.div`relative bg-gray-100 overflow-scroll shadow-inner`
 const LiveEditorPreviewContainer = tw.div``
 const LiveEditorError = styled.div`
   ${tw`p-4 m-4 border-4 border-dashed border-red-400 bg-red-700 text-sm text-white`}
 `
 const LiveEditorEditor = styled.div`
-  flex: 1 1 50%;
-
   .ace_heading {
-    ${tw`font-bold font-heading text-blue-600`}
+    ${tw`font-bold text-blue-600`}
   }
 
   .ace_xml,
@@ -185,7 +175,7 @@ function LiveEditor({ editorId, initialValue }) {
       <LiveEditorEditor>
         <AceEditor
           mode="markdown"
-          theme="github"
+          theme="dracula"
           onChange={setEditorValue}
           name={`docs-ace-editor-${editorId}`}
           editorProps={{
@@ -196,7 +186,7 @@ function LiveEditor({ editorId, initialValue }) {
           }}
           value={editorValue}
           width="100%"
-          height="220px"
+          height="100%"
         />
       </LiveEditorEditor>
     </LiveEditorWrapper>
