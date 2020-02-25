@@ -31,17 +31,21 @@ const DescriptionWrapper = styled(PropWrapper)`
     padding-bottom: 0;
     margin-bottom: 0.1rem;
   }
+  & a {
+    color: inherit;
+    text-decoration: underline;
+  }
 `
 
 const PropTitle = styled.div``
 const Required = tw.span`
   rounded-full py-1 px-2 mr-2 mt-2
-  bg-red-500 shadow-sm
+  bg-red-500 shadow-md
   text-red-100 text-xs
 `
 const Type = tw.span`
   rounded-full py-1 px-2 mr-2 mt-2
-  bg-gray-500 shadow-sm
+  bg-gray-500 shadow-md
   text-gray-100 text-xs
 `
 
