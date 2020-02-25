@@ -1,8 +1,4 @@
-import 'typeface-inter'
 import { toTheme } from '@theme-ui/typography'
-import grandView from 'typography-theme-grand-view'
-
-grandView.headerFontFamily = ['inter', 'sans-serif']
-grandView.bodyFontFamily = ['inter', 'sans-serif']
+import grandView from 'typography-theme-ocean-beach'
 
 export default toTheme(grandView)
