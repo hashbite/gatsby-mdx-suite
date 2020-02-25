@@ -1,3 +1,5 @@
-import themeConfig from '../../theme-ui.config.js'
+import merge from 'lodash/merge'
+import defaultTheme from 'gatsby-theme-mdx-suite/src/gatsby-plugin-theme-ui'
+import typographyTheme from './typography'
 
-export default themeConfig
+export default merge(defaultTheme, typographyTheme)
