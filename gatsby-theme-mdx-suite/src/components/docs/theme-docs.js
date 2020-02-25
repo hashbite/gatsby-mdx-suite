@@ -6,7 +6,6 @@ import tw from 'twin.macro'
 
 import Layout from './layout/layout'
 import LayoutMain from './layout/main'
-// import LayoutNav from './layout/nav'
 import { applyColorSet } from '@gatsby-mdx-suite/helpers'
 
 const ThemeRawWrapper = tw.pre`my-4 p-4 border border-color-gray-500 overflow-scroll bg-gray-200`
