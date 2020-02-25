@@ -8,40 +8,46 @@ import 'tailwindcss/dist/base.css'
 
 const StyledNav = styled.nav(
   ({ isOpen }) => css`
-    ${tw`
-      relative
-      pb-8 px-4
-      text-sm
-      bg-gray-200 overflow-x-scroll
-    `}
-
     grid-area: nav;
 
-    ${isOpen ? tw`w-64` : tw`w-0`}
+    ${tw`
+      grid
+      text-sm
+      bg-gray-700 overflow-x-scroll
+      text-white
+    `}
+
+    grid-template-columns: min-content 1fr;
   `
 )
 
 const Trigger = styled.button(
   ({ isOpen }) => css`
-    transform-origin: center center;
-    position: absolute;
+    ${tw`
+      block relative
+      w-6
+      text-gray-300
+      bg-gray-800 border-l border-color-gray-600
+    `}
 
-    ${isOpen
-      ? css`
-          top: 0.5rem;
-          right: 1rem;
-        `
-      : css`
-          top: 1rem;
-          right: 50%;
-          transform: translate(50%, 100%) rotate(-90deg);
-          line-height: 1;
-        `}
+    &:focus {
+      ${tw`outline-none`}
+    }
   `
 )
+
+const TriggerLabel = styled.div`
+  position: absolute;
+  top: 1rem;
+  right: 50%;
+  transform-origin: center center;
+  transform: translate(50%, 100%) rotate(-90deg);
+  line-height: 1;
+`
 const Content = styled.div(
   ({ isOpen }) => css`
-    ${!isOpen && tw`hidden`}
+    ${isOpen ? tw`w-64` : tw`overflow-hidden w-0`}
+    transition: width .15s ease;
   `
 )
 
@@ -73,10 +79,10 @@ const Nav = ({ children }) => {
 
   return (
     <StyledNav isOpen={isOpen}>
-      <Trigger onClick={handleTriggerClick} isOpen={isOpen}>
-        {isOpen ? 'close' : 'open'}
-      </Trigger>
       <Content isOpen={isOpen}>{children}</Content>
+      <Trigger onClick={handleTriggerClick} isOpen={isOpen}>
+        <TriggerLabel>{isOpen ? 'close' : 'open'}</TriggerLabel>
+      </Trigger>
     </StyledNav>
   )
 }

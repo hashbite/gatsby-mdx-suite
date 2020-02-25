@@ -16,12 +16,21 @@ const KitchenSinkList = styled.div``
 const KitchenSinkIntro = styled.div``
 const KitchenSinkMenuLink = styled.a(
   ({ active }) => css`
-    ${tw`block mt-2`}
-    ${active && tw`text-blue-600`}
+    ${tw`
+      block p-2
+      border-t border-gray-700
+      bg-gray-800
+      text-white hover:text-blue-500
+    `}
+
+    ${active && tw`text-blue-500 bg-gray-900`}
   `
 )
 const KitchenSinkMenuPackage = tw.div``
-const KitchenSinkMenuPackageName = tw.div`font-bold whitespace-no-wrap text-gray-600 mt-8`
+const KitchenSinkMenuPackageName = tw.div`
+  pt-8 px-2 pb-1
+  shadow-inner
+  text-sm whitespace-no-wrap text-gray-500`
 
 function KitchenSink() {
   const [hash, setHash] = useState(null)
@@ -116,6 +125,7 @@ function KitchenSink() {
                 {packageName === 'null'
                   ? `Developed for ${result.site.siteMetadata.title}`
                   : packageName}
+                :
               </KitchenSinkMenuPackageName>
               <ul>
                 {componentsByPackage[packageName].map((component) => (
