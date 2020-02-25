@@ -5,20 +5,18 @@ import Link from 'gatsby-link'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import tw from 'twin.macro'
 import Observer from '@researchgate/react-intersection-observer'
+import { Styled } from 'theme-ui'
 
 import LiveEditor from './live-editor'
-import Props from './props'
 
 const KitchenSinkComponentWrapper = styled.section``
 const KitchenSinkComponentHeader = styled.header``
-const KitchenSinkComponentTitle = styled.h1`
-  ${tw`mt-32 p-4 bg-gray-400`}
-`
+const KitchenSinkComponentTitle = tw(Styled.h1)`mt-32 p-4 bg-gray-400`
+const KitchenSinkComponentDescription = tw.div`my-8 p-4`
 
 function KitchenSinkComponent({
   id,
   displayName,
-  componentProps,
   description,
   path,
   examples,
@@ -52,8 +50,11 @@ function KitchenSinkComponent({
             <Link to={path}>{displayName}</Link>
           </KitchenSinkComponentTitle>
         </KitchenSinkComponentHeader>
-        {description && <MDXRenderer>{description.childMdx.body}</MDXRenderer>}
-        <Props componentProps={componentProps} />
+        {description && (
+          <KitchenSinkComponentDescription>
+            <MDXRenderer>{description.childMdx.body}</MDXRenderer>
+          </KitchenSinkComponentDescription>
+        )}
         <LiveEditor editorId={id} initialValue={examples && examples[0]} />
       </KitchenSinkComponentWrapper>
     </Observer>
@@ -70,7 +71,6 @@ KitchenSinkComponent.propTypes = {
   id: propTypes.string.isRequired,
   path: propTypes.string.isRequired,
   displayName: propTypes.string.isRequired,
-  componentProps: propTypes.array.isRequired,
   examples: propTypes.array,
   description: propTypes.object,
   scrollTo: propTypes.bool,

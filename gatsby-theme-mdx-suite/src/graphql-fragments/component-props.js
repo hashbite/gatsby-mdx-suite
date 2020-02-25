@@ -4,7 +4,10 @@ export const ComponentProps = graphql`
   fragment ComponentProps on ComponentProp {
     name
     description {
-      text
+      text # keep to check if description is given
+      childMdx {
+        body
+      }
     }
     defaultValue {
       value

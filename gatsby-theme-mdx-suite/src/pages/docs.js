@@ -4,7 +4,6 @@ import { Styled } from 'theme-ui'
 
 import Layout from '../components/docs/layout/layout'
 import LayoutMain from '../components/docs/layout/main'
-// import LayoutNav from '../components/docs/layout/nav'
 
 const DocsPage = () => (
   <Layout>

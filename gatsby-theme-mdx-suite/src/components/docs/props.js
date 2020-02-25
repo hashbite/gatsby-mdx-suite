@@ -3,25 +3,47 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const PropsWrapper = styled.table`
-  ${tw`w-10/12 my-8 mx-auto p-0 border border-solid border-gray-400 bg-gray-100`}
+  ${tw`w-10/12 my-8 w-full p-0`}
 
   th {
-    ${tw`text-gray-800 bg-gray-200`}
+    ${tw`text-gray-500`}
   }
 `
 const PropWrapper = styled.tr(
   ({ odd }) => css`
-    ${tw`bg-gray-100`}
-    ${odd && tw`bg-gray-200`}
+    ${tw`whitespace-no-wrap`}
+    ${odd && tw`bg-gray-600`}
 
     td {
-      ${tw`py-1 px-2`}
+      ${tw`py-2 px-2`}
     }
   `
 )
-const DescriptionWrapper = tw(PropWrapper)`text-sm`
+const DescriptionWrapper = styled(PropWrapper)`
+  ${tw`text-sm whitespace-normal`}
+  & ul {
+    list-style-type: disc;
+  }
+  & li {
+    padding-bottom: 0;
+    margin-bottom: 0.1rem;
+  }
+`
+
+const PropTitle = styled.div``
+const Required = tw.span`
+  rounded-full py-1 px-2 mr-2 mt-2
+  bg-red-500 shadow-sm
+  text-red-100 text-xs
+`
+const Type = tw.span`
+  rounded-full py-1 px-2 mr-2 mt-2
+  bg-gray-500 shadow-sm
+  text-gray-100 text-xs
+`
 
 function Props({ componentProps }) {
   if (!componentProps.length) {
@@ -32,9 +54,8 @@ function Props({ componentProps }) {
     <PropsWrapper>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Default Value</th>
+          <th colSpan="2">Name</th>
+          <th>Default</th>
         </tr>
       </thead>
       <tbody>
@@ -45,17 +66,19 @@ function Props({ componentProps }) {
             <>
               <PropWrapper key={name} odd={odd}>
                 <td>
-                  <strong>
-                    {name}
-                    {required && ' (required)'}
-                  </strong>
+                  <PropTitle>{name}</PropTitle>
                 </td>
-                <td>{type && type.name}</td>
+                <td>
+                  {type && <Type>{type.name}</Type>}
+                  {required && <Required>required</Required>}
+                </td>
                 <td>{defaultValue && defaultValue.value}</td>
               </PropWrapper>
-              {description && description.text && (
+              {description && description.text && description.childMdx && (
                 <DescriptionWrapper odd={odd}>
-                  <td colSpan={3}>{description.text}</td>
+                  <td colSpan={3}>
+                    <MDXRenderer>{description.childMdx.body}</MDXRenderer>
+                  </td>
                 </DescriptionWrapper>
               )}
             </>

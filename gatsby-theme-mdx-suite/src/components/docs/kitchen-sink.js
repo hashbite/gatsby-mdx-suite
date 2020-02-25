@@ -5,15 +5,16 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
 import { useMDXComponents } from '@mdx-js/react'
-
-import KitchenSinkComponent from './kitchen-sink-component'
+import { Styled } from 'theme-ui'
 import Layout from './layout/layout'
 import LayoutMain from './layout/main'
 import LayoutNav from './layout/nav'
+
 import DataProvider from './data-provider'
+import KitchenSinkComponent from './kitchen-sink-component'
+import Props from './props'
 
 const KitchenSinkList = styled.div``
-const KitchenSinkIntro = styled.div``
 const KitchenSinkMenuLink = styled.a(
   ({ active }) => css`
     ${tw`
@@ -34,8 +35,9 @@ const KitchenSinkMenuPackageName = tw.div`
 
 function KitchenSink() {
   const [hash, setHash] = useState(null)
-  const [isListening, setIsListening] = useState(false)
+  const [isListeningToHashchange, setIsListeningToHashChange] = useState(false)
   const [scrollToComponent, setScrollToComponent] = useState(false)
+  const [activeComponent, setActiveComponent] = useState(null)
   const mdxComponents = useMDXComponents()
 
   const result = useStaticQuery(graphql`
@@ -91,34 +93,45 @@ function KitchenSink() {
   )
 
   const handleLinkClick = (event) => {
-    setScrollToComponent(event.currentTarget.hash.substr(1))
+    const componentToScrollTo = event.currentTarget.hash.substr(1)
+    if (componentToScrollTo !== scrollToComponent) {
+      setScrollToComponent(componentToScrollTo)
+    }
   }
 
   const handleHashChange = (e) => {
-    setHash(window.location.hash.substr(1))
+    const newHash = window.location.hash.substr(1)
+    if (newHash !== hash) {
+      setHash(newHash)
+    }
   }
 
+  // Listen to window.hashchange event
   useEffect(() => {
-    if (!isListening && ExecutionEnvironment.canUseDOM) {
+    if (!isListeningToHashchange && ExecutionEnvironment.canUseDOM) {
       if (window.location.hash) {
         setHash(window.location.hash.substr(1))
       }
       window.addEventListener('hashchange', handleHashChange)
       window.onhashchange = handleHashChange
-      setIsListening(true)
+      setIsListeningToHashChange(true)
     }
-  }, [ExecutionEnvironment.canUseDOM, isListening])
+  }, [ExecutionEnvironment.canUseDOM, isListeningToHashchange])
 
+  // Set active component
   useEffect(() => {
-    if (!scrollToComponent && hash) {
-      setScrollToComponent(hash)
+    if (hash && (!activeComponent || activeComponent.slug !== hash)) {
+      const res = enabledComponents.find(({ slug }) => slug === hash)
+      if (res) {
+        setActiveComponent(res)
+      }
     }
   }, [hash])
 
   return (
     <DataProvider>
-      <Layout title="Kitchen Sink">
-        <LayoutNav>
+      <Layout title="Kitchen Sink (Component Overview)">
+        <LayoutNav title="Menu">
           {Object.keys(componentsByPackage).map((packageName) => (
             <KitchenSinkMenuPackage key={packageName}>
               <KitchenSinkMenuPackageName>
@@ -144,10 +157,6 @@ function KitchenSink() {
           ))}
         </LayoutNav>
         <LayoutMain>
-          <KitchenSinkIntro>
-            This page currently has {enabledComponents.length} MDX components
-            enabled. This is an overview of all these components.
-          </KitchenSinkIntro>
           <KitchenSinkList>
             {enabledComponents.map((component) => (
               <KitchenSinkComponent
@@ -158,6 +167,11 @@ function KitchenSink() {
             ))}
           </KitchenSinkList>
         </LayoutMain>
+        <LayoutNav title="Props" gridArea="side" inverted>
+          {activeComponent && (
+            <Props componentProps={activeComponent.componentProps} />
+          )}
+        </LayoutNav>
       </Layout>
     </DataProvider>
   )
