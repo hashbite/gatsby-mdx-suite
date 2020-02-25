@@ -17,12 +17,12 @@ const DocsWrapper = styled.div`
 const LayoutHeader = styled.div`
   ${tw`
     px-4 flex justify-between items-center
-    bg-gray-800 text-white shadow-lg
+    bg-gray-200 shadow-lg
   `}
   grid-area: head;
 `
 
-const DocsTitle = tw.h1`m-0`
+const DocsTitle = tw(Styled.h1)`m-0 text-2xl`
 
 const MenuLink = tw(Link)`px-4`
 
