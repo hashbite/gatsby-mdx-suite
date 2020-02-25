@@ -11,7 +11,7 @@
     "format": "prettier --write '{./**/*.{js,jsx},*.{js,json}}'",
     "lint": "eslint . && npx lerna exec 'npm run lint' --scope='gatsby-starter-mdx-suite-*'",
     "publish": "lerna publish --conventional-commits",
-    "check-dependencies": "lerna exec \"pwd && npx depcheck .\" --no-bail --concurrency 1"
+    "check-dependencies": "lerna exec \"pwd && npx depcheck --ignore-dirs '.cache' .\" --no-bail --concurrency 1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
