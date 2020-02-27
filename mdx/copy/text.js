@@ -42,7 +42,7 @@ const TextWrapper = styled.div(
       `}
     ${align &&
       css`
-        align: ${align};
+        text-align: ${align};
       `}
   `
 )
