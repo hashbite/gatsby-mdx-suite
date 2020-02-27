@@ -96,7 +96,7 @@ BoxCarousel.defaultProps = {
   ...BaseBox.defaultProps,
   controls: true,
   autoplay: true,
-  autoplayInterval: 3000,
+  autoplayInterval: 5000,
   loop: true,
 }
 
