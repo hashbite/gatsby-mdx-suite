@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.1.0...@gatsby-mdx-suite/mdx-instagram@0.2.0) (2020-02-27)
+
+
+### Features
+
+* **docs:** add examples to all components ([93685d7](https://github.com/axe312ger/gatsby-mdx-suite/commit/93685d78039085ecf68a3d6513716e678441e1f4))
+* **media:** improve media rendering and introduce more tokes for docs ([af57178](https://github.com/axe312ger/gatsby-mdx-suite/commit/af57178d749e394c1dcd25d29fc06037d3e05a1d))
+
+
+
+
+
 # [0.1.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.0.25...@gatsby-mdx-suite/mdx-instagram@0.1.0) (2020-02-19)
 
 

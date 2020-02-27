@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.7.1...gatsby-theme-mdx-suite@0.8.0) (2020-02-27)
+
+
+### Bug Fixes
+
+* dependencies ([bc31a77](https://github.com/axe312ger/gatsby-mdx-suite/commit/bc31a7768e25af950babb37d449852f6ae392c10))
+
+
+### Features
+
+* **docs:** improve menu toggle ([3b45c19](https://github.com/axe312ger/gatsby-mdx-suite/commit/3b45c19f029b2afa59af1c59ade19495dd19abd0))
+* **docs:** render props in sidebar ([0c0a11b](https://github.com/axe312ger/gatsby-mdx-suite/commit/0c0a11be480e16fc3a5abbbe3703b5e904a4984f))
+* **docs:** restyle and improve editor ([b595cfe](https://github.com/axe312ger/gatsby-mdx-suite/commit/b595cfebf3c9198b062320580ec9fa3a424a041d))
+* adds script to convert Theme UI config to Tailwind CSS config ([7184bfa](https://github.com/axe312ger/gatsby-mdx-suite/commit/7184bfa874f1c15eae948f2c36a21fbef7d8d890))
+* **docs:** add tokens for random images and videos for example codes ([fc854cb](https://github.com/axe312ger/gatsby-mdx-suite/commit/fc854cbb10a7365e7d6c4927693898b38f6703ee))
+* **docs:** hash based routing for kitchen sink ([5e3f1ed](https://github.com/axe312ger/gatsby-mdx-suite/commit/5e3f1edeb702b59b3bce33e33ac1a327c936a925))
+* **docs:** parse and show examples from jsdoc doclets ([cc96bf9](https://github.com/axe312ger/gatsby-mdx-suite/commit/cc96bf9973e8d0c12f2b9e176aa626e404f60aeb))
+* **docs:** support small screens ([e5f9b69](https://github.com/axe312ger/gatsby-mdx-suite/commit/e5f9b69d4d1aee3604c9f1513be33c8ea28b7446))
+* **editor:** use tailwind colors for syntax highlighting ([84da1c8](https://github.com/axe312ger/gatsby-mdx-suite/commit/84da1c824efd490fec696cb9df1f488ea55aa422))
+* **media:** improve media rendering and introduce more tokes for docs ([af57178](https://github.com/axe312ger/gatsby-mdx-suite/commit/af57178d749e394c1dcd25d29fc06037d3e05a1d))
+* **styling:** enhance docs and integrate tailwind with almost all components ([dd8d5a1](https://github.com/axe312ger/gatsby-mdx-suite/commit/dd8d5a19bf7c973099388d6d561db56ed76dc027))
+* **styling:** implement styles via tailwindcss ([9a4f7ed](https://github.com/axe312ger/gatsby-mdx-suite/commit/9a4f7ed74ba10943696b851203d1b9999b481837))
+
+
+
+
+
 ## [0.7.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.7.0...gatsby-theme-mdx-suite@0.7.1) (2020-02-19)
 
 

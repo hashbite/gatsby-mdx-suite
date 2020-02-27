@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.6.2...gatsby-starter-mdx-suite-contentful@0.7.0) (2020-02-27)
+
+
+### Bug Fixes
+
+* dependencies ([bc31a77](https://github.com/axe312ger/gatsby-suite-mdx/commit/bc31a7768e25af950babb37d449852f6ae392c10))
+* **starters/contentful:** fix Header description and example ([c13e279](https://github.com/axe312ger/gatsby-suite-mdx/commit/c13e279c5037de8035429a9c8ee8f3756c40b85b))
+
+
+### Features
+
+* adds script to convert Theme UI config to Tailwind CSS config ([7184bfa](https://github.com/axe312ger/gatsby-suite-mdx/commit/7184bfa874f1c15eae948f2c36a21fbef7d8d890))
+* **docs:** add examples to all components ([93685d7](https://github.com/axe312ger/gatsby-suite-mdx/commit/93685d78039085ecf68a3d6513716e678441e1f4))
+* **media:** improve media rendering and introduce more tokes for docs ([af57178](https://github.com/axe312ger/gatsby-suite-mdx/commit/af57178d749e394c1dcd25d29fc06037d3e05a1d))
+* **styling:** enhance docs and integrate tailwind with almost all components ([dd8d5a1](https://github.com/axe312ger/gatsby-suite-mdx/commit/dd8d5a19bf7c973099388d6d561db56ed76dc027))
+* **styling:** implement styles via tailwindcss ([9a4f7ed](https://github.com/axe312ger/gatsby-suite-mdx/commit/9a4f7ed74ba10943696b851203d1b9999b481837))
+* **styling:** integrate Tailwind CSS via twin.macro ([96474a7](https://github.com/axe312ger/gatsby-suite-mdx/commit/96474a703ac61e77dfc71ab93e094954ef2e288a))
+
+
+
+
+
 ## [0.6.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.6.1...gatsby-starter-mdx-suite-contentful@0.6.2) (2020-02-19)
 
 

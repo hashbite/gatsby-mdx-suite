@@ -1,12 +1,12 @@
 {
   "name": "@gatsby-mdx-suite/helpers",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "> TODO: description",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "^10.0.27",
-    "@gatsby-mdx-suite/mdx-link": "^0.2.0",
+    "@gatsby-mdx-suite/mdx-link": "^0.3.0",
     "twin.macro": "^1.0.0-alpha.3"
   },
   "publishConfig": {

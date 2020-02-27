@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.5.0...@gatsby-mdx-suite/mdx-layout@0.6.0) (2020-02-27)
+
+
+### Features
+
+* **docs:** add examples to all components ([93685d7](https://github.com/axe312ger/gatsby-mdx-suite/commit/93685d78039085ecf68a3d6513716e678441e1f4))
+* **layout:** rename reverseOrder to reverse for FloatingImage ([bc10412](https://github.com/axe312ger/gatsby-mdx-suite/commit/bc1041220fa29ed3ef5b694bc68b04a9ce5e1d55))
+* **media:** improve media rendering and introduce more tokes for docs ([af57178](https://github.com/axe312ger/gatsby-mdx-suite/commit/af57178d749e394c1dcd25d29fc06037d3e05a1d))
+* **styling:** enhance docs and integrate tailwind with almost all components ([dd8d5a1](https://github.com/axe312ger/gatsby-mdx-suite/commit/dd8d5a19bf7c973099388d6d561db56ed76dc027))
+* **styling:** implement styles via tailwindcss ([9a4f7ed](https://github.com/axe312ger/gatsby-mdx-suite/commit/9a4f7ed74ba10943696b851203d1b9999b481837))
+
+
+
+
+
 # [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.4.2...@gatsby-mdx-suite/mdx-layout@0.5.0) (2020-02-19)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.2.0...@gatsby-mdx-suite/mdx-timeline@0.3.0) (2020-02-27)
+
+
+### Features
+
+* **mdx/timeline:** seperate timeline from entries ([5baa0ed](https://github.com/axe312ger/gatsby-mdx-suite/commit/5baa0eda0a8db7ac284ebb5cfdcdee67b914ac43))
+* **styling:** enhance docs and integrate tailwind with almost all components ([dd8d5a1](https://github.com/axe312ger/gatsby-mdx-suite/commit/dd8d5a19bf7c973099388d6d561db56ed76dc027))
+
+
+
+
+
 # 0.2.0 (2020-02-04)
 
 

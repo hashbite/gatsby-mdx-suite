@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-bandcamp@0.1.0...@gatsby-mdx-suite/mdx-bandcamp@0.2.0) (2020-02-27)
+
+
+### Features
+
+* **docs:** add examples to all components ([93685d7](https://github.com/axe312ger/gatsby-mdx-suite/commit/93685d78039085ecf68a3d6513716e678441e1f4))
+
+
+
+
+
 # [0.1.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-bandcamp@0.0.6...@gatsby-mdx-suite/mdx-bandcamp@0.1.0) (2020-02-19)
 
 

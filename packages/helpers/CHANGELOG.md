@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.2.4...@gatsby-mdx-suite/helpers@0.3.0) (2020-02-27)
+
+
+### Features
+
+* **media:** improve media rendering and introduce more tokes for docs ([af57178](https://github.com/axe312ger/gatsby-mdx-suite/commit/af57178d749e394c1dcd25d29fc06037d3e05a1d))
+* **styling:** enhance docs and integrate tailwind with almost all components ([dd8d5a1](https://github.com/axe312ger/gatsby-mdx-suite/commit/dd8d5a19bf7c973099388d6d561db56ed76dc027))
+* **styling:** integrate Tailwind CSS via twin.macro ([96474a7](https://github.com/axe312ger/gatsby-mdx-suite/commit/96474a703ac61e77dfc71ab93e094954ef2e288a))
+
+
+
+
+
 ## [0.2.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.2.3...@gatsby-mdx-suite/helpers@0.2.4) (2020-02-19)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/helpers

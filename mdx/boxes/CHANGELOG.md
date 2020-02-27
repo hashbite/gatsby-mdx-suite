@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.3.1...@gatsby-mdx-suite/mdx-boxes@0.4.0) (2020-02-27)
+
+
+### Bug Fixes
+
+* **mdx/boxes:** allow carousel slides to have no children ([d896baf](https://github.com/axe312ger/gatsby-mdx-suite/commit/d896baf01155f5742ed105e168b66e9986b38462))
+* **mdx/boxes:** increase carousel default autoplay interval ([ad639f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/ad639f4c3e8595f26a078023d8d3ca73ef29202a))
+
+
+### Features
+
+* **docs:** add examples to all components ([93685d7](https://github.com/axe312ger/gatsby-mdx-suite/commit/93685d78039085ecf68a3d6513716e678441e1f4))
+
+
+
+
+
 ## [0.3.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.3.0...@gatsby-mdx-suite/mdx-boxes@0.3.1) (2020-02-19)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
