@@ -105,7 +105,7 @@ BoxCarouselSlide.defaultProps = {
 }
 
 BoxCarouselSlide.propTypes = {
-  children: propTypes.node.isRequired,
+  children: propTypes.node,
   // Id of the background image
   backgroundImageId: propTypes.string,
   /**
