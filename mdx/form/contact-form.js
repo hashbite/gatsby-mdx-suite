@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
-import { useStaticQuery } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
