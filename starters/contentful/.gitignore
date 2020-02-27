@@ -1,4 +1,5 @@
-.env.*
+.env
+tailwind.config.js
 
 # Logs
 logs

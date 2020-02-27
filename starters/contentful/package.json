@@ -5,13 +5,16 @@
   "version": "0.6.2",
   "author": "Benedikt Rötsch <info@benedikt.roetsch.de>",
   "scripts": {
-    "build": "npx --node-arg \"-r esm\" gatsby build",
-    "develop": "GATSBY_CONTENTFUL_OFFLINE=true nodemon -x 'npx --node-arg \"-r esm\" gatsby develop' -w './*.js'",
+    "build": "gatsby build",
+    "develop": "GATSBY_CONTENTFUL_OFFLINE=true nodemon -x 'gatsby develop' -w './*.js'",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "format": "prettier --write '{./**/*.{js,jsx},*.{js,json}}'",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "generate-tailwind-config": "NODE_ENV=test babel-node scripts/generate-tailwind-config.js --ignore /allow/transpile/of/node_modules",
+    "predevelop": "npm run generate-tailwind-config",
+    "prebuild": "npm run generate-tailwind-config"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,9 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.6",
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.0.7",
@@ -46,7 +52,7 @@
     "@gatsby-mdx-suite/seo": "^0.0.7",
     "@mdx-js/react": "^1.5.5",
     "@theme-ui/typography": "^0.3.0",
-    "esm": "^3.2.25",
+    "babel-preset-gatsby": "^0.2.29",
     "gatsby": "^2.19.18",
     "gatsby-plugin-manifest": "^2.2.42",
     "gatsby-plugin-mdx": "^1.0.73",
