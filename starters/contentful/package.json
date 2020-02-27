@@ -29,7 +29,6 @@
   "dependencies": {
     "@babel/core": "^7.8.6",
     "@babel/node": "^7.8.4",
-    "@babel/preset-env": "^7.8.6",
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.0.7",
@@ -51,8 +50,10 @@
     "@gatsby-mdx-suite/menu": "^0.2.4",
     "@gatsby-mdx-suite/seo": "^0.0.7",
     "@mdx-js/react": "^1.5.5",
+    "@theme-ui/tailwind": "^0.3.0",
     "@theme-ui/typography": "^0.3.0",
     "babel-preset-gatsby": "^0.2.29",
+    "fs-extra": "^8.1.0",
     "gatsby": "^2.19.18",
     "gatsby-plugin-manifest": "^2.2.42",
     "gatsby-plugin-mdx": "^1.0.73",
