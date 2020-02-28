@@ -53,6 +53,8 @@ module.exports = {
         /**
          * Configuratoin for automatic media usage detection within your MDX content.
          *
+         * Keep this in sync with your enabled MDX components.
+         *
          * This configures the media field for all mdx fields
          * For each collection the raw mdx source will be searched for media assets
          * Components are located via an query selector the id extracted from a given attribute
@@ -67,13 +69,20 @@ module.exports = {
          */
         mediaCollections: {
           background: {
-            selector:
-              'section[backgroundimageid],viewport[backgroundimageid],header[backgroundimageid]',
-            attribute: 'backgroundimageid',
+            selector: [
+              'Section[backgroundImageId]',
+              'Viewport[backgroundImageId]',
+              'Header[backgroundImageId]',
+            ].join(','),
+            attribute: 'backgroundImageId',
           },
           images: {
-            selector:
-              'image[id],box[backgroundimageid],boxcarouselslide[backgroundimageid]',
+            selector: [
+              'Image[id]',
+              'Box[backgroundImageId]',
+              'BoxCarouselSlide[backgroundImageId]',
+              'Card[imageId]',
+            ].join(','),
             /**
              * @param el See: https://github.com/cheeriojs/cheerio#the-dom-node-object
              */
@@ -81,19 +90,21 @@ module.exports = {
               switch (el.name) {
                 case 'box':
                 case 'boxcarouselslide':
-                  return 'backgroundimageid'
+                  return 'backgroundImageId'
+                case 'card':
+                  return 'imageId'
                 default:
                   return 'id'
               }
             },
           },
           floating: {
-            selector: 'floatingimage[imageid]',
-            attribute: 'imageid',
+            selector: 'FloatingImage[imageId]',
+            attribute: 'imageId',
           },
           videos: {
-            selector: 'video[id],boxvideo[videoid]',
-            attribute: (el) => (el.name === 'video' ? 'id' : 'videoid'),
+            selector: ['Video[id]', 'BoxVideo[videoId]'].join(','),
+            attribute: (el) => (el.name === 'video' ? 'id' : 'videoId'),
           },
         },
       },
