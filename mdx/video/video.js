@@ -59,13 +59,13 @@ export default function Video({
   }
 
   const sources = [
-    { name: 'h265', type: 'video/mp4; codecs=hevc' },
-    { name: 'vp9', type: 'video/webm; codecs=vp9,opus' },
-    { name: 'h264', type: 'video/mp4; codecs=avc1' },
+    { name: 'videoH265', type: 'video/mp4; codecs=hevc' },
+    { name: 'videoVP9', type: 'video/webm; codecs=vp9,opus' },
+    { name: 'videoH264', type: 'video/mp4; codecs=avc1' },
   ]
     .filter(({ name }) => !!video[name])
     .map(({ name, type }) => (
-      <source key={name} src={video[name]} type={type} />
+      <source key={name} src={video[name].path} type={type} />
     ))
 
   if (!sources) {
