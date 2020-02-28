@@ -113,8 +113,15 @@ export default function Image({
       return null
     }
 
+    // Use located data if no overwrites are passed
     fluid = fluid || imageData.fluid
-    previewDataURI = previewDataURI || imageData.previewDataURI
+    previewDataURI =
+      previewDataURI ||
+      // Support string & object structure to simplify GraphQL queries
+      (imageData.previewDataURI &&
+        (typeof imageData.previewDataURI === 'string'
+          ? imageData.previewDataURI
+          : imageData.previewDataURI.dataURI))
     file = file || imageData.file
   }
 
