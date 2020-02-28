@@ -31,7 +31,10 @@ const generateComponentSlug = ({ packageName, parentName }) =>
     .replace(/%40/g, '')
     .toLowerCase()
 
-exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
+exports.createResolvers = (
+  { store, createResolvers },
+  { mediaCollections = {} }
+) => {
   const resolvers = {
     Mdx: {
       // Attach referenced media assets based on the themes collection configuration
@@ -190,6 +193,74 @@ exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
     },
   }
   createResolvers(resolvers)
+}
+
+/**
+ * Create dummy types to allow docs query for all kinds of assets
+ */
+exports.createSchemaCustomization = ({ actions, store, schema }) => {
+  const { createTypes } = actions
+  const { directory } = store.getState().program
+  const config = require(resolve(directory, 'gatsby-config.js'))
+  const enabledPlugins = config.plugins.map((plugin) =>
+    typeof plugin === 'string' ? plugin : plugin.resolve
+  )
+
+  const typeDefs = [
+    `
+    type FakeFile implements Node @dontInfer {
+      url: String
+      childImageSharp: ImageSharp
+    }
+    `,
+  ]
+
+  // Add nulled video data
+  if (!enabledPlugins.includes('gatsby-transformer-video')) {
+    typeDefs.push(`
+      type FakeVideo implements Node @dontInfer  {
+        path: String
+      }
+    `)
+    typeDefs.push(
+      schema.buildObjectType({
+        name: 'ContentfulAsset',
+        fields: {
+          videoH264: {
+            type: 'FakeVideo',
+            args: {
+              fps: 'Int',
+              duration: 'Int',
+            },
+          },
+        },
+        interfaces: ['Node'],
+      })
+    )
+  }
+
+  // Add nulled instagram data
+  if (!enabledPlugins.includes('gatsby-source-instagram')) {
+    typeDefs.push(`
+      type InstaNode implements Node @dontInfer  {
+        title: String
+        localFile: FakeFile
+      }
+    `)
+  }
+
+  // Add nulled youtube data
+  if (!enabledPlugins.includes('gatsby-source-youtube-v2')) {
+    typeDefs.push(`
+      type YoutubeVideo implements Node @dontInfer  {
+        videoId: String
+        title: String
+        localThumbnail: FakeFile
+      }
+    `)
+  }
+
+  createTypes(typeDefs)
 }
 
 /**
