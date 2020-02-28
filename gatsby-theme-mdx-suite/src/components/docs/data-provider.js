@@ -68,13 +68,7 @@ const DocsDataProvider = ({ children }) => {
           background: assetResults.images.nodes || [],
           youtubeVideos: assetResults.youtubeVideos.nodes || [],
           instagramPosts: assetResults.instagramPosts.nodes || [],
-          videos: (assetResults.videos.nodes || []).map(
-            ({ assetId, locale, videoH264 }) => ({
-              assetId,
-              locale,
-              h264: videoH264.path,
-            })
-          ),
+          videos: assetResults.videos.nodes || [],
         },
       }}
     >
