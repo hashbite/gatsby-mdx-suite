@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.2.3...@gatsby-mdx-suite/i18n@0.2.4) (2020-02-28)
+
+
+### Bug Fixes
+
+* SQIP integration ([05a68bc](https://github.com/axe312ger/gatsby-mdx-suite/commit/05a68bcdfeb10faa4f516a48f0bbdad9c3d3eb63))
+
+
+
+
+
 ## [0.2.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.2.2...@gatsby-mdx-suite/i18n@0.2.3) (2020-02-27)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/i18n

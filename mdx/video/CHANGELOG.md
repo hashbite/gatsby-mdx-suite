@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.3.0...@gatsby-mdx-suite/mdx-video@0.3.1) (2020-02-28)
+
+
+### Bug Fixes
+
+* **mdx/video:** change data structure to match image assets ([d51bf97](https://github.com/axe312ger/gatsby-mdx-suite/commit/d51bf978faf135df0dbb685f54dbdced3e83c526))
+
+
+
+
+
 # [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.2.1...@gatsby-mdx-suite/mdx-video@0.3.0) (2020-02-27)
 
 

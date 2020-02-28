@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-media-gallery",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -17,8 +17,8 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.0.8",
-    "@gatsby-mdx-suite/helpers": "^0.3.0",
-    "@gatsby-mdx-suite/mdx-image": "^0.3.0",
+    "@gatsby-mdx-suite/helpers": "^0.3.1",
+    "@gatsby-mdx-suite/mdx-image": "^0.3.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-images": "^1.0.0",

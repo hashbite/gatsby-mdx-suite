@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.7.0...gatsby-starter-mdx-suite-contentful@0.7.1) (2020-02-28)
+
+
+### Bug Fixes
+
+* SQIP integration ([05a68bc](https://github.com/axe312ger/gatsby-suite-mdx/commit/05a68bcdfeb10faa4f516a48f0bbdad9c3d3eb63))
+* **mdx/video:** change data structure to match image assets ([d51bf97](https://github.com/axe312ger/gatsby-suite-mdx/commit/d51bf978faf135df0dbb685f54dbdced3e83c526))
+* **starters/contentful:** add missing components to asset parser config ([bc3a0fd](https://github.com/axe312ger/gatsby-suite-mdx/commit/bc3a0fd9a6bf4331f5831a265bbfef89a872ccbf))
+
+
+
+
+
 # [0.7.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.6.2...gatsby-starter-mdx-suite-contentful@0.7.0) (2020-02-27)
 
 
