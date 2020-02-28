@@ -82,7 +82,7 @@ export const pageQuery = graphql`
             svg {
               content
             }
-            sqip(mode: 8, numberOfPrimitives: 12, blur: 0) {
+            previewDataURI: sqip(mode: 8, numberOfPrimitives: 12, blur: 0) {
               dataURI
             }
             fluid(maxWidth: 1400) {
@@ -94,7 +94,7 @@ export const pageQuery = graphql`
             svg {
               content
             }
-            sqip(mode: 8, numberOfPrimitives: 42, blur: 0) {
+            previewDataURI: sqip(mode: 8, numberOfPrimitives: 42, blur: 0) {
               dataURI
             }
             fluid(maxWidth: 1920) {
@@ -106,7 +106,7 @@ export const pageQuery = graphql`
             svg {
               content
             }
-            sqip(mode: 8, numberOfPrimitives: 22, blur: 0) {
+            previewDataURI: sqip(mode: 8, numberOfPrimitives: 22, blur: 0) {
               dataURI
             }
             fluid(maxWidth: 1024) {

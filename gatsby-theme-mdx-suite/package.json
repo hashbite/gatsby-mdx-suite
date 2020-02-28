@@ -26,7 +26,7 @@
     "cheerio": "0.22.0",
     "debug": "^4.1.1",
     "exenv": "^1.2.2",
-    "gatsby": "^2.19.18",
+    "gatsby": "^2.19.23",
     "gatsby-link": "^2.2.29",
     "gatsby-plugin-bundle-stats": "^1.15.7",
     "gatsby-plugin-emotion": "^4.1.22",
