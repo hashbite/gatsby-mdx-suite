@@ -34,7 +34,20 @@ const generateComponentSlug = ({ packageName, parentName }) =>
 exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
   const resolvers = {
     Mdx: {
-      // Attach referenced media assets based on the themes collection configuration
+      /**
+       * Attach referenced media assets with MDX source based on the themes collection configuration
+       *
+       * @todo
+       *
+       * This currently has to lowercase selectors and ids because of cheerio.
+       *
+       * Cheerio was a very convient and simply solution to integrate this, this should be refactored,
+       * maybe even using MDX related packages to parse the MDX AST instead of parsing the source
+       * as HTML code. On the other hand, selecting these components via dom selectors allow a lot
+       * of flexibility and the selector syntax is well know to developers.
+       *
+       * See: https://github.com/axe312ger/gatsby-mdx-suite/issues/38
+       */
       media: {
         type: ['ContentfulAsset'],
         args: {
@@ -45,12 +58,15 @@ exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
           const { selector, attribute } = mediaCollections[collectionType]
 
           const $ = cheerio.load(source.rawBody)
-          const cheerioResult = $(selector)
+          const cheerioResult = $(selector.toLowerCase())
 
           const mediaIds = cheerioResult
             .map((i, el) =>
               $(el).attr(
-                typeof attribute === 'function' ? attribute(el) : attribute
+                (typeof attribute === 'function'
+                  ? attribute(el)
+                  : attribute
+                ).toLowerCase()
               )
             )
             .get()
