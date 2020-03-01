@@ -7,7 +7,7 @@ import isPropValid from '@emotion/is-prop-valid'
 
 import Link from '@gatsby-mdx-suite/mdx-link/link'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import { applyColorSet } from '@gatsby-mdx-suite/helpers'
+import applyColorSet from '@gatsby-mdx-suite/helpers/styling/apply-color-set'
 
 import { Slide } from 'pure-react-carousel'
 

@@ -5,7 +5,8 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import { applyColorSet, centerToContentColumn } from '@gatsby-mdx-suite/helpers'
+import applyColorSet from '@gatsby-mdx-suite/helpers/styling/apply-color-set'
+import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
 const SectionWrapper = styled.section(
   ({ hasBackgroundImage, ...restProps }) => {
