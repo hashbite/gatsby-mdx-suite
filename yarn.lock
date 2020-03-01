@@ -18845,7 +18845,7 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twin.macro@^1.0.0-alpha.6:
+twin.macro@^1.0.0-alpha.3, twin.macro@^1.0.0-alpha.6:
   version "1.0.0-alpha.6"
   resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-1.0.0-alpha.6.tgz#62bbc55983dada65e774928dee62cb91952e6788"
   integrity sha512-PQLEh26+CZeOHBSiune4WWaCREBpr5wQbw3KAGzbbkJtDnr9r2Dc/9qNIq9d7xXnBsPfRbN9OSM9018eA+twgw==
