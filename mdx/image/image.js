@@ -25,12 +25,14 @@ export const ImageWrapper = styled('div', {
     ].includes(prop),
 })(
   ({ width, height, fitsParent }) => css`
-    display: block;
-
-    ${!fitsParent &&
-      css`
-        position: relative;
-      `}
+    ${fitsParent
+      ? css`
+          display: block;
+        `
+      : css`
+          display: inline-block;
+          position: relative;
+        `}
 
     img {
       display: block;
