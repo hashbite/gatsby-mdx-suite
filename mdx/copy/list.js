@@ -8,8 +8,8 @@ const ListWrapper = tw.div``
 const ListTitle = tw.h3`mt-5 font-bold text-sm text-gray-400 uppercase`
 
 const ListItem = styled.li`
-  ${tw`list-none pl-8 ml-4 bg-no-repeat font-bold`}
-  background-position: left center;
+  ${tw`list-none pl-8 pb-4 ml-4 bg-no-repeat`}
+  background-position: left 0.35em;
   background-size: 1em auto;
 `
 
@@ -88,7 +88,7 @@ export default function List({ type, title, children, colorSet }) {
 
 List.defaultProps = {
   type: 'bulletpoint',
-  colorSet: 'blue',
+  colorSet: 'default',
 }
 
 List.propTypes = {

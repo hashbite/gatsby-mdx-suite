@@ -81,4 +81,5 @@ export default {
   Viewport,
   YoutubeFeed,
   YoutubeVideo,
+  ul: List,
 }

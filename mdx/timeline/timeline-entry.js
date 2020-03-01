@@ -8,7 +8,7 @@ const TimelineEntryLabel = styled.div``
 
 const TimelineEntryWrapper = styled.div(
   ({ theme, bubbleSize }) => css`
-  ${tw`relative pr-4 pb-2`}
+  ${tw`relative pr-4 py-4`}
 
   ${TimelineEntryLabel} {
     ${tw`absolute z-10 border border-gray-500 rounded-full`}
