@@ -10,7 +10,7 @@ import MenuRecursive from '@gatsby-mdx-suite/menu/menu-recursive'
 import MenuUl from '@gatsby-mdx-suite/menu/menu-ul'
 import MenuLi from '@gatsby-mdx-suite/menu/menu-li'
 import MenuTitle from '@gatsby-mdx-suite/menu/menu-title'
-import { centerToContentColumn } from '@gatsby-mdx-suite/helpers'
+import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
 import tw from 'twin.macro'
 

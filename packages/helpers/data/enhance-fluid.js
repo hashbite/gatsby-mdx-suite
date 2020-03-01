@@ -1,7 +1,7 @@
 /**
  * Returns fluid data with replaced embedded preview if SQIP data is available
  */
-export function enhanceFluid(data) {
+function enhanceFluid(data) {
   if (data.sqip) {
     return {
       ...data.fluid,
@@ -10,3 +10,5 @@ export function enhanceFluid(data) {
   }
   return data.fluid
 }
+
+export default enhanceFluid

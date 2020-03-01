@@ -5,13 +5,9 @@ import tw from 'twin.macro'
 import { css } from '@emotion/core'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import { applyColorSet } from '@gatsby-mdx-suite/helpers'
+import applyColorSet from '@gatsby-mdx-suite/helpers/styling/apply-color-set'
+import convertToFlexAlignment from '@gatsby-mdx-suite/helpers/styling/convert-to-flex-alignment'
 import Section from './section'
-
-// Shortcuts to ease up editor UX: start, end -> flex-start, flex-end; center -> center
-// @todo move to helpers
-const extendPositionArgument = (value) =>
-  value === 'center' ? value : `flex-${value}`
 
 const ViewportWrapper = styled.div(
   ({ horizontalAlign, verticalAlign, hasBackgroundImage, ...restProps }) => {
@@ -20,8 +16,8 @@ const ViewportWrapper = styled.div(
     }
     return css`
     ${tw`relative min-h-screen flex flex-col`}
-      align-items: ${extendPositionArgument(horizontalAlign)};
-      justify-content: ${extendPositionArgument(verticalAlign)};
+      align-items: ${horizontalAlign};
+      justify-content: ${verticalAlign};
 
       ${applyColorSet({ ...restProps })}
 
@@ -35,8 +31,7 @@ const ViewportWrapper = styled.div(
 
 const ViewportContent = styled(Section)`
   ${tw`relative z-10 flex flex-col`}
-  align-items: ${({ horizontalAlign }) =>
-    extendPositionArgument(horizontalAlign)};
+  align-items: ${({ horizontalAlign }) => horizontalAlign};
 `
 
 const BackgroundImageWrapper = styled.div`
@@ -78,8 +73,8 @@ export default function Viewport({
 }) {
   return (
     <ViewportWrapper
-      verticalAlign={verticalAlign}
-      horizontalAlign={horizontalAlign}
+      verticalAlign={convertToFlexAlignment(verticalAlign)}
+      horizontalAlign={convertToFlexAlignment(horizontalAlign)}
       hasBackgroundImage={!!backgroundImageId}
       {...restProps}
     >
@@ -89,7 +84,9 @@ export default function Viewport({
         </BackgroundImageWrapper>
       )}
       {children && (
-        <ViewportContent horizontalAlign={horizontalAlign}>
+        <ViewportContent
+          horizontalAlign={convertToFlexAlignment(horizontalAlign)}
+        >
           {children}
         </ViewportContent>
       )}

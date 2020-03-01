@@ -7,7 +7,7 @@ import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import { enhanceFluid } from '@gatsby-mdx-suite/helpers/data'
+import enhanceFluid from '@gatsby-mdx-suite/helpers/data/enhance-fluid'
 
 const MediaGalleryWrapper = styled.div(
   ({ theme }) => css`
