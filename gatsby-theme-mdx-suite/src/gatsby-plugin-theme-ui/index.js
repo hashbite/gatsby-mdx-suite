@@ -2,10 +2,12 @@ import merge from 'lodash/merge'
 import tailwindPreset from '@theme-ui/preset-tailwind'
 
 export default merge(tailwindPreset, {
-  config: {
-    // @todo check if we can replace all of these by extending other theme config like sizes/sizing
-    contentColumnMaxWidth: tailwindPreset.sizes['6xl'],
-    gridDefaultGap: '2rem',
+  spacing: {
+    'content-column-padding': '2vw',
+    'grid-gap': tailwindPreset.sizes['8'],
+  },
+  maxWidth: {
+    'content-column': `${parseInt(tailwindPreset.sizes['6xl']) * 16}px`,
   },
   colors: {
     sets: {

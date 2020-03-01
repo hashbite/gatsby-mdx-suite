@@ -1,13 +1,6 @@
-import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
-const centerToContentColumn = ({
-  theme: {
-    config: { contentColumnMaxWidth },
-  },
-}) => css`
-  ${tw`box-content mx-auto w-full px-8`}
-  max-width: ${contentColumnMaxWidth};
-`
+const centerToContentColumn = () =>
+  tw`mx-auto w-full max-w-content-column px-content-column-padding`
 
 export default centerToContentColumn

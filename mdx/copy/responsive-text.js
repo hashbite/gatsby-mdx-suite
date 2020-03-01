@@ -2,73 +2,29 @@ import React from 'react'
 import propTypes from 'prop-types'
 
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
 
-const ResponsiveTextWrapper = styled.div(
-  ({
-    theme: {
-      sizes: { maxContentWidth },
-      fonts: { heading },
-    },
-    fontSizeMin,
-    fontSizeMax,
-    lineHeightMin,
-    lineHeightMax,
-  }) => css`
-    font-size: ${fontSizeMin};
-    line-height: ${lineHeightMin};
-    font-family: ${heading};
-    font-weight: bold;
+import responsiveFont from '@gatsby-mdx-suite/helpers/styling/responsive-font'
 
-    @media screen and (min-width: 300px) {
-      font-size: calc(
-        ${fontSizeMin} + (${parseFloat(fontSizeMax) - parseFloat(fontSizeMin)}) *
-          ((100vw - 300px) / ${maxContentWidth - 300})
-      );
-      line-height: calc(
-        ${lineHeightMin} +
-          (${parseFloat(lineHeightMax) - parseFloat(lineHeightMin)}) *
-          ((100vw - 300px) / ${maxContentWidth - 300})
-      );
-    }
-    @media screen and (min-width: ${maxContentWidth}px) {
-      font-size: ${fontSizeMax};
-      line-height: ${lineHeightMax};
-    }
+const ResponsiveTextWrapper = styled.div`
+  ${responsiveFont}
 
-    & h1,
+  & h1,
     & h2,
     & h3,
     & h4,
     & h5,
     & h6 {
-      font-size: inherit;
-      line-height: inherit;
-    }
-  `
-)
+    font-size: inherit;
+    line-height: inherit;
+  }
+`
 
 /**
  * Let the font size grow from small to big screens.
  * @example <ResponsiveText>I will be **huge** on desktop</ResponsiveText>
  */
-const ResponsiveText = ({
-  children,
-  fontSizeMin,
-  fontSizeMax,
-  lineHeightMin,
-  lineHeightMax,
-}) => {
-  return (
-    <ResponsiveTextWrapper
-      fontSizeMin={fontSizeMin}
-      fontSizeMax={fontSizeMax}
-      lineHeightMin={lineHeightMin}
-      lineHeightMax={lineHeightMax}
-    >
-      {children}
-    </ResponsiveTextWrapper>
-  )
+const ResponsiveText = ({ children, ...props }) => {
+  return <ResponsiveTextWrapper {...props}>{children}</ResponsiveTextWrapper>
 }
 
 ResponsiveText.propTypes = {

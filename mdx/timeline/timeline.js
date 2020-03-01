@@ -8,7 +8,7 @@ const StyledTimeline = styled.div(
     ${tw`flex flex-col w-full py-16 sm:grid`}
 
     @media (min-width: ${theme.breakpoints[1]}) {
-      grid-gap: ${theme.config.gridDefaultGap};
+      ${tw`grid gap-grid-gap`}
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
   `
