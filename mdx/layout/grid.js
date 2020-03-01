@@ -15,8 +15,7 @@ const GridWrapper = styled.div(
     ${tw`flex flex-wrap items-stretch`}
 
     /* Actual grid */
-    ${tw`grid`}
-    grid-gap: ${theme.config.gridDefaultGap};
+    ${tw`grid gap-grid-gap`}
     grid-template-columns: repeat(auto-fit, minmax(${minWidth}, ${maxWidth}));
 
     /* Ensure all images are responsive within the grid. */

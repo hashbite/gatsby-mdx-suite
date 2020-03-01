@@ -11,8 +11,7 @@ import enhanceFluid from '@gatsby-mdx-suite/helpers/data/enhance-fluid'
 
 const MediaGalleryWrapper = styled.div(
   ({ theme }) => css`
-    ${tw`flex flex-wrap grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3`}
-    grid-gap: ${theme.config.gridDefaultGap};
+    ${tw`flex flex-wrap grid gap-grid-gap grid-cols-1 sm:grid-cols-2 md:grid-cols-3`}
   `
 )
 

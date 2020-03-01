@@ -96,10 +96,10 @@ const TimelineEntryWrapper = styled.div(
     }
 
     &:not(:first-child):before {
-      left: calc(${theme.config.gridDefaultGap});
+      left: calc(${theme.spacing['grid-gap']});
     }
     &:not(:last-child):after  {
-      right: calc(${theme.config.gridDefaultGap});
+      right: calc(${theme.spacing['grid-gap']});
     }
   }
 

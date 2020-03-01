@@ -12,8 +12,7 @@ import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 const BlogPostListingWrapper = styled.div(
   ({ theme }) => css`
-    ${tw`grid grid-cols-4`}
-    grid-gap: ${theme.config.gridDefaultGap};
+    ${tw`grid grid-cols-4 gap-grid-gap`}
 
     > * {
       ${tw`col-span-4 sm:col-span-2`}
