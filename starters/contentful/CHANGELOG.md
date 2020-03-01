@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.7.1...gatsby-starter-mdx-suite-contentful@0.8.0) (2020-03-01)
+
+
+### Bug Fixes
+
+* **styling:** improve and fix styling ([fa3c347](https://github.com/axe312ger/gatsby-suite-mdx/commit/fa3c347c5dcef9b7d3d393a6262a50778d9fd3a6))
+* **styling:** move custom config to Theme UI & Tailwind CSS ([5ad9b68](https://github.com/axe312ger/gatsby-suite-mdx/commit/5ad9b68fe0e817169c212dd4eb67c847ee8e2049)), closes [#79](https://github.com/axe312ger/gatsby-suite-mdx/issues/79)
+
+
+### Features
+
+* **helpers:** restructure and add responsive text helper ([04ff9eb](https://github.com/axe312ger/gatsby-suite-mdx/commit/04ff9ebf40ab6594030666cfa1885936389b98a4)), closes [#64](https://github.com/axe312ger/gatsby-suite-mdx/issues/64) [#63](https://github.com/axe312ger/gatsby-suite-mdx/issues/63)
+
+
+
+
+
 ## [0.7.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.7.0...gatsby-starter-mdx-suite-contentful@0.7.1) (2020-02-28)
 
 

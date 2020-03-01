@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/menu@0.2.6...@gatsby-mdx-suite/menu@0.2.7) (2020-03-01)
+
+
+### Bug Fixes
+
+* **styling:** move custom config to Theme UI & Tailwind CSS ([5ad9b68](https://github.com/axe312ger/gatsby-mdx-suite/commit/5ad9b68fe0e817169c212dd4eb67c847ee8e2049)), closes [#79](https://github.com/axe312ger/gatsby-mdx-suite/issues/79)
+
+
+
+
+
 ## [0.2.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/menu@0.2.5...@gatsby-mdx-suite/menu@0.2.6) (2020-02-28)
 
 

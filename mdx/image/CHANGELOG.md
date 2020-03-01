@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.3.1...@gatsby-mdx-suite/mdx-image@0.4.0) (2020-03-01)
+
+
+### Features
+
+* **fix/image:** Image now acts as inline element by default ([b90df5a](https://github.com/axe312ger/gatsby-mdx-suite/commit/b90df5a354727071b84456f66c25c84064740da5))
+
+
+
+
+
 ## [0.3.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.3.0...@gatsby-mdx-suite/mdx-image@0.3.1) (2020-02-28)
 
 

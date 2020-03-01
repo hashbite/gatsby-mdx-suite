@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.4.1...@gatsby-mdx-suite/mdx-boxes@0.5.0) (2020-03-01)
+
+
+### Features
+
+* **helpers:** restructure and add responsive text helper ([04ff9eb](https://github.com/axe312ger/gatsby-mdx-suite/commit/04ff9ebf40ab6594030666cfa1885936389b98a4)), closes [#64](https://github.com/axe312ger/gatsby-mdx-suite/issues/64) [#63](https://github.com/axe312ger/gatsby-mdx-suite/issues/63)
+
+
+
+
+
 ## [0.4.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.4.0...@gatsby-mdx-suite/mdx-boxes@0.4.1) (2020-02-28)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
