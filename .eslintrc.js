@@ -20,4 +20,13 @@ module.exports = {
     'react/jsx-fragments': 0,
     'react/jsx-pascal-case': 0,
   },
+  overrides: [
+    {
+      files: ['packages/**/*.test.js'],
+      plugins: ['jest'],
+      env: {
+        'jest/globals': true,
+      },
+    },
+  ],
 }
