@@ -11,7 +11,8 @@
     "format": "prettier --write '{./**/*.{js,jsx},*.{js,json}}'",
     "lint": "eslint . && npx lerna exec 'npm run lint' --scope='gatsby-starter-mdx-suite-*'",
     "publish": "lerna publish --conventional-commits",
-    "check-dependencies": "lerna exec \"pwd && npx depcheck --ignore-dirs '.cache' .\" --no-bail --concurrency 1"
+    "check-dependencies": "lerna exec \"pwd && npx depcheck --ignore-dirs '.cache' .\" --no-bail --concurrency 1",
+    "test": "jest"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
@@ -20,12 +21,14 @@
     "eslint-config-standard": "^14.0.0",
     "eslint-config-standard-react": "^9.0.0",
     "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
     "husky": "^4.2.3",
+    "jest": "^25.1.0",
     "lerna": "^3.20.2",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1"

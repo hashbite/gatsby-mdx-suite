@@ -4,12 +4,13 @@ function createPath({ slug, locale, pageType, config }) {
   const pageTypePrefix = pageTypeMap[pageType]
   const localePrefix = localeMap[locale]
 
-  return (
-    '/' +
-    [localePrefix, pageTypePrefix, slug === 'index' ? null : slug]
-      .filter(Boolean)
-      .join('/')
-  )
+  const pathSegments = [
+    localePrefix,
+    pageTypePrefix,
+    slug === 'index' ? null : slug,
+  ].filter(Boolean)
+
+  return pathSegments.length ? `/${pathSegments.join('/')}/` : '/'
 }
 
 function generatePageMap({ pages, activePageId }) {
