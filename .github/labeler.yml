@@ -6,3 +6,9 @@ mdx:
 
 starters:
   - starters/**/*
+
+contentful:
+  - contentful/**/*
+
+ci:
+  - .github/**/*
