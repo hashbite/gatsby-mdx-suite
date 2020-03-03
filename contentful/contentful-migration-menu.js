@@ -50,21 +50,16 @@ module.exports = function(migration) {
       linkType: 'Entry',
     })
 
-  menuItem
-    .createField('hiddenOnMobile')
-    .name('Hidden on mobile')
-    .type('Boolean')
-    .localized(false)
-    .required(false)
-    .validations([])
-    .disabled(false)
-    .omitted(false)
-  menuItem.changeFieldControl('title', 'builtin', 'singleLine', {})
-  menuItem.changeFieldControl('linkedPage', 'builtin', 'entryLinkEditor', {})
+  menuItem.changeFieldControl('title', 'builtin', 'singleLine', {
+    helpText: 'Set the title for this menu item.',
+  })
+
+  menuItem.changeFieldControl('linkedPage', 'builtin', 'entryLinkEditor', {
+    helpText: 'Select an internal page to link to.',
+  })
 
   menuItem.changeFieldControl('subitems', 'builtin', 'entryLinksEditor', {
     bulkEditing: true,
+    helpText: 'Reference all sub items of this menu item.',
   })
-
-  menuItem.changeFieldControl('hiddenOnMobile', 'builtin', 'boolean', {})
 }

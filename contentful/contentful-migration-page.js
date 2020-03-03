@@ -85,51 +85,28 @@ module.exports = function(migration) {
     .disabled(false)
     .omitted(false)
 
-  page
-    .createField('imagesContent')
-    .name('Content Images')
-    .type('Array')
-    .localized(false)
-    .required(false)
-    .validations([])
-    .disabled(false)
-    .omitted(false)
-    .items({
-      type: 'Link',
-
-      validations: [
-        {
-          linkMimetypeGroup: ['image'],
-        },
-      ],
-
-      linkType: 'Asset',
-    })
-
   page.changeFieldControl('title', 'builtin', 'singleLine', {
     helpText:
-      'For browser tab title, search engine results & social media cards. No longer than 60-70 characters.',
+      'Set a title for the browser tab, search engine results & social media shares. No longer than 60-70 characters.',
   })
 
   page.changeFieldControl('slug', 'builtin', 'slugEditor', {
     helpText:
-      'URL identifier for this page. If you change this later one, you might harm your SEO score.',
+      'Set the URL identifier for this page. If you change this later one, you might harm your SEO score. The whole URL should have a maximum of 55-60 characters. This includes the domain name. NOTE: Use "index" to identify the home page.',
   })
 
   page.changeFieldControl('metaDescription', 'builtin', 'singleLine', {
     helpText:
-      'Description which will be used on search engine result pages and when this page is shared in social media.',
+      'The meta description will be used for search engine result pages and when sharing the page on social media.',
   })
 
   page.changeFieldControl('metaImage', 'builtin', 'assetLinkEditor', {
     helpText:
-      'Used as preview image, especially when shared in social media. At best in 1200px by 630px.',
+      'The meta image is used as a preview image for the page, especially when shared on social media and in chat clients. Renders the best when the resolution is at least 1200px by 630px.',
   })
 
   page.changeFieldControl('content', 'builtin', 'markdown', {
-    helpText: 'The actual content of this blog post.',
-  })
-  page.changeFieldControl('imagesContent', 'builtin', 'assetGalleryEditor', {
-    helpText: 'Add all images that will be shown within the content.',
+    helpText:
+      'The actual content. Use MDX syntax to add layout and design to the page. See the documentation of the project for more information about MDX.',
   })
 }
