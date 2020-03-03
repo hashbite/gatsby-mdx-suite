@@ -12,19 +12,18 @@ const Wrapper = tw.div`relative my-8`
 
 const ContentWrapper = styled(Section)(
   ({ reverse }) => css`
-  ${tw`md:relative z-10`}
+    ${tw`md:relative z-10`}
 
-  > div {
-    ${tw`md:flex`}
-    ${reverse && tw`flex-row-reverse`}
-  }
+    > div {
+      ${tw`md:flex`}
+      ${reverse && tw`flex-row-reverse`}
+    }
 
-  ${Content} {
-    ${tw`md:w-1/2`}
-    // box-sizing: border-box;
+    ${Content} {
+      ${tw`md:w-1/2`}
 
-    ${reverse ? tw`md:pl-8` : tw`md:pr-8`}
-  }
+      ${reverse ? tw`md:pl-8` : tw`md:pr-8`}
+    }
   `
 )
 
@@ -36,8 +35,8 @@ const ImageWrapper = styled.div(
 
     @media (min-width: ${theme.breakpoints[2]}) {
       ${tw`absolute z-0 flex flex-col justify-center pb-0`}
-      top: 0;
-      bottom: ${theme.sizes['2']};
+      top: ${theme.sizes['16']};
+      bottom: ${theme.sizes['16']};
 
       ${
         reverse
@@ -85,43 +84,105 @@ const ImageWrapper = styled.div(
  *
  * The image will span from the edge of the screen to the content center.
  *
- * The Content will span from the content center to the edge of the content column.
+ * The content will span from the content center to the edge of the content column.
+ *
+ * The image might be cut off by default. You can change this with the `fit` attribute.
  *
  * @example
  * <FloatingImage imageId="randomPictureId">
  *
- * # Some content
+ * # Default with image
  *
  * Anything inside of the component wil be rendered next to the image.
+ *
+ * * some
+ * * example
+ * * content
+ * * to
+ * * fill
+ * * space
  *
  * </FloatingImage>
- * <FloatingImage imageId="randomImageId" reverse>
+ * <FloatingImage imageId="randomPictureId" reverse fit="cover">
  *
- * # Some content
+ * # Reverse with cover image
  *
  * Anything inside of the component wil be rendered next to the image.
+ *
+ * * some
+ * * example
+ * * content
+ * * to
+ * * fill
+ * * space
+ *
+ * </FloatingImage>
+ * <FloatingImage imageId="randomGraphicId" >
+ *
+ * # Graphic Cover example
+ *
+ * This can look broken. Make sure to set `fit="contain"`. Example below.
+ *
+ * * some
+ * * example
+ * * content
+ * * to
+ * * fill
+ * * space
+ *
+ * </FloatingImage>
+ * <FloatingImage imageId="randomGraphicId" fit="contain">
+ *
+ * # Graphic Contain Example
+ *
+ * Anything inside of the component wil be rendered next to the image.
+ *
+ * * some
+ * * example
+ * * content
+ * * to
+ * * fill
+ * * space
  *
  * </FloatingImage>
  */
-export default function FloatingImage({ children, imageId, reverse }) {
+export default function FloatingImage({ children, imageId, reverse, fit }) {
   return (
     <Wrapper>
       <ContentWrapper reverse={reverse}>
         <Content>{children}</Content>
       </ContentWrapper>
       <ImageWrapper reverse={reverse}>
-        <Image id={imageId} contextKey="floating" />
+        <Image id={imageId} contextKey="floating" fit={fit} />
       </ImageWrapper>
     </Wrapper>
   )
 }
 
 FloatingImage.defaultProps = {
+  fit: 'cover',
   reverse: false,
 }
 
 FloatingImage.propTypes = {
   children: propTypes.node.isRequired,
+  /** Id of the image to be floating next to the content */
   imageId: propTypes.string.isRequired,
+  /** Reverse the order of image and content */
   reverse: propTypes.bool,
+  /**
+   * Set how the image should be fit into the container
+   *
+   * Possible options:
+   *
+   * * fill
+   * * contain
+   * * cover
+   * * none
+   * * scale-down
+   *
+   * Live demo and more details:
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
+   */
+  fit: propTypes.string,
 }
