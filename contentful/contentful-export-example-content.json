@@ -149,9 +149,6 @@
               "id": "vaPPJyZPx2suOTWShP2rI"
             }
           }
-        },
-        "hiddenOnMobile": {
-          "en-US": false
         }
       }
     },
@@ -206,7 +203,7 @@
         "slug": {
           "en-US": "eos-left-a-raiden-network"
         },
-        "publishingDate": {
+        "publicationDate": {
           "en-US": "2019-10-08T13:37-04:30"
         },
         "image": {
@@ -280,7 +277,7 @@
         "slug": {
           "en-US": "lorem-markdownum-suos"
         },
-        "publishingDate": {
+        "publicationDate": {
           "en-US": "2019-12-14T16:20+05:45"
         },
         "image": {
@@ -354,7 +351,7 @@
         "slug": {
           "en-US": "potenti-euismod-pretium-bibendum"
         },
-        "publishingDate": {
+        "publicationDate": {
           "en-US": "2020-03-17T13:37+01:00"
         },
         "image": {

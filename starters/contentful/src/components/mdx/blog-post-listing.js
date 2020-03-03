@@ -44,12 +44,12 @@ export default function BlogPostListing() {
 
   const result = useStaticQuery(graphql`
     query NewsQuery {
-      allContentfulBlogPost(sort: { order: ASC, fields: publishingDate }) {
+      allContentfulBlogPost(sort: { order: ASC, fields: publicationDate }) {
         nodes {
           pageId: contentful_id
           locale: node_locale
           title
-          publishingDate
+          publicationDate
           image {
             ...MdxSuiteContentfulAsset
             svg {
@@ -85,7 +85,7 @@ export default function BlogPostListing() {
         <BlogPostTeaserHeadline>{blogPost.title}</BlogPostTeaserHeadline>
         <BlogPostTeaserMeta>
           {Intl.DateTimeFormat(activeLocale).format(
-            new Date(blogPost.publishingDate)
+            new Date(blogPost.publicationDate)
           )}{' '}
           -{' '}
           {t('newsTimeToRead', {

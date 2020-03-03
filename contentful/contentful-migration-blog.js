@@ -29,7 +29,7 @@ module.exports = function(migration) {
     .omitted(false)
 
   blogPost
-    .createField('publishingDate')
+    .createField('publicationDate')
     .name('Publishing date')
     .type('Date')
     .localized(false)
@@ -89,65 +89,40 @@ module.exports = function(migration) {
     .disabled(false)
     .omitted(false)
 
-  
-  blogPost
-    .createField('imagesContent')
-    .name('Content Images')
-    .type('Array')
-    .localized(false)
-    .required(false)
-    .validations([])
-    .disabled(false)
-    .omitted(false)
-    .items({
-      type: 'Link',
-
-      validations: [
-        {
-          linkMimetypeGroup: ['image'],
-        },
-      ],
-
-      linkType: 'Asset',
-    })
-
   blogPost.changeFieldControl('title', 'builtin', 'singleLine', {
     helpText:
-      'For browser tab title, search engine results & social media cards. No longer than 60-70 characters.',
+      'Set a title for the browser tab, search engine results & social media shares. No longer than 60-70 characters.',
   })
 
   blogPost.changeFieldControl('slug', 'builtin', 'slugEditor', {
     helpText:
-      'URL identifier for this page. If you change this later one, you might harm your SEO score.',
+      'Set the URL identifier for this page. If you change this later one, you might harm your SEO score. The whole URL should have a maximum of 55-60 characters. This includes the domain name. NOTE: Use "index" to identify the home page.',
   })
 
-  blogPost.changeFieldControl('publishingDate', 'builtin', 'datePicker', {
+  blogPost.changeFieldControl('publicationDate', 'builtin', 'datePicker', {
     ampm: '24',
     format: 'timeZ',
     helpText:
-      'Set the public publishing date for this blog post. Will be displayed to the user and used for ordering.',
+      'Set the public publication date for this blog post. It will be displayed to the user based on their regional standard. Used to order the blog posts on the overview page as well.',
   })
 
   blogPost.changeFieldControl('metaDescription', 'builtin', 'singleLine', {
     helpText:
-      'Description which will be used on search engine result pages and when this page is shared in social media.',
+      'The meta description will be used for search engine result pages and when sharing the page on social media.',
   })
 
-  blogPost.changeFieldControl('image', 'builtin', 'assetLinkEditor', {
+  blogPost.changeFieldControl('metaImage', 'builtin', 'assetLinkEditor', {
     helpText:
-      'This image is used for teasers, when this blog post is shared on search machines and might be shown in the header of the detail page.',
+      'The meta image is used as a preview image for the page, especially when shared on social media and in chat clients. Renders the best when the resolution is at least 1200px by 630px.',
   })
 
   blogPost.changeFieldControl('teaser', 'builtin', 'markdown', {
     helpText:
-      'This text is used for teasers, especially on the blog post listing page. You can use any text formatting, but keep this short.',
+      'The content of the blog posts preview. Keep it short. Use MDX syntax to add layout and design to the page. See the documentation of the project for more information about MDX.',
   })
 
-  blogPost.changeFieldControl('content', 'builtin', 'markdown', {
-    helpText: 'The actual content of this blog post.',
-  })
-
-  blogPost.changeFieldControl('imagesContent', 'builtin', 'assetGalleryEditor', {
-    helpText: 'Add all images that will be shown within the content.',
+  page.changeFieldControl('content', 'builtin', 'markdown', {
+    helpText:
+      'The actual content. Use MDX syntax to add layout and design to the page. See the documentation of the project for more information about MDX.',
   })
 }
