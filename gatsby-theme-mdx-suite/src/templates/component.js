@@ -6,7 +6,10 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Link from 'gatsby-link'
 import styled from '@emotion/styled'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
+import { Styled } from 'theme-ui'
 
+import DataProvider from '../components/docs/data-provider'
+import LiveEditor from '../components/docs/live-editor'
 import Props from '../components/docs/props'
 
 const ComponentWrapper = styled.div`
@@ -23,6 +26,7 @@ function DocsComponentTemplate({ data, pageContext }) {
     description,
     longDescription,
     componentProps,
+    examples,
   } = data.componentMetadata
 
   return (
@@ -30,27 +34,42 @@ function DocsComponentTemplate({ data, pageContext }) {
       value={{
         ...MdxSuiteData,
         pageContext,
-        data: {
-          // images: content.childMdx.images,
-          // background: content.childMdx.background,
-          // floating: content.childMdx.floating,
-        },
       }}
     >
-      <ComponentWrapper>
-        <h1>{displayName}</h1>
-        <small>
-          <Link to="/docs/">Back to component list</Link>
-        </small>
+      <DataProvider>
+        <ComponentWrapper>
+          <small>
+            <Link to="/docs/">Back to component list</Link>
+          </small>
+          <br />
+          <br />
+          <Styled.h1>{displayName}</Styled.h1>
 
-        <Props componentProps={componentProps} />
-        <MDXProvider>
-          {description && (
-            <MDXRenderer>{description.childMdx.body}</MDXRenderer>
-          )}
-          {longDescription && <MDXRenderer>{longDescription.body}</MDXRenderer>}
-        </MDXProvider>
-      </ComponentWrapper>
+          <MDXProvider>
+            {description && (
+              <MDXRenderer>{description.childMdx.body}</MDXRenderer>
+            )}
+          </MDXProvider>
+
+          <Props componentProps={componentProps} />
+
+          <LiveEditor
+            editorId={displayName}
+            initialValue={examples && examples[0]}
+          />
+
+          <MDXProvider>
+            {longDescription && (
+              <MDXRenderer>{longDescription.body}</MDXRenderer>
+            )}
+          </MDXProvider>
+          <br />
+          <br />
+          <small>
+            <Link to="/docs/">Back to component list</Link>
+          </small>
+        </ComponentWrapper>
+      </DataProvider>
     </MdxSuiteContext.Provider>
   )
 }
@@ -77,6 +96,7 @@ export const pageQuery = graphql`
       componentProps: props {
         ...ComponentProps
       }
+      examples
     }
   }
 `
