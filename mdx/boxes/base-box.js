@@ -56,9 +56,9 @@ BaseBox.defaultProps = {
 BaseBox.propTypes = {
   children: propTypes.node,
   // Width of the box. Default: 8 or the same as the box's height
-  width: propTypes.number,
+  width: propTypes.oneOfType([propTypes.number, propTypes.string]),
   // Height of the box. Default: 8 or the same as the box's width
-  height: propTypes.number,
+  height: propTypes.oneOfType([propTypes.number, propTypes.string]),
   // Hide box on small viewports
   hideOnMobile: propTypes.bool,
 }
