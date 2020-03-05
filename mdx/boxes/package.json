@@ -18,7 +18,7 @@
     "@emotion/core": "^10.0.27",
     "@emotion/is-prop-valid": "^0.8.6",
     "@emotion/styled": "^10.0.27",
-    "@gatsby-mdx-suite/helpers": "^0.4.0",
+    "@gatsby-mdx-suite/mdx-color-set": "^0.0.0",
     "@gatsby-mdx-suite/mdx-image": "^0.4.0",
     "@gatsby-mdx-suite/mdx-link": "^0.3.2",
     "@gatsby-mdx-suite/mdx-video": "^0.3.1",

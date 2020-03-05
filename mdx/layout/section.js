@@ -5,26 +5,23 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import applyColorSet from '@gatsby-mdx-suite/helpers/styling/apply-color-set'
+import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
-const SectionWrapper = styled.section(
-  ({ hasBackgroundImage, ...restProps }) => {
-    if (hasBackgroundImage && !restProps.colorSet) {
-      restProps.colorSet = 'transparent'
-    }
-    return css`
-      ${tw`relative`}
+const SectionWrapper = styled.section(({ hasBackgroundImage, theme }) => {
+  return css`
+    ${tw`relative`}
 
-      ${applyColorSet(restProps)}
+    background: ${theme.colors.background};
+    color: ${theme.colors.text};
 
-      ${hasBackgroundImage &&
-        css`
-          text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
-        `}
-    `
-  }
-)
+    ${hasBackgroundImage &&
+      css`
+        ${tw`text-white`}
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+      `}
+  `
+})
 
 const SectionContentWrapper = styled.div(
   (props) => css`
@@ -75,7 +72,7 @@ const BackgroundImageWrapper = styled.div`
  * </Columns>
  * </Section>
  *
- * <Section backgroundColor="tomato" primaryColor="#48C9B0" secondaryColor="skyblue">
+ * <Section colors={{ background:"tomato", primary: "#48C9B0", secondary: "heading"}}>
  *
  * # Parrots
  *
@@ -98,31 +95,37 @@ const BackgroundImageWrapper = styled.div`
  * </Columns>
  * </Section>
  */
-export default function Section({ children, backgroundImageId, ...restProps }) {
+export default function Section({
+  children,
+  backgroundImageId,
+  colorSet,
+  colors,
+}) {
   return (
-    <SectionWrapper {...restProps} hasBackgroundImage={!!backgroundImageId}>
-      {backgroundImageId && (
-        <BackgroundImageWrapper>
-          <Image contextKey="background" id={backgroundImageId} fit="cover" />
-        </BackgroundImageWrapper>
-      )}
-      <SectionContentWrapper>{children}</SectionContentWrapper>
-    </SectionWrapper>
+    <ColorSet name={colorSet} {...colors}>
+      <SectionWrapper hasBackgroundImage={!!backgroundImageId}>
+        {backgroundImageId && (
+          <BackgroundImageWrapper>
+            <Image contextKey="background" id={backgroundImageId} fit="cover" />
+          </BackgroundImageWrapper>
+        )}
+        <SectionContentWrapper>{children}</SectionContentWrapper>
+      </SectionWrapper>
+    </ColorSet>
   )
 }
 
-Section.defaultProps = {}
+Section.defaultProps = {
+  colorSet: null,
+  colors: {},
+}
 
 Section.propTypes = {
   children: propTypes.node.isRequired,
   /** image id to display as background image */
   backgroundImageId: propTypes.string,
-  /* Apply color set to this element and all children */
+  /* Define a color set for this box */
   colorSet: propTypes.string,
-  /* Set background color for this element */
-  backgroundColor: propTypes.string,
-  /* Set primary color for this element and all children */
-  primaryColor: propTypes.string,
-  /* Set secondary color for this element and all children */
-  secondaryColor: propTypes.string,
+  /* Overwrite specific colors */
+  colors: propTypes.object,
 }

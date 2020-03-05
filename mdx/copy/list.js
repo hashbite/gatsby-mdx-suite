@@ -65,7 +65,7 @@ const ActualList = styled.ul(({ theme, type, colorSet }) => {
  *
  * </List>
  */
-export default function List({ type, title, children, colorSet }) {
+export default function List({ type, title, children }) {
   if (!children) {
     return null
   }
@@ -79,21 +79,17 @@ export default function List({ type, title, children, colorSet }) {
   return (
     <ListWrapper>
       {title && <ListTitle>{title}</ListTitle>}
-      <ActualList type={type} colorSet={colorSet}>
-        {children}
-      </ActualList>
+      <ActualList type={type}>{children}</ActualList>
     </ListWrapper>
   )
 }
 
 List.defaultProps = {
   type: 'bulletpoint',
-  colorSet: 'default',
 }
 
 List.propTypes = {
   title: propTypes.string,
   type: propTypes.string,
-  colorSet: propTypes.string,
   children: propTypes.node.isRequired,
 }

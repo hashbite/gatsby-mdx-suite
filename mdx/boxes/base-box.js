@@ -9,7 +9,7 @@ const BaseBox = styled('div', {
     isPropValid(prop) && !['width', 'height'].includes(prop),
 })((props) => {
   const {
-    theme: { breakpoints },
+    theme: { breakpoints, colors },
     hideOnMobile,
   } = props
 
@@ -30,6 +30,9 @@ const BaseBox = styled('div', {
     position: relative;
     grid-row-end: span ${height};
     grid-column-end: span ${width};
+
+    background: ${colors.background};
+    color: ${colors.text};
 
     ${hideOnMobile &&
       css`
