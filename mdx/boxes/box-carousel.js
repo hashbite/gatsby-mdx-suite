@@ -71,7 +71,7 @@ const BoxCarousel = ({
 
   // Append carousel index to children
   children = children.map((child, index) =>
-    React.cloneElement(child, { index })
+    React.cloneElement(child, { index, key: index })
   )
 
   return (
@@ -104,7 +104,7 @@ BoxCarousel.propTypes = {
   ...BaseBox.propTypes,
   controls: propTypes.bool,
   autoplay: propTypes.bool,
-  autoplayInterval: propTypes.bool,
+  autoplayInterval: propTypes.number,
   loop: propTypes.bool,
 }
 
