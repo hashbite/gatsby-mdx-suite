@@ -7,7 +7,7 @@ import tw from 'twin.macro'
 import MenuLevel from '@gatsby-mdx-suite/menu/menu-level'
 import LanguageSwitch from '@gatsby-mdx-suite/i18n/language-switch'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import applyColorSet from '@gatsby-mdx-suite/helpers/styling/apply-color-set'
+import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
 import LogoSVG from '../../assets/logo.svg'
@@ -15,16 +15,17 @@ import ColorModeSwitch from '../color-mode-switch'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 const HeaderWrapper = styled.div(
-  ({ hasBackgroundImage, ...restProps }) => css`
-    ${tw`relative`}
+  ({ hasBackgroundImage, theme }) => css`
+    ${tw`relative bg-background`}
 
     ${hasBackgroundImage
       ? css`
-          ${applyColorSet(restProps)}
+          ${tw`text-white`}
           text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
         `
       : css`
-          ${tw`bg-gray-300`}
+          background: ${theme.colors.background};
+          color: ${theme.colors.text};
         `}
   `
 )
@@ -81,7 +82,7 @@ const HeaderBackgroundImageWrapper = styled.div`
  *
  * </Header>
  */
-const Header = ({ children, backgroundImageId }) => {
+const Header = ({ children, backgroundImageId, colorSet }) => {
   const result = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -93,40 +94,44 @@ const Header = ({ children, backgroundImageId }) => {
   `)
 
   return (
-    <HeaderWrapper
-      hasBackgroundImage={!!backgroundImageId}
-      colorSet="transparent"
-    >
-      <HeaderContainer>
-        <HeaderTitle>
-          <Link to="/" title={result.site.siteMetadata.title}>
-            <LogoSVG />
-          </Link>
-        </HeaderTitle>
-        <MenuLevel rootMenuItemId="6Id378BoElgMsJJd81IyP3" />
-        <HeaderMenuControls>
-          <LanguageSwitch />
-          <ColorModeSwitch />
-        </HeaderMenuControls>
-      </HeaderContainer>
-      <HeaderContent>{children}</HeaderContent>
-      {backgroundImageId && (
-        <HeaderBackgroundImageWrapper>
-          <BackgroundImage
-            id={backgroundImageId}
-            contextKey="background"
-            fit="cover"
-            style={{ position: 'static' }}
-          />
-        </HeaderBackgroundImageWrapper>
-      )}
-    </HeaderWrapper>
+    <ColorSet name={colorSet}>
+      <HeaderWrapper hasBackgroundImage={!!backgroundImageId}>
+        <HeaderContainer>
+          <HeaderTitle>
+            <Link to="/" title={result.site.siteMetadata.title}>
+              <LogoSVG />
+            </Link>
+          </HeaderTitle>
+          <MenuLevel rootMenuItemId="6Id378BoElgMsJJd81IyP3" />
+          <HeaderMenuControls>
+            <LanguageSwitch />
+            <ColorModeSwitch />
+          </HeaderMenuControls>
+        </HeaderContainer>
+        <HeaderContent>{children}</HeaderContent>
+        {backgroundImageId && (
+          <HeaderBackgroundImageWrapper>
+            <BackgroundImage
+              id={backgroundImageId}
+              contextKey="background"
+              fit="cover"
+              style={{ position: 'static' }}
+            />
+          </HeaderBackgroundImageWrapper>
+        )}
+      </HeaderWrapper>
+    </ColorSet>
   )
+}
+
+Header.defaultProps = {
+  colorSet: 'blue',
 }
 
 Header.propTypes = {
   children: propTypes.node,
   backgroundImageId: propTypes.string,
+  colorSet: propTypes.string,
 }
 
 export default Header

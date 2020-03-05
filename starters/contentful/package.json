@@ -37,6 +37,7 @@
     "@gatsby-mdx-suite/i18n": "^0.2.4",
     "@gatsby-mdx-suite/mdx-bandcamp": "^0.2.0",
     "@gatsby-mdx-suite/mdx-boxes": "^0.5.0",
+    "@gatsby-mdx-suite/mdx-color-set": "^0.0.0",
     "@gatsby-mdx-suite/mdx-copy": "^0.3.1",
     "@gatsby-mdx-suite/mdx-decoration": "^0.3.2",
     "@gatsby-mdx-suite/mdx-form": "^0.3.2",

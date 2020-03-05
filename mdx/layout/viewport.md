@@ -15,7 +15,7 @@ The `<Section />` wrapper will ensure the content is aligned to the main content
 
 </Section>
 </Viewport>
-<Viewport colorSet="tomato">
+<Viewport colorSet="green">
 <Section>
 
 ## Nec totas solitis

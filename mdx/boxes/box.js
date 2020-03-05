@@ -7,17 +7,22 @@ import isPropValid from '@emotion/is-prop-valid'
 
 import Link from '@gatsby-mdx-suite/mdx-link/link'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import applyColorSet from '@gatsby-mdx-suite/helpers/styling/apply-color-set'
+import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 
 import BaseBox from './base-box'
 
-const StyledBaseBox = styled(BaseBox, {
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
-})(applyColorSet)
+const shouldForwardProp = (prop) =>
+  isPropValid(prop) &&
+  !['scale', 'colors', 'width', 'height', 'href', 'hash'].includes(prop)
 
-const BoxContent = styled('div', {
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
-})(
+const StyledBaseBox = styled(BaseBox, { shouldForwardProp })(
+  ({ theme }) => css`
+    background: ${theme.background};
+    color: ${theme.color};
+  `
+)
+
+const BoxContent = styled('div', { shouldForwardProp })(
   ({ scale, theme: { breakpoints }, minSize }) => css`
     position: absolute;
     z-index: 2;
@@ -37,9 +42,7 @@ const BoxContent = styled('div', {
   `
 )
 
-const BackgroundImageWrapper = styled('div', {
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
-})(
+const BackgroundImageWrapper = styled('div', { shouldForwardProp })(
   ({ scale }) => css`
     position: absolute;
     z-index: 1;
@@ -63,14 +66,26 @@ const BackgroundImageWrapper = styled('div', {
  *
  * @example
  * <Boxes>
- *   <Box backgroundColor="tomato">
+ * <Box>
  *
- *   # This is a heading
+ * # No color set
  *
- *   with some example text
+ * </Box>
+ * <Box colorSet="red">
  *
- *   </Box>
- *   <Box backgroundColor="tomato" />
+ * # Color set red
+ *
+ * </Box>
+ * <Box colors={{background: "#321123", text: "#fff"}}>
+ *
+ * # Custom Colors
+ *
+ * </Box>
+ * <Box colorSet="blue" colors={{background: "#123456"}}>
+ *
+ * # Set and custom Colors
+ *
+ * </Box>
  * </Boxes>
  */
 const Box = ({
@@ -83,13 +98,15 @@ const Box = ({
   href,
   hash,
   title,
+  colorSet,
+  colors,
   ...boxProps
 }) => {
   const minSize = Math.min(
     ...[boxProps.width, boxProps.height].filter((size) => size > 0)
   )
   const linkProps = { id: linkId, href, hash, title }
-  const boxContent = (
+  let boxContent = (
     <>
       {children && (
         <BoxContent scale={scale} minSize={minSize}>
@@ -111,10 +128,13 @@ const Box = ({
       )}
     </>
   )
+  if (linkId) {
+    boxContent = <Link {...linkProps}>{boxContent}</Link>
+  }
   return (
-    <StyledBaseBox {...boxProps}>
-      {linkId || href ? <Link {...linkProps}>{boxContent}</Link> : boxContent}
-    </StyledBaseBox>
+    <ColorSet name={colorSet} {...colors}>
+      <StyledBaseBox {...boxProps}>{boxContent}</StyledBaseBox>
+    </ColorSet>
   )
 }
 
@@ -124,6 +144,8 @@ Box.defaultProps = {
   backgroundImageFit: 'cover',
   backgroundImagePosition: 'center center',
   scale: 1,
+  colorSet: null,
+  colors: {},
 }
 
 Box.propTypes = {
@@ -162,14 +184,6 @@ Box.propTypes = {
    * https://developer.mozilla.org/en-US/docs/Web/CSS/object-position
    */
   backgroundImagePosition: propTypes.string,
-  /* Set a color set for this box */
-  colorSet: propTypes.string,
-  /* Set background color for this element */
-  backgroundColor: propTypes.string,
-  /* Set primary color for this element and all children */
-  primaryColor: propTypes.string,
-  /* Set secondary color for this element and all children */
-  secondaryColor: propTypes.string,
   /* Id of an internal page to link to */
   linkId: propTypes.string,
   /* URI of an external page to link to */
@@ -178,6 +192,10 @@ Box.propTypes = {
   hash: propTypes.string,
   /* Optional title. Should be set for a11y and seo reasons when link has non-text content. */
   title: propTypes.string,
+  /* Define a color set for this box */
+  colorSet: propTypes.string,
+  /* Overwrite specific colors */
+  colors: propTypes.object,
 }
 
 export default Box

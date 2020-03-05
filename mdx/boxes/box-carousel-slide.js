@@ -7,11 +7,10 @@ import isPropValid from '@emotion/is-prop-valid'
 
 import Link from '@gatsby-mdx-suite/mdx-link/link'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import applyColorSet from '@gatsby-mdx-suite/helpers/styling/apply-color-set'
 
 import { Slide } from 'pure-react-carousel'
 
-const StyledSlide = styled(Slide)(applyColorSet)
+const StyledSlide = styled(Slide)``
 
 const SlideContent = styled('div', {
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
@@ -138,14 +137,6 @@ BoxCarouselSlide.propTypes = {
    * https://developer.mozilla.org/en-US/docs/Web/CSS/object-position
    */
   backgroundImagePosition: propTypes.string,
-  /* Set a color set for this box */
-  colorSet: propTypes.string,
-  /* Set background color for this element */
-  backgroundColor: propTypes.string,
-  /* Set primary color for this element and all children */
-  primaryColor: propTypes.string,
-  /* Set secondary color for this element and all children */
-  secondaryColor: propTypes.string,
   /* Id of an internal page to link to */
   linkId: propTypes.string,
   /* URI of an external page to link to */

@@ -5,24 +5,24 @@ import tw from 'twin.macro'
 import { css } from '@emotion/core'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import applyColorSet from '@gatsby-mdx-suite/helpers/styling/apply-color-set'
+import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import convertToFlexAlignment from '@gatsby-mdx-suite/helpers/styling/convert-to-flex-alignment'
+
 import Section from './section'
 
 const ViewportWrapper = styled.div(
-  ({ horizontalAlign, verticalAlign, hasBackgroundImage, ...restProps }) => {
-    if (hasBackgroundImage && !restProps.colorSet) {
-      restProps.colorSet = 'transparent'
-    }
+  ({ horizontalAlign, verticalAlign, hasBackgroundImage, theme }) => {
     return css`
     ${tw`relative min-h-screen flex flex-col`}
       align-items: ${horizontalAlign};
       justify-content: ${verticalAlign};
 
-      ${applyColorSet({ ...restProps })}
+      background: ${theme.colors.background};
+      color: ${theme.colors.text};
 
       ${hasBackgroundImage &&
         css`
+          ${tw`text-white`}
           text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
         `}
     `
@@ -63,35 +63,49 @@ const BackgroundImageWrapper = styled.div`
  * # Well, then I'll stand out for sure.
  *
  * </Viewport>
+ * <Viewport colorSet="indigo">
+ *
+ * # Me as well :)
+ *
+ * </Viewport>
  */
 export default function Viewport({
   children,
   backgroundImageId,
-  horizontalAlign = 'center',
-  verticalAlign = 'center',
-  ...restProps
+  horizontalAlign,
+  verticalAlign,
+  colorSet,
+  colors,
 }) {
   return (
-    <ViewportWrapper
-      verticalAlign={convertToFlexAlignment(verticalAlign)}
-      horizontalAlign={convertToFlexAlignment(horizontalAlign)}
-      hasBackgroundImage={!!backgroundImageId}
-      {...restProps}
-    >
-      {backgroundImageId && (
-        <BackgroundImageWrapper>
-          <Image contextKey="background" id={backgroundImageId} fit="cover" />
-        </BackgroundImageWrapper>
-      )}
-      {children && (
-        <ViewportContent
-          horizontalAlign={convertToFlexAlignment(horizontalAlign)}
-        >
-          {children}
-        </ViewportContent>
-      )}
-    </ViewportWrapper>
+    <ColorSet name={colorSet} {...colors}>
+      <ViewportWrapper
+        verticalAlign={convertToFlexAlignment(verticalAlign)}
+        horizontalAlign={convertToFlexAlignment(horizontalAlign)}
+        hasBackgroundImage={!!backgroundImageId}
+      >
+        {backgroundImageId && (
+          <BackgroundImageWrapper>
+            <Image contextKey="background" id={backgroundImageId} fit="cover" />
+          </BackgroundImageWrapper>
+        )}
+        {children && (
+          <ViewportContent
+            horizontalAlign={convertToFlexAlignment(horizontalAlign)}
+          >
+            {children}
+          </ViewportContent>
+        )}
+      </ViewportWrapper>
+    </ColorSet>
   )
+}
+
+Viewport.defaultProps = {
+  horizontalAlign: 'center',
+  verticalAlign: 'center',
+  colorSet: null,
+  colors: {},
 }
 
 Viewport.propTypes = {
@@ -102,12 +116,8 @@ Viewport.propTypes = {
   horizontalAlign: propTypes.string,
   /** vertical content alignment */
   verticalAlign: propTypes.string,
-  /* Apply color set to this element and all children */
+  /* Define a color set for this box */
   colorSet: propTypes.string,
-  /* Set background color for this element */
-  backgroundColor: propTypes.string,
-  /* Set primary color for this element and all children */
-  primaryColor: propTypes.string,
-  /* Set secondary color for this element and all children */
-  secondaryColor: propTypes.string,
+  /* Overwrite specific colors */
+  colors: propTypes.object,
 }

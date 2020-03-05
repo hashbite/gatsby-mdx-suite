@@ -1,7 +1,7 @@
 {
-  "name": "@gatsby-mdx-suite/mdx-layout",
-  "version": "0.7.0",
-  "description": "",
+  "name": "@gatsby-mdx-suite/mdx-color-set",
+  "version": "0.0.0",
+  "description": "Apply color sets on any content region",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
   "main": "index.js",
@@ -11,17 +11,14 @@
   "keywords": [
     "gatsby-mdx-suite",
     "gatsby",
-    "mdx"
+    "mdx",
+    "video"
   ],
   "dependencies": {
-    "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.27",
-    "@gatsby-mdx-suite/helpers": "^0.4.0",
-    "@gatsby-mdx-suite/mdx-color-set": "^0.0.0",
-    "@gatsby-mdx-suite/mdx-image": "^0.4.0",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "twin.macro": "^1.0.0-alpha.6"
+    "theme-ui": "^0.3.1"
   },
   "publishConfig": {
     "access": "public"
