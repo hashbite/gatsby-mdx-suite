@@ -44,11 +44,15 @@ import Timeline from '@gatsby-mdx-suite/mdx-timeline/timeline'
 import TimelineEntry from '@gatsby-mdx-suite/mdx-timeline/timeline-entry'
 import MediaGallery from '@gatsby-mdx-suite/mdx-media-gallery/media-gallery'
 
+// Animation
+import Animate from '@gatsby-mdx-suite/mdx-animation/animate'
+
 // Project specific components
 import BlogPostListing from '../components/mdx/blog-post-listing'
 import Header from '../components/mdx/header'
 
 export default {
+  Animate,
   BandcampTrack,
   BlogPostListing,
   Box,
@@ -81,5 +85,6 @@ export default {
   Viewport,
   YoutubeFeed,
   YoutubeVideo,
+  // Overwrite standard components with our styled ones
   ul: List,
 }

@@ -16,7 +16,7 @@
   "dependencies": {
     "@gatsby-mdx-suite/mdx-image": "^0.4.0",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
+    "react": "^16.13.0",
     "twin.macro": "^1.0.0-alpha.6"
   },
   "publishConfig": {

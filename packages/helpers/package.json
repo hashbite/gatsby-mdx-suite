@@ -6,6 +6,8 @@
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "^10.0.27",
+    "emotion": "^10.0.27",
+    "react": "^16.13.0",
     "twin.macro": "^1.0.0-alpha.6"
   },
   "publishConfig": {
