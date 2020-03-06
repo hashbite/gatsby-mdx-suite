@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.9.0...gatsby-theme-mdx-suite@0.10.0) (2020-03-06)
+
+
+### Features
+
+* **docs:** extend theme documentation ([dbfacc9](https://github.com/axe312ger/gatsby-mdx-suite/commit/dbfacc9230e320689c36ed9aa6e50bdc56256ec2)), closes [#70](https://github.com/axe312ger/gatsby-mdx-suite/issues/70)
+* **styling:** use nested theme providers to apply color sets ([c008f09](https://github.com/axe312ger/gatsby-mdx-suite/commit/c008f093da19593d8af789a267154797d1c18df5)), closes [#62](https://github.com/axe312ger/gatsby-mdx-suite/issues/62)
+
+
+
+
+
 # [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.8.1...gatsby-theme-mdx-suite@0.9.0) (2020-03-01)
 
 

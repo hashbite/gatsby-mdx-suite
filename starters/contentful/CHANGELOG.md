@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.8.0...gatsby-starter-mdx-suite-contentful@0.9.0) (2020-03-06)
+
+
+### Bug Fixes
+
+* **contentful:** improve and clean up content model ([375b87f](https://github.com/axe312ger/gatsby-suite-mdx/commit/375b87fde9f64b46e3f32f89f3a748c9f3a97f97)), closes [#17](https://github.com/axe312ger/gatsby-suite-mdx/issues/17)
+
+
+### Features
+
+* **starters/contentful:** refactor usage of env variables ([1ef150e](https://github.com/axe312ger/gatsby-suite-mdx/commit/1ef150e55d5860599a13f56c507aca0bb8e32ec0)), closes [#86](https://github.com/axe312ger/gatsby-suite-mdx/issues/86)
+* **styling:** use nested theme providers to apply color sets ([c008f09](https://github.com/axe312ger/gatsby-suite-mdx/commit/c008f093da19593d8af789a267154797d1c18df5)), closes [#62](https://github.com/axe312ger/gatsby-suite-mdx/issues/62)
+
+
+
+
+
 # [0.8.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.7.1...gatsby-starter-mdx-suite-contentful@0.8.0) (2020-03-01)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.2.4...@gatsby-mdx-suite/i18n@0.2.5) (2020-03-06)
+
+
+### Bug Fixes
+
+* **i18n:** reduce redirects by adding trailing slash to generated paths ([cc250d5](https://github.com/axe312ger/gatsby-mdx-suite/commit/cc250d5cd2b059ff978d59ba4bbf5fbe4f34cdf1))
+
+
+
+
+
 ## [0.2.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/i18n@0.2.3...@gatsby-mdx-suite/i18n@0.2.4) (2020-02-28)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.7.0...@gatsby-mdx-suite/mdx-layout@0.8.0) (2020-03-06)
+
+
+### Bug Fixes
+
+* **mdx/layout:** improve floating image alignment and option to control it ([87cbb3c](https://github.com/axe312ger/gatsby-mdx-suite/commit/87cbb3c85d1dcd8b5e6599f8f1427fa9e0ad3bef))
+
+
+### Features
+
+* **styling:** use nested theme providers to apply color sets ([c008f09](https://github.com/axe312ger/gatsby-mdx-suite/commit/c008f093da19593d8af789a267154797d1c18df5)), closes [#62](https://github.com/axe312ger/gatsby-mdx-suite/issues/62)
+
+
+
+
+
 # [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.6.1...@gatsby-mdx-suite/mdx-layout@0.7.0) (2020-03-01)
 
 
