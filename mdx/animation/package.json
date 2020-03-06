@@ -1,0 +1,29 @@
+{
+  "name": "@gatsby-mdx-suite/mdx-animation",
+  "version": "0.0.0",
+  "description": "Simply add animations to any element of your MDX document",
+  "author": "Benedikt Rötsch <opensource@axe312.dev>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gatsby-mdx-suite",
+    "gatsby",
+    "mdx",
+    "video"
+  ],
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@gatsby-mdx-suite/helpers": "^0.5.0",
+    "@researchgate/react-intersection-observer": "^1.0.5",
+    "emotion": "^10.0.27",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

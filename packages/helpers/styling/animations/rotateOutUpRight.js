@@ -1,0 +1,17 @@
+import { css, keyframes as emotionKeyframes } from 'emotion'
+
+const keyframes = emotionKeyframes`
+  from {
+    transform-origin: right bottom;
+    opacity: 1;
+  }
+
+  to {
+    transform-origin: right bottom;
+    transform: rotate3d(0, 0, 1, 90deg);
+    opacity: 0;
+  }`
+
+const styles = css``
+
+export default { keyframes, styles }
