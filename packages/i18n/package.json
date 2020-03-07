@@ -8,7 +8,7 @@
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.0.8",
     "gatsby": "^2.19.23",
-    "gatsby-link": "^2.2.29",
+    "gatsby-link": "^2.2.30",
     "react": "^16.13.0"
   },
   "publishConfig": {
