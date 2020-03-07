@@ -61,7 +61,9 @@ function KitchenSink() {
               body
             }
           }
-          examples
+          examples {
+            raw
+          }
         }
       }
     }

@@ -209,7 +209,7 @@ exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
       },
       // Examples extracted out of the components description via JSDoc @example doclet
       examples: {
-        type: ['String'],
+        type: ['DocumentationJsExample'],
         async resolve(source, args, context, info) {
           const DocumentationJsNode = await context.nodeModel.runQuery({
             query: {
@@ -227,7 +227,7 @@ exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
             return null
           }
 
-          return DocumentationJsNode.examples.map(({ raw }) => raw)
+          return DocumentationJsNode.examples
         },
       },
     },
