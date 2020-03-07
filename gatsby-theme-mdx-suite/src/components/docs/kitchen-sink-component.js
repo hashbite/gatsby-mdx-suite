@@ -33,7 +33,7 @@ const EditorWrapper = styled.div(
     min-height: 30vh;
 
     ${renderEditor &&
-      `
+    `
       &:before {
         content: 'loading...';
         ${tw`absolute font-bold font-heading z-0 text-5xl`}
@@ -91,7 +91,10 @@ function KitchenSinkComponent({
         )}
         <EditorWrapper>
           {renderEditor && (
-            <LiveEditor editorId={id} initialValue={examples && examples[0]} />
+            <LiveEditor
+              editorId={id}
+              initialValue={examples && examples[0].raw}
+            />
           )}
         </EditorWrapper>
       </KitchenSinkComponentWrapper>

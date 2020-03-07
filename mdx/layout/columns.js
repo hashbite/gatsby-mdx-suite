@@ -49,13 +49,14 @@ const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
  * you should use the `<Column/>` element to wrap a single column.
  *
  *
- * @example
+ * @example <caption>Single items</caption>
  * <Columns>
  * <Image id="randomImageId" />
  * <Image id="randomImageId" />
  * <Image id="randomImageId" />
  * <Image id="randomImageId" />
  * </Columns>
+ * @example <caption>Single items</caption>
  * <Columns maxColumns="2">
  * <Image id="randomImageId" />
  * <Image id="randomImageId" />
@@ -63,7 +64,7 @@ const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
  * <Image id="randomImageId" />
  * </Columns>
  *
- * ## Centered Content
+ * @example <caption>Centered Content</caption>
  *
  * <Columns center>
  * <Column center>

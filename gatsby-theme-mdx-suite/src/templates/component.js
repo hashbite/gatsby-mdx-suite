@@ -59,7 +59,7 @@ function DocsComponentTemplate({ data, pageContext }) {
 
               <LiveEditor
                 editorId={displayName}
-                initialValue={examples && examples[0]}
+                initialValue={examples && examples[0].raw}
               />
 
               <MDXProvider>
