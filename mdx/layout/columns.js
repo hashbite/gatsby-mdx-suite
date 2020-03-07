@@ -5,7 +5,7 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 import { useBreakpointIndex } from '@theme-ui/match-media'
 
-const ColumnsWrapper = styled.div(({ maxColumns }) => {
+const ColumnsWrapper = styled.div(({ theme, maxColumns, template }) => {
   return css`
     ${tw`w-full my-8 grid gap-grid-gap`}
     ${maxColumns === 2 && tw`sm:grid-cols-2`}
@@ -19,6 +19,13 @@ const ColumnsWrapper = styled.div(({ maxColumns }) => {
     ${maxColumns === 10 && tw`grid-cols-3 sm:grid-cols-5 md:grid-cols-10`}
     ${maxColumns === 11 && tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-11`}
     ${maxColumns === 12 && tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-12`}
+
+    ${template &&
+      css`
+        @media screen and (min-width: ${theme.breakpoints[0]}) {
+          grid-template-columns: ${template};
+        }
+      `}
   `
 })
 
@@ -63,6 +70,16 @@ const Column = tw.div``
  * </Column>
  * <Column backgroundImageId="randomPictureId" minAspectRatio="9/16" />
  * </Columns>
+ * <Columns template="16fr 9fr">
+ * <Column colorSet="blue">
+ *
+ * # Example Text
+ *
+ * The quick brown fox jumps over the lazy dog
+ *
+ * </Column>
+ * <Column backgroundImageId="randomPictureId" minAspectRatio="9/16" />
+ * </Columns>
  */
 export default function Columns({ children, maxColumns, reverseAt, ...props }) {
   const currentBreakpoint = useBreakpointIndex()
@@ -93,9 +110,15 @@ export default function Columns({ children, maxColumns, reverseAt, ...props }) {
 Columns.displayName = 'Columns'
 
 Columns.propTypes = {
+  children: propTypes.node.isRequired,
   /** Maximum number of columns. Defaults to number of items. */
   maxColumns: propTypes.number,
+  /**
+   * Custom css grid columns template. Applied at the first breakpoint.
+   *
+   * See: https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
+   */
+  template: propTypes.string,
   /** Reverse the order of all columns as soon given breakpoint is reached */
   reverseAt: propTypes.number,
-  children: propTypes.node.isRequired,
 }
