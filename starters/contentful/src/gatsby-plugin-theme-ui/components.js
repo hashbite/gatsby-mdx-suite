@@ -7,6 +7,7 @@ import Video from '@gatsby-mdx-suite/mdx-video/video'
 // Layout
 import Center from '@gatsby-mdx-suite/mdx-layout/center'
 import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
+import Column from '@gatsby-mdx-suite/mdx-layout/column'
 import FloatingImage from '@gatsby-mdx-suite/mdx-layout/floating-image'
 import Gap from '@gatsby-mdx-suite/mdx-layout/gap'
 import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
@@ -62,6 +63,7 @@ export default {
   BoxVideo,
   Card,
   Center,
+  Column,
   Columns,
   ContactForm,
   CTA,
