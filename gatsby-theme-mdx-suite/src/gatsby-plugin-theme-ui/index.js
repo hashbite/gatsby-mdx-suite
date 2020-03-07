@@ -12,15 +12,15 @@ export default merge(tailwindPreset, {
   colors: {
     // Default Theme-UI colors
     text: tailwindPreset.colors.text, // text color
-    background: tailwindPreset.colors.background, // background color
+    rootBackground: tailwindPreset.colors.background, // document background color
+    background: 'transparent', // background color
     primary: tailwindPreset.colors.primary, // primary button and link color
     secondary: tailwindPreset.colors.secondary, // secondary color - can be used for hover states
     accent: tailwindPreset.colors.accent, //	a contrast color for emphasizing UI
     highlight: tailwindPreset.colors.highlight, // a background color for highlighting text
     muted: tailwindPreset.colors.muted, // a gray or subdued color for decorative purposes
     // MDX-Suite specific colors
-    headline: 'toamto', //tailwindPreset.colors.text, // headline color
-    heading: 'tomato',
+    headline: tailwindPreset.colors.text, // headline color
     sets: {
       muted: {
         background: tailwindPreset.colors.gray[7],
@@ -94,6 +94,9 @@ export default merge(tailwindPreset, {
     },
   },
   styles: {
+    root: {
+      backgroundColor: 'rootBackground',
+    },
     h1: {
       color: 'headline',
     },
