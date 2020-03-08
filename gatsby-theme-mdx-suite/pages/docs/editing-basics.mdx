@@ -1,0 +1,86 @@
+---
+title: 'Editing Basics'
+path: '/docs/editing-basics'
+---
+
+# Editing basics
+
+This is a brief introduction on how to write, create and layout content with MDX.
+
+It is easier to learn as it seems in the first place.
+
+## What is Markdown
+
+The Markdown syntax is intended to be as easy-to-read and
+easy-to-write as is feasible.
+
+It uses common patterns to format content which might be already known
+to you from other sites like Wikipedia or some forums.
+
+### Markdown example
+
+```mdx
+# Hello world
+
+This is a paragraph.
+
+This is another one with **some emphasized** text.
+```
+
+* A full list and visual demo of all Markdown features: https://www.markdownguide.org/basic-syntax
+
+### Line breaks &amp; paragraphs
+A paragraph is one or more consecutive lines of text, separated by one
+or more blank lines.
+
+A single line break will not result in a line break when rendered.
+
+Multiple line breaks will not reduce in a bigger gap between the
+content.
+
+If you want to enforce a line break without creating a new paragraph,
+you can use the `<br/>` tag.
+
+### How to keep an overview: Comments &amp; more
+
+As soon your content gets longer, you can use the following tricks to
+navigate easier:
+
+* Use multiple empty lines to visually group and separate syntax.
+* You can use HTML comments for yourself to label sections. `<!-- Important content here -->`
+
+## MDX
+
+With MDX we can add more complex layouts and interactive elements to the content.
+
+> MDX is a superset of Markdown. It allows you to write JSX inside markdown.
+
+This is achieved by adding a few simple tags the syntax, which will look very familiar
+if you know HTML already.
+
+They may work completely independently, accept configuration via attributes but also can
+support wrapping other content.
+
+### MDX example
+
+```mdx
+# Hello world
+
+This renders an internal image of the page, with all optimizations applied.
+
+## Example image
+
+<Image id="randomImageId" />
+
+
+## Example images in a multi-column layout
+
+<Columns>
+<Image id="randomImageId" />
+<Image id="randomImageId" />
+</Column>
+
+```
+
+**Important:** To ensure these new tags are detected properly, ensure to separate
+them with an empty line from regular Markdown content.

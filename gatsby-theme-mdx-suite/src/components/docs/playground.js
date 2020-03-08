@@ -33,7 +33,7 @@ const defaultMDX = `<Header>
 function Playground() {
   return (
     <DataProvider>
-      <Layout title="Theme">
+      <Layout title="Playground">
         <LayoutMain>
           <PlaygroundWrapper>
             <LiveEditor initialValue={defaultMDX} layout="vertical" />

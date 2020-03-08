@@ -1,4 +1,6 @@
 const { existsSync } = require('fs')
+
+const merge = require('lodash/merge')
 const { handler, resolver } = require('react-docgen-styled-resolver')
 
 const defaultComponentPaths = [
@@ -6,6 +8,8 @@ const defaultComponentPaths = [
   `node_modules/@gatsby-mdx-suite/`,
   `../../node_modules/@gatsby-mdx-suite/`,
 ]
+
+const pagesPath = `${__dirname}/pages`
 
 module.exports = ({
   mdx = { extensions: [`.mdx`, `.md`] },
@@ -18,12 +22,32 @@ module.exports = ({
     // MDX
     {
       resolve: `gatsby-plugin-mdx`,
-      options: mdx,
+      options: merge(
+        {
+          defaultLayouts: {
+            docs: require.resolve('./src/templates/docs.js'),
+          },
+        },
+        mdx
+      ),
     },
     // SEO & Performance
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-bundle-stats`,
     // Docs
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `docs`,
+        path: pagesPath,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: pagesPath,
+      },
+    },
     ...componentPaths
       .map((componentPath) => {
         if (existsSync(componentPath)) {

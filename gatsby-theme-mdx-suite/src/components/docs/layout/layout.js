@@ -38,6 +38,7 @@ const Layout = ({ children, title }) => {
             {title && ` - ${title}`}
           </DocsTitle>
           <Menu>
+            <MenuLink to="/docs/editing-basics">Editing Basics</MenuLink>
             <MenuLink to="/docs/playground">Playground</MenuLink>
             <MenuLink to="/docs/kitchen-sink">Kitchen Sink</MenuLink>
             <MenuLink to="/docs/theme">Theme</MenuLink>
