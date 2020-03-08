@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useDebounce } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import loadable from '@loadable/component'
 import tw from 'twin.macro'
@@ -40,16 +41,29 @@ const AceEditor = loadable(async () => {
   return ace
 })
 
-const LiveEditorWrapper = styled.section`
-  ${tw`grid grid-rows-2`}
-  min-height: 60vh;
-`
+const LiveEditorWrapper = styled.section(
+  ({ layout }) => css`
+    ${layout === 'horizontal' ? tw`grid grid-rows-2` : tw`flex flex-row h-full`}
+
+    max-height: calc(100vh - 60px);
+
+    > *:last-child {
+      flex: 1 1 16rem;
+    }
+
+    > * {
+      flex: 1 1 auto;
+    }
+  `
+)
 const LiveEditorPreview = tw.div`relative bg-gray-100 overflow-scroll shadow-inner`
 const LiveEditorPreviewContainer = tw.div``
 const LiveEditorError = styled.div`
   ${tw`p-4 m-4 border-4 border-dashed border-red-400 bg-red-700 text-sm text-white`}
 `
 const LiveEditorEditor = styled.div`
+  min-height: 4rem;
+
   .ace_heading {
     ${tw`font-bold text-blue-600`}
   }
@@ -78,7 +92,7 @@ const LiveEditorEditor = styled.div`
   }
 `
 
-function LiveEditor({ editorId, initialValue }) {
+function LiveEditor({ editorId, initialValue, layout }) {
   const [editorValue, setEditorValue] = useDebounce(initialValue || '', 100)
   const [rawValue, setRawValue] = useDebounce('', 1000)
   const [error, setError] = useState()
@@ -156,7 +170,7 @@ function LiveEditor({ editorId, initialValue }) {
   }, [editorValue])
 
   return (
-    <LiveEditorWrapper>
+    <LiveEditorWrapper layout={layout}>
       <LiveEditorPreview>
         {error && (
           <LiveEditorError>
@@ -195,11 +209,13 @@ function LiveEditor({ editorId, initialValue }) {
 
 LiveEditor.defaultProps = {
   editorId: 'default-editor',
+  layout: 'horizontal',
 }
 
 LiveEditor.propTypes = {
   editorId: propTypes.string,
   initialValue: propTypes.string,
+  layout: propTypes.string,
 }
 
 export default LiveEditor
