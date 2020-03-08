@@ -5,7 +5,6 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { Styled } from 'theme-ui'
 import tw from 'twin.macro'
-import 'tailwindcss/dist/base.css'
 
 import { EntypoMenu } from 'react-entypo-icons'
 

@@ -5,6 +5,7 @@ export default merge(tailwindPreset, {
   spacing: {
     'content-column-padding': '2vw',
     'grid-gap': tailwindPreset.sizes['8'],
+    'content-gap': tailwindPreset.sizes['16'],
   },
   maxWidth: {
     'content-column': `${parseInt(tailwindPreset.sizes['6xl']) * 16}px`,
