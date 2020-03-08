@@ -48,7 +48,7 @@ const LiveEditorWrapper = styled.section(
     max-height: calc(100vh - 60px);
 
     > *:last-child {
-      flex: 1 1 16rem;
+      flex: 0 0 32rem;
     }
 
     > * {
