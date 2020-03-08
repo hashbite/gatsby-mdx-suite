@@ -14,9 +14,10 @@ import {
  * Title will be automatically set for internal pages
  *
  * @example
- * <Link href="https://google.com">External link to Google</Link>
- * <Link id="randomPageId" />
- * <Link id="randomPageId">Internal link with given title</Link>
+ * * <Link id="randomPageId" />
+ * * <Link id="randomPageId">Internal link with given title</Link>
+ * * <Link href="https://google.com">External link to Google</Link>
+ * * <Link href="https://google.com" openInNewTab>External link to Google, opening in a new tab</Link>
  */
 export default function Link({
   id,
@@ -25,12 +26,17 @@ export default function Link({
   className = null,
   hash,
   children,
+  openInNewTab,
   ...linkProps
 }) {
   const {
     themeConfig: { defaultLocale },
     pageContext: { locale },
   } = useContext(MdxSuiteContext)
+
+  if (openInNewTab) {
+    linkProps.target = '_blank'
+  }
 
   const result = useStaticQuery(graphql`
     {
@@ -101,6 +107,10 @@ export default function Link({
   )
 }
 
+Link.defaultProps = {
+  openInNewTab: false,
+}
+
 Link.propTypes = {
   /* Id of an internal page to link to */
   id: propTypes.string,
@@ -112,5 +122,7 @@ Link.propTypes = {
   title: propTypes.string,
   /* Optional link class */
   className: propTypes.string,
+  /* Open linked page in new tag. Should only be used for edge-cases. See: https://css-tricks.com/use-target_blank/ */
+  openInNewTab: propTypes.bool,
   children: propTypes.node,
 }
