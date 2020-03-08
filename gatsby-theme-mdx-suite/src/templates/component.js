@@ -8,6 +8,8 @@ import styled from '@emotion/styled'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import { Styled } from 'theme-ui'
 
+import Layout from '../components/docs/layout/layout'
+import LayoutMain from '../components/docs/layout/main'
 import DataProvider from '../components/docs/data-provider'
 import LiveEditor from '../components/docs/live-editor'
 import Props from '../components/docs/props'
@@ -37,38 +39,42 @@ function DocsComponentTemplate({ data, pageContext }) {
       }}
     >
       <DataProvider>
-        <ComponentWrapper>
-          <small>
-            <Link to="/docs/">Back to component list</Link>
-          </small>
-          <br />
-          <br />
-          <Styled.h1>{displayName}</Styled.h1>
+        <Layout>
+          <LayoutMain>
+            <ComponentWrapper>
+              <small>
+                <Link to="/docs/">Back to component list</Link>
+              </small>
+              <br />
+              <br />
+              <Styled.h1>{displayName}</Styled.h1>
 
-          <MDXProvider>
-            {description && (
-              <MDXRenderer>{description.childMdx.body}</MDXRenderer>
-            )}
-          </MDXProvider>
+              <MDXProvider>
+                {description && (
+                  <MDXRenderer>{description.childMdx.body}</MDXRenderer>
+                )}
+              </MDXProvider>
 
-          <Props componentProps={componentProps} />
+              <Props componentProps={componentProps} />
 
-          <LiveEditor
-            editorId={displayName}
-            initialValue={examples && examples[0]}
-          />
+              <LiveEditor
+                editorId={displayName}
+                initialValue={examples && examples[0]}
+              />
 
-          <MDXProvider>
-            {longDescription && (
-              <MDXRenderer>{longDescription.body}</MDXRenderer>
-            )}
-          </MDXProvider>
-          <br />
-          <br />
-          <small>
-            <Link to="/docs/">Back to component list</Link>
-          </small>
-        </ComponentWrapper>
+              <MDXProvider>
+                {longDescription && (
+                  <MDXRenderer>{longDescription.body}</MDXRenderer>
+                )}
+              </MDXProvider>
+              <br />
+              <br />
+              <small>
+                <Link to="/docs/">Back to component list</Link>
+              </small>
+            </ComponentWrapper>
+          </LayoutMain>
+        </Layout>
       </DataProvider>
     </MdxSuiteContext.Provider>
   )
