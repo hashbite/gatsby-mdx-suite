@@ -5,7 +5,7 @@ import Link from './link'
 
 export const StyledCTA = tw(
   Link
-)`bg-blue-500 hover:bg-blue-700 text-white hover:text-white visited:text-white font-bold py-2 px-4 rounded`
+)`bg-primary hover:bg-secondary text-white hover:text-white visited:text-white font-bold py-2 px-4 rounded`
 
 /**
  * Renders a Link styled as a call to action button.
