@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 
 import responsiveFont from '@gatsby-mdx-suite/helpers/styling/responsive-font'
 
-const ResponsiveTextWrapper = styled.div`
+const ResponsiveTextWrapper = styled.span`
   ${responsiveFont}
 
   & h1,
@@ -21,7 +21,8 @@ const ResponsiveTextWrapper = styled.div`
 
 /**
  * Let the font size grow from small to big screens.
- * @example <ResponsiveText>I will be **huge** on desktop</ResponsiveText>
+ * @example
+ * <ResponsiveText>I will be <Text fontWeight="bold">huge</Text> on desktop ... but smaller on mobile.</ResponsiveText>
  */
 const ResponsiveText = ({ children, ...props }) => {
   return <ResponsiveTextWrapper {...props}>{children}</ResponsiveTextWrapper>

@@ -4,7 +4,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-const TextWrapper = styled.div(
+const TextWrapper = styled.span(
   ({
     color,
     fontFamily,
@@ -50,9 +50,12 @@ const TextWrapper = styled.div(
 /**
  * Applies certain text and font styles.
  * @example
+ *
  * <Text fontFamily="heading" italic fontSize="3rem" color="blue">
  * This will be display in the same font as headlines
  * </Text>
+ *
+ * Inline formattings <Text fontFamily="heading" italic color="red">are possible</Text> as well.
  */
 const Text = ({
   children,
