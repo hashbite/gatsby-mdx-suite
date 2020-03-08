@@ -5,10 +5,14 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
+import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
 
 import Section from './section'
 
-const Wrapper = tw.div`relative my-8`
+const Wrapper = styled.div`
+  ${tw`relative`}
+  ${applyContentGap}
+`
 
 const ContentWrapper = styled(Section)(
   ({ reverse }) => css`

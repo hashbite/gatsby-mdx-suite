@@ -4,10 +4,12 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
 import { useBreakpointIndex } from '@theme-ui/match-media'
+import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
 
 const ColumnsWrapper = styled.div(({ theme, maxColumns, template }) => {
   return css`
-    ${tw`w-full my-8 grid gap-grid-gap`}
+    ${applyContentGap({ theme })}
+    ${tw`w-full grid gap-grid-gap`}
     ${maxColumns === 2 && tw`sm:grid-cols-2`}
     ${maxColumns === 3 && tw`sm:grid-cols-3`}
     ${maxColumns === 4 && tw`sm:grid-cols-2 md:grid-cols-4`}

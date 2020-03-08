@@ -4,9 +4,11 @@ import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
 
+import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
+
 const GridWrapper = styled.div(
-  ({ minWidth, maxWidth, center, theme }) => css`
-    ${tw`my-16`}
+  ({ theme, minWidth, maxWidth, center }) => css`
+    ${applyContentGap({ theme })}
 
     /* ensure full width when within viewport/flex box container */
     ${tw`w-full`}

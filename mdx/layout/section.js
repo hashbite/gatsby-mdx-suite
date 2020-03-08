@@ -25,9 +25,11 @@ const SectionWrapper = styled.section(({ hasBackgroundImage, theme }) => {
 
 const SectionContentWrapper = styled.div(
   (props) => css`
+    ${tw`relative z-10`}
     ${centerToContentColumn(props)}
 
-    ${tw`relative z-10 py-8 sm:py-16`}
+    padding-top: calc(${props.theme.spacing['content-gap']} / 2);
+    padding-bottom: calc(${props.theme.spacing['content-gap']} / 2);
   `
 )
 
