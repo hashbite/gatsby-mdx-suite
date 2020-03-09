@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.4.0...@gatsby-mdx-suite/mdx-copy@0.5.0) (2020-03-09)
+
+
+### Bug Fixes
+
+* **mdx/copy:** Text and ResponsiveText now act as inline elements ([ee4afb0](https://github.com/axe312ger/gatsby-mdx-suite/commit/ee4afb0e421711b43b13a958cdc62c9d595b8469)), closes [#107](https://github.com/axe312ger/gatsby-mdx-suite/issues/107)
+
+
+### Features
+
+* **animations:** introduce Animate component and useAnimation hook ([3f1dc93](https://github.com/axe312ger/gatsby-mdx-suite/commit/3f1dc93ce4e2f57718c8f94a9f96aadc6b94014b))
+
+
+
+
+
 # [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.3.1...@gatsby-mdx-suite/mdx-copy@0.4.0) (2020-03-06)
 
 

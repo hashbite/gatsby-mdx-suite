@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/contexts@0.0.8...@gatsby-mdx-suite/contexts@0.1.0) (2020-03-09)
+
+
+### Features
+
+* **animations:** introduce Animate component and useAnimation hook ([3f1dc93](https://github.com/axe312ger/gatsby-mdx-suite/commit/3f1dc93ce4e2f57718c8f94a9f96aadc6b94014b))
+
+
+
+
+
 ## [0.0.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/contexts@0.0.7...@gatsby-mdx-suite/contexts@0.0.8) (2020-02-27)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/contexts

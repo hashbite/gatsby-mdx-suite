@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.3.3...@gatsby-mdx-suite/mdx-link@0.4.0) (2020-03-09)
+
+
+### Bug Fixes
+
+* **mdx/link:** ensure CTAs use primary & secondary colors by default ([b44ebf2](https://github.com/axe312ger/gatsby-mdx-suite/commit/b44ebf29a9c360c8c206b09aa41a52da6baa4234))
+
+
+### Features
+
+* **animations:** introduce Animate component and useAnimation hook ([3f1dc93](https://github.com/axe312ger/gatsby-mdx-suite/commit/3f1dc93ce4e2f57718c8f94a9f96aadc6b94014b))
+* **mdx/link:** add attribute to open Link/CTA in new tab ([7dbfa76](https://github.com/axe312ger/gatsby-mdx-suite/commit/7dbfa76cc1047286a5e13f8b8dcaf3138d48263a)), closes [#103](https://github.com/axe312ger/gatsby-mdx-suite/issues/103)
+
+
+
+
+
 ## [0.3.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.3.2...@gatsby-mdx-suite/mdx-link@0.3.3) (2020-03-06)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-link

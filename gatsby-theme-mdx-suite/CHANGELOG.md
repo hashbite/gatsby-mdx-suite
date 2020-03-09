@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.10.0...gatsby-theme-mdx-suite@0.11.0) (2020-03-09)
+
+
+### Bug Fixes
+
+* **color-sets:** ensure default element background stays transparent ([9939a33](https://github.com/axe312ger/gatsby-mdx-suite/commit/9939a3347ba80b7fa82075a0222fd9bfc1988940))
+* **docs:** improve playground layout ([0510608](https://github.com/axe312ger/gatsby-mdx-suite/commit/0510608abad364d36d0938276edc9806ad940227))
+
+
+### Features
+
+* **animations:** introduce Animate component and useAnimation hook ([3f1dc93](https://github.com/axe312ger/gatsby-mdx-suite/commit/3f1dc93ce4e2f57718c8f94a9f96aadc6b94014b))
+* **docs:** add MD and MDX editing basics ([0c7ae73](https://github.com/axe312ger/gatsby-mdx-suite/commit/0c7ae73850c864c470a05aa0c73f7e68ba5af601)), closes [#72](https://github.com/axe312ger/gatsby-mdx-suite/issues/72)
+* **docs:** add mobile menu and entypo icon set ([d057e07](https://github.com/axe312ger/gatsby-mdx-suite/commit/d057e078d5951a3122066ee6891ad9ecb8514c61)), closes [#77](https://github.com/axe312ger/gatsby-mdx-suite/issues/77) [#69](https://github.com/axe312ger/gatsby-mdx-suite/issues/69)
+* **docs:** add playground page ([2094049](https://github.com/axe312ger/gatsby-mdx-suite/commit/209404975abc6a4bf9d3db9be81f332e19c3e0ff)), closes [#78](https://github.com/axe312ger/gatsby-mdx-suite/issues/78)
+* **styling:** introduce vertical content gap theme config ([f1133d6](https://github.com/axe312ger/gatsby-mdx-suite/commit/f1133d6686c2766a034501ff534cacc5e09f7153)), closes [#101](https://github.com/axe312ger/gatsby-mdx-suite/issues/101)
+
+
+
+
+
 # [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.9.0...gatsby-theme-mdx-suite@0.10.0) (2020-03-06)
 
 

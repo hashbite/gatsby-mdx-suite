@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.9.0...gatsby-starter-mdx-suite-contentful@0.10.0) (2020-03-09)
+
+
+### Features
+
+* **animations:** introduce Animate component and useAnimation hook ([3f1dc93](https://github.com/axe312ger/gatsby-suite-mdx/commit/3f1dc93ce4e2f57718c8f94a9f96aadc6b94014b))
+* **mdx/layout:** Columns now support coloring, background images, and minimum aspect ratios ([83dd0c7](https://github.com/axe312ger/gatsby-suite-mdx/commit/83dd0c746b9947e979fb46613acb4b337fcf3d89)), closes [#61](https://github.com/axe312ger/gatsby-suite-mdx/issues/61)
+
+
+
+
+
 # [0.9.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.8.0...gatsby-starter-mdx-suite-contentful@0.9.0) (2020-03-06)
 
 
