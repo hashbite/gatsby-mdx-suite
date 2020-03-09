@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.9.0...@gatsby-mdx-suite/mdx-layout@0.9.1) (2020-03-09)
+
+
+### Bug Fixes
+
+* **mdx/layout:** fix floating image content positioning ([8c0298c](https://github.com/axe312ger/gatsby-mdx-suite/commit/8c0298cb5b6a9355b4455e0e3036f866d14a6339))
+
+
+
+
+
 # [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.8.0...@gatsby-mdx-suite/mdx-layout@0.9.0) (2020-03-09)
 
 
