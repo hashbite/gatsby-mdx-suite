@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.4.0...@gatsby-mdx-suite/mdx-link@0.5.0) (2020-03-09)
+
+
+### Bug Fixes
+
+* **build:** restructure and simplify dependencies ([2a6e678](https://github.com/axe312ger/gatsby-mdx-suite/commit/2a6e6784431358d1bc05f76912455c28ed565db0))
+
+
+### Features
+
+* **mdx/link:** cta now uses colors from live theme context ([206d107](https://github.com/axe312ger/gatsby-mdx-suite/commit/206d107dec6c3f11555d77a716574036a11e0d02))
+
+
+
+
+
 # [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.3.3...@gatsby-mdx-suite/mdx-link@0.4.0) (2020-03-09)
 
 

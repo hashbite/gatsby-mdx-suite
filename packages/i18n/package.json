@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/i18n",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "> TODO: description",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@emotion/styled": "^10.0.23",
-    "@gatsby-mdx-suite/contexts": "^0.1.0",
+    "@gatsby-mdx-suite/contexts": "^0.1.1",
     "gatsby-link": "^2.2.30"
   },
   "publishConfig": {

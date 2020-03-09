@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.11.0...gatsby-theme-mdx-suite@0.11.1) (2020-03-09)
+
+
+### Bug Fixes
+
+* **build:** restructure and simplify dependencies ([2a6e678](https://github.com/axe312ger/gatsby-mdx-suite/commit/2a6e6784431358d1bc05f76912455c28ed565db0))
+* **docs:** add proper grid layout for editor ([8347c3b](https://github.com/axe312ger/gatsby-mdx-suite/commit/8347c3bcd06f5d4dae360a459ab173b1c7611d16))
+
+
+
+
+
 # [0.11.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.10.0...gatsby-theme-mdx-suite@0.11.0) (2020-03-09)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.10.1...gatsby-starter-mdx-suite-contentful@0.10.2) (2020-03-09)
+
+
+### Bug Fixes
+
+* **build:** restructure and simplify dependencies ([2a6e678](https://github.com/axe312ger/gatsby-suite-mdx/commit/2a6e6784431358d1bc05f76912455c28ed565db0))
+
+
+
+
+
 ## [0.10.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.10.0...gatsby-starter-mdx-suite-contentful@0.10.1) (2020-03-09)
 
 **Note:** Version bump only for package gatsby-starter-mdx-suite-contentful

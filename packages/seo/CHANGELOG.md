@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/seo@0.1.0...@gatsby-mdx-suite/seo@0.1.1) (2020-03-09)
+
+
+### Bug Fixes
+
+* **build:** restructure and simplify dependencies ([2a6e678](https://github.com/axe312ger/gatsby-mdx-suite/commit/2a6e6784431358d1bc05f76912455c28ed565db0))
+
+
+
+
+
 # [0.1.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/seo@0.0.9...@gatsby-mdx-suite/seo@0.1.0) (2020-03-09)
 
 
