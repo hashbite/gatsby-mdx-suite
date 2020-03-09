@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import Link from 'gatsby-link'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import tw from 'twin.macro'
@@ -10,7 +11,7 @@ import { Styled } from 'theme-ui'
 import LiveEditor from './live-editor'
 
 const KitchenSinkComponentWrapper = styled.section`
-  ${tw`mt-32`}
+  ${tw`mt-8`}
   &:first-child {
     ${tw`mt-0`}
   }
@@ -25,6 +26,26 @@ const KitchenSinkComponentDescription = styled.div`
   }
 `
 
+const EditorWrapper = styled.div(
+  ({ renderEditor }) => css`
+    ${tw`relative shadow-inner`}
+
+    min-height: 30vh;
+
+    ${renderEditor &&
+      `
+      &:before {
+        content: 'loading...';
+        ${tw`absolute font-bold font-heading z-0 text-5xl`}
+        opacity: 0.2;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    `}
+  `
+)
+
 function KitchenSinkComponent({
   id,
   displayName,
@@ -35,7 +56,9 @@ function KitchenSinkComponent({
   scrollTo,
 }) {
   const componentRef = useRef(null)
+  const [renderEditor, setRenderEditor] = useState(false)
   const handleComponentIntersection = (event) => {
+    setRenderEditor(event.isIntersecting)
     if (event.isIntersecting) {
       window.location.hash = `#${slug}`
     }
@@ -66,7 +89,11 @@ function KitchenSinkComponent({
             <MDXRenderer>{description.childMdx.body}</MDXRenderer>
           </KitchenSinkComponentDescription>
         )}
-        <LiveEditor editorId={id} initialValue={examples && examples[0]} />
+        <EditorWrapper>
+          {renderEditor && (
+            <LiveEditor editorId={id} initialValue={examples && examples[0]} />
+          )}
+        </EditorWrapper>
       </KitchenSinkComponentWrapper>
     </Observer>
   )
