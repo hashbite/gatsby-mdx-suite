@@ -4,12 +4,16 @@
   "description": "> TODO: description",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.19.0",
+    "prop-types": "^15.7.0",
+    "react": "^16.9.0",
+    "twin.macro": "^1.0.0-alpha.6"
+  },
   "dependencies": {
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.1.0",
-    "gatsby": "^2.19.23",
-    "gatsby-link": "^2.2.30",
-    "react": "^16.13.0"
+    "gatsby-link": "^2.2.30"
   },
   "publishConfig": {
     "access": "public"

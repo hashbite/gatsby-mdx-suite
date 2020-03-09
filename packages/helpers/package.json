@@ -4,11 +4,14 @@
   "description": "> TODO: description",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
+  "peerDependencies": {
+    "prop-types": "^15.7.0",
+    "react": "^16.9.0",
+    "twin.macro": "^1.0.0-alpha.6"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.27",
-    "emotion": "^10.0.27",
-    "react": "^16.13.0",
-    "twin.macro": "^1.0.0-alpha.6"
+    "emotion": "^10.0.27"
   },
   "publishConfig": {
     "access": "public"
