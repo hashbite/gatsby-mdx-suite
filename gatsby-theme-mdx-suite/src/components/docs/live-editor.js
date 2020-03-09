@@ -43,25 +43,39 @@ const AceEditor = loadable(async () => {
 
 const LiveEditorWrapper = styled.section(
   ({ layout }) => css`
-    ${layout === 'horizontal' ? tw`grid grid-rows-2` : tw`flex flex-row h-full`}
+    ${tw`grid`}
 
-    max-height: calc(100vh - 60px);
-
-    > *:last-child {
-      flex: 0 0 32rem;
-    }
-
-    > * {
-      flex: 1 1 auto;
-    }
+    ${layout === 'horizontal'
+      ? css`
+          grid-template-columns: 1fr;
+          grid-template-rows: min-content 30vh min-content;
+          grid-template-areas:
+            'preview'
+            'editor'
+            'error';
+          max-height: calc(100vh - 60px);
+        `
+      : css`
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr min-content;
+          grid-template-areas:
+            'preview editor'
+            'preview error';
+          height: calc(100vh - 60px);
+        `}
   `
 )
-const LiveEditorPreview = tw.div`relative bg-gray-100 overflow-scroll shadow-inner`
-const LiveEditorPreviewContainer = tw.div``
+const LiveEditorPreview = styled.div`
+  ${tw`relative bg-gray-100 overflow-scroll shadow-inner`}
+  grid-area: preview;
+`
+
 const LiveEditorError = styled.div`
   ${tw`p-4 m-4 border-4 border-dashed border-red-400 bg-red-700 text-sm text-white`}
+  grid-area: error;
 `
 const LiveEditorEditor = styled.div`
+  grid-area: editor;
   min-height: 4rem;
 
   .ace_heading {
@@ -171,20 +185,18 @@ function LiveEditor({ editorId, initialValue, layout }) {
 
   return (
     <LiveEditorWrapper layout={layout}>
+      {error && (
+        <LiveEditorError>
+          <p>
+            <strong>Oops, something went wrong:</strong>
+          </p>
+          <pre>{JSON.stringify(error.message)}</pre>
+        </LiveEditorError>
+      )}
       <LiveEditorPreview>
-        {error && (
-          <LiveEditorError>
-            <p>
-              <strong>Oops, something went wrong:</strong>
-            </p>
-            <pre>{JSON.stringify(error.message)}</pre>
-          </LiveEditorError>
-        )}
-        <LiveEditorPreviewContainer>
-          <MDXErrorBoundary>
-            <MDX>{rawValue}</MDX>
-          </MDXErrorBoundary>
-        </LiveEditorPreviewContainer>
+        <MDXErrorBoundary>
+          <MDX>{rawValue}</MDX>
+        </MDXErrorBoundary>
       </LiveEditorPreview>
       <LiveEditorEditor>
         <AceEditor
