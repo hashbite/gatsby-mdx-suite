@@ -6,32 +6,35 @@ import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
-
-import Section from './section'
+import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
 const Wrapper = styled.div`
   ${tw`relative`}
   ${applyContentGap}
 `
 
-const ContentWrapper = styled(Section)(
-  ({ reverse }) => css`
+const ContentWrapper = styled.div(
+  ({ theme, reverse }) => css`
+    ${centerToContentColumn}
+
     ${tw`md:relative z-10`}
 
-    > div {
-      ${tw`md:flex`}
-      ${reverse && tw`flex-row-reverse`}
-    }
-
-    ${Content} {
-      ${tw`md:w-1/2`}
-
-      ${reverse ? tw`md:pl-8` : tw`md:pr-8`}
-    }
+    ${tw`md:flex gap-grid-gap`}
+    ${reverse && tw`flex-row-reverse`}
   `
 )
 
-const Content = styled.div``
+const Content = styled.div(
+  ({ theme, reverse }) => css`
+    flex: 0 0 50%;
+    padding-right: calc(${theme.spacing['grid-gap']} / 2);
+    ${reverse &&
+      css`
+        padding-left: calc(${theme.spacing['grid-gap']} / 2);
+        padding-right: 0;
+      `}
+  `
+)
 
 const ImageWrapper = styled.div(
   ({ theme, reverse }) => css`
@@ -39,20 +42,20 @@ const ImageWrapper = styled.div(
 
     @media (min-width: ${theme.breakpoints[2]}) {
       ${tw`absolute z-0 flex flex-col justify-center pb-0`}
-      top: ${theme.sizes['16']};
-      bottom: ${theme.sizes['16']};
+      top: 0;
+      bottom: 0;
 
       ${
         reverse
           ? css`
-              right: calc(50% + ${theme.sizes['2']});
+              right: calc(50% + (${theme.spacing['grid-gap']} / 2));
               left: 0;
               & img {
                 object-position: center right !important;
               }
             `
           : css`
-              left: calc(50% + ${theme.sizes['2']});
+              left: calc(50% + (${theme.spacing['grid-gap']} / 2));
               right: 0;
               & img {
                 object-position: center left !important;
@@ -154,7 +157,7 @@ export default function FloatingImage({ children, imageId, reverse, fit }) {
   return (
     <Wrapper>
       <ContentWrapper reverse={reverse}>
-        <Content>{children}</Content>
+        <Content reverse={reverse}>{children}</Content>
       </ContentWrapper>
       <ImageWrapper reverse={reverse}>
         <Image id={imageId} contextKey="floating" fit={fit} />
