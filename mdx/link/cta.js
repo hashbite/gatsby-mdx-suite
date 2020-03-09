@@ -1,11 +1,21 @@
 import React from 'react'
+import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import Link from './link'
 
-export const StyledCTA = tw(
-  Link
-)`bg-primary hover:bg-secondary text-white hover:text-white visited:text-white font-bold py-2 px-4 rounded`
+export const StyledCTA = styled(Link)(
+  ({ theme }) => css`
+    ${tw`
+      py-2 px-6
+      hover:font-bold
+      rounded-lg`}
+
+    background: ${theme.background};
+    color: ${theme.color};
+  `
+)
 
 /**
  * Renders a Link styled as a call to action button.
