@@ -14,10 +14,12 @@
     "mdx",
     "video"
   ],
+  "peerDependencies": {
+    "prop-types": "^15.7.0",
+    "react": "^16.9.0"
+  },
   "dependencies": {
     "lodash": "^4.17.15",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.0",
     "theme-ui": "^0.3.1"
   },
   "publishConfig": {

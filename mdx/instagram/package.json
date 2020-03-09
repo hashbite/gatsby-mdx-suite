@@ -13,12 +13,14 @@
     "gatsby",
     "mdx"
   ],
+  "peerDependencies": {
+    "prop-types": "^15.7.0",
+    "react": "^16.9.0"
+  },
   "dependencies": {
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.1.0",
     "@gatsby-mdx-suite/mdx-media-gallery": "^0.4.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.0",
     "react-instagram-embed": "^1.5.0"
   },
   "publishConfig": {

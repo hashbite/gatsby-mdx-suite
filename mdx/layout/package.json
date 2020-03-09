@@ -13,16 +13,18 @@
     "gatsby",
     "mdx"
   ],
+  "peerDependencies": {
+    "twin.macro": "^1.0.0-alpha.6",
+    "prop-types": "^15.7.0",
+    "react": "^16.9.0"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "@gatsby-mdx-suite/helpers": "^0.6.0",
     "@gatsby-mdx-suite/mdx-color-set": "^0.2.0",
     "@gatsby-mdx-suite/mdx-image": "^0.5.0",
-    "@theme-ui/match-media": "^0.3.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.0",
-    "twin.macro": "^1.0.0-alpha.6"
+    "@theme-ui/match-media": "^0.3.1"
   },
   "publishConfig": {
     "access": "public"

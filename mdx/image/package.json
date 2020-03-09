@@ -16,14 +16,16 @@
     "images",
     "media"
   ],
+  "peerDependencies": {
+    "prop-types": "^15.7.0",
+    "react": "^16.9.0"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/is-prop-valid": "^0.8.6",
     "@emotion/styled": "^10.0.27",
     "@gatsby-mdx-suite/contexts": "^0.1.0",
-    "gatsby-image": "^2.2.43",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.0"
+    "gatsby-image": "^2.2.43"
   },
   "publishConfig": {
     "access": "public"
