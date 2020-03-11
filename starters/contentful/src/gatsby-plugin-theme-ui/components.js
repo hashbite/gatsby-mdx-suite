@@ -24,8 +24,10 @@ import BoxVideo from '@gatsby-mdx-suite/mdx-boxes/box-video'
 
 // Copy
 import List from '@gatsby-mdx-suite/mdx-copy/list'
-import ResponsiveText from '@gatsby-mdx-suite/mdx-copy/responsive-text'
-import Text from '@gatsby-mdx-suite/mdx-copy/text'
+import Font from '@gatsby-mdx-suite/mdx-copy/font'
+import TextBlock from '@gatsby-mdx-suite/mdx-copy/text-block'
+import ResponsiveTextBlock from '@gatsby-mdx-suite/mdx-copy/responsive-text-block'
+import Claim from '@gatsby-mdx-suite/mdx-copy/claim'
 
 // Decorations
 import Card from '@gatsby-mdx-suite/mdx-decoration/card'
@@ -78,9 +80,11 @@ export default {
   List,
   MediaGallery,
   NarrowSection,
-  ResponsiveText,
   Section,
-  Text,
+  Font,
+  TextBlock,
+  ResponsiveTextBlock,
+  Claim,
   Timeline,
   TimelineEntry,
   Video,
