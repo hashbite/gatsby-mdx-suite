@@ -38,8 +38,9 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
   } = useContext(MdxSuiteContext)
 
   const menuRoot = queryResult.allContentfulMenuItem.nodes.find(
-    ({ locale, pageId }) =>
-      pageId === rootMenuItemId && (!activeLocale || locale === activeLocale)
+    ({ locale, menuItemId }) =>
+      menuItemId === rootMenuItemId &&
+      (!activeLocale || locale === activeLocale)
   )
 
   if (!menuRoot) {
@@ -60,7 +61,7 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
     currentLevel++
 
     const result = currentRoot.subitems.find(
-      (item) => item.pageId === destination
+      (item) => item.menuItemId === destination
     )
 
     if (result) {
@@ -75,22 +76,36 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
   return (
     <MenuUl>
       {currentRoot.subitems.map((child) => {
-        const { title, linkedPage } = child
-        const isActive = activeTrail.includes(child.pageId)
+        const {
+          menuItemId,
+          linkedPage,
+          internalSlug,
+          externalUri,
+          ...otherProps
+        } = child
+        const isActive = activeTrail.includes(menuItemId)
+
+        let content = child.title
+
+        if (linkedPage && linkedPage.pageId) {
+          content = <Link id={linkedPage.pageId} {...otherProps} />
+        }
+
+        if (internalSlug) {
+          content = <Link to={internalSlug} {...otherProps} />
+        }
+
+        if (externalUri) {
+          content = <Link href={externalUri} {...otherProps} />
+        }
 
         return (
           <MenuLi
-            key={title}
+            key={menuItemId}
             isActive={isActive}
             className={isActive ? 'active' : null}
           >
-            <MenuTitle>
-              {!linkedPage ? (
-                title
-              ) : (
-                <Link id={linkedPage.pageId} title={title} />
-              )}
-            </MenuTitle>
+            <MenuTitle>{content}</MenuTitle>
           </MenuLi>
         )
       })}

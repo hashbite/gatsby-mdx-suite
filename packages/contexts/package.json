@@ -23,5 +23,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "i18next": "^19.3.2",
+    "react-i18next": "^11.3.3"
   }
 }

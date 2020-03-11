@@ -30,6 +30,33 @@ module.exports = function(migration) {
     .linkType('Entry')
 
   menuItem
+    .createField('externalUri')
+    .name('External URI')
+    .type('Symbol')
+    .localized(false)
+    .required(false)
+    .validations([
+      {
+        regexp: {
+          pattern:
+            '^\\w+:\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$',
+        },
+      },
+    ])
+    .disabled(false)
+    .omitted(false)
+
+  menuItem
+    .createField('internalSlug')
+    .name('Internal slug')
+    .type('Symbol')
+    .localized(false)
+    .required(false)
+    .validations([])
+    .disabled(false)
+    .omitted(false)
+
+  menuItem
     .createField('subitems')
     .name('Subitems')
     .type('Array')
@@ -50,16 +77,38 @@ module.exports = function(migration) {
       linkType: 'Entry',
     })
 
-  menuItem.changeFieldControl('title', 'builtin', 'singleLine', {
-    helpText: 'Set the title for this menu item.',
-  })
+  menuItem
+    .createField('openInNewTab')
+    .name('Open in new tab')
+    .type('Boolean')
+    .localized(false)
+    .required(false)
+    .validations([])
+    .disabled(false)
+    .omitted(false)
+  menuItem.changeFieldControl('title', 'builtin', 'singleLine', {})
 
   menuItem.changeFieldControl('linkedPage', 'builtin', 'entryLinkEditor', {
-    helpText: 'Select an internal page to link to.',
+    helpText: 'Actual page this menu item is linking to',
+  })
+
+  menuItem.changeFieldControl('externalUri', 'builtin', 'urlEditor', {
+    helpText: 'Link an external page.',
+  })
+
+  menuItem.changeFieldControl('internalSlug', 'builtin', 'singleLine', {
+    helpText:
+      'Link hardcoded internal projects. Only use as last resort, always prefer to link pages.',
   })
 
   menuItem.changeFieldControl('subitems', 'builtin', 'entryLinksEditor', {
     bulkEditing: true,
-    helpText: 'Reference all sub items of this menu item.',
+  })
+
+  menuItem.changeFieldControl('openInNewTab', 'builtin', 'boolean', {
+    helpText:
+      'Open link in a new browser tab. Should only be used for edge-cases. See https://css-tricks.com/use-target_blank/',
+    trueLabel: 'Yes',
+    falseLabel: 'No',
   })
 }
