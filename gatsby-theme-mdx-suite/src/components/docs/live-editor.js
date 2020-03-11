@@ -163,8 +163,13 @@ function LiveEditor({ editorId, initialValue, layout }) {
   }, [unverifiedValue])
 
   useEffect(() => {
-    setUnverifiedValue(editorValue)
+    if (unverifiedValue !== editorValue) {
+      setUnverifiedValue()
+    }
   }, [editorValue])
+
+  const handleEditorChange = (content) =>
+    setEditorValue(content.replace(/^\s+$/gm, '').trim())
 
   return (
     <LiveEditorWrapper layout={layout}>
@@ -193,7 +198,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
         <AceEditor
           mode="markdown"
           theme="dracula"
-          onChange={setEditorValue}
+          onChange={handleEditorChange}
           name={`docs-ace-editor-${editorId}`}
           editorProps={{
             $blockScrolling: true,
