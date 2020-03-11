@@ -113,7 +113,11 @@ const LiveEditorEditor = styled.div`
 `
 
 function LiveEditor({ editorId, initialValue, layout }) {
-  const [editorValue, setEditorValue] = useState(initialValue || '')
+  const localStorageId = `mdx-suite-live-editor-${editorId}`
+  const [editorValue, setEditorValue] = useState(
+    localStorage.getItem(localStorageId) || initialValue || ''
+  )
+  const [unverifiedValue, setUnverifiedValue] = useDebounce(editorValue, 300)
   const [rawValue, setRawValue] = useDebounce('', 1000)
   const [error, setError] = useState()
   const {
@@ -131,7 +135,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
     async function parseMdx() {
       try {
         // Replace tokens with asset ids
-        const processedValue = editorValue
+        const processedValue = unverifiedValue
           .replace(
             /"randomImageId"/gi,
             () =>
@@ -180,6 +184,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
         // Set valid raw value
         setError(null)
         setRawValue(processedValue)
+        localStorage.setItem(localStorageId, unverifiedValue)
       } catch (error) {
         console.error(error)
         setError(error)
@@ -187,6 +192,10 @@ function LiveEditor({ editorId, initialValue, layout }) {
     }
 
     parseMdx()
+  }, [unverifiedValue])
+
+  useEffect(() => {
+    setUnverifiedValue(editorValue)
   }, [editorValue])
 
   return (
