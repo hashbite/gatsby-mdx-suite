@@ -12,7 +12,7 @@ import LiveEditor from './live-editor'
 
 const KitchenSinkComponentWrapper = styled.section`
   ${tw`mt-8`}
-  &:first-child {
+  &:first-of-type {
     ${tw`mt-0`}
   }
 `
@@ -21,7 +21,7 @@ const KitchenSinkComponentTitle = tw(Styled.h1)`mt-0 p-4 bg-gray-400`
 const KitchenSinkComponentDescription = styled.div`
   ${tw`my-8 p-4`}
 
-  & *:last-child {
+  & *:last-of-type {
     ${tw`mb-0`}
   }
 `
