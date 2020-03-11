@@ -10,6 +10,8 @@ import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 const MDX = loadable(() => import('@mdx-js/runtime'))
 
+const PreviewFailedWrapper = tw.div`flex justify-center content-center w-full h-full`
+
 class MDXErrorBoundary extends React.Component {
   constructor(props) {
     super(props)
@@ -27,7 +29,11 @@ class MDXErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       // You can render any custom fallback UI
-      return <h1>Something went wrong rendering the preview.</h1>
+      return (
+        <PreviewFailedWrapper>
+          <h1>Something went wrong rendering the preview.</h1>
+        </PreviewFailedWrapper>
+      )
     }
 
     return this.props.children
@@ -60,7 +66,7 @@ const LiveEditorWrapper = styled.section(
           grid-template-rows: 1fr min-content;
           grid-template-areas:
             'preview editor'
-            'preview error';
+            'error editor';
           height: calc(100vh - 60px);
         `}
   `
@@ -190,7 +196,15 @@ function LiveEditor({ editorId, initialValue, layout }) {
           <p>
             <strong>Oops, something went wrong:</strong>
           </p>
-          <pre>{JSON.stringify(error.message)}</pre>
+          <pre>
+            {error.message
+              .replace(/[> ]+([0-9]+) \|/g, (a, b) =>
+                a.replace(b, parseInt(b) - 2)
+              )
+              .replace(/\(([0-9]+):[0-9]+\)/, (a, b) =>
+                a.replace(b, parseInt(b) - 2)
+              )}
+          </pre>
         </LiveEditorError>
       )}
       <LiveEditorPreview>
