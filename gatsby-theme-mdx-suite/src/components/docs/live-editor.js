@@ -8,38 +8,6 @@ import loadable from '@loadable/component'
 import tw from 'twin.macro'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
-const MDX = loadable(() => import('@mdx-js/runtime'))
-
-const PreviewFailedWrapper = tw.div`flex justify-center content-center w-full h-full`
-
-class MDXErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { hasError: false }
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  static propTypes = {
-    children: propTypes.node.isRequired,
-  }
-
-  render() {
-    if (this.state.hasError) {
-      // You can render any custom fallback UI
-      return (
-        <PreviewFailedWrapper>
-          <h1>Something went wrong rendering the preview.</h1>
-        </PreviewFailedWrapper>
-      )
-    }
-
-    return this.props.children
-  }
-}
-
 const AceEditor = loadable(async () => {
   const ace = await import('react-ace')
   await import('ace-builds/src-noconflict/mode-markdown')
@@ -54,7 +22,7 @@ const LiveEditorWrapper = styled.section(
     ${layout === 'horizontal'
       ? css`
           grid-template-columns: 1fr;
-          grid-template-rows: min-content 30vh min-content;
+          grid-template-rows: 50vh 30vh min-content;
           grid-template-areas:
             'preview'
             'editor'
@@ -71,8 +39,8 @@ const LiveEditorWrapper = styled.section(
         `}
   `
 )
-const LiveEditorPreview = styled.div`
-  ${tw`relative bg-gray-100 overflow-scroll shadow-inner`}
+const LiveEditorPreview = styled.iframe`
+  ${tw`overflow-scroll shadow-inner w-full h-full`}
   grid-area: preview;
 `
 
@@ -216,11 +184,11 @@ function LiveEditor({ editorId, initialValue, layout }) {
           </pre>
         </LiveEditorError>
       )}
-      <LiveEditorPreview>
-        <MDXErrorBoundary>
-          <MDX>{rawValue}</MDX>
-        </MDXErrorBoundary>
-      </LiveEditorPreview>
+      <LiveEditorPreview
+        src={`/docs/preview?content=${encodeURIComponent(
+          JSON.stringify(rawValue)
+        )}`}
+      />
       <LiveEditorEditor>
         <AceEditor
           mode="markdown"
