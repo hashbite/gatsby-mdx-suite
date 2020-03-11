@@ -8,7 +8,7 @@ import DataProvider from '../../components/docs/data-provider'
 
 const MDX = loadable(() => import('@mdx-js/runtime'))
 
-const PreviewFailedWrapper = tw.div`flex justify-center content-center w-full h-full`
+const PreviewFailedWrapper = tw.div`flex flex-col justify-center text-center w-screen h-screen`
 
 class MDXErrorBoundary extends React.Component {
   constructor(props) {
@@ -29,8 +29,8 @@ class MDXErrorBoundary extends React.Component {
       // You can render any custom fallback UI
       return (
         <PreviewFailedWrapper>
-          <h1>Something went wrong rendering the preview.</h1>
-          <pre>{this.state.error.message}</pre>
+          <Styled.h2>Something went wrong rendering the preview.</Styled.h2>
+          <Styled.pre>{this.state.error.message}</Styled.pre>
         </PreviewFailedWrapper>
       )
     }

@@ -6,6 +6,7 @@ import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import loadable from '@loadable/component'
 import tw from 'twin.macro'
+import { Styled } from 'theme-ui'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 const AceEditor = loadable(async () => {
@@ -30,11 +31,12 @@ const LiveEditorWrapper = styled.section(
           max-height: calc(100vh - 60px);
         `
       : css`
+          ${tw`w-screen`}
           grid-template-columns: 1fr 1fr;
           grid-template-rows: 1fr min-content;
           grid-template-areas:
             'preview editor'
-            'error editor';
+            'error error';
           height: calc(100vh - 60px);
         `}
   `
@@ -45,9 +47,10 @@ const LiveEditorPreview = styled.iframe`
 `
 
 const LiveEditorError = styled.div`
-  ${tw`p-4 m-4 border-4 border-dashed border-red-400 bg-red-700 text-sm text-white`}
+  ${tw`p-4 border-4 border-dashed border-red-400 bg-red-700 text-white`}
   grid-area: error;
 `
+const LiveEditorErrorMessage = tw.pre`text-sm`
 const LiveEditorEditor = styled.div`
   grid-area: editor;
   min-height: 4rem;
@@ -163,8 +166,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
   }, [unverifiedValue])
 
   useEffect(() => {
-    if (unverifiedValue !== editorValue) {
-      setUnverifiedValue()
+    if (unverifiedValue !== editorValue && editorValue) {
+      setUnverifiedValue(editorValue)
     }
   }, [editorValue])
 
@@ -175,10 +178,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
     <LiveEditorWrapper layout={layout}>
       {error && (
         <LiveEditorError>
-          <p>
-            <strong>Oops, something went wrong:</strong>
-          </p>
-          <pre>
+          <Styled.h3>Oops, something went wrong:</Styled.h3>
+          <LiveEditorErrorMessage>
             {error.message
               .replace(/[> ]+([0-9]+) \|/g, (a, b) =>
                 a.replace(b, parseInt(b) - 2)
@@ -186,7 +187,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
               .replace(/\(([0-9]+):[0-9]+\)/, (a, b) =>
                 a.replace(b, parseInt(b) - 2)
               )}
-          </pre>
+          </LiveEditorErrorMessage>
         </LiveEditorError>
       )}
       <LiveEditorPreview
