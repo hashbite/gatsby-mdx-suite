@@ -6,7 +6,7 @@ import tw from 'twin.macro'
 import { useBreakpointIndex } from '@theme-ui/match-media'
 import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
 
-const ColumnsWrapper = styled.div(({ theme, maxColumns, template }) => {
+const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
   return css`
     ${applyContentGap({ theme })}
     ${tw`w-full grid gap-grid-gap`}
@@ -28,10 +28,13 @@ const ColumnsWrapper = styled.div(({ theme, maxColumns, template }) => {
           grid-template-columns: ${template};
         }
       `}
+
+    ${center &&
+      css`
+        text-align: center;
+      `}
   `
 })
-
-const Column = tw.div``
 
 /**
  * Display content next to each other.
@@ -96,8 +99,6 @@ export default function Columns({ children, maxColumns, reverseAt, ...props }) {
     maxColumns = 12
   }
 
-  children = children.map((child, i) => <Column key={i}>{child}</Column>)
-
   if (currentBreakpoint >= reverseAt) {
     children = children.reverse()
   }
@@ -111,6 +112,10 @@ export default function Columns({ children, maxColumns, reverseAt, ...props }) {
 
 Columns.displayName = 'Columns'
 
+Columns.defaultProps = {
+  center: false,
+}
+
 Columns.propTypes = {
   children: propTypes.node.isRequired,
   /** Maximum number of columns. Defaults to number of items. */
@@ -123,4 +128,6 @@ Columns.propTypes = {
   template: propTypes.string,
   /** Reverse the order of all columns as soon given breakpoint is reached */
   reverseAt: propTypes.number,
+  /** Center text content */
+  center: propTypes.bool,
 }
