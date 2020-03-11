@@ -84,6 +84,16 @@ const LiveEditorEditor = styled.div`
 `
 
 function LiveEditor({ editorId, initialValue, layout }) {
+  if (
+    !(
+      typeof window !== 'undefined' &&
+      window.document &&
+      window.document.createElement
+    )
+  ) {
+    return null
+  }
+
   const localStorageId = `mdx-suite-live-editor-${editorId}`
   const [editorValue, setEditorValue] = useState(
     localStorage.getItem(localStorageId) || initialValue || ''

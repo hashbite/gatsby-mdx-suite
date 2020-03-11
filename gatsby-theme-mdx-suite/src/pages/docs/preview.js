@@ -40,10 +40,15 @@ class MDXErrorBoundary extends React.Component {
 }
 
 const DocsPreviewPage = () => {
-  if (!window) {
+  if (
+    !(
+      typeof window !== 'undefined' &&
+      window.document &&
+      window.document.createElement
+    )
+  ) {
     return null
   }
-
   const searchParams = new URLSearchParams(window.location.search)
   const content = searchParams.get('content')
 
