@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axe312ger/gatsby-suite-mdx"
+  },
   "peerDependencies": {
     "gatsby": "^2.19.0",
     "prop-types": "^15.7.0",
