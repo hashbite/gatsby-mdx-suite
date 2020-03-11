@@ -17,7 +17,7 @@ const BlogPostListingWrapper = styled.div(
     > * {
       ${tw`col-span-4 sm:col-span-2`}
 
-      &:first-child {
+      &:first-of-type {
         ${tw`sm:col-span-4`}
       }
     }

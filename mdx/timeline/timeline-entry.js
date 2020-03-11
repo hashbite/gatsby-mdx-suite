@@ -25,8 +25,8 @@ const TimelineEntryWrapper = styled.div(
     line-height: ${bubbleSize - 4}px;
   }
 
-  &:not(:first-child):before,
-  &:not(:last-child):after {
+  &:not(:first-of-type):before,
+  &:not(:last-of-type):after {
     content: '';
     ${tw`absolute z-0 block h-auto bg-gray-500 opacity-25`}
     right: ${bubbleSize / 2 - 1}px;
@@ -35,10 +35,10 @@ const TimelineEntryWrapper = styled.div(
     width: 2px;
   }
 
-  &:not(:first-child):before {
+  &:not(:first-of-type):before {
     top: 0;
   }
-  &:not(:last-child):after  {
+  &:not(:last-of-type):after  {
     bottom: 0;
   }
 
