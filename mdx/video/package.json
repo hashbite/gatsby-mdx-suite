@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-video",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A video player for internal videos",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -27,7 +27,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
-    "@gatsby-mdx-suite/contexts": "^0.1.1",
+    "@gatsby-mdx-suite/contexts": "^0.2.0",
     "@researchgate/react-intersection-observer": "^1.0.5"
   },
   "publishConfig": {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-link@0.5.0...@gatsby-mdx-suite/mdx-link@0.6.0) (2020-03-11)
+
+
+### Features
+
+* **links:** Links and menu items now can point to external pages, internal slugs and open in new tabs ([0bc72e5](https://github.com/axe312ger/gatsby-suite-mdx/commit/0bc72e5128aed977f0834bc3e237fc96a169894d))
+
+
+
+
+
 # [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.4.0...@gatsby-mdx-suite/mdx-link@0.5.0) (2020-03-09)
 
 

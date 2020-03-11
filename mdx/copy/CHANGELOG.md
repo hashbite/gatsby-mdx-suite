@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.5.1...@gatsby-mdx-suite/mdx-copy@0.6.0) (2020-03-11)
+
+
+### Features
+
+* **mdx/copy:** refactor to inline and block components to control font and text style ([8fb503c](https://github.com/axe312ger/gatsby-suite-mdx/commit/8fb503ce7941523016486ffaa8b7d7010d8e6739))
+
+
+
+
+
 ## [0.5.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.5.0...@gatsby-mdx-suite/mdx-copy@0.5.1) (2020-03-09)
 
 

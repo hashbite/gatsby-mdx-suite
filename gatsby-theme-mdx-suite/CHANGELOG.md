@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.11.1...gatsby-theme-mdx-suite@0.12.0) (2020-03-11)
+
+
+### Bug Fixes
+
+* **live-editor:** exclude from SSR ([860dacc](https://github.com/axe312ger/gatsby-suite-mdx/commit/860dacc195f1303a64d7a0e663ace15ed92918c6))
+* **live-editor:** no more debounce inputs ([c4f2626](https://github.com/axe312ger/gatsby-suite-mdx/commit/c4f2626a345541faec0424d3ad038d2145331d43))
+* **live-editor:** properly render MDX error message ([584dcae](https://github.com/axe312ger/gatsby-suite-mdx/commit/584dcae9baccadde77bdb252e06c49cb7a829845))
+* **live-editor:** trim white space ([a83b21f](https://github.com/axe312ger/gatsby-suite-mdx/commit/a83b21f203093e00d08ee4f475de1c7f247d47ae))
+
+
+### Features
+
+* **links:** Links and menu items now can point to external pages, internal slugs and open in new tabs ([0bc72e5](https://github.com/axe312ger/gatsby-suite-mdx/commit/0bc72e5128aed977f0834bc3e237fc96a169894d))
+* **live-editor:** editor now remembers the last value ([4fb05ba](https://github.com/axe312ger/gatsby-suite-mdx/commit/4fb05bad642048c48cf9f06f23ec8b004c2e82f9))
+* **live-editor:** use iframes as preview container ([7d3acf3](https://github.com/axe312ger/gatsby-suite-mdx/commit/7d3acf36cdff2c677dfc92aecc635f62881aab02))
+
+
+
+
+
 ## [0.11.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite@0.11.0...gatsby-theme-mdx-suite@0.11.1) (2020-03-09)
 
 

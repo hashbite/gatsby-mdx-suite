@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.9.2...@gatsby-mdx-suite/mdx-layout@0.10.0) (2020-03-11)
+
+
+### Features
+
+* **mdx/layout:** Columns now support center property ([e710193](https://github.com/axe312ger/gatsby-suite-mdx/commit/e710193b29e12b50629822679e1a29bd09f75ab7))
+
+
+
+
+
 ## [0.9.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.9.1...@gatsby-mdx-suite/mdx-layout@0.9.2) (2020-03-09)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.10.2...gatsby-starter-mdx-suite-contentful@0.11.0) (2020-03-11)
+
+
+### Bug Fixes
+
+* **starters/contentful:** improve vertical rythim ([8e2296f](https://github.com/axe312ger/gatsby-suite-mdx/commit/8e2296f2897147a7849468c58d27833c1a6e03f8))
+
+
+### Features
+
+* **mdx/copy:** refactor to inline and block components to control font and text style ([8fb503c](https://github.com/axe312ger/gatsby-suite-mdx/commit/8fb503ce7941523016486ffaa8b7d7010d8e6739))
+
+
+
+
+
 ## [0.10.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.10.1...gatsby-starter-mdx-suite-contentful@0.10.2) (2020-03-09)
 
 
