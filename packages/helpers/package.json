@@ -4,6 +4,15 @@
   "description": "> TODO: description",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axe312ger/gatsby-suite-mdx"
+  },
+  "keywords": [
+    "gatsby-mdx-suite",
+    "gatsby",
+    "helpers"
+  ],
   "peerDependencies": {
     "prop-types": "^15.7.0",
     "react": "^16.9.0",
