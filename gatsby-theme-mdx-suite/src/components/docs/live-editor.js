@@ -113,7 +113,7 @@ const LiveEditorEditor = styled.div`
 `
 
 function LiveEditor({ editorId, initialValue, layout }) {
-  const [editorValue, setEditorValue] = useDebounce(initialValue || '', 100)
+  const [editorValue, setEditorValue] = useState(initialValue || '')
   const [rawValue, setRawValue] = useDebounce('', 1000)
   const [error, setError] = useState()
   const {
