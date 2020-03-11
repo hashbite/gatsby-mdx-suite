@@ -229,6 +229,18 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
       childImageSharp: ImageSharp
     }
     `,
+    `
+    type ContentfulMenuItem implements Node {
+      contentful_id: String
+      title: String
+      node_locale: String
+      linkedPage: ContentfulPage
+      internalSlug: String
+      externalUri: String
+      openInNewTab: Boolean
+      subitems: [ContentfulMenuItem]
+    }
+    `,
   ]
 
   // Add nulled video data

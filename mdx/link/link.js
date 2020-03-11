@@ -16,11 +16,13 @@ import {
  * @example
  * * <Link id="randomPageId" />
  * * <Link id="randomPageId">Internal link with given title</Link>
+ * * <Link to="/docs">Internal link to hardcoded page</Link>
  * * <Link href="https://google.com">External link to Google</Link>
  * * <Link href="https://google.com" openInNewTab>External link to Google, opening in a new tab</Link>
  */
 export default function Link({
   id,
+  to,
   href,
   title,
   className = null,
@@ -52,6 +54,21 @@ export default function Link({
       }
     }
   `)
+
+  // Link internal page when to is given
+  if (to) {
+    to = [to, hash ? `#${hash}` : null].filter(Boolean).join('')
+    return (
+      <GatsbyLink
+        className={className}
+        activeClassName="active"
+        to={to}
+        {...linkProps}
+      >
+        {children || title}
+      </GatsbyLink>
+    )
+  }
 
   // Render a normal anchor when a href is given
   if (href) {
@@ -93,13 +110,13 @@ export default function Link({
   }
 
   // Extend path by hash if given
-  const to = [path, hash ? `#${hash}` : null].filter(Boolean).join('')
+  const dynamicTo = [path, hash ? `#${hash}` : null].filter(Boolean).join('')
 
   return (
     <GatsbyLink
       className={className}
       activeClassName="active"
-      to={to}
+      to={dynamicTo}
       {...linkProps}
     >
       {children || title || pageTitle}
@@ -114,6 +131,8 @@ Link.defaultProps = {
 Link.propTypes = {
   /* Id of an internal page to link to */
   id: propTypes.string,
+  /* Slug of an internal page to link to. **Note:** use this for hard-coded pages **only** */
+  to: propTypes.string,
   /* URI of an external page to link to */
   href: propTypes.string,
   /* Option hash to attach to the link href */

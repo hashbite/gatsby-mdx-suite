@@ -38,8 +38,9 @@ export default function MenuRecursive({ rootMenuItemId }) {
   } = useContext(MdxSuiteContext)
 
   const menuRoot = queryResult.allContentfulMenuItem.nodes.find(
-    ({ locale, pageId }) =>
-      pageId === rootMenuItemId && (!activeLocale || locale === activeLocale)
+    ({ locale, menuItemId }) =>
+      menuItemId === rootMenuItemId &&
+      (!activeLocale || locale === activeLocale)
   )
 
   if (!menuRoot) {
@@ -64,20 +65,35 @@ function RecursiveMenu({ children, activeTrail, depth = 0 }) {
   return (
     <MenuUl className={`depth-${depth}`}>
       {children.map((child) => {
-        const { title, subitems, linkedPage } = child
+        const {
+          menuItemId,
+          subitems,
+          linkedPage,
+          internalSlug,
+          externalUri,
+          ...otherProps
+        } = child
+
+        let content = child.title
+
+        if (linkedPage && linkedPage.pageId) {
+          content = <Link id={linkedPage.pageId} {...otherProps} />
+        }
+
+        if (internalSlug) {
+          content = <Link to={internalSlug} {...otherProps} />
+        }
+
+        if (externalUri) {
+          content = <Link href={externalUri} {...otherProps} />
+        }
 
         return (
           <MenuLi
-            key={title}
+            key={menuItemId}
             className={activeTrail.includes(child.pageId) ? 'active' : null}
           >
-            <MenuTitle>
-              {!linkedPage ? (
-                title
-              ) : (
-                <Link id={linkedPage.pageId} title={title} />
-              )}
-            </MenuTitle>
+            <MenuTitle>{content}</MenuTitle>
             {subitems && (
               <RecursiveMenu
                 children={subitems}
