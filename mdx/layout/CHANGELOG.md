@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.10.0...@gatsby-mdx-suite/mdx-layout@0.11.0) (2020-03-12)
+
+
+### Features
+
+* **mdx/layout:** Columns now pass props down to styled component ([13f6584](https://github.com/axe312ger/gatsby-suite-mdx/commit/13f6584432dbdd48f91660810b0329d815f30b01))
+
+
+
+
+
 # [0.10.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.9.2...@gatsby-mdx-suite/mdx-layout@0.10.0) (2020-03-11)
 
 
