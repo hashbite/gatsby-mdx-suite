@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/helpers@0.7.0...@gatsby-mdx-suite/helpers@0.8.0) (2020-03-12)
+
+
+### Features
+
+* **mdx/boxes:** add support for show animation to video and carousel box ([81a9c37](https://github.com/axe312ger/gatsby-suite-mdx/commit/81a9c37d1650446df708c377eb1a2cbce5102ee0))
+
+
+
+
+
 # [0.7.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/helpers@0.6.1...@gatsby-mdx-suite/helpers@0.7.0) (2020-03-11)
 
 
