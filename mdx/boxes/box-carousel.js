@@ -2,8 +2,11 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { CarouselProvider, Slider, DotGroup } from 'pure-react-carousel'
-
 import 'pure-react-carousel/dist/react-carousel.es.css'
+import { cx } from 'emotion'
+import Observer from '@researchgate/react-intersection-observer'
+
+import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
 
 import BaseBox from './base-box'
 
@@ -59,8 +62,13 @@ const BoxCarousel = ({
   autoplay,
   autoplayInterval,
   loop,
-  ...restProps
+  showAnimation,
+  ...boxProps
 }) => {
+  const { animationClass, animationObserverProps } = useAnimation({
+    show: showAnimation,
+  })
+
   if (!children || !children.length) {
     return null
   }
@@ -74,22 +82,31 @@ const BoxCarousel = ({
     React.cloneElement(child, { index, key: index })
   )
 
-  return (
-    <BaseBox {...restProps}>
-      <CarouselProvider
-        naturalSlideWidth={300}
-        naturalSlideHeight={300}
-        totalSlides={children.length}
-        lockOnWindowScroll
-        infinite={loop}
-        isPlaying={autoplay}
-        interval={autoplayInterval}
-      >
-        <Slider>{children}</Slider>
-        {controls && <StyledDotGroup />}
-      </CarouselProvider>
-    </BaseBox>
+  let boxContent = (
+    <CarouselProvider
+      naturalSlideWidth={300}
+      naturalSlideHeight={300}
+      totalSlides={children.length}
+      lockOnWindowScroll
+      infinite={loop}
+      isPlaying={autoplay}
+      interval={autoplayInterval}
+    >
+      <Slider>{children}</Slider>
+      {controls && <StyledDotGroup />}
+    </CarouselProvider>
   )
+
+  if (showAnimation) {
+    boxContent = (
+      <Observer {...animationObserverProps}>
+        <div>{boxContent}</div>
+      </Observer>
+    )
+    boxProps.className = cx(boxProps.className, animationClass)
+  }
+
+  return <BaseBox {...boxProps}>{boxContent}</BaseBox>
 }
 
 BoxCarousel.defaultProps = {
@@ -106,6 +123,8 @@ BoxCarousel.propTypes = {
   autoplay: propTypes.bool,
   autoplayInterval: propTypes.number,
   loop: propTypes.bool,
+  /* Apply show animation */
+  showAnimation: propTypes,
 }
 
 export default BoxCarousel

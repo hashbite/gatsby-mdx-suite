@@ -30,7 +30,7 @@ const useAnimation = ({ show }) => {
   }
 
   const animationObserverProps = {
-    threshold: 1,
+    threshold: 0.7,
     onChange: handleIntersection,
     rootMargin: '-12% 0px -12% 0px',
   }
