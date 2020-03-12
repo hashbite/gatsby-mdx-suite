@@ -153,12 +153,14 @@ const Column = ({
   minAspectRatio,
   backgroundImage,
   backgroundImageId,
+  ...restProps
 }) => {
   return (
     <ColorSet name={colorSet} {...colors}>
       <StyledColumn
         minAspectRatio={minAspectRatio}
         backgroundImage={backgroundImage}
+        {...restProps}
       >
         {children && <ColumnContent>{children}</ColumnContent>}
         {backgroundImageId && <Image id={backgroundImageId} fit="fill" />}
