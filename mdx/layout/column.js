@@ -3,9 +3,14 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
+import { cx } from 'emotion'
+import Observer from '@researchgate/react-intersection-observer'
 
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
+import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
+
+const StyledColumnWrapper = styled.div``
 
 const StyledColumn = styled.div(
   ({ theme, minAspectRatio, backgroundImage }) => css`
@@ -153,18 +158,39 @@ const Column = ({
   minAspectRatio,
   backgroundImage,
   backgroundImageId,
-  ...restProps
+  showAnimation,
+  ...columnProps
 }) => {
-  return (
-    <ColorSet name={colorSet} {...colors}>
+  const { animationClass, animationObserverProps } = useAnimation({
+    show: showAnimation,
+  })
+
+  if (showAnimation) {
+    columnProps.className = cx(columnProps.className, animationClass)
+  }
+
+  let columnContent = (
+    <StyledColumnWrapper>
       <StyledColumn
         minAspectRatio={minAspectRatio}
         backgroundImage={backgroundImage}
-        {...restProps}
+        {...columnProps}
       >
         {children && <ColumnContent>{children}</ColumnContent>}
         {backgroundImageId && <Image id={backgroundImageId} fit="fill" />}
       </StyledColumn>
+    </StyledColumnWrapper>
+  )
+
+  if (showAnimation) {
+    columnContent = (
+      <Observer {...animationObserverProps}>{columnContent}</Observer>
+    )
+  }
+
+  return (
+    <ColorSet name={colorSet} {...colors}>
+      {columnContent}
     </ColorSet>
   )
 }
@@ -183,6 +209,8 @@ Column.propTypes = {
   backgroundImage: propTypes.string,
   /* Internal background image id */
   backgroundImageId: propTypes.string,
+  /* Apply show animation */
+  showAnimation: propTypes.string,
 }
 
 export default Column
