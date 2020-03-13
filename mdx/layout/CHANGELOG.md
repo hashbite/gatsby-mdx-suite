@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.12.0...@gatsby-mdx-suite/mdx-layout@0.12.1) (2020-03-13)
+
+
+### Bug Fixes
+
+* **mdx/layout:** hide overflowing content from Section and Viewport ([55b60cf](https://github.com/axe312ger/gatsby-suite-mdx/commit/55b60cf4d5490eba82bf281ceb0bde5f067803fe))
+
+
+
+
+
 # [0.12.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.11.1...@gatsby-mdx-suite/mdx-layout@0.12.0) (2020-03-13)
 
 
