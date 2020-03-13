@@ -5,16 +5,17 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
 const StyledBoxes = styled.div(
-  ({ theme: { sizes, breakpoints }, mobileColumns }) => css`
+  ({ theme: { sizes, breakpoints } }) => css`
     position: relative;
     display: grid;
     grid-gap: ${sizes.gridGutter || '1rem'};
 
-    grid-template-columns: repeat(${mobileColumns}, 1fr);
-    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
 
     @media screen and (min-width: ${breakpoints[0]}) {
       grid-template-columns: repeat(48, 1fr);
+      grid-auto-rows: 1fr;
     }
 
     // Ensure square base grid
@@ -57,13 +58,10 @@ const StyledBoxes = styled.div(
  */
 const Boxes = (props) => <StyledBoxes {...props} />
 
-Boxes.defaultProps = {
-  mobileColumns: 24,
-}
+Boxes.defaultProps = {}
 
 Boxes.propTypes = {
   columns: propTypes.number,
-  mobileColumns: propTypes.number,
 }
 
 export default Boxes

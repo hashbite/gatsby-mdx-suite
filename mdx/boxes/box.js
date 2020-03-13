@@ -27,18 +27,19 @@ const StyledBaseBox = styled(BaseBox, { shouldForwardProp })(
 
 const BoxContent = styled('div', { shouldForwardProp })(
   ({ scale, theme: { breakpoints }, minSize }) => css`
-    position: absolute;
+    position: relative;
     z-index: 2;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     padding: ${minSize >= 12 ? '2rem' : '1rem'};
 
     @media screen and (min-width: ${breakpoints[0]}) {
       ${scale &&
         scale !== 1 &&
         css`
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
           transform: scale(${scale});
         `}
     }

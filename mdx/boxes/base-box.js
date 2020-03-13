@@ -28,11 +28,29 @@ const BaseBox = styled('div', {
 
   return css`
     position: relative;
-    grid-row-end: span ${height};
-    grid-column-end: span ${width};
-
     background: ${colors.background};
     color: ${colors.text};
+
+    @media screen and (max-width: ${breakpoints[0]}) {
+      &::before {
+        content: '';
+        width: 1px;
+        margin-left: -1px;
+        float: left;
+        height: 0;
+        padding-top: calc(100% / (${width} / ${height}));
+      }
+      &::after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    }
+
+    @media screen and (min-width: ${breakpoints[0]}) {
+      grid-row-end: span ${height};
+      grid-column-end: span ${width};
+    }
 
     ${hideOnMobile &&
       css`
