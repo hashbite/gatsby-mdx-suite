@@ -10,7 +10,6 @@ const DocsDataProvider = ({ children }) => {
     query KitchenSinkComponent {
       images: allContentfulAsset(
         filter: { file: { contentType: { regex: "/^image/" } } }
-        limit: 100
       ) {
         nodes {
           ...MdxSuiteContentfulAsset
@@ -21,11 +20,10 @@ const DocsDataProvider = ({ children }) => {
       }
       videos: allContentfulAsset(
         filter: { file: { contentType: { regex: "/^video/" } } }
-        limit: 5
       ) {
         nodes {
           ...MdxSuiteContentfulAsset
-          videoH264(fps: 15, duration: 3, preset: "ultrafast", maxWidth: 600) {
+          videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
             path
           }
         }
