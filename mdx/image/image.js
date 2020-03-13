@@ -190,6 +190,7 @@ export default function Image({
         {...dimensionProps}
         fit={fit}
         position={position}
+        loading="lazy"
       />
     </ImageWrapper>
   )
