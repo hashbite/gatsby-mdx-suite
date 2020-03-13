@@ -13,7 +13,7 @@ import Section from './section'
 const ViewportWrapper = styled.div(
   ({ horizontalAlign, verticalAlign, hasBackgroundImage, theme }) => {
     return css`
-    ${tw`relative min-h-screen flex flex-col`}
+    ${tw`relative min-h-screen flex flex-col overflow-hidden`}
       align-items: ${horizontalAlign};
       justify-content: ${verticalAlign};
 

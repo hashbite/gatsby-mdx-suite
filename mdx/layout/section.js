@@ -10,7 +10,7 @@ import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-c
 
 const SectionWrapper = styled.section(({ hasBackgroundImage, theme }) => {
   return css`
-    ${tw`relative`}
+    ${tw`relative overflow-hidden`}
 
     background: ${theme.colors.background};
     color: ${theme.colors.text};
