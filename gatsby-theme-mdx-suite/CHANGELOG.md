@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.12.0...gatsby-theme-mdx-suite@0.12.1) (2020-03-13)
+
+
+### Bug Fixes
+
+* **docs:** provide all assets in live editor but with further reduced quality ([2ee8e3d](https://github.com/axe312ger/gatsby-suite-mdx/commit/2ee8e3daaddaafb9142bed44e5eb83d0fa60cc56))
+
+
+
+
+
 # [0.12.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.11.1...gatsby-theme-mdx-suite@0.12.0) (2020-03-11)
 
 
