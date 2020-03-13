@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-boxes@0.8.0...@gatsby-mdx-suite/mdx-boxes@0.9.0) (2020-03-13)
+
+
+### Features
+
+* **mdx/boxes:** render boxes content agnostic on small screens ([71c6361](https://github.com/axe312ger/gatsby-suite-mdx/commit/71c636116d32e62650d2bb3c6224547440514720))
+
+
+
+
+
 # [0.8.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-boxes@0.7.2...@gatsby-mdx-suite/mdx-boxes@0.8.0) (2020-03-12)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.3](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.2...@gatsby-mdx-suite/mdx-image@0.5.3) (2020-03-13)
+
+
+### Bug Fixes
+
+* **mdx/image:** add missing native lady loading to non gatsby-image images ([fbb61e6](https://github.com/axe312ger/gatsby-suite-mdx/commit/fbb61e6541ec51d4a23e08df6790eaa9795eae6d))
+
+
+
+
+
 ## [0.5.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.1...@gatsby-mdx-suite/mdx-image@0.5.2) (2020-03-11)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
