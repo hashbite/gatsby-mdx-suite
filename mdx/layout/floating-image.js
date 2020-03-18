@@ -14,8 +14,8 @@ const Wrapper = styled.div`
 `
 
 const ContentWrapper = styled.div(
-  ({ theme, reverse }) => css`
-    ${centerToContentColumn}
+  ({ reverse, ...props }) => css`
+    ${centerToContentColumn(props)}
 
     ${tw`md:relative z-10`}
 
