@@ -7,14 +7,14 @@ import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 const DocsDataProvider = ({ children }) => {
   const MdxSuiteData = useContext(MdxSuiteContext)
   const assetResults = useStaticQuery(graphql`
-    query KitchenSinkComponent {
+    query DocsAssetData {
       images: allContentfulAsset(
         filter: { file: { contentType: { regex: "/^image/" } } }
       ) {
         nodes {
           ...MdxSuiteContentfulAsset
           fluid(maxWidth: 320, quality: 60) {
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_noBase64
           }
         }
       }
@@ -36,7 +36,7 @@ const DocsDataProvider = ({ children }) => {
             url
             childImageSharp {
               fluid(maxWidth: 320, maxHeight: 280) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
           }
@@ -49,7 +49,7 @@ const DocsDataProvider = ({ children }) => {
             url
             childImageSharp {
               fluid(maxWidth: 320, maxHeight: 320) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
           }
