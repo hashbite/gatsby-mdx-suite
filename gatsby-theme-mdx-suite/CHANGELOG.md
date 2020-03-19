@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.12.1...gatsby-theme-mdx-suite@0.13.0) (2020-03-19)
+
+
+### Bug Fixes
+
+* **docs:** greatly reduce build time and bundle size by removing embedded previews from docs ([d44c0e0](https://github.com/axe312ger/gatsby-suite-mdx/commit/d44c0e0c3ead7494e2c8351ab627e02cd5162824))
+
+
+### Features
+
+* **gatsby-theme-mdx-suite:** log bundle sizes to cli as well ([4110214](https://github.com/axe312ger/gatsby-suite-mdx/commit/4110214c8377e4164c2f760105180aa754012825))
+
+
+
+
+
 ## [0.12.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.12.0...gatsby-theme-mdx-suite@0.12.1) (2020-03-13)
 
 

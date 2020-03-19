@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.6.1...@gatsby-mdx-suite/mdx-copy@0.6.2) (2020-03-19)
+
+
+### Bug Fixes
+
+* **mdx/copy:** Ensure claim uses font family and weight of current heading style ([e06ca16](https://github.com/axe312ger/gatsby-suite-mdx/commit/e06ca168cda4ed1761c4e805c889458adad9abaa))
+
+
+
+
+
 ## [0.6.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.6.0...@gatsby-mdx-suite/mdx-copy@0.6.1) (2020-03-12)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-copy
