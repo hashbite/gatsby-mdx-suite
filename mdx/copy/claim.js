@@ -1,16 +1,19 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import tw from 'twin.macro'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 import responsiveFont from '@gatsby-mdx-suite/helpers/styling/responsive-font'
 
 import TextBlock from './text-block'
 
-const ClaimWrapper = styled(TextBlock)`
-  ${tw`font-heading font-bold`}
-  ${responsiveFont}
-`
+const ClaimWrapper = styled(TextBlock)(
+  (props) => css`
+    ${responsiveFont(props)}
+    font-family: ${props.theme.fonts.heading};
+    font-weight: ${props.theme.fontWeights.heading};
+  `
+)
 
 /**
  * Very bold version of <Claim />
