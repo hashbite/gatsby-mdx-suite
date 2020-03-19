@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.4](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-video@0.4.3...@gatsby-mdx-suite/mdx-video@0.4.4) (2020-03-19)
+
+
+### Bug Fixes
+
+* **mdx/video:** use react variant of playsInline attribute ([c372220](https://github.com/axe312ger/gatsby-suite-mdx/commit/c37222044143fb9aa2024079a6b19297a1a6f620))
+
+
+
+
+
 ## [0.4.3](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-video@0.4.2...@gatsby-mdx-suite/mdx-video@0.4.3) (2020-03-19)
 
 
