@@ -9255,6 +9255,13 @@ gatsby-plugin-theme-ui@^0.3.0:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-theme-ui/-/gatsby-plugin-theme-ui-0.3.0.tgz#ab84216536ae45abe09a6edf24156b9dbf50d6a5"
   integrity sha512-Q2tS8EeYMy7AAtt6hvDtEsd1uwrLMjkDNqabyXhAo38AFoWQ0oKtq9u1YqbiRvp1TK06pAMPQQ3to48LAqc9Cw==
 
+gatsby-plugin-webpack-size@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-webpack-size/-/gatsby-plugin-webpack-size-1.0.0.tgz#26e3b733b82b70715e6598c7b95cefc96b9986b2"
+  integrity sha512-gq7iQtFa3G2oCZcmGUSOg4WehYWrGVG7VhkkEFLNmipnYynk4038jGrlYQQjMayMwrCFcwoPAzUg5oICj6wpaQ==
+  dependencies:
+    size-plugin "^1.2.0"
+
 gatsby-react-router-scroll@^2.1.23:
   version "2.1.23"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.23.tgz#ad58ec7b19f5100432c6d9f197503bd2facbd03e"
@@ -10282,6 +10289,14 @@ gzip-size@3.0.0:
   integrity sha1-VGGI6b3DN/Zzdy+BZgRks4nc5SA=
   dependencies:
     duplexer "^0.1.1"
+
+gzip-size@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-5.1.1.tgz#cb9bee692f87c0612b232840a873904e4c135274"
+  integrity sha512-FNHi6mmoHvs1mxZAds4PpdCS6QG8B4C1krxJsMutgxl5t3+GlRTzzI3NEkifXx2pVsOvJdOGSmIgDhQ55FwdPA==
+  dependencies:
+    duplexer "^0.1.1"
+    pify "^4.0.1"
 
 handle-thing@^2.0.0:
   version "2.0.0"
@@ -18050,6 +18065,19 @@ sitemap@^1.13.0:
   dependencies:
     underscore "^1.7.0"
     url-join "^1.1.0"
+
+size-plugin@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/size-plugin/-/size-plugin-1.2.0.tgz#7fefcd4c7f2083414f4a7ba1941718db6f709cb4"
+  integrity sha512-lgB1vsrDM17fhmUrsS5vP1Tg+R57+AEMhms2B6iBuI3EHWVNQv3TANqixzwDOcMV5azX6DIqOaPu2+6CWw7b3Q==
+  dependencies:
+    chalk "^2.4.1"
+    escape-string-regexp "^1.0.5"
+    glob "^7.1.2"
+    gzip-size "^5.0.0"
+    minimatch "^3.0.4"
+    pretty-bytes "^5.1.0"
+    util.promisify "^1.0.0"
 
 slash@^1.0.0:
   version "1.0.0"
