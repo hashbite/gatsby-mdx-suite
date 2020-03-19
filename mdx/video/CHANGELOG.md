@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-video@0.4.2...@gatsby-mdx-suite/mdx-video@0.4.3) (2020-03-19)
+
+
+### Bug Fixes
+
+* **mdx/video:** add missing playsinline attribute for iOS ([e29ff26](https://github.com/axe312ger/gatsby-suite-mdx/commit/e29ff2641884e98629bc50c2ef87d5c41a7a97c4))
+
+
+
+
+
 ## [0.4.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-video@0.4.1...@gatsby-mdx-suite/mdx-video@0.4.2) (2020-03-11)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-video
