@@ -98,6 +98,7 @@ export default function Video({
         onMouseEnter={handleVideoMouseEnter}
         onMouseLeave={handleVideoMouseLeave}
         controls={controls}
+        playsinline={autoplay || !controls}
         preload={preload}
         muted={autoplay || muted}
         poster={video.screenshots && video.screenshots[screenshotIndex]}
