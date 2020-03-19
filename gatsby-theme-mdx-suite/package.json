@@ -37,6 +37,7 @@
     "gatsby-plugin-mdx": "^1.0.77",
     "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-theme-ui": "^0.3.0",
+    "gatsby-plugin-webpack-size": "^1.0.0",
     "gatsby-source-filesystem": "^2.1.50",
     "gatsby-transformer-documentationjs": "^4.1.25",
     "gatsby-transformer-react-docgen": "^5.0.30",

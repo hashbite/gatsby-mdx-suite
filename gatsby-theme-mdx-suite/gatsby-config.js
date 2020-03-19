@@ -34,6 +34,7 @@ module.exports = ({
     // SEO & Performance
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-bundle-stats`,
+    `gatsby-plugin-webpack-size`,
     // Docs
     {
       resolve: `gatsby-source-filesystem`,
