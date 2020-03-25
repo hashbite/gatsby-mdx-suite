@@ -62,6 +62,10 @@ const DocsDataProvider = ({ children }) => {
     <MdxSuiteContext.Provider
       value={{
         ...MdxSuiteData,
+        pageContext: {
+          locale: MdxSuiteData.themeConfig.defaultLocale,
+          title: 'docs',
+        },
         data: {
           images: assetResults.images.nodes || [],
           floating: assetResults.images.nodes || [],
