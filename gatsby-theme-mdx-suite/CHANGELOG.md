@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.13.0...gatsby-theme-mdx-suite@0.14.0) (2020-03-25)
+
+
+### Bug Fixes
+
+* **live-editor:** properly trim empty lines ([e4b3ab1](https://github.com/axe312ger/gatsby-suite-mdx/commit/e4b3ab1b323674c1be18526baf91e07eeca62c7c))
+* **live-editor:** resize error when error is displayed or hidden ([01227af](https://github.com/axe312ger/gatsby-suite-mdx/commit/01227af9b029ecd4fb9766c3059a5752de58f80e))
+
+
+### Features
+
+* **live-editor:** add search and live auto complete ([f4fc311](https://github.com/axe312ger/gatsby-suite-mdx/commit/f4fc311d90641128d805b5d09ea7610eaf77c422))
+
+
+
+
+
 # [0.13.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.12.1...gatsby-theme-mdx-suite@0.13.0) (2020-03-19)
 
 
