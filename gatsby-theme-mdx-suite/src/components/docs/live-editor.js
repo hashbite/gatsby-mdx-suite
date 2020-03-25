@@ -190,7 +190,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
     }
   }, [editorValue])
 
-  const handleEditorChange = (content) => setEditorValue(content)
+  const handleEditorChange = (content) =>
+    setEditorValue(content.replace(/^[ \t]+$/gm, ''))
 
   return (
     <LiveEditorWrapper layout={layout}>
