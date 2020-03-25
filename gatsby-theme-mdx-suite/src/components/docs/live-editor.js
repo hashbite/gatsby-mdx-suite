@@ -11,8 +11,10 @@ import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
 const AceEditor = loadable(async () => {
   const ace = await import('react-ace')
-  await import('ace-builds/src-noconflict/mode-markdown')
-  await import('ace-builds/src-noconflict/theme-dracula')
+  await import('ace-builds/src-min-noconflict/ext-searchbox')
+  await import('ace-builds/src-min-noconflict/ext-language_tools')
+  await import('ace-builds/src-min-noconflict/mode-markdown')
+  await import('ace-builds/src-min-noconflict/theme-dracula')
   return ace
 })
 
@@ -188,8 +190,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
     }
   }, [editorValue])
 
-  const handleEditorChange = (content) =>
-    setEditorValue(content.replace(/^\s+$/gm, '').trim())
+  const handleEditorChange = (content) => setEditorValue(content)
 
   return (
     <LiveEditorWrapper layout={layout}>
@@ -216,13 +217,14 @@ function LiveEditor({ editorId, initialValue, layout }) {
         <AceEditor
           mode="markdown"
           theme="dracula"
+          ref={editorRef}
+          enableEmmet
+          enableLiveAutocompletion
+          tabSize={2}
           onChange={handleEditorChange}
           name={`docs-ace-editor-${editorId}`}
           editorProps={{
             $blockScrolling: true,
-            // Do we get these working?
-            // enableBasicAutocompletion: true,
-            // enableLiveAutocompletion: true,
           }}
           value={editorValue}
           width="100%"
