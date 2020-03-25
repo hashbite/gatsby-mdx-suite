@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.14.0...gatsby-theme-mdx-suite@0.14.1) (2020-03-25)
+
+
+### Bug Fixes
+
+* **live-editor:** ensure pageContext contains dummy data ([fe58806](https://github.com/axe312ger/gatsby-suite-mdx/commit/fe58806d623add23b5f8947b7ae3e8ec3945cd13))
+
+
+
+
+
 # [0.14.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.13.0...gatsby-theme-mdx-suite@0.14.0) (2020-03-25)
 
 
