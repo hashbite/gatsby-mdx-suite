@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useRef } from 'react'
 import { useDebounce } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
@@ -95,6 +95,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
   }
 
   const localStorageId = `mdx-suite-live-editor-${editorId}`
+  const editorRef = useRef(null)
   const [editorValue, setEditorValue] = useState(
     localStorage.getItem(localStorageId) || initialValue || ''
   )
@@ -166,9 +167,15 @@ function LiveEditor({ editorId, initialValue, layout }) {
         setError(null)
         setRawValue(processedValue)
         localStorage.setItem(localStorageId, unverifiedValue)
+        if (editorRef.current) {
+          editorRef.current.editor.resize()
+        }
       } catch (error) {
         console.error(error)
         setError(error)
+        if (editorRef.current) {
+          editorRef.current.editor.resize()
+        }
       }
     }
 
