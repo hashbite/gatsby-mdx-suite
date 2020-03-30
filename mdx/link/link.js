@@ -38,6 +38,7 @@ export default function Link({
 
   if (openInNewTab) {
     linkProps.target = '_blank'
+    linkProps.rel = 'noopener'
   }
 
   const result = useStaticQuery(graphql`
