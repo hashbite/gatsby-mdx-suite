@@ -22,7 +22,7 @@
   "dependencies": {
     "@emotion/styled": "^10.0.23",
     "@gatsby-mdx-suite/contexts": "^0.2.0",
-    "gatsby-link": "^2.2.30"
+    "gatsby-link": "^2.3.1"
   },
   "publishConfig": {
     "access": "public"
