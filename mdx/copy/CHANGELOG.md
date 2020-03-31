@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.6.2...@gatsby-mdx-suite/mdx-copy@0.7.0) (2020-03-31)
+
+
+### Bug Fixes
+
+* **mdx/copy:** fix copy feature inheritance ([485a3f3](https://github.com/axe312ger/gatsby-suite-mdx/commit/485a3f3505bc76360e0a7c09425b5a46bb8629c9))
+
+
+### Features
+
+* **mdx/copy:** add NoWrap component ([cb13617](https://github.com/axe312ger/gatsby-suite-mdx/commit/cb13617ccece203c502ff59cffb5fc8396eb8908))
+* **mdx/copy:** add support for text transforms like uppercase or capitalize ([9750ff9](https://github.com/axe312ger/gatsby-suite-mdx/commit/9750ff9caa5f8122484e1a1b347f72e96899851c))
+
+
+
+
+
 ## [0.6.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.6.1...@gatsby-mdx-suite/mdx-copy@0.6.2) (2020-03-19)
 
 

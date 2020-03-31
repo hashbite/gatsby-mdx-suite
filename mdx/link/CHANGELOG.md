@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-link@0.6.0...@gatsby-mdx-suite/mdx-link@0.6.1) (2020-03-31)
+
+
+### Bug Fixes
+
+* **mdx/link:** ensure rel=noopener is set for links opening in new tabs ([2550a40](https://github.com/axe312ger/gatsby-suite-mdx/commit/2550a40ee229d68146be6d10bd3520e71b75d5a5))
+
+
+
+
+
 # [0.6.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-link@0.5.0...@gatsby-mdx-suite/mdx-link@0.6.0) (2020-03-11)
 
 

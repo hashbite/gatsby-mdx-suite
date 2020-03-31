@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.11.11...gatsby-starter-mdx-suite-contentful@0.12.0) (2020-03-31)
+
+
+### Features
+
+* **starters/contentful:** add modal to notify and reload when new build is published ([c7421de](https://github.com/axe312ger/gatsby-suite-mdx/commit/c7421de6f7f047633f12c87845366020bd6ddf6a))
+* **starters/contentful:** speed up DX and UX by reducing videos to 720p as it is enough for most content ([1ae9287](https://github.com/axe312ger/gatsby-suite-mdx/commit/1ae9287ede40fef32299a4f92cad574ecf99814e))
+
+
+
+
+
 ## [0.11.11](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.11.10...gatsby-starter-mdx-suite-contentful@0.11.11) (2020-03-25)
 
 **Note:** Version bump only for package gatsby-starter-mdx-suite-contentful

@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-animation",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Simply add animations to any element of your MDX document",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",

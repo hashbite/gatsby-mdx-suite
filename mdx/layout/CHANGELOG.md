@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.12.2...@gatsby-mdx-suite/mdx-layout@0.13.0) (2020-03-31)
+
+
+### Bug Fixes
+
+* **mdx/layout:** add missing docs for available gap sizes ([68bcce1](https://github.com/axe312ger/gatsby-suite-mdx/commit/68bcce10199e41a934534393733165e3e53bbe17))
+* **mdx/layout:** improve floating image on small screens ([7bc3ebd](https://github.com/axe312ger/gatsby-suite-mdx/commit/7bc3ebda6f9715314ab2b5c71fbb7b783fd18e86))
+
+
+### Features
+
+* **mdx/layout:** Column content can now be centered ([f5b1263](https://github.com/axe312ger/gatsby-suite-mdx/commit/f5b1263da0d260d3c72163941248f75bd111c806))
+
+
+
+
+
 ## [0.12.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.12.1...@gatsby-mdx-suite/mdx-layout@0.12.2) (2020-03-18)
 
 

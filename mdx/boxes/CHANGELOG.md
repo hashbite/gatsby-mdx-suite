@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.3](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-boxes@0.9.2...@gatsby-mdx-suite/mdx-boxes@0.9.3) (2020-03-31)
+
+
+### Bug Fixes
+
+* **mdx/boxes:** add missing content gap to Boxes ([eb77d81](https://github.com/axe312ger/gatsby-suite-mdx/commit/eb77d814d66882b34e3f63eb18d3ee63353aad66))
+
+
+
+
+
 ## [0.9.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-boxes@0.9.1...@gatsby-mdx-suite/mdx-boxes@0.9.2) (2020-03-19)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes

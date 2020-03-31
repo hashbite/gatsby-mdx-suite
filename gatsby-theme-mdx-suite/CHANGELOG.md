@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.14.1...gatsby-theme-mdx-suite@0.14.2) (2020-03-31)
+
+
+### Bug Fixes
+
+* **docs:** fix menu positioning ([94e08d9](https://github.com/axe312ger/gatsby-suite-mdx/commit/94e08d990e5a23afddaeb9aaec2e8cb33a6d6ea7))
+* **mdx/layout:** add missing docs for available gap sizes ([68bcce1](https://github.com/axe312ger/gatsby-suite-mdx/commit/68bcce10199e41a934534393733165e3e53bbe17))
+
+
+
+
+
 ## [0.14.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.14.0...gatsby-theme-mdx-suite@0.14.1) (2020-03-25)
 
 
