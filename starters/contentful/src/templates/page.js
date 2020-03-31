@@ -115,7 +115,7 @@ export const pageQuery = graphql`
           }
           videos: media(collectionType: "videos") {
             ...MdxSuiteContentfulAsset
-            videoH264(screenshots: "0") {
+            videoH264(screenshots: "0", maxWidth: 1280) {
               path
               screenshots {
                 path
