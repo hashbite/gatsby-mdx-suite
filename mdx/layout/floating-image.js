@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
+import { useBreakpointIndex } from '@theme-ui/match-media'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
@@ -26,21 +27,23 @@ const ContentWrapper = styled.div(
 
 const Content = styled.div(
   ({ theme, reverse }) => css`
-    flex: 0 0 50%;
-    padding-right: calc(${theme.spacing['grid-gap']} / 2);
-    ${reverse &&
-      css`
-        padding-left: calc(${theme.spacing['grid-gap']} / 2);
-        padding-right: 0;
-      `}
+    @media (min-width: ${theme.breakpoints[1]}) {
+      flex: 0 0 50%;
+      padding-right: calc(${theme.spacing['grid-gap']} / 2);
+      ${reverse &&
+        css`
+          padding-left: calc(${theme.spacing['grid-gap']} / 2);
+          padding-right: 0;
+        `}
+    }
   `
 )
 
 const ImageWrapper = styled.div(
   ({ theme, reverse }) => css`
-    ${tw`pb-8`}
+    ${tw`overflow-hidden`}
 
-    @media (min-width: ${theme.breakpoints[2]}) {
+    @media (min-width: ${theme.breakpoints[1]}) {
       ${tw`absolute z-0 flex flex-col justify-center pb-0`}
       top: 0;
       bottom: 0;
@@ -61,26 +64,6 @@ const ImageWrapper = styled.div(
                 object-position: center left !important;
               }
             `
-      }
-
-      & .gatsby-image-wrapper {
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      & svg {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      & > div {
-        height: 100%;
       }
     }
   `
@@ -154,13 +137,18 @@ const ImageWrapper = styled.div(
  * </FloatingImage>
  */
 export default function FloatingImage({ children, imageId, reverse, fit }) {
+  const currentBreakpoint = useBreakpointIndex()
   return (
     <Wrapper>
       <ContentWrapper reverse={reverse}>
         <Content reverse={reverse}>{children}</Content>
       </ContentWrapper>
       <ImageWrapper reverse={reverse}>
-        <Image id={imageId} contextKey="floating" fit={fit} />
+        <Image
+          id={imageId}
+          contextKey="floating"
+          fit={(currentBreakpoint > 1) & fit}
+        />
       </ImageWrapper>
     </Wrapper>
   )
