@@ -27,11 +27,10 @@ const ClaimWrapper = styled(TextBlock)(
  *
  * </Claim>
  */
-const Claim = ({ children, ...props }) => {
-  return <ClaimWrapper {...props}>{children}</ClaimWrapper>
-}
+const Claim = (props) => <ClaimWrapper {...props} />
 
 Claim.propTypes = {
+  ...TextBlock.propTypes,
   children: propTypes.node,
   fontSizeMin: propTypes.string,
   fontSizeMax: propTypes.string,
@@ -40,6 +39,7 @@ Claim.propTypes = {
 }
 
 Claim.defaultProps = {
+  ...TextBlock.defaultProps,
   tag: 'h1',
   fontSizeMin: '32px',
   fontSizeMax: '64px',

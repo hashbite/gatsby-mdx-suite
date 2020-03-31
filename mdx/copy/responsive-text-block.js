@@ -1,15 +1,17 @@
 import React from 'react'
 import propTypes from 'prop-types'
-
+import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 
 import responsiveFont from '@gatsby-mdx-suite/helpers/styling/responsive-font'
 
 import TextBlock from './text-block'
 
-const ResponsiveTextBlockWrapper = styled(TextBlock)`
-  ${responsiveFont}
-`
+const StyledResponsiveTextBlock = styled(TextBlock)(
+  (props) => css`
+    ${responsiveFont(props)}
+  `
+)
 
 /**
  * A regular text block but font size and line height depend on the users view port.
@@ -23,15 +25,10 @@ const ResponsiveTextBlockWrapper = styled(TextBlock)`
  *
  * </ResponsiveTextBlock>
  */
-const ResponsiveTextBlock = ({ children, ...props }) => {
-  return (
-    <ResponsiveTextBlockWrapper {...props}>
-      {children}
-    </ResponsiveTextBlockWrapper>
-  )
-}
+const ResponsiveTextBlock = (props) => <StyledResponsiveTextBlock {...props} />
 
 ResponsiveTextBlock.propTypes = {
+  ...TextBlock.propTypes,
   children: propTypes.node,
   fontSizeMin: propTypes.string,
   fontSizeMax: propTypes.string,
@@ -40,6 +37,7 @@ ResponsiveTextBlock.propTypes = {
 }
 
 ResponsiveTextBlock.defaultProps = {
+  ...TextBlock.defaultProps,
   fontSizeMin: '16px',
   fontSizeMax: '32px',
   lineHeightMin: '1.5em',
