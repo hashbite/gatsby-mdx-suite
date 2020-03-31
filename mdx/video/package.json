@@ -28,7 +28,7 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "@gatsby-mdx-suite/contexts": "^0.2.0",
-    "@researchgate/react-intersection-observer": "^1.0.5"
+    "@researchgate/react-intersection-observer": "^1.1.2"
   },
   "publishConfig": {
     "access": "public"
