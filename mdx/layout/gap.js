@@ -11,12 +11,28 @@ const StyledGap = styled.div(
 
 /**
  * Creates a vertical gap between content.
+ *
  * @example
+ * <Columns>
+ * <Column>
+ *
+ * **Default gap:**
+ *
  * <Image id="randomPictureId" width="120" />
  * <Gap />
  * <Image id="randomPictureId" width="120" />
- * <Gap gap="64"/>
+ *
+ * </Column>
+ * <Column>
+ *
+ * **Gap with size of 32:**
+ *
  * <Image id="randomPictureId" width="120" />
+ * <Gap gap="32"/>
+ * <Image id="randomPictureId" width="120" />
+ *
+ * </Column>
+ * </Columns>
  */
 const Gap = (props) => <StyledGap {...props} />
 
@@ -25,6 +41,7 @@ Gap.defaultProps = {
 }
 
 Gap.propTypes = {
+  /** Actual gap to be applied. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
   gap: propTypes.number,
 }
 
