@@ -4,19 +4,23 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
+import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
+
 const StyledBoxes = styled.div(
-  ({ theme: { sizes, breakpoints } }) => css`
+  ({ theme }) => css`
     position: relative;
     display: grid;
-    grid-gap: ${sizes.gridGutter || '1rem'};
+    grid-gap: ${theme.sizes.gridGutter || '1rem'};
 
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
 
-    @media screen and (min-width: ${breakpoints[0]}) {
+    @media screen and (min-width: ${theme.breakpoints[0]}) {
       grid-template-columns: repeat(48, 1fr);
       grid-auto-rows: 1fr;
     }
+
+    ${applyContentGap({ theme })}
 
     // Ensure square base grid
     &:before {
@@ -34,7 +38,7 @@ const StyledBoxes = styled.div(
 
     // Allow stacking of boxes components
     & + & {
-      margin-top: ${sizes.gridGutter || '1rem'};
+      margin-top: ${theme.sizes.gridGutter || '1rem'};
     }
   `
 )
