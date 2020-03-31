@@ -13,13 +13,14 @@ import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
 const StyledColumnWrapper = styled.div``
 
 const StyledColumn = styled.div(
-  ({ theme, minAspectRatio, backgroundImage }) => css`
+  ({ theme, minAspectRatio, backgroundImage, center }) => css`
     ${tw`relative h-full`}
 
     background: ${theme.colors.background};
     color: ${theme.colors.text};
 
-    ${minAspectRatio &&
+    ${
+      minAspectRatio &&
       css`
         &::before {
           content: '';
@@ -34,19 +35,28 @@ const StyledColumn = styled.div(
           display: table;
           clear: both;
         }
-      `}
+      `
+    }
 
-    ${backgroundImage &&
+    ${
+      backgroundImage &&
       css`
         background-image: url(${backgroundImage});
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
-      `}
+      `
+    }
+
+      ${center && tw`flex flex-col justify-center text-center`}
   `
 )
 
-const ColumnContent = tw.div`p-8 relative z-10`
+const ColumnContent = styled.div(
+  () => css`
+    ${tw`p-8 relative z-10`}
+  `
+)
 
 /**
  * Column to be placed in a `<Columns />` element.
@@ -195,7 +205,9 @@ const Column = ({
   )
 }
 
-Column.defaultProps = {}
+Column.defaultProps = {
+  center: false,
+}
 
 Column.propTypes = {
   children: propTypes.node,
@@ -209,6 +221,8 @@ Column.propTypes = {
   backgroundImage: propTypes.string,
   /* Internal background image id */
   backgroundImageId: propTypes.string,
+  /* Center content horizontally and vertically within this column */
+  center: propTypes.bool,
   /* Apply show animation */
   showAnimation: propTypes.string,
 }
