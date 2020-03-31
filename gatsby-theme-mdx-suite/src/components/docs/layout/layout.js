@@ -40,7 +40,7 @@ const Menu = styled.nav(
     md:flex-initial md:flex-row
     md:text-sm lg:text-base
   `}
-    ${!menuOpen && tw`hidden md:block`}
+    ${!menuOpen && tw`hidden md:flex md:justify-end`}
   `
 )
 
