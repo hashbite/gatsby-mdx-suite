@@ -20,7 +20,7 @@ const ThemeSectionHeader = styled(Styled.h1)(
     }
   `
 )
-const ThemeSectionContent = tw.div`mx-auto max-w-6xl py-8 px-4`
+const ThemeSectionContent = tw.div`mx-auto max-w-6xl py-8 px-4 overflow-x-scroll`
 const ThemeRawWrapper = tw.pre`my-4 p-4 border border-color-gray-500 overflow-scroll bg-gray-200`
 const ColorSets = tw.div`grid gap-grid-gap grid-cols-2 md:grid-cols-3 lg:grid-cols-4`
 
@@ -50,14 +50,23 @@ const Breakpoints = tw.div`flex flex-col items-center overflow-x-scroll`
 
 const Breakpoint = styled.div(
   ({ width }) => css`
-  ${tw`mt-8 border border-color-red-300 border-t-0 text-center`}
+  ${tw`mt-8 border border-color-red-300 text-center`}
   width: ${width};
-
-  &:before {
-    content: '${width}';
-  }
+  min-height: 0.8rem;
+  border-top: none;
 `
 )
+
+const Length = styled.div(
+  ({ width }) => css`
+  ${tw`border border-color-red-300 text-center`}
+  width: ${width};
+  min-height: 0.8rem;
+  border-top: none;
+`
+)
+
+const Sizes = styled(Styled.table)``
 
 const FontPreview = styled.div`
   & + & {
@@ -76,18 +85,17 @@ function ThemeDocs() {
       <LayoutMain>
         <ThemeWrapper>
           <ThemeSection>
-            <ThemeSectionHeader>
-              <Styled.h1>Theme documentation</Styled.h1>
-            </ThemeSectionHeader>
+            <ThemeSectionHeader>Theme documentation</ThemeSectionHeader>
             <ThemeSectionContent>
-              This gives you an overview about the theme configuration of this
-              project.
+              <p>
+                This gives you an overview about the theme configuration of this
+                project.
+              </p>
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
-            <ThemeSectionHeader>
-              <Styled.h1>Colors</Styled.h1>
-            </ThemeSectionHeader>
+            <a id="colors" />
+            <ThemeSectionHeader>Colors</ThemeSectionHeader>
             <ThemeSectionContent>
               <table>
                 <tbody>
@@ -122,8 +130,9 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
+            <a id="color-sets" />
             <ThemeSectionHeader>
-              <Styled.h2>Color Sets</Styled.h2>
+              <Styled.h1>Color Sets</Styled.h1>
             </ThemeSectionHeader>
             <ThemeSectionContent>
               <ColorSets>
@@ -172,19 +181,35 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
-            <ThemeSectionHeader>
-              <Styled.h2>Breakpoints:</Styled.h2>
-            </ThemeSectionHeader>
+            <a id="breakpoints" />
+            <ThemeSectionHeader>Breakpoints</ThemeSectionHeader>
             <Breakpoints>
-              {theme.breakpoints.map((width) => (
-                <Breakpoint key={width} width={width} />
+              {theme.breakpoints.map((width, i) => (
+                <Breakpoint key={width} width={width}>
+                  {i} ({width})
+                </Breakpoint>
               ))}
             </Breakpoints>
           </ThemeSection>
           <ThemeSection>
-            <ThemeSectionHeader>
-              <Styled.h2>Fonts:</Styled.h2>
-            </ThemeSectionHeader>
+            <a id="sizes" />
+            <ThemeSectionHeader>Sizes</ThemeSectionHeader>
+            <ThemeSectionContent>
+              <Sizes>
+                {Object.keys(theme.sizes).map((size) => (
+                  <Styled.tr key={size}>
+                    <Styled.td>{size}</Styled.td>
+                    <Styled.td>{theme.sizes[size]}</Styled.td>
+                    <Styled.td>
+                      <Length width={theme.sizes[size]} />
+                    </Styled.td>
+                  </Styled.tr>
+                ))}
+              </Sizes>
+            </ThemeSectionContent>
+          </ThemeSection>
+          <ThemeSection>
+            <ThemeSectionHeader>Fonts</ThemeSectionHeader>
             <ThemeSectionContent>
               {Object.keys(theme.fonts).map((font) => (
                 <FontPreview key={font} font={font}>
@@ -249,9 +274,7 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
-            <ThemeSectionHeader>
-              <Styled.h2>Raw processed theme config</Styled.h2>
-            </ThemeSectionHeader>
+            <ThemeSectionHeader>Raw processed theme config</ThemeSectionHeader>
             <ThemeSectionContent>
               <ThemeRawWrapper>
                 {JSON.stringify(
