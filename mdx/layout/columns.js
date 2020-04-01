@@ -22,17 +22,21 @@ const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
     ${maxColumns === 11 && tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-11`}
     ${maxColumns === 12 && tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-12`}
 
-    ${template &&
+    ${
+      template &&
       css`
         @media screen and (min-width: ${theme.breakpoints[0]}) {
           grid-template-columns: ${template};
         }
-      `}
+      `
+    }
 
-    ${center &&
+    ${
+      center &&
       css`
         text-align: center;
-      `}
+      `
+    }
   `
 })
 
@@ -100,7 +104,7 @@ export default function Columns({ children, maxColumns, reverseAt, ...props }) {
   }
 
   if (currentBreakpoint >= reverseAt) {
-    children = children.reverse()
+    children = children.slice().reverse()
   }
 
   return (
