@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.13.0...@gatsby-mdx-suite/mdx-layout@0.13.1) (2020-04-01)
+
+
+### Bug Fixes
+
+* **mdx/layout:** properly reverse columns when children are frozen ([682e2f1](https://github.com/axe312ger/gatsby-suite-mdx/commit/682e2f1b70c6465e435c81eed95ab02e24ca1bbb))
+
+
+
+
+
 # [0.13.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.12.2...@gatsby-mdx-suite/mdx-layout@0.13.0) (2020-03-31)
 
 

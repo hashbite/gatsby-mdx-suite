@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-form",
-  "version": "0.4.9",
+  "version": "0.4.10",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "@emotion/styled": "^10.0.27",
     "@gatsby-mdx-suite/contexts": "^0.2.1",
     "@gatsby-mdx-suite/i18n": "^0.3.3",
-    "@gatsby-mdx-suite/mdx-layout": "^0.13.0"
+    "@gatsby-mdx-suite/mdx-layout": "^0.13.1"
   },
   "publishConfig": {
     "access": "public"
