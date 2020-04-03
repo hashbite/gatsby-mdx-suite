@@ -60,7 +60,6 @@ const ColumnContent = styled.div(
       ${padding &&
       css`
         padding: ${theme.spacing[padding]};
-        color: red;
       `}
     `
 )
