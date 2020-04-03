@@ -137,13 +137,13 @@ BoxCarouselSlide.propTypes = {
    * https://developer.mozilla.org/en-US/docs/Web/CSS/object-position
    */
   backgroundImagePosition: propTypes.string,
-  /* Id of an internal page to link to */
+  /** Id of an internal page to link to */
   linkId: propTypes.string,
-  /* URI of an external page to link to */
+  /** URI of an external page to link to */
   href: propTypes.string,
-  /* Option hash to attach to the link href */
+  /** Option hash to attach to the link href */
   hash: propTypes.string,
-  /* Optional title. Should be set for a11y and seo reasons when link has non-text content. */
+  /** Optional title. Should be set for a11y and seo reasons when link has non-text content. */
   title: propTypes.string,
 }
 

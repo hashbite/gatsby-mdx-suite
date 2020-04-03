@@ -15,11 +15,13 @@ const SectionWrapper = styled.section(({ hasBackgroundImage, theme }) => {
     background: ${theme.colors.background};
     color: ${theme.colors.text};
 
-    ${hasBackgroundImage &&
+    ${
+      hasBackgroundImage &&
       css`
         ${tw`text-white`}
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
-      `}
+      `
+    }
   `
 })
 
@@ -126,8 +128,8 @@ Section.propTypes = {
   children: propTypes.node.isRequired,
   /** image id to display as background image */
   backgroundImageId: propTypes.string,
-  /* Define a color set for this box */
+  /** Define a color set for this box */
   colorSet: propTypes.string,
-  /* Overwrite specific colors */
+  /** Overwrite specific colors */
   colors: propTypes.object,
 }

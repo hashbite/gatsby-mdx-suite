@@ -211,19 +211,19 @@ Column.defaultProps = {
 
 Column.propTypes = {
   children: propTypes.node,
-  /* Define a color set for this box */
+  /** Define a color set for this box */
   colorSet: propTypes.string,
-  /* Overwrite specific colors */
+  /** Overwrite specific colors */
   colors: propTypes.object,
-  /* Optional minimum aspect ratio. Either a mathematical expression or a number. ("16 / 9" or "1.5") */
+  /** Optional minimum aspect ratio. Either a mathematical expression or a number. ("16 / 9" or "1.5") */
   minAspectRatio: propTypes.string,
-  /* External background image URI */
+  /** External background image URI */
   backgroundImage: propTypes.string,
-  /* Internal background image id */
+  /** Internal background image id */
   backgroundImageId: propTypes.string,
-  /* Center content horizontally and vertically within this column */
+  /** Center content horizontally and vertically within this column */
   center: propTypes.bool,
-  /* Apply show animation */
+  /** Apply show animation */
   showAnimation: propTypes.string,
 }
 

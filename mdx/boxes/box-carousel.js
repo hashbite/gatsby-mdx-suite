@@ -123,7 +123,7 @@ BoxCarousel.propTypes = {
   autoplay: propTypes.bool,
   autoplayInterval: propTypes.number,
   loop: propTypes.bool,
-  /* Apply show animation */
+  /** Apply show animation */
   showAnimation: propTypes,
 }
 

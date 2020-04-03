@@ -130,19 +130,19 @@ Link.defaultProps = {
 }
 
 Link.propTypes = {
-  /* Id of an internal page to link to */
+  /** Id of an internal page to link to */
   id: propTypes.string,
-  /* Slug of an internal page to link to. **Note:** use this for hard-coded pages **only** */
+  /** Slug of an internal page to link to. **Note:** use this for hard-coded pages **only** */
   to: propTypes.string,
-  /* URI of an external page to link to */
+  /** URI of an external page to link to */
   href: propTypes.string,
-  /* Option hash to attach to the link href */
+  /** Option hash to attach to the link href */
   hash: propTypes.string,
-  /* Optional title. Should be set for a11y and seo reasons when link has non-text content. */
+  /** Optional title. Should be set for a11y and seo reasons when link has non-text content. */
   title: propTypes.string,
-  /* Optional link class */
+  /** Optional link class */
   className: propTypes.string,
-  /* Open linked page in new tag. Should only be used for edge-cases. See: https://css-tricks.com/use-target_blank/ */
+  /** Open linked page in new tag. Should only be used for edge-cases. See: https://css-tricks.com/use-target_blank/ */
   openInNewTab: propTypes.bool,
   children: propTypes.node,
 }

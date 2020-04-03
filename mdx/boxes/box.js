@@ -33,15 +33,15 @@ const BoxContent = styled('div', { shouldForwardProp })(
 
     @media screen and (min-width: ${breakpoints[0]}) {
       ${scale &&
-        scale !== 1 &&
-        css`
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          transform: scale(${scale});
-        `}
+      scale !== 1 &&
+      css`
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: scale(${scale});
+      `}
     }
   `
 )
@@ -56,10 +56,10 @@ const BackgroundImageWrapper = styled('div', { shouldForwardProp })(
     right: 0;
 
     ${scale &&
-      scale !== 1 &&
-      css`
-        transform: scale(${scale});
-      `}
+    scale !== 1 &&
+    css`
+      transform: scale(${scale});
+    `}
   `
 )
 
@@ -213,19 +213,19 @@ Box.propTypes = {
    * https://developer.mozilla.org/en-US/docs/Web/CSS/object-position
    */
   backgroundImagePosition: propTypes.string,
-  /* Id of an internal page to link to */
+  /** Id of an internal page to link to */
   linkId: propTypes.string,
-  /* URI of an external page to link to */
+  /** URI of an external page to link to */
   href: propTypes.string,
-  /* Option hash to attach to the link href */
+  /** Option hash to attach to the link href */
   hash: propTypes.string,
-  /* Optional title. Should be set for a11y and seo reasons when link has non-text content. */
+  /** Optional title. Should be set for a11y and seo reasons when link has non-text content. */
   title: propTypes.string,
-  /* Define a color set for this box */
+  /** Define a color set for this box */
   colorSet: propTypes.string,
-  /* Overwrite specific colors */
+  /** Overwrite specific colors */
   colors: propTypes.object,
-  /* Apply show animation */
+  /** Apply show animation */
   showAnimation: propTypes.string,
 }
 

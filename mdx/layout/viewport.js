@@ -20,11 +20,13 @@ const ViewportWrapper = styled.div(
       background: ${theme.colors.background};
       color: ${theme.colors.text};
 
-      ${hasBackgroundImage &&
+      ${
+        hasBackgroundImage &&
         css`
           ${tw`text-white`}
           text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
-        `}
+        `
+      }
     `
   }
 )
@@ -116,8 +118,8 @@ Viewport.propTypes = {
   horizontalAlign: propTypes.string,
   /** vertical content alignment */
   verticalAlign: propTypes.string,
-  /* Define a color set for this box */
+  /** Define a color set for this box */
   colorSet: propTypes.string,
-  /* Overwrite specific colors */
+  /** Overwrite specific colors */
   colors: propTypes.object,
 }
