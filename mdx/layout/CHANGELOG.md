@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.14.1...@gatsby-mdx-suite/mdx-layout@0.14.2) (2020-04-03)
+
+
+### Bug Fixes
+
+* **mdx/layout:** allow values from theme.sizes for Column padding ([0f58336](https://github.com/axe312ger/gatsby-suite-mdx/commit/0f5833679b8bce8e7cee1a8fb13caab04c8d1a14))
+
+
+
+
+
 ## [0.14.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.14.0...@gatsby-mdx-suite/mdx-layout@0.14.1) (2020-04-03)
 
 
