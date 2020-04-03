@@ -53,16 +53,30 @@ const StyledColumn = styled.div(
 )
 
 const ColumnContent = styled.div(
-  () => css`
-    ${tw`p-8 relative z-10`}
-  `
+  ({ padding, theme }) =>
+    css`
+      ${tw`relative z-10`}
+
+      ${padding &&
+      css`
+        padding: ${theme.spacing[padding]};
+        color: red;
+      `}
+    `
 )
 
 /**
  * Column to be placed in a `<Columns />` element.
  *
  * @example
- * <Columns>
+ * <Columns maxColumns="2">
+ * <Column>
+ *
+ * # Example text
+ *
+ * Default Layout.
+ *
+ * </Column>
  * <Column>
  *
  * # Example text
@@ -79,7 +93,15 @@ const ColumnContent = styled.div(
  * The quick brown fox jumps over the lazy dog
  *
  * </Column>
- * <Column backgroundImageId="randomPictureId" />
+ * <Column colorSet="red">
+ *
+ * # Example Text
+ *
+ * Colored example.
+ *
+ * The quick brown fox jumps over the lazy dog
+ *
+ * </Column>
  * </Columns>
  * <Columns>
  * <Column>
@@ -169,6 +191,7 @@ const Column = ({
   backgroundImage,
   backgroundImageId,
   showAnimation,
+  padding,
   ...columnProps
 }) => {
   const { animationClass, animationObserverProps } = useAnimation({
@@ -179,6 +202,9 @@ const Column = ({
     columnProps.className = cx(columnProps.className, animationClass)
   }
 
+  const hasBackground = !!colorSet || !!colors.background || !!backgroundImageId
+  const contentPadding = padding || (hasBackground ? 'grid-gap' : null)
+
   let columnContent = (
     <StyledColumnWrapper>
       <StyledColumn
@@ -186,7 +212,9 @@ const Column = ({
         backgroundImage={backgroundImage}
         {...columnProps}
       >
-        {children && <ColumnContent>{children}</ColumnContent>}
+        {children && (
+          <ColumnContent padding={contentPadding}>{children}</ColumnContent>
+        )}
         {backgroundImageId && <Image id={backgroundImageId} fit="fill" />}
       </StyledColumn>
     </StyledColumnWrapper>
@@ -207,6 +235,8 @@ const Column = ({
 
 Column.defaultProps = {
   center: false,
+  padding: null,
+  colors: {},
 }
 
 Column.propTypes = {
@@ -225,6 +255,8 @@ Column.propTypes = {
   center: propTypes.bool,
   /** Apply show animation */
   showAnimation: propTypes.string,
+  /** Define the inner gab to the content */
+  padding: propTypes.string,
 }
 
 export default Column
