@@ -59,7 +59,7 @@ const ColumnContent = styled.div(
 
       ${padding &&
       css`
-        padding: ${theme.spacing[padding]};
+        padding: ${theme.spacing[padding] || theme.sizes[padding]};
       `}
     `
 )
