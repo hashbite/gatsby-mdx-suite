@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.14.0...@gatsby-mdx-suite/mdx-layout@0.14.1) (2020-04-03)
+
+
+### Bug Fixes
+
+* **mdx/layout:** remove red font color from Column elements with background ([19f2d97](https://github.com/axe312ger/gatsby-suite-mdx/commit/19f2d97e644dbe0add8cfb621bc9e82f73c49bfa))
+
+
+
+
+
 # [0.14.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.13.1...@gatsby-mdx-suite/mdx-layout@0.14.0) (2020-04-03)
 
 
