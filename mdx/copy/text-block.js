@@ -34,10 +34,10 @@ const StyledTextBlock = styled(Font)(
     display: block;
 
     ${align &&
-    align !== TextBlock.defaultProps.align &&
-    css`
-      text-align: ${align};
-    `}
+      align !== TextBlock.defaultProps.align &&
+      css`
+        text-align: ${align};
+      `}
   `
 )
 

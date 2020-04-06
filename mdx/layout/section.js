@@ -15,13 +15,11 @@ const SectionWrapper = styled.section(({ hasBackgroundImage, theme }) => {
     background: ${theme.colors.background};
     color: ${theme.colors.text};
 
-    ${
-      hasBackgroundImage &&
+    ${hasBackgroundImage &&
       css`
         ${tw`text-white`}
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
-      `
-    }
+      `}
   `
 })
 

@@ -33,15 +33,15 @@ const BoxContent = styled('div', { shouldForwardProp })(
 
     @media screen and (min-width: ${breakpoints[0]}) {
       ${scale &&
-      scale !== 1 &&
-      css`
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        transform: scale(${scale});
-      `}
+        scale !== 1 &&
+        css`
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          transform: scale(${scale});
+        `}
     }
   `
 )
@@ -56,10 +56,10 @@ const BackgroundImageWrapper = styled('div', { shouldForwardProp })(
     right: 0;
 
     ${scale &&
-    scale !== 1 &&
-    css`
-      transform: scale(${scale});
-    `}
+      scale !== 1 &&
+      css`
+        transform: scale(${scale});
+      `}
   `
 )
 

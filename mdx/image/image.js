@@ -39,13 +39,13 @@ export const ImageWrapper = styled('div', {
     }
 
     ${width &&
-    css`
-      width: ${parseCssValue(width)};
-    `}
+      css`
+        width: ${parseCssValue(width)};
+      `}
     ${height &&
-    css`
-      height: ${parseCssValue(height)};
-    `}
+      css`
+        height: ${parseCssValue(height)};
+      `}
   `
 )
 
