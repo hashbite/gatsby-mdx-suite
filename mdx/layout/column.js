@@ -14,7 +14,7 @@ const StyledColumnWrapper = styled.div``
 
 const StyledColumn = styled.div(
   ({ theme, minAspectRatio, backgroundImage, center }) => css`
-    ${tw`relative h-full`}
+    ${tw`relative h-full flex`}
 
     background: ${theme.colors.background};
     color: ${theme.colors.text};
@@ -47,16 +47,20 @@ const StyledColumn = styled.div(
         background-repeat: no-repeat;
       `
     }
-
-      ${center && tw`flex flex-col justify-center text-center`}
-  `
+`
 )
 
+const ColumnContentWrapper = styled.div(
+  ({ center }) =>
+    css`
+      ${tw`relative z-10 flex flex-col w-full`}
+
+      ${center && tw`justify-center items-center`}
+    `
+)
 const ColumnContent = styled.div(
   ({ padding, theme }) =>
     css`
-      ${tw`relative z-10`}
-
       ${padding &&
       css`
         padding: ${theme.spacing[padding] || theme.sizes[padding]};
@@ -191,6 +195,7 @@ const Column = ({
   backgroundImageId,
   showAnimation,
   padding,
+  center,
   ...columnProps
 }) => {
   const { animationClass, animationObserverProps } = useAnimation({
@@ -212,7 +217,9 @@ const Column = ({
         {...columnProps}
       >
         {children && (
-          <ColumnContent padding={contentPadding}>{children}</ColumnContent>
+          <ColumnContentWrapper center={center}>
+            <ColumnContent padding={contentPadding}>{children}</ColumnContent>
+          </ColumnContentWrapper>
         )}
         {backgroundImageId && <Image id={backgroundImageId} fit="fill" />}
       </StyledColumn>
