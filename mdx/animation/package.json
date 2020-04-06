@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-animation",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Simply add animations to any element of your MDX document",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -25,7 +25,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@gatsby-mdx-suite/helpers": "^0.8.0",
+    "@gatsby-mdx-suite/helpers": "^0.8.1",
     "@researchgate/react-intersection-observer": "^1.1.2",
     "emotion": "^10.0.27"
   },

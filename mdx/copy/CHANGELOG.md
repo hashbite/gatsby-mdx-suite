@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.8.0...@gatsby-mdx-suite/mdx-copy@0.8.1) (2020-04-06)
+
+
+### Bug Fixes
+
+* **mdx/copy:** ensure custom svg icons size properly ([b7a5c93](https://github.com/axe312ger/gatsby-suite-mdx/commit/b7a5c936fa470ae7a359ac6c7314e43f882d8f95))
+
+
+
+
+
 # [0.8.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.7.0...@gatsby-mdx-suite/mdx-copy@0.8.0) (2020-04-06)
 
 

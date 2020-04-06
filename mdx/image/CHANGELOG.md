@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.5...@gatsby-mdx-suite/mdx-image@0.5.6) (2020-04-06)
+
+
+### Bug Fixes
+
+* **mdx/image:** ensure image properly acts as static element by default ([c30a0a0](https://github.com/axe312ger/gatsby-suite-mdx/commit/c30a0a03e6091d030c2c45e97c330ac008b33e48))
+
+
+
+
+
 ## [0.5.5](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.4...@gatsby-mdx-suite/mdx-image@0.5.5) (2020-04-06)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
