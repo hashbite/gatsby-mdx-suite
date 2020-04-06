@@ -39,13 +39,13 @@ export const ImageWrapper = styled('div', {
     }
 
     ${width &&
-      css`
-        width: ${parseCssValue(width)};
-      `}
+    css`
+      width: ${parseCssValue(width)};
+    `}
     ${height &&
-      css`
-        height: ${parseCssValue(height)};
-      `}
+    css`
+      height: ${parseCssValue(height)};
+    `}
   `
 )
 
@@ -156,7 +156,7 @@ export default function Image({
       <ImageWrapper fitsParent={fitsParent} {...dimensionProps} {...restProps}>
         <GatsbyImage
           fluid={fluid}
-          style={{ position: 'static' }}
+          style={{ position: fitsParent ? 'static' : 'relative' }}
           {...imgProps}
           {...dimensionProps}
           objectFit={fit}
