@@ -25,12 +25,18 @@ const ListItemContent = tw.div`pl-4`
  * <ListItem icon="star">Example for icon **star**</ListItem>
  * <ListItem icon="starOutlined">Example for icon **starOutlined**</ListItem>
  * </List>
+ *
+ * <List>
+ * <ListItem icon="check" iconColor="#bada55">Colored example for icon **check**</ListItem>
+ * <ListItem icon="circle" iconColor="blue">Colored example for icon **circle**</ListItem>
+ * <ListItem icon="dot" iconColor="red-500">Colored example for icon **dot**</ListItem>
+ * </List>
  */
-const ListItem = ({ icon, children, ...props }) => {
+const ListItem = ({ icon, iconColor, children, ...props }) => {
   return (
     <StyledListItem {...props}>
       <ListItemIconWrapper>
-        <Icon icon={icon} valign="center" />
+        <Icon icon={icon} color={iconColor} valign="center" />
       </ListItemIconWrapper>
       <ListItemContent>{children}</ListItemContent>
     </StyledListItem>
@@ -42,8 +48,9 @@ ListItem.defaultProps = {
 }
 
 ListItem.propTypes = {
-  icon: propTypes.string,
   children: propTypes.node.isRequired,
+  icon: propTypes.string,
+  iconColor: propTypes.string,
 }
 
 export default ListItem

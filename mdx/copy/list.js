@@ -9,31 +9,54 @@ const StyledList = tw.ul`mt-4 mb-8 p-0`
 /**
  * @example
  * <List>
- *
- * Every paragraph
- * will become a new item
- *
- * Just make sure to have a empty line inbetween.
- *
- * <div>
- *
- * # Grouping
- *
- * Works with the `<div/>` element.
- *
- * </div>
- *
+ * <ListItem>Foo</ListItem>
+ * <ListItem>Bar</ListItem>
+ * <ListItem>Baz</ListItem>
+ * </List>
+ * <List defaultIcon="dotSmall">
+ * <ListItem>Foo</ListItem>
+ * <ListItem>Bar</ListItem>
+ * <ListItem>Baz</ListItem>
+ * </List>
+ * <List defaultIcon="star" defaultIconColor="red">
+ * <ListItem>Foo</ListItem>
+ * <ListItem icon="circle">Bar</ListItem>
+ * <ListItem icon="check" iconColor="green">Baz</ListItem>
  * </List>
  * <List>
- * <ListItem icon="check">Example for icon **check**</ListItem>
- * <ListItem icon="circle">Example for icon **circle**</ListItem>
- * <ListItem icon="dot">Example for icon **dot**</ListItem>
- * <ListItem icon="dotSmall">Example for icon **dotSmall**</ListItem>
- * <ListItem icon="star">Example for icon **star**</ListItem>
- * <ListItem icon="starOutlined">Example for icon **starOutlined**</ListItem>
+ * <ListItem icon="check">
+ *
+ * Example for icon **check** with Markdown formatting applied
+ *
+ * </ListItem>
+ * <ListItem icon="circle">
+ *
+ * Example for icon **circle** with Markdown formatting applied
+ *
+ * </ListItem>
+ * <ListItem icon="dot">
+ *
+ * Example for icon **dot** with Markdown formatting applied
+ *
+ * </ListItem>
+ * <ListItem icon="dotSmall">
+ *
+ * Example for icon **dotSmall** with Markdown formatting applied
+ *
+ * </ListItem>
+ * <ListItem icon="star">
+ *
+ * Example for icon **star** with Markdown formatting applied
+ *
+ * </ListItem>
+ * <ListItem icon="starOutlined">
+ *
+ * Example for icon **starOutlined** with Markdown formatting applied
+ *
+ * </ListItem>
  * </List>
  */
-export default function List({ children }) {
+export default function List({ defaultIcon, defaultIconColor, children }) {
   if (!children) {
     return null
   }
@@ -43,18 +66,31 @@ export default function List({ children }) {
   }
 
   children = children.map((child, i) =>
-    child.props.mdxType === 'li' || child.props.mdxType === 'ListItem' ? (
-      <ListItem key={i} icon={child.props.icon}>
+    child.props &&
+    (child.props.mdxType === 'li' || child.props.mdxType === 'ListItem') ? (
+      <ListItem
+        key={i}
+        icon={child.props.icon || defaultIcon}
+        iconColor={child.props.iconColor || defaultIconColor}
+      >
         {child.props.children}
       </ListItem>
     ) : (
-      <ListItem key={i}>{child}</ListItem>
+      <ListItem key={i} icon={defaultIcon} iconColor={defaultIconColor}>
+        {child}
+      </ListItem>
     )
   )
 
   return <StyledList>{children}</StyledList>
 }
 
+List.defaultProps = {
+  defaultIcon: 'dot',
+}
+
 List.propTypes = {
   children: propTypes.node.isRequired,
+  defaultIcon: propTypes.string,
+  defaultIconColor: propTypes.string,
 }
