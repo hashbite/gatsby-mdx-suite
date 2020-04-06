@@ -2,6 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import loadable from '@loadable/component'
 import tw from 'twin.macro'
+import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
 
 import DataProvider from '../../components/docs/data-provider'
@@ -59,6 +60,32 @@ const DocsPreviewPage = () => {
   return (
     <DataProvider>
       <Styled.root>
+        <Global
+          styles={(theme) => css`
+            body {
+              margin: 0;
+              overflow-x: hidden;
+            }
+            a {
+              color: inherit;
+              text-decoration: none;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            ul,
+            ol,
+            li {
+              &:last-child {
+                margin-bottom: 0 !important;
+              }
+            }
+          `}
+        />
         <MDXErrorBoundary>
           <MDX>{JSON.parse(content)}</MDX>
         </MDXErrorBoundary>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'gatsby-link'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
 import tw from 'twin.macro'
 
@@ -55,6 +55,32 @@ const Layout = ({ children, title }) => {
   }
   return (
     <Styled.root>
+      <Global
+        styles={(theme) => css`
+          body {
+            margin: 0;
+            overflow-x: hidden;
+          }
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          p,
+          ul,
+          ol,
+          li {
+            &:last-child {
+              margin-bottom: 0 !important;
+            }
+          }
+        `}
+      />
       <DocsWrapper>
         <LayoutHeader>
           <DocsTitle>
