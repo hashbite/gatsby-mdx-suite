@@ -68,6 +68,8 @@ const ColumnContent = styled.div(
     `
 )
 
+const BackgroundImage = tw(Image)`absolute inset-0`
+
 /**
  * Column to be placed in a `<Columns />` element.
  *
@@ -221,7 +223,9 @@ const Column = ({
             <ColumnContent padding={contentPadding}>{children}</ColumnContent>
           </ColumnContentWrapper>
         )}
-        {backgroundImageId && <Image id={backgroundImageId} fit="fill" />}
+        {backgroundImageId && (
+          <BackgroundImage id={backgroundImageId} fit="fill" />
+        )}
       </StyledColumn>
     </StyledColumnWrapper>
   )
