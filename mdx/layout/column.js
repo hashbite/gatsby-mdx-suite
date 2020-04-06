@@ -19,8 +19,7 @@ const StyledColumn = styled.div(
     background: ${theme.colors.background};
     color: ${theme.colors.text};
 
-    ${
-      minAspectRatio &&
+    ${minAspectRatio &&
       css`
         &::before {
           content: '';
@@ -35,18 +34,15 @@ const StyledColumn = styled.div(
           display: table;
           clear: both;
         }
-      `
-    }
+      `}
 
-    ${
-      backgroundImage &&
+    ${backgroundImage &&
       css`
         background-image: url(${backgroundImage});
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
-      `
-    }
+      `}
 `
 )
 
@@ -62,9 +58,9 @@ const ColumnContent = styled.div(
   ({ padding, theme }) =>
     css`
       ${padding &&
-      css`
-        padding: ${theme.spacing[padding] || theme.sizes[padding]};
-      `}
+        css`
+          padding: ${theme.spacing[padding] || theme.sizes[padding]};
+        `}
     `
 )
 

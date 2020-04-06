@@ -26,6 +26,7 @@ const keyframes = emotionKeyframes`
   }}`
 
 const styles = css`
-  backface-visibility: visible !important;`
+  backface-visibility: visible !important;
+`
 
 export default { keyframes, styles }

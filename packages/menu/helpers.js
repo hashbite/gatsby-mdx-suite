@@ -7,7 +7,7 @@ export function findActiveTrail({ id, subTree }) {
     if (item.subitems) {
       const subTreeResult = findActiveTrail({
         id,
-        subTree: item.subitems
+        subTree: item.subitems,
       })
       if (subTreeResult.length) {
         return [item.pageId, ...subTreeResult]
