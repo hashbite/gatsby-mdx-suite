@@ -11,14 +11,21 @@ const IconWrapper = styled.span(
     css`
       display: inline-block;
       transform-origin: 50% 50%;
+
       ${color &&
-      css`
-        color: ${selectColor(theme.colors, color)};
-      `}
+        css`
+          color: ${selectColor(theme.colors, color)};
+        `}
+
       ${scale &&
-      css`
-        transform: scale(${scale});
-      `}
+        css`
+          transform: scale(${scale});
+        `}
+
+      svg {
+        width: 1em;
+        height: auto;
+      }
     `
 )
 
