@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { useThemeUI, Styled } from 'theme-ui'
 import tw from 'twin.macro'
 
+import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
+import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 import Layout from './layout/layout'
 import LayoutMain from './layout/main'
@@ -74,11 +76,17 @@ const FontPreview = styled.div`
   }
 `
 
+const Grid = tw.div`grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4`
+const GridItem = tw.div`text-center`
+const GridItemTitle = tw.div`mt-4 text-sm text-gray-800`
+const GridItemContent = tw.div``
+
 const ColorSetTitle = tw(Styled.h2)`mb-4`
 
 function ThemeDocs() {
   const context = useThemeUI()
   const { theme, colorMode } = context
+  const icons = useContext(IconsContext)
 
   return (
     <Layout title="Theme">
@@ -178,6 +186,24 @@ function ThemeDocs() {
                     )
                   })}
               </ColorSets>
+            </ThemeSectionContent>
+          </ThemeSection>
+          <ThemeSection>
+            <a id="icons" />
+            <ThemeSectionHeader>Icons</ThemeSectionHeader>
+            <ThemeSectionContent>
+              <Grid>
+                {Object.keys(icons).map((name) => {
+                  return (
+                    <GridItem key={name}>
+                      <GridItemContent>
+                        <Icon icon={name} />
+                      </GridItemContent>
+                      <GridItemTitle>{name}</GridItemTitle>
+                    </GridItem>
+                  )
+                })}
+              </Grid>
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>

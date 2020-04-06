@@ -26,7 +26,7 @@ const BlogPostListingWrapper = styled.div(
 
 const BlogPostTeaser = tw.article`relative pt-8 px-8 pb-24 bg-gray-300`
 
-const BlogPostTeaserHeadline = tw.h1`mt-8 mb-0`
+const BlogPostTeaserHeadline = tw.h1`mb-0`
 const BlogPostTeaserMeta = tw.div`text-sm text-gray-800 mb-6`
 const BlogPostTeaserDescription = tw.div``
 const BlogPostTeaserFooter = tw.div`absolute inset-x-0 bottom-0 px-8 pb-8 flex justify-between text-sm`

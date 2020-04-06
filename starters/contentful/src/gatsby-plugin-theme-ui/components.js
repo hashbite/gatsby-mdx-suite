@@ -24,10 +24,12 @@ import BoxVideo from '@gatsby-mdx-suite/mdx-boxes/box-video'
 
 // Copy
 import List from '@gatsby-mdx-suite/mdx-copy/list'
+import ListItem from '@gatsby-mdx-suite/mdx-copy/list-item'
 import Font from '@gatsby-mdx-suite/mdx-copy/font'
 import TextBlock from '@gatsby-mdx-suite/mdx-copy/text-block'
 import ResponsiveTextBlock from '@gatsby-mdx-suite/mdx-copy/responsive-text-block'
 import Claim from '@gatsby-mdx-suite/mdx-copy/claim'
+import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 // Decorations
 import Card from '@gatsby-mdx-suite/mdx-decoration/card'
@@ -65,26 +67,28 @@ export default {
   BoxVideo,
   Card,
   Center,
+  Claim,
   Column,
   Columns,
   ContactForm,
   CTA,
   FloatingImage,
+  Font,
   Gap,
   Grid,
   Header,
+  Icon,
   Image,
   InstagramFeed,
   InstagramPost,
   Link,
   List,
+  ListItem,
   MediaGallery,
   NarrowSection,
-  Section,
-  Font,
-  TextBlock,
   ResponsiveTextBlock,
-  Claim,
+  Section,
+  TextBlock,
   Timeline,
   TimelineEntry,
   Video,
