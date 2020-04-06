@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.7.0...@gatsby-mdx-suite/mdx-copy@0.8.0) (2020-04-06)
+
+
+### Features
+
+* **icons:** color support for icons and list bullet points ([763d76a](https://github.com/axe312ger/gatsby-suite-mdx/commit/763d76a341f295ace38a6109b2a0fa633f836218))
+* **icons:** Introduce Icon component with global configuration and list item support ([e00971c](https://github.com/axe312ger/gatsby-suite-mdx/commit/e00971cdc60cc51a748cf74cd6e167a411739272))
+
+
+
+
+
 # [0.7.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.6.2...@gatsby-mdx-suite/mdx-copy@0.7.0) (2020-03-31)
 
 

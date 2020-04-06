@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.12.4...gatsby-starter-mdx-suite-contentful@0.13.0) (2020-04-06)
+
+
+### Bug Fixes
+
+* **icons:** proper server side rendering support ([6c3f099](https://github.com/axe312ger/gatsby-suite-mdx/commit/6c3f099f25020091a233144ed2c7bbf3f981b8f3))
+
+
+### Features
+
+* **icons:** Introduce Icon component with global configuration and list item support ([e00971c](https://github.com/axe312ger/gatsby-suite-mdx/commit/e00971cdc60cc51a748cf74cd6e167a411739272))
+
+
+
+
+
 ## [0.12.4](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.12.3...gatsby-starter-mdx-suite-contentful@0.12.4) (2020-04-03)
 
 **Note:** Version bump only for package gatsby-starter-mdx-suite-contentful

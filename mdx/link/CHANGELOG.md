@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.3](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-link@0.6.2...@gatsby-mdx-suite/mdx-link@0.6.3) (2020-04-06)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-link
+
+
+
+
+
 ## [0.6.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-link@0.6.1...@gatsby-mdx-suite/mdx-link@0.6.2) (2020-04-03)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-link

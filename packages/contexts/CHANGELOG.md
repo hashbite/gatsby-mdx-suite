@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/contexts@0.2.1...@gatsby-mdx-suite/contexts@0.3.0) (2020-04-06)
+
+
+### Features
+
+* **icons:** Introduce Icon component with global configuration and list item support ([e00971c](https://github.com/axe312ger/gatsby-suite-mdx/commit/e00971cdc60cc51a748cf74cd6e167a411739272))
+
+
+
+
+
 ## [0.2.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/contexts@0.2.0...@gatsby-mdx-suite/contexts@0.2.1) (2020-03-31)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/contexts

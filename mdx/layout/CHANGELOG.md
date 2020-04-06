@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.3](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.14.2...@gatsby-mdx-suite/mdx-layout@0.14.3) (2020-04-06)
+
+
+### Bug Fixes
+
+* **mdx/layout:** Column background images now more enforce minimum height ([d36a6c5](https://github.com/axe312ger/gatsby-suite-mdx/commit/d36a6c5cff362251396c0d43f0a11c9247057149))
+* **mdx/layout:** Column now properly applies minimumAspectRatio and center when combined ([9e27244](https://github.com/axe312ger/gatsby-suite-mdx/commit/9e27244cf7b2412ec2269893d926db22fb956487))
+
+
+
+
+
 ## [0.14.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.14.1...@gatsby-mdx-suite/mdx-layout@0.14.2) (2020-04-03)
 
 
