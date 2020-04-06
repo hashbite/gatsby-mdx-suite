@@ -51,7 +51,7 @@ module.exports = {
           },
         },
         /**
-         * Configuratoin for automatic media usage detection within your MDX content.
+         * Configuration for automatic media usage detection within your MDX content.
          *
          * Keep this in sync with your enabled MDX components.
          *
