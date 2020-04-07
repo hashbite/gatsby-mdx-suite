@@ -1,16 +1,19 @@
 export function findActiveTrail({ id, subTree }) {
   for (const item of subTree) {
-    const linkedPage = item.linkedPage || item.linkedApp
-    if (linkedPage && id === linkedPage.cid) {
-      return [item.pageId]
+    // Found the target
+    if (item.linkedPage && id === item.linkedPage.pageId) {
+      return [item.menuItemId]
     }
+
+    // Look deeper
     if (item.subitems) {
       const subTreeResult = findActiveTrail({
         id,
         subTree: item.subitems,
       })
       if (subTreeResult.length) {
-        return [item.pageId, ...subTreeResult]
+        // Target found in subitems, bubble up.
+        return [item.menuItemId, ...subTreeResult]
       }
     }
   }
