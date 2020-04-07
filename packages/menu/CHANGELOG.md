@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.6](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/menu@0.4.5...@gatsby-mdx-suite/menu@0.4.6) (2020-04-07)
+
+
+### Bug Fixes
+
+* **menu:** properly display active menu items ([a8c94f9](https://github.com/axe312ger/gatsby-suite-mdx/commit/a8c94f90aabe3f0710a6a06a20da8db91f389950))
+
+
+
+
+
 ## [0.4.5](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/menu@0.4.4...@gatsby-mdx-suite/menu@0.4.5) (2020-04-07)
 
 
