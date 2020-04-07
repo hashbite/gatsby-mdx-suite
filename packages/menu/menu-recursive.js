@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Link from '@gatsby-mdx-suite/mdx-link/link'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
+import MenuLink from './menu-link'
 import MenuUl from './menu-ul'
 import MenuLi from './menu-li'
 import MenuTitle from './menu-title'
@@ -48,7 +48,7 @@ export default function MenuRecursive({ rootMenuItemId }) {
   }
 
   const activeTrail = findActiveTrail({
-    activePageId,
+    id: activePageId,
     subTree: [menuRoot],
   })
 
@@ -73,27 +73,35 @@ function RecursiveMenu({ children, activeTrail, depth = 0 }) {
           externalUri,
           ...otherProps
         } = child
+        const isActive = activeTrail.includes(menuItemId)
 
         let content = child.title
 
         if (linkedPage && linkedPage.pageId) {
-          content = <Link id={linkedPage.pageId} {...otherProps} />
+          content = (
+            <MenuLink
+              active={isActive}
+              id={linkedPage.pageId}
+              {...otherProps}
+            />
+          )
         }
 
         if (internalSlug) {
-          content = <Link to={internalSlug} {...otherProps} />
+          content = (
+            <MenuLink active={isActive} to={internalSlug} {...otherProps} />
+          )
         }
 
         if (externalUri) {
-          content = <Link href={externalUri} {...otherProps} />
+          content = (
+            <MenuLink active={isActive} href={externalUri} {...otherProps} />
+          )
         }
 
         return (
-          <MenuLi
-            key={menuItemId}
-            className={activeTrail.includes(child.pageId) ? 'active' : null}
-          >
-            <MenuTitle>{content}</MenuTitle>
+          <MenuLi key={menuItemId} active={isActive}>
+            <MenuTitle active={isActive}>{content}</MenuTitle>
             {subitems && (
               <RecursiveMenu
                 children={subitems}
