@@ -1,5 +1,4 @@
 const isProduction = process.env.NODE_ENV === 'production'
-const isStaging = !!process.env.STAGING
 
 require('dotenv').config({ path: `.env` })
 
@@ -151,6 +150,20 @@ module.exports = {
     `gatsby-transformer-inline-svg`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
-    ...(isProduction && !isStaging ? [`gatsby-plugin-offline`] : []),
+    ...(isProduction
+      ? [
+          `gatsby-plugin-offline`,
+          {
+            resolve: 'gatsby-plugin-netlify-cache',
+            options: {
+              extraDirsToCache: [
+                'node_modules',
+                '.cache',
+                'gatsby-transformer-video',
+              ],
+            },
+          },
+        ]
+      : []),
   ].filter(Boolean),
 }
