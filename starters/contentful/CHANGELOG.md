@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.13.1...gatsby-starter-mdx-suite-contentful@0.13.2) (2020-04-07)
+
+
+### Performance Improvements
+
+* **starters/contentful:** cache videos on netlify to reduce build times ([3b9366b](https://github.com/axe312ger/gatsby-suite-mdx/commit/3b9366b77969922fd1710bd7802d7aa880277721))
+
+
+
+
+
 ## [0.13.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.13.0...gatsby-starter-mdx-suite-contentful@0.13.1) (2020-04-06)
 
 **Note:** Version bump only for package gatsby-starter-mdx-suite-contentful

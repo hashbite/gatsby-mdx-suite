@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.8.1...@gatsby-mdx-suite/mdx-copy@0.8.2) (2020-04-07)
+
+
+### Bug Fixes
+
+* **mdx/copy:** reduce claim default fontSizeMax ([2bf0689](https://github.com/axe312ger/gatsby-suite-mdx/commit/2bf0689ed7d1468b3ee86c8d2b99ef1c92780cf8))
+
+
+
+
+
 ## [0.8.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-copy@0.8.0...@gatsby-mdx-suite/mdx-copy@0.8.1) (2020-04-06)
 
 
