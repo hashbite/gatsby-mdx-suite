@@ -42,9 +42,9 @@ Claim.defaultProps = {
   ...TextBlock.defaultProps,
   tag: 'h1',
   fontSizeMin: '32px',
-  fontSizeMax: '64px',
-  lineHeightMin: '1.4em',
-  lineHeightMax: '1.1em',
+  fontSizeMax: '48px',
+  lineHeightMin: '1.5em',
+  lineHeightMax: '1.3em',
 }
 
 export default Claim
