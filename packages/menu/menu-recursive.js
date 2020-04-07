@@ -62,46 +62,67 @@ MenuRecursive.propTypes = {
 }
 
 function RecursiveMenu({ children, activeTrail, depth = 0 }) {
+  const {
+    pageContext: { pageId: activePageId },
+  } = useContext(MdxSuiteContext)
+
   return (
     <MenuUl className={`depth-${depth}`}>
       {children.map((child) => {
         const {
+          title,
           menuItemId,
-          subitems,
           linkedPage,
           internalSlug,
           externalUri,
-          ...otherProps
+          subitems,
         } = child
-        const isActive = activeTrail.includes(menuItemId)
 
-        let content = child.title
+        // Menu item links to current page or is part of the active trail
+        const isActive =
+          activeTrail.includes(menuItemId) ||
+          (linkedPage && linkedPage.pageId === activePageId)
+
+        const className = isActive ? 'active' : null
+
+        let content = title
 
         if (linkedPage && linkedPage.pageId) {
           content = (
             <MenuLink
-              active={isActive}
+              className={className}
+              activeClassName={null}
               id={linkedPage.pageId}
-              {...otherProps}
+              title={title}
             />
           )
         }
 
         if (internalSlug) {
           content = (
-            <MenuLink active={isActive} to={internalSlug} {...otherProps} />
+            <MenuLink
+              className={className}
+              activeClassName={null}
+              to={internalSlug}
+              title={title}
+            />
           )
         }
 
         if (externalUri) {
           content = (
-            <MenuLink active={isActive} href={externalUri} {...otherProps} />
+            <MenuLink
+              className={className}
+              activeClassName={null}
+              href={externalUri}
+              title={title}
+            />
           )
         }
 
         return (
-          <MenuLi key={menuItemId} active={isActive}>
-            <MenuTitle active={isActive}>{content}</MenuTitle>
+          <MenuLi key={menuItemId} className={className}>
+            <MenuTitle className={className}>{content}</MenuTitle>
             {subitems && (
               <RecursiveMenu
                 children={subitems}

@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
+import tw from 'twin.macro'
 
-const MenuTitle = styled.div``
+const MenuTitle = tw.div`inline-block`
 
 export default MenuTitle
