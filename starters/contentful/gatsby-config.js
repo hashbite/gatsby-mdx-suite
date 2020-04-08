@@ -1,3 +1,5 @@
+const { join } = require('path')
+
 const isProduction = process.env.NODE_ENV === 'production'
 
 require('dotenv').config({ path: `.env` })
@@ -157,9 +159,8 @@ module.exports = {
             resolve: 'gatsby-plugin-netlify-cache',
             options: {
               extraDirsToCache: [
-                'node_modules',
-                '.cache',
-                'gatsby-transformer-video',
+                join('node_modules', '.cache', 'gatsby-transformer-video'),
+                join('node_modules', '.cache', 'gatsby-transformer-video-bin'),
               ],
             },
           },
