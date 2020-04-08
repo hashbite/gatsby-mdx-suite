@@ -5,11 +5,10 @@ export const MenuItemFragment = graphql`
     menuItemId: contentful_id
     title
     locale: node_locale
-    linkedPage {
-      pageId: contentful_id
-    }
+    internalTargetId
     internalSlug
     externalUri
     openInNewTab
+    hiddenOnMobile
   }
 `

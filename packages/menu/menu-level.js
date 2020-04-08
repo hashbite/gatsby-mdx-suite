@@ -1,13 +1,12 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
+import { cx } from 'emotion'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
-import MenuLink from './menu-link'
 import MenuUl from './menu-ul'
-import MenuLi from './menu-li'
-import MenuTitle from './menu-title'
+import MenuItem from './menu-item'
 import { findActiveTrail } from './helpers'
 
 export default function MenuLevel({ rootMenuItemId, level = 1 }) {
@@ -73,65 +72,18 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
     return null
   }
 
+  const levelClass = cx(`level-${level}`)
+
   return (
-    <MenuUl>
-      {currentRoot.subitems.map((child) => {
-        const {
-          title,
-          menuItemId,
-          linkedPage,
-          internalSlug,
-          externalUri,
-        } = child
-
-        // Menu item links to current page or is part of the active trail
-        const isActive =
-          activeTrail.includes(menuItemId) ||
-          (linkedPage && linkedPage.pageId === activePageId)
-
-        const className = isActive ? 'active' : null
-
-        let content = title
-
-        if (linkedPage && linkedPage.pageId) {
-          content = (
-            <MenuLink
-              className={className}
-              activeClassName={null}
-              id={linkedPage.pageId}
-              title={title}
-            />
-          )
-        }
-
-        if (internalSlug) {
-          content = (
-            <MenuLink
-              className={className}
-              activeClassName={null}
-              to={internalSlug}
-              title={title}
-            />
-          )
-        }
-
-        if (externalUri) {
-          content = (
-            <MenuLink
-              className={className}
-              activeClassName={null}
-              href={externalUri}
-              title={title}
-            />
-          )
-        }
-
-        return (
-          <MenuLi key={menuItemId} className={className}>
-            <MenuTitle className={className}>{content}</MenuTitle>
-          </MenuLi>
-        )
-      })}
+    <MenuUl className={levelClass}>
+      {currentRoot.subitems.map(({ ...itemData }) => (
+        <MenuItem
+          key={itemData.menuItemId}
+          activeTrail={activeTrail}
+          className={levelClass}
+          {...itemData}
+        />
+      ))}
     </MenuUl>
   )
 }
