@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.4](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.13.3...gatsby-starter-mdx-suite-contentful@0.13.4) (2020-04-08)
+
+
+### Bug Fixes
+
+* **starters/contentful:** properly cache videos and ffmpeg bins on netlify ([9089b8f](https://github.com/axe312ger/gatsby-suite-mdx/commit/9089b8fa3ccd2c41773932e7bb2cefd828c49849))
+
+
+
+
+
 ## [0.13.3](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.13.2...gatsby-starter-mdx-suite-contentful@0.13.3) (2020-04-07)
 
 **Note:** Version bump only for package gatsby-starter-mdx-suite-contentful

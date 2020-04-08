@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.15.0...gatsby-theme-mdx-suite@0.16.0) (2020-04-08)
+
+
+### Features
+
+* **menu:** support for multiple content types as menu item target ([d0b6b59](https://github.com/axe312ger/gatsby-suite-mdx/commit/d0b6b595541a209139ad78e1e6894ccdc58928e7))
+
+
+
+
+
 # [0.15.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.14.2...gatsby-theme-mdx-suite@0.15.0) (2020-04-06)
 
 
