@@ -31,11 +31,35 @@ const generateComponentSlug = ({ packageName, parentName }) =>
     .replace(/%40/g, '')
     .toLowerCase()
 
-exports.createResolvers = (
-  { store, createResolvers },
-  { mediaCollections = {} }
-) => {
+exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
   const resolvers = {
+    ContentfulMenuItem: {
+      /**
+       * Since Gatsby & Contentful have issues with reference fields that support multiple target content types,
+       * we determine the menu item target programatically in this resolver.
+       *
+       * See: https://github.com/gatsbyjs/gatsby/issues/10090
+       */
+      internalTargetId: {
+        type: 'String',
+        args: { cache: 'String' },
+        async resolve(source, args, context, info) {
+          const linkedFields = Object.keys(source).filter(
+            (name) => name.match(/^linked.+___NODE$/) && !!source[name]
+          )
+
+          if (!linkedFields || !linkedFields.length) {
+            return null
+          }
+
+          const linkedPage = context.nodeModel.getNodeById({
+            id: source[linkedFields[0]],
+          })
+
+          return linkedPage.contentful_id
+        },
+      },
+    },
     Mdx: {
       /**
        * Attach referenced media assets with MDX source based on the themes collection configuration
@@ -234,10 +258,10 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
       contentful_id: String
       title: String
       node_locale: String
-      linkedPage: ContentfulPage
       internalSlug: String
       externalUri: String
       openInNewTab: Boolean
+      hiddenOnMobile: Boolean
       subitems: [ContentfulMenuItem]
     }
     `,
