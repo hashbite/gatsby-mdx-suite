@@ -30,7 +30,7 @@
     "@gatsby-mdx-suite/contexts": "^0.3.0",
     "@gatsby-mdx-suite/helpers": "^0.8.1",
     "@gatsby-mdx-suite/mdx-image": "^0.5.6",
-    "react-images": "^1.1.0"
+    "react-images": "^1.1.2"
   },
   "publishConfig": {
     "access": "public"
