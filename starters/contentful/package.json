@@ -12,7 +12,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "format": "prettier --write '{./**/*.{js,jsx},*.{js,json}}'",
     "lint": "eslint src",
-    "generate-tailwind-config": "NODE_ENV=test babel-node scripts/generate-tailwind-config.js --ignore /allow/transpile/of/node_modules",
+    "generate-tailwind-config": "NODE_ENV=test babel-node --config-file ./scripts/babel.config.js --ignore /allow/transpile/of/node_modules scripts/generate-tailwind-config.js",
     "predevelop": "npm run generate-tailwind-config",
     "prebuild": "npm run generate-tailwind-config",
     "postinstall": "npm run generate-tailwind-config"
