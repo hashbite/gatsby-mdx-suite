@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.16.0...gatsby-theme-mdx-suite@0.17.0) (2020-04-16)
+
+
+### Features
+
+* **styling:** properly shadow theme ui configuration and use typography.js vertical rythym ([37d898b](https://github.com/axe312ger/gatsby-suite-mdx/commit/37d898bef2385f973e59c9abd5e765a1be5b2b34))
+
+
+
+
+
 # [0.16.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.15.0...gatsby-theme-mdx-suite@0.16.0) (2020-04-08)
 
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-animation@0.1.6...@gatsby-mdx-suite/mdx-animation@0.1.7) (2020-04-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation
+
+
+
+
+
 ## [0.1.6](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-animation@0.1.5...@gatsby-mdx-suite/mdx-animation@0.1.6) (2020-04-06)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation

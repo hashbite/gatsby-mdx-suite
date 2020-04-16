@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.13.4...gatsby-starter-mdx-suite-contentful@0.14.0) (2020-04-16)
+
+
+### Bug Fixes
+
+* **starters/contentful:** use core-js v3 to generate tailwind config file ([9d8c7fd](https://github.com/axe312ger/gatsby-suite-mdx/commit/9d8c7fdd08aefc0e8c255c8a1c85de53bf0f004e))
+
+
+### Features
+
+* **styling:** properly shadow theme ui configuration and use typography.js vertical rythym ([37d898b](https://github.com/axe312ger/gatsby-suite-mdx/commit/37d898bef2385f973e59c9abd5e765a1be5b2b34))
+
+
+
+
+
 ## [0.13.4](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-starter-mdx-suite-contentful@0.13.3...gatsby-starter-mdx-suite-contentful@0.13.4) (2020-04-08)
 
 

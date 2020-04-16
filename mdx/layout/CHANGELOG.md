@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.14.4...@gatsby-mdx-suite/mdx-layout@0.15.0) (2020-04-16)
+
+
+### Features
+
+* **mdx/layout:** Vertical gaps and text shadow are now configurable on Section component ([ac8f29f](https://github.com/axe312ger/gatsby-suite-mdx/commit/ac8f29f523af5c9a5d3cc6a70edc8c95db4bd88b))
+
+
+
+
+
 ## [0.14.4](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.14.3...@gatsby-mdx-suite/mdx-layout@0.14.4) (2020-04-06)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
