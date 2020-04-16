@@ -1,11 +1,16 @@
 import merge from 'lodash/merge'
 import tailwindPreset from '@theme-ui/preset-tailwind'
 
-export default merge(tailwindPreset, {
+import typographyTheme from './typography'
+
+// We use styles based on typography.js to achieve a proper vertical rhythm
+delete tailwindPreset.styles
+
+export default merge(tailwindPreset, typographyTheme, {
   spacing: {
     'content-column-padding': '2vw',
-    'grid-gap': tailwindPreset.sizes['8'],
-    'content-gap': tailwindPreset.sizes['16'],
+    'grid-gap': `${typographyTheme.space[3]}px`,
+    'content-gap': `${typographyTheme.space[3]}px`,
   },
   maxWidth: {
     'content-column': `${parseInt(tailwindPreset.sizes['6xl']) * 16}px`,
@@ -23,11 +28,14 @@ export default merge(tailwindPreset, {
     // MDX-Suite specific colors
     headline: tailwindPreset.colors.text, // headline color
     sets: {
-      muted: {
-        background: tailwindPreset.colors.gray[7],
-        primary: tailwindPreset.colors.gray[1],
-        headline: tailwindPreset.colors.gray[2],
-        secondary: tailwindPreset.colors.white,
+      backgroundImage: {
+        background: 'transparent',
+        text: tailwindPreset.colors.white,
+        headline: tailwindPreset.colors.white,
+      },
+      brightBackgroundImage: {
+        text: tailwindPreset.colors.text,
+        headline: tailwindPreset.colors.headline,
       },
       red: {
         background: tailwindPreset.colors.red[7],

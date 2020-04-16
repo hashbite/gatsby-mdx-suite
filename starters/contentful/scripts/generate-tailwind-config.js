@@ -12,7 +12,7 @@ import { writeFileSync } from 'fs-extra'
 import { resolve } from 'path'
 
 import toTailwind from '@theme-ui/tailwind'
-import themeUITheme from '../src/gatsby-plugin-theme-ui'
+import themeUITheme from '../src/gatsby-theme-mdx-suite/gatsby-plugin-theme-ui'
 
 console.log('Converting Theme UI config to TailwindCSS config')
 
