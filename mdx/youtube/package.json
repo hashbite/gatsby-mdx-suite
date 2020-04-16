@@ -31,7 +31,7 @@
     "@gatsby-mdx-suite/contexts": "^0.3.0",
     "@gatsby-mdx-suite/helpers": "^0.8.1",
     "@gatsby-mdx-suite/mdx-image": "^0.5.6",
-    "react-youtube": "^7.11.1"
+    "react-youtube": "7.9.0"
   },
   "publishConfig": {
     "access": "public"
