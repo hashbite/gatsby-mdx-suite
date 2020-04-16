@@ -8,28 +8,34 @@ import Image from '@gatsby-mdx-suite/mdx-image/image'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
-const SectionWrapper = styled.section(({ hasBackgroundImage, theme }) => {
+const SectionWrapper = styled.section(({ textShadow, theme }) => {
   return css`
     ${tw`relative overflow-hidden`}
 
     background: ${theme.colors.background};
     color: ${theme.colors.text};
 
-    ${hasBackgroundImage &&
+    ${
+      textShadow &&
       css`
-        ${tw`text-white`}
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
-      `}
+      `
+    }
   `
 })
+
+function calcGapValue(gap, theme) {
+  const customSize = gap && theme.sizes[gap]
+  return customSize || `calc(${theme.spacing['content-gap']} * 2)`
+}
 
 const SectionContentWrapper = styled.div(
   (props) => css`
     ${tw`relative z-10`}
     ${centerToContentColumn(props)}
 
-    padding-top: calc(${props.theme.spacing['content-gap']} / 2);
-    padding-bottom: calc(${props.theme.spacing['content-gap']} / 2);
+    padding-top: ${calcGapValue(props.gapTop || props.gap, props.theme)};
+    padding-bottom: ${calcGapValue(props.gapBottom || props.gap, props.theme)};
   `
 )
 
@@ -102,16 +108,22 @@ export default function Section({
   backgroundImageId,
   colorSet,
   colors,
+  textShadow,
+  gap,
+  gapTop,
+  gapBottom,
 }) {
   return (
     <ColorSet name={colorSet} {...colors}>
-      <SectionWrapper hasBackgroundImage={!!backgroundImageId}>
+      <SectionWrapper textShadow={textShadow}>
         {backgroundImageId && (
           <BackgroundImageWrapper>
             <Image contextKey="background" id={backgroundImageId} fit="cover" />
           </BackgroundImageWrapper>
         )}
-        <SectionContentWrapper>{children}</SectionContentWrapper>
+        <SectionContentWrapper gap={gap} gapTop={gapTop} gapBottom={gapBottom}>
+          {children}
+        </SectionContentWrapper>
       </SectionWrapper>
     </ColorSet>
   )
@@ -120,6 +132,7 @@ export default function Section({
 Section.defaultProps = {
   colorSet: null,
   colors: {},
+  textShadow: false,
 }
 
 Section.propTypes = {
@@ -130,4 +143,12 @@ Section.propTypes = {
   colorSet: propTypes.string,
   /** Overwrite specific colors */
   colors: propTypes.object,
+  /** Optional slight text shadow to increase readability when using background images */
+  textShadow: propTypes.bool,
+  /** Overwrite default horizontal content gap. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  gap: propTypes.string,
+  /** Overwrite default top content gap. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  gapTop: propTypes.string,
+  /** Overwrite default bottom content gap. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  gapBottom: propTypes.string,
 }
