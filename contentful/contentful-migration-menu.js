@@ -1,4 +1,4 @@
-module.exports = function(migration) {
+module.exports = function (migration) {
   const menuItem = migration
     .createContentType('menuItem')
     .name('Menu Item')

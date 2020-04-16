@@ -1,7 +1,7 @@
-module.exports = function(migration) {
+module.exports = function (migration) {
   const blogPost = migration
     .createContentType('blogPost')
-    .name('Blog Posttml')
+    .name('Blog Post')
     .description('')
     .displayField('title')
   blogPost
@@ -30,7 +30,7 @@ module.exports = function(migration) {
 
   blogPost
     .createField('publicationDate')
-    .name('Publishing date')
+    .name('Publication Date')
     .type('Date')
     .localized(false)
     .required(true)
@@ -96,32 +96,32 @@ module.exports = function(migration) {
 
   blogPost.changeFieldControl('slug', 'builtin', 'slugEditor', {
     helpText:
-      'Set the URL identifier for this page. If you change this later one, you might harm your SEO score. The whole URL should have a maximum of 55-60 characters. This includes the domain name. NOTE: Use "index" to identify the home page.',
+      'Set the URL identifier for this page. If you change this later one, you might harm your SEO score. The whole URL should have a maximum of 55-60 characters. This includes the domain name.',
   })
 
   blogPost.changeFieldControl('publicationDate', 'builtin', 'datePicker', {
     ampm: '24',
     format: 'timeZ',
     helpText:
-      'Set the public publication date for this blog post. It will be displayed to the user based on their regional standard. Used to order the blog posts on the overview page as well.',
+      'Set the public publication date for this blog post. Will be displayed to the user and used for ordering.',
+  })
+
+  blogPost.changeFieldControl('image', 'builtin', 'assetLinkEditor', {
+    helpText:
+      'This image is used for teasers, when this blog post is shared on search machines and might be shown in the header of the detail page.',
   })
 
   blogPost.changeFieldControl('metaDescription', 'builtin', 'singleLine', {
     helpText:
-      'The meta description will be used for search engine result pages and when sharing the page on social media.',
-  })
-
-  blogPost.changeFieldControl('metaImage', 'builtin', 'assetLinkEditor', {
-    helpText:
-      'The meta image is used as a preview image for the page, especially when shared on social media and in chat clients. Renders the best when the resolution is at least 1200px by 630px.',
+      'Description which will be used on search engine result pages and when this page is shared in social media.',
   })
 
   blogPost.changeFieldControl('teaser', 'builtin', 'markdown', {
     helpText:
-      'The content of the blog posts preview. Keep it short. Use MDX syntax to add layout and design to the page. See the documentation of the project for more information about MDX.',
+      'Teaser/preview content, especially used on the blog post overview page. Use MDX syntax to add layout and design to the page. See the documentation of the project for more information about MDX.',
   })
 
-  page.changeFieldControl('content', 'builtin', 'markdown', {
+  blogPost.changeFieldControl('content', 'builtin', 'markdown', {
     helpText:
       'The actual content. Use MDX syntax to add layout and design to the page. See the documentation of the project for more information about MDX.',
   })

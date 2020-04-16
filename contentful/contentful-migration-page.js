@@ -1,4 +1,4 @@
-module.exports = function(migration) {
+module.exports = function (migration) {
   const page = migration
     .createContentType('page')
     .name('Page')
@@ -97,16 +97,11 @@ module.exports = function(migration) {
 
   page.changeFieldControl('metaDescription', 'builtin', 'singleLine', {
     helpText:
-      'The meta description will be used for search engine result pages and when sharing the page on social media.',
+      'Description which will be used on search engine result pages and when this page is shared in social media.',
   })
 
   page.changeFieldControl('metaImage', 'builtin', 'assetLinkEditor', {
     helpText:
-      'The meta image is used as a preview image for the page, especially when shared on social media and in chat clients. Renders the best when the resolution is at least 1200px by 630px.',
-  })
-
-  page.changeFieldControl('content', 'builtin', 'markdown', {
-    helpText:
-      'The actual content. Use MDX syntax to add layout and design to the page. See the documentation of the project for more information about MDX.',
+      'Used as preview image, especially when shared in social media. At best in 1200px by 630px.',
   })
 }
