@@ -102,7 +102,6 @@ function LiveEditor({ editorId, initialValue, layout }) {
     localStorage.getItem(localStorageId) || initialValue || ''
   )
   const [unverifiedValue, setUnverifiedValue] = useDebounce(editorValue, 300)
-  const [rawValue, setRawValue] = useDebounce('', 1000)
   const [error, setError] = useState()
   const {
     data: { images, videos, youtubeVideos, instagramPosts },
@@ -167,8 +166,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
 
         // Set valid raw value
         setError(null)
-        setRawValue(processedValue)
         localStorage.setItem(localStorageId, unverifiedValue)
+        localStorage.setItem(`${localStorageId}-processed`, processedValue)
         if (editorRef.current) {
           editorRef.current.editor.resize()
         }
@@ -210,9 +209,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
         </LiveEditorError>
       )}
       <LiveEditorPreview
-        src={`/docs/preview?content=${encodeURIComponent(
-          JSON.stringify(rawValue)
-        )}`}
+        src={`/docs/preview?id=${`${localStorageId}-processed`}`}
       />
       <LiveEditorEditor>
         <AceEditor

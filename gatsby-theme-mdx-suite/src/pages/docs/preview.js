@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import propTypes from 'prop-types'
 import loadable from '@loadable/component'
 import tw from 'twin.macro'
 import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
+import useEventListener from '@use-it/event-listener'
 
 import DataProvider from '../../components/docs/data-provider'
 
@@ -50,12 +51,22 @@ const DocsPreviewPage = () => {
   ) {
     return null
   }
-  const searchParams = new URLSearchParams(window.location.search)
-  const content = searchParams.get('content')
 
-  if (!content) {
+  const searchParams = new URLSearchParams(window.location.search)
+  const localStorageId = searchParams.get('id')
+
+  const [content, setContent] = useState(localStorage.getItem(localStorageId))
+
+  if (!localStorageId || !content) {
     return null
   }
+
+  // Listen for content updates from editor
+  useEventListener('storage', (e) => {
+    if (e.key === localStorageId) {
+      setContent(e.newValue)
+    }
+  })
 
   return (
     <DataProvider>
@@ -87,7 +98,7 @@ const DocsPreviewPage = () => {
           `}
         />
         <MDXErrorBoundary>
-          <MDX>{JSON.parse(content)}</MDX>
+          <MDX>{content}</MDX>
         </MDXErrorBoundary>
       </Styled.root>
     </DataProvider>
