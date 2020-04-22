@@ -24,43 +24,48 @@ export const ImageWrapper = styled('div', {
       'position',
     ].includes(prop),
 })(
-  ({ width, height, fitsParent }) => css`
-    ${fitsParent
-      ? css`
-          display: block;
-        `
-      : css`
-          display: inline-block;
-          position: relative;
-        `}
+  ({ width, height, fitsParent, fit, position }) => css`
+    ${
+      fitsParent
+        ? css`
+            display: block;
+          `
+        : css`
+            display: inline-block;
+            position: relative;
+          `
+    }
+
+    ${
+      width &&
+      css`
+        width: ${parseCssValue(width)};
+      `
+    }
+    ${
+      height &&
+      css`
+        height: ${parseCssValue(height)};
+      `
+    }
 
     img {
       display: block;
+
+      ${
+        fit &&
+        css`
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: ${fit} !important;
+          object-position: ${position} !important;
+        `
+      }
     }
-
-    ${width &&
-      css`
-        width: ${parseCssValue(width)};
-      `}
-    ${height &&
-      css`
-        height: ${parseCssValue(height)};
-      `}
   `
-)
-
-const StyledImage = styled.img(
-  ({ fit, position }) =>
-    fit &&
-    css`
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: ${fit};
-      object-position: ${position};
-    `
 )
 
 /**
@@ -153,7 +158,13 @@ export default function Image({
   // Images with fluid data from gatsby-transformer-sharp
   if (fluid) {
     return (
-      <ImageWrapper fitsParent={fitsParent} {...dimensionProps} {...restProps}>
+      <ImageWrapper
+        fit={fit}
+        position={position}
+        fitsParent={fitsParent}
+        {...dimensionProps}
+        {...restProps}
+      >
         <GatsbyImage
           fluid={fluid}
           style={{ position: fitsParent ? 'static' : 'relative' }}
@@ -183,15 +194,14 @@ export default function Image({
 
   // Images without fluid data
   return (
-    <ImageWrapper fitsParent={fitsParent} {...dimensionProps} {...restProps}>
-      <StyledImage
-        src={imageSrc}
-        {...imgProps}
-        {...dimensionProps}
-        fit={fit}
-        position={position}
-        loading="lazy"
-      />
+    <ImageWrapper
+      fit={fit}
+      position={position}
+      fitsParent={fitsParent}
+      {...dimensionProps}
+      {...restProps}
+    >
+      <img src={imageSrc} {...imgProps} {...dimensionProps} loading="lazy" />
     </ImageWrapper>
   )
 }
