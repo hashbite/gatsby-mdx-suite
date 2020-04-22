@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.17.0...gatsby-theme-mdx-suite@0.18.0) (2020-04-22)
+
+
+### Features
+
+* **docs:** live editor now faster, supports very long content and keeps scroll position ([25a0b02](https://github.com/axe312ger/gatsby-suite-mdx/commit/25a0b02d2b99efc771d646c8aa55b3a15f6055c5))
+
+
+
+
+
 # [0.17.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.16.0...gatsby-theme-mdx-suite@0.17.0) (2020-04-16)
 
 

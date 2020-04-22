@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.8](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.7...@gatsby-mdx-suite/mdx-image@0.5.8) (2020-04-22)
+
+
+### Bug Fixes
+
+* **mdx/image:** enforce fit property for all image rendering techniques ([93cb657](https://github.com/axe312ger/gatsby-suite-mdx/commit/93cb657a9bcb7bda90cb02ca68f3c1686ae70e9c))
+
+
+
+
+
 ## [0.5.7](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.6...@gatsby-mdx-suite/mdx-image@0.5.7) (2020-04-16)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
