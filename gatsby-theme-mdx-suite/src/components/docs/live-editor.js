@@ -8,6 +8,7 @@ import loadable from '@loadable/component'
 import tw from 'twin.macro'
 import { Styled } from 'theme-ui'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
+import { EntypoTabletMobileCombo } from 'react-entypo-icons'
 
 const AceEditor = loadable(async () => {
   const ace = await import('react-ace')
@@ -43,10 +44,15 @@ const LiveEditorWrapper = styled.section(
         `}
   `
 )
-const LiveEditorPreview = styled.iframe`
-  ${tw`overflow-scroll shadow-inner w-full h-full`}
+const LiveEditorPreviewWrapper = styled.div`
+  ${tw`relative shadow-inner w-full h-full`}
   grid-area: preview;
 `
+const LiveEditorPreview = styled.iframe`
+  ${tw`overflow-scroll w-full h-full`}
+`
+const PreviewControls = tw.div`absolute z-50 right-0 top-0 m-4`
+const PreviewControl = tw.a`rounded bg-gray-200 px-2 py-1`
 
 const LiveEditorError = styled.div`
   ${tw`p-4 border-4 border-dashed border-red-400 bg-red-700 text-white`}
@@ -192,6 +198,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const handleEditorChange = (content) =>
     setEditorValue(content.replace(/^[ \t]+$/gm, ''))
 
+  const previewSrc = `/docs/preview?id=${`${localStorageId}-processed`}`
+
   return (
     <LiveEditorWrapper layout={layout}>
       {error && (
@@ -208,9 +216,14 @@ function LiveEditor({ editorId, initialValue, layout }) {
           </LiveEditorErrorMessage>
         </LiveEditorError>
       )}
-      <LiveEditorPreview
-        src={`/docs/preview?id=${`${localStorageId}-processed`}`}
-      />
+      <LiveEditorPreviewWrapper>
+        <PreviewControls>
+          <PreviewControl target="_blank" href={previewSrc}>
+            <EntypoTabletMobileCombo valign="baseline" /> Full Size
+          </PreviewControl>
+        </PreviewControls>
+        <LiveEditorPreview src={previewSrc} />
+      </LiveEditorPreviewWrapper>
       <LiveEditorEditor>
         <AceEditor
           mode="markdown"
