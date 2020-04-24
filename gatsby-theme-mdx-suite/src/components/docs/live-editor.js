@@ -35,7 +35,7 @@ const LiveEditorWrapper = styled.section(
         `
       : css`
           ${tw`w-screen`}
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 420px 1fr;
           grid-template-rows: 1fr min-content;
           grid-template-areas:
             'preview editor'
