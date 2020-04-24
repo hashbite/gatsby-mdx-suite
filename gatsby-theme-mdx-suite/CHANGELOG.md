@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.18.0...gatsby-theme-mdx-suite@0.19.0) (2020-04-24)
+
+
+### Features
+
+* **live-editor:** add button to open preview in new tab ([5e54ce5](https://github.com/axe312ger/gatsby-suite-mdx/commit/5e54ce5bdc3540159362ee650d703e33397c570d))
+* **live-editor:** playground preview width now matches mobile devices ([ab3abbb](https://github.com/axe312ger/gatsby-suite-mdx/commit/ab3abbb8d057daf6a80bc94a60e84a34ecdac491))
+
+
+
+
+
 # [0.18.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.17.0...gatsby-theme-mdx-suite@0.18.0) (2020-04-22)
 
 
