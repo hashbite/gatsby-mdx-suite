@@ -19,7 +19,8 @@ const StyledColumn = styled.div(
     background: ${theme.colors.background};
     color: ${theme.colors.text};
 
-    ${minAspectRatio &&
+    ${
+      minAspectRatio &&
       css`
         &::before {
           content: '';
@@ -34,33 +35,35 @@ const StyledColumn = styled.div(
           display: table;
           clear: both;
         }
-      `}
+      `
+    }
 
-    ${backgroundImage &&
+    ${
+      backgroundImage &&
       css`
         background-image: url(${backgroundImage});
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
-      `}
+      `
+    }
 `
 )
 
 const ColumnContentWrapper = styled.div(
   ({ center }) =>
     css`
-      ${tw`relative z-10 flex flex-col w-full`}
-
-      ${center && tw`justify-center items-center`}
+      ${tw`relative z-10`}
+      ${center && tw`flex flex-col w-full justify-center`}
     `
 )
 const ColumnContent = styled.div(
   ({ padding, theme }) =>
     css`
       ${padding &&
-        css`
-          padding: ${theme.spacing[padding] || theme.sizes[padding]};
-        `}
+      css`
+        padding: ${theme.spacing[padding] || theme.sizes[padding]};
+      `}
     `
 )
 
@@ -220,7 +223,7 @@ const Column = ({
           </ColumnContentWrapper>
         )}
         {backgroundImageId && (
-          <BackgroundImage id={backgroundImageId} fit="fill" />
+          <BackgroundImage id={backgroundImageId} fit="cover" />
         )}
       </StyledColumn>
     </StyledColumnWrapper>
@@ -257,7 +260,7 @@ Column.propTypes = {
   backgroundImage: propTypes.string,
   /** Internal background image id */
   backgroundImageId: propTypes.string,
-  /** Center content horizontally and vertically within this column */
+  /** Vertically center column content. For horizontal centering use <Center /> */
   center: propTypes.bool,
   /** Apply show animation */
   showAnimation: propTypes.string,

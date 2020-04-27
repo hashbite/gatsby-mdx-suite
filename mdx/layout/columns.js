@@ -22,17 +22,21 @@ const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
     ${maxColumns === 11 && tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-11`}
     ${maxColumns === 12 && tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-12`}
 
-    ${template &&
+    ${
+      template &&
       css`
         @media screen and (min-width: ${theme.breakpoints[0]}) {
           grid-template-columns: ${template};
         }
-      `}
+      `
+    }
 
-    ${center &&
+    ${
+      center &&
       css`
         text-align: center;
-      `}
+      `
+    }
   `
 })
 
@@ -58,6 +62,26 @@ const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
  * <Image id="randomImageId" />
  * <Image id="randomImageId" />
  * </Columns>
+ *
+ * ## Centered Content
+ *
+ * <Columns center>
+ * <Column center>
+ *
+ * ## Some Content
+ *
+ * Just as a demo
+ *
+ * A very long one
+ *
+ * To get some extra lines
+ *
+ * </Column>
+ * <Column center>
+ * <Image id="randomImageId" />
+ * </Column>
+ * </Columns>
+ *
  * <Columns>
  * <Column>
  *
