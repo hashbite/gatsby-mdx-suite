@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.3](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.15.2...@gatsby-mdx-suite/mdx-layout@0.15.3) (2020-04-27)
+
+
+### Bug Fixes
+
+* **mdx/layout:** Properly position centered and background images in Columns ([242c33d](https://github.com/axe312ger/gatsby-suite-mdx/commit/242c33d86f0de373d06fd6d43287611747c4edfa))
+
+
+
+
+
 ## [0.15.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.15.1...@gatsby-mdx-suite/mdx-layout@0.15.2) (2020-04-24)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
