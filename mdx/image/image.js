@@ -39,13 +39,15 @@ export const ImageWrapper = styled('div', {
     ${
       width &&
       css`
-        width: ${parseCssValue(width)};
+        max-width: ${parseCssValue(width)};
+        width: 100%;
       `
     }
     ${
       height &&
       css`
-        height: ${parseCssValue(height)};
+        max-height: ${parseCssValue(height)};
+        height: 100%;
       `
     }
 
