@@ -51,6 +51,7 @@ export const ImageWrapper = styled('div', {
 
     img {
       display: block;
+      width: 100%;
 
       ${
         fit &&
@@ -169,7 +170,6 @@ export default function Image({
           fluid={fluid}
           style={{ position: fitsParent ? 'static' : 'relative' }}
           {...imgProps}
-          {...dimensionProps}
           objectFit={fit}
           objectPosition={position}
         />
@@ -201,7 +201,7 @@ export default function Image({
       {...dimensionProps}
       {...restProps}
     >
-      <img src={imageSrc} {...imgProps} {...dimensionProps} loading="lazy" />
+      <img src={imageSrc} {...imgProps} loading="lazy" />
     </ImageWrapper>
   )
 }
