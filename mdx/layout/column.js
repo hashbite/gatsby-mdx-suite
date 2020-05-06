@@ -10,11 +10,9 @@ import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
 
-const StyledColumnWrapper = styled.div``
-
 const StyledColumn = styled.div(
-  ({ theme, minAspectRatio, backgroundImage, center }) => css`
-    ${tw`relative h-full flex`}
+  ({ theme, minAspectRatio, backgroundImage }) => css`
+    ${tw`relative`}
 
     background: ${theme.colors.background};
     color: ${theme.colors.text};
@@ -53,7 +51,7 @@ const StyledColumn = styled.div(
 const ColumnContentWrapper = styled.div(
   ({ center }) =>
     css`
-      ${tw`relative z-10`}
+      ${tw`relative z-10 h-full`}
       ${center && tw`flex flex-col w-full justify-center`}
     `
 )
@@ -211,22 +209,20 @@ const Column = ({
   const contentPadding = padding || (hasBackground ? 'grid-gap' : null)
 
   let columnContent = (
-    <StyledColumnWrapper>
-      <StyledColumn
-        minAspectRatio={minAspectRatio}
-        backgroundImage={backgroundImage}
-        {...columnProps}
-      >
-        {children && (
-          <ColumnContentWrapper center={center}>
-            <ColumnContent padding={contentPadding}>{children}</ColumnContent>
-          </ColumnContentWrapper>
-        )}
-        {backgroundImageId && (
-          <BackgroundImage id={backgroundImageId} fit="cover" />
-        )}
-      </StyledColumn>
-    </StyledColumnWrapper>
+    <StyledColumn
+      minAspectRatio={minAspectRatio}
+      backgroundImage={backgroundImage}
+      {...columnProps}
+    >
+      {children && (
+        <ColumnContentWrapper center={center}>
+          <ColumnContent padding={contentPadding}>{children}</ColumnContent>
+        </ColumnContentWrapper>
+      )}
+      {backgroundImageId && (
+        <BackgroundImage id={backgroundImageId} fit="cover" />
+      )}
+    </StyledColumn>
   )
 
   if (showAnimation) {
