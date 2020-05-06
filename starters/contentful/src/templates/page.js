@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import * as propTypes from 'prop-types'
 
-import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { useTranslation } from 'react-i18next'
 
@@ -46,9 +45,7 @@ function PageTemplate({ data, pageContext }) {
             metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
           }
         />
-        <MDXProvider>
-          <MDXRenderer>{content.childMdx.body}</MDXRenderer>
-        </MDXProvider>
+        <MDXRenderer>{content.childMdx.body}</MDXRenderer>
       </Layout>
     </MdxSuiteContext.Provider>
   )
