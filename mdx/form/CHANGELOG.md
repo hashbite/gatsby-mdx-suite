@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.20](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-form@0.4.19...@gatsby-mdx-suite/mdx-form@0.4.20) (2020-05-07)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-form
+
+
+
+
+
 ## [0.4.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-form@0.4.18...@gatsby-mdx-suite/mdx-form@0.4.19) (2020-04-27)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-form

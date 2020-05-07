@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.4](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.15.3...@gatsby-mdx-suite/mdx-layout@0.15.4) (2020-05-07)
+
+
+### Bug Fixes
+
+* **mdx/layout:** simplify and improve Column DOM ([72123c7](https://github.com/axe312ger/gatsby-suite-mdx/commit/72123c7f2e5a0594452b8c3d272f50632098991f))
+
+
+
+
+
 ## [0.15.3](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-layout@0.15.2...@gatsby-mdx-suite/mdx-layout@0.15.3) (2020-04-27)
 
 

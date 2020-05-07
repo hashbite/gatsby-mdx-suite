@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.10](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.9...@gatsby-mdx-suite/mdx-image@0.5.10) (2020-05-07)
+
+
+### Bug Fixes
+
+* **mdx/image:** ensure image dimensions are responsive ([06453fc](https://github.com/axe312ger/gatsby-suite-mdx/commit/06453fc57629d7d1329453b868cb385be0c38e06))
+* **mdx/image:** properly apply image dimensions ([bf00dc4](https://github.com/axe312ger/gatsby-suite-mdx/commit/bf00dc491879aa7ed384f04cd3f4af78bff27146))
+
+
+
+
+
 ## [0.5.9](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.8...@gatsby-mdx-suite/mdx-image@0.5.9) (2020-04-27)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
