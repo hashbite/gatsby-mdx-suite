@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.10](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-video@0.4.9...@gatsby-mdx-suite/mdx-video@0.4.10) (2020-05-10)
+
+
+### Bug Fixes
+
+* **mdx/video:** background videos now keep playing when user scrolls ([1e9ae69](https://github.com/axe312ger/gatsby-suite-mdx/commit/1e9ae69f6e1001ba20fdde09c55d3bfc38b13143))
+* images and videos are now locale aware ([7382a8d](https://github.com/axe312ger/gatsby-suite-mdx/commit/7382a8dceed2489fef5bf39927054074bf8e9b1a))
+
+
+
+
+
 ## [0.4.9](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-video@0.4.8...@gatsby-mdx-suite/mdx-video@0.4.9) (2020-04-27)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-video

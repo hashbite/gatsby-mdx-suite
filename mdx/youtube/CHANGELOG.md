@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-youtube@0.4.11...@gatsby-mdx-suite/mdx-youtube@0.5.0) (2020-05-10)
+
+
+### Features
+
+* **mdx/youtube:** add support for youtube player parameters, aspect ratio and improve positioning ([b3a13f4](https://github.com/axe312ger/gatsby-suite-mdx/commit/b3a13f41fe22139deba8fc11779ea8a588bb6ef5))
+
+
+
+
+
 ## [0.4.11](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-youtube@0.4.10...@gatsby-mdx-suite/mdx-youtube@0.4.11) (2020-05-07)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube

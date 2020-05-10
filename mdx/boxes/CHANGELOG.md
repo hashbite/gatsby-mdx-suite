@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.11](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-boxes@0.9.10...@gatsby-mdx-suite/mdx-boxes@0.9.11) (2020-05-10)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
 ## [0.9.10](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-boxes@0.9.9...@gatsby-mdx-suite/mdx-boxes@0.9.10) (2020-05-07)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
