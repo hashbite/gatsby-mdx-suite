@@ -1,7 +1,7 @@
 export function findActiveTrail({ id, subTree }) {
   for (const item of subTree) {
     // Found the target
-    if (item.linkedPage && id === item.linkedPage.pageId) {
+    if (item.internalTargetId === id) {
       return [item.menuItemId]
     }
 
