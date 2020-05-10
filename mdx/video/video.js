@@ -47,10 +47,13 @@ export default function Video({
 
   const handleVideoIntersection = async (event) => {
     try {
+      // Autoplay as soon video is visible to the user.
       if (autoplay && event.isIntersecting && refVideo.current) {
         await refVideo.current.play()
       }
-      if (!event.isIntersecting && refVideo.current) {
+      // Stop video when user leaves the viewport.
+      // Only active when controls are enabled to allow background videos to loop.
+      if (controls && !event.isIntersecting && refVideo.current) {
         await refVideo.current.pause()
       }
     } catch (err) {
