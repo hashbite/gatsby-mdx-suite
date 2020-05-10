@@ -97,7 +97,10 @@ export default function Image({
   fluid,
   ...restProps
 }) {
-  const { data } = useContext(MdxSuiteContext)
+  const {
+    data,
+    pageContext: { locale: activeLocale },
+  } = useContext(MdxSuiteContext)
 
   // Locate image data from context if id is passed
   if (id) {
@@ -108,7 +111,9 @@ export default function Image({
     }
 
     // Fetch data from context when an id was passed
-    const imageData = data[contextKey].find((asset) => asset.assetId === id)
+    const imageData = data[contextKey].find(
+      ({ assetId, locale }) => assetId === id && locale === activeLocale
+    )
 
     if (!imageData) {
       console.error(

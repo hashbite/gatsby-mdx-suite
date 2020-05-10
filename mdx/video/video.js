@@ -30,9 +30,12 @@ export default function Video({
 }) {
   const {
     data: { videos = [] },
+    pageContext: { locale: activeLocale },
   } = useContext(MdxSuiteContext)
 
-  const video = videos.find((video) => video.assetId === id)
+  const video = videos.find(
+    ({ assetId, locale }) => assetId === id && locale === activeLocale
+  )
 
   if (!video) {
     console.error(
