@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/menu@0.5.5...@gatsby-mdx-suite/menu@0.5.6) (2020-05-12)
+
+
+### Bug Fixes
+
+* **menu:** extend active trail when parent and child share target ([9a3a8c6](https://github.com/axe312ger/gatsby-suite-mdx/commit/9a3a8c6a1c625eab17bb34ba40626aedbfefd64f))
+
+
+
+
+
 ## [0.5.5](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/menu@0.5.4...@gatsby-mdx-suite/menu@0.5.5) (2020-05-10)
 
 
