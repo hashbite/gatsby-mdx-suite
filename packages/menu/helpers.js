@@ -1,10 +1,5 @@
 export function findActiveTrail({ id, subTree }) {
   for (const item of subTree) {
-    // Found the target
-    if (item.internalTargetId === id) {
-      return [item.menuItemId]
-    }
-
     // Look deeper
     if (item.subitems) {
       const subTreeResult = findActiveTrail({
@@ -15,6 +10,11 @@ export function findActiveTrail({ id, subTree }) {
         // Target found in subitems, bubble up.
         return [item.menuItemId, ...subTreeResult]
       }
+    }
+
+    // Found the target
+    if (item.internalTargetId === id) {
+      return [item.menuItemId]
     }
   }
 
