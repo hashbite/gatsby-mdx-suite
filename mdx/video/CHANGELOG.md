@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.11](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-video@0.4.10...@gatsby-mdx-suite/mdx-video@0.4.11) (2020-05-25)
+
+
+### Bug Fixes
+
+* **mdx/video:** properly set h264 mimetype codec ([1d08e54](https://github.com/axe312ger/gatsby-suite-mdx/commit/1d08e54c2700ea10ac366c08702ff61ce4d3be62))
+
+
+
+
+
 ## [0.4.10](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-video@0.4.9...@gatsby-mdx-suite/mdx-video@0.4.10) (2020-05-10)
 
 
