@@ -84,8 +84,8 @@ const Layout = ({ children, title }) => {
       <DocsWrapper>
         <LayoutHeader>
           <DocsTitle>
-            <Link to="/docs">Docs</Link>
-            {title && ` - ${title}`}
+            <MenuLink to="/">&laquo;</MenuLink>
+            <MenuLink to="/docs">Docs</MenuLink>
           </DocsTitle>
           <MenuToggleWrapper>
             <MenuToggle
@@ -94,11 +94,10 @@ const Layout = ({ children, title }) => {
             />
           </MenuToggleWrapper>
           <Menu menuOpen={menuOpen}>
-            <MenuLink to="/docs/editing-basics">Editing Basics</MenuLink>
+            <MenuLink to="/docs">Home</MenuLink>
             <MenuLink to="/docs/playground">Playground</MenuLink>
             <MenuLink to="/docs/kitchen-sink">Kitchen Sink</MenuLink>
             <MenuLink to="/docs/theme">Theme</MenuLink>
-            <MenuLink to="/">Back to the page</MenuLink>
           </Menu>
         </LayoutHeader>
         {children}
