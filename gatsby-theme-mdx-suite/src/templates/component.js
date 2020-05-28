@@ -54,7 +54,7 @@ function DocsComponentTemplate({ data, pageContext }) {
   const tabs = [
     displayName,
     'Props',
-    ...examples.map((v, i) => `Example ${i + 1}`),
+    ...(examples ? examples.map((v, i) => `Example ${i + 1}`) : []),
   ]
 
   let content = (
