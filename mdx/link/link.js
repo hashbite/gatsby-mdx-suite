@@ -95,7 +95,7 @@ export default function Link({
 
   const page = getPageWithFallback({
     pageMap,
-    locale,
+    locale: locale || defaultLocale,
     defaultLocale,
   })
 

@@ -318,7 +318,10 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
 /**
  * Docs
  */
-exports.createPages = async ({ graphql, actions, getCache }) => {
+exports.createPages = async (
+  { graphql, actions, getCache },
+  { defaultLocale }
+) => {
   const { createPage } = actions
 
   async function createPages() {
@@ -352,7 +355,8 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
           id,
           pageId: `${packageName}/${filename}`,
           displayName,
-          pageTitle: displayName,
+          title: displayName,
+          locale: defaultLocale,
         },
       })
     })
