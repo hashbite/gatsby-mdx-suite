@@ -96,7 +96,7 @@ const Layout = ({ children, title }) => {
           <Menu menuOpen={menuOpen}>
             <MenuLink to="/docs">Home</MenuLink>
             <MenuLink to="/docs/playground">Playground</MenuLink>
-            <MenuLink to="/docs/kitchen-sink">Kitchen Sink</MenuLink>
+            <MenuLink to="/docs/components">Components</MenuLink>
             <MenuLink to="/docs/theme">Theme</MenuLink>
           </Menu>
         </LayoutHeader>

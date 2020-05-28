@@ -87,7 +87,7 @@ function DocsComponentTemplate({ data, pageContext }) {
     >
       <DataProvider>
         <Layout>
-          <LayoutNav title="Menu">
+          <LayoutNav title="Components">
             <ComponentsMenu />
           </LayoutNav>
           <LayoutMain>

@@ -6,7 +6,7 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 import { useMDXComponents } from '@mdx-js/react'
 
-const KitchenSinkMenuLink = styled.a(
+const ComponentMenuMenuLink = styled.a(
   ({ active }) => css`
     ${tw`
       block p-2
@@ -19,8 +19,8 @@ const KitchenSinkMenuLink = styled.a(
   `
 )
 
-const KitchenSinkMenuPackage = tw.div``
-const KitchenSinkMenuPackageName = tw.div`
+const ComponentMenuMenuPackage = tw.div``
+const ComponentMenuMenuPackageName = tw.div`
   pt-8 px-2 pb-1
   shadow-inner
   text-sm whitespace-no-wrap text-gray-500`
@@ -29,7 +29,7 @@ function ComponentsMenu() {
   const mdxComponents = useMDXComponents()
 
   const result = useStaticQuery(graphql`
-    query KitchenSinkQuery {
+    query ComponentMenuQuery {
       site {
         siteMetadata {
           title
@@ -85,23 +85,23 @@ function ComponentsMenu() {
   return (
     <>
       {Object.keys(componentsByPackage).map((packageName) => (
-        <KitchenSinkMenuPackage key={packageName}>
-          <KitchenSinkMenuPackageName>
+        <ComponentMenuMenuPackage key={packageName}>
+          <ComponentMenuMenuPackageName>
             {packageName === 'null'
               ? `Developed for ${result.site.siteMetadata.title}`
               : packageName}
             :
-          </KitchenSinkMenuPackageName>
+          </ComponentMenuMenuPackageName>
           <ul>
             {componentsByPackage[packageName].map((component) => (
               <li key={component.id}>
-                <KitchenSinkMenuLink href={component.path}>
+                <ComponentMenuMenuLink href={component.path}>
                   {component.displayName}
-                </KitchenSinkMenuLink>
+                </ComponentMenuMenuLink>
               </li>
             ))}
           </ul>
-        </KitchenSinkMenuPackage>
+        </ComponentMenuMenuPackage>
       ))}
     </>
   )
