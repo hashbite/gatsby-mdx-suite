@@ -14,11 +14,15 @@ import {
  * Title will be automatically set for internal pages
  *
  * @example
- * * <Link id="randomPageId" />
- * * <Link id="randomPageId">Internal link with given title</Link>
- * * <Link to="/docs">Internal link to hardcoded page</Link>
- * * <Link href="https://google.com">External link to Google</Link>
- * * <Link href="https://google.com" openInNewTab>External link to Google, opening in a new tab</Link>
+ * <Link id="randomPageId" />
+ * @example
+ * <Link id="randomPageId">Internal link with given title</Link>
+ * @example
+ * <Link to="/docs">Internal link to hardcoded page</Link>
+ * @example
+ * <Link href="https://google.com">External link to Google</Link>
+ * @example
+ * <Link href="https://google.com" openInNewTab>External link to Google, opening in a new tab</Link>
  */
 export default function Link({
   id,

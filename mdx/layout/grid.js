@@ -35,17 +35,17 @@ const GridWrapper = styled.div(
 const GridItem = styled.div(
   ({ center }) => css`
     ${center &&
-      css`
-        ${tw`flex flex-col items-center text-center`}
+    css`
+      ${tw`flex flex-col items-center text-center`}
+
+      > * {
+        ${tw`w-full`}
 
         > * {
-          ${tw`w-full`}
-
-          > * {
-            ${tw`my-auto`}
-          }
+          ${tw`my-auto`}
         }
-      `}
+      }
+    `}
   `
 )
 
@@ -61,12 +61,14 @@ const GridItem = styled.div(
  * <Image src="https://source.unsplash.com/random#1" />
  * <Image src="https://source.unsplash.com/random#2" />
  * </Grid>
+ * @example
  * <Grid>
  * <Image src="https://source.unsplash.com/random#1" />
  * <Image src="https://source.unsplash.com/random#2" />
  * <Image src="https://source.unsplash.com/random#3" />
  * <Image src="https://source.unsplash.com/random#4" />
  * </Grid>
+ * @example
  * <Grid>
  * <Image src="https://source.unsplash.com/random#1" />
  * <Image src="https://source.unsplash.com/random#2" />
@@ -77,6 +79,7 @@ const GridItem = styled.div(
  * <Image src="https://source.unsplash.com/random#7" />
  * <Image src="https://source.unsplash.com/random#8" />
  * </Grid>
+ * @example
  * <Grid minWidth="1fr" maxWidth="420px">
  * <Image src="https://source.unsplash.com/random#1" />
  * <Image src="https://source.unsplash.com/random#2" />

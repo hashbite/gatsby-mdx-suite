@@ -25,7 +25,7 @@ const ListItemContent = tw.div`pl-4`
  * <ListItem icon="star">Example for icon **star**</ListItem>
  * <ListItem icon="starOutlined">Example for icon **starOutlined**</ListItem>
  * </List>
- *
+ * @example
  * <List>
  * <ListItem icon="check" iconColor="#bada55">Colored example for icon **check**</ListItem>
  * <ListItem icon="circle" iconColor="blue">Colored example for icon **circle**</ListItem>

@@ -105,6 +105,7 @@ const BackgroundImage = tw(Image)`absolute inset-0`
  *
  * </Column>
  * </Columns>
+ * @example
  * <Columns>
  * <Column>
  *
@@ -128,6 +129,7 @@ const BackgroundImage = tw(Image)`absolute inset-0`
  * </Column>
  * <Column backgroundImage="https://source.unsplash.com/1600x900/?nature" />
  * </Columns>
+ * @example
  * <Columns>
  * <Column>
  *
@@ -148,6 +150,7 @@ const BackgroundImage = tw(Image)`absolute inset-0`
  * minAspectRatio="900 / 1600"
  * />
  * </Columns>
+ * @example
  * <Columns>
  * <Column>
  *
@@ -166,7 +169,7 @@ const BackgroundImage = tw(Image)`absolute inset-0`
  *
  * </Column>
  * </Columns>
- *
+ * @example
  * <Columns>
  * <Column>
  *

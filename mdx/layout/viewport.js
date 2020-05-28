@@ -20,11 +20,13 @@ const ViewportWrapper = styled.div(
       background: ${theme.colors.background};
       color: ${theme.colors.text};
 
-      ${hasBackgroundImage &&
+      ${
+        hasBackgroundImage &&
         css`
           ${tw`text-white`}
           text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
-        `}
+        `
+      }
     `
   }
 )
@@ -58,11 +60,13 @@ const BackgroundImageWrapper = styled.div`
  * # I'll stand out.
  *
  * </Viewport>
+ * @example
  * <Viewport backgroundImageId="randomPictureId">
  *
  * # Well, then I'll stand out for sure.
  *
  * </Viewport>
+ * @example
  * <Viewport colorSet="indigo">
  *
  * # Me as well :)

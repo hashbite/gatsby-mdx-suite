@@ -19,11 +19,13 @@ import Font from './font'
  * <TextBlock>
  * A normal paragraph
  * </TextBlock>
+ * @example
  * <TextBlock as="h1">
  * A complex headline<br/>
  * <Font color="blue" size="normal">With an embedded subline</Font>
  * </TextBlock>
- * <TextBlock family="heading" align="right">
+ * @example
+ * <TextBlock family="heading" align="right" color="red">
  * Text blocks have alignment support.
  * </TextBlock>
  *
@@ -34,10 +36,10 @@ const StyledTextBlock = styled(Font)(
     display: block;
 
     ${align &&
-      align !== TextBlock.defaultProps.align &&
-      css`
-        text-align: ${align};
-      `}
+    align !== TextBlock.defaultProps.align &&
+    css`
+      text-align: ${align};
+    `}
   `
 )
 

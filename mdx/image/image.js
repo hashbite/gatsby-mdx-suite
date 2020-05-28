@@ -78,7 +78,7 @@ export const ImageWrapper = styled('div', {
  * # An internal image
  *
  * <Image id="randomImageId" width="300" />
- *
+ * @example
  * # An external image
  *
  * <Image src="https://source.unsplash.com/random" width="300" />

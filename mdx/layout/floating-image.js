@@ -31,10 +31,10 @@ const Content = styled.div(
       flex: 0 0 50%;
       padding-right: calc(${theme.spacing['grid-gap']} / 2);
       ${reverse &&
-        css`
-          padding-left: calc(${theme.spacing['grid-gap']} / 2);
-          padding-right: 0;
-        `}
+      css`
+        padding-left: calc(${theme.spacing['grid-gap']} / 2);
+        padding-right: 0;
+      `}
     }
   `
 )
@@ -93,6 +93,7 @@ const ImageWrapper = styled.div(
  * * space
  *
  * </FloatingImage>
+ * @example
  * <FloatingImage imageId="randomPictureId" reverse fit="cover">
  *
  * # Reverse with cover image
@@ -107,6 +108,7 @@ const ImageWrapper = styled.div(
  * * space
  *
  * </FloatingImage>
+ * @example
  * <FloatingImage imageId="randomGraphicId" >
  *
  * # Graphic Cover example
@@ -121,6 +123,7 @@ const ImageWrapper = styled.div(
  * * space
  *
  * </FloatingImage>
+ * @example
  * <FloatingImage imageId="randomGraphicId" fit="contain">
  *
  * # Graphic Contain Example
