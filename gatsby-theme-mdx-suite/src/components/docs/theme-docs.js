@@ -235,6 +235,7 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
+            <a id="fonts" />
             <ThemeSectionHeader>Fonts</ThemeSectionHeader>
             <ThemeSectionContent>
               {Object.keys(theme.fonts).map((font) => (
@@ -300,6 +301,7 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
+            <a id="raw" />
             <ThemeSectionHeader>Raw processed theme config</ThemeSectionHeader>
             <ThemeSectionContent>
               <ThemeRawWrapper>
