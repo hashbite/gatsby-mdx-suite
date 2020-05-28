@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.19.3...gatsby-theme-mdx-suite@0.20.0) (2020-05-28)
+
+
+### Bug Fixes
+
+* **docs:** render example tabs only when examples are available ([b3085ff](https://github.com/axe312ger/gatsby-suite-mdx/commit/b3085ffbf923a68ffc89e856d246cb15cbaa800b))
+* **mdx-link:** fallback to default locale when non is passed ([71ecd3d](https://github.com/axe312ger/gatsby-suite-mdx/commit/71ecd3d6a8c755f589b2a4919e6283cd45f03cbd))
+
+
+### Features
+
+* **docs:** improve overview page ([5dff361](https://github.com/axe312ger/gatsby-suite-mdx/commit/5dff361277a78eeab2fbfeef7af5d4b17499e5c8))
+* **docs:** link common components in overview page ([8403d58](https://github.com/axe312ger/gatsby-suite-mdx/commit/8403d58de8568d0522fdb46e9d9851698bb02920))
+* **docs:** rename kitchen-sink to components and simplify code and components ([af23330](https://github.com/axe312ger/gatsby-suite-mdx/commit/af23330159c2aaa4227f544ab89f4cc27a4249f3))
+* **docs:** render components as subpages only, split up examples and render them as tabs ([e99cbcc](https://github.com/axe312ger/gatsby-suite-mdx/commit/e99cbcc1dc6ef76b1d419d8678628fd93dbef9c2))
+
+
+
+
+
 ## [0.19.3](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.19.2...gatsby-theme-mdx-suite@0.19.3) (2020-05-10)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite

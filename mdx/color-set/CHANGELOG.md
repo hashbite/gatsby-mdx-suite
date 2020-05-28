@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-color-set@0.2.2...@gatsby-mdx-suite/mdx-color-set@0.3.0) (2020-05-28)
+
+
+### Features
+
+* **docs:** render components as subpages only, split up examples and render them as tabs ([e99cbcc](https://github.com/axe312ger/gatsby-suite-mdx/commit/e99cbcc1dc6ef76b1d419d8678628fd93dbef9c2))
+
+
+
+
+
 ## [0.2.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-color-set@0.2.1...@gatsby-mdx-suite/mdx-color-set@0.2.2) (2020-03-11)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set

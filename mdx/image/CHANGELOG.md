@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.11...@gatsby-mdx-suite/mdx-image@0.6.0) (2020-05-28)
+
+
+### Features
+
+* **docs:** render components as subpages only, split up examples and render them as tabs ([e99cbcc](https://github.com/axe312ger/gatsby-suite-mdx/commit/e99cbcc1dc6ef76b1d419d8678628fd93dbef9c2))
+
+
+
+
+
 ## [0.5.11](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.10...@gatsby-mdx-suite/mdx-image@0.5.11) (2020-05-10)
 
 
