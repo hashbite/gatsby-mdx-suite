@@ -2,126 +2,141 @@
 title: 'Welcome'
 ---
 
-<TextBlock color="green">
-  This help is work in progress. <a href="https://meetings.hubspot.com/t4">Book a call with Tobias</a> if you have any questions, ideas, feedback. We're here to help.
-</TextBlock>
+# Gatsby MDX Suite
 
-# techboi site builder
-
-The techboi site builder lets you build fast loading static sites with reusable components.
+The Gatsby MDX Suite lets you build fast loading static sites with reusable components.
 
 ## Quick Start
-Based on more than 20 years experience we've developed a website builder with best practice layouts, a set of building blocks and amazing features.
 
 <Boxes>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/docs/get-started">
-      <TextBlock align="center">
-        <Font size="4xl">👀</Font><br/>
-        <Font weight="700">Get started</Font><br/>
-        Setup, Tutorials
-      </TextBlock>
-    </Link>
-  </Box>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/docs/layouts">
-      <TextBlock align="center">
-        <Font size="4xl">📐</Font><br/>
-        <Font weight="700">Layouts</Font><br/>
-        Headlines, Grids, Tables
-      </TextBlock>
-    </Link>
-  </Box>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/docs/branding">
-      <TextBlock align="center">
-        <Font size="4xl">🎨</Font><br/>
-        <Font weight="700">Branding</Font><br/>
-        Font, Sizes, Color
-      </TextBlock>
-    </Link>
-  </Box>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/docs/media">
-      <TextBlock align="center">
-        <Font size="4xl">📸</Font><br/>
-        <Font weight="700">Media</Font><br/>
-        Image, Videos, Instagram, Youtube, and more..
-      </TextBlock>
-    </Link>
-  </Box>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/docs/animations">
-      <TextBlock align="center">
-        <Font size="4xl">🌟</Font><br/>
-        <Font weight="700">
-          Animations
-        </Font><br/>
-        where the magic happens
-      </TextBlock>
-    </Link>
-  </Box>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/docs/special-elements">
-      <TextBlock align="center">
-        <Font size="4xl">😱</Font><br/>
-        <Font weight="700">
-          Special Elements
-        </Font><br/>
-        Media Gallery, Forms, Integrations, and more..
-      </TextBlock>
-    </Link>
-  </Box>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/docs/help">
-      <TextBlock align="center">
-        <Font size="4xl">⁉️</Font><br/>
-        <Font weight="700">Help</Font><br/>
-        FAQ, Support, Feedback
-      </TextBlock>
-    </Link>
-  </Box>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/docs/help">
-      <TextBlock align="center">
-        <Font size="4xl">😎</Font><br/>
-        <Font weight="700">Special Request</Font><br/>
-        Crazy ideas? Let us know!
-      </TextBlock>
-    </Link>
-  </Box>
+<Box colors={{ background: '#f2f2f2' }} width={12}>
+
+<TextBlock align="center">
+<Font size="4xl">🐣</Font><br/>
+<Font weight="700">Setup</Font><br/>
+<List defaultIcon="star">
+<ListItem><Link to="/docs/get-started">Get started</Link></ListItem>
+<ListItem><Link to="/docs/theme#fonts">Fonts</Link></ListItem>
+<ListItem><Link to="/docs/theme#icons">Icons</Link></ListItem>
+<ListItem><Link to="/docs/theme#colors">Colors</Link></ListItem>
+<ListItem><Link to="/docs/theme#sizes">Sizes</Link></ListItem>
+</List>
+</TextBlock>
+</Box>
+<Box colors={{ background: '#f2f2f2' }} width={12}>
+<TextBlock align="center">
+<Font size="4xl">📐</Font><br/>
+<Font weight="700">Layouts</Font><br/>
+<List defaultIcon="star">
+<ListItem><Link id="@gatsby-mdx-suite/mdx-layout/section"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-layout/columns"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-layout/column"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-boxes/boxes"/></ListItem>
+</List>
+</TextBlock>
+</Box>
+<Box colors={{ background: '#f2f2f2' }} width={12}>
+<TextBlock align="center">
+<Font size="4xl">🎨</Font><br/>
+<Font weight="700">Branding</Font><br/>
+<List defaultIcon="star">
+<ListItem><Link id="@gatsby-mdx-suite/mdx-copy/font"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-copy/text-block"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-copy/claim"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-copy/list"/></ListItem>
+</List>
+</TextBlock>
+</Box>
+<Box colors={{ background: '#f2f2f2' }} width={12}>
+<TextBlock align="center">
+<Font size="4xl">📸</Font><br/>
+<Font weight="700">Media</Font><br/>
+<List defaultIcon="star">
+<ListItem><Link id="@gatsby-mdx-suite/mdx-image/image"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-copy/icon"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-video/video"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-youtube/youtube-video"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-layout/floating-image"/></ListItem>
+</List>
+</TextBlock>
+</Box>
+<Box colors={{ background: '#f2f2f2' }} width={12}>
+<TextBlock align="center">
+<Font size="4xl">🌟</Font><br/>
+<Font weight="700">
+  Animations
+</Font><br/>
+<List defaultIcon="star">
+<ListItem><Link id="@gatsby-mdx-suite/mdx-animation/animate"/></ListItem>
+<ListItem>More...</ListItem>
+</List>
+</TextBlock>
+</Box>
+<Box colors={{ background: '#f2f2f2' }} width={12}>
+<Link to="/docs/special-elements">
+<TextBlock align="center">
+<Font size="4xl">😱</Font><br/>
+<Font weight="700">
+  Special Elements
+</Font><br/>
+<List defaultIcon="star">
+<ListItem><Link id="@gatsby-mdx-suite/mdx-timeline/timeline"/></ListItem>
+<ListItem><Link id="@gatsby-mdx-suite/mdx-instagram/instagram-post"/></ListItem>
+</List>
+</TextBlock>
+</Link>
+</Box>
+<Box colors={{ background: '#f2f2f2' }} width={12}>
+<Link href="https://github.com/axe312ger/gatsby-mdx-suite/issues">
+<TextBlock align="center">
+<Font size="4xl">⁉️</Font><br/>
+<Font weight="700">Help</Font><br/>
+
+* FAQ
+* Support
+* Feedback
+
+</TextBlock>
+</Link>
+</Box>
+<Box colors={{ background: '#f2f2f2' }} width={12}>
+<Link href="https://github.com/axe312ger/gatsby-mdx-suite/issues">
+<TextBlock align="center">
+<Font size="4xl">😎</Font><br/>
+<Font weight="700">Special Request</Font><br/><br/>
+
+Crazy ideas?
+
+Let us know!
+
+</TextBlock>
+</Link>
+</Box>
 </Boxes>
 
 
 ## Examples
 
-<Boxes>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/examples/landing-page">
-      <TextBlock align="center">
-        <Font size="4xl">💸</Font><br/>
-        <Font weight="700">Landing Page</Font><br/>
-        How to build websites that converts leads
-      </TextBlock>
-    </Link>
-  </Box>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/examples/blog">
-      <TextBlock align="center">
-        <Font size="4xl">✏️</Font><br/>
-        <Font weight="700">Blog</Font><br/>
-        How to start a blog, magazine, journal
-      </TextBlock>
-    </Link>
-  </Box>
-  <Box colors={{ background: '#f2f2f2' }} width={12}>
-    <Link to="/examples/portfolio">
-      <TextBlock align="center">
-        <Font size="4xl">🖼</Font><br/>
-        <Font weight="700">Portfolio</Font><br/>
-        Show videos, images, and more
-      </TextBlock>
-    </Link>
-  </Box>
-</Boxes>
-
+<Columns>
+<Column colors={{ background: '#f2f2f2' }}>
+<TextBlock align="center">
+<Font size="4xl">💸</Font><br/>
+<Font weight="700">Landing Page</Font><br/>
+How to build websites that converts leads
+</TextBlock>
+</Column>
+<Column colors={{ background: '#f2f2f2' }}>
+<TextBlock align="center">
+<Font size="4xl">✏️</Font><br/>
+<Font weight="700">Blog</Font><br/>
+How to start a blog, magazine, journal
+</TextBlock>
+</Column>
+<Column colors={{ background: '#f2f2f2' }}>
+<TextBlock align="center">
+<Font size="4xl">🖼</Font><br/>
+<Font weight="700">Portfolio</Font><br/>
+Show videos, images, and more
+</TextBlock>
+</Column>
+</Columns>
