@@ -13,16 +13,19 @@ const StyledList = tw.ul`mt-4 mb-8 p-0`
  * <ListItem>Bar</ListItem>
  * <ListItem>Baz</ListItem>
  * </List>
+ * @example
  * <List defaultIcon="dotSmall">
  * <ListItem>Foo</ListItem>
  * <ListItem>Bar</ListItem>
  * <ListItem>Baz</ListItem>
  * </List>
+ * @example
  * <List defaultIcon="star" defaultIconColor="red">
  * <ListItem>Foo</ListItem>
  * <ListItem icon="circle">Bar</ListItem>
  * <ListItem icon="check" iconColor="green">Baz</ListItem>
  * </List>
+ * @example
  * <List>
  * <ListItem icon="check">
  *

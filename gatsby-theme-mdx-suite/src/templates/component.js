@@ -1,18 +1,37 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { graphql } from 'gatsby'
 import * as propTypes from 'prop-types'
-import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import Link from 'gatsby-link'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import { Styled } from 'theme-ui'
+import tw from 'twin.macro'
 
+import LayoutNav from '../components/docs/layout/nav'
+import ComponentsMenu from '../components/docs/layout/components-menu'
 import Layout from '../components/docs/layout/layout'
 import LayoutMain from '../components/docs/layout/main'
 import DataProvider from '../components/docs/data-provider'
 import LiveEditor from '../components/docs/live-editor'
 import Props from '../components/docs/props'
+
+const Tabs = styled.div`
+  ${tw`flex border-b mb-8`}
+`
+const Tab = styled.div(
+  ({ active }) => css`
+    ${active ? tw`-mb-px mr-1` : tw`mr-1`}
+  `
+)
+const TabLink = styled.a(
+  ({ active }) => css`
+    ${tw`bg-white inline-block py-2 px-4 text-gray-400 font-semibold cursor-pointer`}
+    ${active
+      ? tw`border-l border-t border-r rounded-t py-2 px-4 text-gray-800`
+      : tw``}
+  `
+)
 
 const ComponentWrapper = styled.div`
   max-width: 1200px;
@@ -22,6 +41,7 @@ const ComponentWrapper = styled.div`
 
 function DocsComponentTemplate({ data, pageContext }) {
   const MdxSuiteData = useContext(MdxSuiteContext)
+  const [activeTab, setActiveTab] = useState(0)
 
   const {
     displayName,
@@ -30,6 +50,33 @@ function DocsComponentTemplate({ data, pageContext }) {
     componentProps,
     examples,
   } = data.componentMetadata
+
+  const tabs = [
+    displayName,
+    'Props',
+    ...examples.map((v, i) => `Example ${i + 1}`),
+  ]
+
+  let content = (
+    <>
+      <Styled.h1>{displayName}</Styled.h1>
+      {description && <MDXRenderer>{description.childMdx.body}</MDXRenderer>}
+      {longDescription && <MDXRenderer>{longDescription.body}</MDXRenderer>}
+    </>
+  )
+
+  if (activeTab === 1) {
+    content = <Props componentProps={componentProps} />
+  }
+
+  if (activeTab > 1) {
+    content = (
+      <LiveEditor
+        editorId={displayName + activeTab}
+        initialValue={examples[activeTab - 2].raw}
+      />
+    )
+  }
 
   return (
     <MdxSuiteContext.Provider
@@ -40,38 +87,24 @@ function DocsComponentTemplate({ data, pageContext }) {
     >
       <DataProvider>
         <Layout>
+          <LayoutNav title="Menu">
+            <ComponentsMenu />
+          </LayoutNav>
           <LayoutMain>
             <ComponentWrapper>
-              <small>
-                <Link to="/docs/">Back to component list</Link>
-              </small>
-              <br />
-              <br />
-              <Styled.h1>{displayName}</Styled.h1>
-
-              <MDXProvider>
-                {description && (
-                  <MDXRenderer>{description.childMdx.body}</MDXRenderer>
-                )}
-              </MDXProvider>
-
-              <Props componentProps={componentProps} />
-
-              <LiveEditor
-                editorId={displayName}
-                initialValue={examples && examples[0].raw}
-              />
-
-              <MDXProvider>
-                {longDescription && (
-                  <MDXRenderer>{longDescription.body}</MDXRenderer>
-                )}
-              </MDXProvider>
-              <br />
-              <br />
-              <small>
-                <Link to="/docs/">Back to component list</Link>
-              </small>
+              <Tabs>
+                {tabs.map((tabTitle, i) => (
+                  <Tab key={i} active={i === activeTab}>
+                    <TabLink
+                      active={i === activeTab}
+                      onClick={() => setActiveTab(i)}
+                    >
+                      {tabTitle}
+                    </TabLink>
+                  </Tab>
+                ))}
+              </Tabs>
+              {content}
             </ComponentWrapper>
           </LayoutMain>
         </Layout>
@@ -102,7 +135,9 @@ export const pageQuery = graphql`
       componentProps: props {
         ...ComponentProps
       }
-      examples
+      examples {
+        raw
+      }
     }
   }
 `

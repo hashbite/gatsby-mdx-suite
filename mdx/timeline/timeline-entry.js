@@ -119,6 +119,7 @@ const TimelineEntryWrapper = styled.div(
  * <TimelineEntry label="2">Second</TimelineEntry>
  * <TimelineEntry label="3">Third</TimelineEntry>
  * </Timeline>
+ * @example
  * <Timeline>
  * <TimelineEntry bubbleSize="112" label="First">First</TimelineEntry>
  * <TimelineEntry bubbleSize="112" label="Second">Second</TimelineEntry>

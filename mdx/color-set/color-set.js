@@ -3,6 +3,13 @@ import propTypes from 'prop-types'
 import merge from 'lodash/merge'
 import { ThemeProvider, useThemeUI } from 'theme-ui'
 
+/**
+ * Apply a color set to a subset of elements.
+ *
+ * @example
+ * <CTA href="#">Foo</CTA>
+ * <ColorSet name="blue"><CTA href="#">Bar</CTA></ColorSet>
+ */
 const ColorSet = ({ name, children, ...colors }) => {
   const { theme } = useThemeUI()
 

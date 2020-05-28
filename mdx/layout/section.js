@@ -68,6 +68,7 @@ const BackgroundImageWrapper = styled.div`
  * ![picture of a dog](https://source.unsplash.com/400x300/weekly?dog)
  *
  * </Section>
+ * @example
  * <Section colorSet="teal">
  *
  * # Cats
@@ -79,7 +80,7 @@ const BackgroundImageWrapper = styled.div`
  * <Image src="https://source.unsplash.com/400x300/weekly?cat" alt="Picture of a cat" />
  * </Columns>
  * </Section>
- *
+ * @example
  * <Section colors={{ background:"tomato", primary: "#48C9B0", secondary: "heading"}}>
  *
  * # Parrots
@@ -91,6 +92,7 @@ const BackgroundImageWrapper = styled.div`
  * <Image src="https://source.unsplash.com/400x300/weekly?parrot" alt="Picture of a parrot" />
  * </Columns>
  * </Section>
+ * @example
  * <Section backgroundImageId="randomPictureId">
  *
  * # Ghosts

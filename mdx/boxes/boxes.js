@@ -54,7 +54,7 @@ const StyledBoxes = styled.div(
  *   <Box height="4" colorSet="green" />
  *   <Box width="8" height="12" colorSet="blue" />
  * </Boxes>
- * @example <caption>Hmm</caption>
+ * @example
  * <Boxes>
  *   <Box backgroundColor="tomato" />
  *   <Box backgroundColor="#BADA55" />
