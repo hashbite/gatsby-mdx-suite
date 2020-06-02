@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.6.0...@gatsby-mdx-suite/mdx-image@0.6.1) (2020-06-02)
+
+
+### Bug Fixes
+
+* **mdx/image:** add fall backs when image is not available in current locale ([9dd6e4c](https://github.com/axe312ger/gatsby-suite-mdx/commit/9dd6e4cbf65705d5117cef90876db3a569971aeb))
+
+
+
+
+
 # [0.6.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-image@0.5.11...@gatsby-mdx-suite/mdx-image@0.6.0) (2020-05-28)
 
 
