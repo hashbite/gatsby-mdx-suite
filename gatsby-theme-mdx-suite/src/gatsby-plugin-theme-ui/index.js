@@ -13,7 +13,7 @@ export default merge(tailwindPreset, typographyTheme, {
     'content-gap': `${typographyTheme.space[3]}px`,
   },
   maxWidth: {
-    'content-column': `${parseInt(tailwindPreset.sizes['6xl']) * 16}px`,
+    'content-column': `1200px`,
   },
   colors: {
     // Default Theme-UI colors
