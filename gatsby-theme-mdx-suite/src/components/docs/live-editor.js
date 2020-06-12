@@ -110,14 +110,18 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const [unverifiedValue, setUnverifiedValue] = useDebounce(editorValue, 300)
   const [error, setError] = useState()
   const {
-    data: { images, videos, youtubeVideos, instagramPosts },
+    data: { full, youtubeVideos, instagramPosts },
   } = useContext(MdxSuiteContext)
 
-  const pictures = images.filter(
+  const pictures = full.filter(
     ({ file: { contentType } }) => contentType.indexOf('svg') === -1
   )
-  const graphics = images.filter(
+  const graphics = full.filter(
     ({ file: { contentType } }) => contentType.indexOf('svg') !== -1
+  )
+
+  const videos = full.filter(
+    ({ file: { contentType } }) => contentType.indexOf('video') === 1
   )
 
   useEffect(() => {
@@ -127,8 +131,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
         const processedValue = unverifiedValue
           .replace(
             /"randomImageId"/gi,
-            () =>
-              `"${images[Math.floor(Math.random() * images.length)].assetId}"`
+            () => `"${full[Math.floor(Math.random() * full.length)].assetId}"`
           )
           .replace(
             /"randomPictureId"/gi,

@@ -8,24 +8,39 @@ const DocsDataProvider = ({ children }) => {
   const MdxSuiteData = useContext(MdxSuiteContext)
   const assetResults = useStaticQuery(graphql`
     query DocsAssetData {
-      images: allContentfulAsset(
-        filter: { file: { contentType: { regex: "/^image/" } } }
-      ) {
+      screen: allContentfulAsset {
         nodes {
-          ...MdxSuiteContentfulAsset
-          fluid(maxWidth: 320, quality: 60) {
-            ...GatsbyContentfulFluid_noBase64
-          }
+          ...MdxSuiteMediaCollectionScreenDocs
         }
       }
-      videos: allContentfulAsset(
-        filter: { file: { contentType: { regex: "/^video/" } } }
-      ) {
+      full: allContentfulAsset {
         nodes {
-          ...MdxSuiteContentfulAsset
-          videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
-            path
-          }
+          ...MdxSuiteMediaCollectionFullDocs
+        }
+      }
+      half: allContentfulAsset {
+        nodes {
+          ...MdxSuiteMediaCollectionHalfDocs
+        }
+      }
+      third: allContentfulAsset {
+        nodes {
+          ...MdxSuiteMediaCollectionThirdDocs
+        }
+      }
+      quarter: allContentfulAsset {
+        nodes {
+          ...MdxSuiteMediaCollectionQuarterDocs
+        }
+      }
+      sixth: allContentfulAsset {
+        nodes {
+          ...MdxSuiteMediaCollectionSixthDocs
+        }
+      }
+      eigth: allContentfulAsset {
+        nodes {
+          ...MdxSuiteMediaCollectionEigthDocs
         }
       }
       youtubeVideos: allYoutubeVideo {
@@ -58,6 +73,14 @@ const DocsDataProvider = ({ children }) => {
     }
   `)
 
+  const mediaCollections = Object.keys(assetResults).reduce(
+    (collections, mediaCollection) => ({
+      ...collections,
+      [mediaCollection]: assetResults[mediaCollection].nodes,
+    }),
+    {}
+  )
+
   return (
     <MdxSuiteContext.Provider
       value={{
@@ -66,14 +89,7 @@ const DocsDataProvider = ({ children }) => {
           locale: MdxSuiteData.themeConfig.defaultLocale,
           title: 'docs',
         },
-        data: {
-          images: assetResults.images.nodes || [],
-          floating: assetResults.images.nodes || [],
-          background: assetResults.images.nodes || [],
-          youtubeVideos: assetResults.youtubeVideos.nodes || [],
-          instagramPosts: assetResults.instagramPosts.nodes || [],
-          videos: assetResults.videos.nodes || [],
-        },
+        data: mediaCollections,
       }}
     >
       {children}

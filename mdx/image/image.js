@@ -237,7 +237,7 @@ export default function Image({
 Image.displayName = 'Image'
 
 Image.defaultProps = {
-  contextKey: 'images',
+  contextKey: 'full',
   width: '100%',
   fit: null,
   position: 'center center',

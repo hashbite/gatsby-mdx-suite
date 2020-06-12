@@ -26,12 +26,24 @@ export default function Video({
   preload,
   muted,
   pauseOnHover,
+  contextKey,
   ...props
 }) {
   const {
-    data: { videos = [] },
+    data,
     pageContext: { locale: activeLocale },
   } = useContext(MdxSuiteContext)
+
+  const videos = data[contextKey]
+
+  if (!videos) {
+    console.error(
+      new Error(
+        `The media context "${contextKey}" does not exist or does not contain any data.`
+      )
+    )
+    return null
+  }
 
   const video = videos.find(
     ({ assetId, locale }) => assetId === id && locale === activeLocale
@@ -123,6 +135,7 @@ Video.defaultProps = {
   muted: false,
   pauseOnHover: false,
   preload: 'metadata',
+  contextKey: 'screen',
 }
 
 Video.propTypes = {
@@ -133,4 +146,5 @@ Video.propTypes = {
   controls: propTypes.bool,
   muted: propTypes.bool,
   pauseOnHover: propTypes.bool,
+  contextKey: propTypes.string,
 }
