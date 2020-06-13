@@ -1,0 +1,114 @@
+{
+  "name": "gatsby-starter-mdx-suite",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.0.2",
+  "author": "Benedikt Rötsch <info@benedikt.roetsch.de>",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "GATSBY_CONTENTFUL_OFFLINE=true nodemon -x 'gatsby develop' -w './*.js'",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "format": "prettier --write '{./**/*.{js,jsx},*.{js,json}}'",
+    "lint": "eslint src",
+    "generate-tailwind-config": "NODE_ENV=test babel-node --config-file ./scripts/babel.config.js --ignore /allow/transpile/of/node_modules scripts/generate-tailwind-config.js",
+    "predevelop": "npm run generate-tailwind-config",
+    "prebuild": "npm run generate-tailwind-config",
+    "postinstall": "npm run generate-tailwind-config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axe312ger/gatsby-suite-mdx"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-mdx-suite",
+    "starter",
+    "mdx"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.4",
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
+    "@gatsby-mdx-suite/contexts": "^0.3.3",
+    "@gatsby-mdx-suite/helpers": "^0.8.1",
+    "@gatsby-mdx-suite/i18n": "^0.3.7",
+    "@gatsby-mdx-suite/mdx-animation": "^0.1.7",
+    "@gatsby-mdx-suite/mdx-bandcamp": "^0.3.2",
+    "@gatsby-mdx-suite/mdx-boxes": "^0.10.2",
+    "@gatsby-mdx-suite/mdx-color-set": "^0.3.0",
+    "@gatsby-mdx-suite/mdx-copy": "^0.9.0",
+    "@gatsby-mdx-suite/mdx-decoration": "^0.4.14",
+    "@gatsby-mdx-suite/mdx-form": "^0.4.24",
+    "@gatsby-mdx-suite/mdx-image": "^0.7.0",
+    "@gatsby-mdx-suite/mdx-instagram": "^0.3.15",
+    "@gatsby-mdx-suite/mdx-layout": "^0.16.2",
+    "@gatsby-mdx-suite/mdx-link": "^0.7.0",
+    "@gatsby-mdx-suite/mdx-media-gallery": "^0.4.15",
+    "@gatsby-mdx-suite/mdx-timeline": "^0.5.0",
+    "@gatsby-mdx-suite/mdx-video": "^0.5.0",
+    "@gatsby-mdx-suite/mdx-youtube": "^0.5.3",
+    "@gatsby-mdx-suite/menu": "^0.5.7",
+    "@gatsby-mdx-suite/seo": "^0.1.3",
+    "@theme-ui/tailwind": "^0.3.0",
+    "@theme-ui/typography": "^0.3.0",
+    "babel-preset-gatsby": "^0.4.0",
+    "fs-extra": "^9.0.0",
+    "gatsby": "^2.21.0",
+    "gatsby-plugin-manifest": "^2.4.0",
+    "gatsby-plugin-mdx": "^1.2.0",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
+    "gatsby-plugin-offline": "^3.2.0",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sharp": "^2.6.0",
+    "gatsby-plugin-sitemap": "^2.4.0",
+    "gatsby-source-contentful": "^2.3.0",
+    "gatsby-theme-mdx-suite": "^0.21.0",
+    "gatsby-transformer-inline-svg": "^0.0.7",
+    "gatsby-transformer-sharp": "^2.5.0",
+    "gatsby-transformer-video": "^0.1.18",
+    "i18next": "^19.4.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-entypo-icons": "^1.4.1",
+    "react-i18next": "^11.4.0",
+    "theme-ui": "^0.3.1",
+    "twin.macro": "^1.0.0-alpha.10",
+    "typography-theme-ocean-beach": "^0.16.19"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-react": "^9.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
+    "nodemon": "^2.0.3",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --config .prettierrc",
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write --config .prettierrc"
+    ]
+  }
+}

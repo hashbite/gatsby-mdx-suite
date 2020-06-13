@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.20.1...gatsby-theme-mdx-suite@0.21.0) (2020-06-13)
+
+
+### Features
+
+* **media:** merge image and video into seven preset media collections ([22f53e7](https://github.com/axe312ger/gatsby-suite-mdx/commit/22f53e794c5fda6d87682b46f81d617dedca216d))
+
+
+
+
+
 ## [0.20.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.20.0...gatsby-theme-mdx-suite@0.20.1) (2020-06-02)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite
