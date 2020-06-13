@@ -9,13 +9,14 @@
   ],
   "scripts": {
     "format": "prettier --write '{./**/*.{js,jsx},*.{js,json}}'",
-    "lint": "eslint . && npx lerna exec 'npm run lint' --scope='gatsby-starter-mdx-suite-*'",
+    "lint": "eslint .",
     "publish": "lerna publish --conventional-commits",
     "check-dependencies": "lerna exec \"pwd && npx depcheck --ignore-dirs '.cache,public' .\" --no-bail --concurrency 1",
     "test": "jest"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
+    "babel-preset-gatsby": "^0.4.9",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
