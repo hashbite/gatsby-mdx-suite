@@ -6,7 +6,7 @@ import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
 import tw from 'twin.macro'
 
-import { EntypoMenu } from 'react-entypo-icons'
+import EntypoMenu from 'react-entypo-icons/lib/entypo/Menu'
 
 const DocsWrapper = styled.div`
   ${tw`grid h-screen w-screen`}

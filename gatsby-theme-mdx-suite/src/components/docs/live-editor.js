@@ -8,7 +8,7 @@ import loadable from '@loadable/component'
 import tw from 'twin.macro'
 import { Styled } from 'theme-ui'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
-import { EntypoTabletMobileCombo } from 'react-entypo-icons'
+import EntypoTabletMobileCombo from 'react-entypo-icons/lib/entypo/TabletMobileCombo'
 
 const AceEditor = loadable(async () => {
   const ace = await import('react-ace')
