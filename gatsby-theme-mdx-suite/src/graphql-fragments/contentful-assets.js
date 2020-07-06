@@ -9,12 +9,6 @@ export const MdxSuiteContentfulAsset = graphql`
     file {
       contentType
       url
-      details {
-        image {
-          height
-          width
-        }
-      }
     }
     svg {
       content
@@ -40,9 +34,6 @@ export const MdxSuiteMediaCollectionScreen = graphql`
 export const MdxSuiteMediaCollectionScreenDocs = graphql`
   fragment MdxSuiteMediaCollectionScreenDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 2048) {
-      ...GatsbyContentfulFluid_noBase64
-    }
     videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
       path
     }
@@ -67,9 +58,6 @@ export const MdxSuiteMediaCollectionFull = graphql`
 export const MdxSuiteMediaCollectionFullDocs = graphql`
   fragment MdxSuiteMediaCollectionFullDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 1200) {
-      ...GatsbyContentfulFluid_noBase64
-    }
     videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
       path
     }
@@ -94,9 +82,6 @@ export const MdxSuiteMediaCollectionHalf = graphql`
 export const MdxSuiteMediaCollectionHalfDocs = graphql`
   fragment MdxSuiteMediaCollectionHalfDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 600) {
-      ...GatsbyContentfulFluid_noBase64
-    }
     videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
       path
     }
@@ -121,9 +106,6 @@ export const MdxSuiteMediaCollectionThird = graphql`
 export const MdxSuiteMediaCollectionThirdDocs = graphql`
   fragment MdxSuiteMediaCollectionThirdDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 400) {
-      ...GatsbyContentfulFluid_noBase64
-    }
     videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
       path
     }
@@ -148,9 +130,6 @@ export const MdxSuiteMediaCollectionQuarter = graphql`
 export const MdxSuiteMediaCollectionQuarterDocs = graphql`
   fragment MdxSuiteMediaCollectionQuarterDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 300) {
-      ...GatsbyContentfulFluid_noBase64
-    }
     videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
       path
     }
@@ -175,9 +154,6 @@ export const MdxSuiteMediaCollectionSixth = graphql`
 export const MdxSuiteMediaCollectionSixthDocs = graphql`
   fragment MdxSuiteMediaCollectionSixthDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 200) {
-      ...GatsbyContentfulFluid_noBase64
-    }
     videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
       path
     }
@@ -202,9 +178,6 @@ export const MdxSuiteMediaCollectionEigth = graphql`
 export const MdxSuiteMediaCollectionEigthDocs = graphql`
   fragment MdxSuiteMediaCollectionEigthDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 150) {
-      ...GatsbyContentfulFluid_noBase64
-    }
     videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
       path
     }
