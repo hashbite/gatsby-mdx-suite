@@ -1,7 +1,6 @@
 const { existsSync } = require('fs')
 
 const merge = require('lodash/merge')
-const { handler, resolver } = require('react-docgen-styled-resolver')
 
 const defaultComponentPaths = [
   `src/components/mdx/`,
@@ -64,10 +63,6 @@ module.exports = ({
       .filter(Boolean),
     {
       resolve: `gatsby-transformer-react-docgen`,
-      options: {
-        resolver,
-        handlers: [handler],
-      },
     },
     {
       resolve: `gatsby-transformer-documentationjs`,
