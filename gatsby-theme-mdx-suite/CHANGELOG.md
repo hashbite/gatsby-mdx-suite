@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.21.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.21.0...gatsby-theme-mdx-suite@0.21.1) (2020-07-06)
+
+
+### Performance Improvements
+
+* **assets:** reduce payload assets create, especially for the live editor ([2ad29aa](https://github.com/axe312ger/gatsby-suite-mdx/commit/2ad29aabca8e2deee8b58f6b7b3db7ac91ffe4cf))
+* **icons:** directly require entypo icons ([4c66b2f](https://github.com/axe312ger/gatsby-suite-mdx/commit/4c66b2f9adbec2239cdcb61395cb54cb2a937efa))
+
+
+
+
+
 # [0.21.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/gatsby-theme-mdx-suite@0.20.1...gatsby-theme-mdx-suite@0.21.0) (2020-06-13)
 
 
