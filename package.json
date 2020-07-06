@@ -4,7 +4,6 @@
   "workspaces": [
     "packages/*",
     "mdx/*",
-    "starters/*",
     "gatsby-theme-mdx-suite"
   ],
   "scripts": {
