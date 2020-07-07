@@ -2,6 +2,8 @@ import defaultComponents from 'gatsby-theme-mdx-suite-base/src/gatsby-plugin-the
 
 // Video support
 import Video from '@gatsby-mdx-suite/mdx-video/video'
+import YoutubeVideo from '@gatsby-mdx-suite/mdx-youtube/youtube-video'
+import VimeoVideo from '@gatsby-mdx-suite/mdx-vimeo/vimeo-video'
 
 // Add some basic scroll effects
 import Anchor from '@gatsby-mdx-suite/mdx-scroll-effects/anchor'
@@ -15,6 +17,8 @@ export default {
   ...defaultComponents,
   // Video
   Video,
+  YoutubeVideo,
+  VimeoVideo,
   // Scroll effects
   Anchor,
   AnchorHook,

@@ -23,6 +23,8 @@
     "@gatsby-mdx-suite/mdx-image": "^0.7.2",
     "@gatsby-mdx-suite/mdx-scroll-effects": "^0.0.0",
     "@gatsby-mdx-suite/mdx-video": "^0.5.2",
+    "@gatsby-mdx-suite/mdx-vimeo": "^0.0.0",
+    "@gatsby-mdx-suite/mdx-youtube": "^0.5.6",
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.64",
     "gatsby-plugin-manifest": "^2.4.31",
