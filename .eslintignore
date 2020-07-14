@@ -1,2 +1,3 @@
-/contentful/**
 **/node_modules/**
+**/public/**
+**/.cache/**

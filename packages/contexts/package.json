@@ -15,17 +15,11 @@
     "context"
   ],
   "peerDependencies": {
-    "i18next": "^16.13.0",
     "prop-types": "^15.7.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-i18next": "^11.3.3"
+    "react-dom": "^16.9.0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "i18next": "^19.4.4",
-    "react-i18next": "^11.4.0"
   }
 }

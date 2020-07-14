@@ -1,5 +1,8 @@
 theme:
-  - gatsby-theme-mdx-suite/**/*
+  - themes/**/*
+
+examples:
+  - examples/**/*
 
 mdx:
   - mdx/**/*

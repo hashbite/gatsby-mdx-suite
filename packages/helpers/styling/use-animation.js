@@ -3,10 +3,11 @@ import { css } from 'emotion'
 import * as animations from './animations'
 
 const useAnimation = ({ show }) => {
+  const [isVisible, setIsVisible] = useState(false)
+
   if (typeof show !== 'string') {
     return {}
   }
-  const [isVisible, setIsVisible] = useState(false)
 
   const animationName = show.split(' ').find((fragment) => animations[fragment])
 
