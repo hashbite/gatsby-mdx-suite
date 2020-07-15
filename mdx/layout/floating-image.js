@@ -29,10 +29,10 @@ const Content = styled.div(
   ({ theme, reverse }) => css`
     @media (min-width: ${theme.breakpoints[1]}) {
       flex: 0 0 50%;
-      padding-right: calc(${theme.spacing['grid-gap']} / 2);
+      padding-right: calc(${theme.sizes.gridGap} / 2);
       ${reverse &&
       css`
-        padding-left: calc(${theme.spacing['grid-gap']} / 2);
+        padding-left: calc(${theme.sizes.gridGap} / 2);
         padding-right: 0;
       `}
     }
@@ -51,14 +51,14 @@ const ImageWrapper = styled.div(
       ${
         reverse
           ? css`
-              right: calc(50% + (${theme.spacing['grid-gap']} / 2));
+              right: calc(50% + (${theme.sizes.gridGap} / 2));
               left: 0;
               & img {
                 object-position: center right !important;
               }
             `
           : css`
-              left: calc(50% + (${theme.spacing['grid-gap']} / 2));
+              left: calc(50% + (${theme.sizes.gridGap} / 2));
               right: 0;
               & img {
                 object-position: center left !important;

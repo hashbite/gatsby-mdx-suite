@@ -1,9 +1,12 @@
-const { writeFile } = require('fs-extra')
+const { writeFile, writeJSON } = require('fs-extra')
 const { resolve } = require('path')
 const cheerio = require('cheerio')
 const Debug = require('debug')
 const merge = require('lodash/merge')
+const omit = require('lodash/omit')
+const kebabCase = require('lodash/kebabCase')
 const toTailwind = require('@theme-ui/tailwind')
+const tailwindPreset = require('@theme-ui/preset-tailwind')
 
 const minimumConfig = require('./minimum-config')
 
@@ -33,9 +36,9 @@ exports.onCreateWebpackConfig = ({ actions }) => {
  */
 exports.onPreInit = async ({ reporter }, { themeUiConfig = {} }) => {
   reporter.info('Converting Theme UI config to TailwindCSS config')
+  const tailwindTheme = toTailwind(themeUiConfig).theme
 
-  const tailwindTheme = toTailwind(themeUiConfig).theme.default
-
+  // Ensure color palettes follow map pattern
   tailwindTheme.colors = Object.keys(tailwindTheme.colors).reduce(
     (colors, color) => {
       const palette = tailwindTheme.colors[color]
@@ -49,6 +52,20 @@ exports.onPreInit = async ({ reporter }, { themeUiConfig = {} }) => {
     },
     {}
   )
+
+  // Move ensure all custom sizes are available in tailwind
+  const transformedSizes = Object.keys(
+    omit(tailwindTheme.sizes, Object.keys(tailwindPreset.sizes))
+  ).reduce(
+    (sizes, key) => ({ ...sizes, [kebabCase(key)]: tailwindTheme.sizes[key] }),
+    {}
+  )
+
+  tailwindTheme.spacing = transformedSizes
+  tailwindTheme.minWidth = merge(tailwindTheme.minWidth, transformedSizes)
+  tailwindTheme.maxWidth = merge(tailwindTheme.maxWidth, transformedSizes)
+  tailwindTheme.minHeight = merge(tailwindTheme.minHeight, transformedSizes)
+  tailwindTheme.maxHeight = merge(tailwindTheme.maxHeight, transformedSizes)
 
   const configFileContent = `module.exports = ${JSON.stringify(
     { theme: { extend: { ...tailwindTheme } } },

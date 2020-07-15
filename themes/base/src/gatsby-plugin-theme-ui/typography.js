@@ -1,5 +1,5 @@
-import { toTheme } from '@theme-ui/typography'
+const { toTheme } = require('@theme-ui/typography')
 
 const typographyTheme = toTheme({})
 
-export default typographyTheme
+module.exports = typographyTheme

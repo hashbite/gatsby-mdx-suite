@@ -1,27 +1,31 @@
-import merge from 'lodash/merge'
-import tailwindPreset from '@theme-ui/preset-tailwind'
+/**
+ * This core theme sets all required values for rendering the page.
+ * It will automatically be merged with @theme-ui/preset-tailwind
+ *
+ * Important: The es-modules syntax can not be used here till gatsby-config.js supports it.
+ */
+const merge = require('lodash/merge')
+const tailwindPreset = require('@theme-ui/preset-tailwind')
 
-export default merge(tailwindPreset, {
-  spacing: {
-    'content-column-padding': '2vw',
-    'grid-gap': `${tailwindPreset.space[3]}px`,
-    'content-gap': `${tailwindPreset.space[3]}px`,
-  },
-  maxWidth: {
-    'content-column': `1200px`,
+module.exports = merge({}, tailwindPreset, {
+  sizes: {
+    contentColumnPadding: '2vw',
+    gridGap: `${tailwindPreset.space[3]}`,
+    contentGap: `${tailwindPreset.space[3]}`,
+    contentColumn: `1200px`,
   },
   colors: {
     // Default Theme-UI colors
-    text: tailwindPreset.colors.text, // text color
-    rootBackground: tailwindPreset.colors.background, // document background color
-    background: 'transparent', // background color
-    primary: tailwindPreset.colors.primary, // primary button and link color
-    secondary: tailwindPreset.colors.secondary, // secondary color - can be used for hover states
-    accent: tailwindPreset.colors.accent, //	a contrast color for emphasizing UI
-    highlight: tailwindPreset.colors.highlight, // a background color for highlighting text
-    muted: tailwindPreset.colors.muted, // a gray or subdued color for decorative purposes
+    // text: tailwindPreset.colors.text, // text color
+    // primary: tailwindPreset.colors.primary, // primary button and link color
+    // secondary: tailwindPreset.colors.secondary, // secondary color - can be used for hover states
+    // accent: tailwindPreset.colors.accent, //	a contrast color for emphasizing UI
+    // highlight: tailwindPreset.colors.highlight, // a background color for highlighting text
+    // muted: tailwindPreset.colors.muted, // a gray or subdued color for decorative purposes
     // MDX-Suite specific colors
+    background: 'transparent', // background color to transparent to simplify working with color sets
     headline: tailwindPreset.colors.text, // headline color
+    rootBackground: tailwindPreset.colors.background, // document background color
     sets: {
       backgroundImage: {
         background: 'transparent',
@@ -34,9 +38,31 @@ export default merge(tailwindPreset, {
       },
     },
   },
+  // Custom styles to inject our custom colors into all (MDX) components
   styles: {
     root: {
       backgroundColor: 'rootBackground',
+    },
+    h1: {
+      color: 'headline',
+    },
+    h2: {
+      color: 'headline',
+    },
+    h3: {
+      color: 'headline',
+    },
+    h4: {
+      color: 'headline',
+    },
+    h5: {
+      color: 'headline',
+    },
+    h6: {
+      color: 'headline',
+    },
+    th: {
+      color: 'headline',
     },
   },
 })

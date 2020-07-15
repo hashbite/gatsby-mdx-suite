@@ -26,7 +26,7 @@ const SectionWrapper = styled.section(({ textShadow, theme }) => {
 
 function calcGapValue(gap, theme) {
   const customSize = gap && theme.sizes[gap]
-  return customSize || `calc(${theme.spacing['content-gap']} * 2)`
+  return customSize || `calc(${theme.sizes.contentGap} * 2)`
 }
 
 const SectionContentWrapper = styled.div(

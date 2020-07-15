@@ -19,7 +19,7 @@ function PageTemplate({ data, pageContext }) {
     if (pageContext.locale !== i18n.language) {
       i18n.changeLanguage(pageContext.locale)
     }
-  }, [pageContext.locale])
+  }, [pageContext.locale, i18n])
 
   return (
     <MdxSuiteContext.Provider

@@ -8,7 +8,7 @@ const responsiveFont = ({
   lineHeightMax = '1.1em',
 }) => {
   const scaleStart = '300px'
-  const scaleEnd = theme.maxWidth['content-column']
+  const scaleEnd = theme.sizes.contentColumn
   const scaleRange = parseInt(scaleEnd) - parseInt(scaleStart)
 
   return css`

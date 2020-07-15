@@ -185,13 +185,22 @@ function LiveEditor({ editorId, initialValue, layout }) {
     }
 
     parseMdx()
-  }, [unverifiedValue])
+  }, [
+    unverifiedValue,
+    full,
+    graphics,
+    instagramPosts,
+    localStorageId,
+    pictures,
+    videos,
+    youtubeVideos,
+  ])
 
   useEffect(() => {
     if (unverifiedValue !== editorValue && editorValue) {
       setUnverifiedValue(editorValue)
     }
-  }, [editorValue])
+  }, [editorValue, setUnverifiedValue, unverifiedValue])
 
   const handleEditorChange = (content) =>
     setEditorValue(content.replace(/^[ \t]+$/gm, ''))
