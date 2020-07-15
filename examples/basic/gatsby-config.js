@@ -57,8 +57,9 @@ module.exports = {
          * This is a exception for demonstration purposes.
          */
         contentful: {
-          spaceId: `ep35pft871o5`,
-          accessToken: `8547Gq5lgVFt9bX5hzsZd4WHIE6pFp-OPjTbdU_fMHc`,
+          spaceId: `kkye7j4w7zwc`,
+          accessToken: `yfNcvsaJfU6nmL6xzKwbP-WHw27vvDzjTCeFkg93pKk`,
+          environment: `basic`,
         },
       },
     },

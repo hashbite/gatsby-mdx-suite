@@ -1,5 +1,5 @@
 const { resolve } = require('path')
-const { createPath } = require('@gatsby-mdx-suite/i18n/helpers')
+const { createPath } = require('@gatsby-mdx-suite/helpers/routing')
 
 exports.createPages = async ({ graphql, actions, getCache }) => {
   const { createPage, createRedirect } = actions

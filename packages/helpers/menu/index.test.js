@@ -1,4 +1,4 @@
-import { findActiveTrail } from './helpers'
+import { findActiveTrail } from '.'
 
 const menuRoot = [
   {

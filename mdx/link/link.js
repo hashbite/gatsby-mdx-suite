@@ -6,7 +6,7 @@ import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import {
   generatePageMap,
   getPageWithFallback,
-} from '@gatsby-mdx-suite/i18n/helpers'
+} from '@gatsby-mdx-suite/helpers/routing'
 
 /**
  * Link either an internal or external page.
