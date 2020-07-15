@@ -4,25 +4,16 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
-import loadable from '@loadable/component'
 import tw from 'twin.macro'
 import { Styled } from 'theme-ui'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import EntypoTabletMobileCombo from 'react-entypo-icons/lib/entypo/TabletMobileCombo'
+import AceEditor from 'react-ace'
 
-const AceEditor = loadable(() => import('react-ace'))
-const AceEditorExtSearchbox = loadable(() =>
-  import('ace-builds/src-min-noconflict/ext-searchbox')
-)
-const AceEditorExtLanguageTools = loadable(() =>
-  import('ace-builds/src-min-noconflict/ext-language_tools')
-)
-const AceEditorModeMarkdown = loadable(() =>
-  import('ace-builds/src-min-noconflict/mode-markdown')
-)
-const AceEditorThemeDracula = loadable(() =>
-  import('ace-builds/src-min-noconflict/theme-dracula')
-)
+import 'ace-builds/src-noconflict/ext-searchbox'
+import 'ace-builds/src-noconflict/ext-language_tools'
+import 'ace-builds/src-noconflict/mode-markdown'
+import 'ace-builds/src-noconflict/theme-dracula'
 
 const LiveEditorWrapper = styled.section(
   ({ layout }) => css`
@@ -185,16 +176,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
     }
 
     parseMdx()
-  }, [
-    unverifiedValue,
-    full,
-    graphics,
-    instagramPosts,
-    localStorageId,
-    pictures,
-    videos,
-    youtubeVideos,
-  ])
+  }, [unverifiedValue])
 
   useEffect(() => {
     if (unverifiedValue !== editorValue && editorValue) {
@@ -248,10 +230,6 @@ function LiveEditor({ editorId, initialValue, layout }) {
           width="100%"
           height="100%"
         />
-        <AceEditorExtSearchbox />
-        <AceEditorExtLanguageTools />
-        <AceEditorModeMarkdown />
-        <AceEditorThemeDracula />
       </LiveEditorEditor>
     </LiveEditorWrapper>
   )
