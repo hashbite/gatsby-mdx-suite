@@ -8,7 +8,8 @@ import Column from '@gatsby-mdx-suite/mdx-layout/column'
 import Section from '@gatsby-mdx-suite/mdx-layout/section'
 
 // Project specific components
-import Header from '../components/header'
+import Header from 'gatsby-theme-mdx-suite-base/src/components/layout/header'
+import CustomComponent from '../components/custom-component'
 
 export default {
   Column,
@@ -17,4 +18,5 @@ export default {
   Link,
   Section,
   Header,
+  CustomComponent,
 }

@@ -1,4 +1,4 @@
-import { createPath } from './helpers'
+import { createPath } from '.'
 
 const config = {
   localeMap: {

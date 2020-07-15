@@ -4,14 +4,14 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { cx } from 'emotion'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
+import { findActiveTrail } from '@gatsby-mdx-suite/helpers/menu'
 
 import MenuUl from './menu-ul'
 import MenuItem from './menu-item'
-import { findActiveTrail } from './helpers'
 
-export default function MenuRecursive({ rootMenuItemId }) {
+export default function MenuLevel({ rootMenuItemId, level = 1 }) {
   const queryResult = useStaticQuery(graphql`
-    query MenuRecursiveQuery {
+    query MenuLevelQuery {
       allContentfulMenuItem {
         nodes {
           ...MenuItem
@@ -51,42 +51,44 @@ export default function MenuRecursive({ rootMenuItemId }) {
     subTree: [menuRoot],
   })
 
+  const pathToTravel = activeTrail.slice(0, level)
+
+  let currentRoot = menuRoot
+  let currentLevel = 1
+
+  pathToTravel.forEach((destination) => {
+    currentLevel++
+
+    const result = currentRoot.subitems.find(
+      (item) => item.menuItemId === destination
+    )
+
+    if (result) {
+      currentRoot = result
+    }
+  })
+
+  if (currentLevel < level || !currentRoot.subitems) {
+    return null
+  }
+
+  const levelClass = cx(`level-${level}`)
+
   return (
-    <RecursiveMenu children={menuRoot.subitems} activeTrail={activeTrail} />
-  )
-}
-
-MenuRecursive.propTypes = {
-  rootMenuItemId: propTypes.string.isRequired,
-}
-
-function RecursiveMenu({ children, activeTrail, depth = 0 }) {
-  const depthClass = cx(`depth-${depth}`)
-
-  return (
-    <MenuUl className={depthClass}>
-      {children.map(({ ...itemData }) => (
+    <MenuUl className={levelClass}>
+      {currentRoot.subitems.map(({ ...itemData }) => (
         <MenuItem
           key={itemData.menuItemId}
           activeTrail={activeTrail}
-          className={depthClass}
+          className={levelClass}
           {...itemData}
-        >
-          {itemData.subitems && (
-            <RecursiveMenu
-              children={itemData.subitems}
-              depth={depth + 1}
-              activeTrail={activeTrail}
-            />
-          )}
-        </MenuItem>
+        />
       ))}
     </MenuUl>
   )
 }
 
-RecursiveMenu.propTypes = {
-  children: propTypes.array.isRequired,
-  depth: propTypes.number,
-  activeTrail: propTypes.array,
+MenuLevel.propTypes = {
+  rootMenuItemId: propTypes.string.isRequired,
+  level: propTypes.number,
 }

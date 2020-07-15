@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.3",
-    "@gatsby-mdx-suite/i18n": "^0.3.7",
+    "@gatsby-mdx-suite/helpers": "^0.8.1",
     "@gatsby-mdx-suite/mdx-image": "^0.7.0",
     "@gatsby-mdx-suite/mdx-layout": "^0.16.2",
     "@gatsby-mdx-suite/mdx-link": "^0.7.0",

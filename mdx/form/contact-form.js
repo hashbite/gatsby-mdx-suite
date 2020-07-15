@@ -9,7 +9,7 @@ import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import {
   generatePageMap,
   getPageWithFallback,
-} from '@gatsby-mdx-suite/i18n/helpers'
+} from '@gatsby-mdx-suite/helpers/routing'
 
 import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
 
@@ -82,11 +82,7 @@ export default function ContactForm({ successPageId }) {
     defaultLocale,
   })
 
-  const [salt] = useState(
-    Math.random()
-      .toString(36)
-      .substr(2, 5)
-  )
+  const [salt] = useState(Math.random().toString(36).substr(2, 5))
 
   return (
     <Form

@@ -33,6 +33,7 @@ export default function Video({
     data,
     pageContext: { locale: activeLocale },
   } = useContext(MdxSuiteContext)
+  const refVideo = useRef(null)
 
   const videos = data[contextKey]
 
@@ -57,8 +58,6 @@ export default function Video({
     )
     return null
   }
-
-  const refVideo = useRef(null)
 
   const handleVideoIntersection = async (event) => {
     try {

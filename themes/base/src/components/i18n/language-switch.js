@@ -1,10 +1,15 @@
 import React, { useContext } from 'react'
+import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import styled from '@emotion/styled'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
-import { generatePageMap, getPageWithFallback } from './helpers'
+import {
+  generatePageMap,
+  getPageWithFallback,
+} from '@gatsby-mdx-suite/helpers/routing'
+import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 const List = styled.ul({
   display: 'flex',
@@ -20,12 +25,13 @@ const ListItem = styled.li({
 })
 
 const SwitcherLink = styled(Link)`
-  display: block;
+  display: inline-flex;
   min-width: 48px;
-  padding: 0 0.6em;
-  line-height: 48px;
+  padding: 0 1em;
   text-align: center;
   transition: 0.3s opacity linear;
+  font-size: 1.4em;
+  vertical-align: middle;
 
   &:hover {
     opacity: 0.8;
@@ -33,7 +39,13 @@ const SwitcherLink = styled(Link)`
   }
 `
 
-export default function LanguageSwitch() {
+const SwitcherIcon = styled(Icon)`
+  border-radius: 100%;
+  overflow: hidden;
+  padding-bottom: 3px; /* visual center */
+`
+
+function LanguageSwitch({ useIcons }) {
   const {
     pageContext: { pageId, locale: activeLocale },
     themeConfig: { langs, defaultLocale },
@@ -87,7 +99,7 @@ export default function LanguageSwitch() {
               to={page.path}
               aria-label={`Switch language to ${locale}`}
             >
-              {locale}
+              {useIcons ? <SwitcherIcon icon={`flag-${locale}`} /> : locale}
             </SwitcherLink>
           )}
         </ListItem>
@@ -95,3 +107,13 @@ export default function LanguageSwitch() {
     </List>
   )
 }
+
+LanguageSwitch.defaultProps = {
+  useIcons: false,
+}
+
+LanguageSwitch.propTypes = {
+  useIcons: propTypes.bool,
+}
+
+export default LanguageSwitch
