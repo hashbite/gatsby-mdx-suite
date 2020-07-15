@@ -30,7 +30,6 @@
     "@theme-ui/typography": "^0.3.0",
     "emotion": "^10.0.27",
     "gatsby-link": "^2.4.12",
-    "gatsby-plugin-anchor-links": "^1.1.1",
     "gatsby-plugin-bundle-stats": "^2.2.0",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-react-svg": "^3.0.0",

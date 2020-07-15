@@ -3,7 +3,6 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
-import { Location } from '@reach/router'
 
 import Footer from './footer'
 import Seo from './seo'
@@ -41,32 +40,7 @@ const Layout = ({ children }) => {
           }
         `}
       />
-      <Location>
-        {({ location }) => (
-          <Seo
-            title="SQ ONE"
-            meta={[
-              // {
-              // property: 'og:url',
-              // @todo set via theme config or query from graphql site metadtaa!!!
-              // content: `https://xxxxx/${location.pathname}`,
-              // },
-              {
-                name: 'apple-mobile-web-app-capable',
-                content: 'yes',
-              },
-              {
-                name: 'apple-mobile-web-app-status-bar-style',
-                content: 'black-translucent',
-              },
-              {
-                name: 'format-detection',
-                content: 'telephone=no',
-              },
-            ]}
-          />
-        )}
-      </Location>
+      <Seo />
       <Wrapper>
         <main>{children}</main>
         <Footer />

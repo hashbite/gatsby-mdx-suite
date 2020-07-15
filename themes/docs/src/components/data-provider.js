@@ -43,33 +43,6 @@ const DocsDataProvider = ({ children }) => {
           ...MdxSuiteMediaCollectionEigthDocs
         }
       }
-      youtubeVideos: allYoutubeVideo {
-        nodes {
-          videoId
-          title
-          localThumbnail {
-            url
-            childImageSharp {
-              fluid(maxWidth: 320, maxHeight: 280) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-            }
-          }
-        }
-      }
-      instagramPosts: allInstaNode {
-        nodes {
-          id
-          localFile {
-            url
-            childImageSharp {
-              fluid(maxWidth: 320, maxHeight: 320) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-            }
-          }
-        }
-      }
     }
   `)
 

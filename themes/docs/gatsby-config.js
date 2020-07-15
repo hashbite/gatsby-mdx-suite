@@ -21,7 +21,6 @@ module.exports = ({
       },
     },
     {
-      // @todo do we need ths for the docs? plugin is already dependency of gatsby - https://www.gatsbyjs.org/packages/gatsby-plugin-page-creator/
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: pagesPath,
