@@ -149,7 +149,7 @@ export default function FloatingImage({ children, imageId, reverse, fit }) {
       <ImageWrapper reverse={reverse}>
         <Image
           id={imageId}
-          contextKey="floating"
+          contextKey="screen"
           fit={(currentBreakpoint > 1) & fit}
         />
       </ImageWrapper>

@@ -10,12 +10,25 @@ function createPath({ slug, locale, pageType, config }) {
     slug === 'index' ? null : slug,
   ].filter(Boolean)
 
-  return pathSegments.length ? `/${pathSegments.join('/')}/` : '/'
+  return pathSegments.length ? `/${pathSegments.join('/')}` : '/'
 }
 
 function generatePageMap({ pages, activePageId }) {
+  if (!activePageId) {
+    return {}
+  }
+
   return pages
-    .filter(({ context }) => context && context.pageId === activePageId)
+    .filter(({ context }) => {
+      if (!context) {
+        return false
+      }
+      // Support for listing pages build with gatsby-awesome-pagination
+      if (context.pageNumber !== null) {
+        return context.pageId === activePageId && context.pageNumber === 0
+      }
+      return context.pageId === activePageId
+    })
     .reduce(
       (map, page) => ({
         ...map,
