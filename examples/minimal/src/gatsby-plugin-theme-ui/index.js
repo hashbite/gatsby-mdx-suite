@@ -5,10 +5,10 @@
  */
 
 const merge = require('lodash/merge')
-const baseThemeUiConfig = require('gatsby-theme-mdx-suite-base/src/gatsby-plugin-theme-ui')
+const coreThemeUiConfig = require('gatsby-theme-mdx-suite-core/src/gatsby-plugin-theme-ui')
 
 // Overwrite core theme
-module.exports = merge({}, baseThemeUiConfig, {
+module.exports = merge({}, coreThemeUiConfig, {
   colors: {
     primary: 'tomato',
   },

@@ -103,7 +103,7 @@ const Nav = ({ children, gridArea, inverted, title }) => {
       }
       setLastBreakpoint(currentBreakpoint)
     }
-  }, [currentBreakpoint])
+  }, [currentBreakpoint, isOpen, lastBreakpoint])
 
   const handleTriggerClick = () => {
     setIsOpen(!isOpen)

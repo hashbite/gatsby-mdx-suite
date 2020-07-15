@@ -8299,11 +8299,6 @@ eslint@^7.4.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-esm@^3.2.25:
-  version "3.2.25"
-  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
-  integrity sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
-
 espree@^6.1.2:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/espree/-/espree-6.2.1.tgz#77fc72e1fd744a2052c20f38a5b575832e82734a"
@@ -20241,7 +20236,7 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twin.macro@^1.0.0-alpha.10:
+twin.macro@^1.0.0-alpha.10, twin.macro@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-1.5.0.tgz#8ef869ee32e2e73b0f9954d412b1d7fe80519d70"
   integrity sha512-LDdNwobwizgOXVwxLObALq1j+u9USFrGXpKPQy7UCum+y/8UQBxCnI+JV7NCRq4a/+3o3ot8TY0hmkIriuZP+w==

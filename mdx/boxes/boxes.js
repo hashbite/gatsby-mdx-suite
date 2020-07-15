@@ -7,40 +7,41 @@ import { css } from '@emotion/core'
 import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
 
 const StyledBoxes = styled.div(
-  ({ theme }) => css`
-    position: relative;
-    display: grid;
-    grid-gap: ${theme.sizes.gridGutter || '1rem'};
+  ({ theme }) =>
+    css`
+      position: relative;
+      display: grid;
+      grid-gap: ${theme.sizes.gridGutter || '1rem'};
 
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
 
-    @media screen and (min-width: ${theme.breakpoints[0]}) {
-      grid-template-columns: repeat(48, 1fr);
-      grid-auto-rows: 1fr;
-    }
+      @media screen and (min-width: ${theme.breakpoints[0]}) {
+        grid-template-columns: repeat(48, 1fr);
+        grid-auto-rows: 1fr;
+      }
 
-    ${applyContentGap({ theme })}
+      ${applyContentGap({ theme })}
 
-    // Ensure square base grid
+      // Ensure square base grid
     &:before {
-      content: '';
-      width: 0;
-      padding-bottom: 100%;
-      grid-row: 1 / 1;
-      grid-column: 1 / 1;
-    }
+        content: '';
+        width: 0;
+        padding-bottom: 100%;
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+      }
 
-    > *:first-child {
-      grid-row-start: 1;
-      grid-column-start: 1;
-    }
+      > *:first-child {
+        grid-row-start: 1;
+        grid-column-start: 1;
+      }
 
-    // Allow stacking of boxes components
-    & + & {
-      margin-top: ${theme.sizes.gridGutter || '1rem'};
-    }
-  `
+      // Allow stacking of boxes components
+      & + & {
+        margin-top: ${theme.sizes.gridGutter || '1rem'};
+      }
+    `
 )
 
 /**

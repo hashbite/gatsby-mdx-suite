@@ -1,4 +1,4 @@
-const defaultThemeUiConfig = require('gatsby-theme-mdx-suite-core/src/gatsby-plugin-theme-ui')
+const themeUiConfig = require('./src/gatsby-plugin-theme-ui')
 
 module.exports = {
   pathPrefix: ``,
@@ -12,7 +12,7 @@ module.exports = {
       resolve: `gatsby-theme-mdx-suite-core`,
       options: {
         // Configure the MDX Suite
-        themeUiConfig: defaultThemeUiConfig,
+        themeUiConfig,
         /**
          * Contentful credentials from environment variables will be used by default.
          * Never hardcode API credentials in your projects.

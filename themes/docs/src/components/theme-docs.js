@@ -102,7 +102,7 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
-            <a id="colors" />
+            <div id="colors" />
             <ThemeSectionHeader>Colors</ThemeSectionHeader>
             <ThemeSectionContent>
               <table>
@@ -138,7 +138,7 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
-            <a id="color-sets" />
+            <div id="color-sets" />
             <ThemeSectionHeader>
               <Styled.h1>Color Sets</Styled.h1>
             </ThemeSectionHeader>
@@ -189,7 +189,7 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
-            <a id="icons" />
+            <div id="icons" />
             <ThemeSectionHeader>Icons</ThemeSectionHeader>
             <ThemeSectionContent>
               <Grid>
@@ -207,7 +207,7 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
-            <a id="breakpoints" />
+            <div id="breakpoints" />
             <ThemeSectionHeader>Breakpoints</ThemeSectionHeader>
             <Breakpoints>
               {theme.breakpoints.map((width, i) => (
@@ -218,7 +218,7 @@ function ThemeDocs() {
             </Breakpoints>
           </ThemeSection>
           <ThemeSection>
-            <a id="sizes" />
+            <div id="sizes" />
             <ThemeSectionHeader>Sizes</ThemeSectionHeader>
             <ThemeSectionContent>
               <Sizes>
@@ -235,7 +235,7 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
-            <a id="fonts" />
+            <div id="fonts" />
             <ThemeSectionHeader>Fonts</ThemeSectionHeader>
             <ThemeSectionContent>
               {Object.keys(theme.fonts).map((font) => (
@@ -301,7 +301,7 @@ function ThemeDocs() {
             </ThemeSectionContent>
           </ThemeSection>
           <ThemeSection>
-            <a id="raw" />
+            <div id="raw" />
             <ThemeSectionHeader>Raw processed theme config</ThemeSectionHeader>
             <ThemeSectionContent>
               <ThemeRawWrapper>

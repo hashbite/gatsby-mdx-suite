@@ -60,7 +60,7 @@ const ColumnContent = styled.div(
     css`
       ${padding &&
       css`
-        padding: ${theme.spacing[padding] || theme.sizes[padding]};
+        padding: ${theme.sizes[padding] || theme.sizes[padding]};
       `}
     `
 )
@@ -209,7 +209,7 @@ const Column = ({
   }
 
   const hasBackground = !!colorSet || !!colors.background || !!backgroundImageId
-  const contentPadding = padding || (hasBackground ? 'grid-gap' : null)
+  const contentPadding = padding || (hasBackground ? 'gridGap' : null)
 
   let columnContent = (
     <StyledColumn
