@@ -21,7 +21,6 @@ module.exports = (themeConfig) => {
       {
         resolve: `gatsby-plugin-mdx`,
         options: merge(
-          // @todo how to solve this without requiring docs?
           {
             defaultLayouts: {
               docs: require.resolve(

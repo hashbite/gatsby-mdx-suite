@@ -10,16 +10,6 @@ module.exports = ({ renderDocs = true }) => ({
     `gatsby-plugin-react-svg`,
     `gatsby-transformer-inline-svg`,
     /**
-     * UX
-     */
-    {
-      // @todo does it actually work?
-      resolve: 'gatsby-plugin-anchor-links',
-      options: {
-        offset: -100,
-      },
-    },
-    /**
      * SEO & Performance
      */
     `gatsby-plugin-react-helmet`,

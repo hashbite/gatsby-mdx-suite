@@ -1,4 +1,4 @@
-const { writeFile, writeJSON } = require('fs-extra')
+const { writeFile } = require('fs-extra')
 const { resolve } = require('path')
 const cheerio = require('cheerio')
 const Debug = require('debug')
@@ -14,7 +14,6 @@ const debug = Debug('gatsby-theme-mdx-suite')
 
 /**
  * Ensure @mdx-js dependencies build via webpack
- * @todo still needed?
  */
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -181,8 +180,6 @@ exports.createResolvers = ({ createResolvers }, themeConfig) => {
 
 /**
  * Create dummy types to allow queries to succeed even without data.
- *
- * @todo Reinvestigate how much/what we need
  */
 exports.createSchemaCustomization = ({ actions, store, schema }) => {
   const { createTypes } = actions
@@ -196,6 +193,7 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
     `
     type FakeFile implements Node @dontInfer {
       url: String
+      contentType: String
       childImageSharp: ImageSharp
     }
     `,
@@ -219,6 +217,11 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
     `
     type ContentfulAsset implements Node {
       svg: FakeSvg
+      node_locale: String
+      title: String
+      contentful_id: String
+      description: String
+      file: FakeFile
     }
     `,
   ]
@@ -253,29 +256,6 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
         interfaces: ['Node'],
       })
     )
-  }
-
-  // Add nulled instagram data
-  // @todo still needed even when instagram is not used?
-  if (!enabledPlugins.includes('gatsby-source-instagram')) {
-    typeDefs.push(`
-      type InstaNode implements Node @dontInfer  {
-        title: String
-        localFile: FakeFile
-      }
-    `)
-  }
-
-  // Add nulled youtube data
-  // @todo still needed even when youtube is not used?
-  if (!enabledPlugins.includes('gatsby-source-youtube-v2')) {
-    typeDefs.push(`
-      type YoutubeVideo implements Node @dontInfer  {
-        videoId: String
-        title: String
-        localThumbnail: FakeFile
-      }
-    `)
   }
 
   createTypes(typeDefs)
