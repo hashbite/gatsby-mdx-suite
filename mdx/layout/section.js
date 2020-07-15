@@ -120,7 +120,7 @@ export default function Section({
       <SectionWrapper textShadow={textShadow}>
         {backgroundImageId && (
           <BackgroundImageWrapper>
-            <Image contextKey="background" id={backgroundImageId} fit="cover" />
+            <Image contextKey="screen" id={backgroundImageId} fit="cover" />
           </BackgroundImageWrapper>
         )}
         <SectionContentWrapper gap={gap} gapTop={gapTop} gapBottom={gapBottom}>

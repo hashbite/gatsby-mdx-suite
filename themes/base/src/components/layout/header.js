@@ -228,7 +228,7 @@ const Header = ({
                   {backgroundImageId && (
                     <Image
                       id={backgroundImageId}
-                      contextKey="background"
+                      contextKey="screen"
                       fit="cover"
                     />
                   )}

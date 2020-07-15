@@ -10,11 +10,15 @@ module.exports = ({ renderDocs = true }) => ({
     `gatsby-plugin-react-svg`,
     `gatsby-transformer-inline-svg`,
     /**
-     * SEO & Performance
+     * SEO
      */
+    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    /**
+     * Performance
+     */
     `gatsby-plugin-bundle-stats`,
     `gatsby-plugin-webpack-size`,
-    `gatsby-plugin-sitemap`,
   ].filter(Boolean),
 })
