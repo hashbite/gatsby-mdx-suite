@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import propTypes from 'prop-types'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
+import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
 const DocsDataProvider = ({ children }) => {
   const MdxSuiteData = useContext(MdxSuiteContext)
@@ -56,14 +57,13 @@ const DocsDataProvider = ({ children }) => {
 
   return (
     <MdxSuiteContext.Provider
-      value={{
-        ...MdxSuiteData,
+      value={mergeContextData(MdxSuiteData, {
         pageContext: {
           locale: MdxSuiteData.themeConfig.defaultLocale,
           title: 'docs',
         },
         data: mediaCollections,
-      }}
+      })}
     >
       {children}
     </MdxSuiteContext.Provider>
