@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { useBreakpointIndex } from '@theme-ui/match-media'
 import tw from 'twin.macro'
-import 'tailwindcss/dist/base.css'
 
 const MENU_TRIGGER_BREAKPOINT = 3
 
