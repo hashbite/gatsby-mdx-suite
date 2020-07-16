@@ -11,7 +11,7 @@ import Video from '@gatsby-mdx-suite/mdx-video/video'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
-import Logo from '../../../assets/logo.svg'
+import Logo from '../../assets/logo.svg'
 
 import NavigationDesktop from './navigation-desktop'
 import NavigationMobile from './navigation-mobile'
