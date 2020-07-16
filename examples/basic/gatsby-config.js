@@ -8,8 +8,8 @@ require('dotenv').config({ path: `.env` })
 module.exports = {
   pathPrefix: ``,
   siteMetadata: {
-    title: `Gatsby MDX Suite Minimal Example`,
-    description: `Most minimal implementation of the suite`,
+    title: `Gatsby MDX Suite Basic Example`,
+    description: `Basic implementation of the suite.`,
     siteUrl: `https://axe312ger.github.io/gatsby-starter-mdx-suite`,
   },
   plugins: [

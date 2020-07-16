@@ -10,14 +10,12 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
       `
         {
           allContentfulPage(limit: 1000) {
-            edges {
-              node {
-                id
-                pageId: contentful_id
-                locale: node_locale
-                slug
-                title
-              }
+            nodes {
+              id
+              pageId: contentful_id
+              locale: node_locale
+              slug
+              title
             }
           }
         }
@@ -28,8 +26,8 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
       throw result.errors
     }
 
-    result.data.allContentfulPage.edges.map((edge) => {
-      const { id, pageId, locale, slug, title } = edge.node
+    result.data.allContentfulPage.nodes.map((node) => {
+      const { id, pageId, locale, slug, title } = node
 
       const path = createPath({ slug, locale, config })
 
