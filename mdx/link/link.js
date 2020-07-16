@@ -49,12 +49,7 @@ export default function Link({
     {
       allSitePage {
         nodes {
-          path
-          context {
-            pageId
-            locale
-            title
-          }
+          ...MdxSuiteSitePageMetadata
         }
       }
     }

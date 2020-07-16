@@ -224,6 +224,14 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
       file: FakeFile
     }
     `,
+    `
+    type SitePageContext implements Node @dontInfer {
+      pageNumber: Int
+      title: String
+      locale: String
+      pageId: String
+    }
+    `,
   ]
 
   // Make gatsby-transformer-video optional
