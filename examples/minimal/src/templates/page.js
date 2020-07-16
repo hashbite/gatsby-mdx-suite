@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import * as propTypes from 'prop-types'
-import omit from 'lodash/omit'
 
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { useTranslation } from 'react-i18next'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
+import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
 function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
@@ -23,11 +23,10 @@ function PageTemplate({ data, pageContext }) {
 
   return (
     <MdxSuiteContext.Provider
-      value={{
-        ...MdxSuiteData,
+      value={mergeContextData(MdxSuiteData, {
         pageContext,
-        data: omit(content.childMdx, ['body']),
-      }}
+        data: [content.childMdx],
+      })}
     >
       <MDXRenderer>{content.childMdx.body}</MDXRenderer>
     </MdxSuiteContext.Provider>

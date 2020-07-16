@@ -4,9 +4,11 @@ import * as propTypes from 'prop-types'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import { Styled } from 'theme-ui'
 import tw from 'twin.macro'
+
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
+import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
 import LayoutNav from '../components/layout/nav'
 import ComponentsMenu from '../components/layout/components-menu'
@@ -80,10 +82,9 @@ function DocsComponentTemplate({ data, pageContext }) {
 
   return (
     <MdxSuiteContext.Provider
-      value={{
-        ...MdxSuiteData,
+      value={mergeContextData(MdxSuiteData, {
         pageContext,
-      }}
+      })}
     >
       <DataProvider>
         <Layout>
