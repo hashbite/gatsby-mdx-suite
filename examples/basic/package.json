@@ -7,8 +7,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/axe312ger/gatsby-suite-mdx"
+    "url": "https://github.com/axe312ger/gatsby-mdx-suite"
   },
+  "private": true,
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",

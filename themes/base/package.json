@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/axe312ger/gatsby-suite-mdx"
+    "url": "https://github.com/axe312ger/gatsby-mdx-suite"
   },
   "peerDependencies": {
     "gatsby": "^2.19.0",
