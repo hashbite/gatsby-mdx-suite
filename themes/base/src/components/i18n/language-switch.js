@@ -55,16 +55,16 @@ function LanguageSwitch({ useIcons }) {
     {
       allSitePage {
         nodes {
-          path
-          context {
-            pageId
-            locale
-            title
-          }
+          ...MdxSuiteSitePageMetadata
         }
       }
     }
   `)
+
+  // No need for a language switch when only one language is enabled
+  if (langs.length === 1) {
+    return null
+  }
 
   // Generate a language based map of sub pages relating to the current content
   const pageMap = generatePageMap({
