@@ -9,10 +9,9 @@ import MdxSuiteContextProvider from '@gatsby-mdx-suite/contexts/provider'
 import minimumConfig from './minimum-config'
 
 export const wrapRootElement = ({ element }, themeConfig) => {
-  const { translations, langs, defaultLocale } = merge(
-    minimumConfig,
-    themeConfig
-  )
+  const mergedConfig = merge(minimumConfig, themeConfig)
+
+  const { translations, langs, defaultLocale } = mergedConfig
 
   i18n
     // pass the i18n instance to react-i18next.
@@ -31,7 +30,7 @@ export const wrapRootElement = ({ element }, themeConfig) => {
     })
 
   return (
-    <MdxSuiteContextProvider themeConfig={themeConfig}>
+    <MdxSuiteContextProvider themeConfig={mergedConfig}>
       {element}
     </MdxSuiteContextProvider>
   )

@@ -7,7 +7,39 @@ module.exports = {
   localeMap: {
     'en-US': '',
   },
-  translations: {},
+  translations: {
+    'en-US': {
+      translation: {
+        copyright: '© Copyright {{year}}. All rights reserved.',
+        open: 'open',
+        close: 'close',
+        next: 'next',
+        previous: 'previous',
+        first: 'first',
+        last: 'last',
+        '404PageTitle': '404 - Not Found',
+        '404PageDescription': 'This page does not exist.',
+        newsReadMore: 'Read more...',
+        newsTimeToRead: '{{minutes}} min. to read',
+      },
+    },
+    de: {
+      translation: {
+        copyright: '© Copyright {{year}}. Alle Rechte vorbehalten.',
+        open: 'Öffnen',
+        close: 'Schließen',
+        next: 'Weiter',
+        previous: 'Zurück',
+        first: 'Anfang',
+        last: 'Ende',
+        '404PageTitle': '404 - Not Found',
+        '404PageDescription': 'Diese Seite existiert leider nicht.',
+        newsReadMore: 'Weiterlesen...',
+        newsTimeToRead: '{{minutes}} Min. Lesezeit',
+      },
+    },
+  },
+  // This can get very messy. Might be replaced. See:  https://github.com/axe312ger/gatsby-mdx-suite/issues/38
   mediaCollections: {
     screen: {
       selector: [
@@ -15,6 +47,8 @@ module.exports = {
         'Viewport[backgroundImageId]',
         'Header[backgroundImageId]',
         'Image[id][contextKey="screen"]',
+        'Video[id][contextKey="screen"]',
+        'Video:not([contextKey])',
       ].join(','),
       /**
        * @param el See: https://github.com/cheeriojs/cheerio#the-dom-node-object
@@ -22,6 +56,7 @@ module.exports = {
       attribute: (el) => {
         switch (el.name) {
           case 'image':
+          case 'video':
             return 'id'
           default:
             return 'backgroundImageId'
@@ -32,6 +67,7 @@ module.exports = {
       selector: [
         'Image[id][contextKey="full"]',
         'Image:not([contextKey])',
+        'Video[id][contextKey="full"]',
       ].join(','),
       attribute: (el) => {
         switch (el.name) {
@@ -41,7 +77,10 @@ module.exports = {
       },
     },
     half: {
-      selector: ['Image[id][contextKey="half"]'].join(','),
+      selector: [
+        'Image[id][contextKey="half"]',
+        'Video[id][contextKey="half"]',
+      ].join(','),
       attribute: (el) => {
         switch (el.name) {
           default:
@@ -50,7 +89,10 @@ module.exports = {
       },
     },
     third: {
-      selector: ['Image[id][contextKey="third"]'].join(','),
+      selector: [
+        'Image[id][contextKey="third"]',
+        'Video[id][contextKey="third"]',
+      ].join(','),
       attribute: (el) => {
         switch (el.name) {
           default:
@@ -59,7 +101,10 @@ module.exports = {
       },
     },
     quarter: {
-      selector: ['Image[id][contextKey="quarter"]'].join(','),
+      selector: [
+        'Image[id][contextKey="quarter"]',
+        'Video[id][contextKey="quarter"]',
+      ].join(','),
       attribute: (el) => {
         switch (el.name) {
           default:
@@ -68,7 +113,10 @@ module.exports = {
       },
     },
     sixth: {
-      selector: ['Image[id][contextKey="sixth"]'].join(','),
+      selector: [
+        'Image[id][contextKey="sixth"]',
+        'Video[id][contextKey="sixth"]',
+      ].join(','),
       attribute: (el) => {
         switch (el.name) {
           default:
@@ -77,7 +125,10 @@ module.exports = {
       },
     },
     eight: {
-      selector: ['Image[id][contextKey="eight"]'].join(','),
+      selector: [
+        'Image[id][contextKey="eight"]',
+        'Video[id][contextKey="eight"]',
+      ].join(','),
       attribute: (el) => {
         switch (el.name) {
           default:
