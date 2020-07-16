@@ -7,7 +7,7 @@ import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
 import { Styled } from 'theme-ui'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
-import EntypoTabletMobileCombo from 'react-entypo-icons/lib/entypo/TabletMobileCombo'
+import IconFullscreen from 'heroicons/outline/external-link.svg'
 import AceEditor from 'react-ace'
 
 import 'ace-builds/src-noconflict/ext-searchbox'
@@ -49,6 +49,12 @@ const LiveEditorPreview = styled.iframe`
 `
 const PreviewControls = tw.div`absolute z-50 right-0 top-0 m-4`
 const PreviewControl = tw.a`rounded bg-gray-200 px-2 py-1`
+const PreviewControlIcon = styled(IconFullscreen)`
+  display: inline-block;
+  width: 1.4rem;
+  vertical-align: middle;
+  padding-bottom: 3px;
+`
 
 const LiveEditorError = styled.div`
   ${tw`p-4 border-4 border-dashed border-red-400 bg-red-700 text-white`}
@@ -208,7 +214,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
       <LiveEditorPreviewWrapper>
         <PreviewControls>
           <PreviewControl target="_blank" href={previewSrc}>
-            <EntypoTabletMobileCombo valign="baseline" /> Full Size
+            <PreviewControlIcon /> Full Size
           </PreviewControl>
         </PreviewControls>
         <LiveEditorPreview src={previewSrc} />

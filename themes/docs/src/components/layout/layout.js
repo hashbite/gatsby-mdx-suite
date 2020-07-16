@@ -6,7 +6,8 @@ import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
 import tw from 'twin.macro'
 
-import EntypoMenu from 'react-entypo-icons/lib/entypo/Menu'
+import MenuIcon from 'heroicons/outline/menu.svg'
+import ChevronLeftIcon from 'heroicons/outline/chevron-left.svg'
 
 const DocsWrapper = styled.div`
   ${tw`grid h-screen w-screen`}
@@ -45,7 +46,10 @@ const Menu = styled.nav(
 )
 
 const MenuToggleWrapper = tw.div`p-1 md:hidden`
-const MenuToggle = tw(EntypoMenu)`cursor-pointer`
+const MenuToggleIcon = tw(MenuIcon)`cursor-pointer w-8`
+const BackIcon = tw(
+  ChevronLeftIcon
+)`cursor-pointer w-6 inline align-middle pb-1`
 
 const Layout = ({ children, title }) => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -84,14 +88,13 @@ const Layout = ({ children, title }) => {
       <DocsWrapper>
         <LayoutHeader>
           <DocsTitle>
-            <MenuLink to="/">&laquo;</MenuLink>
+            <MenuLink to="/">
+              <BackIcon />
+            </MenuLink>
             <MenuLink to="/docs">Docs</MenuLink>
           </DocsTitle>
           <MenuToggleWrapper>
-            <MenuToggle
-              onClick={handleMenuToggleClick}
-              style={{ verticalAlign: 'middle' }}
-            />
+            <MenuToggleIcon onClick={handleMenuToggleClick} />
           </MenuToggleWrapper>
           <Menu menuOpen={menuOpen}>
             <MenuLink to="/docs">Home</MenuLink>
