@@ -1,0 +1,43 @@
+{
+  "name": "gatsby-mdx-suite-example-full",
+  "version": "0.0.0",
+  "description": "Full implementation of the MDX suite. Mostly for testing and demonstration purposes.",
+  "main": "index.js",
+  "author": "Benedikt Rötsch <opensource@axe312.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axe312ger/gatsby-mdx-suite"
+  },
+  "private": true,
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "@gatsby-mdx-suite/contexts": "^0.3.3",
+    "@gatsby-mdx-suite/helpers": "^0.8.1",
+    "@gatsby-mdx-suite/mdx-image": "^0.7.0",
+    "@gatsby-mdx-suite/mdx-layout": "^0.16.2",
+    "@gatsby-mdx-suite/mdx-link": "^0.7.0",
+    "@icons-pack/react-simple-icons": "^3.6.0",
+    "dotenv": "^8.2.0",
+    "flag-icon-css": "^3.5.0",
+    "gatsby": "^2.24.2",
+    "gatsby-plugin-manifest": "^2.4.18",
+    "gatsby-plugin-mdx": "^1.2.25",
+    "gatsby-plugin-offline": "^3.2.17",
+    "gatsby-theme-mdx-suite-base": "^0.0.0",
+    "gatsby-theme-mdx-suite-blog": "^0.0.0",
+    "gatsby-theme-mdx-suite-core": "^0.0.0",
+    "heroicons": "^0.3.6",
+    "i18n": "^0.10.0",
+    "lodash": "^4.17.19",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-i18next": "^11.7.0",
+    "twin.macro": "^1.5.0"
+  }
+}
