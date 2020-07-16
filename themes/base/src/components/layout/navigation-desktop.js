@@ -14,7 +14,7 @@ import MenuLink from '../menu/menu-link'
 import MenuTitle from '../menu/menu-title'
 import MenuLi from '../menu/menu-li'
 
-const NavigationDesktopWrapper = tw.div`hidden lg:block`
+const NavigationDesktopWrapper = tw.div`hidden md:block`
 const NavigationDesktopTop = styled.div``
 const NavigationDesktopBottom = styled.div`
   ${tw`relative overflow-hidden`}
@@ -51,7 +51,7 @@ const NavigationDesktopBottomContent = styled.div`
 `
 
 const HeaderLogoWrapper = styled(Styled.h1)`
-  ${tw`mb-0 py-4 w-20 md:w-24 lg:w-32`}
+  ${tw`mb-0 w-48 lg:w-64`}
 
   & svg {
     width: 100%;
@@ -79,7 +79,6 @@ const HeaderMenuLevel0 = styled.div(
       ${tw`
       relative
       block px-4
-      uppercase
     `}
     }
 

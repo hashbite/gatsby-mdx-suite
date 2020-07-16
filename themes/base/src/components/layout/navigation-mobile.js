@@ -137,7 +137,10 @@ const NavigationMobileBottomContent = styled.div`
 `
 
 const HeaderLogoWrapper = styled(Styled.h1)`
-  ${tw`py-4 w-40 md:w-48 lg:w-56 xl:w-64 mb-0`}
+  ${tw`py-0 mb-0`}
+
+  width: 32vw;
+  max-width: 220px;
 
   & svg {
     width: 100%;
