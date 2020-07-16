@@ -2,9 +2,9 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Styled } from 'theme-ui'
 
-import Layout from 'gatsby-theme-mdx-suite-base/src/components/layout/layout'
-import Header from 'gatsby-theme-mdx-suite-base/src/components/layout/header'
-import Seo from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
+import Layout from '../components/layout/layout'
+import Header from '../components/layout/header'
+import Seo from '../components/layout/seo'
 
 function NotFoundPage() {
   const { t } = useTranslation()
