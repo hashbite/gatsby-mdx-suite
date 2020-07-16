@@ -25,7 +25,7 @@ const ListItem = styled.li({
 })
 
 const SwitcherLink = styled(Link)`
-  display: inline-flex;
+  display: flex;
   min-width: 48px;
   padding: 0 1em;
   text-align: center;
@@ -39,11 +39,7 @@ const SwitcherLink = styled(Link)`
   }
 `
 
-const SwitcherIcon = styled(Icon)`
-  border-radius: 100%;
-  overflow: hidden;
-  padding-bottom: 3px; /* visual center */
-`
+const SwitcherIcon = styled(Icon)``
 
 function LanguageSwitch({ useIcons }) {
   const {
@@ -109,7 +105,7 @@ function LanguageSwitch({ useIcons }) {
 }
 
 LanguageSwitch.defaultProps = {
-  useIcons: false,
+  useIcons: true,
 }
 
 LanguageSwitch.propTypes = {
