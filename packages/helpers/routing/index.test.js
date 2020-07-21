@@ -17,14 +17,14 @@ test('createPath applies locale map', () => {
       locale: 'en',
       config,
     })
-  ).toBe('/slug/')
+  ).toBe('/slug')
   expect(
     createPath({
       slug: 'slug',
       locale: 'de',
       config,
     })
-  ).toBe('/de/slug/')
+  ).toBe('/de/slug')
 })
 test('createPath applies pageType map', () => {
   expect(
@@ -33,14 +33,14 @@ test('createPath applies pageType map', () => {
       pageType: 'page',
       config,
     })
-  ).toBe('/slug/')
+  ).toBe('/slug')
   expect(
     createPath({
       slug: 'slug',
       pageType: 'blogPost',
       config,
     })
-  ).toBe('/blog/slug/')
+  ).toBe('/blog/slug')
 })
 test('createPath for index/home', () => {
   expect(
@@ -56,7 +56,7 @@ test('createPath for index/home', () => {
       locale: 'de',
       config,
     })
-  ).toBe('/de/')
+  ).toBe('/de')
 })
 test('createPath with all-features', () => {
   expect(
@@ -66,5 +66,5 @@ test('createPath with all-features', () => {
       pageType: 'blogPost',
       config,
     })
-  ).toBe('/de/blog/slug/')
+  ).toBe('/de/blog/slug')
 })
