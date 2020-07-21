@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 
-export const MenuItemFragment = graphql`
-  fragment MenuItem on ContentfulMenuItem {
+export const MdxSuiteMenuItemFragment = graphql`
+  fragment MdxSuiteMenuItem on ContentfulMenuItem {
     menuItemId: contentful_id
     title
     locale: node_locale
