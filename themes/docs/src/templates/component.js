@@ -134,7 +134,7 @@ export const pageQuery = graphql`
         body
       }
       componentProps: props {
-        ...ComponentProps
+        ...MdxSuiteComponentProps
       }
       examples {
         raw

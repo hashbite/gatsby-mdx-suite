@@ -14,15 +14,15 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
     query MenuLevelQuery {
       allContentfulMenuItem {
         nodes {
-          ...MenuItem
+          ...MdxSuiteMenuItem
           subitems {
-            ...MenuItem
+            ...MdxSuiteMenuItem
             subitems {
-              ...MenuItem
+              ...MdxSuiteMenuItem
               subitems {
-                ...MenuItem
+                ...MdxSuiteMenuItem
                 subitems {
-                  ...MenuItem
+                  ...MdxSuiteMenuItem
                 }
               }
             }

@@ -14,15 +14,15 @@ export default function MenuRecursive({ rootMenuItemId }) {
     query MenuRecursiveQuery {
       allContentfulMenuItem {
         nodes {
-          ...MenuItem
+          ...MdxSuiteMenuItem
           subitems {
-            ...MenuItem
+            ...MdxSuiteMenuItem
             subitems {
-              ...MenuItem
+              ...MdxSuiteMenuItem
               subitems {
-                ...MenuItem
+                ...MdxSuiteMenuItem
                 subitems {
-                  ...MenuItem
+                  ...MdxSuiteMenuItem
                 }
               }
             }

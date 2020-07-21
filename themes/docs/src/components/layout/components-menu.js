@@ -43,7 +43,7 @@ function ComponentsMenu() {
           path
           slug
           componentProps: props {
-            ...ComponentProps
+            ...MdxSuiteComponentProps
           }
           description {
             childMdx {
