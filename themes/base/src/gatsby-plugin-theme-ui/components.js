@@ -2,6 +2,7 @@
 import CTA from '@gatsby-mdx-suite/mdx-link/cta'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import Link from '@gatsby-mdx-suite/mdx-link/link'
+import ColorSet from '@gatsby-mdx-suite/mdx-color-set'
 
 // Layout
 import Center from '@gatsby-mdx-suite/mdx-layout/center'
@@ -23,6 +24,7 @@ import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 export default {
   Center,
   Claim,
+  ColorSet,
   Column,
   Columns,
   CTA,
