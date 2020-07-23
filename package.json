@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "babel-preset-gatsby": "^0.5.2",
-    "eslint": "^7.4.0",
+    "babel-preset-gatsby": "^0.5.3",
+    "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-config-standard-react": "^9.0.0",

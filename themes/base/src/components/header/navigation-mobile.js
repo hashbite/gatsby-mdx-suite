@@ -63,7 +63,7 @@ const NavigationMobileBottomContent = styled.div`
       > ${MenuLi} {
         ${tw`
           py-2
-          border-0 border-b border-color-gray-300
+          border-0 border-b border-gray-300
           `}
 
         &:last-child {

@@ -23,7 +23,7 @@ const ThemeSectionHeader = styled(Styled.h1)(
   `
 )
 const ThemeSectionContent = tw.div`mx-auto max-w-6xl py-8 px-4 overflow-x-scroll`
-const ThemeRawWrapper = tw.pre`my-4 p-4 border border-color-gray-500 overflow-scroll bg-gray-200`
+const ThemeRawWrapper = tw.pre`my-4 p-4 border border-gray-500 overflow-scroll bg-gray-200`
 const ColorSets = tw.div`grid gap-grid-gap grid-cols-2 md:grid-cols-3 lg:grid-cols-4`
 
 const ColorSetWrapper = styled.div`
@@ -52,7 +52,7 @@ const Breakpoints = tw.div`flex flex-col items-center overflow-x-scroll`
 
 const Breakpoint = styled.div(
   ({ width }) => css`
-  ${tw`mt-8 border border-color-red-300 text-center`}
+  ${tw`mt-8 border border-red-300 text-center`}
   width: ${width};
   min-height: 0.8rem;
   border-top: none;
@@ -61,7 +61,7 @@ const Breakpoint = styled.div(
 
 const Length = styled.div(
   ({ width }) => css`
-  ${tw`border border-color-red-300 text-center`}
+  ${tw`border border-red-300 text-center`}
   width: ${width};
   min-height: 0.8rem;
   border-top: none;
