@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.8.1...@gatsby-mdx-suite/helpers@0.9.0) (2020-07-23)
+
+
+### Features
+
+* **theme-blog:** introduce blog theme with blog listing and detail pages ([4414479](https://github.com/axe312ger/gatsby-mdx-suite/commit/44144793b55daf62ffdccf096d6bd91eb9f9cdd3))
+
+
+
+
+
 ## [0.8.1](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/helpers@0.8.0...@gatsby-mdx-suite/helpers@0.8.1) (2020-04-06)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/helpers
