@@ -10,6 +10,8 @@ import ScrollLock from 'react-scrolllock'
 import { Styled } from 'theme-ui'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
+
+import Logo from './logo'
 import LanguageSwitch from '../i18n/language-switch'
 import MenuRecursive from '../menu/menu-recursive'
 import MenuTitle from '../menu/menu-title'
@@ -156,7 +158,7 @@ const HeaderMenuToggle = tw.button`
 
 const HeaderMenuToggleIcon = tw(MenuIcon)`w-10`
 
-const NavigationMobile = ({ logo, rootMenuItemId }) => {
+const NavigationMobile = ({ rootMenuItemId }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const result = useStaticQuery(graphql`
@@ -177,7 +179,7 @@ const NavigationMobile = ({ logo, rootMenuItemId }) => {
         <NavigationMobileTopContent>
           <HeaderLogoWrapper>
             <Link to="/" title={result.site.siteMetadata.title}>
-              {logo}
+              <Logo />
             </Link>
           </HeaderLogoWrapper>
           <HeaderControls>
@@ -204,7 +206,6 @@ NavigationMobile.defaultProps = {
 }
 
 NavigationMobile.propTypes = {
-  logo: propTypes.element.isRequired,
   rootMenuItemId: propTypes.string.isRequired,
 }
 

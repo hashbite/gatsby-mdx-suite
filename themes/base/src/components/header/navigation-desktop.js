@@ -8,6 +8,8 @@ import tw from 'twin.macro'
 import { Styled } from 'theme-ui'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
+
+import Logo from './logo'
 import LanguageSwitch from '../i18n/language-switch'
 import MenuLevel from '../menu/menu-level'
 import MenuLink from '../menu/menu-link'
@@ -136,11 +138,7 @@ const HeaderMenuLevel1 = styled.div`
   }
 `
 
-const NavigationDesktop = ({
-  logo,
-  rootMenuItemId,
-  isNavigationTransparent,
-}) => {
+const NavigationDesktop = ({ rootMenuItemId, isNavigationTransparent }) => {
   const result = useStaticQuery(graphql`
     query NavigationDesktopQuery {
       site {
@@ -158,7 +156,7 @@ const NavigationDesktop = ({
           <NavigationDesktopTopContent transparent={isNavigationTransparent}>
             <HeaderLogoWrapper>
               <Link to="/" title={result.site.siteMetadata.title}>
-                {logo}
+                <Logo />
               </Link>
             </HeaderLogoWrapper>
             <HeaderMenuLevel0>
@@ -185,7 +183,6 @@ NavigationDesktop.defaultProps = {
 }
 
 NavigationDesktop.propTypes = {
-  logo: propTypes.element.isRequired,
   rootMenuItemId: propTypes.string,
   isNavigationTransparent: propTypes.bool,
 }

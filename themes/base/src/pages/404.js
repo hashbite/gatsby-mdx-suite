@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Styled } from 'theme-ui'
 
 import Layout from '../components/layout/layout'
-import Header from '../components/layout/header'
+import Header from '../components/header/header'
 import Seo from '../components/layout/seo'
 
 function NotFoundPage() {
