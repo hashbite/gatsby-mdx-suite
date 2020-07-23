@@ -47,7 +47,7 @@ const Trigger = styled.button`
     block relative
     w-6
     text-gray-300
-    bg-gray-800 border-l border-color-gray-600
+    bg-gray-800 border-l border-gray-600
   `}
 
   &:focus {
