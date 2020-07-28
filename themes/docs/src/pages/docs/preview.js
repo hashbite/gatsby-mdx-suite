@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import propTypes from 'prop-types'
 import loadable from '@loadable/component'
 import tw from 'twin.macro'
-import { Global, css } from '@emotion/core'
 import { Styled } from 'theme-ui'
 import useEventListener from '@use-it/event-listener'
 
+import Layout from 'gatsby-theme-mdx-suite-base/src/components/layout/layout'
 import DataProvider from '../../components/data-provider'
 
 const MDX = loadable(() => import('@mdx-js/runtime'))
@@ -60,37 +60,11 @@ const DocsPreviewPage = () => {
 
   return (
     <DataProvider>
-      <Styled.root>
-        <Global
-          styles={(theme) => css`
-            body {
-              margin: 0;
-              overflow-x: hidden;
-            }
-            a {
-              color: inherit;
-              text-decoration: none;
-            }
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            p,
-            ul,
-            ol,
-            li {
-              &:last-child {
-                margin-bottom: 0 !important;
-              }
-            }
-          `}
-        />
+      <Layout>
         <MDXErrorBoundary>
           <MDX>{content}</MDX>
         </MDXErrorBoundary>
-      </Styled.root>
+      </Layout>
     </DataProvider>
   )
 }
