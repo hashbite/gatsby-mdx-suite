@@ -23,7 +23,7 @@ const LayoutHeader = styled.div`
     md:static
     p-4 flex justify-between items-center flex-wrap
     md:py-0 md:flex-no-wrap
-    bg-gray-200 shadow-lg
+    shadow-lg
   `}
   grid-area: head;
 `
