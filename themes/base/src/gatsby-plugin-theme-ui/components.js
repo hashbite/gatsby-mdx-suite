@@ -2,7 +2,7 @@
 import CTA from '@gatsby-mdx-suite/mdx-link/cta'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import Link from '@gatsby-mdx-suite/mdx-link/link'
-import ColorSet from '@gatsby-mdx-suite/mdx-color-set'
+import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 
 // Layout
 import Center from '@gatsby-mdx-suite/mdx-layout/center'
