@@ -3,13 +3,49 @@ import propTypes from 'prop-types'
 import merge from 'lodash/merge'
 import { ThemeProvider, useThemeUI } from 'theme-ui'
 
+import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
+
 /**
- * Apply a color set to a subset of elements.
+ * Apply a color set or single colors to a subset of elements.
  *
  * @example
- * <CTA href="#">Foo</CTA>
- * <ColorSet name="blue"><CTA href="#">Bar</CTA></ColorSet>
+ * # Setting a color set
+ *
+ * ## Default color
+ *
+ * This is some example text
+ *
+ * <CTA href="#">Example</CTA>
+ *
+ * <ColorSet colorSet="primary">
+ *
+ * ## Custom color set
+ *
+ * This is some example text
+ *
+ * <CTA href="#">Example</CTA>
+ *
+ * </ColorSet>
+ * @example
+ * # Setting single colors
+ *
+ * ## Default color
+ *
+ * This is some example text
+ *
+ * <CTA href="#">Example</CTA>
+ *
+ * <ColorSet background="black" text="gray-200">
+ *
+ * ## Custom color set
+ *
+ * This is some example text
+ *
+ * <CTA href="#">Example</CTA>
+ *
+ * </ColorSet>
  */
+
 const ColorSet = ({ name, children, ...colors }) => {
   const { theme } = useThemeUI()
 
@@ -22,6 +58,11 @@ const ColorSet = ({ name, children, ...colors }) => {
     colorizedTheme.colors = merge(colorizedTheme.colors, colorSetData)
   }
   if (colors.constructor === Object && Object.entries(colors).length !== 0) {
+    // Support color palettes
+    Object.entries(colors).forEach(
+      ([key, val]) => (colors[key] = selectColor(theme.colors, val))
+    )
+
     colorizedTheme.colors = merge(colorizedTheme.colors, colors)
   }
 
