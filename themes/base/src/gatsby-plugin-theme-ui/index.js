@@ -21,10 +21,10 @@ module.exports = merge({}, coreTheme, typographyTheme, {
     sets: {
       primary: {
         background: coreTheme.colors.primary,
-        text: coreTheme.colors.rootBackground,
-        primary: coreTheme.colors.rootBackground,
+        text: coreTheme.colors.background,
+        primary: coreTheme.colors.background,
         secondary: coreTheme.colors.primary,
-        headline: coreTheme.colors.rootBackground,
+        headline: coreTheme.colors.background,
       },
       red: {
         background: coreTheme.colors.red[7],

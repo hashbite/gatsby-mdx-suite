@@ -25,7 +25,6 @@ module.exports = merge({}, tailwindPreset, {
     // MDX-Suite specific colors
     background: 'transparent', // background color to transparent to simplify working with color sets
     headline: tailwindPreset.colors.text, // headline color
-    rootBackground: tailwindPreset.colors.background, // document background color
     sets: {
       backgroundImage: {
         background: 'transparent',
@@ -40,9 +39,6 @@ module.exports = merge({}, tailwindPreset, {
   },
   // Custom styles to inject our custom colors into all (MDX) components
   styles: {
-    root: {
-      backgroundColor: 'rootBackground',
-    },
     h1: {
       color: 'headline',
     },
