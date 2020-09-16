@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.3.1...@gatsby-mdx-suite/mdx-color-set@0.4.0) (2020-09-16)
+
+
+### Features
+
+* **colorSet:** single colors now support custom theme colors ([319d114](https://github.com/axe312ger/gatsby-mdx-suite/commit/319d11461b4b0d689bf45cb95cca9a881559ab2b))
+
+
+
+
+
 ## [0.3.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.3.0...@gatsby-mdx-suite/mdx-color-set@0.3.1) (2020-07-23)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set

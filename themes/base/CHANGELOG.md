@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.1.0...gatsby-theme-mdx-suite-base@0.1.1) (2020-09-16)
+
+
+### Bug Fixes
+
+* **components:** import color set properly ([636fa29](https://github.com/axe312ger/gatsby-mdx-suite/commit/636fa291b5b0ad9925a6516188f07ffcdbeb14e6))
+* **icons:** allow icons to be overwritten ([df6b87b](https://github.com/axe312ger/gatsby-mdx-suite/commit/df6b87b51a380fb515700cd4a8bba122abe7a613))
+
+
+
+
+
 # 0.1.0 (2020-07-23)
 
 
