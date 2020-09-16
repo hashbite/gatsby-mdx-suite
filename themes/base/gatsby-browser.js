@@ -1,11 +1,22 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import icons from './src/icons'
+import defaultIcons from './src/default-icons'
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 
 export const wrapRootElement = ({ element }) => {
-  return <IconsContext.Provider value={icons}>{element}</IconsContext.Provider>
+  // Only set default icons when project does not define any icons
+  const seedIcons = (contextIcons) => {
+    return contextIcons ? (
+      element
+    ) : (
+      <IconsContext.Provider value={defaultIcons}>
+        {element}
+      </IconsContext.Provider>
+    )
+  }
+
+  return <IconsContext.Consumer>{seedIcons}</IconsContext.Consumer>
 }
 wrapRootElement.propTypes = {
   element: propTypes.element.isRequired,
