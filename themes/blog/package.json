@@ -15,7 +15,9 @@
     "gatsby-plugin-mdx": "^1.2.0",
     "prop-types": "^15.7.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-i18next": "^11.7.2",
+    "twin.macro": "^1.9.0"
   },
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.4",
@@ -25,9 +27,7 @@
     "@gatsby-mdx-suite/mdx-link": "^0.7.1",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-theme-mdx-suite-base": "^0.1.1",
-    "heroicons": "^0.3.6",
-    "react-i18next": "^11.7.0",
-    "theme-ui": "^0.3.1",
-    "twin.macro": "^1.5.0"
+    "heroicons": "^0.4.2",
+    "theme-ui": "^0.3.1"
   }
 }

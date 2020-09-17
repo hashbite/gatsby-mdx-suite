@@ -229,7 +229,6 @@ export default function Image({
       {...dimensionProps}
       {...restProps}
     >
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
       <img src={imageSrc} {...imgProps} loading="lazy" />
     </ImageWrapper>
   )
