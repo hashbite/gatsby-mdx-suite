@@ -23,18 +23,20 @@
     "@gatsby-mdx-suite/mdx-image": "^0.7.1",
     "@gatsby-mdx-suite/mdx-video": "^0.5.1",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.24.10",
-    "gatsby-plugin-manifest": "^2.4.20",
-    "gatsby-plugin-mdx": "^1.2.28",
-    "gatsby-plugin-offline": "^3.2.20",
+    "gatsby": "^2.24.63",
+    "gatsby-plugin-manifest": "^2.4.30",
+    "gatsby-plugin-offline": "^3.2.28",
     "gatsby-theme-mdx-suite-base": "^0.1.1",
     "gatsby-theme-mdx-suite-blog": "^0.1.1",
     "gatsby-theme-mdx-suite-core": "^0.1.1",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-i18next": "^11.7.0",
-    "twin.macro": "^1.5.0"
+    "react-i18next": "^11.7.2",
+    "twin.macro": "^1.9.0"
+  },
+  "peerDependencies": {
+    "gatsby-plugin-mdx": "^1.2.40"
   }
 }
