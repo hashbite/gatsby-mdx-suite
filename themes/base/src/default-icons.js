@@ -32,19 +32,21 @@ const Circle = () => (
   </svg>
 )
 
-export default {
-  check: { icon: Check, scale: 1.2 },
-  circle: { icon: Circle },
-  dot: { icon: Dot },
-  dotSmall: { icon: Dot, scale: 0.6 },
-  star: { icon: Star },
-  phone: { icon: Phone },
-  mail: { icon: Mail },
-  facebook: { icon: Facebook },
-  instagram: { icon: Instagram },
-  youtube: { icon: Youtube },
-  linkedin: { icon: Linkedin },
-  twitter: { icon: Twitter },
-  'flag-de': { icon: FlagDe },
-  'flag-en-US': { icon: FlagEn },
-}
+export default new Map(
+  Object.entries({
+    check: { icon: Check, scale: 1.2 },
+    circle: { icon: Circle },
+    dot: { icon: Dot },
+    dotSmall: { icon: Dot, scale: 0.6 },
+    star: { icon: Star },
+    phone: { icon: Phone },
+    mail: { icon: Mail },
+    facebook: { icon: Facebook },
+    instagram: { icon: Instagram },
+    youtube: { icon: Youtube },
+    linkedin: { icon: Linkedin },
+    twitter: { icon: Twitter },
+    'flag-de': { icon: FlagDe },
+    'flag-en-US': { icon: FlagEn },
+  })
+)

@@ -34,38 +34,38 @@ const ColorSetWrapper = styled.div`
 
 const ColorSwatch = styled.div(
   ({ color }) => css`
-  ${tw`
+    ${tw`
     inline-block px-2 py-1
     rounded
     text-sm
     `}
-  background: ${color};
+    background: ${color};
 
-  &:before{
-    content: '${color}';
-    mix-blend-mode: difference;
-  }
-`
+    &:before {
+      content: '${color}';
+      mix-blend-mode: difference;
+    }
+  `
 )
 
 const Breakpoints = tw.div`flex flex-col items-center overflow-x-scroll`
 
 const Breakpoint = styled.div(
   ({ width }) => css`
-  ${tw`mt-8 border border-red-300 text-center`}
-  width: ${width};
-  min-height: 0.8rem;
-  border-top: none;
-`
+    ${tw`mt-8 border border-red-300 text-center`}
+    width: ${width};
+    min-height: 0.8rem;
+    border-top: none;
+  `
 )
 
 const Length = styled.div(
   ({ width }) => css`
-  ${tw`border border-red-300 text-center`}
-  width: ${width};
-  min-height: 0.8rem;
-  border-top: none;
-`
+    ${tw`border border-red-300 text-center`}
+    width: ${width};
+    min-height: 0.8rem;
+    border-top: none;
+  `
 )
 
 const Sizes = styled(Styled.table)``
@@ -193,7 +193,7 @@ function ThemeDocs() {
             <ThemeSectionHeader>Icons</ThemeSectionHeader>
             <ThemeSectionContent>
               <Grid>
-                {Object.keys(icons).map((name) => {
+                {[...icons.keys()].map((name) => {
                   return (
                     <GridItem key={name}>
                       <GridItemContent>
