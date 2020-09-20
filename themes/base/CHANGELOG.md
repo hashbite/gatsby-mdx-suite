@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.1.1...gatsby-theme-mdx-suite-base@0.1.2) (2020-09-20)
+
+
+### Bug Fixes
+
+* **icons:** fix icon overwrite by using a map ([b0e31dc](https://github.com/axe312ger/gatsby-mdx-suite/commit/b0e31dcf6ed469957eb3a3a6dc05c3b15582f5fe))
+
+
+
+
+
 ## [0.1.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.1.0...gatsby-theme-mdx-suite-base@0.1.1) (2020-09-16)
 
 

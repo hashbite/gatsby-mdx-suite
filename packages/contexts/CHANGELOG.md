@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/contexts@0.3.4...@gatsby-mdx-suite/contexts@0.3.5) (2020-09-20)
+
+
+### Bug Fixes
+
+* **icons:** fix icon overwrite by using a map ([b0e31dc](https://github.com/axe312ger/gatsby-mdx-suite/commit/b0e31dcf6ed469957eb3a3a6dc05c3b15582f5fe))
+
+
+
+
+
 ## [0.3.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/contexts@0.3.3...@gatsby-mdx-suite/contexts@0.3.4) (2020-07-23)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/contexts
