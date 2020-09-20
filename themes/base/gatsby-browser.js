@@ -7,7 +7,7 @@ import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 export const wrapRootElement = ({ element }) => {
   // Only set default icons when project does not define any icons
   const seedIcons = (contextIcons) => {
-    return contextIcons ? (
+    return contextIcons.length ? (
       element
     ) : (
       <IconsContext.Provider value={defaultIcons}>

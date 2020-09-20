@@ -40,7 +40,7 @@ const IconWrapper = styled.span(
  */
 const Icon = ({ icon, color, ...props }) => {
   const icons = useContext(IconsContext)
-  const IconData = icons && icons[icon]
+  const IconData = icons.get(icon)
   if (!IconData) {
     throw new Error(`Unable to locate icon "${icon}"`)
   }
