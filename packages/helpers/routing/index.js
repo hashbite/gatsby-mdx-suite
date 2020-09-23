@@ -24,7 +24,10 @@ function generatePageMap({ pages, activePageId }) {
         return false
       }
       // Support for listing pages build with gatsby-awesome-pagination
-      if (context.pageNumber !== null) {
+      if (
+        Object.prototype.hasOwnProperty.call(context, 'pageNumber') &&
+        context.pageNumber !== null
+      ) {
         return context.pageId === activePageId && context.pageNumber === 0
       }
       return context.pageId === activePageId
