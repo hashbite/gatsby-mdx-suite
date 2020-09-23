@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-suite-base",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
