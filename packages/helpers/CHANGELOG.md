@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.9.1...@gatsby-mdx-suite/helpers@0.9.2) (2020-09-23)
+
+
+### Bug Fixes
+
+* **routing:** ensure pagemap is properly generated without gatsby-awesome-pagination enabled ([8b0592b](https://github.com/axe312ger/gatsby-mdx-suite/commit/8b0592b6bb3fb3418cf5f3af5b1085fa8d4c8b25))
+
+
+
+
+
 ## [0.9.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.9.0...@gatsby-mdx-suite/helpers@0.9.1) (2020-09-20)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/helpers
