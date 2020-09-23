@@ -21,7 +21,7 @@
     "@gatsby-mdx-suite/mdx-image": "^0.7.2",
     "@gatsby-mdx-suite/mdx-layout": "^0.17.2",
     "@gatsby-mdx-suite/mdx-link": "^0.7.2",
-    "gatsby": "^2.24.63",
+    "gatsby": "^2.24.64",
     "gatsby-theme-mdx-suite-core": "^0.1.2",
     "lodash": "^4.17.20",
     "prop-types": "^15.7.2",

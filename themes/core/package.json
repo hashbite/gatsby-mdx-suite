@@ -34,7 +34,7 @@
     "gatsby-plugin-mdx": "^1.2.40",
     "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-plugin-theme-ui": "^0.3.0",
-    "gatsby-source-contentful": "^2.3.46",
+    "gatsby-source-contentful": "^2.3.47",
     "gatsby-source-filesystem": "^2.3.30",
     "gatsby-transformer-sharp": "^2.5.15",
     "i18next": "^19.7.0",
