@@ -1,9 +1,11 @@
-import defaultIcons from 'gatsby-theme-mdx-suite-base/src/icons'
+import defaultIcons from 'gatsby-theme-mdx-suite-base/src/default-icons'
 
 import Users from 'heroicons/solid/users.svg'
 
-export default {
+export default new Map([
   ...defaultIcons,
   // Project specific icons
-  users: { icon: Users },
-}
+  ...Object.entries({
+    users: { icon: Users },
+  }),
+])
