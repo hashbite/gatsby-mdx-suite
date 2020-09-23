@@ -21,7 +21,7 @@
     "@gatsby-mdx-suite/mdx-video": "^0.5.2",
     "@mdx-js/react": "^1.6.18",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.24.63",
+    "gatsby": "^2.24.64",
     "gatsby-theme-mdx-suite-base": "^0.1.4",
     "lodash": "^4.17.20",
     "prop-types": "^15.7.2",
