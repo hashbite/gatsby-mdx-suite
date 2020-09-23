@@ -1,6 +1,5 @@
 /**
- * This base theme extends our core theme with a few custom values and
- * adds the defaul typography design to it.
+ * This base theme extends our core theme with a few custom values.
  *
  * It will automatically be merged with @theme-ui/preset-tailwind
  *
@@ -10,12 +9,7 @@
 const merge = require('lodash/merge')
 const coreTheme = require('gatsby-theme-mdx-suite-core/src/gatsby-plugin-theme-ui')
 
-const typographyTheme = require('./typography')
-
-// Optional: We use styles based on typography.js to achieve a proper vertical rhythm
-delete coreTheme.styles
-
-module.exports = merge({}, coreTheme, typographyTheme, {
+module.exports = merge({}, coreTheme, {
   // Options see gatsby-theme-mdx-suite-core/src/gatsby-plugin-theme-ui/index.js
   colors: {
     sets: {
