@@ -2,7 +2,10 @@ const { resolve } = require('path')
 const { createPath } = require('@gatsby-mdx-suite/helpers/routing')
 const { paginate } = require('gatsby-awesome-pagination')
 
-exports.createPages = async ({ graphql, actions, getCache }) => {
+exports.createPages = async (
+  { graphql, actions, getCache },
+  themeOptions = { itemsPerPage: 2 }
+) => {
   const { createPage } = actions
   const { config } = await getCache().get('mdx-suite')
 
@@ -51,7 +54,7 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
     paginate({
       createPage,
       items: localizedBlogPosts,
-      itemsPerPage: 2,
+      itemsPerPage: themeOptions.itemsPerPage,
       pathPrefix: createPath({ slug: 'blog', locale, config }),
       component: resolve(__dirname, `./src/templates/blog-post-list.js`),
       context: {
