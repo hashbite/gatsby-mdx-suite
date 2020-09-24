@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-blog@0.1.6...gatsby-theme-mdx-suite-blog@0.2.0) (2020-09-24)
+
+
+### Features
+
+* **blog:** add option to set items per page ([725cbee](https://github.com/axe312ger/gatsby-mdx-suite/commit/725cbee5566f5832317f743c2532b14ace545776))
+
+
+
+
+
 ## [0.1.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-blog@0.1.5...gatsby-theme-mdx-suite-blog@0.1.6) (2020-09-23)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-blog
