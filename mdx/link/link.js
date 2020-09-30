@@ -46,7 +46,7 @@ export default function Link({
   }
 
   const result = useStaticQuery(graphql`
-    {
+    query LinkQuery {
       allSitePage {
         nodes {
           ...MdxSuiteSitePageMetadata

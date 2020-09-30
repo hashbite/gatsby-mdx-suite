@@ -53,7 +53,7 @@ const Submit = tw.input`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 
 export default function ContactForm({ successPageId }) {
   const [t] = useTranslation()
   const result = useStaticQuery(graphql`
-    {
+    query ContactFormQuery {
       allSitePage {
         nodes {
           ...MdxSuiteSitePageMetadata

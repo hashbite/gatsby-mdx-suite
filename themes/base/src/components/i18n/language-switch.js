@@ -48,7 +48,7 @@ function LanguageSwitch({ useIcons }) {
   } = useContext(MdxSuiteContext)
 
   const result = useStaticQuery(graphql`
-    {
+    query LanguageSwitchQuery {
       allSitePage {
         nodes {
           ...MdxSuiteSitePageMetadata
