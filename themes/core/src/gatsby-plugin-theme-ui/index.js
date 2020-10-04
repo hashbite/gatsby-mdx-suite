@@ -4,10 +4,10 @@
  *
  * Important: The es-modules syntax can not be used here till gatsby-config.js supports it.
  */
-const merge = require('lodash/merge')
+const merge = require('deepmerge')
 const tailwindPreset = require('@theme-ui/preset-tailwind')
 
-module.exports = merge({}, tailwindPreset, {
+module.exports = merge(tailwindPreset, {
   sizes: {
     contentColumnPadding: '2vw',
     gridGap: `${tailwindPreset.space[3]}`,

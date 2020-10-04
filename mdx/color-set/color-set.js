@@ -1,6 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import merge from 'lodash/merge'
+import merge from 'deepmerge'
 import { ThemeProvider, useThemeUI } from 'theme-ui'
 
 import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
