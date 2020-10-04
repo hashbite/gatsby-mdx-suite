@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
-    "emotion": "^10.0.27",
-    "lodash": "^4.17.20"
+    "deepmerge": "^4.2.2",
+    "emotion": "^10.0.27"
   },
   "publishConfig": {
     "access": "public"

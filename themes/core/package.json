@@ -27,6 +27,7 @@
     "@theme-ui/tailwind": "^0.3.0",
     "cheerio": "0.22.0",
     "debug": "^4.2.0",
+    "deepmerge": "^4.2.2",
     "emotion": "^10.0.27",
     "fs-extra": "^9.0.1",
     "gatsby-plugin-emotion": "^4.3.11",

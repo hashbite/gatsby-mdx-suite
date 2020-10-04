@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import merge from 'lodash/merge'
+import merge from 'deepmerge'
 
 import MdxSuiteContextProvider from '@gatsby-mdx-suite/contexts/provider'
 
