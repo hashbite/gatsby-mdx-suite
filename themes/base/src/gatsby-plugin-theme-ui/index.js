@@ -6,10 +6,10 @@
  * Important: The es-modules syntax can not be used here till gatsby-config.js supports it.
  */
 
-const merge = require('lodash/merge')
+const merge = require('deepmerge')
 const coreTheme = require('gatsby-theme-mdx-suite-core/src/gatsby-plugin-theme-ui')
 
-module.exports = merge({}, coreTheme, {
+module.exports = merge(coreTheme, {
   // Options see gatsby-theme-mdx-suite-core/src/gatsby-plugin-theme-ui/index.js
   colors: {
     sets: {

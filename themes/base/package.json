@@ -34,6 +34,7 @@
     "@reach/router": "^1.3.4",
     "@react-hook/window-size": "^3.0.7",
     "@researchgate/react-intersection-observer": "^1.3.4",
+    "deepmerge": "^4.2.2",
     "flag-icon-css": "^3.5.0",
     "gatsby-link": "^2.4.15",
     "gatsby-plugin-bundle-stats": "^2.2.0",
@@ -47,7 +48,6 @@
     "gatsby-transformer-inline-svg": "^0.0.7",
     "gatsby-transformer-video": "^0.1.18",
     "heroicons": "^0.4.2",
-    "lodash": "^4.17.20",
     "react-helmet": "^6.1.0",
     "react-scrolllock": "^5.0.1",
     "theme-ui": "^0.3.1"
