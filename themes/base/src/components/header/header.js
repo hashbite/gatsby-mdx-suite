@@ -12,11 +12,19 @@ import HeaderBar from './header-bar'
 import Hero from './hero'
 
 const HeaderWrapper = styled.div(
-  ({ theme }) => css`
-  ${tw`relative flex flex-col`}
-  background: ${theme.colors.background};
-  color: ${theme.colors.text};
-`
+  ({ theme, hasBackgroundMedia }) => css`
+    ${tw`relative flex flex-col`}
+    background: ${theme.colors.background};
+    color: ${theme.colors.text};
+
+    ${hasBackgroundMedia
+      ? css`
+          height: 61.8vh;
+        `
+      : css`
+          height: 38.2vh;
+        `}
+  `
 )
 
 /**
@@ -87,7 +95,6 @@ const Header = ({
   }
 
   const headerBarProps = {
-    transparent,
     headerPassed,
     headerVisibleAgain,
     menuOpen,
@@ -98,7 +105,7 @@ const Header = ({
     children,
     backgroundImageId,
     backgroundVideoId,
-    transparent,
+    isNavigationTransparent,
     headerBarHeight: `${headerBarHeight}px`,
   }
 
@@ -106,8 +113,8 @@ const Header = ({
     <ColorSet name={colorSet} {...colors}>
       <Observer onChange={handleHeaderIntersection}>
         <HeaderWrapper hasBackgroundMedia={hasBackgroundMedia}>
-          <div style={{ height: headerBarHeight }} ref={headerBarRef}>
-            <HeaderBar {...headerBarProps} />
+          <div style={{ height: headerBarHeight }}>
+            <HeaderBar {...headerBarProps} ref={headerBarRef} />
           </div>
           {shouldRenderHero && <Hero {...heroProps} />}
         </HeaderWrapper>
@@ -118,6 +125,7 @@ const Header = ({
 
 Header.defaultProps = {
   colorSet: 'primary',
+  transparent: false,
 }
 
 Header.propTypes = {

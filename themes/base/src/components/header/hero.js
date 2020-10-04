@@ -9,30 +9,30 @@ import Video from '@gatsby-mdx-suite/mdx-video/video'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
 const HeroWrapper = styled.div(
-  ({ transparent }) => css`
+  ({ isNavigationTransparent }) => css`
     ${tw`
     flex-auto
     flex flex-col justify-center`}
 
-    ${transparent
-      ? css`
-          min-height: 62vh;
-        `
-      : css`
-          position: relative;
-          min-height: 42vh;
-        `}
+    ${!isNavigationTransparent && tw`relative`}
   `
 )
 
-const HeroContent = styled.div`
-  ${tw`
+const HeroContent = styled.div(
+  ({ hasBackgroundMedia, ...props }) => css`
+    ${tw`
     relative z-20
     py-16
     flex flex-col
     `}
-  ${centerToContentColumn}
-`
+    ${hasBackgroundMedia &&
+    css`
+      ${tw`text-white`}
+      text-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    `}
+  ${centerToContentColumn(props)}
+  `
+)
 
 const HeroMediaWrapper = styled.div`
   ${tw`absolute inset-0 z-0 overflow-hidden`}
@@ -55,12 +55,15 @@ const Hero = ({
   children,
   backgroundImageId,
   backgroundVideoId,
-  transparent,
+  isNavigationTransparent,
 }) => {
+  const hasBackgroundMedia = !!(backgroundImageId || backgroundVideoId)
   return (
-    <HeroWrapper transparent={transparent}>
-      <HeroContent>{children}</HeroContent>
-      {backgroundImageId && (
+    <HeroWrapper isNavigationTransparent={isNavigationTransparent}>
+      <HeroContent hasBackgroundMedia={hasBackgroundMedia}>
+        {children}
+      </HeroContent>
+      {hasBackgroundMedia && (
         <HeroMediaWrapper>
           {backgroundImageId && (
             <Image id={backgroundImageId} contextKey="screen" fit="cover" />
@@ -82,14 +85,14 @@ const Hero = ({
 
 Hero.defaultProps = {
   children: null,
-  transparent: false,
+  isNavigationTransparent: false,
 }
 
 Hero.propTypes = {
   children: propTypes.node,
   backgroundImageId: propTypes.string,
   backgroundVideoId: propTypes.string,
-  transparent: propTypes.bool,
+  isNavigationTransparent: propTypes.bool,
 }
 
 export default Hero

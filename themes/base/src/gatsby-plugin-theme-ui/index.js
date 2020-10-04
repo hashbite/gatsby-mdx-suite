@@ -15,10 +15,10 @@ module.exports = merge({}, coreTheme, {
     sets: {
       primary: {
         background: coreTheme.colors.primary,
-        text: coreTheme.colors.background,
-        primary: coreTheme.colors.background,
+        text: coreTheme.colors.rootBackground,
+        primary: coreTheme.colors.rootBackground,
         secondary: coreTheme.colors.primary,
-        headline: coreTheme.colors.background,
+        headline: coreTheme.colors.rootBackground,
       },
       red: {
         background: coreTheme.colors.red[7],
