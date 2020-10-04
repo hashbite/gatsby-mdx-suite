@@ -19,59 +19,58 @@ const MenuShowAnimation = keyframes`
 
 const MenuHideAnimation = keyframes`
   from {
-    ${tw`fixed top-0 left-0 right-0 bg-background`}
+    ${tw`fixed top-0 left-0 right-0 bg-rootBackground`}
     transform: translate3d(0, 0, 0);
   }
 
   to {
-    ${tw`fixed top-0 left-0 right-0 bg-background`}
+    ${tw`fixed top-0 left-0 right-0 bg-rootBackground`}
     transform: translate3d(0, -100%, 0);
   }
 `
 
 const HeaderBarWrapper = styled.div(
-  ({ headerPassed, headerVisibleAgain, transparent, menuOpen, theme }) => css`
+  ({
+    headerPassed,
+    headerVisibleAgain,
+    isNavigationTransparent,
+    menuOpen,
+    theme,
+  }) => css`
     ${tw`
       flex-none
       relative z-50
+      shadow-xl
       `}
-    ${
-      !transparent
-        ? css`
-            ${tw`shadow-xl bg-background text-text`}
-          `
-        : css`
-            color: ${theme.colors.white};
-          `
-    };
+    ${!isNavigationTransparent
+      ? css`
+          ${tw`bg-rootBackground text-text`}
+        `
+      : css`
+          ${tw`text-white`}
+          background: rgba(0,0,0,0.1);
+        `};
 
-    ${
-      menuOpen &&
-      css`
-        ${tw`bg-background text-text`}
-      `
-    }
+    ${menuOpen &&
+    css`
+      ${tw`bg-rootBackground text-text`}
+    `}
 
-    ${
-      headerPassed &&
-      css`
-      ${tw`fixed top-0 left-0 right-0 bg-background text-text shadow-xl`}
+    ${headerPassed &&
+    css`
+      ${tw`fixed top-0 left-0 right-0 bg-rootBackground text-text shadow-xl`}
       animation: 0.45s ${MenuShowAnimation} ease-out;
       animation-fill-mode: both;
-    `
-    }
+    `}
 
-    ${
-      headerVisibleAgain &&
-      css`
-        animation: 0.3s ${MenuHideAnimation} ease-in;
-      `
-    }
+    ${headerVisibleAgain &&
+    css`
+      animation: 0.3s ${MenuHideAnimation} ease-in;
+    `}
   `
 )
 
 const HeaderBar = ({
-  transparent,
   headerPassed,
   headerVisibleAgain,
   menuOpen,
@@ -80,7 +79,7 @@ const HeaderBar = ({
 }) => {
   return (
     <HeaderBarWrapper
-      transparent={transparent}
+      isNavigationTransparent={isNavigationTransparent}
       headerPassed={headerPassed}
       headerVisibleAgain={headerVisibleAgain}
       menuOpen={menuOpen}
@@ -96,7 +95,6 @@ const HeaderBar = ({
 }
 
 HeaderBar.defaultProps = {
-  transparent: false,
   headerPassed: false,
   headerVisibleAgain: false,
   menuOpen: false,
@@ -104,7 +102,6 @@ HeaderBar.defaultProps = {
 }
 
 HeaderBar.propTypes = {
-  transparent: propTypes.bool,
   headerPassed: propTypes.bool,
   headerVisibleAgain: propTypes.bool,
   menuOpen: propTypes.bool,

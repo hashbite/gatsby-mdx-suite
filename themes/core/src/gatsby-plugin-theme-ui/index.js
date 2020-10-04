@@ -24,6 +24,7 @@ module.exports = merge({}, tailwindPreset, {
     // muted: tailwindPreset.colors.muted, // a gray or subdued color for decorative purposes
     // MDX-Suite specific colors
     background: 'transparent', // background color to transparent to simplify working with color sets
+    rootBackground: 'white', // background of body and overlapping global elements
     headline: tailwindPreset.colors.text, // headline color
     sets: {
       backgroundImage: {

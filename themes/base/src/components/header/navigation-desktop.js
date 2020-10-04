@@ -31,21 +31,9 @@ const NavigationDesktopTopContentWrapper = styled.div`
   ${centerToContentColumn}
 `
 const NavigationDesktopTopContent = styled.div(
-  ({ transparent }) =>
+  () =>
     css`
       ${tw`flex justify-between items-center flex-wrap relative`}
-      ${transparent &&
-      css`
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: -10vw;
-          right: -10vw;
-          height: 1px;
-          background: white;
-        }
-      `}
     `
 )
 const NavigationDesktopBottomContent = styled.div`
@@ -53,10 +41,14 @@ const NavigationDesktopBottomContent = styled.div`
 `
 
 const HeaderLogoWrapper = styled(Styled.h1)`
-  ${tw`mb-0 w-48 lg:w-64`}
+  ${tw`m-0 w-48 lg:w-64`}
+
+  & a {
+    ${tw`block`}
+  }
 
   & svg {
-    width: 100%;
+    ${tw`block w-full`}
   }
 `
 
@@ -153,7 +145,7 @@ const NavigationDesktop = ({ rootMenuItemId, isNavigationTransparent }) => {
     <NavigationDesktopWrapper>
       <NavigationDesktopTop>
         <NavigationDesktopTopContentWrapper>
-          <NavigationDesktopTopContent transparent={isNavigationTransparent}>
+          <NavigationDesktopTopContent>
             <HeaderLogoWrapper>
               <Link to="/" title={result.site.siteMetadata.title}>
                 <Logo />
@@ -179,7 +171,7 @@ const NavigationDesktop = ({ rootMenuItemId, isNavigationTransparent }) => {
 
 NavigationDesktop.defaultProps = {
   rootMenuItemId: 'menuRootHeader',
-  transparent: false,
+  isNavigationTransparent: false,
 }
 
 NavigationDesktop.propTypes = {
