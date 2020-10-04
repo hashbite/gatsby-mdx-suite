@@ -10079,10 +10079,17 @@ gatsby-react-router-scroll@^3.0.14:
   dependencies:
     "@babel/runtime" "^7.11.2"
 
+<<<<<<< HEAD
 gatsby-recipes@^0.2.31:
   version "0.2.31"
   resolved "https://registry.yarnpkg.com/gatsby-recipes/-/gatsby-recipes-0.2.31.tgz#0f2f3f7b5c2f69b09d4761f7f78448ff23e14088"
   integrity sha512-5sF1U+VbGpuHE4E+CdODraAZmzQS8DbHDWP/rpNYBzFalLdFs0HPngg8zb7TbzDY0p6b5umS32OF/2P9PAuVJg==
+=======
+gatsby-recipes@^0.2.28:
+  version "0.2.28"
+  resolved "https://registry.yarnpkg.com/gatsby-recipes/-/gatsby-recipes-0.2.28.tgz#496548ca63dd0e78596b420c4556befd309cd9f1"
+  integrity sha512-wXwLFgxs/wHUcunpLGwnJ44rECLvrWZj8xSiuF09M9C/bz2KldbcNEDf4lsBA+cqfA2qcOsKjQKW+a6n3ZAz5A==
+>>>>>>> perf: replace lodash with deepmerge
   dependencies:
     "@babel/core" "^7.11.6"
     "@babel/generator" "^7.11.6"
