@@ -9,7 +9,7 @@ const ModalContentWrapper = styled.div`
   ${tw`
     relative
     m-auto max-w-content-column p-8
-    bg-rootBackground shadow rounded
+    bg-root-background shadow rounded
     cursor-auto
   `}
   pointer-events: all;

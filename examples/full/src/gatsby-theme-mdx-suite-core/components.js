@@ -1,4 +1,4 @@
-import defaultComponents from 'gatsby-theme-mdx-suite-base/src/gatsby-plugin-theme-ui/components'
+import defaultComponents from 'gatsby-theme-mdx-suite-base/src/gatsby-theme-mdx-suite-core/components'
 
 // Video support
 import Video from '@gatsby-mdx-suite/mdx-video/video'

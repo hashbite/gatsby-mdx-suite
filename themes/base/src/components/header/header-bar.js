@@ -19,12 +19,12 @@ const MenuShowAnimation = keyframes`
 
 const MenuHideAnimation = keyframes`
   from {
-    ${tw`fixed top-0 left-0 right-0 bg-rootBackground`}
+    ${tw`fixed top-0 left-0 right-0 bg-root-background`}
     transform: translate3d(0, 0, 0);
   }
 
   to {
-    ${tw`fixed top-0 left-0 right-0 bg-rootBackground`}
+    ${tw`fixed top-0 left-0 right-0 bg-root-background`}
     transform: translate3d(0, -100%, 0);
   }
 `
@@ -35,7 +35,6 @@ const HeaderBarWrapper = styled.div(
     headerVisibleAgain,
     isNavigationTransparent,
     menuOpen,
-    theme,
   }) => css`
     ${tw`
       flex-none
@@ -44,7 +43,7 @@ const HeaderBarWrapper = styled.div(
       `}
     ${!isNavigationTransparent
       ? css`
-          ${tw`bg-rootBackground text-text`}
+          ${tw`bg-root-background text-text`}
         `
       : css`
           ${tw`text-white`}
@@ -53,12 +52,12 @@ const HeaderBarWrapper = styled.div(
 
     ${menuOpen &&
     css`
-      ${tw`bg-rootBackground text-text`}
+      ${tw`bg-root-background text-text`}
     `}
 
     ${headerPassed &&
     css`
-      ${tw`fixed top-0 left-0 right-0 bg-rootBackground text-text shadow-xl`}
+      ${tw`fixed top-0 left-0 right-0 bg-root-background text-text shadow-xl`}
       animation: 0.45s ${MenuShowAnimation} ease-out;
       animation-fill-mode: both;
     `}

@@ -2,10 +2,10 @@ import { css } from '@emotion/core'
 
 const applyContentGap = ({ theme }) => css`
   &:not(:first-child) {
-    margin-top: ${theme.sizes.contentGap};
+    margin-top: ${theme.spacing['content-gap']};
   }
   &:not(:last-child) {
-    margin-bottom: ${theme.sizes.contentGap};
+    margin-bottom: ${theme.spacing['content-gap']};
   }
 `
 

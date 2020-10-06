@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { useBreakpointIndex } from '@theme-ui/match-media'
 import tw from 'twin.macro'
 
 const MENU_TRIGGER_BREAKPOINT = 3
@@ -77,7 +76,7 @@ const Content = styled.div(
 )
 
 const Nav = ({ children, gridArea, inverted, title }) => {
-  const currentBreakpoint = useBreakpointIndex()
+  const currentBreakpoint = 0 // @todo useBreakpointIndex()
   const [lastBreakpoint, setLastBreakpoint] = useState(currentBreakpoint)
   const [isOpen, setIsOpen] = useState(
     currentBreakpoint > MENU_TRIGGER_BREAKPOINT

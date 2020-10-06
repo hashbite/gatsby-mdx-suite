@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import propTypes from 'prop-types'
 import loadable from '@loadable/component'
 import tw from 'twin.macro'
-import { Styled } from 'theme-ui'
 import useEventListener from '@use-it/event-listener'
 
 import Layout from 'gatsby-theme-mdx-suite-base/src/components/layout/layout'
@@ -11,6 +10,8 @@ import DataProvider from '../../components/data-provider'
 const MDX = loadable(() => import('@mdx-js/runtime'))
 
 const PreviewFailedWrapper = tw.div`flex flex-col justify-center text-center w-screen h-screen`
+
+const ContentWrapper = tw.div`prose`
 
 class MDXErrorBoundary extends React.Component {
   constructor(props) {
@@ -31,8 +32,8 @@ class MDXErrorBoundary extends React.Component {
       // You can render any custom fallback UI
       return (
         <PreviewFailedWrapper>
-          <Styled.h2>Something went wrong rendering the preview.</Styled.h2>
-          <Styled.pre>{this.state.error.message}</Styled.pre>
+          <h2>Something went wrong rendering the preview.</h2>
+          <pre>{this.state.error.message}</pre>
         </PreviewFailedWrapper>
       )
     }
@@ -61,9 +62,11 @@ const DocsPreviewPage = () => {
   return (
     <DataProvider>
       <Layout>
-        <MDXErrorBoundary>
-          <MDX>{content}</MDX>
-        </MDXErrorBoundary>
+        <ContentWrapper>
+          <MDXErrorBoundary>
+            <MDX>{content}</MDX>
+          </MDXErrorBoundary>
+        </ContentWrapper>
       </Layout>
     </DataProvider>
   )

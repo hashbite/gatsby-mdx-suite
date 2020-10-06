@@ -5,7 +5,7 @@ import { css } from '@emotion/core'
 
 const StyledGap = styled.div(
   ({ theme, gap }) => css`
-    height: ${theme.sizes[gap]};
+    height: ${theme.spacing[gap]};
   `
 )
 

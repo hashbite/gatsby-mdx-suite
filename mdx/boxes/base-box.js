@@ -9,7 +9,7 @@ const BaseBox = styled('div', {
     isPropValid(prop) && !['width', 'height'].includes(prop),
 })((props) => {
   const {
-    theme: { breakpoints, colors },
+    theme: { screens, colors },
     hideOnMobile,
   } = props
 
@@ -31,7 +31,7 @@ const BaseBox = styled('div', {
     background: ${colors.background};
     color: ${colors.text};
 
-    @media screen and (max-width: ${breakpoints[0]}) {
+    @media screen and (max-width: ${screens.sm}) {
       &::before {
         content: '';
         width: 1px;
@@ -47,18 +47,18 @@ const BaseBox = styled('div', {
       }
     }
 
-    @media screen and (min-width: ${breakpoints[0]}) {
+    @media screen and (min-width: ${screens.sm}) {
       grid-row-end: span ${height};
       grid-column-end: span ${width};
     }
 
     ${hideOnMobile &&
-      css`
-        display: none;
-        @media screen and (min-width: ${breakpoints[0]}) {
-          display: block;
-        }
-      `}
+    css`
+      display: none;
+      @media screen and (min-width: ${screens.sm}) {
+        display: block;
+      }
+    `}
   `
 })
 

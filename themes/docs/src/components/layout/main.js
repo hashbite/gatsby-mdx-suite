@@ -8,7 +8,7 @@ import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 
 const MainWrapper = styled.div(
   ({ theme }) => css`
-    ${tw`overflow-x-scroll`}
+    ${tw`overflow-x-scroll prose`}
 
     background: ${theme.colors.background};
     color: ${theme.colors.text};

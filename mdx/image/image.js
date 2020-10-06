@@ -25,48 +25,40 @@ export const ImageWrapper = styled('div', {
     ].includes(prop),
 })(
   ({ width, height, fitsParent, fit, position }) => css`
-    ${
-      fitsParent
-        ? css`
-            display: block;
-          `
-        : css`
-            display: inline-block;
-            position: relative;
-          `
-    }
+    ${fitsParent
+      ? css`
+          display: block;
+        `
+      : css`
+          display: inline-block;
+          position: relative;
+        `}
 
-    ${
-      width &&
-      css`
-        max-width: ${parseCssValue(width)};
-        width: 100%;
-      `
-    }
-    ${
-      height &&
-      css`
-        max-height: ${parseCssValue(height)};
-        height: 100%;
-      `
-    }
+    ${width &&
+    css`
+      max-width: ${parseCssValue(width)};
+      width: 100%;
+    `}
+    ${height &&
+    css`
+      max-height: ${parseCssValue(height)};
+      height: 100%;
+    `}
 
     img {
       display: block;
       width: 100%;
 
-      ${
-        fit &&
-        css`
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: ${fit} !important;
-          object-position: ${position} !important;
-        `
-      }
+      ${fit &&
+      css`
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: ${fit} !important;
+        object-position: ${position} !important;
+      `}
     }
   `
 )

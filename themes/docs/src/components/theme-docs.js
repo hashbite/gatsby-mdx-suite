@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { useThemeUI, Styled } from 'theme-ui'
+import { useTheme } from 'emotion-theming'
 import tw from 'twin.macro'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
@@ -13,7 +13,7 @@ import LayoutMain from './layout/main'
 
 const ThemeWrapper = tw.div`pt-8`
 const ThemeSection = tw.section`my-16`
-const ThemeSectionHeader = styled(Styled.h1)(
+const ThemeSectionHeader = styled.h1(
   () => css`
     ${tw`mt-0 p-4 bg-gray-400`}
 
@@ -68,7 +68,7 @@ const Length = styled.div(
   `
 )
 
-const Sizes = styled(Styled.table)``
+const Sizes = tw.table`table-auto`
 
 const FontPreview = styled.div`
   & + & {
@@ -81,11 +81,10 @@ const GridItem = tw.div`text-center`
 const GridItemTitle = tw.div`mt-4 text-sm text-gray-800`
 const GridItemContent = tw.div``
 
-const ColorSetTitle = tw(Styled.h2)`mb-4`
+const ColorSetTitle = tw.h2`mb-4`
 
 function ThemeDocs() {
-  const context = useThemeUI()
-  const { theme, colorMode } = context
+  const theme = useTheme()
   const icons = useContext(IconsContext)
 
   return (
@@ -108,12 +107,8 @@ function ThemeDocs() {
               <table>
                 <tbody>
                   {Object.keys(theme.colors)
-                    .filter(
-                      (name) =>
-                        Array.isArray(theme.colors[name]) ||
-                        typeof theme.colors[name] === 'string'
-                    )
                     .sort((a, b) => a.localeCompare(b))
+                    .filter((name) => name !== 'sets')
                     .map((name) => {
                       const colorData = theme.colors[name]
                       return (
@@ -140,7 +135,7 @@ function ThemeDocs() {
           <ThemeSection>
             <div id="color-sets" />
             <ThemeSectionHeader>
-              <Styled.h1>Color Sets</Styled.h1>
+              <h1>Color Sets</h1>
             </ThemeSectionHeader>
             <ThemeSectionContent>
               <ColorSets>
@@ -210,9 +205,9 @@ function ThemeDocs() {
             <div id="breakpoints" />
             <ThemeSectionHeader>Breakpoints</ThemeSectionHeader>
             <Breakpoints>
-              {theme.breakpoints.map((width, i) => (
-                <Breakpoint key={width} width={width}>
-                  {i} ({width})
+              {Object.keys(theme.screens).map((name) => (
+                <Breakpoint key={name} width={theme.screens[name]}>
+                  {name} ({theme.screens[name]})
                 </Breakpoint>
               ))}
             </Breakpoints>
@@ -222,14 +217,14 @@ function ThemeDocs() {
             <ThemeSectionHeader>Sizes</ThemeSectionHeader>
             <ThemeSectionContent>
               <Sizes>
-                {Object.keys(theme.sizes).map((size) => (
-                  <Styled.tr key={size}>
-                    <Styled.td>{size}</Styled.td>
-                    <Styled.td>{theme.sizes[size]}</Styled.td>
-                    <Styled.td>
-                      <Length width={theme.sizes[size]} />
-                    </Styled.td>
-                  </Styled.tr>
+                {Object.keys(theme.spacing).map((size) => (
+                  <tr key={size}>
+                    <td>{size}</td>
+                    <td>{theme.spacing[size]}</td>
+                    <td>
+                      <Length width={theme.spacing[size]} />
+                    </td>
+                  </tr>
                 ))}
               </Sizes>
             </ThemeSectionContent>
@@ -238,64 +233,64 @@ function ThemeDocs() {
             <div id="fonts" />
             <ThemeSectionHeader>Fonts</ThemeSectionHeader>
             <ThemeSectionContent>
-              {Object.keys(theme.fonts).map((font) => (
+              {Object.keys(theme.fontFamily).map((font) => (
                 <FontPreview key={font} font={font}>
-                  <Styled.h1
+                  <h1
                     css={css`
-                      font-family: ${theme.fonts[font]};
+                      font-family: ${theme.fontFamily[font]};
                     `}
                   >
                     <strong>{font}:</strong> The quick brown fox jumps over the
                     lazy dog
-                  </Styled.h1>
-                  <Styled.h2
+                  </h1>
+                  <h2
                     css={css`
-                      font-family: ${theme.fonts[font]};
+                      font-family: ${theme.fontFamily[font]};
                     `}
                   >
                     <strong>{font}:</strong> The quick brown fox jumps over the
                     lazy dog
-                  </Styled.h2>
-                  <Styled.h3
+                  </h2>
+                  <h3
                     css={css`
-                      font-family: ${theme.fonts[font]};
+                      font-family: ${theme.fontFamily[font]};
                     `}
                   >
                     <strong>{font}:</strong> The quick brown fox jumps over the
                     lazy dog
-                  </Styled.h3>
-                  <Styled.h4
+                  </h3>
+                  <h4
                     css={css`
-                      font-family: ${theme.fonts[font]};
+                      font-family: ${theme.fontFamily[font]};
                     `}
                   >
                     <strong>{font}:</strong> The quick brown fox jumps over the
                     lazy dog
-                  </Styled.h4>
-                  <Styled.h5
+                  </h4>
+                  <h5
                     css={css`
-                      font-family: ${theme.fonts[font]};
+                      font-family: ${theme.fontFamily[font]};
                     `}
                   >
                     <strong>{font}:</strong> The quick brown fox jumps over the
                     lazy dog
-                  </Styled.h5>
-                  <Styled.h6
+                  </h5>
+                  <h6
                     css={css`
-                      font-family: ${theme.fonts[font]};
+                      font-family: ${theme.fontFamily[font]};
                     `}
                   >
                     <strong>{font}:</strong> The quick brown fox jumps over the
                     lazy dog
-                  </Styled.h6>
-                  <Styled.p
+                  </h6>
+                  <p
                     css={css`
-                      font-family: ${theme.fonts[font]};
+                      font-family: ${theme.fontFamily[font]};
                     `}
                   >
                     <strong>{font}:</strong> The quick brown fox jumps over the
                     lazy dog
-                  </Styled.p>
+                  </p>
                 </FontPreview>
               ))}
             </ThemeSectionContent>
@@ -305,11 +300,7 @@ function ThemeDocs() {
             <ThemeSectionHeader>Raw processed theme config</ThemeSectionHeader>
             <ThemeSectionContent>
               <ThemeRawWrapper>
-                {JSON.stringify(
-                  { keys: Object.keys(context), colorMode, theme },
-                  null,
-                  2
-                )}
+                {JSON.stringify(theme, null, 2)}
               </ThemeRawWrapper>
             </ThemeSectionContent>
           </ThemeSection>

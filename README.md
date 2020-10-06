@@ -4,11 +4,14 @@
 >
 > The intention is to provide a feature rich but fully custimizable set of components ready to use for your authors.
 
+
+**🚀 Start right away using our [GatsbyJS starter](https://github.com/axe312ger/gatsby-starter-mdx-suite)**
+
 ## Core features
 
 ### ![Implemented features](https://img.shields.io/badge/Status-Implemented-green?style=flat)
 
-*  Fully customizable, extend and alterable MDX components. We just provide some minimal layout for the components and integrate with theme-ui.
+* Fully customizable, extend and alterable MDX components. You can modify them by shadowing, overwriting the theme and style them via emotion and tailwindCSS.
 * Simple MDX tag structures to keep editing simple.
 * Contentful support
 * Starters & a theme for fast integration into your GatsbyJS project
@@ -19,29 +22,43 @@
 
 ### ![Work in progress features](https://img.shields.io/badge/Status-Work_in_progress-yellowgreen?style=flat)
 
-* Upcomming support of WYSIWYG editors. Waiting for https://github.com/blocks/blocks to get more progress, in the meanwhile https://github.com/Ionaru/easy-markdown-editor is being used.
+* Upcomming support of WYSIWYG editors. Waiting for https://github.com/blocks/blocks to get more progress, in the meantime, we developed our own split-screen editor using [Ace Editor](https://ace.c9.io/) and [MDX runtime](https://mdxjs.com/advanced/runtime). Curious? [The playground in the docs](https://gatsby-mdx-suite.netlify.app/docs/playground/) is powered by it.
 * Automatic parsing of MDX content to create graphql relations to used assets like images, videos & others.
 * More components to come
-
+* GDPR/DSGVO compatability. We will give visitors full control over data flow and analytics, and provide proper UX if they decide against it.
 
 ### ![Upcoming features](https://img.shields.io/badge/Status-Upcoming-orange?style=flat)
 
-* GDPR/DSGVO compatability
-* This whole thing is still alpha, so more to come and anything might change.
+* A few production websites are already running on this. We getting closer to a beta release.
+* Build & Website performance improvements
+* DX & Stability
 
 ## Core dependencies
 
 * React using mostly the hooks API & contexts
-* GatsbyJS with themes -> EmotionJS, theme-ui, styled systems
-* Pretty plain integration of i18next
+* GatsbyJS with themes -> [Emotion](https://emotion.sh/) & [tailwindcss](https://tailwindcss.com/) via [twin.macro](https://github.com/ben-rogerson/twin.macro)
+* Internationalization support via [i18next](https://www.i18next.com/)
+* Optional support for menu rendering, icons, themes, color sets, ...
 
 ## Project structure
 
-* GastbyJS theme: `gatsby-theme-mdx-suite`
-  * Has required configuration opions
-  * Integrates theme-ui & MDX into your project
-  * Ensures the documentation will be rendered
-  * Initializes the MDX data context and i18next
+* GastbyJS themes: `./themes/*` or `gatsby-theme-mdx-suite-*`
+  * `gatsby-theme-mdx-suite-core`:
+    * Has some required configuration opions!
+    * Connects to Contentful
+    * Integrates MDX into your project
+    * Initializes the MDX data context and i18next
+    * Integrates i18next & emotion
+  * `gatsby-theme-mdx-suite-base`:
+      Adds default components to MDX (https://github.com/axe312ger/gatsby-mdx-suite/blob/master/themes/base/src/gatsby-plugin-theme-ui/components.js)
+    * Adds SVG support
+    * Adds SEO plugins (Sitemap, Helmet, ...)
+    * Adds Icons support
+  * `gatsby-theme-mdx-suite-docs`:
+    * Enables `/docs` with MDX playground, components documentation and theme overview
+  * `gatsby-theme-mdx-suite-base`:
+    * Adds a blog to the page with proper pagination, `back to the news` button, ...
+    * Some demo blog posts
 * MDX components: `./mdx/*` or `@gatsby-mdx-suite/mdx-*`
   * Basic - Very basic stuff like images and links
   * Layout - Add visual structure to the content. Grids, columns and more.
@@ -54,8 +71,24 @@
   * i18n: Helpers to generate paths and render language switch component
   * seo: SEO helper components
   * menu: generate single menu levels or whole menu trees
-* Starters: `./starters/*` or `gatsby-starter-mdx-suite-*`
-  * Get quickly started, should be used as example implementations as well
+* Examples: `./starters/*`
+  * Minimal:
+    * Integrates required core theme: `gatsby-theme-mdx-suite-core`
+    * Just a minimal selection of MDX components
+    * Minimal default styling
+  * Base:
+    * Features of minimal plus:
+    * Enables optional base theme: `gatsby-theme-mdx-suite-base`
+    * Simple demo content
+    * Some more default styling
+    * Enabled optional video support
+    * Includes the docs
+  * Full:
+    * Features of base plus:
+    * Complex demo content
+    * Demonstrates how to shadow components
+    * Enabled optional blog theme `gatsby-theme-mdx-suite-blog`
+    * Additional theme overwrites
 
 ## Getting started
 
@@ -88,6 +121,8 @@ The most accurate documentation are the starters. Especially https://github.com/
 
 ### Integrate into your project
 
+**Note:** This is outdated. Have a look at the examples in `/examples`
+
 This is just a quick listing, the whole readme will be improved soon and a getting starting guide provided.
 
 * `npm i gatsby-theme-mdx-suite`
@@ -109,14 +144,9 @@ The idea is to support these options to alter the design:
 
 ### Currently possible
 
-* Provide your own theme configuraton via theme-ui
-* Wrap and extend existing components with your own styles & logic
-* Replace whole components (even copy & paste might be the right way some times)
+* Provide your own theme configuraton
+* Wrap and extend existing components with your own styles & logic via Emotion
+* [Shadow components](https://www.gatsbyjs.com/docs/themes/shadowing/) or use existing ones as blueprint for your custom components
 * You can use emotion to wrap any component and then target other components within your custom styles.
   * https://emotion.sh/docs/styled#styling-any-component
   * https://emotion.sh/docs/styled#targeting-another-emotion-component
-
-### In consideration
-
-* We might provide several attributes to alter styling
-* Shadow components via theme-ui or overwrite components by passing them to the root component (should work, still to be tested, might be a bad idea)

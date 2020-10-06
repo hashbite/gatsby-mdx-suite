@@ -11,12 +11,12 @@ const StyledBoxes = styled.div(
     css`
       position: relative;
       display: grid;
-      grid-gap: ${theme.sizes.gridGutter || '1rem'};
+      grid-gap: ${theme.spacing.gridGutter || '1rem'};
 
       grid-template-columns: 1fr;
       grid-auto-rows: auto;
 
-      @media screen and (min-width: ${theme.breakpoints[0]}) {
+      @media screen and (min-width: ${theme.screens.sm}) {
         grid-template-columns: repeat(48, 1fr);
         grid-auto-rows: 1fr;
       }
@@ -39,7 +39,7 @@ const StyledBoxes = styled.div(
 
       // Allow stacking of boxes components
       & + & {
-        margin-top: ${theme.sizes.gridGutter || '1rem'};
+        margin-top: ${theme.spacing.gridGutter || '1rem'};
       }
     `
 )

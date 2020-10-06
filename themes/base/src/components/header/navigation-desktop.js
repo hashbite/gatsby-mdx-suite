@@ -5,7 +5,6 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css, keyframes } from '@emotion/core'
 import tw from 'twin.macro'
-import { Styled } from 'theme-ui'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
@@ -40,7 +39,7 @@ const NavigationDesktopBottomContent = styled.div`
   ${centerToContentColumn}
 `
 
-const HeaderLogoWrapper = styled(Styled.h1)`
+const HeaderLogoWrapper = styled.h1`
   ${tw`m-0 w-48 lg:w-64`}
 
   & a {

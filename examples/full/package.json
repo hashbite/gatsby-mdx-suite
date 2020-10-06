@@ -43,5 +43,8 @@
     "@emotion/styled": "^10.0.27",
     "gatsby-plugin-mdx": "^1.2.40",
     "heroicons": "^0.4.2"
+  },
+  "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13"
   }
 }

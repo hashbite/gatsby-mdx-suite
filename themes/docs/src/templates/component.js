@@ -4,7 +4,6 @@ import * as propTypes from 'prop-types'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { Styled } from 'theme-ui'
 import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
@@ -59,9 +58,9 @@ function DocsComponentTemplate({ data, pageContext }) {
 
   let content = (
     <>
-      <Styled.h1>{displayName}</Styled.h1>
+      <h1>{displayName}</h1>
       {description && <MDXRenderer>{description.childMdx.body}</MDXRenderer>}
-      <Styled.h2>Properties:</Styled.h2>
+      <h2>Properties:</h2>
       <Props componentProps={componentProps} />
     </>
   )

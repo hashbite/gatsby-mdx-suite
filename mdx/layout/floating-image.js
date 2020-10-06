@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
-import { useBreakpointIndex } from '@theme-ui/match-media'
+// import { useBreakpointIndex } from '@theme-ui/match-media'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
@@ -27,12 +27,12 @@ const ContentWrapper = styled.div(
 
 const Content = styled.div(
   ({ theme, reverse }) => css`
-    @media (min-width: ${theme.breakpoints[1]}) {
+    @media (min-width: ${theme.screens.md}) {
       flex: 0 0 50%;
-      padding-right: calc(${theme.sizes.gridGap} / 2);
+      padding-right: calc(${theme.spacing['grid-gap']} / 2);
       ${reverse &&
       css`
-        padding-left: calc(${theme.sizes.gridGap} / 2);
+        padding-left: calc(${theme.spacing['grid-gap']} / 2);
         padding-right: 0;
       `}
     }
@@ -43,28 +43,26 @@ const ImageWrapper = styled.div(
   ({ theme, reverse }) => css`
     ${tw`overflow-hidden`}
 
-    @media (min-width: ${theme.breakpoints[1]}) {
+    @media (min-width: ${theme.screens.md}) {
       ${tw`absolute z-0 flex flex-col justify-center pb-0`}
       top: 0;
       bottom: 0;
 
-      ${
-        reverse
-          ? css`
-              right: calc(50% + (${theme.sizes.gridGap} / 2));
-              left: 0;
-              & img {
-                object-position: center right !important;
-              }
-            `
-          : css`
-              left: calc(50% + (${theme.sizes.gridGap} / 2));
-              right: 0;
-              & img {
-                object-position: center left !important;
-              }
-            `
-      }
+      ${reverse
+        ? css`
+            right: calc(50% + (${theme.spacing['grid-gap']} / 2));
+            left: 0;
+            & img {
+              object-position: center right !important;
+            }
+          `
+        : css`
+            left: calc(50% + (${theme.spacing['grid-gap']} / 2));
+            right: 0;
+            & img {
+              object-position: center left !important;
+            }
+          `}
     }
   `
 )
@@ -140,7 +138,7 @@ const ImageWrapper = styled.div(
  * </FloatingImage>
  */
 export default function FloatingImage({ children, imageId, reverse, fit }) {
-  const currentBreakpoint = useBreakpointIndex()
+  const currentBreakpoint = 0 // @todo useBreakpointIndex()
   return (
     <Wrapper>
       <ContentWrapper reverse={reverse}>
