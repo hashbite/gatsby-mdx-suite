@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import Link from 'gatsby-link'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { Global, css } from '@emotion/core'
-import { Styled } from 'theme-ui'
+import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import MenuIcon from 'heroicons/outline/menu.svg'
@@ -28,7 +27,7 @@ const LayoutHeader = styled.div`
   grid-area: head;
 `
 
-const DocsTitle = tw(Styled.h1)`m-0 text-2xl`
+const DocsTitle = tw.h1`m-0 text-2xl`
 
 const MenuLink = tw(Link)`my-2 md:my-0 md:px-2 lg:px-4`
 
@@ -58,54 +57,26 @@ const Layout = ({ children, title }) => {
     setMenuOpen(!menuOpen)
   }
   return (
-    <Styled.root>
-      <Global
-        styles={(theme) => css`
-          body {
-            margin: 0;
-            overflow-x: hidden;
-          }
-          a {
-            color: inherit;
-            text-decoration: none;
-          }
-          h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6,
-          p,
-          ul,
-          ol,
-          li {
-            &:last-child {
-              margin-bottom: 0 !important;
-            }
-          }
-        `}
-      />
-      <DocsWrapper>
-        <LayoutHeader>
-          <DocsTitle>
-            <MenuLink to="/">
-              <BackIcon />
-            </MenuLink>
-            <MenuLink to="/docs">Docs</MenuLink>
-          </DocsTitle>
-          <MenuToggleWrapper>
-            <MenuToggleIcon onClick={handleMenuToggleClick} />
-          </MenuToggleWrapper>
-          <Menu menuOpen={menuOpen}>
-            <MenuLink to="/docs">Home</MenuLink>
-            <MenuLink to="/docs/playground">Playground</MenuLink>
-            <MenuLink to="/docs/components">Components</MenuLink>
-            <MenuLink to="/docs/theme">Theme</MenuLink>
-          </Menu>
-        </LayoutHeader>
-        {children}
-      </DocsWrapper>
-    </Styled.root>
+    <DocsWrapper>
+      <LayoutHeader>
+        <DocsTitle>
+          <MenuLink to="/">
+            <BackIcon />
+          </MenuLink>
+          <MenuLink to="/docs">Docs</MenuLink>
+        </DocsTitle>
+        <MenuToggleWrapper>
+          <MenuToggleIcon onClick={handleMenuToggleClick} />
+        </MenuToggleWrapper>
+        <Menu menuOpen={menuOpen}>
+          <MenuLink to="/docs">Home</MenuLink>
+          <MenuLink to="/docs/playground">Playground</MenuLink>
+          <MenuLink to="/docs/components">Components</MenuLink>
+          <MenuLink to="/docs/theme">Theme</MenuLink>
+        </Menu>
+      </LayoutHeader>
+      {children}
+    </DocsWrapper>
   )
 }
 

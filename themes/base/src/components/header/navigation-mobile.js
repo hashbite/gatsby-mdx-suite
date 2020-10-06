@@ -7,7 +7,6 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 import MenuIcon from 'heroicons/outline/menu.svg'
 import ScrollLock from 'react-scrolllock'
-import { Styled } from 'theme-ui'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
@@ -56,7 +55,6 @@ const NavigationMobileBottomContent = styled.div`
     }
 
     ${MenuLink} {
-
     }
 
     &.depth-0 {
@@ -131,14 +129,13 @@ const NavigationMobileBottomContent = styled.div`
       }
     }
 
-
     ${MenuTitle} {
       ${tw`block`}
     }
   }
 `
 
-const HeaderLogoWrapper = styled(Styled.h1)`
+const HeaderLogoWrapper = styled.h1`
   ${tw`py-0 mb-0`}
 
   width: 32vw;

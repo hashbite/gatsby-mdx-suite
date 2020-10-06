@@ -61,7 +61,7 @@ const Header = ({
   const [menuOpen, setMenuOpen] = useState(false)
   const [headerPassed, setHeaderPassed] = useState(false)
   const [headerVisibleAgain, setHeaderVisibleAgain] = useState(false)
-  const [headerBarHeight, setHeaderBarHeight] = useState(null)
+  const [headerBarHeight, setHeaderBarHeight] = useState('auto')
   const [isNavigationTransparent, setIsNavigationTransparent] = useState(
     transparent
   )
@@ -87,11 +87,10 @@ const Header = ({
 
   const hasBackgroundMedia = !!backgroundImageId || !!backgroundVideoId
 
-  const shouldRenderHero =
-    !!children || !!backgroundImageId || !!backgroundVideoId
+  const shouldRenderHero = !!children || hasBackgroundMedia
 
   // Fallback color set
-  if (!colorSet && hasBackgroundMedia && shouldRenderHero) {
+  if (!colorSet && shouldRenderHero) {
     colorSet = 'backgroundImage'
   }
 
@@ -107,7 +106,6 @@ const Header = ({
     backgroundImageId,
     backgroundVideoId,
     isNavigationTransparent,
-    headerBarHeight: `${headerBarHeight}px`,
   }
 
   return (

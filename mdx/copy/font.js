@@ -31,10 +31,10 @@ const StyledFont = styled.span(
     italic,
     lineHeight,
     transform,
-    theme: { fonts, colors },
+    theme: { fontFamily, colors },
   }) =>
     css`
-    ${size &&
+      ${size &&
       size !== Font.defaultProps.size &&
       css`
         ${size === 'xs' && tw`text-xs`}
@@ -48,7 +48,7 @@ const StyledFont = styled.span(
         ${size === '5xl' && tw`text-5xl`}
         ${size === '6xl' && tw`text-6xl`}
       `}
-    ${lineHeight &&
+      ${lineHeight &&
       lineHeight !== Font.defaultProps.lineHeight &&
       css`
         ${lineHeight === 'none' && tw`leading-none`}
@@ -66,7 +66,7 @@ const StyledFont = styled.span(
     ${family &&
       family !== Font.defaultProps.family &&
       css`
-        font-family: ${fonts[family] || family};
+        font-family: ${fontFamily[family] || family};
       `}
     ${weight &&
       weight !== Font.defaultProps.weight &&
@@ -81,7 +81,7 @@ const StyledFont = styled.span(
       css`
         text-transform: ${transform};
       `}
-  `
+    `
 )
 
 const Font = (props) => <StyledFont {...props} />

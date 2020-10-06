@@ -17,35 +17,31 @@ const StyledColumn = styled.div(
     background: ${theme.colors.background};
     color: ${theme.colors.text};
 
-    ${
-      minAspectRatio &&
-      css`
-        &::before {
-          content: '';
-          width: 1px;
-          margin-left: -1px;
-          float: left;
-          height: 0;
-          padding-top: calc(100% / (${minAspectRatio}));
-        }
-        &::after {
-          content: '';
-          display: table;
-          clear: both;
-        }
-      `
-    }
+    ${minAspectRatio &&
+    css`
+      &::before {
+        content: '';
+        width: 1px;
+        margin-left: -1px;
+        float: left;
+        height: 0;
+        padding-top: calc(100% / (${minAspectRatio}));
+      }
+      &::after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    `}
 
-    ${
-      backgroundImage &&
-      css`
-        background-image: url(${backgroundImage});
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      `
-    }
-`
+    ${backgroundImage &&
+    css`
+      background-image: url(${backgroundImage});
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    `}
+  `
 )
 
 const ColumnContentWrapper = styled.div(
@@ -60,7 +56,7 @@ const ColumnContent = styled.div(
     css`
       ${padding &&
       css`
-        padding: ${theme.sizes[padding] || theme.sizes[padding]};
+        padding: ${theme.spacing[padding] || theme.spacing[padding]};
       `}
     `
 )
@@ -209,7 +205,7 @@ const Column = ({
   }
 
   const hasBackground = !!colorSet || !!colors.background || !!backgroundImageId
-  const contentPadding = padding || (hasBackground ? 'gridGap' : null)
+  const contentPadding = padding || (hasBackground ? 'grid-gap' : null)
 
   let columnContent = (
     <StyledColumn

@@ -1,4 +1,4 @@
-const themeUiConfig = require('./src/gatsby-plugin-theme-ui')
+const themeConfig = require('./tailwind.config.js')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -17,7 +17,7 @@ module.exports = {
       resolve: `gatsby-theme-mdx-suite-core`,
       options: {
         // Configure the MDX Suite
-        themeUiConfig,
+        themeConfig,
         /**
          * Contentful credentials from environment variables will be used by default.
          * Never hardcode API credentials in your projects.

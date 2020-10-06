@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
-import { useBreakpointIndex } from '@theme-ui/match-media'
+// import { useBreakpointIndex } from '@theme-ui/match-media'
 import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
 
 const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
@@ -22,21 +22,17 @@ const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
     ${maxColumns === 11 && tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-11`}
     ${maxColumns === 12 && tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-12`}
 
-    ${
-      template &&
-      css`
-        @media screen and (min-width: ${theme.breakpoints[0]}) {
-          grid-template-columns: ${template};
-        }
-      `
-    }
+    ${template &&
+    css`
+      @media screen and (min-width: ${theme.screens.sm}) {
+        grid-template-columns: ${template};
+      }
+    `}
 
-    ${
-      center &&
-      css`
-        text-align: center;
-      `
-    }
+    ${center &&
+    css`
+      text-align: center;
+    `}
   `
 })
 
@@ -113,7 +109,7 @@ const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
  * </Columns>
  */
 export default function Columns({ children, maxColumns, reverseAt, ...props }) {
-  const currentBreakpoint = useBreakpointIndex()
+  const currentBreakpoint = 0 // @todo useBreakpointIndex()
 
   if (!children) {
     return null

@@ -5,7 +5,6 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
-import { Styled } from 'theme-ui'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import IconFullscreen from 'heroicons/outline/external-link.svg'
 import AceEditor from 'react-ace'
@@ -206,7 +205,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
     <LiveEditorWrapper layout={layout}>
       {error && (
         <LiveEditorError>
-          <Styled.h3>Oops, something went wrong:</Styled.h3>
+          <h3>Oops, something went wrong:</h3>
           <LiveEditorErrorMessage>
             {error.message
               .replace(/[> ]+([0-9]+) \|/g, (a, b) =>

@@ -1,4 +1,4 @@
-const themeUiConfig = require('./src/gatsby-plugin-theme-ui')
+const themeConfig = require('./tailwind.config.js')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-theme-mdx-suite-core`,
       options: {
         // Configure the MDX Suite
-        themeUiConfig,
+        themeConfig,
         /**
          * Internationalisation
          */
@@ -72,6 +72,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-video`,
+    'gatsby-plugin-webpack-bundle-analyser-v2',
     ...(isProduction
       ? [
           `gatsby-plugin-offline`,

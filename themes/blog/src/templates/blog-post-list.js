@@ -3,7 +3,6 @@ import propTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import tw from 'twin.macro'
 import styled from '@emotion/styled'
-import { Styled } from 'theme-ui'
 import { useTranslation } from 'react-i18next'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import NextIcon from 'heroicons/outline/chevron-right.svg'
@@ -20,7 +19,7 @@ import Cta from '@gatsby-mdx-suite/mdx-link/cta'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 
 const BlogPostTeaser = tw.article`flex flex-col h-full`
-const BlogPostTeaserHeadline = styled(Styled.h1)`
+const BlogPostTeaserHeadline = styled.h1`
   ${tw`my-0 text-xl leading-relaxed`}
   min-height: 6rem;
   display: flex;

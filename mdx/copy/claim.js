@@ -10,8 +10,6 @@ import TextBlock from './text-block'
 const ClaimWrapper = styled(TextBlock)(
   (props) => css`
     ${responsiveFont(props)}
-    font-family: ${props.theme.fonts.heading};
-    font-weight: ${props.theme.fontWeights.heading};
   `
 )
 

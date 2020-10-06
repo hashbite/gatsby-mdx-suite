@@ -1,7 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import { Styled } from 'theme-ui'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
@@ -43,9 +42,7 @@ const StyledTextBlock = styled(Font)(
   `
 )
 
-const TextBlock = (props) => (
-  <StyledTextBlock {...props} as={Styled[props.tag] || Styled.p} />
-)
+const TextBlock = (props) => <StyledTextBlock {...props} as={props.tag} />
 
 TextBlock.propTypes = {
   ...Font.propTypes,

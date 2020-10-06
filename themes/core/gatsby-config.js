@@ -32,13 +32,20 @@ module.exports = (themeConfig) => {
         ),
       },
       // Styling
-      `gatsby-plugin-theme-ui`,
       `gatsby-plugin-emotion`,
+      {
+        resolve: `gatsby-plugin-postcss`,
+        options: {
+          postcssOptions: {
+            plugins: ['tailwindcss', 'autoprefixer'],
+          },
+        },
+      },
       // Media
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
       // DX
-      `gatsby-plugin-loadable-components-ssr`,
+      // `gatsby-plugin-loadable-components-ssr`,
     ].filter(Boolean),
   }
 }

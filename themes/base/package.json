@@ -19,6 +19,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-i18next": "^11.7.2",
+    "tailwindcss": "^1.8.10",
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
@@ -49,7 +50,6 @@
     "gatsby-transformer-video": "^0.1.18",
     "heroicons": "^0.4.2",
     "react-helmet": "^6.1.0",
-    "react-scrolllock": "^5.0.1",
-    "theme-ui": "^0.3.1"
+    "react-scrolllock": "^5.0.1"
   }
 }

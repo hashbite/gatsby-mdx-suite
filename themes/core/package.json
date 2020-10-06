@@ -16,29 +16,30 @@
     "prop-types": "^15.7.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-i18next": "^11.7.2",
-    "theme-ui": "^0.3.1"
+    "react-i18next": "^11.7.2"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@gatsby-mdx-suite/contexts": "^0.3.5",
-    "@theme-ui/preset-tailwind": "^0.3.0",
-    "@theme-ui/tailwind": "^0.3.0",
+    "@tailwindcss/typography": "^0.2.0",
+    "autoprefixer": "^10.0.1",
     "cheerio": "0.22.0",
     "debug": "^4.2.0",
     "deepmerge": "^4.2.2",
     "emotion": "^10.0.27",
+    "emotion-theming": "^10.0.27",
     "fs-extra": "^9.0.1",
     "gatsby-plugin-emotion": "^4.3.13",
     "gatsby-plugin-loadable-components-ssr": "^2.1.0",
     "gatsby-plugin-mdx": "^1.2.46",
+    "gatsby-plugin-postcss": "^3.0.1",
     "gatsby-plugin-sharp": "^2.6.40",
-    "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-source-contentful": "^2.3.51",
     "gatsby-source-filesystem": "^2.3.34",
     "gatsby-transformer-sharp": "^2.5.17",
     "i18next": "^19.8.2",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "tailwindcss": "^1.8.10"
   }
 }

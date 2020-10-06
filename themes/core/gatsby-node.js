@@ -1,12 +1,7 @@
-const { writeFile } = require('fs-extra')
 const { resolve } = require('path')
 const cheerio = require('cheerio')
 const Debug = require('debug')
-const merge = require('lodash/merge')
-const omit = require('lodash/omit')
-const kebabCase = require('lodash/kebabCase')
-const toTailwind = require('@theme-ui/tailwind')
-const tailwindPreset = require('@theme-ui/preset-tailwind')
+const merge = require('deepmerge')
 
 const minimumConfig = require('./minimum-config')
 
@@ -21,62 +16,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       fs: 'empty',
     },
   })
-}
-
-/**
- * Convert Theme-UI config to TailwindCSS config.
- *
- *
- * This is a workaround as theme-ui config is supplied as es modules and
- * twin.macro expects its config file in ES5 standard.
- *
- * In a perfect world (e.G. node fully supports es modules out of the box)
- * we can remove this file and use toTailwind(ourTheme) in tailwind.config.js
- */
-exports.onPreInit = async ({ reporter }, { themeUiConfig = {} }) => {
-  reporter.info('Converting Theme UI config to TailwindCSS config')
-  const tailwindTheme = toTailwind(themeUiConfig).theme
-
-  // Ensure color palettes follow map pattern
-  tailwindTheme.colors = Object.keys(tailwindTheme.colors).reduce(
-    (colors, color) => {
-      const palette = tailwindTheme.colors[color]
-      const convertedPalette = Array.isArray(palette)
-        ? palette
-            .filter(Boolean)
-            .reduce((map, shade, i) => ({ ...map, [(i + 1) * 100]: shade }), {})
-        : palette
-
-      return { ...colors, [color]: convertedPalette }
-    },
-    {}
-  )
-
-  // Move ensure all custom sizes are available in tailwind
-  const transformedSizes = Object.keys(
-    omit(tailwindTheme.sizes, Object.keys(tailwindPreset.sizes))
-  ).reduce(
-    (sizes, key) => ({ ...sizes, [kebabCase(key)]: tailwindTheme.sizes[key] }),
-    {}
-  )
-
-  tailwindTheme.spacing = transformedSizes
-  tailwindTheme.minWidth = merge(tailwindTheme.minWidth, transformedSizes)
-  tailwindTheme.maxWidth = merge(tailwindTheme.maxWidth, transformedSizes)
-  tailwindTheme.minHeight = merge(tailwindTheme.minHeight, transformedSizes)
-  tailwindTheme.maxHeight = merge(tailwindTheme.maxHeight, transformedSizes)
-
-  const configFileContent = `module.exports = ${JSON.stringify(
-    { theme: { extend: { ...tailwindTheme } } },
-    null,
-    2
-  )}`
-
-  const configFilePath = resolve(process.cwd(), 'tailwind.config.js')
-
-  await writeFile(configFilePath, configFileContent)
-
-  reporter.info('./tailwind.config.js updated')
 }
 
 /**

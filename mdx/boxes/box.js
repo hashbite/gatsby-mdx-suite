@@ -26,22 +26,22 @@ const StyledBaseBox = styled(BaseBox, { shouldForwardProp })(
 )
 
 const BoxContent = styled('div', { shouldForwardProp })(
-  ({ scale, theme: { breakpoints }, minSize }) => css`
+  ({ scale, theme: { screens }, minSize }) => css`
     position: relative;
     z-index: 2;
     padding: ${minSize >= 12 ? '2rem' : '1rem'};
 
-    @media screen and (min-width: ${breakpoints[0]}) {
+    @media screen and (min-width: ${screens.sm}) {
       ${scale &&
-        scale !== 1 &&
-        css`
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          transform: scale(${scale});
-        `}
+      scale !== 1 &&
+      css`
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: scale(${scale});
+      `}
     }
   `
 )
@@ -56,10 +56,10 @@ const BackgroundImageWrapper = styled('div', { shouldForwardProp })(
     right: 0;
 
     ${scale &&
-      scale !== 1 &&
-      css`
-        transform: scale(${scale});
-      `}
+    scale !== 1 &&
+    css`
+      transform: scale(${scale});
+    `}
   `
 )
 

@@ -9,7 +9,7 @@ const StyledTimeline = styled.div(
     ${tw`flex flex-col w-full sm:grid`}
     ${applyContentGap({ theme })}
 
-    @media (min-width: ${theme.breakpoints[1]}) {
+    @media (min-width: ${theme.screens.md}) {
       ${tw`grid gap-grid-gap`}
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
