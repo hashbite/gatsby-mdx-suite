@@ -1,0 +1,31 @@
+{
+  "name": "@gatsby-mdx-suite/mdx-scroll-effects",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Benedikt Rötsch <opensource@axe312.dev>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axe312ger/gatsby-mdx-suite"
+  },
+  "keywords": [
+    "gatsby-mdx-suite",
+    "gatsby",
+    "mdx",
+    "scroll-effects"
+  ],
+  "peerDependencies": {
+    "prop-types": "^15.7.0",
+    "react": "^16.9.0",
+    "twin.macro": "^1.9.0",
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.23"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

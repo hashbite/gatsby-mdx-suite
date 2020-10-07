@@ -5,17 +5,14 @@ import tw from 'twin.macro'
 
 import Link from './link'
 
-export const StyledCTA = styled(Link)(
-  ({ theme }) => css`
-    ${tw`
-      py-2 px-6
-      hover:font-bold
-      rounded-lg`}
+export const styleCTA = ({ theme }) => css`
+  ${tw`font-bold py-2 px-4 rounded shadow`}
 
-    background: ${theme.background};
-    color: ${theme.color};
-  `
-)
+  background: ${theme.colors.primary};
+  color: ${theme.colors.white};
+`
+
+const StyledCTA = styled(Link)(styleCTA)
 
 /**
  * Renders a Link styled as a call to action button.
