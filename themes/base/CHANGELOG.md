@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.1.6...gatsby-theme-mdx-suite-base@0.2.0) (2020-10-07)
+
+
+### Bug Fixes
+
+* **graphql:** ensure all queries are named ([0327704](https://github.com/axe312ger/gatsby-mdx-suite/commit/03277047683a7a4383022e93641661c7dde3b72c))
+* **header:** show content above background media and fix transparent mode ([32fb07a](https://github.com/axe312ger/gatsby-mdx-suite/commit/32fb07acc812953e038fe4dacb0e1c9e0aacf865))
+
+
+### Features
+
+* introduce Modal component ([93d7a4b](https://github.com/axe312ger/gatsby-mdx-suite/commit/93d7a4ba1218b6fe062d820250da25c967b7064f))
+
+
+### Performance Improvements
+
+* replace lodash with deepmerge ([85f48bd](https://github.com/axe312ger/gatsby-mdx-suite/commit/85f48bd1b80904e6df358bf2f4c233ee1b781d83))
+
+
+
+
+
 ## [0.1.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.1.5...gatsby-theme-mdx-suite-base@0.1.6) (2020-09-23)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base

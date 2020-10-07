@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.29](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-form@0.4.28...@gatsby-mdx-suite/mdx-form@0.4.29) (2020-10-07)
+
+
+### Bug Fixes
+
+* **graphql:** ensure all queries are named ([0327704](https://github.com/axe312ger/gatsby-mdx-suite/commit/03277047683a7a4383022e93641661c7dde3b72c))
+
+
+
+
+
 ## [0.4.28](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-form@0.4.27...@gatsby-mdx-suite/mdx-form@0.4.28) (2020-09-23)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-form

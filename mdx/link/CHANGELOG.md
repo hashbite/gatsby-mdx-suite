@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.7.3...@gatsby-mdx-suite/mdx-link@0.8.0) (2020-10-07)
+
+
+### Bug Fixes
+
+* **graphql:** ensure all queries are named ([0327704](https://github.com/axe312ger/gatsby-mdx-suite/commit/03277047683a7a4383022e93641661c7dde3b72c))
+
+
+### Features
+
+* add scroll-effects via Anchor and AnchorHook ([71e76ec](https://github.com/axe312ger/gatsby-mdx-suite/commit/71e76ec1f6e2da39e0b584523b332ca2a7479cd9))
+
+
+
+
+
 ## [0.7.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.7.2...@gatsby-mdx-suite/mdx-link@0.7.3) (2020-09-23)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-link

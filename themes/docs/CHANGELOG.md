@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.2.2...gatsby-theme-mdx-suite-docs@0.2.3) (2020-10-07)
+
+
+### Bug Fixes
+
+* **docs:** ensure random image ids do not contain videos ([7552e59](https://github.com/axe312ger/gatsby-mdx-suite/commit/7552e5985bcc91025015168556f646629e101dea))
+
+
+
+
+
 ## [0.2.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.2.1...gatsby-theme-mdx-suite-docs@0.2.2) (2020-09-23)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-docs

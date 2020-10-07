@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.2...@gatsby-mdx-suite/mdx-color-set@0.4.3) (2020-10-07)
+
+
+### Performance Improvements
+
+* replace lodash with deepmerge ([85f48bd](https://github.com/axe312ger/gatsby-mdx-suite/commit/85f48bd1b80904e6df358bf2f4c233ee1b781d83))
+
+
+
+
+
 ## [0.4.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.1...@gatsby-mdx-suite/mdx-color-set@0.4.2) (2020-09-23)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set

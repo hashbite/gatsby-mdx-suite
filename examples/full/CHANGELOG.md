@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.1.7...gatsby-mdx-suite-example-full@0.2.0) (2020-10-07)
+
+
+### Bug Fixes
+
+* **header:** show content above background media and fix transparent mode ([32fb07a](https://github.com/axe312ger/gatsby-mdx-suite/commit/32fb07acc812953e038fe4dacb0e1c9e0aacf865))
+
+
+### Features
+
+* add scroll-effects via Anchor and AnchorHook ([71e76ec](https://github.com/axe312ger/gatsby-mdx-suite/commit/71e76ec1f6e2da39e0b584523b332ca2a7479cd9))
+* introduce Modal component ([93d7a4b](https://github.com/axe312ger/gatsby-mdx-suite/commit/93d7a4ba1218b6fe062d820250da25c967b7064f))
+* introduce VimeoVideo component ([149c0dd](https://github.com/axe312ger/gatsby-mdx-suite/commit/149c0dd2980533c983a1a0437c985231b3d3b978))
+
+
+### Performance Improvements
+
+* replace lodash with deepmerge ([85f48bd](https://github.com/axe312ger/gatsby-mdx-suite/commit/85f48bd1b80904e6df358bf2f4c233ee1b781d83))
+
+
+
+
+
 ## [0.1.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.1.6...gatsby-mdx-suite-example-full@0.1.7) (2020-09-24)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-full
