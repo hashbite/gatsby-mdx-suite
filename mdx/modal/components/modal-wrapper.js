@@ -7,14 +7,9 @@ import tw from 'twin.macro'
 ReactModal.setAppElement('#___gatsby')
 
 const StyledModal = styled(ReactModal)`
-  ${tw`w-full h-full flex p-4 overflow-y-auto`}
+  ${tw`w-full h-full flex p-4 overflow-y-auto `}
   background: rgba(0,0,0,0.42);
-
-  > div {
-    ${tw`
-      m-auto max-w-content-column p-8
-      bg-rootBackground shadow rounded `}
-  }
+  pointer-events: none;
 `
 
 const ModalWrapper = ({ children, ...props }) => {
@@ -28,6 +23,8 @@ const ModalWrapper = ({ children, ...props }) => {
           left: 0,
           right: 0,
           bottom: 0,
+          zIndex: 1000,
+          cursor: 'pointer',
         },
       }}
     >

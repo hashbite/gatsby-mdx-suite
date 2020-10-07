@@ -14,7 +14,7 @@ import ModalWrapper from './components/modal-wrapper'
  *
  * <Section>
  *
- * <Modal triggerTitle="Open Modal" modalTitle="Example modal" triggerAs="CTA">
+ * <Modal triggerTitle="Open Example Modal" modalTitle="Example modal" triggerAs="CTA">
  *
  * # Modal content
  *
