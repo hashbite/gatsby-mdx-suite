@@ -3,6 +3,9 @@ import defaultComponents from 'gatsby-theme-mdx-suite-base/src/gatsby-plugin-the
 // Video support
 import Video from '@gatsby-mdx-suite/mdx-video/video'
 
+// Modal support
+import Modal from '@gatsby-mdx-suite/mdx-modal/modal'
+
 // Add some basic scroll effects
 import Anchor from '@gatsby-mdx-suite/mdx-scroll-effects/anchor'
 import AnchorHook from '@gatsby-mdx-suite/mdx-scroll-effects/anchor-hook'
@@ -13,6 +16,8 @@ import CustomComponent from '../components/custom-component'
 
 export default {
   ...defaultComponents,
+  // Modal
+  Modal,
   // Video
   Video,
   // Scroll effects

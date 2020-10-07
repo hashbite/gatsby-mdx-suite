@@ -5,6 +5,7 @@ import Check from 'heroicons/solid/check.svg'
 import Star from 'heroicons/solid/star.svg'
 import Phone from 'heroicons/solid/phone.svg'
 import Mail from 'heroicons/solid/mail.svg'
+import Close from 'heroicons/solid/x.svg'
 
 // Brand logos via https://simpleicons.org/
 import {
@@ -39,6 +40,7 @@ export default new Map(
     dot: { icon: Dot },
     dotSmall: { icon: Dot, scale: 0.6 },
     star: { icon: Star },
+    close: { icon: Close },
     phone: { icon: Phone },
     mail: { icon: Mail },
     facebook: { icon: Facebook },
