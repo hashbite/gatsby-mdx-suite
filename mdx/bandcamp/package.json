@@ -19,11 +19,9 @@
     "bandcamp"
   ],
   "peerDependencies": {
+    "@emotion/styled": "^10.0.23",
     "prop-types": "^15.7.0",
     "react": "^16.9.0"
-  },
-  "dependencies": {
-    "@emotion/styled": "^10.0.23"
   },
   "publishConfig": {
     "access": "public"
