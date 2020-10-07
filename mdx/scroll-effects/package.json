@@ -27,5 +27,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@gatsby-mdx-suite/mdx-link": "^0.7.3"
   }
 }
