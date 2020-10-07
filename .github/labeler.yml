@@ -1,6 +1,12 @@
 theme:
   - themes/**/*
 
+docs:
+  - themes/docs/*
+
+blog:
+  - themes/blog/*
+
 examples:
   - examples/**/*
 
