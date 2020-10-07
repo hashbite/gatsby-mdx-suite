@@ -5,6 +5,9 @@ import Video from '@gatsby-mdx-suite/mdx-video/video'
 import YoutubeVideo from '@gatsby-mdx-suite/mdx-youtube/youtube-video'
 import VimeoVideo from '@gatsby-mdx-suite/mdx-vimeo/vimeo-video'
 
+// Modal support
+import Modal from '@gatsby-mdx-suite/mdx-modal/modal'
+
 // Add some basic scroll effects
 import Anchor from '@gatsby-mdx-suite/mdx-scroll-effects/anchor'
 import AnchorHook from '@gatsby-mdx-suite/mdx-scroll-effects/anchor-hook'
@@ -15,6 +18,8 @@ import CustomComponent from '../components/custom-component'
 
 export default {
   ...defaultComponents,
+  // Modal
+  Modal,
   // Video
   Video,
   YoutubeVideo,
