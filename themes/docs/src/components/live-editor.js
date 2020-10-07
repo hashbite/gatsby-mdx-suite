@@ -93,6 +93,8 @@ const LiveEditorEditor = styled.div`
   }
 `
 
+const isVideo = (mimeType) => mimeType.indexOf('video') === 0
+
 function LiveEditor({ editorId, initialValue, layout }) {
   const localStorageId = `mdx-suite-live-editor-${editorId}`
   const editorRef = useRef(null)
@@ -105,15 +107,19 @@ function LiveEditor({ editorId, initialValue, layout }) {
     data: { full, youtubeVideos, instagramPosts },
   } = useContext(MdxSuiteContext)
 
-  const pictures = full.filter(
+  const images = full.filter(
+    ({ file: { contentType } }) => !isVideo(contentType)
+  )
+
+  const pictures = images.filter(
     ({ file: { contentType } }) => contentType.indexOf('svg') === -1
   )
-  const graphics = full.filter(
+  const graphics = images.filter(
     ({ file: { contentType } }) => contentType.indexOf('svg') !== -1
   )
 
-  const videos = full.filter(
-    ({ file: { contentType } }) => contentType.indexOf('video') === 1
+  const videos = full.filter(({ file: { contentType } }) =>
+    isVideo(contentType)
   )
 
   useEffect(() => {
@@ -123,7 +129,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
         const processedValue = unverifiedValue
           .replace(
             /"randomImageId"/gi,
-            () => `"${full[Math.floor(Math.random() * full.length)].assetId}"`
+            () =>
+              `"${images[Math.floor(Math.random() * images.length)].assetId}"`
           )
           .replace(
             /"randomPictureId"/gi,
