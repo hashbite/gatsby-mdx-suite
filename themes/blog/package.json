@@ -13,6 +13,7 @@
     "@emotion/styled": "^10.0.27",
     "gatsby": "^2.19.0",
     "gatsby-plugin-mdx": "^1.2.0",
+    "heroicons": "^0.4.2",
     "prop-types": "^15.7.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -27,7 +28,6 @@
     "@gatsby-mdx-suite/mdx-link": "^0.7.3",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-theme-mdx-suite-base": "^0.1.6",
-    "heroicons": "^0.4.2",
     "theme-ui": "^0.3.1"
   }
 }
