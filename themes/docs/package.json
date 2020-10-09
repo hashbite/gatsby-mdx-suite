@@ -33,6 +33,7 @@
     "@theme-ui/match-media": "^0.3.1",
     "@use-it/event-listener": "^0.1.5",
     "ace-builds": "^1.4.12",
+    "debug": "^4.2.0",
     "gatsby-link": "^2.4.15",
     "gatsby-source-filesystem": "^2.3.33",
     "gatsby-transformer-documentationjs": "^4.3.16",
