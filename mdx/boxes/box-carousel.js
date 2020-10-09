@@ -121,7 +121,7 @@ BoxCarousel.propTypes = {
   ...BaseBox.propTypes,
   controls: propTypes.bool,
   autoplay: propTypes.bool,
-  autoplayInterval: propTypes.number,
+  autoplayInterval: propTypes.oneOfType([propTypes.number, propTypes.string]),
   loop: propTypes.bool,
   /** Apply show animation */
   showAnimation: propTypes,

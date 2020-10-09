@@ -70,5 +70,5 @@ VimeoVideo.propTypes = {
   /** Aspect ratio of the video player */
   aspectRatio: propTypes.string,
   /** maximum width the video will be embedded as */
-  maxWidth: propTypes.number,
+  maxWidth: propTypes.oneOfType([propTypes.number, propTypes.string]),
 }

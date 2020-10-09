@@ -177,7 +177,7 @@ Video.propTypes = {
   /** Id of the video to embed */
   id: propTypes.string.isRequired,
   /** Maximum width the video player will grow to */
-  maxWidth: propTypes.number,
+  maxWidth: propTypes.oneOfType([propTypes.number, propTypes.string]),
   /** Overwrite the default aspect rati of the video */
   aspectRatio: propTypes.string,
   /** Should the video automatically start playing? **Requires muted**. */
@@ -189,7 +189,7 @@ Video.propTypes = {
   /** Should the video pause when the user hovers the video? */
   pauseOnHover: propTypes.bool,
   /** Select another screenshot */
-  screenshotIndex: propTypes.number,
+  screenshotIndex: propTypes.oneOfType([propTypes.number, propTypes.string]),
   /** Preloading behaviour */
   preload: propTypes.string,
   /** Change rendering size of the video */

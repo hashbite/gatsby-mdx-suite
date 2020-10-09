@@ -143,7 +143,7 @@ TimelineEntry.defaultProps = {
 TimelineEntry.propTypes = {
   label: propTypes.string,
   children: propTypes.node.isRequired,
-  bubbleSize: propTypes.number,
+  bubbleSize: propTypes.oneOfType([propTypes.number, propTypes.string]),
 }
 
 export default TimelineEntry

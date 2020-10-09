@@ -180,7 +180,7 @@ Box.defaultProps = {
 Box.propTypes = {
   ...BaseBox.propTypes,
   // Scale factor of the content & background image of the box. Usually a value between 0.1 and 2.
-  scale: propTypes.number,
+  scale: propTypes.oneOfType([propTypes.number, propTypes.string]),
   // Id of the background image
   backgroundImageId: propTypes.string,
   /**

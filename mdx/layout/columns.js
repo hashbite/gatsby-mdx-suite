@@ -145,7 +145,7 @@ Columns.defaultProps = {
 Columns.propTypes = {
   children: propTypes.node.isRequired,
   /** Maximum number of columns. Defaults to number of items. */
-  maxColumns: propTypes.number,
+  maxColumns: propTypes.oneOfType([propTypes.number, propTypes.string]),
   /**
    * Custom css grid columns template. Applied at the first breakpoint.
    *
@@ -153,7 +153,7 @@ Columns.propTypes = {
    */
   template: propTypes.string,
   /** Reverse the order of all columns as soon given breakpoint is reached */
-  reverseAt: propTypes.number,
+  reverseAt: propTypes.oneOfType([propTypes.number, propTypes.string]),
   /** Center text content */
   center: propTypes.bool,
 }
