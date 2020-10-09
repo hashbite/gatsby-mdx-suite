@@ -69,6 +69,7 @@ function DocsComponentTemplate({ data, pageContext }) {
   if (activeTab > 0) {
     content = (
       <LiveEditor
+        key={displayName + activeTab}
         editorId={displayName + activeTab}
         initialValue={examples[activeTab - 1].raw}
       />
