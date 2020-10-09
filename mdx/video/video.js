@@ -1,14 +1,44 @@
 import React, { useRef, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import Observer from '@researchgate/react-intersection-observer'
+import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 
-const VideoTag = styled.video`
-  display: block;
-  width: 100%;
-`
+const VideoWrapper = styled.div(
+  ({ aspectRatio, maxWidth }) => css`
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: ${maxWidth};
+
+    ${aspectRatio &&
+    css`
+      &::before {
+        content: '';
+        width: 1px;
+        margin-left: -1px;
+        float: left;
+        height: 0;
+        padding-top: calc(100% / (${aspectRatio}));
+      }
+      &::after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    `}
+  `
+)
+
+const VideoTag = styled.video(
+  ({ aspectRatio }) => css`
+    display: block;
+    ${aspectRatio && tw`absolute bg-black inset-0 w-full h-full`}
+  `
+)
 
 /**
  * Renders an internal video. For external videos use `<YoutubeVideo />` or similar.
@@ -26,6 +56,8 @@ export default function Video({
   preload,
   muted,
   pauseOnHover,
+  maxWidth,
+  aspectRatio,
   contextKey,
   ...props
 }) {
@@ -110,19 +142,22 @@ export default function Video({
       onChange={handleVideoIntersection}
       threshold={0.3}
     >
-      <VideoTag
-        ref={refVideo}
-        onMouseEnter={handleVideoMouseEnter}
-        onMouseLeave={handleVideoMouseLeave}
-        controls={controls}
-        playsInline={autoplay || !controls}
-        preload={preload}
-        muted={autoplay || muted}
-        poster={video.screenshots && video.screenshots[screenshotIndex]}
-        {...props}
-      >
-        {sources}
-      </VideoTag>
+      <VideoWrapper maxWidth={maxWidth} aspectRatio={aspectRatio}>
+        <VideoTag
+          ref={refVideo}
+          onMouseEnter={handleVideoMouseEnter}
+          onMouseLeave={handleVideoMouseLeave}
+          controls={controls}
+          playsInline={autoplay || !controls}
+          preload={preload}
+          muted={autoplay || muted}
+          poster={video.screenshots && video.screenshots[screenshotIndex]}
+          aspectRatio={aspectRatio}
+          {...props}
+        >
+          {sources}
+        </VideoTag>
+      </VideoWrapper>
     </Observer>
   )
 }
@@ -135,15 +170,28 @@ Video.defaultProps = {
   pauseOnHover: false,
   preload: 'metadata',
   contextKey: 'screen',
+  maxWidth: '100%',
 }
 
 Video.propTypes = {
+  /** Id of the video to embed */
   id: propTypes.string.isRequired,
-  screenshotIndex: propTypes.number,
-  preload: propTypes.string,
+  /** Maximum width the video player will grow to */
+  maxWidth: propTypes.number,
+  /** Overwrite the default aspect rati of the video */
+  aspectRatio: propTypes.string,
+  /** Should the video automatically start playing? **Requires muted**. */
   autoplay: propTypes.bool,
+  /** Should the controls be display? */
   controls: propTypes.bool,
+  /** Should the audio be muted? */
   muted: propTypes.bool,
+  /** Should the video pause when the user hovers the video? */
   pauseOnHover: propTypes.bool,
+  /** Select another screenshot */
+  screenshotIndex: propTypes.number,
+  /** Preloading behaviour */
+  preload: propTypes.string,
+  /** Change rendering size of the video */
   contextKey: propTypes.string,
 }

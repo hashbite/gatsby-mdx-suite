@@ -11,12 +11,7 @@ const VimeoVideoWrapper = styled.div(
     position: relative;
     display: inline-block;
     width: 100%;
-
-    min-width: 326px;
-    ${maxWidth &&
-    css`
-      max-width: ${maxWidth};
-    `};
+    max-width: ${maxWidth};
 
     &::before {
       content: '';
