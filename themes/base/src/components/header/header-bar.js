@@ -76,6 +76,7 @@ const HeaderBar = ({
   menuOpen,
   isNavigationTransparent,
   setMenuOpen,
+  wrapperRef,
 }) => {
   return (
     <HeaderBarWrapper
@@ -83,6 +84,7 @@ const HeaderBar = ({
       headerPassed={headerPassed}
       headerVisibleAgain={headerVisibleAgain}
       menuOpen={menuOpen}
+      ref={wrapperRef}
     >
       <NavigationDesktop isNavigationTransparent={isNavigationTransparent} />
       <NavigationMobile
@@ -107,6 +109,7 @@ HeaderBar.propTypes = {
   menuOpen: propTypes.bool,
   isNavigationTransparent: propTypes.bool,
   setMenuOpen: propTypes.func,
+  wrapperRef: propTypes.object,
 }
 
 export default HeaderBar
