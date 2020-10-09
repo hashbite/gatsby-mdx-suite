@@ -48,7 +48,6 @@ function DocsComponentTemplate({ data, pageContext }) {
   const {
     displayName,
     description,
-    longDescription,
     componentProps,
     examples,
   } = data.componentMetadata
@@ -64,7 +63,6 @@ function DocsComponentTemplate({ data, pageContext }) {
       <Styled.h2>Properties:</Styled.h2>
       <Props componentProps={componentProps} />
       {description && <MDXRenderer>{description.childMdx.body}</MDXRenderer>}
-      {longDescription && <MDXRenderer>{longDescription.body}</MDXRenderer>}
     </>
   )
 
