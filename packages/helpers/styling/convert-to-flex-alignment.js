@@ -5,6 +5,6 @@
  *
  */
 const convertToFlexAlignment = (value) =>
-  value === 'center' ? value : `flex-${value}`
+  value && (value === 'center' ? value : `flex-${value}`)
 
 export default convertToFlexAlignment
