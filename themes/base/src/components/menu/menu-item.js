@@ -45,7 +45,6 @@ const MenuItem = ({
 
   const linkProps = {
     className: cx(className, activeClass),
-    activeClassName: null,
     title,
     openInNewTab,
   }
