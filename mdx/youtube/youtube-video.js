@@ -4,18 +4,14 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import tw from 'twin.macro'
 
 const YoutubeVideoWrapper = styled.div(
   ({ aspectRatio, maxWidth }) => css`
     position: relative;
     display: inline-block;
     width: 100%;
-
-    min-width: 326px;
-    ${maxWidth &&
-    css`
-      max-width: ${maxWidth};
-    `};
+    max-width: ${maxWidth};
 
     &::before {
       content: '';
@@ -33,11 +29,7 @@ const YoutubeVideoWrapper = styled.div(
   `
 )
 const StyledReactYoutube = styled(ReactYoutube)`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  ${tw`absolute inset-0 bg-black`}
 `
 /**
  * Renders a video from YouTube. For internal videos use `<Video />`.
