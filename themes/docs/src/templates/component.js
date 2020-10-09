@@ -60,9 +60,9 @@ function DocsComponentTemplate({ data, pageContext }) {
   let content = (
     <>
       <Styled.h1>{displayName}</Styled.h1>
+      {description && <MDXRenderer>{description.childMdx.body}</MDXRenderer>}
       <Styled.h2>Properties:</Styled.h2>
       <Props componentProps={componentProps} />
-      {description && <MDXRenderer>{description.childMdx.body}</MDXRenderer>}
     </>
   )
 
@@ -70,7 +70,7 @@ function DocsComponentTemplate({ data, pageContext }) {
     content = (
       <LiveEditor
         editorId={displayName + activeTab}
-        initialValue={examples[activeTab - 2].raw}
+        initialValue={examples[activeTab - 1].raw}
       />
     )
   }
@@ -124,9 +124,6 @@ export const pageQuery = graphql`
         childMdx {
           body
         }
-      }
-      longDescription {
-        body
       }
       componentProps: props {
         ...MdxSuiteComponentProps

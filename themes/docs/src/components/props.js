@@ -6,19 +6,18 @@ import tw from 'twin.macro'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const PropsWrapper = styled.table`
-  ${tw`w-10/12 my-8 w-full p-0`}
+  ${tw`table-auto`}
+  border-collapse: collapse;
 
   th {
-    ${tw`text-gray-500`}
+    ${tw`px-4 py-2`}
   }
 `
 const PropWrapper = styled.tr(
   ({ odd }) => css`
-    ${tw`whitespace-no-wrap`}
-    ${odd && tw`bg-gray-600`}
-
     td {
-      ${tw`py-2 px-2`}
+      ${tw`border border-solid border-gray-300 py-2 px-2`}
+      ${odd && tw`bg-gray-100`}
     }
   `
 )
@@ -58,8 +57,10 @@ function Props({ componentProps }) {
     <PropsWrapper>
       <thead>
         <tr>
-          <th colSpan="2">Name</th>
+          <th>Name</th>
+          <th>Type</th>
           <th>Default</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
@@ -67,25 +68,23 @@ function Props({ componentProps }) {
           const { name, type, required, defaultValue, description } = propData
           const odd = i % 2 !== 0
           return (
-            <>
-              <PropWrapper key={name} odd={odd}>
-                <td>
-                  <PropTitle>{name}</PropTitle>
-                </td>
-                <td>
-                  {type && <Type>{type.name}</Type>}
-                  {required && <Required>required</Required>}
-                </td>
-                <td>{defaultValue && defaultValue.value}</td>
-              </PropWrapper>
-              {description && description.text && description.childMdx && (
-                <DescriptionWrapper odd={odd}>
-                  <td colSpan={3}>
+            <PropWrapper key={name} odd={odd}>
+              <td>
+                <PropTitle>{name}</PropTitle>
+              </td>
+              <td>
+                {type && <Type>{type.name}</Type>}
+                {required && <Required>required</Required>}
+              </td>
+              <td>{defaultValue && defaultValue.value}</td>
+              <td colSpan={3}>
+                {description && description.text && description.childMdx && (
+                  <DescriptionWrapper>
                     <MDXRenderer>{description.childMdx.body}</MDXRenderer>
-                  </td>
-                </DescriptionWrapper>
-              )}
-            </>
+                  </DescriptionWrapper>
+                )}
+              </td>
+            </PropWrapper>
           )
         })}
       </tbody>
