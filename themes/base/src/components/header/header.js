@@ -12,18 +12,19 @@ import HeaderBar from './header-bar'
 import Hero from './hero'
 
 const HeaderWrapper = styled.div(
-  ({ theme, hasBackgroundMedia }) => css`
+  ({ theme, hasBackgroundMedia, shouldRenderHero }) => css`
     ${tw`relative flex flex-col`}
     background: ${theme.colors.background};
     color: ${theme.colors.text};
 
-    ${hasBackgroundMedia
+    ${shouldRenderHero &&
+    (hasBackgroundMedia
       ? css`
           height: 61.8vh;
         `
       : css`
           height: 38.2vh;
-        `}
+        `)}
   `
 )
 
@@ -112,9 +113,12 @@ const Header = ({
   return (
     <ColorSet name={colorSet} {...colors}>
       <Observer onChange={handleHeaderIntersection}>
-        <HeaderWrapper hasBackgroundMedia={hasBackgroundMedia}>
+        <HeaderWrapper
+          hasBackgroundMedia={hasBackgroundMedia}
+          shouldRenderHero={shouldRenderHero}
+        >
           <div style={{ height: headerBarHeight }}>
-            <HeaderBar {...headerBarProps} ref={headerBarRef} />
+            <HeaderBar {...headerBarProps} wrapperRef={headerBarRef} />
           </div>
           {shouldRenderHero && <Hero {...heroProps} />}
         </HeaderWrapper>
