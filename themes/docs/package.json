@@ -37,7 +37,7 @@
     "ace-builds": "^1.4.12",
     "debug": "^4.2.0",
     "gatsby-link": "^2.4.15",
-    "gatsby-source-filesystem": "^2.3.33",
+    "gatsby-source-filesystem": "^2.3.34",
     "gatsby-transformer-documentationjs": "^4.3.16",
     "gatsby-transformer-react-docgen": "^5.2.14",
     "react-ace": "^9.1.4",

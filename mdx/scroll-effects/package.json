@@ -29,6 +29,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/mdx-link": "^0.7.3"
+    "@gatsby-mdx-suite/mdx-link": "^0.8.0"
   }
 }
