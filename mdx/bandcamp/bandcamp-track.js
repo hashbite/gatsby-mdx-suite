@@ -24,7 +24,10 @@ const BandCampWrapper = styled.div`
 `
 /**
  * Embed a track from bandcamp.com
- * @example <BandcampTrack id="1505826681" />
+ *
+ * @example
+ *
+ * <BandcampTrack id="1505826681" />
  */
 export default function BandcampTrack({ id }) {
   return (
