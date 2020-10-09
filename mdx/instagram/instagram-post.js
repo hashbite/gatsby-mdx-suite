@@ -40,5 +40,5 @@ InstagramPost.propTypes = {
   /** hide the caption */
   hideCaption: propTypes.bool,
   /** maximum width the post will be embedded as */
-  maxWidth: propTypes.number,
+  maxWidth: propTypes.oneOfType([propTypes.number, propTypes.string]),
 }

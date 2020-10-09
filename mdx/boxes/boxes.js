@@ -66,7 +66,7 @@ const Boxes = (props) => <StyledBoxes {...props} />
 Boxes.defaultProps = {}
 
 Boxes.propTypes = {
-  columns: propTypes.number,
+  columns: propTypes.oneOfType([propTypes.number, propTypes.string]),
 }
 
 export default Boxes
