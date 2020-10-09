@@ -45,7 +45,9 @@ const Submit = tw.input`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 
 /**
  * Creates a contact form with spam protection.
  *
- * @todo make fields configurable
+ * @todo
+ *
+ * Fields are not yet configurable.
  *
  * @example
  * <ContactForm />
