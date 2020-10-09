@@ -117,10 +117,25 @@ const mediaParsers = {
  * * Youtube Videos (`<YoutubeVideo />`)
  * * Instagram Posts (`<InstagramPost />`)
  *
- * @example
+ * @example Images
  * <MediaGallery>
  * <Image id="randomImageId" />
  * <Image id="randomImageId" />
+ * <Image id="randomImageId" />
+ * </MediaGallery>
+ * @example Instagram
+ *
+ * <MediaGallery>
+ * <InstagramPost id="B16Tc2fBOMJ" />
+ * <InstagramPost id="B0-s4uzBW6v" />
+ * <InstagramPost id="BzimNxLByQk" />
+ * </MediaGallery>
+ *
+ * @example Mixed
+ *
+ * <MediaGallery>
+ * <InstagramPost id="randomInstagramPost" />
+ * <YoutubeVideo id="randomYoutubeVideo" />
  * <Image id="randomImageId" />
  * </MediaGallery>
  */

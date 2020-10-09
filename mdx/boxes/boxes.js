@@ -45,7 +45,7 @@ const StyledBoxes = styled.div(
 )
 
 /**
- * Creates a 48 column grid layout.
+ * Wrap all `<Box/>` components in a `<Boxes/>` component to enable a 48 column grid.
  *
  * @example
  * <Boxes>

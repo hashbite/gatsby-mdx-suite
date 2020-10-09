@@ -11,41 +11,6 @@ const generateComponentSlug = ({ packageName, parentName }) =>
 exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
   const resolvers = {
     ComponentMetadata: {
-      // Match markdown documentation page with component metadata
-      longDescription: {
-        type: 'Mdx',
-        async resolve(source, args, context, info) {
-          const parent = await context.nodeModel.findRootNodeAncestor(source)
-
-          const fileNode = await context.nodeModel.runQuery({
-            query: {
-              filter: {
-                dir: { eq: parent.dir },
-                name: { eq: parent.name },
-                extension: { in: ['md', 'mdx'] },
-              },
-            },
-            type: 'File',
-            firstOnly: true,
-          })
-
-          if (!fileNode) {
-            return null
-          }
-
-          const mdxNode = await context.nodeModel.runQuery({
-            query: {
-              filter: {
-                parent: { id: { eq: fileNode.id } },
-              },
-            },
-            type: 'Mdx',
-            firstOnly: true,
-          })
-
-          return mdxNode
-        },
-      },
       // Attach package name to component of dependencies
       packageName: {
         type: 'String',
