@@ -130,8 +130,12 @@ exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
   createResolvers(resolvers)
 }
 
-exports.createPages = async ({ graphql, actions }, { defaultLocale }) => {
+exports.createPages = async ({ graphql, actions, getCache }) => {
   const { createPage } = actions
+  const cache = getCache()
+  const coreConfig = await cache.get('mdx-suite')
+
+  const { defaultLocale } = coreConfig.config
 
   async function createPages() {
     const result = await graphql(
