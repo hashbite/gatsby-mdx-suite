@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@gatsby-mdx-suite/mdx-copy": "^0.9.3",
-    "@gatsby-mdx-suite/mdx-link": "^0.7.3",
+    "@gatsby-mdx-suite/mdx-link": "^0.8.0",
     "react-modal": "^3.11.2"
   }
 }
