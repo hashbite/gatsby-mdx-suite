@@ -55,23 +55,20 @@ function DocsComponentTemplate({ data, pageContext }) {
 
   const tabs = [
     displayName,
-    'Props',
     ...(examples ? examples.map((v, i) => `Example ${i + 1}`) : []),
   ]
 
   let content = (
     <>
       <Styled.h1>{displayName}</Styled.h1>
+      <Styled.h2>Properties:</Styled.h2>
+      <Props componentProps={componentProps} />
       {description && <MDXRenderer>{description.childMdx.body}</MDXRenderer>}
       {longDescription && <MDXRenderer>{longDescription.body}</MDXRenderer>}
     </>
   )
 
-  if (activeTab === 1) {
-    content = <Props componentProps={componentProps} />
-  }
-
-  if (activeTab > 1) {
+  if (activeTab > 0) {
     content = (
       <LiveEditor
         editorId={displayName + activeTab}
