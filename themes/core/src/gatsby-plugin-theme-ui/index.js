@@ -36,6 +36,46 @@ module.exports = merge(tailwindPreset, {
         text: tailwindPreset.colors.text,
         headline: tailwindPreset.colors.headline,
       },
+      white: {
+        background: tailwindPreset.colors.white,
+        text: tailwindPreset.colors.gray[8],
+      },
+      gray100: {
+        background: tailwindPreset.colors.gray[1],
+      },
+      gray200: {
+        background: tailwindPreset.colors.gray[2],
+      },
+      gray300: {
+        background: tailwindPreset.colors.gray[3],
+      },
+      gray400: {
+        background: tailwindPreset.colors.gray[4],
+      },
+      gray500: {
+        background: tailwindPreset.colors.gray[5],
+        text: tailwindPreset.colors.white,
+      },
+      gray600: {
+        background: tailwindPreset.colors.gray[6],
+        text: tailwindPreset.colors.white,
+      },
+      gray700: {
+        background: tailwindPreset.colors.gray[7],
+        text: tailwindPreset.colors.white,
+      },
+      gray800: {
+        background: tailwindPreset.colors.gray[8],
+        text: tailwindPreset.colors.white,
+      },
+      gray900: {
+        background: tailwindPreset.colors.gray[9],
+        text: tailwindPreset.colors.white,
+      },
+      black: {
+        background: tailwindPreset.colors.black,
+        text: tailwindPreset.colors.gray[2],
+      },
     },
   },
   // Custom styles to inject our custom colors into all (MDX) components
