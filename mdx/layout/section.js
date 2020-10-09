@@ -118,7 +118,7 @@ const BackgroundMediaOverlay = styled.div(
  * * Adds a gap between multiple sections
  * * They can be colored and supports background images
  *
- * @example
+ * @example <caption>Default</caption>
  * <Section>
  *
  * # Doggy
@@ -128,7 +128,8 @@ const BackgroundMediaOverlay = styled.div(
  * ![picture of a dog](https://source.unsplash.com/400x300/weekly?dog)
  *
  * </Section>
- * @example
+
+ * @example <caption>Coloring</caption>
  * <Section colorSet="teal">
  *
  * # Cats
@@ -140,7 +141,8 @@ const BackgroundMediaOverlay = styled.div(
  * <Image src="https://source.unsplash.com/400x300/weekly?cat" alt="Picture of a cat" />
  * </Columns>
  * </Section>
- * @example
+
+ * @example <caption>Custom colors</caption>
  * <Section colors={{ background:"tomato", primary: "#48C9B0", secondary: "heading"}}>
  *
  * # Parrots
@@ -152,7 +154,8 @@ const BackgroundMediaOverlay = styled.div(
  * <Image src="https://source.unsplash.com/400x300/weekly?parrot" alt="Picture of a parrot" />
  * </Columns>
  * </Section>
- * @example
+ *
+ * @example <caption>Background image</caption>
  * <Section backgroundImageId="randomPictureId">
  *
  * # Ghosts
