@@ -7,22 +7,36 @@ import tw from 'twin.macro'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
+import convertToFlexAlignment from '@gatsby-mdx-suite/helpers/styling/convert-to-flex-alignment'
 
-const SectionWrapper = styled.section(({ textShadow, theme }) => {
-  return css`
-    ${tw`relative overflow-hidden`}
+const SectionWrapper = styled.section(
+  ({ textShadow, theme, minHeight, verticalAlign, horizontalAlign }) => {
+    return css`
+      ${tw`relative overflow-hidden`}
 
-    background: ${theme.colors.background};
-    color: ${theme.colors.text};
+      background: ${theme.colors.background};
+      color: ${theme.colors.text};
 
-    ${
-      textShadow &&
+      ${(minHeight || horizontalAlign) && tw`flex flex-col`}
+
+      ${minHeight &&
+      css`
+        min-height: ${minHeight};
+        justify-content: ${verticalAlign};
+      `}
+
+      ${horizontalAlign &&
+      css`
+        align-items: ${horizontalAlign};
+      `}
+
+      ${textShadow &&
       css`
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
-      `
-    }
-  `
-})
+      `}
+    `
+  }
+)
 
 function calcGapValue(gap, theme) {
   const customSize = gap && theme.sizes[gap]
@@ -30,9 +44,9 @@ function calcGapValue(gap, theme) {
 }
 
 const SectionContentWrapper = styled.div(
-  (props) => css`
+  ({ horizontalAlign, ...props }) => css`
     ${tw`relative z-10`}
-    ${centerToContentColumn(props)}
+    ${!horizontalAlign && centerToContentColumn(props)}
 
     padding-top: ${calcGapValue(props.gapTop || props.gap, props.theme)};
     padding-bottom: ${calcGapValue(props.gapBottom || props.gap, props.theme)};
@@ -112,20 +126,31 @@ export default function Section({
   colors,
   textShadow,
   gap,
-  gapTop,
-  gapBottom,
+  minHeight,
+  verticalAlign,
+  horizontalAlign,
 }) {
   return (
     <ColorSet name={colorSet} {...colors}>
-      <SectionWrapper textShadow={textShadow}>
+      <SectionWrapper
+        textShadow={textShadow}
+        minHeight={minHeight}
+        verticalAlign={convertToFlexAlignment(verticalAlign)}
+        horizontalAlign={convertToFlexAlignment(horizontalAlign)}
+      >
         {backgroundImageId && (
           <BackgroundImageWrapper>
             <Image contextKey="screen" id={backgroundImageId} fit="cover" />
           </BackgroundImageWrapper>
         )}
-        <SectionContentWrapper gap={gap} gapTop={gapTop} gapBottom={gapBottom}>
-          {children}
-        </SectionContentWrapper>
+        {children && (
+          <SectionContentWrapper
+            gap={gap}
+            horizontalAlign={convertToFlexAlignment(horizontalAlign)}
+          >
+            {children}
+          </SectionContentWrapper>
+        )}
       </SectionWrapper>
     </ColorSet>
   )
@@ -135,10 +160,11 @@ Section.defaultProps = {
   colorSet: null,
   colors: {},
   textShadow: false,
+  verticalAlign: 'center',
 }
 
 Section.propTypes = {
-  children: propTypes.node.isRequired,
+  children: propTypes.node,
   /** image id to display as background image */
   backgroundImageId: propTypes.string,
   /** Define a color set for this box */
@@ -149,8 +175,10 @@ Section.propTypes = {
   textShadow: propTypes.bool,
   /** Overwrite default horizontal content gap. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
   gap: propTypes.string,
-  /** Overwrite default top content gap. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
-  gapTop: propTypes.string,
-  /** Overwrite default bottom content gap. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
-  gapBottom: propTypes.string,
+  /** Set the minimum size for the section. Usually used with `100vh` to achieve full screen sizes. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  minHeight: propTypes.string,
+  /** Vertical alignment if the available space exceeds the content height */
+  verticalAlign: propTypes.oneOf(['start', 'center', 'end']),
+  /** Horizontal alignment. Will detach the content from the content column. */
+  horizontalAlign: propTypes.oneOf(['start', 'center', 'end']),
 }
