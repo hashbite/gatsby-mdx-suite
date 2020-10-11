@@ -37,7 +37,13 @@ module.exports = (themeConfig) => {
         resolve: `gatsby-plugin-postcss`,
         options: {
           postcssOptions: {
-            plugins: ['tailwindcss', 'autoprefixer'],
+            plugins: [
+              'tailwindcss',
+              'autoprefixer',
+              require('cssnano')({
+                preset: 'default',
+              }),
+            ],
           },
         },
       },
