@@ -50,8 +50,8 @@ const TimelineEntryWrapper = styled.div(
         right: -${bubbleSize / 2}px;
       }
 
-      &:not(:first-child):before,
-      &:not(:last-child):after {
+      &:not(:first-of-type):before,
+      &:not(:last-of-type):after {
         right: -1px;
       }
 
@@ -83,8 +83,8 @@ const TimelineEntryWrapper = styled.div(
         transform: translateX(-50%);
       }
 
-      &:not(:first-child):before,
-      &:not(:last-child):after {
+      &:not(:first-of-type):before,
+      &:not(:last-of-type):after {
         top: ${bubbleSize / 2 - 1}px;
         left: calc(50% + ${bubbleSize / 2 + 12}px);
         right: calc(50% + ${bubbleSize / 2 + 12}px);
@@ -92,10 +92,10 @@ const TimelineEntryWrapper = styled.div(
         width: auto;
       }
 
-      &:not(:first-child):before {
+      &:not(:first-of-type):before {
         left: calc(${theme.spacing['grid-gap']});
       }
-      &:not(:last-child):after {
+      &:not(:last-of-type):after {
         right: calc(${theme.spacing['grid-gap']});
       }
     }

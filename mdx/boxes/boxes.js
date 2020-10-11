@@ -32,7 +32,7 @@ const StyledBoxes = styled.div(
         grid-column: 1 / 1;
       }
 
-      > *:first-child {
+      > *:first-of-type {
         grid-row-start: 1;
         grid-column-start: 1;
       }
