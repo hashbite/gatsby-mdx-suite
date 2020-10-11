@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.2.3...gatsby-theme-mdx-suite-docs@0.3.0) (2020-10-11)
+
+
+### Bug Fixes
+
+* **docs:** remount live editor when another example is rendered ([6c5a232](https://github.com/axe312ger/gatsby-mdx-suite/commit/6c5a23249c181af04c1aac43e82668d3621ea4dd))
+* **docs:** repair links to component doc pages ([ad8f4c2](https://github.com/axe312ger/gatsby-mdx-suite/commit/ad8f4c2e6032d7fec0a5c47e621da9fb894c024d))
+
+
+### Features
+
+* **doc:** show properties above component description ([ca1c5ed](https://github.com/axe312ger/gatsby-mdx-suite/commit/ca1c5ed574c8811cba6af3f2c1972926a81e9cd4))
+* **docs:** display font family and tag names ([eeb3397](https://github.com/axe312ger/gatsby-mdx-suite/commit/eeb3397b062b8744a1974aefd1d2e31b23ddd150))
+* **docs:** improve display of single colors and sets ([f0cd2e4](https://github.com/axe312ger/gatsby-mdx-suite/commit/f0cd2e49fffff79ee661234d1f98babb794482ec))
+* **styling:** introduce new custom useBreakpoint hook ([6dfadc9](https://github.com/axe312ger/gatsby-mdx-suite/commit/6dfadc9dbcb6e80dc2f855fdb410e85f705e3b85))
+* **typography:** use custom vertical rhythm implementation ([f36badb](https://github.com/axe312ger/gatsby-mdx-suite/commit/f36badb555cd944de0119bb9c6218e413bccb7a9))
+
+
+### Performance Improvements
+
+* **docs:** only load and parse MDX component files ([10b4fd0](https://github.com/axe312ger/gatsby-mdx-suite/commit/10b4fd0ac80ea410dba62ceadef8992ab65b5231))
+* **docs:** remove extra MDX parsing for long description ([4e219bb](https://github.com/axe312ger/gatsby-mdx-suite/commit/4e219bbd5590d0ae0c1a832bdff00ccf58ab4a6f))
+
+
+
+
+
 ## [0.2.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.2.2...gatsby-theme-mdx-suite-docs@0.2.3) (2020-10-07)
 
 

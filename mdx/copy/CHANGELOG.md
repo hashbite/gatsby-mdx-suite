@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.9.4...@gatsby-mdx-suite/mdx-copy@0.10.0) (2020-10-11)
+
+
+### Features
+
+* **lists:** better support for icons as bullet points and support ordered lists ([78faf9e](https://github.com/axe312ger/gatsby-mdx-suite/commit/78faf9e6db693c5868e31f7003fd5d974f9a51f9))
+* **typography:** use custom vertical rhythm implementation ([f36badb](https://github.com/axe312ger/gatsby-mdx-suite/commit/f36badb555cd944de0119bb9c6218e413bccb7a9))
+
+
+
+
+
 ## [0.9.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.9.3...@gatsby-mdx-suite/mdx-copy@0.9.4) (2020-10-07)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-copy

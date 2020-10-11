@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.5.4...@gatsby-mdx-suite/mdx-timeline@0.6.0) (2020-10-11)
+
+
+### Bug Fixes
+
+* **props:** allow string and number values for MDX props ([54da00f](https://github.com/axe312ger/gatsby-mdx-suite/commit/54da00f6c985dbc8a14a9c1e75d8b2bd195209da))
+* **styling:** switch to first-of-type for better SSR ([99d384f](https://github.com/axe312ger/gatsby-mdx-suite/commit/99d384f265c5792f05805903854a575008a090c5))
+
+
+### Features
+
+* **typography:** use custom vertical rhythm implementation ([f36badb](https://github.com/axe312ger/gatsby-mdx-suite/commit/f36badb555cd944de0119bb9c6218e413bccb7a9))
+
+
+
+
+
 ## [0.5.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.5.3...@gatsby-mdx-suite/mdx-timeline@0.5.4) (2020-10-07)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-timeline

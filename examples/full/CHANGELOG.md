@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.2.0...gatsby-mdx-suite-example-full@0.3.0) (2020-10-11)
+
+
+### Features
+
+* **components:** add FloatingImage and Boxes ([6e2adbd](https://github.com/axe312ger/gatsby-mdx-suite/commit/6e2adbd8160f8f6d2f54c03a9c333074ae019f60))
+
+
+
+
+
 # [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.1.7...gatsby-mdx-suite-example-full@0.2.0) (2020-10-07)
 
 

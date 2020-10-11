@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.8.0...@gatsby-mdx-suite/mdx-link@0.8.1) (2020-10-11)
+
+
+### Bug Fixes
+
+* **CTA:** use proper CTA text color in color sets ([6c6fdd1](https://github.com/axe312ger/gatsby-mdx-suite/commit/6c6fdd1adb345689d4ecefc26effe8cac468c103))
+
+
+
+
+
 # [0.8.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.7.3...@gatsby-mdx-suite/mdx-link@0.8.0) (2020-10-07)
 
 

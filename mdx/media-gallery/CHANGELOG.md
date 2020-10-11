@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.20](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.4.19...@gatsby-mdx-suite/mdx-media-gallery@0.4.20) (2020-10-11)
+
+
+### Performance Improvements
+
+* **docs:** remove extra MDX parsing for long description ([4e219bb](https://github.com/axe312ger/gatsby-mdx-suite/commit/4e219bbd5590d0ae0c1a832bdff00ccf58ab4a6f))
+
+
+
+
+
 ## [0.4.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.4.18...@gatsby-mdx-suite/mdx-media-gallery@0.4.19) (2020-10-07)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery

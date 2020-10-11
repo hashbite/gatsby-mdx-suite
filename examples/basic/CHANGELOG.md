@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.1.7...gatsby-mdx-suite-example-basic@0.2.0) (2020-10-11)
+
+
+### Features
+
+* **typography:** use custom vertical rhythm implementation ([f36badb](https://github.com/axe312ger/gatsby-mdx-suite/commit/f36badb555cd944de0119bb9c6218e413bccb7a9))
+
+
+
+
+
 ## [0.1.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.1.6...gatsby-mdx-suite-example-basic@0.1.7) (2020-10-07)
 
 

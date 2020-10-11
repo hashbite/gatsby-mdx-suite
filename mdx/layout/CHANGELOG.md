@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.17.4...@gatsby-mdx-suite/mdx-layout@0.18.0) (2020-10-11)
+
+
+### Bug Fixes
+
+* **props:** allow string and number values for MDX props ([54da00f](https://github.com/axe312ger/gatsby-mdx-suite/commit/54da00f6c985dbc8a14a9c1e75d8b2bd195209da))
+
+
+### Features
+
+* **floating-image:** add minHeight and vertical align properties ([ed7a506](https://github.com/axe312ger/gatsby-mdx-suite/commit/ed7a5066d13c1c2d4617d0be034746d95ac7a1b6))
+* **layout:** merge Viewport into Section component ([47ec620](https://github.com/axe312ger/gatsby-mdx-suite/commit/47ec620e70610e95890c311bbf234708537d953c))
+* **section:** add support for background image opacity ([e6680fb](https://github.com/axe312ger/gatsby-mdx-suite/commit/e6680fb982b19ffde320144a942a9ca4a484ae7e))
+* **styling:** introduce new custom useBreakpoint hook ([6dfadc9](https://github.com/axe312ger/gatsby-mdx-suite/commit/6dfadc9dbcb6e80dc2f855fdb410e85f705e3b85))
+* **typography:** use custom vertical rhythm implementation ([f36badb](https://github.com/axe312ger/gatsby-mdx-suite/commit/f36badb555cd944de0119bb9c6218e413bccb7a9))
+
+
+### Performance Improvements
+
+* **docs:** remove extra MDX parsing for long description ([4e219bb](https://github.com/axe312ger/gatsby-mdx-suite/commit/4e219bbd5590d0ae0c1a832bdff00ccf58ab4a6f))
+
+
+
+
+
 ## [0.17.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.17.3...@gatsby-mdx-suite/mdx-layout@0.17.4) (2020-10-07)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout

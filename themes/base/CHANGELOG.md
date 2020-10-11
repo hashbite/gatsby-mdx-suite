@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.2.0...gatsby-theme-mdx-suite-base@0.3.0) (2020-10-11)
+
+
+### Bug Fixes
+
+* **header:** apply minimum height only when hero is present ([219eaa2](https://github.com/axe312ger/gatsby-mdx-suite/commit/219eaa26abb39c8ae82429468bbf7f17a273c97a))
+* **header:** properly use ref to calculate header bar height ([78a10e2](https://github.com/axe312ger/gatsby-mdx-suite/commit/78a10e2df2a93fb799a2eea59bc820ed54e3cca3))
+* **menu:** do not pass activeClassName to links in menu ([5efbb8f](https://github.com/axe312ger/gatsby-mdx-suite/commit/5efbb8f196b33e826b90c655e0e86e76997c8369))
+* **offline:** fix warning and add extra lines to reload message ([eebbbe5](https://github.com/axe312ger/gatsby-mdx-suite/commit/eebbbe581e7a9e3d8a42e14ddcd1003b99ec74ad))
+
+
+### Features
+
+* **lists:** better support for icons as bullet points and support ordered lists ([78faf9e](https://github.com/axe312ger/gatsby-mdx-suite/commit/78faf9e6db693c5868e31f7003fd5d974f9a51f9))
+
+
+
+
+
 # [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.1.6...gatsby-theme-mdx-suite-base@0.2.0) (2020-10-07)
 
 

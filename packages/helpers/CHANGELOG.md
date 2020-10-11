@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.9.3...@gatsby-mdx-suite/helpers@0.10.0) (2020-10-11)
+
+
+### Bug Fixes
+
+* **styling:** return no flex alignment if no input is provided ([026d67a](https://github.com/axe312ger/gatsby-mdx-suite/commit/026d67a5ef8b50ef49971401d08764d201c12b9e))
+
+
+### Features
+
+* **styling:** introduce new custom useBreakpoint hook ([6dfadc9](https://github.com/axe312ger/gatsby-mdx-suite/commit/6dfadc9dbcb6e80dc2f855fdb410e85f705e3b85))
+* **typography:** use custom vertical rhythm implementation ([f36badb](https://github.com/axe312ger/gatsby-mdx-suite/commit/f36badb555cd944de0119bb9c6218e413bccb7a9))
+
+
+
+
+
 ## [0.9.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.9.2...@gatsby-mdx-suite/helpers@0.9.3) (2020-10-07)
 
 

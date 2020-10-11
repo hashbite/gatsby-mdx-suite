@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.20](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.19...@gatsby-mdx-suite/mdx-instagram@0.3.20) (2020-10-11)
+
+
+### Bug Fixes
+
+* **props:** allow string and number values for MDX props ([54da00f](https://github.com/axe312ger/gatsby-mdx-suite/commit/54da00f6c985dbc8a14a9c1e75d8b2bd195209da))
+
+
+
+
+
 ## [0.3.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.18...@gatsby-mdx-suite/mdx-instagram@0.3.19) (2020-10-07)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram

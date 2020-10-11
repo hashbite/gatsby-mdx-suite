@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.5.3...@gatsby-mdx-suite/mdx-video@0.6.0) (2020-10-11)
+
+
+### Bug Fixes
+
+* **props:** allow string and number values for MDX props ([54da00f](https://github.com/axe312ger/gatsby-mdx-suite/commit/54da00f6c985dbc8a14a9c1e75d8b2bd195209da))
+
+
+### Features
+
+* **video:** add maxWidth and aspectRatio properties to Video ([9ddb782](https://github.com/axe312ger/gatsby-mdx-suite/commit/9ddb782a1aa00d1e8b8b340c3b18e7e104da5893))
+
+
+
+
+
 ## [0.5.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.5.2...@gatsby-mdx-suite/mdx-video@0.5.3) (2020-10-07)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-video
