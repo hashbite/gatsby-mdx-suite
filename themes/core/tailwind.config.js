@@ -106,6 +106,11 @@ module.exports = {
           color: theme('colors.text'),
           maxWidth: null,
           img: { marginTop: null, marginBottom: null },
+          a: {
+            color: theme('colors.primary'),
+          },
+          // We have our own bullet points for unordered lists
+          'ul > li::before': false,
         },
       },
     }),

@@ -1,3 +1,5 @@
+import React from 'React'
+
 // Basics
 import CTA from '@gatsby-mdx-suite/mdx-link/cta'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
@@ -39,6 +41,7 @@ export default {
   ResponsiveTextBlock,
   Section,
   TextBlock,
-  // Overwrite standard components with our styled ones
-  ul: List,
+  // Overwrite standard html elements with our custom components
+  ul: (props) => <List type="unordered" {...props} />,
+  ol: (props) => <List type="ordered" {...props} />,
 }
