@@ -72,7 +72,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-video`,
-    'gatsby-plugin-webpack-bundle-analyser-v2',
     ...(isProduction
       ? [
           `gatsby-plugin-offline`,

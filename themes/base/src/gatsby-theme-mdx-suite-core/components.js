@@ -1,4 +1,4 @@
-import React from 'React'
+import React from 'react'
 
 // Basics
 import CTA from '@gatsby-mdx-suite/mdx-link/cta'
