@@ -10,9 +10,6 @@ const MainWrapper = styled.div(
   ({ theme }) => css`
     ${tw`overflow-x-scroll prose`}
 
-    background: ${theme.colors.background};
-    color: ${theme.colors.text};
-
     grid-area: main;
   `
 )
