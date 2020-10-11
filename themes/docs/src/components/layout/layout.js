@@ -12,14 +12,12 @@ const DocsWrapper = styled.div`
   ${tw`grid h-screen w-screen`}
   grid-template-areas:  "head head head"
                         "nav  main side";
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: minmax(60px, auto) 1fr;
   grid-template-columns: min-content 1fr min-content;
 `
 
 const LayoutHeader = styled.div`
   ${tw`
-    fixed left-0 right-0
-    md:static
     p-4 flex justify-between items-center flex-wrap
     md:py-0 md:flex-no-wrap
     shadow-lg
