@@ -29,7 +29,7 @@
 
 ### ![Upcoming features](https://img.shields.io/badge/Status-Upcoming-orange?style=flat)
 
-* A few production websites are already running on this. We getting closer to a beta release.
+* A few production websites are already running on this. We are getting closer to a beta release.
 * Build & Website performance improvements
 * DX & Stability
 
@@ -58,7 +58,7 @@
     * Enables `/docs` with MDX playground, components documentation and theme overview
   * `gatsby-theme-mdx-suite-base`:
     * Adds a blog to the page with proper pagination, `back to the news` button, ...
-    * Some demo blog posts
+    * Some example blog posts
 * MDX components: `./mdx/*` or `@gatsby-mdx-suite/mdx-*`
   * Basic - Very basic stuff like images and links
   * Layout - Add visual structure to the content. Grids, columns and more.
