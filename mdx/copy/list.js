@@ -4,7 +4,7 @@ import tw from 'twin.macro'
 
 import ListItem from './list-item'
 
-const StyledList = tw.ul`mt-4 mb-8 p-0`
+const StyledList = tw.ul``
 
 /**
  * @example

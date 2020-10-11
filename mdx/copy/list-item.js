@@ -5,13 +5,21 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import Icon from './icon'
+import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 
 const StyledListItem = styled.li(
   ({ iconColor, type }) => css`
+    ${tw`relative pl-6 my-content-gap`}
+
     ${type === 'ordered' &&
     css`
+      counter-increment: list-counter;
       &:before {
-        color: ${iconColor};
+        content: counter(list-counter) '.';
+        ${tw`absolute left-0 font-normal text-gray-600`}
+        color: ${selectColor(iconColor) || 'inherit'};
+        top: 50%;
+        transform: translateY(-50%);
       }
     `}
   `
@@ -19,7 +27,8 @@ const StyledListItem = styled.li(
 
 const ListItemIcon = styled(Icon)`
   ${tw`absolute left-0`}
-  top: 0.35em;
+  top: 50%;
+  transform: translateY(-50%);
 `
 /**
  * Renders a list with an optional title and customizable bullet points.
@@ -41,8 +50,11 @@ const ListItemIcon = styled(Icon)`
  * </List>
  */
 const ListItem = ({ icon, iconColor, children, type, ...props }) => {
+  if (!children) {
+    return null
+  }
   return (
-    <StyledListItem {...props} iconColor={iconColor}>
+    <StyledListItem {...props} type={type} iconColor={iconColor}>
       {type === 'unordered' && (
         <ListItemIcon icon={icon} color={iconColor} valign="center" />
       )}

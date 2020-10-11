@@ -2,12 +2,10 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
-import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
 
 const StyledTimeline = styled.div(
   ({ theme }) => css`
-    ${tw`flex flex-col w-full sm:grid`}
-    ${applyContentGap({ theme })}
+    ${tw`flex flex-col w-full sm:grid my-content-gap`}
 
     @media (min-width: ${theme.screens.md}) {
       ${tw`grid gap-grid-gap`}
