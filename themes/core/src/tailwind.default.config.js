@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   screens: {
     sm: '640px',
     md: '768px',
@@ -363,27 +363,6 @@ export default {
     4: 'repeat(4, minmax(0, 1fr))',
     5: 'repeat(5, minmax(0, 1fr))',
     6: 'repeat(6, minmax(0, 1fr))',
-  },
-  scale: {
-    0: '0',
-    50: '.5',
-    75: '.75',
-    90: '.9',
-    95: '.95',
-    100: '1',
-    105: '1.05',
-    110: '1.1',
-    125: '1.25',
-    150: '1.5',
-  },
-  rotate: {
-    '-180': '-180deg',
-    '-90': '-90deg',
-    '-45': '-45deg',
-    0: '0',
-    45: '45deg',
-    90: '90deg',
-    180: '180deg',
   },
   translate: (theme, { negative }) => ({
     ...theme('spacing'),
