@@ -26,9 +26,6 @@
     "react": "^16.9.0",
     "twin.macro": "^1.9.0"
   },
-  "dependencies": {
-    "@gatsby-mdx-suite/helpers": "^0.9.3"
-  },
   "publishConfig": {
     "access": "public"
   }

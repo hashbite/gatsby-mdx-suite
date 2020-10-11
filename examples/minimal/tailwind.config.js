@@ -1,5 +1,5 @@
 const merge = require('deepmerge')
-const defaultTheme = require('gatsby-theme-mdx-suite-base/tailwind.config.js')
+const defaultTheme = require('gatsby-theme-mdx-suite-core/tailwind.config.js')
 
 // If you need to access the tailwind default theme values:
 // const defaultTailwindTheme = require('tailwindcss/defaultTheme')

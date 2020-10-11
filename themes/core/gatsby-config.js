@@ -38,8 +38,8 @@ module.exports = (themeConfig) => {
         options: {
           postcssOptions: {
             plugins: [
-              'tailwindcss',
-              'autoprefixer',
+              require('tailwindcss')(),
+              require('autoprefixer')(),
               require('cssnano')({
                 preset: 'default',
               }),
@@ -51,7 +51,7 @@ module.exports = (themeConfig) => {
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
       // DX
-      // `gatsby-plugin-loadable-components-ssr`,
+      `gatsby-plugin-loadable-components-ssr`,
     ].filter(Boolean),
   }
 }

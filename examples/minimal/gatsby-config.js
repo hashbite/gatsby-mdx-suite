@@ -25,8 +25,6 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-webpack-bundle-analyser-v2',
-
     // Project specific plugins & configuration
     // ...
   ].filter(Boolean),
