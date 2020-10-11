@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useCallback } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
-const MENU_TRIGGER_BREAKPOINT = 3
+import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
+
+const MENU_TRIGGER_BREAKPOINT = 'md'
 
 const StyledNav = styled.nav(
   ({ gridArea, inverted }) => css`
@@ -76,36 +78,12 @@ const Content = styled.div(
 )
 
 const Nav = ({ children, gridArea, inverted, title }) => {
-  const currentBreakpoint = 0 // @todo useBreakpointIndex()
-  const [lastBreakpoint, setLastBreakpoint] = useState(currentBreakpoint)
-  const [isOpen, setIsOpen] = useState(
-    currentBreakpoint > MENU_TRIGGER_BREAKPOINT
-  )
+  const breakpoints = useBreakpoint()
+  const [isOpen, setIsOpen] = useState(breakpoints[MENU_TRIGGER_BREAKPOINT])
 
-  // Automatically open & close menu when screen width changes
-  useEffect(() => {
-    if (currentBreakpoint !== lastBreakpoint) {
-      const shouldCloseMenu =
-        isOpen &&
-        currentBreakpoint <= MENU_TRIGGER_BREAKPOINT &&
-        lastBreakpoint > currentBreakpoint
-      const shouldOpenMenu =
-        !isOpen &&
-        currentBreakpoint > MENU_TRIGGER_BREAKPOINT &&
-        lastBreakpoint < currentBreakpoint
-      if (shouldCloseMenu) {
-        setIsOpen(false)
-      }
-      if (shouldOpenMenu) {
-        setIsOpen(true)
-      }
-      setLastBreakpoint(currentBreakpoint)
-    }
-  }, [currentBreakpoint, isOpen, lastBreakpoint])
-
-  const handleTriggerClick = () => {
-    setIsOpen(!isOpen)
-  }
+  const handleTriggerClick = useCallback(() => {
+    setIsOpen((isOpen) => !isOpen)
+  }, [])
 
   return (
     <StyledNav isOpen={isOpen} gridArea={gridArea} inverted={inverted}>

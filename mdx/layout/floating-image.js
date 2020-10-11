@@ -3,11 +3,11 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
-// import { useBreakpointIndex } from '@theme-ui/match-media'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
+import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 
 const Wrapper = styled.div`
   ${tw`relative`}
@@ -138,18 +138,14 @@ const ImageWrapper = styled.div(
  * </FloatingImage>
  */
 export default function FloatingImage({ children, imageId, reverse, fit }) {
-  const currentBreakpoint = 0 // @todo useBreakpointIndex()
+  const breakpoints = useBreakpoint()
   return (
     <Wrapper>
       <ContentWrapper reverse={reverse}>
         <Content reverse={reverse}>{children}</Content>
       </ContentWrapper>
       <ImageWrapper reverse={reverse}>
-        <Image
-          id={imageId}
-          contextKey="screen"
-          fit={(currentBreakpoint > 1) & fit}
-        />
+        <Image id={imageId} contextKey="screen" fit={breakpoints.md && fit} />
       </ImageWrapper>
     </Wrapper>
   )
