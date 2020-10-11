@@ -28,7 +28,7 @@ exports.createPages = async (
   }
 
   // Create blog post pages
-  result.data.allContentfulBlogPost.nodes.map((node) => {
+  result.data.allContentfulBlogPost.nodes.forEach((node) => {
     const { id, pageId, locale, slug, title } = node
 
     const path = createPath({ slug, locale, config, pageType: 'blogPost' })

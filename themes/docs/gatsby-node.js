@@ -123,7 +123,7 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
       throw result.errors
     }
 
-    result.data.allComponentMetadata.nodes.map((componentMetadata) => {
+    result.data.allComponentMetadata.nodes.forEach((componentMetadata) => {
       const { id, displayName, path, packageName, filename } = componentMetadata
 
       createPage({

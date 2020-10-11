@@ -33,6 +33,7 @@ export default function BandcampTrack({ id }) {
   return (
     <BandCampWrapper>
       <iframe
+        title={`bandcamp track #${id}`}
         src={`https://bandcamp.com/EmbeddedPlayer/track=${id}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/`}
         seamless
       />
