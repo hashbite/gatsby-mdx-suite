@@ -53,18 +53,24 @@ const SectionContentWrapper = styled.div(
   `
 )
 
-const BackgroundImageWrapper = styled.div`
-  ${tw`absolute z-0 inset-0`}
+const BackgroundImageWrapper = styled.div(
+  ({ backgroundImageOpacity }) => css`
+    ${tw`absolute z-0 inset-0`}
 
-  /* Hack gatsby-image to act as background image */
+    /* Hack gatsby-image to act as background image */
   & .gatsby-image-wrapper {
-    position: static !important;
-  }
+      position: static !important;
+    }
 
-  & img {
-    height: 100%;
-  }
-`
+    & img {
+      height: 100%;
+      ${backgroundImageOpacity !== '1' &&
+      css`
+        opacity: ${backgroundImageOpacity};
+      `}
+    }
+  `
+)
 /**
  * Sections are content seperators and serve multiple purposes:
  *
@@ -122,6 +128,7 @@ const BackgroundImageWrapper = styled.div`
 export default function Section({
   children,
   backgroundImageId,
+  backgroundImageOpacity,
   colorSet,
   colors,
   textShadow,
@@ -130,6 +137,9 @@ export default function Section({
   verticalAlign,
   horizontalAlign,
 }) {
+  if (backgroundImageId && !colorSet) {
+    colorSet = 'background-image'
+  }
   return (
     <ColorSet name={colorSet} {...colors}>
       <SectionWrapper
@@ -139,7 +149,9 @@ export default function Section({
         horizontalAlign={convertToFlexAlignment(horizontalAlign)}
       >
         {backgroundImageId && (
-          <BackgroundImageWrapper>
+          <BackgroundImageWrapper
+            backgroundImageOpacity={backgroundImageOpacity}
+          >
             <Image contextKey="screen" id={backgroundImageId} fit="cover" />
           </BackgroundImageWrapper>
         )}
@@ -161,12 +173,18 @@ Section.defaultProps = {
   colors: {},
   textShadow: false,
   verticalAlign: 'center',
+  backgroundImageOpacity: '1',
 }
 
 Section.propTypes = {
   children: propTypes.node,
   /** image id to display as background image */
   backgroundImageId: propTypes.string,
+  /** Set the opacity for the background image */
+  backgroundImageOpacity: propTypes.oneOfType([
+    propTypes.string,
+    propTypes.number,
+  ]),
   /** Define a color set for this box */
   colorSet: propTypes.string,
   /** Overwrite specific colors */
