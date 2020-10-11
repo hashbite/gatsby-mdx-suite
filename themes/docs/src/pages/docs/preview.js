@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import propTypes from 'prop-types'
 import loadable from '@loadable/component'
 import tw from 'twin.macro'
+import styled from '@emotion/styled'
 import useEventListener from '@use-it/event-listener'
 
 import Layout from 'gatsby-theme-mdx-suite-base/src/components/layout/layout'
@@ -13,7 +14,7 @@ const MDX = loadable(() =>
 
 const PreviewFailedWrapper = tw.div`flex flex-col justify-center text-center w-screen h-screen`
 
-const ContentWrapper = tw.div`prose`
+const ContentWrapper = styled.div``
 
 class MDXErrorBoundary extends React.Component {
   constructor(props) {

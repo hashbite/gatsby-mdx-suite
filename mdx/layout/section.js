@@ -40,7 +40,7 @@ const SectionWrapper = styled.section(
 
 function calcGapValue(gap, theme) {
   const customSize = gap && theme.spacing[gap]
-  return customSize || `calc(${theme.spacing['content-gap']} * 2)`
+  return customSize || theme.spacing['content-gap']
 }
 
 const SectionContentWrapper = styled.div(
@@ -48,8 +48,8 @@ const SectionContentWrapper = styled.div(
     ${tw`relative z-10`}
     ${!horizontalAlign && centerToContentColumn(props)}
 
-    padding-top: ${calcGapValue(props.gapTop || props.gap, props.theme)};
-    padding-bottom: ${calcGapValue(props.gapBottom || props.gap, props.theme)};
+    margin-top: ${calcGapValue(props.gapTop || props.gap, props.theme)};
+    margin-bottom: ${calcGapValue(props.gapBottom || props.gap, props.theme)};
   `
 )
 

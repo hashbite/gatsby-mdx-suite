@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import * as propTypes from 'prop-types'
-import tw from 'twin.macro'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { useTranslation } from 'react-i18next'
 
@@ -10,8 +9,6 @@ import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
 import Layout from 'gatsby-theme-mdx-suite-base/src/components/layout/layout'
 import Seo from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
-
-const Content = tw.div`prose`
 
 function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
@@ -35,9 +32,7 @@ function PageTemplate({ data, pageContext }) {
     >
       <Layout>
         <Seo title={title} />
-        <Content>
-          <MDXRenderer>{content.childMdx.body}</MDXRenderer>
-        </Content>
+        <MDXRenderer>{content.childMdx.body}</MDXRenderer>
       </Layout>
     </MdxSuiteContext.Provider>
   )

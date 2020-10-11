@@ -24,7 +24,7 @@ export const ImageWrapper = styled('div', {
       'position',
     ].includes(prop),
 })(
-  ({ width, height, fitsParent, fit, position }) => css`
+  ({ width, height, fitsParent, fit, position, ...props }) => css`
     ${fitsParent
       ? css`
           display: block;

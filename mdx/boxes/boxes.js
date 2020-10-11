@@ -3,12 +3,12 @@ import propTypes from 'prop-types'
 
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-
-import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
+import tw from 'twin.macro'
 
 const StyledBoxes = styled.div(
   ({ theme }) =>
     css`
+      ${tw`my-content-gap`}
       position: relative;
       display: grid;
       grid-gap: ${theme.spacing.gridGutter || '1rem'};
@@ -21,10 +21,8 @@ const StyledBoxes = styled.div(
         grid-auto-rows: 1fr;
       }
 
-      ${applyContentGap({ theme })}
-
       // Ensure square base grid
-    &:before {
+      &:before {
         content: '';
         width: 0;
         padding-bottom: 100%;

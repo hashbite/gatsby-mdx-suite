@@ -22,7 +22,6 @@
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@gatsby-mdx-suite/contexts": "^0.3.5",
-    "@tailwindcss/typography": "^0.2.0",
     "autoprefixer": "^10.0.1",
     "cheerio": "0.22.0",
     "cssnano": "^4.1.10",

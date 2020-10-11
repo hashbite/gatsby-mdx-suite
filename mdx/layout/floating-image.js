@@ -28,6 +28,7 @@ const ContentWrapper = styled.div(
 const Content = styled.div(
   ({ theme, reverse }) => css`
     @media (min-width: ${theme.screens.md}) {
+      ${tw`my-content-gap`}
       flex: 0 0 50%;
       padding-right: calc(${theme.spacing['grid-gap']} / 2);
       ${reverse &&
@@ -42,6 +43,10 @@ const Content = styled.div(
 const ImageWrapper = styled.div(
   ({ theme, reverse }) => css`
     ${tw`overflow-hidden`}
+
+    > div {
+      display: block;
+    }
 
     @media (min-width: ${theme.screens.md}) {
       ${tw`absolute z-0 flex flex-col justify-center pb-0`}

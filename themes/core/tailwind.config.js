@@ -100,53 +100,77 @@ module.exports = {
         'content-column': '1200px',
       },
     },
-    typography: (theme) => ({
-      default: {
-        css: {
-          color: theme('colors.text'),
-          maxWidth: null,
-          img: { marginTop: null, marginBottom: null },
-          a: {
-            color: theme('colors.primary'),
-          },
-          // We have our own bullet points for unordered lists
-          'ul > li::before': false,
-        },
-      },
-    }),
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    // Font families, size and colors
     plugin(function ({ addBase, config }) {
       addBase({
         html: {
           color: config('theme.colors.text'),
         },
         h1: {
-          color: config('theme.colors.text'),
+          color: config('theme.colors.headline'),
           fontFamily: config('theme.fontFamily.headline').join(', '),
+          fontSize: config('theme.fontSize.4xl'),
+          lineHeight: config('theme.lineHeight.none'),
         },
         h2: {
-          color: config('theme.colors.text'),
+          color: config('theme.colors.headline'),
           fontFamily: config('theme.fontFamily.headline').join(', '),
+          fontSize: config('theme.fontSize.3xl'),
+          lineHeight: config('theme.lineHeight.tight'),
         },
         h3: {
-          color: config('theme.colors.text'),
+          color: config('theme.colors.headline'),
           fontFamily: config('theme.fontFamily.headline').join(', '),
+          fontSize: config('theme.fontSize.2xl'),
+          lineHeight: config('theme.lineHeight.tight'),
         },
         h4: {
-          color: config('theme.colors.text'),
+          color: config('theme.colors.headline'),
           fontFamily: config('theme.fontFamily.headline').join(', '),
+          fontSize: config('theme.fontSize.xl'),
+          lineHeight: config('theme.lineHeight.snug'),
         },
         h5: {
-          color: config('theme.colors.text'),
+          color: config('theme.colors.headline'),
           fontFamily: config('theme.fontFamily.headline').join(', '),
+          fontSize: config('theme.fontSize.lg'),
+          lineHeight: config('theme.lineHeight.snug'),
         },
         h6: {
-          color: config('theme.colors.text'),
+          color: config('theme.colors.headline'),
           fontFamily: config('theme.fontFamily.headline').join(', '),
         },
       })
+    }),
+    // Apply content gap to MDX block elements
+    plugin(function ({ addBase, config }) {
+      const contentBlockElements = [
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
+        'h6',
+        'p',
+        'ul',
+        'ol',
+        'blockquote',
+        'dl',
+        'dd',
+        'hr',
+        'figure',
+        'pre',
+      ]
+      const contentBlockStyles = {}
+      contentBlockElements.forEach((element) => {
+        contentBlockStyles[element] = {
+          marginTop: config('theme.spacing.content-gap'),
+          marginBottom: config('theme.spacing.content-gap'),
+        }
+      })
+      addBase(contentBlockStyles)
     }),
   ],
   purge: false,
