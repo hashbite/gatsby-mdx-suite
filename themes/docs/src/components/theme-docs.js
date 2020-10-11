@@ -43,6 +43,7 @@ const ColorSwatch = styled.div(
 
     &:before {
       content: '${color}';
+      color: white;
       mix-blend-mode: difference;
     }
   `
@@ -83,6 +84,9 @@ const GridItemContent = tw.div``
 
 const ColorSetTitle = tw.h2`mb-4`
 
+const ColorSwatches = tw.div`flex gap-4`
+const ColorSwatchWrapper = tw.div``
+
 function ThemeDocs() {
   const theme = useTheme()
   const icons = useContext(IconsContext)
@@ -117,10 +121,20 @@ function ThemeDocs() {
                             <strong>{name}:</strong>
                           </td>
                           <td>
-                            {Array.isArray(colorData) ? (
-                              colorData.map((value, i) => (
-                                <ColorSwatch key={i} color={value} />
-                              ))
+                            {typeof colorData === 'object' ? (
+                              <ColorSwatches>
+                                {Object.keys(colorData).map(
+                                  (colorVariant, i) => (
+                                    <ColorSwatchWrapper key={i}>
+                                      <ColorSwatch
+                                        color={colorData[colorVariant]}
+                                      />
+                                      <br />
+                                      {colorVariant}
+                                    </ColorSwatchWrapper>
+                                  )
+                                )}
+                              </ColorSwatches>
                             ) : (
                               <ColorSwatch color={colorData} />
                             )}
