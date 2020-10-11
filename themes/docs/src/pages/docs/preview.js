@@ -7,7 +7,9 @@ import useEventListener from '@use-it/event-listener'
 import Layout from 'gatsby-theme-mdx-suite-base/src/components/layout/layout'
 import DataProvider from '../../components/data-provider'
 
-const MDX = loadable(() => import('@mdx-js/runtime'))
+const MDX = loadable(() =>
+  import(/* webpackChunkName: "mdx-runtime" */ '@mdx-js/runtime')
+)
 
 const PreviewFailedWrapper = tw.div`flex flex-col justify-center text-center w-screen h-screen`
 
