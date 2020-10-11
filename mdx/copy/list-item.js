@@ -1,18 +1,26 @@
 import React from 'react'
 import propTypes from 'prop-types'
+import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import Icon from './icon'
 
-const StyledListItem = tw.li`
-  flex
-  pb-4 ml-4
-  list-none
+const StyledListItem = styled.li(
+  ({ iconColor, type }) => css`
+    ${type === 'ordered' &&
+    css`
+      &:before {
+        color: ${iconColor};
+      }
+    `}
+  `
+)
+
+const ListItemIcon = styled(Icon)`
+  ${tw`absolute left-0`}
+  top: 0.35em;
 `
-
-const ListItemIconWrapper = tw.div`flex items-center w-8 justify-center`
-const ListItemContent = tw.div`pl-4`
-
 /**
  * Renders a list with an optional title and customizable bullet points.
  *
@@ -32,25 +40,29 @@ const ListItemContent = tw.div`pl-4`
  * <ListItem icon="dot" iconColor="red-500">Colored example for icon **dot**</ListItem>
  * </List>
  */
-const ListItem = ({ icon, iconColor, children, ...props }) => {
+const ListItem = ({ icon, iconColor, children, type, ...props }) => {
   return (
-    <StyledListItem {...props}>
-      <ListItemIconWrapper>
-        <Icon icon={icon} color={iconColor} valign="center" />
-      </ListItemIconWrapper>
-      <ListItemContent>{children}</ListItemContent>
+    <StyledListItem {...props} iconColor={iconColor}>
+      {type === 'unordered' && (
+        <ListItemIcon icon={icon} color={iconColor} valign="center" />
+      )}
+      {children}
     </StyledListItem>
   )
 }
 
 ListItem.defaultProps = {
-  icon: 'dot',
+  type: 'unordered',
 }
 
 ListItem.propTypes = {
-  children: propTypes.node.isRequired,
+  children: propTypes.node,
+  /** Overwrite the default icon set by the wrapping `<List/>` component. */
   icon: propTypes.string,
+  /** Overwrite the default icon color set by the wrapping `<List/>` component. */
   iconColor: propTypes.string,
+  /** Unordered lists use icons, ordered lists use a counter as bullet points. This will automatically be set by the wrapping `<List/>` component. */
+  type: propTypes.oneOf(['ordered', 'unordered']),
 }
 
 export default ListItem

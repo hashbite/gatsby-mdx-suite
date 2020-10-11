@@ -38,7 +38,7 @@ const IconWrapper = styled.span(
  * <Icon icon="facebook" color="#4267B2" />
  * <Icon icon="youtube" color="red" />
  */
-const Icon = ({ icon, color, ...props }) => {
+const Icon = ({ icon, color, svgProps, ...props }) => {
   const icons = useContext(IconsContext)
   const IconData = icons.get(icon)
   if (!IconData) {
@@ -46,8 +46,8 @@ const Icon = ({ icon, color, ...props }) => {
   }
   const ActualIcon = IconData.icon
   return (
-    <IconWrapper scale={IconData.scale} color={color}>
-      <ActualIcon valign="baseline" {...props} />
+    <IconWrapper scale={IconData.scale} color={color} {...props}>
+      <ActualIcon valign="baseline" {...svgProps} />
     </IconWrapper>
   )
 }
@@ -55,6 +55,7 @@ const Icon = ({ icon, color, ...props }) => {
 Icon.propTypes = {
   icon: propTypes.string.isRequired,
   color: propTypes.string,
+  svgProps: propTypes.object,
 }
 
 export default Icon

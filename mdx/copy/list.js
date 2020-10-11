@@ -59,7 +59,12 @@ const StyledList = tw.ul`mt-4 mb-8 p-0`
  * </ListItem>
  * </List>
  */
-export default function List({ defaultIcon, defaultIconColor, children }) {
+export default function List({
+  type,
+  defaultIcon,
+  defaultIconColor,
+  children,
+}) {
   if (!children) {
     return null
   }
@@ -75,24 +80,33 @@ export default function List({ defaultIcon, defaultIconColor, children }) {
         key={i}
         icon={child.props.icon || defaultIcon}
         iconColor={child.props.iconColor || defaultIconColor}
+        type={type}
       >
         {child.props.children}
       </ListItem>
     ) : (
-      <ListItem key={i} icon={defaultIcon} iconColor={defaultIconColor}>
+      <ListItem
+        key={i}
+        icon={defaultIcon}
+        iconColor={defaultIconColor}
+        type={type}
+      >
         {child}
       </ListItem>
     )
   )
 
-  return <StyledList>{children}</StyledList>
+  return <StyledList as={type === 'ordered' && 'ol'}>{children}</StyledList>
 }
 
 List.defaultProps = {
   defaultIcon: 'dot',
+  type: 'unordered',
 }
 
 List.propTypes = {
+  /** Unordered lists use icons, ordered lists use a counter as bullet points */
+  type: propTypes.oneOf(['ordered', 'unordered']),
   children: propTypes.node.isRequired,
   defaultIcon: propTypes.string,
   defaultIconColor: propTypes.string,
