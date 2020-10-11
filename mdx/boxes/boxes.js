@@ -47,24 +47,20 @@ const StyledBoxes = styled.div(
  *
  * @example
  * <Boxes>
- *   <Box backgroundColor="tomato" />
- *   <Box backgroundColor="#BADA55" />
  *   <Box width="8" height="4" colorSet="red" />
  *   <Box height="4" colorSet="green" />
  *   <Box width="8" height="12" colorSet="blue" />
  * </Boxes>
  * @example
  * <Boxes>
- *   <Box backgroundColor="tomato" />
- *   <Box backgroundColor="#BADA55" />
+ *   <Box colors={{background: "tomato"}} />
+ *   <Box colors={{background: "#BADA55"}} />
  * </Boxes>
  */
 const Boxes = (props) => <StyledBoxes {...props} />
 
-Boxes.defaultProps = {}
-
 Boxes.propTypes = {
-  columns: propTypes.oneOfType([propTypes.number, propTypes.string]),
+  children: propTypes.node.isRequired,
 }
 
 export default Boxes
