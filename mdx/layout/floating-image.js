@@ -5,14 +5,22 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
+import convertToFlexAlignment from '@gatsby-mdx-suite/helpers/styling/convert-to-flex-alignment'
 import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 
-const Wrapper = styled.div`
-  ${tw`relative`}
-  ${applyContentGap}
-`
+const FloatingImageWrapper = styled.section(
+  ({ minHeight, verticalAlign }) => css`
+    ${tw`relative`}
+    min-height: ${minHeight};
+
+    ${verticalAlign &&
+    css`
+      ${tw`flex flex-col`}
+      justify-content: ${verticalAlign};
+    `}
+  `
+)
 
 const ContentWrapper = styled.div(
   ({ reverse, ...props }) => css`
@@ -142,23 +150,35 @@ const ImageWrapper = styled.div(
  *
  * </FloatingImage>
  */
-export default function FloatingImage({ children, imageId, reverse, fit }) {
+export default function FloatingImage({
+  children,
+  imageId,
+  reverse,
+  fit,
+  verticalAlign,
+  ...props
+}) {
   const breakpoints = useBreakpoint()
   return (
-    <Wrapper>
+    <FloatingImageWrapper
+      verticalAlign={convertToFlexAlignment(verticalAlign)}
+      {...props}
+    >
       <ContentWrapper reverse={reverse}>
         <Content reverse={reverse}>{children}</Content>
       </ContentWrapper>
       <ImageWrapper reverse={reverse}>
         <Image id={imageId} contextKey="screen" fit={breakpoints.md && fit} />
       </ImageWrapper>
-    </Wrapper>
+    </FloatingImageWrapper>
   )
 }
 
 FloatingImage.defaultProps = {
   fit: 'cover',
   reverse: false,
+  minHeight: '40vh',
+  verticalAlign: 'center',
 }
 
 FloatingImage.propTypes = {
@@ -182,4 +202,8 @@ FloatingImage.propTypes = {
    * https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
    */
   fit: propTypes.string,
+  /** Set the minimum size for the section. Usually used with `100vh` to achieve full screen sizes. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  minHeight: propTypes.string,
+  /** Vertical alignment if the available space exceeds the content height */
+  verticalAlign: propTypes.oneOf(['start', 'center', 'end']),
 }
