@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from 'react'
+import React, { useState, useEffect, useContext, useRef, useMemo } from 'react'
 import { useDebounce } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
@@ -106,19 +106,29 @@ function LiveEditor({ editorId, initialValue, layout }) {
     data: { full, youtubeVideos, instagramPosts },
   } = useContext(MdxSuiteContext)
 
-  const images = full.filter(
-    ({ file: { contentType } }) => !isVideo(contentType)
+  const images = useMemo(
+    () => full.filter(({ file: { contentType } }) => !isVideo(contentType)),
+    [full]
   )
 
-  const pictures = images.filter(
-    ({ file: { contentType } }) => contentType.indexOf('svg') === -1
+  const pictures = useMemo(
+    () =>
+      images.filter(
+        ({ file: { contentType } }) => contentType.indexOf('svg') === -1
+      ),
+    [images]
   )
-  const graphics = images.filter(
-    ({ file: { contentType } }) => contentType.indexOf('svg') !== -1
+  const graphics = useMemo(
+    () =>
+      images.filter(
+        ({ file: { contentType } }) => contentType.indexOf('svg') !== -1
+      ),
+    [images]
   )
 
-  const videos = full.filter(({ file: { contentType } }) =>
-    isVideo(contentType)
+  const videos = useMemo(
+    () => full.filter(({ file: { contentType } }) => isVideo(contentType)),
+    [full]
   )
 
   useEffect(() => {
@@ -188,7 +198,16 @@ function LiveEditor({ editorId, initialValue, layout }) {
     }
 
     parseMdx()
-  }, [unverifiedValue])
+  }, [
+    unverifiedValue,
+    graphics,
+    images,
+    pictures,
+    videos,
+    instagramPosts,
+    youtubeVideos,
+    localStorageId,
+  ])
 
   useEffect(() => {
     if (unverifiedValue !== editorValue && editorValue) {

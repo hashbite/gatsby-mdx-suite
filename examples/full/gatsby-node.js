@@ -26,10 +26,10 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
       throw result.errors
     }
 
-    result.data.allContentfulPage.nodes.map((node) => {
+    result.data.allContentfulPage.nodes.forEach((node) => {
       const { id, pageId, locale, slug, title } = node
 
-      // Ensure we do not overwrite out blog post listing
+      // Ensure we do not overwrite our blog post listing
       if (slug === 'blog') {
         return
       }

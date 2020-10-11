@@ -71,7 +71,7 @@ export default function AnchorHook({ to, as, verticalAlign, children }) {
         block: verticalAlign,
       })
     },
-    [to]
+    [verticalAlign, href]
   )
 
   return (

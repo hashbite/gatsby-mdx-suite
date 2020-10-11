@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions, getCache }) => {
       throw result.errors
     }
 
-    result.data.allContentfulPage.nodes.map((node) => {
+    result.data.allContentfulPage.nodes.forEach((node) => {
       const { id, pageId, locale, slug, title } = node
 
       const path = createPath({ slug, locale, config })

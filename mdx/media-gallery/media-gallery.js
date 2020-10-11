@@ -145,10 +145,6 @@ export default function MediaGallery({ children }) {
   const [views, setViews] = useState([])
   const { data } = useContext(MdxSuiteContext)
 
-  if (!children) {
-    return null
-  }
-
   const showItem = (index) => {
     setSelectedIndex(index)
     setModalIsOpen(true)
@@ -174,7 +170,11 @@ export default function MediaGallery({ children }) {
         return parser({ element, props, data })
       }).filter(Boolean)
     )
-  }, [children])
+  }, [data, children])
+
+  if (!children) {
+    return null
+  }
 
   return (
     <MediaGalleryWrapper>
