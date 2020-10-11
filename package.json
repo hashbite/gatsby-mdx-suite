@@ -13,7 +13,8 @@
     "publish": "lerna publish --conventional-commits",
     "check-dependencies": "lerna exec \"pwd && npx depcheck --ignore-dirs '.cache,public' .\" --no-bail --concurrency 1",
     "test": "jest",
-    "build-examples": "npx lerna run build --stream --scope 'gatsby-mdx-suite-example*'"
+    "build-examples": "npx lerna run build --stream --scope 'gatsby-mdx-suite-example*'",
+    "clean-examples": "npx lerna exec 'gatsby clean' --stream --scope 'gatsby-mdx-suite-example*'"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
