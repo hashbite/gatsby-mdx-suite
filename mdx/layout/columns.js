@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useMemo, useEffect, useState } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
-// import { useBreakpointIndex } from '@theme-ui/match-media'
+
+import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 import applyContentGap from '@gatsby-mdx-suite/helpers/styling/apply-content-gap'
 
 const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
@@ -109,25 +110,38 @@ const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
  * </Columns>
  */
 export default function Columns({ children, maxColumns, reverseAt, ...props }) {
-  const currentBreakpoint = 0 // @todo useBreakpointIndex()
+  const [columns, setColumns] = useState([])
 
-  if (!children) {
+  useEffect(() => {
+    if (children) {
+      setColumns(Array.isArray(children) ? children : [children])
+    }
+  }, [children])
+
+  const breakpoints = useBreakpoint()
+
+  const realMaxColumns = useMemo(() => {
+    const desiredColumns =
+      parseInt(maxColumns) > 0 ? parseInt(maxColumns) : columns.length
+    if (desiredColumns > 12) {
+      return 12
+    }
+    return desiredColumns
+  }, [maxColumns, columns.length])
+
+  useEffect(() => {
+    if (breakpoints[reverseAt]) {
+      setColumns((columns) => columns.slice().reverse())
+    }
+  }, [breakpoints, reverseAt])
+
+  if (!columns.length) {
     return null
   }
 
-  children = Array.isArray(children) ? children : [children]
-  maxColumns = parseInt(maxColumns) > 0 ? parseInt(maxColumns) : children.length
-  if (maxColumns > 12) {
-    maxColumns = 12
-  }
-
-  if (currentBreakpoint >= reverseAt) {
-    children = children.slice().reverse()
-  }
-
   return (
-    <ColumnsWrapper maxColumns={maxColumns} {...props}>
-      {children}
+    <ColumnsWrapper maxColumns={realMaxColumns} {...props}>
+      {columns}
     </ColumnsWrapper>
   )
 }
@@ -149,7 +163,7 @@ Columns.propTypes = {
    */
   template: propTypes.string,
   /** Reverse the order of all columns as soon given breakpoint is reached */
-  reverseAt: propTypes.oneOfType([propTypes.number, propTypes.string]),
+  reverseAt: propTypes.oneOf(['sm', 'md', 'lg', 'xl']),
   /** Center text content */
   center: propTypes.bool,
 }

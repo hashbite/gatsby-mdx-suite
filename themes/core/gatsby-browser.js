@@ -8,6 +8,7 @@ import { ThemeProvider } from 'emotion-theming'
 import tailwindConfigStub from 'tailwindcss/stubs/defaultConfig.stub'
 
 import MdxSuiteContextProvider from '@gatsby-mdx-suite/contexts/provider'
+import { BreakpointProvider } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 
 import minimumConfig from './minimum-config'
 import components from './src/components'
@@ -43,7 +44,9 @@ export const wrapRootElement = ({ element }, config) => {
   return (
     <MdxSuiteContextProvider themeConfig={mergedConfig}>
       <ThemeProvider theme={theme}>
-        <MDXProvider components={components}>{element}</MDXProvider>
+        <BreakpointProvider screens={theme.screens}>
+          <MDXProvider components={components}>{element}</MDXProvider>
+        </BreakpointProvider>
       </ThemeProvider>
     </MdxSuiteContextProvider>
   )
