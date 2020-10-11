@@ -5,11 +5,11 @@ import { initReactI18next } from 'react-i18next'
 import merge from 'deepmerge'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from 'emotion-theming'
-import tailwindConfigStub from 'tailwindcss/stubs/defaultConfig.stub'
 
 import MdxSuiteContextProvider from '@gatsby-mdx-suite/contexts/provider'
 import { BreakpointProvider } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 
+import tailwindConfigStub from './src/tailwind.default.config'
 import minimumConfig from './minimum-config'
 import components from './src/components'
 import './src/tailwind.css'
@@ -19,7 +19,7 @@ export const wrapRootElement = ({ element }, config) => {
 
   const { translations, langs, defaultLocale, themeConfig } = mergedConfig
 
-  const theme = merge(tailwindConfigStub.theme, themeConfig.theme.extend)
+  const theme = merge(tailwindConfigStub, themeConfig.theme.extend)
 
   i18n
     // pass the i18n instance to react-i18next.
