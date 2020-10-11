@@ -251,59 +251,63 @@ function ThemeDocs() {
                 <FontPreview key={font} font={font}>
                   <h1
                     css={css`
-                      font-family: ${theme.fontFamily[font]};
+                      font-family: ${theme.fontFamily[font].join(', ')};
                     `}
                   >
-                    <strong>{font}:</strong> The quick brown fox jumps over the
-                    lazy dog
+                    <strong>{font} h1:</strong> The quick brown fox jumps over
+                    the lazy dog
                   </h1>
                   <h2
                     css={css`
-                      font-family: ${theme.fontFamily[font]};
+                      font-family: ${theme.fontFamily[font].join(', ')};
                     `}
                   >
-                    <strong>{font}:</strong> The quick brown fox jumps over the
-                    lazy dog
+                    <strong>{font} h2:</strong> The quick brown fox jumps over
+                    the lazy dog
                   </h2>
                   <h3
                     css={css`
-                      font-family: ${theme.fontFamily[font]};
+                      font-family: ${theme.fontFamily[font].join(', ')};
                     `}
                   >
-                    <strong>{font}:</strong> The quick brown fox jumps over the
-                    lazy dog
+                    <strong>{font} h3:</strong> The quick brown fox jumps over
+                    the lazy dog
                   </h3>
                   <h4
                     css={css`
-                      font-family: ${theme.fontFamily[font]};
+                      font-family: ${theme.fontFamily[font].join(', ')};
                     `}
                   >
-                    <strong>{font}:</strong> The quick brown fox jumps over the
-                    lazy dog
+                    <strong>{font} h4:</strong> The quick brown fox jumps over
+                    the lazy dog
                   </h4>
                   <h5
                     css={css`
-                      font-family: ${theme.fontFamily[font]};
+                      font-family: ${theme.fontFamily[font].join(', ')};
                     `}
                   >
-                    <strong>{font}:</strong> The quick brown fox jumps over the
-                    lazy dog
+                    <strong>{font} h5:</strong> The quick brown fox jumps over
+                    the lazy dog
                   </h5>
                   <h6
                     css={css`
-                      font-family: ${theme.fontFamily[font]};
+                      font-family: ${theme.fontFamily[font].join(', ')};
                     `}
                   >
-                    <strong>{font}:</strong> The quick brown fox jumps over the
-                    lazy dog
+                    <strong>{font} h6:</strong> The quick brown fox jumps over
+                    the lazy dog
                   </h6>
                   <p
                     css={css`
-                      font-family: ${theme.fontFamily[font]};
+                      font-family: ${theme.fontFamily[font].join(', ')};
                     `}
                   >
-                    <strong>{font}:</strong> The quick brown fox jumps over the
-                    lazy dog
+                    <strong>{font} p:</strong> The quick brown fox jumps over
+                    the lazy dog
+                  </p>
+                  <p>
+                    <strong>Font families: </strong>
+                    {theme.fontFamily[font].join(', ')}
                   </p>
                 </FontPreview>
               ))}
