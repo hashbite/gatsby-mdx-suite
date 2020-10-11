@@ -1,5 +1,13 @@
 import defaultComponents from 'gatsby-theme-mdx-suite-base/src/gatsby-theme-mdx-suite-core/components'
 
+// Special layout components
+import FloatingImage from '@gatsby-mdx-suite/mdx-layout/floating-image'
+import Boxes from '@gatsby-mdx-suite/mdx-boxes/boxes'
+import Box from '@gatsby-mdx-suite/mdx-boxes/box'
+import BoxVideo from '@gatsby-mdx-suite/mdx-boxes/box-video'
+import BoxCarousel from '@gatsby-mdx-suite/mdx-boxes/box-carousel'
+import BoxCarouselSlide from '@gatsby-mdx-suite/mdx-boxes/box-carousel-slide'
+
 // Video support
 import Video from '@gatsby-mdx-suite/mdx-video/video'
 import YoutubeVideo from '@gatsby-mdx-suite/mdx-youtube/youtube-video'
@@ -18,6 +26,13 @@ import CustomComponent from '../components/custom-component'
 
 export default {
   ...defaultComponents,
+  // Special layout
+  FloatingImage,
+  Boxes,
+  Box,
+  BoxVideo,
+  BoxCarousel,
+  BoxCarouselSlide,
   // Modal
   Modal,
   // Video
