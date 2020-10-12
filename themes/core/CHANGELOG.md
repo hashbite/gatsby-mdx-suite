@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.2.1...gatsby-theme-mdx-suite-core@0.2.2) (2020-10-12)
+
+
+### Bug Fixes
+
+* **config:** ensure minimum config arrays are replaced ([afde732](https://github.com/axe312ger/gatsby-mdx-suite/commit/afde732fbef0456506ca81537f5806e2961417c0))
+
+
+
+
+
 ## [0.2.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.2.0...gatsby-theme-mdx-suite-core@0.2.1) (2020-10-12)
 
 
