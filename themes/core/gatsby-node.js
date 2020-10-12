@@ -23,7 +23,11 @@ exports.onCreateWebpackConfig = ({ actions }) => {
  */
 exports.onPreBootstrap = async ({ getCache }, themeConfig) => {
   const cache = getCache()
-  await cache.set('mdx-suite', { config: merge(minimumConfig, themeConfig) })
+  await cache.set('mdx-suite', {
+    config: merge(minimumConfig, themeConfig, {
+      arrayMerge: (destinationArray, sourceArray, options) => sourceArray,
+    }),
+  })
 }
 
 exports.createResolvers = ({ createResolvers }, themeConfig) => {
