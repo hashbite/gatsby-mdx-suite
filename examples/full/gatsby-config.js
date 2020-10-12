@@ -13,7 +13,7 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby MDX Suite Full Example`,
     description: `Gatsby MDX suite with i18n and blog features`,
-    siteUrl: `https://axe312ger.github.io/gatsby-starter-mdx-suite`,
+    siteUrl: 'https://gatsbymdxsuiteexamplesfull.gtsb.io',
   },
   plugins: [
     {
@@ -51,7 +51,6 @@ module.exports = {
     // Basic layout, SEO, Analytics and more
     {
       resolve: `gatsby-theme-mdx-suite-base`,
-      // options: {}
     },
     // Enable blog
     {

@@ -1,4 +1,4 @@
-module.exports = ({ renderDocs = true }) => ({
+module.exports = ({ renderDocs = true } = {}) => ({
   plugins: [
     /**
      * Docs
@@ -19,11 +19,16 @@ module.exports = ({ renderDocs = true }) => ({
       options: {
         exclude: [`/docs/*`],
       },
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', disallow: ['/docs/*'] }],
+      },
+    },
     /**
      * Performance
-     */
-    `gatsby-plugin-bundle-stats`,
+     */ `gatsby-plugin-bundle-stats`,
     `gatsby-plugin-webpack-size`,
   ].filter(Boolean),
 })
