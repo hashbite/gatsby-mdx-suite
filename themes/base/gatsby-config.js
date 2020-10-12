@@ -14,7 +14,12 @@ module.exports = ({ renderDocs = true }) => ({
      */
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/docs/*`],
+      },
+    }
     /**
      * Performance
      */
