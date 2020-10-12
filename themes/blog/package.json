@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-suite-blog",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -27,6 +27,6 @@
     "@gatsby-mdx-suite/mdx-layout": "^0.18.0",
     "@gatsby-mdx-suite/mdx-link": "^0.8.1",
     "gatsby-awesome-pagination": "^0.3.6",
-    "gatsby-theme-mdx-suite-base": "^0.3.0"
+    "gatsby-theme-mdx-suite-base": "^0.3.1"
   }
 }

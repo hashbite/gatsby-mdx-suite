@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.2.0...gatsby-theme-mdx-suite-core@0.2.1) (2020-10-12)
+
+
+### Bug Fixes
+
+* **theme-config:** merge common default values into core theme ([7ad01b5](https://github.com/axe312ger/gatsby-mdx-suite/commit/7ad01b55ac861814a7bfabc2cb8c3e12c81a4a75))
+
+
+
+
+
 # [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.1.4...gatsby-theme-mdx-suite-core@0.2.0) (2020-10-11)
 
 
