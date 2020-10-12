@@ -15,7 +15,9 @@ import components from './src/components'
 import './src/tailwind.css'
 
 export const wrapRootElement = ({ element }, config) => {
-  const mergedConfig = merge(minimumConfig, config)
+  const mergedConfig = merge(minimumConfig, config, {
+    arrayMerge: (destinationArray, sourceArray, options) => sourceArray,
+  })
 
   const { translations, langs, defaultLocale, themeConfig } = mergedConfig
 
