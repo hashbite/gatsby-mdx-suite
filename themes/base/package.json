@@ -42,6 +42,7 @@
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-remove-trailing-slashes": "^2.3.13",
+    "gatsby-plugin-robots-txt": "^1.5.3",
     "gatsby-plugin-sitemap": "^2.4.17",
     "gatsby-plugin-webpack-size": "^1.0.0",
     "gatsby-theme-mdx-suite-core": "^0.4.3",

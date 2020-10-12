@@ -10,7 +10,7 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby MDX Suite Basic Example`,
     description: `Basic implementation of the suite.`,
-    siteUrl: `https://axe312ger.github.io/gatsby-starter-mdx-suite`,
+    siteUrl: `https://gatsbymdxsuiteexamplesbasic.gtsb.io`,
   },
   plugins: [
     {
@@ -33,7 +33,6 @@ module.exports = {
     // Basic layout, SEO, Analytics and more
     {
       resolve: `gatsby-theme-mdx-suite-base`,
-      // options: {}
     },
     // Project specific configuration
     `gatsby-transformer-video`,

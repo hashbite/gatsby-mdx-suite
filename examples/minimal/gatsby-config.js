@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby MDX Suite Minimal Example`,
     description: `Most minimal implementation of the suite`,
-    siteUrl: `https://axe312ger.github.io/gatsby-starter-mdx-suite`,
+    siteUrl: 'https://gatsbymdxsuiteexamplesminimal.gtsb.io',
   },
   plugins: [
     {
