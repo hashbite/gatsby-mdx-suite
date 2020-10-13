@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.2.2...gatsby-theme-mdx-suite-core@0.2.3) (2020-10-13)
+
+
+### Bug Fixes
+
+* **build:** force postcss to v7 till all deps are upgraded ([d285550](https://github.com/axe312ger/gatsby-mdx-suite/commit/d285550cacc4ee1bb83f0f4c78ab195cdf929b4f))
+
+
+
+
+
 ## [0.2.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.2.1...gatsby-theme-mdx-suite-core@0.2.2) (2020-10-12)
 
 
