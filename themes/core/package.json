@@ -32,13 +32,14 @@
     "gatsby-plugin-emotion": "^4.3.13",
     "gatsby-plugin-loadable-components-ssr": "^2.1.0",
     "gatsby-plugin-mdx": "^1.2.46",
-    "gatsby-plugin-postcss": "^3.0.1",
+    "gatsby-plugin-postcss": "^2",
     "gatsby-plugin-sharp": "^2.6.40",
     "gatsby-source-contentful": "^2.3.51",
     "gatsby-source-filesystem": "^2.3.34",
     "gatsby-transformer-sharp": "^2.5.17",
     "i18next": "^19.8.2",
     "lodash": "^4.17.20",
+    "postcss": "^7",
     "postcss-csso": "^4",
     "tailwindcss": "^1.8.10"
   }
