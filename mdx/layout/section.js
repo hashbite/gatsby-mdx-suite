@@ -11,6 +11,10 @@ import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 import convertToFlexAlignment from '@gatsby-mdx-suite/helpers/styling/convert-to-flex-alignment'
 
+const BackgroundVideo = styled(Video)`
+  ${tw`static`}
+`
+
 const SectionWrapper = styled.section(
   ({ textShadow, theme, minHeight, verticalAlign, horizontalAlign }) => {
     return css`
@@ -166,7 +170,7 @@ export default function Section({
               <Image contextKey="screen" id={backgroundImageId} fit="cover" />
             )}
             {backgroundVideoId && (
-              <Video
+              <BackgroundVideo
                 autoPlay
                 loop
                 muted

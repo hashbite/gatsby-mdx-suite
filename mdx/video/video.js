@@ -59,6 +59,7 @@ export default function Video({
   maxWidth,
   aspectRatio,
   contextKey,
+  className,
   ...props
 }) {
   const {
@@ -142,7 +143,11 @@ export default function Video({
       onChange={handleVideoIntersection}
       threshold={0.3}
     >
-      <VideoWrapper maxWidth={maxWidth} aspectRatio={aspectRatio}>
+      <VideoWrapper
+        maxWidth={maxWidth}
+        aspectRatio={aspectRatio}
+        className={className}
+      >
         <VideoTag
           ref={refVideo}
           onMouseEnter={handleVideoMouseEnter}
