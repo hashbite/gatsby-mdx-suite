@@ -9,7 +9,7 @@ import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 
 const StyledListItem = styled.li(
   ({ iconColor, type }) => css`
-    ${tw`relative pl-6 my-content-gap`}
+    ${tw`relative pl-6`}
 
     ${type === 'ordered' &&
     css`
