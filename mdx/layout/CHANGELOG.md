@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.18.0...@gatsby-mdx-suite/mdx-layout@0.19.0) (2020-10-14)
+
+
+### Features
+
+* **section:** add support for background videos ([88c5bfc](https://github.com/axe312ger/gatsby-mdx-suite/commit/88c5bfc6d6d4fabafd8070e7db469a4e0171cba2))
+
+
+
+
+
 # [0.18.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.17.4...@gatsby-mdx-suite/mdx-layout@0.18.0) (2020-10-11)
 
 
