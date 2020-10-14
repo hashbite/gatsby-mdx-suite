@@ -44,6 +44,7 @@ module.exports = {
     screen: {
       selector: [
         'Section[backgroundImageId]',
+        'Section[backgroundVideoId]',
         'Viewport[backgroundImageId]',
         'Header[backgroundImageId]',
         'Image[id][contextKey="screen"]',
@@ -55,6 +56,10 @@ module.exports = {
        */
       attribute: (el) => {
         switch (el.name) {
+          case 'section':
+            return el.attribs.backgroundvideoid
+              ? 'backgroundvideoid'
+              : 'backgroundimageid'
           case 'image':
           case 'video':
             return 'id'
