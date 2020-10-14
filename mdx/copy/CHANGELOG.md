@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.10.0...@gatsby-mdx-suite/mdx-copy@0.10.1) (2020-10-14)
+
+
+### Bug Fixes
+
+* **lists:** remove extra space between list items ([585638f](https://github.com/axe312ger/gatsby-mdx-suite/commit/585638fdae60e7b74780ab23ae890b2625105e96))
+
+
+
+
+
 # [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.9.4...@gatsby-mdx-suite/mdx-copy@0.10.0) (2020-10-11)
 
 

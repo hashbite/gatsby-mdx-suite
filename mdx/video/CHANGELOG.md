@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.6.0...@gatsby-mdx-suite/mdx-video@0.6.1) (2020-10-14)
+
+
+### Bug Fixes
+
+* **video:** allow Video to be properly positioned as background video ([8cf84fe](https://github.com/axe312ger/gatsby-mdx-suite/commit/8cf84fee288c49c6d85dff836ad3122ef34fcd91))
+
+
+
+
+
 # [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.5.3...@gatsby-mdx-suite/mdx-video@0.6.0) (2020-10-11)
 
 
