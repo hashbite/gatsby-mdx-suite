@@ -5,6 +5,8 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import Image from '@gatsby-mdx-suite/mdx-image/image'
+import Video from '@gatsby-mdx-suite/mdx-video/video'
+
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 import convertToFlexAlignment from '@gatsby-mdx-suite/helpers/styling/convert-to-flex-alignment'
@@ -53,12 +55,12 @@ const SectionContentWrapper = styled.div(
   `
 )
 
-const BackgroundImageWrapper = styled.div(
+const BackgroundMediaWrapper = styled.div(
   ({ backgroundImageOpacity }) => css`
     ${tw`absolute z-0 inset-0`}
 
     /* Hack gatsby-image to act as background image */
-  & .gatsby-image-wrapper {
+    & .gatsby-image-wrapper {
       position: static !important;
     }
 
@@ -68,6 +70,10 @@ const BackgroundImageWrapper = styled.div(
       css`
         opacity: ${backgroundImageOpacity};
       `}
+    }
+
+    & video {
+      ${tw`absolute inset-0 z-10 object-cover object-center w-full h-full`}
     }
   `
 )
@@ -136,10 +142,13 @@ export default function Section({
   minHeight,
   verticalAlign,
   horizontalAlign,
+  backgroundVideoId,
+  ...props
 }) {
   if (backgroundImageId && !colorSet) {
     colorSet = 'background-image'
   }
+  const hasBackgroundMedia = !!(backgroundImageId || backgroundVideoId)
   return (
     <ColorSet name={colorSet} {...colors}>
       <SectionWrapper
@@ -147,13 +156,25 @@ export default function Section({
         minHeight={minHeight}
         verticalAlign={convertToFlexAlignment(verticalAlign)}
         horizontalAlign={convertToFlexAlignment(horizontalAlign)}
+        {...props}
       >
-        {backgroundImageId && (
-          <BackgroundImageWrapper
+        {hasBackgroundMedia && (
+          <BackgroundMediaWrapper
             backgroundImageOpacity={backgroundImageOpacity}
           >
-            <Image contextKey="screen" id={backgroundImageId} fit="cover" />
-          </BackgroundImageWrapper>
+            {backgroundImageId && (
+              <Image contextKey="screen" id={backgroundImageId} fit="cover" />
+            )}
+            {backgroundVideoId && (
+              <Video
+                autoPlay
+                loop
+                muted
+                controls={false}
+                id={backgroundVideoId}
+              />
+            )}
+          </BackgroundMediaWrapper>
         )}
         {children && (
           <SectionContentWrapper
@@ -178,13 +199,15 @@ Section.defaultProps = {
 
 Section.propTypes = {
   children: propTypes.node,
-  /** image id to display as background image */
+  /** Id the background image */
   backgroundImageId: propTypes.string,
   /** Set the opacity for the background image */
   backgroundImageOpacity: propTypes.oneOfType([
     propTypes.string,
     propTypes.number,
   ]),
+  /** Id of the background video */
+  backgroundVideoId: propTypes.string,
   /** Define a color set for this box */
   colorSet: propTypes.string,
   /** Overwrite specific colors */
