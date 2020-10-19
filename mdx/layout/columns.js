@@ -5,10 +5,12 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
+import verticalRhythm from '@gatsby-mdx-suite/helpers/styling/vertical-rhythm'
 
 const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
   return css`
-    ${tw`w-full grid gap-grid-gap my-content-gap`}
+    ${tw`w-full grid gap-grid-gap`}
+    ${verticalRhythm}
     ${maxColumns === 2 && tw`sm:grid-cols-2`}
     ${maxColumns === 3 && tw`sm:grid-cols-3`}
     ${maxColumns === 4 && tw`sm:grid-cols-2 md:grid-cols-4`}

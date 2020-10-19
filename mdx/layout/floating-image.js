@@ -35,8 +35,8 @@ const ContentWrapper = styled.div(
 
 const Content = styled.div(
   ({ theme, reverse }) => css`
+    ${tw`my-section-gap`}
     @media (min-width: ${theme.screens.md}) {
-      ${tw`my-content-gap`}
       flex: 0 0 50%;
       padding-right: calc(${theme.spacing['grid-gap']} / 2);
       ${reverse &&

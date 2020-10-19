@@ -3,12 +3,12 @@ import propTypes from 'prop-types'
 
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import tw from 'twin.macro'
+import verticalRhythm from '@gatsby-mdx-suite/helpers/styling/vertical-rhythm'
 
 const StyledBoxes = styled.div(
   ({ theme }) =>
     css`
-      ${tw`my-content-gap`}
+      ${verticalRhythm}
       position: relative;
       display: grid;
       grid-gap: ${theme.spacing.gridGutter || '1rem'};

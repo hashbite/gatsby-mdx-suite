@@ -8,13 +8,13 @@ const TimelineEntryLabel = styled.div``
 
 const TimelineEntryWrapper = styled.div(
   ({ theme, bubbleSize }) => css`
-    ${tw`relative pr-4 py-4`}
+    ${tw`relative pr-4 py-4 my-content-gap`}
 
     ${TimelineEntryLabel} {
       ${tw`absolute z-10 border border-gray-500 rounded-full`}
       ${tw`text-sm text-gray-500 text-center`}
 
-    top: 50%;
+      top: 50%;
       right: 0;
       transform: translateY(-50%);
       width: ${bubbleSize}px;
