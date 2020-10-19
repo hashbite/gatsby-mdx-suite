@@ -7,35 +7,41 @@ import tw from 'twin.macro'
 import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 import verticalRhythm from '@gatsby-mdx-suite/helpers/styling/vertical-rhythm'
 
-const ColumnsWrapper = styled.div(({ theme, maxColumns, template, center }) => {
-  return css`
-    ${tw`w-full grid gap-grid-gap`}
-    ${verticalRhythm}
-    ${maxColumns === 2 && tw`sm:grid-cols-2`}
-    ${maxColumns === 3 && tw`sm:grid-cols-3`}
-    ${maxColumns === 4 && tw`sm:grid-cols-2 md:grid-cols-4`}
-    ${maxColumns === 5 && tw`grid-cols-2 sm:grid-cols-2 md:grid-cols-5`}
-    ${maxColumns === 6 && tw`grid-cols-2 sm:grid-cols-3 md:grid-cols-6`}
-    ${maxColumns === 7 && tw`grid-cols-2 sm:grid-cols-4 md:grid-cols-7`}
-    ${maxColumns === 8 && tw`grid-cols-2 sm:grid-cols-4 md:grid-cols-8`}
-    ${maxColumns === 9 && tw`grid-cols-3 sm:grid-cols-5 md:grid-cols-9`}
-    ${maxColumns === 10 && tw`grid-cols-3 sm:grid-cols-5 md:grid-cols-10`}
-    ${maxColumns === 11 && tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-11`}
-    ${maxColumns === 12 && tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-12`}
+const ColumnsWrapper = styled.div(
+  ({ theme, minColumns, maxColumns, template, center }) => {
+    return css`
+      ${tw`w-full grid gap-grid-gap`}
+      ${verticalRhythm}
 
-    ${template &&
-    css`
-      @media screen and (min-width: ${theme.screens.sm}) {
-        grid-template-columns: ${template};
-      }
-    `}
+    ${template
+        ? css`
+            grid-template-columns: ${template};
+          `
+        : css`
+            grid-template-columns: ${theme.gridTemplateColumns[minColumns]};
+            ${maxColumns === 2 && tw`sm:grid-cols-2`}
+            ${maxColumns === 3 && tw`sm:grid-cols-3`}
+            ${maxColumns === 4 && tw`sm:grid-cols-2 md:grid-cols-4`}
+            ${maxColumns === 5 && tw`grid-cols-2 sm:grid-cols-2 md:grid-cols-5`}
+            ${maxColumns === 6 && tw`grid-cols-2 sm:grid-cols-3 md:grid-cols-6`}
+            ${maxColumns === 7 && tw`grid-cols-2 sm:grid-cols-4 md:grid-cols-7`}
+            ${maxColumns === 8 && tw`grid-cols-2 sm:grid-cols-4 md:grid-cols-8`}
+            ${maxColumns === 9 && tw`grid-cols-3 sm:grid-cols-5 md:grid-cols-9`}
+            ${maxColumns === 10 &&
+            tw`grid-cols-3 sm:grid-cols-5 md:grid-cols-10`}
+            ${maxColumns === 11 &&
+            tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-11`}
+            ${maxColumns === 12 &&
+            tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-12`};
+          `}
 
     ${center &&
-    css`
-      text-align: center;
-    `}
-  `
-})
+      css`
+        text-align: center;
+      `}
+    `
+  }
+)
 
 /**
  * Display content next to each other.
@@ -150,20 +156,23 @@ Columns.displayName = 'Columns'
 
 Columns.defaultProps = {
   center: false,
+  minColumns: 1,
 }
 
 Columns.propTypes = {
   children: propTypes.node.isRequired,
-  /** Maximum number of columns. Defaults to number of items. */
+  /** Minimum number of columns for the smallest screen. */
+  minColumns: propTypes.oneOfType([propTypes.number, propTypes.string]),
+  /** Maximum number of columns for the biggest screen. Defaults to number of items. Maximum is 12. */
   maxColumns: propTypes.oneOfType([propTypes.number, propTypes.string]),
+  /** Reverse the order of all columns as soon given screen size is reached */
+  reverseAt: propTypes.oneOf(['sm', 'md', 'lg', 'xl']),
+  /** Center text content */
+  center: propTypes.bool,
   /**
-   * Custom css grid columns template. Applied at the first breakpoint.
+   * Custom css grid columns template.
    *
    * See: https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
    */
   template: propTypes.string,
-  /** Reverse the order of all columns as soon given breakpoint is reached */
-  reverseAt: propTypes.oneOf(['sm', 'md', 'lg', 'xl']),
-  /** Center text content */
-  center: propTypes.bool,
 }
