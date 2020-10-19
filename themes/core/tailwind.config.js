@@ -8,9 +8,10 @@ module.exports = merge(
     theme: {
       extend: {
         spacing: {
+          'grid-gap': defaultTailwindTheme.spacing['8'],
+          'section-gap': defaultTailwindTheme.spacing['12'],
+          'content-gap': defaultTailwindTheme.spacing['4'],
           'content-column-padding': '2vw',
-          'grid-gap': '1rem',
-          'content-gap': '1rem',
           'content-column': '1200px',
         },
         colors: {
@@ -78,30 +79,12 @@ module.exports = merge(
           headline: defaultTailwindTheme.fontFamily.serif,
           body: defaultTailwindTheme.fontFamily.sans,
         },
-        minWidth: {
-          'content-column-padding': '2vw',
-          'grid-gap': '1rem',
-          'content-gap': '1rem',
-          'content-column': '1200px',
-        },
-        maxWidth: {
-          'content-column-padding': '2vw',
-          'grid-gap': '1rem',
-          'content-gap': '1rem',
-          'content-column': '1200px',
-        },
-        minHeight: {
-          'content-column-padding': '2vw',
-          'grid-gap': '1rem',
-          'content-gap': '1rem',
-          'content-column': '1200px',
-        },
-        maxHeight: {
-          'content-column-padding': '2vw',
-          'grid-gap': '1rem',
-          'content-gap': '1rem',
-          'content-column': '1200px',
-        },
+        minWidth: (theme) => ({
+          'content-column': theme('spacing.content-column'),
+        }),
+        maxWidth: (theme) => ({
+          'content-column': theme('spacing.content-column'),
+        }),
       },
     },
     plugins: [
@@ -168,9 +151,12 @@ module.exports = merge(
         ]
         const contentBlockStyles = {}
         contentBlockElements.forEach((element) => {
-          contentBlockStyles[element] = {
-            marginTop: config('theme.spacing.content-gap'),
+          contentBlockStyles[`${element}:not(:last-child)`] = {
             marginBottom: config('theme.spacing.content-gap'),
+          }
+          contentBlockStyles[element] = {
+            marginTop: 0,
+            marginBottom: 0,
           }
         })
         addBase(contentBlockStyles)

@@ -46,7 +46,7 @@ const SectionWrapper = styled.section(
 
 function calcGapValue(gap, theme) {
   const customSize = gap && theme.spacing[gap]
-  return customSize || theme.spacing['content-gap']
+  return customSize || theme.spacing['section-gap']
 }
 
 const SectionContentWrapper = styled.div(
@@ -54,8 +54,8 @@ const SectionContentWrapper = styled.div(
     ${tw`relative z-10`}
     ${!horizontalAlign && centerToContentColumn(props)}
 
-    margin-top: ${calcGapValue(props.gapTop || props.gap, props.theme)};
-    margin-bottom: ${calcGapValue(props.gapBottom || props.gap, props.theme)};
+    margin-top: ${calcGapValue(props.gap, props.theme)};
+    margin-bottom: ${calcGapValue(props.gap, props.theme)};
   `
 )
 
@@ -218,7 +218,7 @@ Section.propTypes = {
   colors: propTypes.object,
   /** Optional slight text shadow to increase readability when using background images */
   textShadow: propTypes.bool,
-  /** Overwrite default horizontal content gap. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  /** Overwrite default vertical margin. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
   gap: propTypes.string,
   /** Set the minimum size for the section. Usually used with `100vh` to achieve full screen sizes. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
   minHeight: propTypes.string,

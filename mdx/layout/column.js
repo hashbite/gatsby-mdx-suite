@@ -205,7 +205,7 @@ const Column = ({
   }
 
   const hasBackground = !!colorSet || !!colors.background || !!backgroundImageId
-  const contentPadding = padding || (hasBackground ? 'grid-gap' : null)
+  const contentPadding = padding || (hasBackground ? 'content-gap' : null)
 
   let columnContent = (
     <StyledColumn
