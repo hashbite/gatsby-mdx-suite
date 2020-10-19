@@ -7,6 +7,8 @@ import Box from '@gatsby-mdx-suite/mdx-boxes/box'
 import BoxVideo from '@gatsby-mdx-suite/mdx-boxes/box-video'
 import BoxCarousel from '@gatsby-mdx-suite/mdx-boxes/box-carousel'
 import BoxCarouselSlide from '@gatsby-mdx-suite/mdx-boxes/box-carousel-slide'
+import Timeline from '@gatsby-mdx-suite/mdx-timeline/timeline'
+import TimelineEntry from '@gatsby-mdx-suite/mdx-timeline/timeline-entry'
 
 // Video support
 import Video from '@gatsby-mdx-suite/mdx-video/video'
@@ -33,6 +35,8 @@ export default {
   BoxVideo,
   BoxCarousel,
   BoxCarouselSlide,
+  Timeline,
+  TimelineEntry,
   // Modal
   Modal,
   // Video

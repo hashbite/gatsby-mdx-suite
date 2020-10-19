@@ -22,6 +22,7 @@
     "@gatsby-mdx-suite/mdx-layout": "^0.19.1",
     "@gatsby-mdx-suite/mdx-modal": "^0.1.2",
     "@gatsby-mdx-suite/mdx-scroll-effects": "^0.1.1",
+    "@gatsby-mdx-suite/mdx-timeline": "^0.6.0",
     "@gatsby-mdx-suite/mdx-video": "^0.6.1",
     "@gatsby-mdx-suite/mdx-vimeo": "^0.2.0",
     "@gatsby-mdx-suite/mdx-youtube": "^0.6.0",
