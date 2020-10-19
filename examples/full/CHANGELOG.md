@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.3.5...gatsby-mdx-suite-example-full@0.4.0) (2020-10-19)
+
+
+### Features
+
+* **components:** add Timeline and TimelineEntry ([910bfcb](https://github.com/axe312ger/gatsby-mdx-suite/commit/910bfcb8b43fe3c7af2e22b3b7dadc820621c675))
+
+
+
+
+
 ## [0.3.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.3.4...gatsby-mdx-suite-example-full@0.3.5) (2020-10-14)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-full

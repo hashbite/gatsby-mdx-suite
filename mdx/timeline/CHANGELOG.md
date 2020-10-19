@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.6.0...@gatsby-mdx-suite/mdx-timeline@0.7.0) (2020-10-19)
+
+
+### Features
+
+* **spacing:** introduce verticalRhythm helper and section-gap theme variable ([e412f97](https://github.com/axe312ger/gatsby-mdx-suite/commit/e412f978c7c00a09f333ee83a82a882bee5dd37a))
+
+
+
+
+
 # [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.5.4...@gatsby-mdx-suite/mdx-timeline@0.6.0) (2020-10-11)
 
 

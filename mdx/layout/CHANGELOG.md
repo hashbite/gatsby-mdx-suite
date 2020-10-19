@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.19.1...@gatsby-mdx-suite/mdx-layout@0.20.0) (2020-10-19)
+
+
+### Features
+
+* **columns:** introduce minColumns property to Columns and improve default mobile styling ([1b296ef](https://github.com/axe312ger/gatsby-mdx-suite/commit/1b296ef2114b0faf9632c9bb44909d2c580618ff))
+* **spacing:** introduce verticalRhythm helper and section-gap theme variable ([e412f97](https://github.com/axe312ger/gatsby-mdx-suite/commit/e412f978c7c00a09f333ee83a82a882bee5dd37a))
+
+
+
+
+
 ## [0.19.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.19.0...@gatsby-mdx-suite/mdx-layout@0.19.1) (2020-10-14)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.3.0...gatsby-theme-mdx-suite-core@0.4.0) (2020-10-19)
+
+
+### Bug Fixes
+
+* **styling:** ensure body font family is used by default ([f8a4e7d](https://github.com/axe312ger/gatsby-mdx-suite/commit/f8a4e7d05119ba520bb428b26034d1cf2c9c448b))
+
+
+### Features
+
+* **spacing:** introduce verticalRhythm helper and section-gap theme variable ([e412f97](https://github.com/axe312ger/gatsby-mdx-suite/commit/e412f978c7c00a09f333ee83a82a882bee5dd37a))
+
+
+
+
+
 # [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.2.3...gatsby-theme-mdx-suite-core@0.3.0) (2020-10-14)
 
 

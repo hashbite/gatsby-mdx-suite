@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-scroll-effects",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -29,6 +29,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/mdx-link": "^0.8.1"
+    "@gatsby-mdx-suite/mdx-link": "^0.8.2"
   }
 }
