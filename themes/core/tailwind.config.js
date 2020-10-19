@@ -93,6 +93,7 @@ module.exports = merge(
         addBase({
           html: {
             color: config('theme.colors.text'),
+            fontFamily: config('theme.fontFamily.body').join(', '),
           },
           h1: {
             color: config('theme.colors.headline'),
