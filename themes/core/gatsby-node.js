@@ -134,13 +134,6 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
 
   const typeDefs = [
     `
-    type FakeFile implements Node @dontInfer {
-      url: String
-      contentType: String
-      childImageSharp: ImageSharp
-    }
-    `,
-    `
     type ContentfulMenuItem implements Node {
       contentful_id: String
       title: String
@@ -150,21 +143,6 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
       openInNewTab: Boolean
       hiddenOnMobile: Boolean
       subitems: [ContentfulMenuItem]
-    }
-    `,
-    `
-    type FakeSvg implements Node {
-      content: String
-    }
-    `,
-    `
-    type ContentfulAsset implements Node {
-      svg: FakeSvg
-      node_locale: String
-      title: String
-      contentful_id: String
-      description: String
-      file: FakeFile
     }
     `,
     `
