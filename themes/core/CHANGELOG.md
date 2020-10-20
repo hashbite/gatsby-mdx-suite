@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.4.0...gatsby-theme-mdx-suite-core@0.4.1) (2020-10-20)
+
+
+### Bug Fixes
+
+* **data:** remove fakeFile and other schema types ([45302af](https://github.com/axe312ger/gatsby-mdx-suite/commit/45302afc8038fa62483f3084925ad2095999630f))
+* **styling:** ensure background color is set to root-background ([77ecd2c](https://github.com/axe312ger/gatsby-mdx-suite/commit/77ecd2c682fe1415419c65bdbaf58b1df35393f6))
+
+
+
+
+
 # [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.3.0...gatsby-theme-mdx-suite-core@0.4.0) (2020-10-19)
 
 
