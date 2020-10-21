@@ -144,7 +144,7 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
       description: String
       node_locale: String
       sys: ContentfulAssetSys
-      svg: Svg
+      svg: InlineSvg
     }
 
     type ContentfulAssetFile @derivedTypes {
@@ -168,7 +168,7 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
       type: String
       revision: Int
     }
-    type Svg @derivedTypes {
+    type InlineSvg @derivedTypes {
       content: String
     }
     type ContentfulMenuItem implements Node {
