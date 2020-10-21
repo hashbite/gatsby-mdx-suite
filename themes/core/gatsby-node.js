@@ -134,6 +134,43 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
 
   const typeDefs = [
     `
+    type ContentfulAsset implements Node @derivedTypes @dontInfer {
+      contentful_id: String
+      spaceId: String
+      createdAt: Date @dateformat
+      updatedAt: Date @dateformat
+      file: ContentfulAssetFile
+      title: String
+      description: String
+      node_locale: String
+      sys: ContentfulAssetSys
+      svg: Svg
+    }
+
+    type ContentfulAssetFile @derivedTypes {
+      url: String
+      details: ContentfulAssetFileDetails
+      fileName: String
+      contentType: String
+    }
+
+    type ContentfulAssetFileDetails @derivedTypes {
+      size: Int
+      image: ContentfulAssetFileDetailsImage
+    }
+
+    type ContentfulAssetFileDetailsImage {
+      width: Int
+      height: Int
+    }
+
+    type ContentfulAssetSys {
+      type: String
+      revision: Int
+    }
+    type Svg @derivedTypes {
+      content: String
+    }
     type ContentfulMenuItem implements Node {
       contentful_id: String
       title: String
