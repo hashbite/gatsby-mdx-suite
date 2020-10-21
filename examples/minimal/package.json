@@ -28,7 +28,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.2",
-    "twin.macro": "^1.10.0"
+    "twin.macro": "^1.11.0"
   },
   "peerDependencies": {
     "gatsby-plugin-mdx": "^1.2.40"

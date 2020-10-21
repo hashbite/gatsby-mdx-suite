@@ -39,7 +39,7 @@ module.exports = (themeConfig) => {
           postCssPlugins: [
             require('tailwindcss')(),
             require('autoprefixer')(),
-            require('cssnano')({
+            require('postcss-csso')({
               preset: 'default',
             }),
           ],

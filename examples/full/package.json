@@ -38,7 +38,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.2",
-    "twin.macro": "^1.10.0"
+    "twin.macro": "^1.11.0"
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.28",
