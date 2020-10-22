@@ -58,8 +58,8 @@ module.exports = {
         switch (el.name) {
           case 'section':
             return el.attribs.backgroundvideoid
-              ? 'backgroundvideoid'
-              : 'backgroundimageid'
+              ? 'backgroundVideoId'
+              : 'backgroundImageId'
           case 'image':
           case 'video':
             return 'id'
