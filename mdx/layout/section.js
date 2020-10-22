@@ -247,7 +247,7 @@ Section.propTypes = {
   /** Define a color set for this box */
   colorSet: propTypes.string,
   /** Set the opacity of the background media overlay */
-  overlayOpacity: propTypes.string,
+  overlayOpacity: propTypes.oneOfType([propTypes.string, propTypes.number]),
   /** Set the color for the background media overlay */
   overlayColor: propTypes.string,
   /** Overwrite specific colors */
