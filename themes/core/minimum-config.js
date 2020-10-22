@@ -45,8 +45,8 @@ module.exports = {
       selector: [
         'Section[backgroundImageId]',
         'Section[backgroundVideoId]',
-        'Viewport[backgroundImageId]',
         'Header[backgroundImageId]',
+        'Header[backgroundVideoId]',
         'Image[id][contextKey="screen"]',
         'Video[id][contextKey="screen"]',
         'Video:not([contextKey])',
@@ -56,15 +56,19 @@ module.exports = {
        */
       attribute: (el) => {
         switch (el.name) {
+          case 'header':
+            return el.attribs.backgroundvideoid
+              ? 'backgroundvideoid'
+              : 'backgroundimageid'
           case 'section':
             return el.attribs.backgroundvideoid
-              ? 'backgroundVideoId'
-              : 'backgroundImageId'
+              ? 'backgroundvideoid'
+              : 'backgroundimageid'
           case 'image':
           case 'video':
             return 'id'
           default:
-            return 'backgroundImageId'
+            return 'backgroundimageid'
         }
       },
     },
