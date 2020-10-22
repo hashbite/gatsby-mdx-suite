@@ -15,15 +15,31 @@ const BackgroundVideo = styled(Video)`
   ${tw`static`}
 `
 
-const SectionWrapper = styled.section(
-  ({ textShadow, theme, minHeight, verticalAlign, horizontalAlign }) => {
+const SectionWrapper = styled.section(({ textShadow, theme, minHeight }) => {
+  return css`
+    ${tw`relative overflow-hidden`}
+
+    background: ${theme.colors.background};
+    color: ${theme.colors.text};
+
+    ${minHeight &&
+    css`
+      min-height: ${minHeight};
+    `}
+
+    ${textShadow &&
+    css`
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+    `}
+  `
+})
+
+const SectionContentWrapper = styled.section(
+  ({ minHeight, verticalAlign, horizontalAlign }) => {
     return css`
-      ${tw`relative overflow-hidden`}
+      ${tw`relative`}
 
-      background: ${theme.colors.background};
-      color: ${theme.colors.text};
-
-      ${(minHeight || horizontalAlign) && tw`flex flex-col`}
+      ${(minHeight || horizontalAlign) && tw`flex flex-col h-full w-full`}
 
       ${minHeight &&
       css`
@@ -35,29 +51,25 @@ const SectionWrapper = styled.section(
       css`
         align-items: ${horizontalAlign};
       `}
-
-      ${textShadow &&
-      css`
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
-      `}
     `
   }
+)
+
+const SectionContent = styled.div(
+  ({ horizontalAlign, ...props }) => css`
+    ${horizontalAlign
+      ? tw`px-content-column-padding`
+      : centerToContentColumn(props)}
+
+    margin-top: ${calcGapValue(props.gap, props.theme)};
+    margin-bottom: ${calcGapValue(props.gap, props.theme)};
+  `
 )
 
 function calcGapValue(gap, theme) {
   const customSize = gap && theme.spacing[gap]
   return customSize || theme.spacing['section-gap']
 }
-
-const SectionContentWrapper = styled.div(
-  ({ horizontalAlign, ...props }) => css`
-    ${tw`relative z-10`}
-    ${!horizontalAlign && centerToContentColumn(props)}
-
-    margin-top: ${calcGapValue(props.gap, props.theme)};
-    margin-bottom: ${calcGapValue(props.gap, props.theme)};
-  `
-)
 
 const BackgroundMediaWrapper = styled.div(
   ({ backgroundImageOpacity }) => css`
@@ -155,13 +167,7 @@ export default function Section({
   const hasBackgroundMedia = !!(backgroundImageId || backgroundVideoId)
   return (
     <ColorSet name={colorSet} {...colors}>
-      <SectionWrapper
-        textShadow={textShadow}
-        minHeight={minHeight}
-        verticalAlign={convertToFlexAlignment(verticalAlign)}
-        horizontalAlign={convertToFlexAlignment(horizontalAlign)}
-        {...props}
-      >
+      <SectionWrapper textShadow={textShadow} minHeight={minHeight} {...props}>
         {hasBackgroundMedia && (
           <BackgroundMediaWrapper
             backgroundImageOpacity={backgroundImageOpacity}
@@ -182,10 +188,16 @@ export default function Section({
         )}
         {children && (
           <SectionContentWrapper
-            gap={gap}
+            minHeight={minHeight}
+            verticalAlign={convertToFlexAlignment(verticalAlign)}
             horizontalAlign={convertToFlexAlignment(horizontalAlign)}
           >
-            {children}
+            <SectionContent
+              gap={gap}
+              horizontalAlign={convertToFlexAlignment(horizontalAlign)}
+            >
+              {children}
+            </SectionContent>
           </SectionContentWrapper>
         )}
       </SectionWrapper>
