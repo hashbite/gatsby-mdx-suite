@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.4.2...gatsby-theme-mdx-suite-core@0.4.3) (2020-10-22)
+
+
+### Bug Fixes
+
+* **default-config:** properly detect background videos in Section ([339ae56](https://github.com/axe312ger/gatsby-mdx-suite/commit/339ae563811c9b5b7fd71766c095eb329ce83b0d))
+* **media-collections:** properly detect videos in section and header, remove viewport ([d85fe41](https://github.com/axe312ger/gatsby-mdx-suite/commit/d85fe41cae7461ece3b84357677937f62d2ed959))
+
+
+
+
+
 ## [0.4.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.4.1...gatsby-theme-mdx-suite-core@0.4.2) (2020-10-21)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-core

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.20.0...@gatsby-mdx-suite/mdx-layout@0.21.0) (2020-10-22)
+
+
+### Bug Fixes
+
+* **section:** allow numbers and strings as overlay opacity ([04df120](https://github.com/axe312ger/gatsby-mdx-suite/commit/04df1206e554d6ae44eeca1f0da329adb529e119))
+
+
+### Features
+
+* **section:** add optional overlay for background media ([407c145](https://github.com/axe312ger/gatsby-mdx-suite/commit/407c1459d3aab5e1b6a7ae657cf7c183528f930e))
+* **section:** allow absolute positioned children ([30f859c](https://github.com/axe312ger/gatsby-mdx-suite/commit/30f859caad7e6bb3861255f6b5ec9a4aac160024))
+
+
+
+
+
 # [0.20.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.19.1...@gatsby-mdx-suite/mdx-layout@0.20.0) (2020-10-19)
 
 
