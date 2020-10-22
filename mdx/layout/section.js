@@ -10,6 +10,7 @@ import Video from '@gatsby-mdx-suite/mdx-video/video'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 import convertToFlexAlignment from '@gatsby-mdx-suite/helpers/styling/convert-to-flex-alignment'
+import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 
 const BackgroundVideo = styled(Video)`
   ${tw`static`}
@@ -93,6 +94,15 @@ const BackgroundMediaWrapper = styled.div(
     }
   `
 )
+
+const BackgroundMediaOverlay = styled.div(
+  ({ overlayColor, overlayOpacity, theme }) => css`
+    ${tw`absolute inset-0 z-20`}
+    background: ${selectColor(theme.colors, overlayColor)};
+    opacity: ${overlayOpacity};
+  `
+)
+
 /**
  * Sections are content seperators and serve multiple purposes:
  *
@@ -159,6 +169,8 @@ export default function Section({
   verticalAlign,
   horizontalAlign,
   backgroundVideoId,
+  overlayOpacity,
+  overlayColor,
   ...props
 }) {
   if (backgroundImageId && !colorSet) {
@@ -172,6 +184,12 @@ export default function Section({
           <BackgroundMediaWrapper
             backgroundImageOpacity={backgroundImageOpacity}
           >
+            {parseFloat(overlayOpacity) > 0 && (
+              <BackgroundMediaOverlay
+                overlayOpacity={overlayOpacity}
+                overlayColor={overlayColor}
+              />
+            )}
             {backgroundImageId && (
               <Image contextKey="screen" id={backgroundImageId} fit="cover" />
             )}
@@ -211,6 +229,8 @@ Section.defaultProps = {
   textShadow: false,
   verticalAlign: 'center',
   backgroundImageOpacity: '1',
+  overlayOpacity: 0,
+  overlayColor: 'black',
 }
 
 Section.propTypes = {
@@ -226,6 +246,10 @@ Section.propTypes = {
   backgroundVideoId: propTypes.string,
   /** Define a color set for this box */
   colorSet: propTypes.string,
+  /** Set the opacity of the background media overlay */
+  overlayOpacity: propTypes.string,
+  /** Set the color for the background media overlay */
+  overlayColor: propTypes.string,
   /** Overwrite specific colors */
   colors: propTypes.object,
   /** Optional slight text shadow to increase readability when using background images */
