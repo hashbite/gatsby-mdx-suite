@@ -17,7 +17,7 @@ module.exports = ({ renderDocs = true } = {}) => ({
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/docs/*`],
+        exclude: [`/docs`, `/docs/*`, `/docs/**/*`],
       },
     },
     {
