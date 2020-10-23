@@ -31,16 +31,14 @@ function BlogPostTemplate({ data, pageContext }) {
         data: [content.childMdx, { screen: [image] }],
       })}
     >
-      <Layout>
-        <Seo
-          title={title}
-          description={metaDescription}
-          ogImage={image && `${image.file.url}?w=1200&h=630&fit=fill`}
-          twitterImage={image && `${image.file.url}?w=1200&h=628&fit=fill`}
-        />
-        <Header backgroundImageId={image.assetId}>{title}</Header>
-        <MDXRenderer>{content && content.childMdx.body}</MDXRenderer>
-      </Layout>
+      <Seo
+        title={title}
+        description={metaDescription}
+        ogImage={image && `${image.file.url}?w=1200&h=630&fit=fill`}
+        twitterImage={image && `${image.file.url}?w=1200&h=628&fit=fill`}
+      />
+      <Header backgroundImageId={image.assetId}>{title}</Header>
+      <MDXRenderer>{content && content.childMdx.body}</MDXRenderer>
     </MdxSuiteContext.Provider>
   )
 }
