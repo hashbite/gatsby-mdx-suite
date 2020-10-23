@@ -15,7 +15,7 @@ function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
   const MdxSuiteData = useContext(MdxSuiteContext)
 
-  const { title, content } = data.contentfulPage
+  const { title, content, metaDescription } = data.contentfulPage
 
   // Set current i18next translation language based on page locale
   useEffect(() => {
@@ -32,7 +32,7 @@ function PageTemplate({ data, pageContext }) {
       })}
     >
       <Layout>
-        <Seo title={title} />
+        <Seo title={title} description={metaDescription} />
         <MDXRenderer>{content.childMdx.body}</MDXRenderer>
       </Layout>
     </MdxSuiteContext.Provider>
@@ -53,6 +53,7 @@ export const pageQuery = graphql`
       pageId: contentful_id
       slug
       title
+      metaDescription
       content {
         childMdx {
           body
