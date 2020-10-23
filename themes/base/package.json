@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-suite-base",
-  "version": "0.3.9",
+  "version": "0.4.0",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -46,7 +46,7 @@
     "gatsby-plugin-sitemap": "^2.4.17",
     "gatsby-plugin-webpack-size": "^1.0.0",
     "gatsby-theme-mdx-suite-core": "^0.4.3",
-    "gatsby-theme-mdx-suite-docs": "^0.3.3",
+    "gatsby-theme-mdx-suite-docs": "^0.3.4",
     "gatsby-transformer-inline-svg": "^0.0.7",
     "gatsby-transformer-video": "^0.1.18",
     "heroicons": "^0.4.2",

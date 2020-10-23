@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.3.9...gatsby-theme-mdx-suite-base@0.4.0) (2020-10-23)
+
+
+### Bug Fixes
+
+* **seo:** exclude docs from sitemap ([7e30184](https://github.com/axe312ger/gatsby-mdx-suite/commit/7e301843729182f1a5f084f11e18801e5d1ea017))
+* **seo:** sitemap now excludes all docs ([d4df294](https://github.com/axe312ger/gatsby-mdx-suite/commit/d4df294167b457e51e7979f73eb357f5fb50940c))
+
+
+### Features
+
+* **seo:** add robots.txt ([d3bc8dd](https://github.com/axe312ger/gatsby-mdx-suite/commit/d3bc8dd72bf4a55ab2bddfaab061d806f4ad2a73))
+
+
+### Performance Improvements
+
+* **rendering:** move layout rendering to wrapePageElement ([44bb6c0](https://github.com/axe312ger/gatsby-mdx-suite/commit/44bb6c0db630460fdee9c2c6691234bcc015e034))
+
+
+
+
+
 ## [0.3.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.3.8...gatsby-theme-mdx-suite-base@0.3.9) (2020-10-22)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base

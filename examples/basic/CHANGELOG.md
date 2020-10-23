@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.2.9...gatsby-mdx-suite-example-basic@0.3.0) (2020-10-23)
+
+
+### Bug Fixes
+
+* **seo:** output meta description of pages ([243a930](https://github.com/axe312ger/gatsby-mdx-suite/commit/243a930bba3f498c4ea778e00346f14615617de8))
+
+
+### Features
+
+* **seo:** add robots.txt ([d3bc8dd](https://github.com/axe312ger/gatsby-mdx-suite/commit/d3bc8dd72bf4a55ab2bddfaab061d806f4ad2a73))
+
+
+### Performance Improvements
+
+* **rendering:** move layout rendering to wrapePageElement ([44bb6c0](https://github.com/axe312ger/gatsby-mdx-suite/commit/44bb6c0db630460fdee9c2c6691234bcc015e034))
+
+
+
+
+
 ## [0.2.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.2.8...gatsby-mdx-suite-example-basic@0.2.9) (2020-10-22)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-basic

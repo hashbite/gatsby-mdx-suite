@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-blog@0.2.11...gatsby-theme-mdx-suite-blog@0.2.12) (2020-10-23)
+
+
+### Performance Improvements
+
+* **rendering:** move layout rendering to wrapePageElement ([44bb6c0](https://github.com/axe312ger/gatsby-mdx-suite/commit/44bb6c0db630460fdee9c2c6691234bcc015e034))
+
+
+
+
+
 ## [0.2.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-blog@0.2.10...gatsby-theme-mdx-suite-blog@0.2.11) (2020-10-22)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-blog
