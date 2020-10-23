@@ -11,8 +11,6 @@ import PreviousIcon from 'heroicons/outline/chevron-left.svg'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
-import Layout from 'gatsby-theme-mdx-suite-base/src/components/layout/layout'
-
 import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
 import Section from '@gatsby-mdx-suite/mdx-layout/section'
 import Cta from '@gatsby-mdx-suite/mdx-link/cta'
@@ -71,30 +69,28 @@ const BlogPostList = ({ data, pageContext }) => {
         data: [content && content.childMdx],
       })}
     >
-      <Layout>
-        <MDXRenderer>{content && content.childMdx.body}</MDXRenderer>
-        <Section>
-          <Columns maxColumns={2}>{blogPosts}</Columns>
-          <Pagination>
-            <div>
-              {pageContext.previousPagePath && (
-                <Cta to={pageContext.previousPagePath}>
-                  <PreviousIcon />
-                  {t('previous')}
-                </Cta>
-              )}
-            </div>
-            <div>
-              {pageContext.nextPagePath && (
-                <Cta to={pageContext.nextPagePath}>
-                  {t('next')}
-                  <NextIcon />
-                </Cta>
-              )}
-            </div>
-          </Pagination>
-        </Section>
-      </Layout>
+      <MDXRenderer>{content && content.childMdx.body}</MDXRenderer>
+      <Section>
+        <Columns maxColumns={2}>{blogPosts}</Columns>
+        <Pagination>
+          <div>
+            {pageContext.previousPagePath && (
+              <Cta to={pageContext.previousPagePath}>
+                <PreviousIcon />
+                {t('previous')}
+              </Cta>
+            )}
+          </div>
+          <div>
+            {pageContext.nextPagePath && (
+              <Cta to={pageContext.nextPagePath}>
+                {t('next')}
+                <NextIcon />
+              </Cta>
+            )}
+          </div>
+        </Pagination>
+      </Section>
     </MdxSuiteContext.Provider>
   )
 }

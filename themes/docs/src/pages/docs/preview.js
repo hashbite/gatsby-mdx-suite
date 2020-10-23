@@ -5,7 +5,6 @@ import tw from 'twin.macro'
 import styled from '@emotion/styled'
 import useEventListener from '@use-it/event-listener'
 
-import Layout from 'gatsby-theme-mdx-suite-base/src/components/layout/layout'
 import DataProvider from '../../components/data-provider'
 
 const MDX = loadable(() =>
@@ -64,13 +63,11 @@ const DocsPreviewPage = () => {
 
   return (
     <DataProvider>
-      <Layout>
-        <ContentWrapper>
-          <MDXErrorBoundary>
-            <MDX>{content}</MDX>
-          </MDXErrorBoundary>
-        </ContentWrapper>
-      </Layout>
+      <ContentWrapper>
+        <MDXErrorBoundary>
+          <MDX>{content}</MDX>
+        </MDXErrorBoundary>
+      </ContentWrapper>
     </DataProvider>
   )
 }

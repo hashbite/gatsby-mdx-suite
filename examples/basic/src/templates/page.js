@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
-import Layout from 'gatsby-theme-mdx-suite-base/src/components/layout/layout'
 import Seo from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
 
 function PageTemplate({ data, pageContext }) {
@@ -30,10 +29,8 @@ function PageTemplate({ data, pageContext }) {
         data: [content.childMdx],
       })}
     >
-      <Layout>
-        <Seo title={title} description={metaDescription} />
-        <MDXRenderer>{content.childMdx.body}</MDXRenderer>
-      </Layout>
+      <Seo title={title} description={metaDescription} />
+      <MDXRenderer>{content.childMdx.body}</MDXRenderer>
     </MdxSuiteContext.Provider>
   )
 }

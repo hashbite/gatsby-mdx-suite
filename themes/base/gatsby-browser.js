@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
+import Layout from './src/components/layout/layout'
 import defaultIcons from './src/default-icons'
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 
@@ -20,6 +21,10 @@ export const wrapRootElement = ({ element }) => {
 }
 wrapRootElement.propTypes = {
   element: propTypes.element.isRequired,
+}
+
+export const wrapPageElement = ({ element }) => {
+  return <Layout>{element}</Layout>
 }
 
 export const onServiceWorkerUpdateReady = () => {
