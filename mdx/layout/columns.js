@@ -116,16 +116,15 @@ const ColumnsWrapper = styled.div(
  * </Columns>
  */
 export default function Columns({ children, maxColumns, reverseAt, ...props }) {
-  const [columns, setColumns] = useState([])
-
-  useEffect(() => {
-    if (children) {
-      setColumns(Array.isArray(children) ? children : [children])
-    }
-  }, [children])
+  const originalColumns = useMemo(
+    () => (Array.isArray(children) ? children : [children]),
+    [children]
+  )
+  const [columns, setColumns] = useState(originalColumns)
 
   const breakpoints = useBreakpoint()
 
+  // Set max columns based on number of columns
   const realMaxColumns = useMemo(() => {
     const desiredColumns =
       parseInt(maxColumns) > 0 ? parseInt(maxColumns) : columns.length
@@ -135,13 +134,16 @@ export default function Columns({ children, maxColumns, reverseAt, ...props }) {
     return desiredColumns
   }, [maxColumns, columns.length])
 
+  // Reverse columns based on reverseAt
   useEffect(() => {
     if (breakpoints[reverseAt]) {
-      setColumns((columns) => columns.slice().reverse())
+      setColumns(originalColumns.slice().reverse())
+      return
     }
-  }, [breakpoints, reverseAt])
+    setColumns(originalColumns.slice())
+  }, [breakpoints, reverseAt, originalColumns])
 
-  if (!columns.length) {
+  if (!originalColumns.length) {
     return null
   }
 
