@@ -18,8 +18,6 @@ const StyledListItem = styled.li(
         content: counter(list-counter) '.';
         ${tw`absolute left-0 font-normal text-gray-600`}
         color: ${selectColor(iconColor) || 'inherit'};
-        top: 50%;
-        transform: translateY(-50%);
       }
     `}
   `
@@ -27,7 +25,7 @@ const StyledListItem = styled.li(
 
 const ListItemIcon = styled(Icon)`
   ${tw`absolute left-0`}
-  top: 50%;
+  top: 0.8em;
   transform: translateY(-50%);
 `
 /**
