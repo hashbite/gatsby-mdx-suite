@@ -9,9 +9,8 @@ import verticalRhythm from '@gatsby-mdx-suite/helpers/styling/vertical-rhythm'
 
 const VimeoVideoWrapper = styled.div(
   ({ aspectRatio, maxWidth }) => css`
-    position: relative;
-    display: inline-block;
-    width: 100%;
+    ${tw`relative w-full`}
+    ${verticalRhythm}
     max-width: ${maxWidth};
 
     &::before {
