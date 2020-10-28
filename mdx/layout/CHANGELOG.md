@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.21.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.21.0...@gatsby-mdx-suite/mdx-layout@0.21.1) (2020-10-28)
+
+
+### Bug Fixes
+
+* **layout:** columns now reverses properly ([751d09c](https://github.com/axe312ger/gatsby-mdx-suite/commit/751d09c8027eacec74447c0af0e87e72329900ec))
+
+
+
+
+
 # [0.21.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.20.0...@gatsby-mdx-suite/mdx-layout@0.21.0) (2020-10-22)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.10.2...@gatsby-mdx-suite/mdx-copy@0.10.3) (2020-10-28)
+
+
+### Bug Fixes
+
+* **copy:** align bullet points to the first line of a list item ([8c1bffa](https://github.com/axe312ger/gatsby-mdx-suite/commit/8c1bffae1bf4633c3d26e12b419fbbb822d0ca68))
+
+
+
+
+
 ## [0.10.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.10.1...@gatsby-mdx-suite/mdx-copy@0.10.2) (2020-10-19)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-copy
