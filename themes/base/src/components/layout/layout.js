@@ -7,13 +7,14 @@ import Seo from './seo'
 
 const Wrapper = styled.div``
 
-const Layout = ({ children }) => {
+const Layout = ({ children, uri }) => {
+  const isDocs = uri.indexOf('/docs') === 0
   return (
     <>
       <Seo />
       <Wrapper>
         <main>{children}</main>
-        <Footer />
+        {!isDocs && <Footer />}
       </Wrapper>
     </>
   )
