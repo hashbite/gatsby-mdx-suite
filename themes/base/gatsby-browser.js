@@ -24,7 +24,7 @@ wrapRootElement.propTypes = {
 }
 
 export const wrapPageElement = ({ element }) => {
-  return <Layout>{element}</Layout>
+  return <Layout {...element.props}>{element}</Layout>
 }
 
 export const onServiceWorkerUpdateReady = () => {
