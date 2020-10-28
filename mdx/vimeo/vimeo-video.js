@@ -1,40 +1,13 @@
-import Vimeo from '@u-wave/react-vimeo'
-
 import React from 'react'
 import propTypes from 'prop-types'
-import styled from '@emotion/styled'
-import { css } from '@emotion/core'
-import tw from 'twin.macro'
 
-const VimeoVideoWrapper = styled.div(
-  ({ aspectRatio, maxWidth }) => css`
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: ${maxWidth};
+import Loadable from '@loadable/component'
+import AsyncChunk from 'gatsby-theme-mdx-suite-base/src/components/async/async-chunk'
 
-    &::before {
-      content: '';
-      width: 1px;
-      margin-left: -1px;
-      float: left;
-      height: 0;
-      padding-top: calc(100% / (${aspectRatio}));
-    }
-    &::after {
-      content: '';
-      display: table;
-      clear: both;
-    }
-  `
+const VimeoVideoRenderer = Loadable(() =>
+  import(/* webpackChunkName: "vimeo-video-player" */ './vimeo-video-renderer')
 )
-const StyledVimeo = styled(Vimeo)`
-  ${tw`absolute inset-0 bg-black`}
-  iframe {
-    width: 100%;
-    height: 100%;
-  }
-`
+
 /**
  * Renders a video from Yimeo. For internal videos use `<Video />`.
  *
@@ -44,16 +17,8 @@ const StyledVimeo = styled(Vimeo)`
  * @example
  * <VimeoVideo id="148751763" />
  */
-export default function VimeoVideo({ id, maxWidth, aspectRatio, ...props }) {
-  if (!id) {
-    return null
-  }
-
-  return (
-    <VimeoVideoWrapper maxWidth={maxWidth} aspectRatio={aspectRatio}>
-      <StyledVimeo video={id} {...props} />
-    </VimeoVideoWrapper>
-  )
+export default function VimeoVideo(props) {
+  return <AsyncChunk loadable={<VimeoVideoRenderer {...props} />} />
 }
 
 VimeoVideo.displayName = 'VimeoVideo'

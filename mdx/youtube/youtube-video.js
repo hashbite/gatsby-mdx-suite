@@ -1,36 +1,15 @@
-import ReactYoutube from 'react-youtube'
-
 import React from 'react'
 import propTypes from 'prop-types'
-import styled from '@emotion/styled'
-import { css } from '@emotion/core'
-import tw from 'twin.macro'
 
-const YoutubeVideoWrapper = styled.div(
-  ({ aspectRatio, maxWidth }) => css`
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: ${maxWidth};
+import Loadable from '@loadable/component'
+import AsyncChunk from 'gatsby-theme-mdx-suite-base/src/components/async/async-chunk'
 
-    &::before {
-      content: '';
-      width: 1px;
-      margin-left: -1px;
-      float: left;
-      height: 0;
-      padding-top: calc(100% / (${aspectRatio}));
-    }
-    &::after {
-      content: '';
-      display: table;
-      clear: both;
-    }
-  `
+const YoutubeVideoRenderer = Loadable(() =>
+  import(
+    /* webpackChunkName: "youtube-video-player" */ './youtube-video-renderer'
+  )
 )
-const StyledReactYoutube = styled(ReactYoutube)`
-  ${tw`absolute inset-0 bg-black`}
-`
+
 /**
  * Renders a video from YouTube. For internal videos use `<Video />`.
  *
@@ -40,22 +19,8 @@ const StyledReactYoutube = styled(ReactYoutube)`
  * @example
  * <YoutubeVideo id="dQw4w9WgXcQ" />
  */
-export default function YoutubeVideo({ id, maxWidth, aspectRatio, ...props }) {
-  if (!id) {
-    return null
-  }
-
-  const opts = {
-    width: '100%',
-    height: '100%',
-    playerVars: { modestbranding: 1, ...props },
-  }
-
-  return (
-    <YoutubeVideoWrapper maxWidth={maxWidth} aspectRatio={aspectRatio}>
-      <StyledReactYoutube videoId={id} opts={opts} />
-    </YoutubeVideoWrapper>
-  )
+export default function YoutubeVideo(props) {
+  return <AsyncChunk loadable={<YoutubeVideoRenderer {...props} />} />
 }
 
 YoutubeVideo.displayName = 'YoutubeVideo'
