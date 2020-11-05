@@ -1,11 +1,8 @@
 const { resolve } = require('path')
 const cheerio = require('cheerio')
-const Debug = require('debug')
 const merge = require('deepmerge')
 
 const minimumConfig = require('./minimum-config')
-
-const debug = Debug('gatsby-theme-mdx-suite')
 
 /**
  * Ensure @mdx-js dependencies build via webpack
@@ -30,7 +27,7 @@ exports.onPreBootstrap = async ({ getCache }, themeConfig) => {
   })
 }
 
-exports.createResolvers = ({ createResolvers }, themeConfig) => {
+exports.createResolvers = ({ createResolvers, reporter }, themeConfig) => {
   const { mediaCollections } = merge(minimumConfig, themeConfig)
   const resolvers = {
     ContentfulMenuItem: {
@@ -100,9 +97,21 @@ exports.createResolvers = ({ createResolvers }, themeConfig) => {
             )
             .get()
 
-          debug(
-            `Found ${mediaIds.length} assets for ${collectionType} in ${source.fileAbsolutePath} (${source.id})`
-          )
+          if (mediaIds.length) {
+            const meta = [
+              source.fileAbsolutePath,
+              context?.context?.title,
+              context?.context?.locale,
+              context?.context?.pageId,
+              `(${source.id})`,
+            ]
+              .filter(Boolean)
+              .join(' - ')
+
+            reporter.info(
+              `Found ${mediaIds.length} assets for ${collectionType} in ${meta}`
+            )
+          }
 
           const result = await context.nodeModel.runQuery({
             query: {
