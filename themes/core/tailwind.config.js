@@ -99,32 +99,22 @@ module.exports = merge(
           h1: {
             color: config('theme.colors.headline'),
             fontFamily: config('theme.fontFamily.headline').join(', '),
-            fontSize: config('theme.fontSize.4xl'),
-            lineHeight: config('theme.lineHeight.none'),
           },
           h2: {
             color: config('theme.colors.headline'),
             fontFamily: config('theme.fontFamily.headline').join(', '),
-            fontSize: config('theme.fontSize.3xl'),
-            lineHeight: config('theme.lineHeight.tight'),
           },
           h3: {
             color: config('theme.colors.headline'),
             fontFamily: config('theme.fontFamily.headline').join(', '),
-            fontSize: config('theme.fontSize.2xl'),
-            lineHeight: config('theme.lineHeight.tight'),
           },
           h4: {
             color: config('theme.colors.headline'),
             fontFamily: config('theme.fontFamily.headline').join(', '),
-            fontSize: config('theme.fontSize.xl'),
-            lineHeight: config('theme.lineHeight.snug'),
           },
           h5: {
             color: config('theme.colors.headline'),
             fontFamily: config('theme.fontFamily.headline').join(', '),
-            fontSize: config('theme.fontSize.lg'),
-            lineHeight: config('theme.lineHeight.snug'),
           },
           h6: {
             color: config('theme.colors.headline'),
