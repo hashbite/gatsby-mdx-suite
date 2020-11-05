@@ -7,9 +7,17 @@ const debug = Debug('gatsby-theme-mdx-suite-docs')
 const defaultComponentPaths = [
   // Project/custom components
   resolve(process.cwd(), `src/components/mdx/`),
+  // Base theme components
+  resolve(
+    process.cwd(),
+    `node_modules/gatsby-theme-mdx-suite-base/src/components/mdx/`
+  ),
+  resolve(
+    process.cwd(),
+    `../../node_modules/gatsby-theme-mdx-suite-base/src/components/mdx/`
+  ),
   // External components
   resolve(process.cwd(), `node_modules/@gatsby-mdx-suite/`),
-  // Lerna/yarn workspaces environment
   resolve(process.cwd(), `../../node_modules/@gatsby-mdx-suite/`),
 ]
 
