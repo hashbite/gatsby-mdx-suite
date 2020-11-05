@@ -13,6 +13,7 @@ import Column from '@gatsby-mdx-suite/mdx-layout/column'
 import Gap from '@gatsby-mdx-suite/mdx-layout/gap'
 import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
 import Section from '@gatsby-mdx-suite/mdx-layout/section'
+import Hide from '@gatsby-mdx-suite/mdx-layout/hide'
 
 // Copy
 import List from '@gatsby-mdx-suite/mdx-copy/list'
@@ -23,7 +24,7 @@ import ResponsiveTextBlock from '@gatsby-mdx-suite/mdx-copy/responsive-text-bloc
 import Claim from '@gatsby-mdx-suite/mdx-copy/claim'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
-export default {
+const components = {
   Center,
   Claim,
   ColorSet,
@@ -41,6 +42,7 @@ export default {
   ResponsiveTextBlock,
   Section,
   TextBlock,
+  Hide,
   // Overwrite standard html elements with our custom components
   ul: (props) => <List type="unordered" {...props} />,
   ol: (props) => <List type="ordered" {...props} />,
@@ -65,3 +67,5 @@ export default {
   p: (props) => <TextBlock {...props} />,
   img: (props) => <Image {...props} />,
 }
+
+export default components
