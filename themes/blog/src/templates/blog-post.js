@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
-import Layout from 'gatsby-theme-mdx-suite-base/src/components/layout/layout'
 import Header from 'gatsby-theme-mdx-suite-base/src/components/header/header'
 import Seo from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
 
