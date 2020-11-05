@@ -28,28 +28,6 @@ const HeaderWrapper = styled.div(
   `
 )
 
-/**
- * Renders the header including menu and hero element of the page.
- *
- * Can have a background image.
- *
- * @example
- * <Header colorSet="blue">
- *
- * # Some catching text
- *
- * </Header>
- * <Header backgroundImageId="randomImageId">
- *
- * # Some catching text
- *
- * </Header>
- * <Header backgroundVideoId="randomVideoId">
- *
- * # Some catching text
- *
- * </Header>
- */
 const Header = ({
   children,
   backgroundImageId,

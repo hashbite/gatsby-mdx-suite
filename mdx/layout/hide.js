@@ -42,8 +42,12 @@ const Hide = ({ children, till, from, ...props }) => {
     })
   }, [children, from, till, activeBreakpoints])
 
-  return styledChild
+  return <>{styledChild}</>
 }
+
+Hide.displayName = 'Hide'
+
+Hide.defaultProps = {}
 
 Hide.propTypes = {
   /** The component that should be hidden */
