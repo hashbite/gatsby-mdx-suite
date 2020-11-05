@@ -44,4 +44,24 @@ export default {
   // Overwrite standard html elements with our custom components
   ul: (props) => <List type="unordered" {...props} />,
   ol: (props) => <List type="ordered" {...props} />,
+  h1: (props) => (
+    <Claim tag="h1" fontSizeMin="1.75rem" fontSizeMax="2.25rem" {...props} />
+  ),
+  h2: (props) => (
+    <Claim tag="h2" fontSizeMin="1.5rem" fontSizeMax="1.875rem" {...props} />
+  ),
+  h3: (props) => (
+    <Claim tag="h3" fontSizeMin="1.25rem" fontSizeMax="1.5rem" {...props} />
+  ),
+  h4: (props) => (
+    <Claim tag="h4" fontSizeMin="1.125rem" fontSizeMax="1.25rem" {...props} />
+  ),
+  h5: (props) => (
+    <Claim tag="h5" fontSizeMin="1rem" fontSizeMax="1.125rem" {...props} />
+  ),
+  h6: (props) => (
+    <Claim tag="h6" fontSizeMin="1rem" fontSizeMax="1.1rem" {...props} />
+  ),
+  p: (props) => <TextBlock {...props} />,
+  img: (props) => <Image {...props} />,
 }
