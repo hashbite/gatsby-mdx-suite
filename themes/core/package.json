@@ -25,7 +25,6 @@
     "@gatsby-mdx-suite/helpers": "^0.11.0",
     "autoprefixer": "^10.0.1",
     "cheerio": "0.22.0",
-    "debug": "^4.2.0",
     "deepmerge": "^4.2.2",
     "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",

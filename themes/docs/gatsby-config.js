@@ -1,8 +1,6 @@
 const { existsSync, lstatSync } = require('fs')
 const { resolve } = require('path')
-const Debug = require('debug')
-
-const debug = Debug('gatsby-theme-mdx-suite-docs')
+const reporter = require('gatsby-cli/lib/reporter')
 
 const defaultComponentPaths = [
   // Project/custom components
@@ -47,7 +45,7 @@ module.exports = ({
                 (path) => {
                   // Always accept root dirs
                   if (path === componentPath) {
-                    debug(`${path} - Passed for root`)
+                    reporter.verbose(`${path} - Passed for root`)
                     return false
                   }
 
@@ -56,24 +54,24 @@ module.exports = ({
                     path.indexOf(`@gatsby-mdx-suite/mdx-`) === -1 &&
                     path.indexOf(`/mdx/`) === -1
                   ) {
-                    debug(`${path} - Ignored as non mdx package`)
+                    reporter.verbose(`${path} - Ignored as non mdx package`)
                     return true
                   }
 
                   // If it is a dir and passed, continue
                   const stats = lstatSync(path)
                   if (stats.isSymbolicLink() || stats.isDirectory()) {
-                    debug(`${path} - Passed as valid package`)
+                    reporter.verbose(`${path} - Passed as valid package`)
                     return false
                   }
 
                   // filter out non script files
                   if (nonScriptFileRegex.test(path)) {
-                    debug(`${path} - Ignored as non script file`)
+                    reporter.verbose(`${path} - Ignored as non script file`)
                     return true
                   }
 
-                  debug(`${path} - Passed`)
+                  reporter.verbose(`${path} - Passed`)
                   return false
                 },
               ],
