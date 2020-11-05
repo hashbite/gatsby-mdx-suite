@@ -8,14 +8,22 @@ import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 import verticalRhythm from '@gatsby-mdx-suite/helpers/styling/vertical-rhythm'
 
 const ColumnsWrapper = styled.div(
-  ({ theme, minColumns, maxColumns, template, center }) => {
+  ({ theme, minColumns, maxColumns, template, templateAt, center }) => {
     return css`
       ${tw`w-full grid gap-grid-gap`}
       ${verticalRhythm}
 
     ${template
         ? css`
-            grid-template-columns: ${template};
+            ${templateAt
+              ? css`
+                  @media (min-width: ${theme.screens[templateAt]}) {
+                    grid-template-columns: ${template};
+                  }
+                `
+              : css`
+                  grid-template-columns: ${template};
+                `}
           `
         : css`
             grid-template-columns: ${theme.gridTemplateColumns[minColumns]};
@@ -177,4 +185,10 @@ Columns.propTypes = {
    * See: https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
    */
   template: propTypes.string,
+  /**
+   * Apply the template at the given screen size. By default the template is applied to all screen sizes.
+   *
+   * See: https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
+   */
+  templateAt: propTypes.string,
 }
