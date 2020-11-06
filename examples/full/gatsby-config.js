@@ -51,6 +51,26 @@ module.exports = {
     // Basic layout, SEO, Analytics and more
     {
       resolve: `gatsby-theme-mdx-suite-base`,
+      options: {
+        privacy: {
+          privacyPolicyId: `0kHMRcBOQSiSoMa8us8yC`,
+          enablePrivacyModeToolbar: false,
+          blurBackdrop: true,
+          integrations: {
+            statistics: {
+              matomo: {
+                title: 'Matomo',
+                icon: 'matomo',
+                url: 'https://matomo.org/',
+              },
+            },
+          },
+          trackingConfig: {
+            urlBase: 'https://trackboi.uber.space/',
+            siteId: 9,
+          },
+        },
+      },
     },
     // Enable blog
     {

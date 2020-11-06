@@ -9,6 +9,8 @@ import Close from 'heroicons/solid/x.svg'
 import ChevronRight from 'heroicons/outline/chevron-right.svg'
 import ChevronLeft from 'heroicons/outline/chevron-left.svg'
 import Menu from 'heroicons/outline/menu.svg'
+import Cog from 'heroicons/solid/cog.svg'
+import Chart from 'heroicons/solid/chart-square-bar.svg'
 
 // Brand logos via https://simpleicons.org/ & https://react-icons.github.io/react-icons/
 import {
@@ -17,6 +19,7 @@ import {
   SiLinkedin,
   SiYoutube,
   SiTwitter,
+  SiVimeo,
 } from 'react-icons/si'
 
 // Country flags via https://flagicons.lipis.dev/
@@ -47,6 +50,7 @@ export default new Map(
     next: { icon: ChevronRight },
     previous: { icon: ChevronLeft },
     menu: { icon: Menu },
+    settings: { icon: Cog },
     phone: { icon: Phone },
     mail: { icon: Mail },
     facebook: { icon: SiFacebook },
@@ -54,6 +58,8 @@ export default new Map(
     youtube: { icon: SiYoutube },
     linkedin: { icon: SiLinkedin },
     twitter: { icon: SiTwitter },
+    vimeo: { icon: SiVimeo },
+    matomo: { icon: Chart },
     'flag-de': { icon: FlagDe },
     'flag-en-US': { icon: FlagEn },
   })
