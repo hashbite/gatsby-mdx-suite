@@ -2,6 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 
 import LazyChunk from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-chunk'
+import PrivacyShield from 'gatsby-theme-mdx-suite-base/src/privacy-manager/components/privacy-shield'
 
 const YoutubeVideoRenderer = React.lazy(() =>
   import(
@@ -20,10 +21,23 @@ const YoutubeVideoRenderer = React.lazy(() =>
  */
 export default function YoutubeVideo(props) {
   return (
-    <LazyChunk>
-      <YoutubeVideoRenderer {...props} />
-    </LazyChunk>
+    <PrivacyShield
+      config={YoutubeVideo.privacy}
+      fallbackUrl={`https://www.youtube.com/watch?v=${props.id}`}
+    >
+      <LazyChunk>
+        <YoutubeVideoRenderer {...props} />
+      </LazyChunk>
+    </PrivacyShield>
   )
+}
+
+YoutubeVideo.privacy = {
+  category: 'social',
+  id: 'youtube',
+  title: 'YouTube',
+  icon: 'youtube',
+  url: 'http://youtube.com/',
 }
 
 YoutubeVideo.displayName = 'YoutubeVideo'
