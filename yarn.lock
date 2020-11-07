@@ -8893,7 +8893,7 @@ fast-glob@^2.2.6:
     merge2 "^1.2.3"
     micromatch "^3.1.10"
 
-fast-glob@^3.0.3, fast-glob@^3.1.1, fast-glob@^3.2.2:
+fast-glob@^3.0.3, fast-glob@^3.1.1:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.4.tgz#d20aefbf99579383e7f3cc66529158c9b98554d3"
   integrity sha512-kr/Oo6PX51265qeuCYsyGypiO5uJFgBS0jksyG7FUeCyQzNwYnzrNIMR1NXfkZXsMYXYLRAHgISHBz8gQcxKHQ==
@@ -9951,19 +9951,18 @@ gatsby-transformer-sharp@^2.5.21:
     semver "^7.3.2"
     sharp "^0.25.4"
 
-gatsby-transformer-video@^0.1.18:
-  version "0.1.18"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-video/-/gatsby-transformer-video-0.1.18.tgz#25f3fe16f8fd21dc8755e588c06d3f5ac59f1ba6"
-  integrity sha512-4VEcuxR2nUc+qvfmMzprDyfMxC0tZTL+2HOWTCdbiXcIgMAz2ugze82Hsuqkgd052kWnMALNmsgr4dr78GdX9A==
+gatsby-transformer-video@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-video/-/gatsby-transformer-video-0.2.0.tgz#8003fcdb523a13a934e51027f1ecdc71bcf777e4"
+  integrity sha512-PnHkx5yapDcD9psWx+Mxos775K//t1QoW5PHqUf+MuArLKP9rchQhKb6ZdukB6wUsikLZyvDcxWrMQQSrFS/TA==
   dependencies:
-    execa "^4.0.0"
-    fast-glob "^3.2.2"
+    execa "^4.0.3"
     fluent-ffmpeg "^2.1.2"
-    fs-extra "^8.1.0"
-    imagemin "^7.0.0"
-    imagemin-giflossy "^5.0.0"
-    imagemin-mozjpeg "^8.0.0"
-    p-queue "^6.3.0"
+    fs-extra "^9.0.1"
+    imagemin "^7.0.1"
+    imagemin-giflossy "^5.1.10"
+    imagemin-mozjpeg "^9.0.0"
+    p-queue "^6.6.2"
 
 gatsby@^2.19.11, gatsby@^2.25.3:
   version "2.25.3"
@@ -11478,7 +11477,7 @@ image-q@^1.1.1:
   resolved "https://registry.yarnpkg.com/image-q/-/image-q-1.1.1.tgz#fc84099664460b90ca862d9300b6bfbbbfbf8056"
   integrity sha1-/IQJlmRGC5DKhi2TALa/u7+/gFY=
 
-imagemin-giflossy@^5.0.0:
+imagemin-giflossy@^5.1.10:
   version "5.1.10"
   resolved "https://registry.yarnpkg.com/imagemin-giflossy/-/imagemin-giflossy-5.1.10.tgz#3f910e7c9e987fea0c1bfd7d522dd56bd0a38cc3"
   integrity sha1-P5EOfJ6Yf+oMG/19Ui3Va9CjjMM=
@@ -11486,15 +11485,6 @@ imagemin-giflossy@^5.0.0:
     exec-buffer "^3.0.0"
     giflossy "^3.0.41"
     is-gif "^1.0.0"
-
-imagemin-mozjpeg@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/imagemin-mozjpeg/-/imagemin-mozjpeg-8.0.0.tgz#d2ca4e8c982c7c6eda55069af89dee4c1cebcdfd"
-  integrity sha512-+EciPiIjCb8JWjQNr1q8sYWYf7GDCNDxPYnkD11TNIjjWNzaV+oTg4DpOPQjl5ZX/KRCPMEgS79zLYAQzLitIA==
-  dependencies:
-    execa "^1.0.0"
-    is-jpg "^2.0.0"
-    mozjpeg "^6.0.0"
 
 imagemin-mozjpeg@^9.0.0:
   version "9.0.0"
@@ -11516,7 +11506,7 @@ imagemin-pngquant@^9.0.1:
     ow "^0.17.0"
     pngquant-bin "^6.0.0"
 
-imagemin@^7.0.0, imagemin@^7.0.1:
+imagemin@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/imagemin/-/imagemin-7.0.1.tgz#f6441ca647197632e23db7d971fffbd530c87dbf"
   integrity sha512-33AmZ+xjZhg2JMCe+vDf6a9mzWukE7l+wAtesjE7KyteqqKjzxv7aVQeWnul1Ve26mWvEQqyPwl0OctNBfSR9w==
@@ -14743,15 +14733,6 @@ move-concurrently@^1.0.1:
     rimraf "^2.5.4"
     run-queue "^1.0.3"
 
-mozjpeg@^6.0.0:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/mozjpeg/-/mozjpeg-6.0.1.tgz#56969dddb5741ef2bcb1af066cae21e61a91a27b"
-  integrity sha512-9Z59pJMi8ni+IUvSH5xQwK5tNLw7p3dwDNCZ3o1xE+of3G5Hc/yOz6Ue/YuLiBXU3ZB5oaHPURyPdqfBX/QYJA==
-  dependencies:
-    bin-build "^3.0.0"
-    bin-wrapper "^4.0.0"
-    logalot "^2.1.0"
-
 mozjpeg@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/mozjpeg/-/mozjpeg-7.0.0.tgz#c20f67a538fcaaa388d325875c53c0e7bc432f7d"
@@ -15784,7 +15765,7 @@ p-queue@^4.0.0:
   dependencies:
     eventemitter3 "^3.1.0"
 
-p-queue@^6.2.1, p-queue@^6.3.0, p-queue@^6.6.2:
+p-queue@^6.2.1, p-queue@^6.6.2:
   version "6.6.2"
   resolved "https://registry.yarnpkg.com/p-queue/-/p-queue-6.6.2.tgz#2068a9dcf8e67dd0ec3e7a2bcb76810faa85e426"
   integrity sha512-RwFpb72c/BhQLEXIZ5K2e+AhgNVmIejGlTgiB9MzZ0e93GRvqZ7uSi0dvRF7/XIXDeNkra2fNHBxTyPDGySpjQ==
