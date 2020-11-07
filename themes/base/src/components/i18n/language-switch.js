@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import styled from '@emotion/styled'
+import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import {
@@ -11,14 +12,9 @@ import {
 } from '@gatsby-mdx-suite/helpers/routing'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
-const List = styled.ul({
-  display: 'flex',
-  margin: 0,
-  padding: 0,
-  listStyleType: 'none',
-  textTransform: 'uppercase',
-  whiteSpace: 'nowrap',
-})
+const List = tw.ul`
+  flex m-0 mb-0! p-0 list-none uppercase whitespace-no-wrap
+`
 
 const ListItem = styled.li({
   margin: 0,
