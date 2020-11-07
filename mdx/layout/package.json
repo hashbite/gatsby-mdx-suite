@@ -30,7 +30,8 @@
     "@gatsby-mdx-suite/helpers": "^0.11.0",
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.5",
     "@gatsby-mdx-suite/mdx-image": "^0.8.0",
-    "@researchgate/react-intersection-observer": "^1.3.4"
+    "@gatsby-mdx-suite/mdx-video": "^0.6.1",
+    "@researchgate/react-intersection-observer": "^1.3.5"
   },
   "publishConfig": {
     "access": "public"
