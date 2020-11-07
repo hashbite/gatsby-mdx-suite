@@ -204,14 +204,13 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
   // Make gatsby-transformer-video optional
   if (!enabledPlugins.includes('gatsby-transformer-video')) {
     typeDefs.push(`
-      type FakeScreenshots implements Node @dontInfer {
-          path: String
+      type FakeScreenshot implements Node @dontInfer {
+        publicURL: String
       }
     `)
     typeDefs.push(`
       type FakeVideo implements Node @dontInfer  {
         path: String
-        screenshots: FakeScreenshots
       }
     `)
     typeDefs.push(
@@ -224,7 +223,13 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
               fps: 'Int',
               duration: 'Int',
               maxWidth: 'Int',
-              screenshots: 'String',
+            },
+          },
+          videoScreenshots: {
+            type: 'FakeScreenshot',
+            args: {
+              width: 'Int',
+              timestamps: ['String'],
             },
           },
         },

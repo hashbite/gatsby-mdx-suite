@@ -156,7 +156,10 @@ export default function Video({
           playsInline={autoplay || !controls}
           preload={preload}
           muted={autoplay || muted}
-          poster={video.screenshots && video.screenshots[screenshotIndex]}
+          poster={
+            video.videoScreenshots &&
+            video.videoScreenshots[screenshotIndex].publicURL
+          }
           aspectRatio={aspectRatio}
           {...props}
         >
