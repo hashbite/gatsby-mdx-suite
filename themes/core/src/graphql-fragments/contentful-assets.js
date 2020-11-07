@@ -22,11 +22,11 @@ export const MdxSuiteMediaCollectionScreen = graphql`
     fluid(maxWidth: 2048) {
       ...GatsbyContentfulFluid_withWebp
     }
-    videoH264(screenshots: "0", maxWidth: 1920) {
+    videoH264(maxWidth: 1920) {
       path
-      screenshots {
-        path
-      }
+    }
+    videoScreenshots(timestamps: ["0"], width: 1920) {
+      publicURL
     }
   }
 `
@@ -34,7 +34,7 @@ export const MdxSuiteMediaCollectionScreen = graphql`
 export const MdxSuiteMediaCollectionScreenDocs = graphql`
   fragment MdxSuiteMediaCollectionScreenDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
+    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
       path
     }
   }
@@ -46,11 +46,11 @@ export const MdxSuiteMediaCollectionFull = graphql`
     fluid(maxWidth: 1200) {
       ...GatsbyContentfulFluid_withWebp
     }
-    videoH264(screenshots: "0", maxWidth: 1200) {
+    videoH264(maxWidth: 1200) {
       path
-      screenshots {
-        path
-      }
+    }
+    videoScreenshots(timestamps: ["0"], width: 1200) {
+      publicURL
     }
   }
 `
@@ -58,7 +58,7 @@ export const MdxSuiteMediaCollectionFull = graphql`
 export const MdxSuiteMediaCollectionFullDocs = graphql`
   fragment MdxSuiteMediaCollectionFullDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
+    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
       path
     }
   }
@@ -70,11 +70,11 @@ export const MdxSuiteMediaCollectionHalf = graphql`
     fluid(maxWidth: 600) {
       ...GatsbyContentfulFluid_withWebp
     }
-    videoH264(screenshots: "0", maxWidth: 600) {
+    videoH264(maxWidth: 600) {
       path
-      screenshots {
-        path
-      }
+    }
+    videoScreenshots(timestamps: ["0"], width: 600) {
+      publicURL
     }
   }
 `
@@ -82,7 +82,7 @@ export const MdxSuiteMediaCollectionHalf = graphql`
 export const MdxSuiteMediaCollectionHalfDocs = graphql`
   fragment MdxSuiteMediaCollectionHalfDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
+    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
       path
     }
   }
@@ -94,11 +94,11 @@ export const MdxSuiteMediaCollectionThird = graphql`
     fluid(maxWidth: 400) {
       ...GatsbyContentfulFluid_withWebp
     }
-    videoH264(screenshots: "0", maxWidth: 400) {
+    videoH264(maxWidth: 400) {
       path
-      screenshots {
-        path
-      }
+    }
+    videoScreenshots(timestamps: ["0"], width: 400) {
+      publicURL
     }
   }
 `
@@ -106,7 +106,7 @@ export const MdxSuiteMediaCollectionThird = graphql`
 export const MdxSuiteMediaCollectionThirdDocs = graphql`
   fragment MdxSuiteMediaCollectionThirdDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
+    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
       path
     }
   }
@@ -118,11 +118,11 @@ export const MdxSuiteMediaCollectionQuarter = graphql`
     fluid(maxWidth: 300) {
       ...GatsbyContentfulFluid_withWebp
     }
-    videoH264(screenshots: "0", maxWidth: 300) {
+    videoH264(maxWidth: 300) {
       path
-      screenshots {
-        path
-      }
+    }
+    videoScreenshots(timestamps: ["0"], width: 300) {
+      publicURL
     }
   }
 `
@@ -130,7 +130,7 @@ export const MdxSuiteMediaCollectionQuarter = graphql`
 export const MdxSuiteMediaCollectionQuarterDocs = graphql`
   fragment MdxSuiteMediaCollectionQuarterDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
+    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
       path
     }
   }
@@ -142,11 +142,11 @@ export const MdxSuiteMediaCollectionSixth = graphql`
     fluid(maxWidth: 200) {
       ...GatsbyContentfulFluid_withWebp
     }
-    videoH264(screenshots: "0", maxWidth: 200) {
+    videoH264(maxWidth: 200) {
       path
-      screenshots {
-        path
-      }
+    }
+    videoScreenshots(timestamps: ["0"], width: 200) {
+      publicURL
     }
   }
 `
@@ -154,7 +154,7 @@ export const MdxSuiteMediaCollectionSixth = graphql`
 export const MdxSuiteMediaCollectionSixthDocs = graphql`
   fragment MdxSuiteMediaCollectionSixthDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
+    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
       path
     }
   }
@@ -166,11 +166,11 @@ export const MdxSuiteMediaCollectionEigth = graphql`
     fluid(maxWidth: 150) {
       ...GatsbyContentfulFluid_withWebp
     }
-    videoH264(screenshots: "0", maxWidth: 150) {
+    videoH264(maxWidth: 150) {
       path
-      screenshots {
-        path
-      }
+    }
+    videoScreenshots(timestamps: ["0"], width: 150) {
+      publicURL
     }
   }
 `
@@ -178,7 +178,7 @@ export const MdxSuiteMediaCollectionEigth = graphql`
 export const MdxSuiteMediaCollectionEigthDocs = graphql`
   fragment MdxSuiteMediaCollectionEigthDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 1, preset: "ultrafast", maxWidth: 300) {
+    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
       path
     }
   }
