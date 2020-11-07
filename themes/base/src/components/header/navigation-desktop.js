@@ -32,7 +32,7 @@ const NavigationDesktopTopContentWrapper = styled.div`
 const NavigationDesktopTopContent = styled.div(
   () =>
     css`
-      ${tw`flex justify-between items-center flex-wrap relative`}
+      ${tw`flex justify-between items-stretch flex-wrap relative`}
     `
 )
 const NavigationDesktopBottomContent = styled.div`
@@ -40,7 +40,7 @@ const NavigationDesktopBottomContent = styled.div`
 `
 
 const HeaderLogoWrapper = styled.h1`
-  ${tw`m-0 w-48 lg:w-64`}
+  ${tw`m-0 mb-0! w-48 lg:w-64`}
 
   & a {
     ${tw`block`}
