@@ -7,12 +7,11 @@ import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import IconFullscreen from 'heroicons/outline/external-link.svg'
-import AceEditor from 'react-ace'
+import Loadable from '@loadable/component'
 
-import 'ace-builds/src-noconflict/ext-searchbox'
-import 'ace-builds/src-noconflict/ext-language_tools'
-import 'ace-builds/src-noconflict/mode-markdown'
-import 'ace-builds/src-noconflict/theme-dracula'
+const AceEditor = Loadable(() =>
+  import(/* webpackChunkName: "ace-editor" */ 'react-ace')
+)
 
 const LiveEditorWrapper = styled.section(
   ({ layout }) => css`
@@ -96,6 +95,11 @@ const isVideo = (mimeType) => mimeType.indexOf('video') === 0
 
 function LiveEditor({ editorId, initialValue, layout }) {
   const localStorageId = `mdx-suite-live-editor-${editorId}`
+
+  useEffect(() => {
+    import(/* webpackChunkName: "ace-editor-plugins" */ './ace-editor-plugins')
+  }, [])
+
   const editorRef = useRef(null)
   const [editorValue, setEditorValue] = useState(
     localStorage.getItem(localStorageId) || initialValue || ''
