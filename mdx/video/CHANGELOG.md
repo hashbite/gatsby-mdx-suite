@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.6.2...@gatsby-mdx-suite/mdx-video@0.6.3) (2020-11-08)
+
+
+### Bug Fixes
+
+* **video:** show poster and improve video quality ([1c121ff](https://github.com/axe312ger/gatsby-mdx-suite/commit/1c121ffbb7fdc7874e3a89bc91ec4ece64254f67))
+
+
+
+
+
 ## [0.6.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.6.1...@gatsby-mdx-suite/mdx-video@0.6.2) (2020-11-08)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-video
