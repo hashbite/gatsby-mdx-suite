@@ -100,9 +100,9 @@ exports.createResolvers = ({ createResolvers, reporter }, themeConfig) => {
           if (mediaIds.length) {
             const meta = [
               source.fileAbsolutePath,
-              context?.context?.title,
-              context?.context?.locale,
-              context?.context?.pageId,
+              context && context.context && context.context.title,
+              context && context.context && context.context.locale,
+              context && context.context && context.context.pageId,
               `(${source.id})`,
             ]
               .filter(Boolean)
