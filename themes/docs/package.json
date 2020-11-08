@@ -28,17 +28,17 @@
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.5",
     "@gatsby-mdx-suite/mdx-copy": "^0.10.3",
     "@gatsby-mdx-suite/mdx-link": "^0.8.2",
-    "@loadable/component": "^5.13.2",
-    "@mdx-js/mdx": "^1.6.18",
-    "@mdx-js/react": "^1.6.18",
-    "@mdx-js/runtime": "^1.6.18",
+    "@loadable/component": "^5.14.1",
+    "@mdx-js/mdx": "^1.6.21",
+    "@mdx-js/react": "^1.6.21",
+    "@mdx-js/runtime": "^1.6.21",
     "@react-hook/debounce": "^3.0.0",
     "@use-it/event-listener": "^0.1.5",
     "ace-builds": "^1.4.12",
     "gatsby-link": "^2.4.16",
-    "gatsby-source-filesystem": "^2.3.35",
+    "gatsby-source-filesystem": "^2.4.2",
     "gatsby-transformer-documentationjs": "^4.3.17",
     "gatsby-transformer-react-docgen": "^5.2.15",
-    "react-ace": "^9.1.4"
+    "react-ace": "^9.2.0"
   }
 }
