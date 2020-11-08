@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.4.1...gatsby-theme-mdx-suite-base@0.5.0) (2020-11-08)
+
+
+### Bug Fixes
+
+* **docs:** ensure footer is not rendered in docs ([a61f681](https://github.com/axe312ger/gatsby-mdx-suite/commit/a61f681ec2e4127aa285157ae7df21df052297ea))
+* **docs:** ensure Header and Hide are parsed for component list ([f0dbc16](https://github.com/axe312ger/gatsby-mdx-suite/commit/f0dbc1622cf8483ec22f5c87fa84383f59e20aa1))
+* **styling:** improve header menu styling ([24f52e6](https://github.com/axe312ger/gatsby-mdx-suite/commit/24f52e62bba6b6e4c6495dfc9bddc2d1e6179003))
+
+
+### Features
+
+* **editing:** replace headlines, paragraphs and images with our enhanced components ([07c56f7](https://github.com/axe312ger/gatsby-mdx-suite/commit/07c56f7c48e12ed66e6dcf400f625f03171796cb))
+* **layout:** introduce Hide component ([c1af15c](https://github.com/axe312ger/gatsby-mdx-suite/commit/c1af15c8bb414b799480bb2614a465066e1c45e6))
+* **perf:** heavy components like video embeds can now be loaded as an async chunk which is delayed till the user scrolls to it ([5fdd75f](https://github.com/axe312ger/gatsby-mdx-suite/commit/5fdd75fa4f8ef02379538d2eef1743a2955ee1fd))
+
+
+
+
+
 ## [0.4.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.4.0...gatsby-theme-mdx-suite-base@0.4.1) (2020-10-28)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base

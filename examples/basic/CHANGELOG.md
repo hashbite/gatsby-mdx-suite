@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.3.1...gatsby-mdx-suite-example-basic@0.4.0) (2020-11-08)
+
+
+### Features
+
+* **components:** add Youtube and Vimeo video player ([fa1ccee](https://github.com/axe312ger/gatsby-mdx-suite/commit/fa1ccee222843058f2ff1d85eea088df0cf601cb))
+
+
+
+
+
 ## [0.3.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.3.0...gatsby-mdx-suite-example-basic@0.3.1) (2020-10-28)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-basic

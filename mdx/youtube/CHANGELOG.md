@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.6.2...@gatsby-mdx-suite/mdx-youtube@0.7.0) (2020-11-08)
+
+
+### Features
+
+* **perf:** heavy components like video embeds can now be loaded as an async chunk which is delayed till the user scrolls to it ([5fdd75f](https://github.com/axe312ger/gatsby-mdx-suite/commit/5fdd75fa4f8ef02379538d2eef1743a2955ee1fd))
+
+
+
+
+
 ## [0.6.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.6.1...@gatsby-mdx-suite/mdx-youtube@0.6.2) (2020-10-21)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube

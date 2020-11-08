@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.11.0...@gatsby-mdx-suite/helpers@0.12.0) (2020-11-08)
+
+
+### Features
+
+* **responsive-font:** support rem values for Claim, ResponsiveTextBlock and more ([d37e31c](https://github.com/axe312ger/gatsby-mdx-suite/commit/d37e31c61d62c2f867a4cb889607fcbce27cec19))
+
+
+
+
+
 # [0.11.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.10.0...@gatsby-mdx-suite/helpers@0.11.0) (2020-10-19)
 
 

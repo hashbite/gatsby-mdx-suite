@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.21.1...@gatsby-mdx-suite/mdx-layout@0.22.0) (2020-11-08)
+
+
+### Bug Fixes
+
+* **docs:** ensure Header and Hide are parsed for component list ([f0dbc16](https://github.com/axe312ger/gatsby-mdx-suite/commit/f0dbc1622cf8483ec22f5c87fa84383f59e20aa1))
+
+
+### Features
+
+* **columns:** add templateAt propert. ([fda483f](https://github.com/axe312ger/gatsby-mdx-suite/commit/fda483fbb16d3b576a7a5e5c7f6981c9bbf420c7))
+* **layout:** introduce Hide component ([c1af15c](https://github.com/axe312ger/gatsby-mdx-suite/commit/c1af15c8bb414b799480bb2614a465066e1c45e6))
+
+
+
+
+
 ## [0.21.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.21.0...@gatsby-mdx-suite/mdx-layout@0.21.1) (2020-10-28)
 
 

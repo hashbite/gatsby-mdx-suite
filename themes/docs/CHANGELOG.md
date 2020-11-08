@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.3.5...gatsby-theme-mdx-suite-docs@0.3.6) (2020-11-08)
+
+
+### Bug Fixes
+
+* **docs:** ensure Header and Hide are parsed for component list ([f0dbc16](https://github.com/axe312ger/gatsby-mdx-suite/commit/f0dbc1622cf8483ec22f5c87fa84383f59e20aa1))
+
+
+### Performance Improvements
+
+* **editor:** create chunks for ace editor and plugins ([6d4ead4](https://github.com/axe312ger/gatsby-mdx-suite/commit/6d4ead457bc0bd5487e18c25c30d9a15f83270ad))
+
+
+
+
+
 ## [0.3.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.3.4...gatsby-theme-mdx-suite-docs@0.3.5) (2020-10-28)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-docs

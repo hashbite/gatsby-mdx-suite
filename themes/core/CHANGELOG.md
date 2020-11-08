@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.4.3...gatsby-theme-mdx-suite-core@0.5.0) (2020-11-08)
+
+
+### Features
+
+* **editing:** replace headlines, paragraphs and images with our enhanced components ([07c56f7](https://github.com/axe312ger/gatsby-mdx-suite/commit/07c56f7c48e12ed66e6dcf400f625f03171796cb))
+
+
+
+
+
 ## [0.4.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.4.2...gatsby-theme-mdx-suite-core@0.4.3) (2020-10-22)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.2.0...@gatsby-mdx-suite/mdx-vimeo@0.3.0) (2020-11-08)
+
+
+### Bug Fixes
+
+* **styling:** vimeo videos now follow vertical rhythm ([616c46b](https://github.com/axe312ger/gatsby-suite-mdx/commit/616c46bd2a4a0369b923d224a81474ffd83bbd3e))
+
+
+### Features
+
+* **perf:** heavy components like video embeds can now be loaded as an async chunk which is delayed till the user scrolls to it ([5fdd75f](https://github.com/axe312ger/gatsby-suite-mdx/commit/5fdd75fa4f8ef02379538d2eef1743a2955ee1fd))
+
+
+
+
+
 # [0.2.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.1.0...@gatsby-mdx-suite/mdx-vimeo@0.2.0) (2020-10-11)
 
 
