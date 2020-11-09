@@ -28,7 +28,7 @@ export default function LazyComponent({
       const scrollTriggerInstance = ScrollTrigger.create({
         trigger: node,
         markers,
-
+        start: 'top 120%',
         end: 'bottom top',
         onToggle: ({ isActive }) => isActive && setShouldRender(true),
       })
