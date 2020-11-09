@@ -6,6 +6,7 @@ import Observer from '@researchgate/react-intersection-observer'
 import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
+import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
 
 const VideoWrapper = styled.div(
   ({ aspectRatio, maxWidth }) => css`
@@ -60,6 +61,7 @@ export default function Video({
   aspectRatio,
   contextKey,
   className,
+  forceRendering,
   ...props
 }) {
   const {
@@ -138,35 +140,37 @@ export default function Video({
   }
 
   return (
-    <Observer
-      treshold={0.33}
-      onChange={handleVideoIntersection}
-      threshold={0.3}
-    >
-      <VideoWrapper
-        maxWidth={maxWidth}
-        aspectRatio={aspectRatio}
-        className={className}
+    <LazyComponent forceRendering={forceRendering}>
+      <Observer
+        treshold={0.33}
+        onChange={handleVideoIntersection}
+        threshold={0.3}
       >
-        <VideoTag
-          ref={refVideo}
-          onMouseEnter={handleVideoMouseEnter}
-          onMouseLeave={handleVideoMouseLeave}
-          controls={controls}
-          playsInline={autoplay || !controls}
-          preload={preload}
-          muted={autoplay || muted}
-          poster={
-            video.videoScreenshots &&
-            video.videoScreenshots[screenshotIndex].publicURL
-          }
+        <VideoWrapper
+          maxWidth={maxWidth}
           aspectRatio={aspectRatio}
-          {...props}
+          className={className}
         >
-          {sources}
-        </VideoTag>
-      </VideoWrapper>
-    </Observer>
+          <VideoTag
+            ref={refVideo}
+            onMouseEnter={handleVideoMouseEnter}
+            onMouseLeave={handleVideoMouseLeave}
+            controls={controls}
+            playsInline={autoplay || !controls}
+            preload={preload}
+            muted={autoplay || muted}
+            poster={
+              video.videoScreenshots &&
+              video.videoScreenshots[screenshotIndex].publicURL
+            }
+            aspectRatio={aspectRatio}
+            {...props}
+          >
+            {sources}
+          </VideoTag>
+        </VideoWrapper>
+      </Observer>
+    </LazyComponent>
   )
 }
 
@@ -179,6 +183,7 @@ Video.defaultProps = {
   preload: 'metadata',
   contextKey: 'screen',
   maxWidth: '100%',
+  forceRendering: false,
 }
 
 Video.propTypes = {
@@ -202,4 +207,6 @@ Video.propTypes = {
   preload: propTypes.string,
   /** Change rendering size of the video */
   contextKey: propTypes.string,
+  /** Force video to be rendered, even when user did not scroll close. Useful for components that will be displayed above the fold. */
+  forceRendering: propTypes.bool,
 }
