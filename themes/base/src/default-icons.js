@@ -6,6 +6,8 @@ import Star from 'heroicons/solid/star.svg'
 import Phone from 'heroicons/solid/phone.svg'
 import Mail from 'heroicons/solid/mail.svg'
 import Close from 'heroicons/solid/x.svg'
+import ChevronRight from 'heroicons/outline/chevron-right.svg'
+import ChevronLeft from 'heroicons/outline/chevron-left.svg'
 
 // Brand logos via https://simpleicons.org/
 import {
@@ -41,6 +43,8 @@ export default new Map(
     dotSmall: { icon: Dot, scale: 0.6 },
     star: { icon: Star },
     close: { icon: Close },
+    next: { icon: ChevronRight },
+    previous: { icon: ChevronLeft },
     phone: { icon: Phone },
     mail: { icon: Mail },
     facebook: { icon: Facebook },

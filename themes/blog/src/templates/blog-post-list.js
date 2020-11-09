@@ -5,8 +5,6 @@ import tw from 'twin.macro'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import NextIcon from 'heroicons/outline/chevron-right.svg'
-import PreviousIcon from 'heroicons/outline/chevron-left.svg'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
@@ -15,6 +13,7 @@ import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
 import Section from '@gatsby-mdx-suite/mdx-layout/section'
 import Cta from '@gatsby-mdx-suite/mdx-link/cta'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
+import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 const BlogPostTeaser = tw.article`flex flex-col h-full`
 const BlogPostTeaserHeadline = styled.h1`
@@ -76,7 +75,7 @@ const BlogPostList = ({ data, pageContext }) => {
           <div>
             {pageContext.previousPagePath && (
               <Cta to={pageContext.previousPagePath}>
-                <PreviousIcon />
+                <Icon icon="previous" />
                 {t('previous')}
               </Cta>
             )}
@@ -85,7 +84,7 @@ const BlogPostList = ({ data, pageContext }) => {
             {pageContext.nextPagePath && (
               <Cta to={pageContext.nextPagePath}>
                 {t('next')}
-                <NextIcon />
+                <Icon icon="next" />
               </Cta>
             )}
           </div>
