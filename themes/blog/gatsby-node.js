@@ -2,10 +2,10 @@ const { resolve } = require('path')
 const { createPath } = require('@gatsby-mdx-suite/helpers/routing')
 const { paginate } = require('gatsby-awesome-pagination')
 
-exports.createPages = async (
-  { graphql, actions, getCache },
-  themeOptions = { itemsPerPage: 2 }
-) => {
+const merge = require('deepmerge')
+
+exports.createPages = async ({ graphql, actions, getCache }, themeConfig) => {
+  const options = merge({ itemsPerPage: 6 }, themeConfig)
   const { createPage } = actions
   const { config } = await getCache().get('mdx-suite')
 
@@ -54,7 +54,7 @@ exports.createPages = async (
     paginate({
       createPage,
       items: localizedBlogPosts,
-      itemsPerPage: themeOptions.itemsPerPage,
+      itemsPerPage: options.itemsPerPage,
       pathPrefix: createPath({ slug: 'blog', locale, config }),
       component: resolve(__dirname, `./src/templates/blog-post-list.js`),
       context: {
