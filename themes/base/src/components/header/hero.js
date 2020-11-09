@@ -79,6 +79,7 @@ const Hero = ({
               muted
               controls={false}
               id={backgroundVideoId}
+              forceRendering
             />
           )}
         </HeroMediaWrapper>
