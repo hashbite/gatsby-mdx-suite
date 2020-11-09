@@ -46,6 +46,7 @@ const components = {
   // Overwrite standard html elements with our custom components
   ul: (props) => <List type="unordered" {...props} />,
   ol: (props) => <List type="ordered" {...props} />,
+  li: (props) => <ListItem {...props} />,
   h1: (props) => (
     <Claim tag="h1" fontSizeMin="1.75rem" fontSizeMax="2.25rem" {...props} />
   ),
