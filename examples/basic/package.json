@@ -25,8 +25,8 @@
     "gatsby": "^2.25.3",
     "gatsby-theme-mdx-suite-base": "^0.5.1",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-i18next": "^11.7.2",
     "twin.macro": "^1.12.0"
   },

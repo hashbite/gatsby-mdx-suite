@@ -7,10 +7,11 @@ import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import IconFullscreen from 'heroicons/outline/external-link.svg'
-import Loadable from '@loadable/component'
 
-const AceEditor = Loadable(() =>
-  import(/* webpackChunkName: "ace-editor" */ 'react-ace')
+import Loading from 'gatsby-theme-mdx-suite-base/src/components/async/loading'
+
+const AceEditor = React.lazy(() =>
+  import(/* webpackChunkName: "ace-editor" */ './ace-editor')
 )
 
 const LiveEditorWrapper = styled.section(
@@ -95,10 +96,6 @@ const isVideo = (mimeType) => mimeType.indexOf('video') === 0
 
 function LiveEditor({ editorId, initialValue, layout }) {
   const localStorageId = `mdx-suite-live-editor-${editorId}`
-
-  useEffect(() => {
-    import(/* webpackChunkName: "ace-editor-plugins" */ './ace-editor-plugins')
-  }, [])
 
   const editorRef = useRef(null)
   const [editorValue, setEditorValue] = useState(
@@ -219,6 +216,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
     }
   }, [editorValue, setUnverifiedValue, unverifiedValue])
 
+  const isSSR = typeof window === 'undefined'
+
   const handleEditorChange = (content) =>
     setEditorValue(content.replace(/^[ \t]+$/gm, ''))
 
@@ -249,22 +248,26 @@ function LiveEditor({ editorId, initialValue, layout }) {
         <LiveEditorPreview src={previewSrc} />
       </LiveEditorPreviewWrapper>
       <LiveEditorEditor>
-        <AceEditor
-          mode="markdown"
-          theme="dracula"
-          ref={editorRef}
-          enableEmmet
-          enableLiveAutocompletion
-          tabSize={2}
-          onChange={handleEditorChange}
-          name={`docs-ace-editor-${editorId}`}
-          editorProps={{
-            $blockScrolling: true,
-          }}
-          value={editorValue}
-          width="100%"
-          height="100%"
-        />
+        {!isSSR && (
+          <React.Suspense fallback={<Loading />}>
+            <AceEditor
+              mode="markdown"
+              theme="dracula"
+              ref={editorRef}
+              enableEmmet
+              enableLiveAutocompletion
+              tabSize={2}
+              onChange={handleEditorChange}
+              name={`docs-ace-editor-${editorId}`}
+              editorProps={{
+                $blockScrolling: true,
+              }}
+              value={editorValue}
+              width="100%"
+              height="100%"
+            />
+          </React.Suspense>
+        )}
       </LiveEditorEditor>
     </LiveEditorWrapper>
   )

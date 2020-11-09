@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import propTypes from 'prop-types'
-import loadable from '@loadable/component'
 import tw from 'twin.macro'
 import styled from '@emotion/styled'
 import useEventListener from '@use-it/event-listener'
 
 import DataProvider from '../../components/data-provider'
 
-const MDX = loadable(() =>
+import Loading from 'gatsby-theme-mdx-suite-base/src/components/async/loading'
+
+const MDX = React.lazy(() =>
   import(/* webpackChunkName: "mdx-runtime" */ '@mdx-js/runtime')
 )
 
@@ -61,11 +62,17 @@ const DocsPreviewPage = () => {
     return null
   }
 
+  const isSSR = typeof window === 'undefined'
+
   return (
     <DataProvider>
       <ContentWrapper>
         <MDXErrorBoundary>
-          <MDX>{content}</MDX>
+          {!isSSR && (
+            <React.Suspense fallback={<Loading />}>
+              <MDX>{content}</MDX>
+            </React.Suspense>
+          )}
         </MDXErrorBoundary>
       </ContentWrapper>
     </DataProvider>

@@ -48,8 +48,6 @@ module.exports = (themeConfig) => {
       // Media
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
-      // DX
-      `gatsby-plugin-loadable-components-ssr`,
     ].filter(Boolean),
   }
 }

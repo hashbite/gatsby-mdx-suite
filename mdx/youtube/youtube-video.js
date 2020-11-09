@@ -1,10 +1,9 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import Loadable from '@loadable/component'
 import AsyncChunk from 'gatsby-theme-mdx-suite-base/src/components/async/async-chunk'
 
-const YoutubeVideoRenderer = Loadable(() =>
+const YoutubeVideoRenderer = React.lazy(() =>
   import(
     /* webpackChunkName: "youtube-video-player" */ './youtube-video-renderer'
   )
