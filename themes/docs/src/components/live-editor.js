@@ -47,7 +47,7 @@ const LiveEditorPreview = styled.iframe`
   ${tw`overflow-scroll w-full h-full`}
 `
 const PreviewControls = tw.div`absolute z-50 right-0 top-0 m-4`
-const PreviewControl = tw.a`rounded bg-gray-200 px-2 py-1`
+const PreviewControl = tw.a`rounded bg-gray-200 text-gray-900 px-2 py-1`
 const PreviewControlIcon = styled(IconFullscreen)`
   display: inline-block;
   width: 1.4rem;
@@ -242,7 +242,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
       <LiveEditorPreviewWrapper>
         <PreviewControls>
           <PreviewControl target="_blank" href={previewSrc}>
-            <PreviewControlIcon /> Full Size
+            <PreviewControlIcon /> Full Size Preview
           </PreviewControl>
         </PreviewControls>
         <LiveEditorPreview src={previewSrc} />
