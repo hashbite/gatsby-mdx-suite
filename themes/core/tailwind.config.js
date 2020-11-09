@@ -99,18 +99,22 @@ module.exports = merge(
           h1: {
             color: config('theme.colors.headline'),
             fontFamily: config('theme.fontFamily.headline').join(', '),
+            fontSize: '1.75rem',
           },
           h2: {
             color: config('theme.colors.headline'),
             fontFamily: config('theme.fontFamily.headline').join(', '),
+            fontSize: '1.5rem',
           },
           h3: {
             color: config('theme.colors.headline'),
             fontFamily: config('theme.fontFamily.headline').join(', '),
+            fontSize: '1.25rem',
           },
           h4: {
             color: config('theme.colors.headline'),
             fontFamily: config('theme.fontFamily.headline').join(', '),
+            fontSize: '1.125rem',
           },
           h5: {
             color: config('theme.colors.headline'),
