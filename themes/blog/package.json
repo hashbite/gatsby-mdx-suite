@@ -23,9 +23,11 @@
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.5",
     "@gatsby-mdx-suite/helpers": "^0.12.0",
+    "@gatsby-mdx-suite/mdx-copy": "^0.11.0",
     "@gatsby-mdx-suite/mdx-image": "^0.8.0",
     "@gatsby-mdx-suite/mdx-layout": "^0.22.0",
     "@gatsby-mdx-suite/mdx-link": "^0.8.3",
+    "deepmerge": "^4.2.2",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-theme-mdx-suite-base": "^0.5.1"
   }
