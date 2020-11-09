@@ -15,14 +15,16 @@ export default function LazyComponent({
   markers,
   children,
   loading = <DefaultLoading />,
+  forceRendering = false,
 }) {
   const [scrollTrigger, setScrollTrigger] = useState(false)
-  const [shouldRender, setShouldRender] = useState(false)
+  const [shouldRender, setShouldRender] = useState(forceRendering)
   const [wrapperHeight, setWrapperHeight] = useState(null)
 
   const initScrollTrigger = useCallback(
     (node) => {
-      if (!node) {
+      // Do not init when rendering is forced or wrapper is not yet mounted.
+      if (!node || forceRendering) {
         return
       }
       const scrollTriggerInstance = ScrollTrigger.create({
@@ -36,7 +38,7 @@ export default function LazyComponent({
       setWrapperHeight(node.clientHeight)
       return scrollTriggerInstance.kill
     },
-    [markers]
+    [markers, forceRendering]
   )
 
   // Remove Scroll trigger as soon chunk starts loading
@@ -67,4 +69,6 @@ LazyComponent.propTypes = {
   loading: propTypes.node,
   /** Enable markers for debugging */
   markers: propTypes.bool,
+  /** Do not listen for scroll position and force rendering. Useful for components that will get rendered above the fold. */
+  forceRendering: propTypes.bool,
 }

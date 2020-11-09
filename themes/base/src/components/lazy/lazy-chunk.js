@@ -7,18 +7,18 @@ import DefaultLoading from './loading'
 /**
  * Ensure a loadable component is delayed until the user scrolls close to it
  */
-export default function LazyChunk({ children, loading = <DefaultLoading /> }) {
+export default function LazyChunk({
+  children,
+  loading = <DefaultLoading />,
+  ...props
+}) {
   const isSSR = typeof window === 'undefined'
 
   return (
-    <LazyComponent>
+    <LazyComponent {...props}>
       {!isSSR && <React.Suspense fallback={loading}>{children}</React.Suspense>}
     </LazyComponent>
   )
-}
-
-LazyChunk.defaultProps = {
-  markers: false,
 }
 
 LazyChunk.propTypes = {
