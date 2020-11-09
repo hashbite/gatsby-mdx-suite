@@ -8,6 +8,7 @@ import Mail from 'heroicons/solid/mail.svg'
 import Close from 'heroicons/solid/x.svg'
 import ChevronRight from 'heroicons/outline/chevron-right.svg'
 import ChevronLeft from 'heroicons/outline/chevron-left.svg'
+import Menu from 'heroicons/outline/menu.svg'
 
 // Brand logos via https://simpleicons.org/
 import {
@@ -45,6 +46,7 @@ export default new Map(
     close: { icon: Close },
     next: { icon: ChevronRight },
     previous: { icon: ChevronLeft },
+    menu: { icon: Menu },
     phone: { icon: Phone },
     mail: { icon: Mail },
     facebook: { icon: Facebook },
