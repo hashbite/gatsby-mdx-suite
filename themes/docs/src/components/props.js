@@ -21,7 +21,7 @@ const PropWrapper = styled.tr(
     }
   `
 )
-const DescriptionWrapper = styled(PropWrapper)`
+const DescriptionWrapper = styled.div`
   ${tw`text-sm whitespace-normal`}
   & ul {
     list-style-type: disc;
@@ -77,7 +77,7 @@ function Props({ componentProps }) {
                 {required && <Required>required</Required>}
               </td>
               <td>{defaultValue && defaultValue.value}</td>
-              <td colSpan={3}>
+              <td>
                 {description && description.text && description.childMdx && (
                   <DescriptionWrapper>
                     <MDXRenderer>{description.childMdx.body}</MDXRenderer>
