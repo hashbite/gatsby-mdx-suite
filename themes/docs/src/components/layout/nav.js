@@ -1,12 +1,8 @@
-import React, { useState, useCallback } from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
-
-import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
-
-const MENU_TRIGGER_BREAKPOINT = 'md'
 
 const StyledNav = styled.nav(
   ({ gridArea, inverted }) => css`
@@ -55,44 +51,18 @@ const Trigger = styled.button`
     ${tw`outline-none`}
   }
 `
-
-const TriggerLabel = styled.div`
-  position: absolute;
-  top: 2rem;
-  right: 50%;
-  transform-origin: center center;
-  transform: translate(50%, 100%) rotate(-90deg);
-  line-height: 1;
-  white-space: nowrap;
-`
 const Content = styled.div(
-  ({ isOpen }) => css`
-    max-width: 0;
-    ${isOpen &&
-    css`
-      max-width: 360px;
-    `}
+  () => css`
+    max-width: 360px;
     width: 100vw;
     transition: max-width 0.15s ease;
   `
 )
 
-const Nav = ({ children, gridArea, inverted, title }) => {
-  const breakpoints = useBreakpoint()
-  const [isOpen, setIsOpen] = useState(breakpoints[MENU_TRIGGER_BREAKPOINT])
-
-  const handleTriggerClick = useCallback(() => {
-    setIsOpen((isOpen) => !isOpen)
-  }, [])
-
+const Nav = ({ children, gridArea, inverted }) => {
   return (
-    <StyledNav isOpen={isOpen} gridArea={gridArea} inverted={inverted}>
-      <Content isOpen={isOpen}>{children}</Content>
-      <Trigger onClick={handleTriggerClick} isOpen={isOpen}>
-        <TriggerLabel>
-          {title} &nbsp;{isOpen ? '↥' : '↧'}
-        </TriggerLabel>
-      </Trigger>
+    <StyledNav gridArea={gridArea} inverted={inverted}>
+      <Content>{children}</Content>
     </StyledNav>
   )
 }
