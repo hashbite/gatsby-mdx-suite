@@ -28,7 +28,6 @@
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.6",
     "@gatsby-mdx-suite/mdx-copy": "^0.11.0",
     "@gatsby-mdx-suite/mdx-link": "^0.8.3",
-    "@loadable/component": "^5.14.1",
     "@mdx-js/mdx": "^1.6.21",
     "@mdx-js/react": "^1.6.21",
     "@mdx-js/runtime": "^1.6.21",

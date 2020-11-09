@@ -46,8 +46,10 @@ export default function AsyncChunk({
     }
   }, [scrollTrigger, shouldRender])
 
-  return shouldRender ? (
-    loadable
+  const isSSR = typeof window === 'undefined'
+
+  return shouldRender && !isSSR ? (
+    <React.Suspense fallback={loading}>{loadable}</React.Suspense>
   ) : (
     <div ref={initScrollTrigger} style={{ minHeight: wrapperHeight }}>
       {loading}

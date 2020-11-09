@@ -1,10 +1,9 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import Loadable from '@loadable/component'
 import AsyncChunk from 'gatsby-theme-mdx-suite-base/src/components/async/async-chunk'
 
-const VimeoVideoRenderer = Loadable(() =>
+const VimeoVideoRenderer = React.lazy(() =>
   import(/* webpackChunkName: "vimeo-video-player" */ './vimeo-video-renderer')
 )
 
