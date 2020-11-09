@@ -56,9 +56,15 @@ function DocsComponentTemplate({ data, pageContext }) {
     ...(examples ? examples.map((v, i) => `Example ${i + 1}`) : []),
   ]
 
+  const hasChildren = componentProps.some(({ name }) => name === 'children')
+
+  const title = hasChildren
+    ? `<${displayName}></${displayName}>`
+    : `<${displayName} />`
+
   let content = (
     <>
-      <h1>{displayName}</h1>
+      <h1>{title}</h1>
       {description && <MDXRenderer>{description.childMdx.body}</MDXRenderer>}
       <h2>Properties:</h2>
       <Props componentProps={componentProps} />

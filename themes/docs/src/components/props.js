@@ -64,29 +64,31 @@ function Props({ componentProps }) {
         </tr>
       </thead>
       <tbody>
-        {componentProps.map((propData, i) => {
-          const { name, type, required, defaultValue, description } = propData
-          const odd = i % 2 !== 0
-          return (
-            <PropWrapper key={name} odd={odd}>
-              <td>
-                <PropTitle>{name}</PropTitle>
-              </td>
-              <td>
-                {type && <Type>{type.name}</Type>}
-                {required && <Required>required</Required>}
-              </td>
-              <td>{defaultValue && defaultValue.value}</td>
-              <td>
-                {description && description.text && description.childMdx && (
-                  <DescriptionWrapper>
-                    <MDXRenderer>{description.childMdx.body}</MDXRenderer>
-                  </DescriptionWrapper>
-                )}
-              </td>
-            </PropWrapper>
-          )
-        })}
+        {componentProps
+          .filter(({ name }) => name !== 'children')
+          .map((propData, i) => {
+            const { name, type, required, defaultValue, description } = propData
+            const odd = i % 2 !== 0
+            return (
+              <PropWrapper key={name} odd={odd}>
+                <td>
+                  <PropTitle>{name}</PropTitle>
+                </td>
+                <td>
+                  {type && <Type>{type.name}</Type>}
+                  {required && <Required>required</Required>}
+                </td>
+                <td>{defaultValue && defaultValue.value}</td>
+                <td>
+                  {description && description.text && description.childMdx && (
+                    <DescriptionWrapper>
+                      <MDXRenderer>{description.childMdx.body}</MDXRenderer>
+                    </DescriptionWrapper>
+                  )}
+                </td>
+              </PropWrapper>
+            )
+          })}
       </tbody>
     </PropsWrapper>
   )
