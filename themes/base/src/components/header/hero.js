@@ -8,6 +8,10 @@ import Image from '@gatsby-mdx-suite/mdx-image/image'
 import Video from '@gatsby-mdx-suite/mdx-video/video'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
+const BackgroundVideo = styled(Video)`
+  ${tw`static`}
+`
+
 const HeroWrapper = styled.div(
   ({ isNavigationTransparent }) => css`
     ${tw`
@@ -69,7 +73,7 @@ const Hero = ({
             <Image id={backgroundImageId} contextKey="screen" fit="cover" />
           )}
           {backgroundVideoId && (
-            <Video
+            <BackgroundVideo
               autoPlay
               loop
               muted
