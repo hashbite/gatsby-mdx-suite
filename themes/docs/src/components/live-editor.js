@@ -8,7 +8,7 @@ import tw from 'twin.macro'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import IconFullscreen from 'heroicons/outline/external-link.svg'
 
-import Loading from 'gatsby-theme-mdx-suite-base/src/components/async/loading'
+import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 
 const AceEditor = React.lazy(() =>
   import(/* webpackChunkName: "ace-editor" */ './ace-editor')

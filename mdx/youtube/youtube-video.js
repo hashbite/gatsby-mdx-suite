@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import AsyncChunk from 'gatsby-theme-mdx-suite-base/src/components/async/async-chunk'
+import LazyChunk from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-chunk'
 
 const YoutubeVideoRenderer = React.lazy(() =>
   import(
@@ -19,7 +19,11 @@ const YoutubeVideoRenderer = React.lazy(() =>
  * <YoutubeVideo id="dQw4w9WgXcQ" />
  */
 export default function YoutubeVideo(props) {
-  return <AsyncChunk loadable={<YoutubeVideoRenderer {...props} />} />
+  return (
+    <LazyChunk>
+      <YoutubeVideoRenderer {...props} />
+    </LazyChunk>
+  )
 }
 
 YoutubeVideo.displayName = 'YoutubeVideo'

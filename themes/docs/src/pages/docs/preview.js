@@ -6,7 +6,7 @@ import useEventListener from '@use-it/event-listener'
 
 import DataProvider from '../../components/data-provider'
 
-import Loading from 'gatsby-theme-mdx-suite-base/src/components/async/loading'
+import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 
 const MDX = React.lazy(() =>
   import(/* webpackChunkName: "mdx-runtime" */ '@mdx-js/runtime')

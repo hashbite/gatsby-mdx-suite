@@ -9,11 +9,11 @@ import DefaultLoading from './loading'
 gsap.registerPlugin(ScrollTrigger)
 
 /**
- * Ensure a loadable component is delayed until the user scrolls close to it
+ * Ensure children are not rendered till the user scrolls close by
  */
-export default function AsyncChunk({
+export default function LazyComponent({
   markers,
-  loadable,
+  children,
   loading = <DefaultLoading />,
 }) {
   const [scrollTrigger, setScrollTrigger] = useState(false)
@@ -28,6 +28,7 @@ export default function AsyncChunk({
       const scrollTriggerInstance = ScrollTrigger.create({
         trigger: node,
         markers,
+
         end: 'bottom top',
         onToggle: ({ isActive }) => isActive && setShouldRender(true),
       })
@@ -46,10 +47,8 @@ export default function AsyncChunk({
     }
   }, [scrollTrigger, shouldRender])
 
-  const isSSR = typeof window === 'undefined'
-
-  return shouldRender && !isSSR ? (
-    <React.Suspense fallback={loading}>{loadable}</React.Suspense>
+  return shouldRender ? (
+    children
   ) : (
     <div ref={initScrollTrigger} style={{ minHeight: wrapperHeight }}>
       {loading}
@@ -57,14 +56,14 @@ export default function AsyncChunk({
   )
 }
 
-AsyncChunk.defaultProps = {
+LazyComponent.defaultProps = {
   markers: false,
 }
 
-AsyncChunk.propTypes = {
-  /** The component that should be loaded as soon the user scrolls close */
-  loadable: propTypes.node.isRequired,
-  /** Overwrite the loading component */
+LazyComponent.propTypes = {
+  /** The children that should not be rendered till the user scrolls close */
+  children: propTypes.node.isRequired,
+  /** Overwrite the default loading component */
   loading: propTypes.node,
   /** Enable markers for debugging */
   markers: propTypes.bool,

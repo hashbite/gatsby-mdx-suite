@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import AsyncChunk from 'gatsby-theme-mdx-suite-base/src/components/async/async-chunk'
+import LazyChunk from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-chunk'
 
 const VimeoVideoRenderer = React.lazy(() =>
   import(/* webpackChunkName: "vimeo-video-player" */ './vimeo-video-renderer')
@@ -17,7 +17,11 @@ const VimeoVideoRenderer = React.lazy(() =>
  * <VimeoVideo id="148751763" />
  */
 export default function VimeoVideo(props) {
-  return <AsyncChunk loadable={<VimeoVideoRenderer {...props} />} />
+  return (
+    <LazyChunk>
+      <VimeoVideoRenderer {...props} />
+    </LazyChunk>
+  )
 }
 
 VimeoVideo.displayName = 'VimeoVideo'
