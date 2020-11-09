@@ -12,51 +12,20 @@ import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
 import Section from '@gatsby-mdx-suite/mdx-layout/section'
 import Cta from '@gatsby-mdx-suite/mdx-link/cta'
-import Image from '@gatsby-mdx-suite/mdx-image/image'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
-const BlogPostTeaser = tw.article`flex flex-col h-full`
-const BlogPostTeaserHeadline = styled.h1`
-  ${tw`my-0 text-xl leading-relaxed`}
-  min-height: 6rem;
-  display: flex;
-  align-items: center;
+import BlogPostTeaser from '../components/blog-post-teaser'
+
+const Pagination = styled.div`
+  ${tw`flex justify-between`}
 `
-const BlogPostTeaserMeta = styled.div`
-  ${tw`text-sm text-gray-600 mb-8 mt-2 text-secondary py-2`}
-`
-const BlogPostTeaserDescription = tw.div`flex-1`
-const BlogPostTeaserFooter = tw.div`mt-8`
-const BlogPostTeaserImage = tw(Image)``
-const Pagination = tw.div`flex justify-between`
 
 const BlogPostList = ({ data, pageContext }) => {
   const MdxSuiteData = useContext(MdxSuiteContext)
   const { t } = useTranslation()
 
-  const { locale } = pageContext
-
   const blogPosts = data.allContentfulBlogPost.nodes.map((blogPost, i) => (
-    <BlogPostTeaser key={i}>
-      <BlogPostTeaserImage {...blogPost.image} />
-      <BlogPostTeaserHeadline>{blogPost.title}</BlogPostTeaserHeadline>
-      <BlogPostTeaserMeta>
-        {Intl.DateTimeFormat(locale).format(new Date(blogPost.publicationDate))}{' '}
-        -{' '}
-        {t('newsTimeToRead', {
-          minutes: blogPost.content.childMdx.timeToRead,
-        })}
-      </BlogPostTeaserMeta>
-
-      {blogPost.teaser && (
-        <BlogPostTeaserDescription>
-          <MDXRenderer>{blogPost.teaser.childMdx.body}</MDXRenderer>
-        </BlogPostTeaserDescription>
-      )}
-      <BlogPostTeaserFooter>
-        <Cta id={blogPost.pageId}>{t('newsReadMore')}</Cta>
-      </BlogPostTeaserFooter>
-    </BlogPostTeaser>
+    <BlogPostTeaser key={i} blogPost={blogPost} />
   ))
 
   const content = data.contentfulPage.content
