@@ -27,9 +27,9 @@ const Tab = styled.div(
 )
 const TabLink = styled.a(
   ({ active }) => css`
-    ${tw`bg-white inline-block py-2 px-4 text-gray-400 font-semibold cursor-pointer`}
+    ${tw`inline-block py-2 px-4 font-semibold cursor-pointer rounded-t `}
     ${active
-      ? tw`border-l border-t border-r rounded-t py-2 px-4 text-gray-800`
+      ? tw`bg-gray-200 border-l border-t border-r py-2 px-4 text-gray-800`
       : tw``}
   `
 )

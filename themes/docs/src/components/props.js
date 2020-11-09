@@ -16,8 +16,8 @@ const PropsWrapper = styled.table`
 const PropWrapper = styled.tr(
   ({ odd }) => css`
     td {
-      ${tw`border border-solid border-gray-300 py-2 px-2`}
-      ${odd && tw`bg-gray-100`}
+      ${tw`border border-solid border-gray-300 py-2 px-2 bg-gray-100 text-gray-900`}
+      ${odd && tw`bg-gray-200`}
     }
   `
 )
