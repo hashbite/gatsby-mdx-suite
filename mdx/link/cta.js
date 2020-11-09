@@ -9,7 +9,7 @@ export const styleCTA = ({ theme }) => css`
   ${tw`font-bold py-2 px-4 rounded shadow`}
 
   background: ${theme.colors.primary};
-  color: ${theme.colors.background};
+  color: ${theme.colors['root-background']};
 `
 
 const StyledCTA = styled(Link)(styleCTA)
