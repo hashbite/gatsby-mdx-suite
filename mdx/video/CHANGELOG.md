@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.6.3...@gatsby-mdx-suite/mdx-video@0.7.0) (2020-11-10)
+
+
+### Features
+
+* introduce lazy rendering for videos ([e303b71](https://github.com/axe312ger/gatsby-mdx-suite/commit/e303b715b5ae99a497eaf758a3394b491427880e))
+
+
+
+
+
 ## [0.6.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.6.2...@gatsby-mdx-suite/mdx-video@0.6.3) (2020-11-08)
 
 

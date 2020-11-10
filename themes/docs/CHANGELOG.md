@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.3.7...gatsby-theme-mdx-suite-docs@0.4.0) (2020-11-10)
+
+
+### Bug Fixes
+
+* **docs:** fix DOM for property table ([aeabb29](https://github.com/axe312ger/gatsby-mdx-suite/commit/aeabb29bc2723bb919024ca36340cf0dad24ea4f))
+* **docs:** fix text for live editor controls for pages with dark background ([86f610f](https://github.com/axe312ger/gatsby-mdx-suite/commit/86f610f3ac4240150bedf9d3e9ecc208811ce750))
+* **docs:** improve docs coloring for pages with dark background ([edc3a9e](https://github.com/axe312ger/gatsby-mdx-suite/commit/edc3a9e978b1c50735fbccece1da6f9a1126e824))
+* **docs:** improve docs layout spacing ([8fb9337](https://github.com/axe312ger/gatsby-mdx-suite/commit/8fb9337b1afa13b1ba6aa4276ec6b113b410ce23))
+* **docs:** keep component menu always open ([7a10746](https://github.com/axe312ger/gatsby-mdx-suite/commit/7a10746246dc681cb4df67f9f97bb5cbd53b3f69))
+* **logging:** reduce verbosity ([3c80743](https://github.com/axe312ger/gatsby-mdx-suite/commit/3c8074329ce0de15210cf9f8b19a8afd276b22cf))
+
+
+### Features
+
+* **docs:** indicate if a component can have children ([b9e5aee](https://github.com/axe312ger/gatsby-mdx-suite/commit/b9e5aee32b968769d72a0c5fb83f29a6ce9bdf25))
+* rename async-chunk to lazy-chunk and introduce lazy-component ([5d794c8](https://github.com/axe312ger/gatsby-mdx-suite/commit/5d794c8c009e53b4fa16097624346394a8cf1338))
+
+
+### Performance Improvements
+
+* remove loadable-component and migrate to React 17 ([89f29da](https://github.com/axe312ger/gatsby-mdx-suite/commit/89f29da1dc1a064638d77d6a614bfb5fad9efef9))
+
+
+
+
+
 ## [0.3.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.3.6...gatsby-theme-mdx-suite-docs@0.3.7) (2020-11-08)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-docs

@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.5.1...gatsby-theme-mdx-suite-base@0.6.0) (2020-11-10)
+
+
+### Bug Fixes
+
+* **components:** ensure our custom list items are used ([badcdb5](https://github.com/axe312ger/gatsby-mdx-suite/commit/badcdb592a34ad050e2fa1de07dc12e1f6a26e2d))
+* **header:** force header videos to be directly rendered ([4b5aecb](https://github.com/axe312ger/gatsby-mdx-suite/commit/4b5aecbde8b26dee078aa2cecfde6aedd7c1e4e8))
+* **header:** videos are now properly display in Header Hero ([90ad6cd](https://github.com/axe312ger/gatsby-mdx-suite/commit/90ad6cd6161b0a2d447e06aadb897ec9686c8962))
+* **lazy:** render/load component 20% before user reaches scoll position ([eee79ad](https://github.com/axe312ger/gatsby-mdx-suite/commit/eee79ad9be7963f889eab988e2666bd069482fd6))
+
+
+### Features
+
+* **icons:** add default menu icon ([d33863f](https://github.com/axe312ger/gatsby-mdx-suite/commit/d33863f649d46ebc677ea5c036353eb97c62659f))
+* **icons:** introduce previous and next icons ([2f3fbeb](https://github.com/axe312ger/gatsby-mdx-suite/commit/2f3fbeb471890a9599ab994fdf123a6a6ee27813))
+* **perf:** create detailed webpack stats.json when ANALYZE is enabled ([0e3c03f](https://github.com/axe312ger/gatsby-mdx-suite/commit/0e3c03f8e425d7184e1ff76fe2105d309a80aedf))
+* introduce lazy rendering for videos ([e303b71](https://github.com/axe312ger/gatsby-mdx-suite/commit/e303b715b5ae99a497eaf758a3394b491427880e))
+* rename async-chunk to lazy-chunk and introduce lazy-component ([5d794c8](https://github.com/axe312ger/gatsby-mdx-suite/commit/5d794c8c009e53b4fa16097624346394a8cf1338))
+
+
+### Performance Improvements
+
+* **icons:** use react-icons package ([3d4cd04](https://github.com/axe312ger/gatsby-mdx-suite/commit/3d4cd040274fb16a4f5704cde3a730309934c48f))
+* remove loadable-component and migrate to React 17 ([89f29da](https://github.com/axe312ger/gatsby-mdx-suite/commit/89f29da1dc1a064638d77d6a614bfb5fad9efef9))
+
+
+
+
+
 ## [0.5.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.5.0...gatsby-theme-mdx-suite-base@0.5.1) (2020-11-08)
 
 

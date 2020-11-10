@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.11.0...@gatsby-mdx-suite/mdx-copy@0.12.0) (2020-11-10)
+
+
+### Features
+
+* **icons:** improve icon placement and add property for vertical alignment ([124aa24](https://github.com/axe312ger/gatsby-mdx-suite/commit/124aa24aba635f0d32ea0c5f6f09fa41796db619))
+
+
+
+
+
 # [0.11.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.10.3...@gatsby-mdx-suite/mdx-copy@0.11.0) (2020-11-08)
 
 

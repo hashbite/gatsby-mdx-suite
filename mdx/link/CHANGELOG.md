@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.8.3...@gatsby-mdx-suite/mdx-link@0.8.4) (2020-11-10)
+
+
+### Bug Fixes
+
+* **CTA:** use root background color for text color ([185f0c0](https://github.com/axe312ger/gatsby-mdx-suite/commit/185f0c0c1c00bfe52fcdb6b0463e2d4ccd0e88c5))
+
+
+
+
+
 ## [0.8.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.8.2...@gatsby-mdx-suite/mdx-link@0.8.3) (2020-11-08)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-link

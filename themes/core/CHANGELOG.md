@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.5.1...gatsby-theme-mdx-suite-core@0.5.2) (2020-11-10)
+
+
+### Bug Fixes
+
+* **styling:** ensure non-MDX headlines have default font sizes ([aedfd33](https://github.com/axe312ger/gatsby-mdx-suite/commit/aedfd33d71a58e8c190b8c1b68b00ea7d2c1c471))
+
+
+### Performance Improvements
+
+* remove loadable-component and migrate to React 17 ([89f29da](https://github.com/axe312ger/gatsby-mdx-suite/commit/89f29da1dc1a064638d77d6a614bfb5fad9efef9))
+* upgrade to upcoming gatsby-source-contentful ([7671d5e](https://github.com/axe312ger/gatsby-mdx-suite/commit/7671d5ec66d6d6e1fe707ff465f0957dab1084ef))
+
+
+
+
+
 ## [0.5.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.5.0...gatsby-theme-mdx-suite-core@0.5.1) (2020-11-08)
 
 

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-blog@0.2.15...gatsby-theme-mdx-suite-blog@0.3.0) (2020-11-10)
+
+
+### Bug Fixes
+
+* **blog-listing:** ensure blog posts listings are rendered with default config ([1d63b58](https://github.com/axe312ger/gatsby-mdx-suite/commit/1d63b58defc83c1f5494a4afdecf16651fffeca1))
+
+
+### Features
+
+* **blog:** allow projects to override blog post teaser ([e4882cd](https://github.com/axe312ger/gatsby-mdx-suite/commit/e4882cd9ada48ed7142bf19ebe4dc703be6e11ce))
+* **icons:** introduce previous and next icons ([2f3fbeb](https://github.com/axe312ger/gatsby-mdx-suite/commit/2f3fbeb471890a9599ab994fdf123a6a6ee27813))
+
+
+
+
+
 ## [0.2.15](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-blog@0.2.14...gatsby-theme-mdx-suite-blog@0.2.15) (2020-11-08)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-blog

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.3.0...@gatsby-mdx-suite/mdx-vimeo@0.4.0) (2020-11-10)
+
+
+### Features
+
+* rename async-chunk to lazy-chunk and introduce lazy-component ([5d794c8](https://github.com/axe312ger/gatsby-suite-mdx/commit/5d794c8c009e53b4fa16097624346394a8cf1338))
+
+
+### Performance Improvements
+
+* remove loadable-component and migrate to React 17 ([89f29da](https://github.com/axe312ger/gatsby-suite-mdx/commit/89f29da1dc1a064638d77d6a614bfb5fad9efef9))
+
+
+
+
+
 # [0.3.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.2.0...@gatsby-mdx-suite/mdx-vimeo@0.3.0) (2020-11-08)
 
 

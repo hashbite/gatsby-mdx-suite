@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.4.1...gatsby-mdx-suite-example-basic@0.4.2) (2020-11-10)
+
+
+### Performance Improvements
+
+* remove loadable-component and migrate to React 17 ([89f29da](https://github.com/axe312ger/gatsby-mdx-suite/commit/89f29da1dc1a064638d77d6a614bfb5fad9efef9))
+
+
+
+
+
 ## [0.4.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.4.0...gatsby-mdx-suite-example-basic@0.4.1) (2020-11-08)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-basic
