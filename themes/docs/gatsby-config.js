@@ -53,7 +53,6 @@ module.exports = ({
                 (path) => {
                   // Always accept root dirs
                   if (path === componentPath) {
-                    reporter.verbose(`${path} - Passed for root`)
                     return false
                   }
 
@@ -62,24 +61,21 @@ module.exports = ({
                     path.indexOf(`@gatsby-mdx-suite/mdx-`) === -1 &&
                     path.indexOf(`/mdx/`) === -1
                   ) {
-                    reporter.verbose(`${path} - Ignored as non mdx package`)
                     return true
                   }
 
-                  // If it is a dir and passed, continue
+                  // If it is a dir and did not match filter above, continue file lookup
                   const stats = lstatSync(path)
                   if (stats.isSymbolicLink() || stats.isDirectory()) {
-                    reporter.verbose(`${path} - Passed as valid package`)
                     return false
                   }
 
                   // filter out non script files
                   if (nonScriptFileRegex.test(path)) {
-                    reporter.verbose(`${path} - Ignored as non script file`)
                     return true
                   }
 
-                  reporter.verbose(`${path} - Passed`)
+                  reporter.verbose(`Located component: ${path}`)
                   return false
                 },
               ],
