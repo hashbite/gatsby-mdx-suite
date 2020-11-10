@@ -220,6 +220,7 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
           videoH264: {
             type: 'FakeVideo',
             args: {
+              preset: 'String',
               fps: 'Int',
               duration: 'Int',
               maxWidth: 'Int',
