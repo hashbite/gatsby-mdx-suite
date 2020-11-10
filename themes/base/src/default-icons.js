@@ -10,14 +10,14 @@ import ChevronRight from 'heroicons/outline/chevron-right.svg'
 import ChevronLeft from 'heroicons/outline/chevron-left.svg'
 import Menu from 'heroicons/outline/menu.svg'
 
-// Brand logos via https://simpleicons.org/
+// Brand logos via https://simpleicons.org/ & https://react-icons.github.io/react-icons/
 import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Youtube,
-  Twitter,
-} from '@icons-pack/react-simple-icons'
+  SiFacebook,
+  SiInstagram,
+  SiLinkedin,
+  SiYoutube,
+  SiTwitter,
+} from 'react-icons/si'
 
 // Country flags via https://flagicons.lipis.dev/
 import FlagDe from 'flag-icon-css/flags/4x3/de.svg'
@@ -49,11 +49,11 @@ export default new Map(
     menu: { icon: Menu },
     phone: { icon: Phone },
     mail: { icon: Mail },
-    facebook: { icon: Facebook },
-    instagram: { icon: Instagram },
-    youtube: { icon: Youtube },
-    linkedin: { icon: Linkedin },
-    twitter: { icon: Twitter },
+    facebook: { icon: SiFacebook },
+    instagram: { icon: SiInstagram },
+    youtube: { icon: SiYoutube },
+    linkedin: { icon: SiLinkedin },
+    twitter: { icon: SiTwitter },
     'flag-de': { icon: FlagDe },
     'flag-en-US': { icon: FlagEn },
   })
