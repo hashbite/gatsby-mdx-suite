@@ -55,6 +55,8 @@
     "react-scrolllock": "^5.0.1"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.7.0",
+    "@typescript-eslint/parser": "4.7.0",
     "webpack-stats-plugin": "^1.0.2"
   }
 }

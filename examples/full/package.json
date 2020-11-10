@@ -30,7 +30,7 @@
     "dotenv": "^8.2.0",
     "gatsby": "^2.25.3",
     "gatsby-plugin-manifest": "^2.5.2",
-    "gatsby-plugin-offline": "^3.3.2",
+    "gatsby-plugin-offline": "^3.3.3",
     "gatsby-theme-mdx-suite-base": "^0.5.1",
     "gatsby-theme-mdx-suite-blog": "^0.2.15",
     "gatsby-theme-mdx-suite-core": "^0.5.1",
