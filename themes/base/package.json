@@ -53,5 +53,8 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
     "react-scrolllock": "^5.0.1"
+  },
+  "devDependencies": {
+    "webpack-stats-plugin": "^1.0.2"
   }
 }
