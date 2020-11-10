@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.6.0...gatsby-theme-mdx-suite-base@0.6.1) (2020-11-10)
+
+
+### Bug Fixes
+
+* **layout:** use reach router hook to check for docs ([b2ab2cb](https://github.com/axe312ger/gatsby-mdx-suite/commit/b2ab2cb5a84f0966638f38b7eef545c05c6c1906))
+
+
+
+
+
 # [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.5.1...gatsby-theme-mdx-suite-base@0.6.0) (2020-11-10)
 
 

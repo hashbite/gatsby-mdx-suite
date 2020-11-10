@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.5.2...gatsby-theme-mdx-suite-core@0.5.3) (2020-11-10)
+
+
+### Bug Fixes
+
+* **video:** do not break rendering when no video is uploaded ([83ee1a4](https://github.com/axe312ger/gatsby-mdx-suite/commit/83ee1a45ba0ddf176499220acc9f15060f00e6a5))
+
+
+
+
+
 ## [0.5.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.5.1...gatsby-theme-mdx-suite-core@0.5.2) (2020-11-10)
 
 
