@@ -31,6 +31,7 @@ const IconWrapper = styled.span(
         display: inline-block;
         width: 1em;
         height: auto;
+        vertical-align: baseline;
       }
     `
 )
