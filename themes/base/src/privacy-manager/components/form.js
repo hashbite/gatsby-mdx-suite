@@ -11,8 +11,7 @@ import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-c
 import Logo from 'gatsby-theme-mdx-suite-base/src/components/header/logo.js'
 
 import SwitchField from './switch-field'
-
-const Button = styled.button``
+import { useTranslation } from 'react-i18next'
 
 const PrivacyManagerWrapper = styled.div`
   ${tw`
@@ -26,14 +25,11 @@ const PrivacyManagerCopy = styled.div`
 `
 
 const PrivacyManagerHeadline = styled.h1`
-  ${tw`text-2xl leading-snug`}
+  ${tw`text-2xl leading-snug pb-content-gap md:hidden`}
 
   strong {
     ${tw`text-green-400`}
   }
-`
-const PrivacyManagerDescription = styled.p`
-  ${tw``}
 `
 
 const PrivacyManagerToggle = styled.div`
@@ -50,7 +46,10 @@ const PrivacyManagerToggle = styled.div`
 `
 
 const PrivacyLink = styled(Link)`
-  ${tw`text-blue-600`}
+  ${tw`
+    block mt-content-gap md:mt-0 md:inline-block
+    text-blue-600
+  `}
   &:after {
     display: none;
   }
@@ -78,20 +77,28 @@ const PrivacyManagerPanel = styled.div(
   `
 )
 
-const PrivacyManagerPanelContent = styled.div`
+const PrivacyManagerPanelWrapper = styled.div`
   ${tw`
-      flex flex-wrap gap-grid-gap items-center
-      p-4 sm:p-8 bg-white text-gray-900 w-screen
+      relative
+      md:flex flex-wrap gap-grid-gap items-center
+      bg-white text-gray-900 w-screen
     `}
   pointer-events: all;
-  /* box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.1), 0 -4px 6px -2px rgba(0, 0, 0, 0.05); */
   box-shadow: 0 -20px 25px -5px rgba(0, 0, 0, 0.1),
     0 -10px 10px -5px rgba(0, 0, 0, 0.04);
-  /* box-shadow: 0 -25px 50px -12px rgba(0, 0, 0, 0.25); */
+`
+
+const PrivacyManagerPanelContent = styled.div`
+  ${centerToContentColumn}
+  ${tw`p-10`}
 `
 
 const PrivacyForm = styled.form`
-  ${tw`flex-auto`}
+  ${tw`md:flex md:gap-20 lg:gap-40`}
+`
+
+const PrivacyFormContent = styled.div`
+  ${tw``}
 `
 
 const PrivacyManagerBubble = styled.div`
@@ -102,52 +109,37 @@ const PrivacyManagerPreviewLabel = styled.div`
 `
 
 const PrivacyLogo = styled(Logo)`
-  ${tw`mb-content-gap`}
+  ${tw`mb-content-gap mx-auto md:hidden`}
   max-width: 210px;
   width: 100%;
 `
 
-const IntegrationCategories = styled.div`
-  ${tw`
-    flex flex-wrap justify-between gap-grid-gap
-  `}
-`
-const IntegrationCategory = styled.div`
-  ${tw`text-gray-800`}
-
-  max-width: 420px;
-  flex: 1 0 300px;
-`
-const IntegrationCategoryTitle = styled.h2`
-  ${tw`text-base font-sans font-bold text-gray-700 uppercase p-1 text-center bg-gray-100`}
-`
-const IntegrationCategoryIntegrations = styled.div`
-  ${tw`
-    grid gap-grid-gap justify-center
-  `}
-  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+const IntegrationFieldsWrapper = styled.div`
+  ${tw`md:flex gap-grid-gap my-8 md:my-0`}
 `
 
 const IntegrationField = styled.div`
-  ${tw`text-center`}
+  ${tw`mb-content-gap md:mb-0 flex items-center`}
 `
-const IntegrationIcon = styled(Icon)`
-  ${tw`text-4xl`}
-`
-const IntegrationTitle = styled.h3`
-  ${tw`text-base`}
+// const IntegrationIcon = styled(Icon)`
+//   ${tw`text-xl px-2`}
+// `
+const IntegrationTitle = styled.span`
+  ${tw`text-lg`}
 `
 
 const PrivacyManagerControls = styled.div`
-  ${tw`mt-8 flex gap-grid-gap items-stretch`}
+  ${tw``}
+`
 
-  button {
-    ${tw`flex-auto bg-gray-200 px-4 py-2`}
-
-    &[type="primary"] {
-      ${tw`bg-green-400 `}
-    }
-  }
+const SaveButton = styled.button`
+  ${tw`
+  px-24 py-6 w-full md:w-auto
+  text-center text-xl font-bold
+  bg-gray-200 bg-green-400 rounded`}
+`
+const CloseButton = styled.button`
+  ${tw`absolute left-0 top-0 p-3`}
 `
 
 const PrivacyManagerForm = ({
@@ -160,6 +152,7 @@ const PrivacyManagerForm = ({
   config,
 }) => {
   const refForm = useRef(null)
+  const { t } = useTranslation()
 
   const {
     enablePrivacyModeToolbar = false,
@@ -208,33 +201,24 @@ const PrivacyManagerForm = ({
     [privacyModeActive]
   )
 
-  const integrationsByCategory = useMemo(() => {
-    return Object.keys(integrations).map((category) => {
-      const categoryIntegrations = []
+  const integrationFields = useMemo(() => {
+    const fields = []
+    Object.keys(integrations).forEach((category) => {
       for (const [id, integration] of integrations[category].entries()) {
-        const { title, icon, url = '#' } = integration
+        const { title } = integration
         const fieldId = `${category}.${id}`
-        categoryIntegrations.push(
+        fields.push(
           <IntegrationField key={fieldId}>
-            <IntegrationIcon icon={icon} />
-            <IntegrationTitle>
-              <a href={url} target="_blank" rel="noreferrer">
-                {title}
-              </a>
-            </IntegrationTitle>
             <SwitchField name={fieldId} />
+            <div>
+              {/* <IntegrationIcon icon={icon} verticalAlign="middle" /> */}
+              <IntegrationTitle>{title}</IntegrationTitle>
+            </div>
           </IntegrationField>
         )
       }
-      return (
-        <IntegrationCategory key={category}>
-          <IntegrationCategoryTitle>{category}</IntegrationCategoryTitle>
-          <IntegrationCategoryIntegrations>
-            {categoryIntegrations}
-          </IntegrationCategoryIntegrations>
-        </IntegrationCategory>
-      )
     })
+    return fields
   }, [integrations])
 
   return (
@@ -248,60 +232,56 @@ const PrivacyManagerForm = ({
             <PrivacyManagerPreviewContent>
               <PrivacyManagerBubble />
               <PrivacyManagerPreviewLabel>
-                privacy mode is on
+                {t('privacyManagerPrivacyModeEnabled')}
               </PrivacyManagerPreviewLabel>
             </PrivacyManagerPreviewContent>
           </PrivacyManagerPreview>
         )}
         {open && (
           <PrivacyManagerPanel blur={blurBackdrop}>
-            <PrivacyManagerPanelContent>
-              <PrivacyManagerCopy>
-                <PrivacyLogo />
-                <PrivacyManagerHeadline>
-                  <strong>we care</strong>
-                  <br /> about your privacy.
-                </PrivacyManagerHeadline>
-              </PrivacyManagerCopy>
-              <PrivacyManagerCopy>
-                <PrivacyManagerDescription>
-                  We've disabled all data processing by default.
-                </PrivacyManagerDescription>
-                <PrivacyManagerDescription>
-                  Data is only loaded and send if you enable it.
-                </PrivacyManagerDescription>
-                <PrivacyManagerDescription>
-                  Here is our{' '}
-                  <PrivacyLink id={privacyPolicyId} onClick={handleLink}>
-                    privacy policy.
-                  </PrivacyLink>
-                </PrivacyManagerDescription>
-              </PrivacyManagerCopy>
-              <Form
-                onSubmit={handleFormSubmit}
-                initialValues={activeState.settings}
-                // debug={console.log}
-                render={({ handleSubmit, values }) => (
-                  <PrivacyForm onSubmit={handleSubmit} ref={refForm}>
-                    <IntegrationCategories>
-                      {integrationsByCategory}
-                    </IntegrationCategories>
-                    <PrivacyManagerControls>
-                      <Button type="primary" htmlType="submit">
-                        Save
-                      </Button>
-                      <Button
-                        type="secondary"
-                        htmlType="button"
-                        onClick={handleClose}
-                      >
-                        Cancel
-                      </Button>
-                    </PrivacyManagerControls>
-                  </PrivacyForm>
-                )}
-              />
-            </PrivacyManagerPanelContent>
+            <PrivacyManagerPanelWrapper>
+              <PrivacyManagerPanelContent>
+                <Form
+                  onSubmit={handleFormSubmit}
+                  initialValues={activeState.settings}
+                  // debug={console.log}
+                  render={({ handleSubmit, values }) => (
+                    <PrivacyForm onSubmit={handleSubmit} ref={refForm}>
+                      <PrivacyFormContent>
+                        <div>
+                          <PrivacyLogo />
+                          <PrivacyManagerHeadline>
+                            {t('privacyManagerHeadline')}
+                          </PrivacyManagerHeadline>
+                        </div>
+                        <PrivacyManagerCopy>
+                          {t('privacyManagerDescription')}
+                          <PrivacyLink
+                            id={privacyPolicyId}
+                            onClick={handleLink}
+                          />
+                        </PrivacyManagerCopy>
+                        <IntegrationFieldsWrapper>
+                          {integrationFields}
+                        </IntegrationFieldsWrapper>
+                      </PrivacyFormContent>
+                      <PrivacyManagerControls>
+                        <SaveButton type="primary" htmlType="submit">
+                          Save
+                        </SaveButton>
+                        <CloseButton
+                          type="secondary"
+                          htmlType="button"
+                          onClick={handleClose}
+                        >
+                          <Icon icon="close" verticalAlign="middle" />
+                        </CloseButton>
+                      </PrivacyManagerControls>
+                    </PrivacyForm>
+                  )}
+                />
+              </PrivacyManagerPanelContent>
+            </PrivacyManagerPanelWrapper>
           </PrivacyManagerPanel>
         )}
       </PrivacyManagerWrapper>
@@ -310,7 +290,7 @@ const PrivacyManagerForm = ({
           onClick={handleOpenPrivacyManager}
           title="Change your privacy settings"
         >
-          <Icon icon="settings" />
+          <Icon icon="settings" verticalAlign="middle" />
         </PrivacyManagerToggle>
       )}
     </>
