@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.5.5...gatsby-mdx-suite-example-full@0.6.0) (2020-11-12)
+
+
+### Features
+
+* **privacy:** implement GDPR privacy manager ([346e246](https://github.com/axe312ger/gatsby-mdx-suite/commit/346e246fbd7a868f8d97493dc112a843bcd35d91))
+
+
+
+
+
 ## [0.5.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.5.4...gatsby-mdx-suite-example-full@0.5.5) (2020-11-10)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-full

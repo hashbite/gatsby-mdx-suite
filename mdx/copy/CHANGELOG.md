@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.12.0...@gatsby-mdx-suite/mdx-copy@0.12.1) (2020-11-12)
+
+
+### Bug Fixes
+
+* **icons:** force icon svgs to align to baseline ([ee33469](https://github.com/axe312ger/gatsby-mdx-suite/commit/ee33469efb6071985687cbe658e6fa6bb90a4a56))
+
+
+
+
+
 # [0.12.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.11.0...@gatsby-mdx-suite/mdx-copy@0.12.0) (2020-11-10)
 
 

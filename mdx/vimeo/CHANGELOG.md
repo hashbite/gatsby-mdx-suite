@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.4.0...@gatsby-mdx-suite/mdx-vimeo@0.5.0) (2020-11-12)
+
+
+### Features
+
+* **privacy:** implement GDPR privacy manager ([346e246](https://github.com/axe312ger/gatsby-suite-mdx/commit/346e246fbd7a868f8d97493dc112a843bcd35d91))
+
+
+
+
+
 # [0.4.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.3.0...@gatsby-mdx-suite/mdx-vimeo@0.4.0) (2020-11-10)
 
 

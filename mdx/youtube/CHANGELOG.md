@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.8.0...@gatsby-mdx-suite/mdx-youtube@0.9.0) (2020-11-12)
+
+
+### Features
+
+* **privacy:** implement GDPR privacy manager ([346e246](https://github.com/axe312ger/gatsby-mdx-suite/commit/346e246fbd7a868f8d97493dc112a843bcd35d91))
+
+
+
+
+
 # [0.8.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.7.0...@gatsby-mdx-suite/mdx-youtube@0.8.0) (2020-11-10)
 
 

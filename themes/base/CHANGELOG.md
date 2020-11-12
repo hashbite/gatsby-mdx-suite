@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.6.1...gatsby-theme-mdx-suite-base@0.7.0) (2020-11-12)
+
+
+### Bug Fixes
+
+* **privacy-manager:** new check if trackers should be included ([18099ec](https://github.com/axe312ger/gatsby-mdx-suite/commit/18099ecf3481a6c35beb05ecca7038215da55f75))
+
+
+### Features
+
+* **privacy:** implement GDPR privacy manager ([346e246](https://github.com/axe312ger/gatsby-mdx-suite/commit/346e246fbd7a868f8d97493dc112a843bcd35d91))
+
+
+
+
+
 ## [0.6.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.6.0...gatsby-theme-mdx-suite-base@0.6.1) (2020-11-10)
 
 

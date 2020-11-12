@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.22.0...@gatsby-mdx-suite/mdx-layout@0.23.0) (2020-11-12)
+
+
+### Features
+
+* **section:** add option to force rendering of background media ([5ea6244](https://github.com/axe312ger/gatsby-mdx-suite/commit/5ea624437981dadec0c2053de549f12944e13938))
+
+
+
+
+
 # [0.22.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.21.1...@gatsby-mdx-suite/mdx-layout@0.22.0) (2020-11-08)
 
 
