@@ -79,7 +79,6 @@ const PrivacyManager = ({
           ...values,
         },
       })
-      console.log({ enhancedState })
       setPrivacyManagerState(enhancedState)
     },
     [defaultState, setPrivacyManagerState]

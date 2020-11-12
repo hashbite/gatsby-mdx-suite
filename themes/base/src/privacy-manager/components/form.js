@@ -47,7 +47,7 @@ const PrivacyManagerToggle = styled.div`
 
 const PrivacyLink = styled(Link)`
   ${tw`
-    block mt-content-gap md:mt-0 md:inline-block
+    block mt-content-gap md:mt-0 md:inline-block md:pl-1
     text-blue-600
   `}
   &:after {
@@ -115,7 +115,7 @@ const PrivacyLogo = styled(Logo)`
 `
 
 const IntegrationFieldsWrapper = styled.div`
-  ${tw`md:flex gap-grid-gap my-8 md:my-0`}
+  ${tw`md:flex flex-wrap gap-grid-gap my-8 md:my-0`}
 `
 
 const IntegrationField = styled.div`
@@ -134,7 +134,7 @@ const PrivacyManagerControls = styled.div`
 
 const SaveButton = styled.button`
   ${tw`
-  px-24 py-6 w-full md:w-auto
+  px-16 py-6 w-full
   text-center text-xl font-bold
   bg-gray-200 bg-green-400 rounded`}
 `
@@ -267,7 +267,7 @@ const PrivacyManagerForm = ({
                       </PrivacyFormContent>
                       <PrivacyManagerControls>
                         <SaveButton type="primary" htmlType="submit">
-                          Save
+                          {t('save')}
                         </SaveButton>
                         <CloseButton
                           type="secondary"
