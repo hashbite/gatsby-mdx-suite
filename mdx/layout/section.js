@@ -171,6 +171,7 @@ export default function Section({
   backgroundVideoId,
   overlayOpacity,
   overlayColor,
+  backgroundForceRendering,
   ...props
 }) {
   if (backgroundImageId && !colorSet) {
@@ -200,6 +201,7 @@ export default function Section({
                 muted
                 controls={false}
                 id={backgroundVideoId}
+                forceRendering={backgroundForceRendering}
               />
             )}
           </BackgroundMediaWrapper>
@@ -231,6 +233,7 @@ Section.defaultProps = {
   backgroundImageOpacity: '1',
   overlayOpacity: 0,
   overlayColor: 'black',
+  backgroundForceRendering: false,
 }
 
 Section.propTypes = {
@@ -262,4 +265,6 @@ Section.propTypes = {
   verticalAlign: propTypes.oneOf(['start', 'center', 'end']),
   /** Horizontal alignment. Will detach the content from the content column. */
   horizontalAlign: propTypes.oneOf(['start', 'center', 'end']),
+  /** Force background media to be rendered. Set this to true when a section is likely to be rendered above the fold. */
+  backgroundForceRendering: propTypes.bool,
 }
