@@ -11,6 +11,7 @@ module.exports = {
     'en-US': {
       translation: {
         copyright: '© Copyright {{year}}. All rights reserved.',
+        save: 'save',
         open: 'open',
         close: 'close',
         next: 'next',
@@ -22,12 +23,13 @@ module.exports = {
         privacyManagerPrivacyModeEnabled: 'privacy mode is on',
         privacyManagerHeadline: 'Your privacy is important to us!',
         privacyManagerDescription:
-          'This website stores data such as cookies to enable necessary site functionality, including analytics, targeting, and personalization. You may change your settings at any time or accept the default settings.',
+          'This website stores data such as cookies to enable necessary site functionality, anonymous analytics, and embedding of external services for videos, maps and more. You may change your settings at any time.',
       },
     },
     de: {
       translation: {
         copyright: '© Copyright {{year}}. Alle Rechte vorbehalten.',
+        save: 'Speichern',
         open: 'Öffnen',
         close: 'Schließen',
         next: 'Weiter',
@@ -36,10 +38,10 @@ module.exports = {
         last: 'Ende',
         newsReadMore: 'Weiterlesen...',
         newsTimeToRead: '{{minutes}} Min. Lesezeit',
-        privacyManagerPrivacyModeEnabled: 'privacy mode is on',
-        privacyManagerHeadline: 'Your privacy is important to us!',
+        privacyManagerPrivacyModeEnabled: 'Datenschutzmodus aktiviert',
+        privacyManagerHeadline: 'Der Schutz Ihrer Daten ist uns wichtig!',
         privacyManagerDescription:
-          'This website stores data such as cookies to enable necessary site functionality, including analytics, targeting, and personalization. You may change your settings at any time or accept the default settings.',
+          'Diese Website speichert Daten unter Anderem in Form von Cookies. Diese ermöglichen wichtige Funktionen dieser Website, anonyme Webanalyse sowie die Einbindung externer Anbieter für Videos, Karten und weiteres. Sie können die Einstellungen jederzeit ändern.',
       },
     },
   },
