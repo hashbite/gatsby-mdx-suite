@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 import propTypes from 'prop-types'
 import createPersistedState from 'use-persisted-state'
 import { useMDXComponents } from '@mdx-js/react'
@@ -70,7 +70,6 @@ const PrivacyManager = ({
   }, [integrations])
 
   const [userState, setPrivacyManagerState] = usePrivacyManagerState(null)
-  const [hasMounted, setHasMounted] = useState(false)
 
   const updateState = useCallback(
     (values) => {
@@ -114,13 +113,15 @@ const PrivacyManager = ({
     return true
   }, [isValidState, activeState])
 
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  if (!hasMounted) {
-    return null
-  }
+  const shouldTrack = useMemo(
+    () =>
+      isValidState &&
+      userState.settings.statistics &&
+      Object.entries(userState.settings.statistics).every(
+        ([prop, val]) => val === true
+      ),
+    [isValidState, userState]
+  )
 
   return (
     <PrivacyManagerContext.Provider
@@ -130,7 +131,7 @@ const PrivacyManager = ({
         setOpen,
       }}
     >
-      {isValidState && userState.settings.statistics ? (
+      {shouldTrack ? (
         <Tracking {...config.trackingConfig}>{children}</Tracking>
       ) : (
         children
