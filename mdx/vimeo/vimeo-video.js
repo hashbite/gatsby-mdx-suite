@@ -35,7 +35,7 @@ VimeoVideo.privacy = {
   id: 'vimeo',
   title: 'Vimeo',
   icon: 'vimeo',
-  url: 'http://vimeo.com/',
+  url: 'https://vimeo.com/privacy',
 }
 
 VimeoVideo.displayName = 'VimeoVideo'
