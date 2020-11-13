@@ -1,7 +1,6 @@
 export const onRouteUpdate = ({ location }, pluginOptions = {}) => {
   //if (process.env.NODE_ENV !== `production` || typeof ga !== `function`) {
   if (typeof window.ga !== `function`) {
-    console.log('no ga on window')
     return null
   }
 
