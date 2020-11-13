@@ -37,7 +37,7 @@ YoutubeVideo.privacy = {
   id: 'youtube',
   title: 'YouTube',
   icon: 'youtube',
-  url: 'http://youtube.com/',
+  url: 'https://policies.google.com/privacy?hl=en',
 }
 
 YoutubeVideo.displayName = 'YoutubeVideo'
