@@ -34,10 +34,10 @@
     "@react-hook/debounce": "^3.0.0",
     "@use-it/event-listener": "^0.1.5",
     "ace-builds": "^1.4.12",
-    "gatsby-link": "^2.4.16",
-    "gatsby-source-filesystem": "^2.4.2",
-    "gatsby-transformer-documentationjs": "^4.3.17",
-    "gatsby-transformer-react-docgen": "^5.2.15",
+    "gatsby-link": "^2.5.0",
+    "gatsby-source-filesystem": "^2.5.0",
+    "gatsby-transformer-documentationjs": "^4.4.0",
+    "gatsby-transformer-react-docgen": "^5.3.0",
     "react-ace": "^9.2.0"
   }
 }
