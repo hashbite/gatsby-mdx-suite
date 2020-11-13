@@ -5,7 +5,8 @@ import tw from 'twin.macro'
 
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
-import PrivacyManagerContext from '../context'
+import PrivacyManagerContext from 'gatsby-theme-mdx-suite-base/src/privacy-manager/context'
+import { useTranslation } from 'react-i18next'
 
 const PrivacyShieldWrapper = styled.div`
   ${tw`
@@ -20,7 +21,7 @@ const PrivacyShieldIcon = styled(Icon)`
   ${tw`text-4xl`}
 `
 const PrivacyShieldTitle = styled.h3`
-  ${tw`text-base`}
+  ${tw`text-base text-current`}
 `
 const PrivacyShieldDescription = styled.p``
 const PrivacyShieldAlternative = styled.p`
@@ -34,12 +35,13 @@ const PrivacyShieldButton = styled.button`
   }
 `
 
-const PrivacyShieldAlternativeLink = styled.a`
-  ${tw`text-current`}
+const PrivacyShieldLink = styled.a`
+  ${tw`text-current underline hover:no-underline hover:text-current`}
 `
 
 const PrivacyShield = ({ config, fallbackUrl = false, children }) => {
-  const { id, category, title, url = '#', icon } = config
+  const { t } = useTranslation()
+  const { id, category, title, url = '#', icon, description } = config
   const privacyContextData = useContext(PrivacyManagerContext)
 
   const openPrivacyManager = useCallback(() => {
@@ -50,11 +52,15 @@ const PrivacyShield = ({ config, fallbackUrl = false, children }) => {
     return (
       <PrivacyShieldWrapper>
         <PrivacyShieldIcon icon={icon} />
-        <PrivacyShieldTitle>
-          <a href={url}>{title}</a>
-        </PrivacyShieldTitle>
+        <PrivacyShieldTitle>{title}</PrivacyShieldTitle>
         <PrivacyShieldDescription>
-          <strong>We disabled {title} to protect your privacy.</strong>
+          <strong>{t('privacyShieldIntro', { title })}</strong>
+        </PrivacyShieldDescription>
+        <PrivacyShieldDescription>{t(description)}</PrivacyShieldDescription>
+        <PrivacyShieldDescription>
+          <PrivacyShieldLink href={url} target="_blank" rel="noreferrer">
+            {t('privacyShieldLearnMore', { title })}
+          </PrivacyShieldLink>
         </PrivacyShieldDescription>
         <PrivacyShieldDescription>
           <PrivacyShieldButton onClick={openPrivacyManager}>
@@ -66,13 +72,13 @@ const PrivacyShield = ({ config, fallbackUrl = false, children }) => {
             Alternative:
             <br />
             Visit{' '}
-            <PrivacyShieldAlternativeLink
+            <PrivacyShieldLink
               href={fallbackUrl}
               target="_blank"
               rel="noreferrer"
             >
               {fallbackUrl}
-            </PrivacyShieldAlternativeLink>
+            </PrivacyShieldLink>
           </PrivacyShieldAlternative>
         )}
       </PrivacyShieldWrapper>

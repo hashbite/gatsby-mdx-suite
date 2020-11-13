@@ -24,6 +24,15 @@ module.exports = {
         privacyManagerHeadline: 'Your privacy is important to us!',
         privacyManagerDescription:
           'This website stores data such as cookies to enable necessary site functionality, anonymous analytics, and embedding of external services for videos, maps and more. You may change your settings at any time.',
+        privacyShieldIntro: 'We disabled {{title}} to protect your privacy.',
+        privacyShieldLearnMore:
+          "Get more details at {{title}}'s privacy policy.",
+        privacyDescriptionMapbox:
+          'With Mapbox we can provide you an modern map experience.',
+        privacyDescriptionYoutube:
+          'We use YouTube to offer you further content as videos.',
+        privacyDescriptionVimeo:
+          'We use Vimeo to offer you further content as videos.',
       },
     },
     de: {
@@ -42,6 +51,16 @@ module.exports = {
         privacyManagerHeadline: 'Der Schutz Ihrer Daten ist uns wichtig!',
         privacyManagerDescription:
           'Diese Website speichert Daten unter Anderem in Form von Cookies. Diese ermöglichen wichtige Funktionen dieser Website, anonyme Webanalyse sowie die Einbindung externer Anbieter für Videos, Karten und weiteres. Sie können die Einstellungen jederzeit ändern.',
+        privacyShieldIntro:
+          'Zum Schutz Ihrer Privatspähre wurde {{title}} deaktiviert.',
+        privacyShieldLearnMore:
+          'Lesen sie die Datenschutzbestimmungen von {{title}}.',
+        privacyDescriptionMapbox:
+          'Wir nutzen Mapbox um Ihnen eine moderne Kartenansicht anzubieten.',
+        privacyDescriptionYoutube:
+          'Wir nutzen YouTube um Ihnen weitere Inhalte in Form von Videos anzubieten.',
+        privacyDescriptionVimeo:
+          'Wir nutzen Vimeo um Ihnen weitere Inhalte in Form von Videos anzubieten.',
       },
     },
   },

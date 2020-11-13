@@ -38,6 +38,7 @@ YoutubeVideo.privacy = {
   title: 'YouTube',
   icon: 'youtube',
   url: 'https://policies.google.com/privacy?hl=en',
+  description: 'privacyDescriptionYoutube',
 }
 
 YoutubeVideo.displayName = 'YoutubeVideo'
