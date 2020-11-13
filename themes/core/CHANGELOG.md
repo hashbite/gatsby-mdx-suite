@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.5.4...gatsby-theme-mdx-suite-core@0.5.5) (2020-11-13)
+
+
+### Bug Fixes
+
+* **privacy-manager:** translate privacy shield and improve overall spacing ([8f05c09](https://github.com/axe312ger/gatsby-mdx-suite/commit/8f05c09d02199a884ca1c19e7a14e4c258985057))
+* **styling:** move global css definitions from html to body ([67f9db2](https://github.com/axe312ger/gatsby-mdx-suite/commit/67f9db297647a03be12e75ed851d18d28b7f982e))
+
+
+### Performance Improvements
+
+* **contentful:** load 1000 entries from Sync API at once ([83ea48a](https://github.com/axe312ger/gatsby-mdx-suite/commit/83ea48ae4639284684f13ec26cde721f903122ce))
+
+
+
+
+
 ## [0.5.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.5.3...gatsby-theme-mdx-suite-core@0.5.4) (2020-11-12)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-core

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.7.0...gatsby-theme-mdx-suite-base@0.7.1) (2020-11-13)
+
+
+### Bug Fixes
+
+* **privacy-manager:** allow GA and GTM trackers to be configured ([a9b13e5](https://github.com/axe312ger/gatsby-mdx-suite/commit/a9b13e5e1709d1a44ae0ecb7b447c91da21adbd1))
+* **privacy-manager:** translate privacy shield and improve overall spacing ([8f05c09](https://github.com/axe312ger/gatsby-mdx-suite/commit/8f05c09d02199a884ca1c19e7a14e4c258985057))
+* **privacy-manager:** use current color font privacy shield links ([e87fe41](https://github.com/axe312ger/gatsby-mdx-suite/commit/e87fe41e364f749b18fad859d12a7a193675d9b3))
+
+
+
+
+
 # [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.6.1...gatsby-theme-mdx-suite-base@0.7.0) (2020-11-12)
 
 

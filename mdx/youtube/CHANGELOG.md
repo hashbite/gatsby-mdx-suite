@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.9.0...@gatsby-mdx-suite/mdx-youtube@0.9.1) (2020-11-13)
+
+
+### Bug Fixes
+
+* **privacy-manager:** link to privacy policy page of integrations instead of home ([19327fa](https://github.com/axe312ger/gatsby-mdx-suite/commit/19327fa3564312ecd626b98f023c6401e397ba68))
+* **privacy-manager:** translate privacy shield and improve overall spacing ([8f05c09](https://github.com/axe312ger/gatsby-mdx-suite/commit/8f05c09d02199a884ca1c19e7a14e4c258985057))
+
+
+
+
+
 # [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.8.0...@gatsby-mdx-suite/mdx-youtube@0.9.0) (2020-11-12)
 
 
