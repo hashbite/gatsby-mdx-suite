@@ -13,25 +13,23 @@
 
 * Fully customizable, extend and alterable MDX components. You can modify them by shadowing, overwriting the theme and style them via emotion and tailwindCSS.
 * Simple MDX tag structures to keep editing simple.
-* Contentful support
-* Starters & a theme for fast integration into your GatsbyJS project
-* Full i18n integration with helpers to easily create menus and language switchers
-* No crazy magic. The components code are pretty simple and very common dependencies are used
-* Automated generation of documentation of all components used within the system. Provides basic information about Markdown and MDX as well.
-* Components to render Menus, Links, Language Switch & more
+* Full integration with [Contentful](https://contentful.com/)
+* Build with Gatsby themes for fast integration into your GatsbyJS project
+* A starter to get set up a new Gatsby MDX project within minutes.
+* Full i18n integration with helpers to easily create menus and a language switcher.
+* No to much crazy magic besides MDX. Components are often a few DOM elements with css applied or just a wrapper around a common React package.
+* Automated generation of documentation of all components used within the system. Provides basic information about Markdown and MDX as well.  Demo: https://gatsby-mdx-suite-example-full.netlify.app/docs
+* Components to render Menus, Links, Language Switch & more.
+* GDPR/DSGVO compatability. Your visitors have full control over data flow and analytics. Nothing is sent outside if they don't give consent. You can adjust the behavior and style of the privacy manager. Demo: https://gatsby-mdx-suite-example-full.netlify.app/
+* Online MDX editor per project, get real time previews of your MDX. Demo: https://gatsby-mdx-suite-example-full.netlify.app/docs/playground
 
 ### ![Work in progress features](https://img.shields.io/badge/Status-Work_in_progress-yellowgreen?style=flat)
 
-* Upcomming support of WYSIWYG editors. Waiting for https://github.com/blocks/blocks to get more progress, in the meantime, we developed our own split-screen editor using [Ace Editor](https://ace.c9.io/) and [MDX runtime](https://mdxjs.com/advanced/runtime). Curious? [The playground in the docs](https://gatsby-mdx-suite.netlify.app/docs/playground/) is powered by it.
-* Automatic parsing of MDX content to create graphql relations to used assets like images, videos & others.
-* More components to come
-* GDPR/DSGVO compatability. We will give visitors full control over data flow and analytics, and provide proper UX if they decide against it.
-
-### ![Upcoming features](https://img.shields.io/badge/Status-Upcoming-orange?style=flat)
-
-* A few production websites are already running on this. We are getting closer to a beta release.
+* Upcoming support of WYSIWYG editors. Waiting for https://github.com/blocks/blocks to get more progress, in the meantime, we developed our own split-screen editor using [Ace Editor](https://ace.c9.io/) and [MDX runtime](https://mdxjs.com/advanced/runtime). Curious? [The playground in the docs]( Demo: https://gatsby-mdx-suite-example-full.netlify.app/docs/playground) is powered by it.
+* We are closing the last bugs and finish documentation for the beta release.
 * Build & Website performance improvements
-* DX & Stability
+* More components to come. Always. Feel free to submit your own!
+
 
 ## Core dependencies
 
