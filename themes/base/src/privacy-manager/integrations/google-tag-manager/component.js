@@ -1,19 +1,23 @@
 import { useEffect, useState } from 'react'
+import propTypes from 'prop-types'
+
 import TagManager from 'react-gtm-module'
 
-const tagManagerArgs = {
-  gtmId: 'GTM-XXXXXXX',
-}
-
-const GoogleTagManager = ({ children }) => {
+const GoogleTagManager = ({ children, gtmId, ...tagManagerArgs }) => {
   const [initialized, setInitialized] = useState(false)
+
   useEffect(() => {
     if (!initialized) {
-      TagManager.initialize(tagManagerArgs)
+      TagManager.initialize({ gtmId, ...tagManagerArgs })
       setInitialized(true)
     }
-  }, [initialized])
+  }, [initialized, gtmId, tagManagerArgs])
+
   return children
+}
+
+GoogleTagManager.propTypes = {
+  gtmId: propTypes.string.isRequired,
 }
 
 export default GoogleTagManager
