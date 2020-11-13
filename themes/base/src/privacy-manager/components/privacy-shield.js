@@ -34,6 +34,10 @@ const PrivacyShieldButton = styled.button`
   }
 `
 
+const PrivacyShieldAlternativeLink = styled.a`
+  ${tw`text-current`}
+`
+
 const PrivacyShield = ({ config, fallbackUrl = false, children }) => {
   const { id, category, title, url = '#', icon } = config
   const privacyContextData = useContext(PrivacyManagerContext)
@@ -62,9 +66,13 @@ const PrivacyShield = ({ config, fallbackUrl = false, children }) => {
             Alternative:
             <br />
             Visit{' '}
-            <a href={fallbackUrl} target="_blank" rel="noreferrer">
+            <PrivacyShieldAlternativeLink
+              href={fallbackUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               {fallbackUrl}
-            </a>
+            </PrivacyShieldAlternativeLink>
           </PrivacyShieldAlternative>
         )}
       </PrivacyShieldWrapper>
