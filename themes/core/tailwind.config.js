@@ -91,7 +91,7 @@ module.exports = merge(
       // Font families, size and colors
       plugin(function ({ addBase, config }) {
         addBase({
-          html: {
+          body: {
             color: config('theme.colors.text'),
             backgroundColor: config('theme.colors.root-background'),
             fontFamily: config('theme.fontFamily.body').join(', '),
