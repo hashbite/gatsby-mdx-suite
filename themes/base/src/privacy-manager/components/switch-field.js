@@ -6,11 +6,11 @@ import tw from 'twin.macro'
 import { Field } from 'react-final-form'
 
 const SwitchInputWrapper = styled.div`
-  ${tw`relative inline-block w-20 mr-2 align-middle select-none transition duration-200 ease-in`}
+  ${tw`relative inline-block w-16 mr-2 align-middle select-none transition duration-200 ease-in`}
 `
 
 const SwitchInputFakeLabel = styled.label`
-  ${tw`block overflow-hidden h-10 rounded-full bg-gray-300 cursor-pointer`}
+  ${tw`block overflow-hidden h-8 rounded-full bg-gray-300 cursor-pointer`}
   transition: background 0.15s;
 `
 
@@ -25,7 +25,7 @@ const slideAnimation = keyframes`
 const SwitchInput = styled.input(
   ({ theme }) => css`
     ${tw`
-      absolute block w-10 h-10
+      absolute block w-8 h-8
       rounded-full bg-white
       border-4 border-gray-300
       appearance-none cursor-pointer

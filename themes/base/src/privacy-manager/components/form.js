@@ -115,7 +115,7 @@ const PrivacyLogo = styled(Logo)`
 `
 
 const IntegrationFieldsWrapper = styled.div`
-  ${tw`md:flex flex-wrap gap-grid-gap my-8 md:my-0`}
+  ${tw`md:flex flex-wrap gap-content-gap my-8 md:my-0`}
 `
 
 const IntegrationField = styled.div`
@@ -125,7 +125,7 @@ const IntegrationField = styled.div`
 //   ${tw`text-xl px-2`}
 // `
 const IntegrationTitle = styled.span`
-  ${tw`text-lg`}
+  ${tw``}
 `
 
 const PrivacyManagerControls = styled.div`
