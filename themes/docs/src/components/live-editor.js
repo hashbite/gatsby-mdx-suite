@@ -185,9 +185,15 @@ function LiveEditor({ editorId, initialValue, layout }) {
         // Set valid raw value
         setError(null)
         localStorage.setItem(localStorageId, unverifiedValue)
+
         localStorage.setItem(`${localStorageId}-processed`, processedValue)
       } catch (error) {
         console.error(error)
+        error.message = error.message
+          .replace(/[> ]+([0-9]+) \|/g, (a, b) => a.replace(b, parseInt(b) - 4))
+          .replace(/\(([0-9]+):[0-9]+\)/, (a, b) =>
+            a.replace(b, parseInt(b) - 4)
+          )
         setError(error)
         if (editorRef.current) {
           editorRef.current.editor.resize()
@@ -218,15 +224,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
       {error && (
         <LiveEditorError>
           <h3>Oops, something went wrong:</h3>
-          <LiveEditorErrorMessage>
-            {error.message
-              .replace(/[> ]+([0-9]+) \|/g, (a, b) =>
-                a.replace(b, parseInt(b) - 2)
-              )
-              .replace(/\(([0-9]+):[0-9]+\)/, (a, b) =>
-                a.replace(b, parseInt(b) - 2)
-              )}
-          </LiveEditorErrorMessage>
+          <LiveEditorErrorMessage>{error.message}</LiveEditorErrorMessage>
         </LiveEditorError>
       )}
       <LiveEditorPreviewWrapper>
