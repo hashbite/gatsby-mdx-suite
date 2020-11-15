@@ -1,15 +1,9 @@
 import React from 'react'
-import styled from '@emotion/styled'
 
 import Layout from './layout/layout'
 import LayoutMain from './layout/main'
 import LiveEditor from './live-editor'
 import DataProvider from './data-provider'
-
-const PlaygroundWrapper = styled.div`
-  height: calc(100vh - 60px);
-  overflow-y: scroll;
-`
 
 const defaultMDX = `<Header>
 
@@ -35,9 +29,7 @@ function Playground() {
     <DataProvider>
       <Layout title="Playground">
         <LayoutMain>
-          <PlaygroundWrapper>
-            <LiveEditor initialValue={defaultMDX} layout="vertical" />
-          </PlaygroundWrapper>
+          <LiveEditor initialValue={defaultMDX} layout="vertical" />
         </LayoutMain>
       </Layout>
     </DataProvider>

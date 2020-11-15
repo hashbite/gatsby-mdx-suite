@@ -1,13 +1,20 @@
-import React, { useState, useEffect, useContext, useRef, useMemo } from 'react'
-import { useDebounce } from '@react-hook/debounce'
+import React, {
+  useCallback,
+  useState,
+  useEffect,
+  useContext,
+  useRef,
+  useMemo,
+} from 'react'
+import { useDebounce, useDebounceCallback } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
-import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
-import IconFullscreen from 'heroicons/outline/external-link.svg'
 
+import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
+import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 
 const AceEditor = React.lazy(() =>
@@ -21,21 +28,24 @@ const LiveEditorWrapper = styled.section(
     ${layout === 'horizontal'
       ? css`
           grid-template-columns: 1fr;
-          grid-template-rows: 50vh 30vh min-content;
+          grid-template-rows: min-content 50vh min-content 30vh min-content;
           grid-template-areas:
+            'toolbar-preview'
             'preview'
+            'toolbar-editor'
             'editor'
             'error';
-          max-height: calc(100vh - 60px);
+          max-height: calc(80vh);
         `
       : css`
           ${tw`w-screen`}
           grid-template-columns: 420px 1fr;
-          grid-template-rows: 1fr min-content;
+          grid-template-rows: min-content 1fr min-content;
           grid-template-areas:
+            'toolbar-preview toolbar-editor'
             'preview editor'
             'error error';
-          height: calc(100vh - 60px);
+          height: 100%;
         `}
   `
 )
@@ -46,13 +56,35 @@ const LiveEditorPreviewWrapper = styled.div`
 const LiveEditorPreview = styled.iframe`
   ${tw`overflow-scroll w-full h-full`}
 `
-const PreviewControls = tw.div`absolute z-50 right-0 top-0 m-4`
-const PreviewControl = tw.a`rounded bg-gray-200 text-gray-900 px-2 py-1`
-const PreviewControlIcon = styled(IconFullscreen)`
-  display: inline-block;
-  width: 1.4rem;
+
+const toolbarStyles = css`
+  ${tw`flex justify-between`}
+  ${tw`bg-gray-900 p-1`}
+`
+const LivePreviewToolbar = styled.div`
+  ${toolbarStyles}
+  grid-area: toolbar-preview;
+`
+
+const LiveEditorToolbar = styled.div`
+  ${toolbarStyles}
+  grid-area: toolbar-editor;
+`
+const ToolbarSection = styled.div``
+const Button = styled.button`
+  ${tw`rounded bg-gray-200 text-gray-900 px-2 py-1 m-1`}
+
+  :disabled {
+    ${tw`text-gray-600`}
+  }
+`
+
+const ButtonLabel = styled.span``
+const ButtonIcon = styled(Icon)`
   vertical-align: middle;
-  padding-bottom: 3px;
+  & + * {
+    ${tw`pl-2`}
+  }
 `
 
 const LiveEditorError = styled.div`
@@ -219,6 +251,24 @@ function LiveEditor({ editorId, initialValue, layout }) {
 
   const previewSrc = `/docs/preview?id=${`${localStorageId}-processed`}`
 
+  const onToggleDebugMode = useCallback((e) => {
+    console.log('called onToggleDebugMode', e)
+    alert('This feature is currenty still in development')
+  }, [])
+
+  const onClickReload = useCallback((e) => {
+    console.log('called onClickReload', e)
+    alert('This feature is currenty still in development')
+  }, [])
+  const onToggleAutoReload = useCallback((e) => {
+    console.log('called onToggleAutoReload', e)
+    alert('This feature is currenty still in development')
+  }, [])
+  const onOpenToolbar = useCallback((e) => {
+    console.log('called onOpenToolbar', e)
+    alert('This feature is currenty still in development')
+  }, [])
+
   return (
     <LiveEditorWrapper layout={layout}>
       {error && (
@@ -227,14 +277,38 @@ function LiveEditor({ editorId, initialValue, layout }) {
           <LiveEditorErrorMessage>{error.message}</LiveEditorErrorMessage>
         </LiveEditorError>
       )}
+      <LivePreviewToolbar>
+        <Button target="_blank" href={previewSrc} as="a">
+          <ButtonIcon icon="external-link" /> <ButtonLabel>Preview</ButtonLabel>
+        </Button>
+        <Button onClick={onToggleDebugMode} disabled>
+          <ButtonIcon icon="search" />
+          <ButtonLabel>Debug</ButtonLabel>
+        </Button>
+      </LivePreviewToolbar>
       <LiveEditorPreviewWrapper>
-        <PreviewControls>
-          <PreviewControl target="_blank" href={previewSrc}>
-            <PreviewControlIcon /> Full Size Preview
-          </PreviewControl>
-        </PreviewControls>
         <LiveEditorPreview src={previewSrc} />
       </LiveEditorPreviewWrapper>
+      <LiveEditorToolbar>
+        <ToolbarSection>
+          <Button onClick={onClickReload} disabled>
+            <ButtonIcon icon="repeat" />
+          </Button>
+          <Button onClick={onToggleAutoReload} disabled>
+            <ButtonIcon icon="repeat" />
+            <ButtonIcon icon={true ? 'lock' : 'unlock'} />
+            Auto Reload
+          </Button>
+        </ToolbarSection>
+        <Button onClick={() => onOpenToolbar('snippets')} disabled>
+          <ButtonIcon icon="snippets" />
+          <ButtonLabel>Snippets</ButtonLabel>
+        </Button>
+        <Button onClick={() => onOpenToolbar('help')} disabled>
+          <ButtonIcon icon="question" />
+          <ButtonLabel>Help</ButtonLabel>
+        </Button>
+      </LiveEditorToolbar>
       <LiveEditorEditor>
         {!isSSR && (
           <React.Suspense fallback={<Loading />}>
