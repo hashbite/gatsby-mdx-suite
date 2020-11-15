@@ -273,6 +273,15 @@ function LiveEditor({ editorId, initialValue, layout }) {
     (e) => setPreviewExpanded((v) => !v),
     []
   )
+  const onReset = useCallback(
+    (e) => {
+      // eslint-disable-next-line no-restricted-globals
+      if (confirm('Are you sure you want to reset your progress?')) {
+        setEditorValue(initialValue)
+      }
+    },
+    [initialValue]
+  )
 
   return (
     <LiveEditorWrapper layout={layout} previewExpanded={previewExpanded}>
@@ -318,6 +327,10 @@ function LiveEditor({ editorId, initialValue, layout }) {
         <Button onClick={() => onOpenToolbar('help')} disabled>
           <ButtonIcon icon="question" />
           <ButtonLabel>Help</ButtonLabel>
+        </Button>
+        <Button onClick={onReset}>
+          <ButtonIcon icon="trash" />
+          <ButtonLabel>Reset</ButtonLabel>
         </Button>
       </LiveEditorToolbar>
       <LiveEditorEditor>
