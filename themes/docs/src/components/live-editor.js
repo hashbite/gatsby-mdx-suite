@@ -22,7 +22,7 @@ const AceEditor = React.lazy(() =>
 )
 
 const LiveEditorWrapper = styled.section(
-  ({ layout }) => css`
+  ({ layout, previewExpanded }) => css`
     ${tw`grid`}
 
     ${layout === 'horizontal'
@@ -39,7 +39,7 @@ const LiveEditorWrapper = styled.section(
         `
       : css`
           ${tw`w-screen`}
-          grid-template-columns: 420px 1fr;
+          grid-template-columns: ${previewExpanded ? '768px' : '420px'} 1fr;
           grid-template-rows: min-content 1fr min-content;
           grid-template-areas:
             'toolbar-preview toolbar-editor'
@@ -268,9 +268,14 @@ function LiveEditor({ editorId, initialValue, layout }) {
     console.log('called onOpenToolbar', e)
     alert('This feature is currenty still in development')
   }, [])
+  const [previewExpanded, setPreviewExpanded] = useState(false)
+  const onTogglePreviewExpanded = useCallback(
+    (e) => setPreviewExpanded((v) => !v),
+    []
+  )
 
   return (
-    <LiveEditorWrapper layout={layout}>
+    <LiveEditorWrapper layout={layout} previewExpanded={previewExpanded}>
       {error && (
         <LiveEditorError>
           <h3>Oops, something went wrong:</h3>
@@ -284,6 +289,12 @@ function LiveEditor({ editorId, initialValue, layout }) {
         <Button onClick={onToggleDebugMode} disabled>
           <ButtonIcon icon="search" />
           <ButtonLabel>Debug</ButtonLabel>
+        </Button>
+        <Button onClick={onTogglePreviewExpanded}>
+          <ButtonIcon icon="switch" />
+          <ButtonLabel>
+            {previewExpanded ? 'Mobile View' : 'Tablet View'}
+          </ButtonLabel>
         </Button>
       </LivePreviewToolbar>
       <LiveEditorPreviewWrapper>
