@@ -11,6 +11,7 @@ import ChevronLeft from 'heroicons/outline/chevron-left.svg'
 import Menu from 'heroicons/outline/menu.svg'
 import Cog from 'heroicons/solid/cog.svg'
 import Chart from 'heroicons/solid/chart-square-bar.svg'
+import ExternalLink from 'heroicons/outline/external-link.svg'
 
 // Brand logos via https://simpleicons.org/ & https://react-icons.github.io/react-icons/
 import {
@@ -21,6 +22,18 @@ import {
   SiTwitter,
   SiVimeo,
 } from 'react-icons/si'
+
+import { BsArrowRepeat, BsCodeSlash } from 'react-icons/bs'
+import { MdContentPaste } from 'react-icons/md'
+import {
+  AiOutlineDelete,
+  AiOutlineInfoCircle,
+  AiOutlineLock,
+  AiOutlineQuestionCircle,
+  AiOutlineUnlock,
+  AiOutlineSearch,
+} from 'react-icons/ai'
+import { HiOutlineSwitchHorizontal } from 'react-icons/hi'
 
 // Country flags via https://flagicons.lipis.dev/
 import FlagDe from 'flag-icon-css/flags/4x3/de.svg'
@@ -51,6 +64,17 @@ export default new Map(
     previous: { icon: ChevronLeft },
     menu: { icon: Menu },
     settings: { icon: Cog },
+    'external-link': { icon: ExternalLink },
+    repeat: { icon: BsArrowRepeat },
+    search: { icon: AiOutlineSearch },
+    lock: { icon: AiOutlineLock },
+    unlock: { icon: AiOutlineUnlock },
+    code: { icon: BsCodeSlash },
+    trash: { icon: AiOutlineDelete },
+    question: { icon: AiOutlineQuestionCircle },
+    info: { icon: AiOutlineInfoCircle },
+    snippets: { icon: MdContentPaste },
+    switch: { icon: HiOutlineSwitchHorizontal },
     phone: { icon: Phone },
     mail: { icon: Mail },
     facebook: { icon: SiFacebook },

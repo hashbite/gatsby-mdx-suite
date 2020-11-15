@@ -5,10 +5,10 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
-import MenuIcon from 'heroicons/outline/menu.svg'
 import ScrollLock from 'react-scrolllock'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
+import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 import Logo from './logo'
 import LanguageSwitch from '../i18n/language-switch'
@@ -150,10 +150,8 @@ const HeaderControls = tw.div`flex items-center`
 
 const HeaderMenuToggle = tw.button`
   xl:hidden
-  text-4xl text-primary
+  text-3xl text-primary
   border-none bg-transparent`
-
-const HeaderMenuToggleIcon = tw(MenuIcon)`w-10`
 
 const NavigationMobile = ({ rootMenuItemId }) => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -182,7 +180,7 @@ const NavigationMobile = ({ rootMenuItemId }) => {
           <HeaderControls>
             <LanguageSwitch />
             <HeaderMenuToggle onClick={handleClickMenuToggle}>
-              <HeaderMenuToggleIcon />
+              <Icon icon="menu" verticalAlign="middle" />
             </HeaderMenuToggle>
           </HeaderControls>
         </NavigationMobileTopContent>
