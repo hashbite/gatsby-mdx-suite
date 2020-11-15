@@ -96,12 +96,7 @@ const isVideo = (mimeType) => mimeType.indexOf('video') === 0
 
 function LiveEditor({ editorId, initialValue, layout }) {
   const localStorageId = `mdx-suite-live-editor-${editorId}`
-
   const editorRef = useRef(null)
-  const [editorValue, setEditorValue] = useState(
-    localStorage.getItem(localStorageId) || initialValue || ''
-  )
-  const [unverifiedValue, setUnverifiedValue] = useDebounce(editorValue, 300)
   const [error, setError] = useState()
   const {
     data: { full, youtubeVideos, instagramPosts },
@@ -132,63 +127,65 @@ function LiveEditor({ editorId, initialValue, layout }) {
     [full]
   )
 
+  const replaceTokens = useCallback(
+    (mdx) => {
+      return mdx
+        .replace(
+          /"randomImageId"/gi,
+          () => `"${images[Math.floor(Math.random() * images.length)].assetId}"`
+        )
+        .replace(
+          /"randomPictureId"/gi,
+          () =>
+            `"${pictures[Math.floor(Math.random() * pictures.length)].assetId}"`
+        )
+        .replace(
+          /"randomGraphicId"/gi,
+          () =>
+            `"${graphics[Math.floor(Math.random() * graphics.length)].assetId}"`
+        )
+        .replace(
+          /"randomVideoId"/gi,
+          () => `"${videos[Math.floor(Math.random() * videos.length)].assetId}"`
+        )
+        .replace(
+          /"randomInstagramPostId"/gi,
+          () =>
+            `"${
+              instagramPosts[Math.floor(Math.random() * instagramPosts.length)]
+                .id
+            }"`
+        )
+        .replace(
+          /"randomYoutubeVideoId"/gi,
+          () =>
+            `"${
+              youtubeVideos[Math.floor(Math.random() * youtubeVideos.length)]
+                .videoId
+            }"`
+        )
+    },
+    [graphics, images, pictures, videos, instagramPosts, youtubeVideos]
+  )
+
+  const [editorValue, setEditorValue] = useState(
+    localStorage.getItem(localStorageId) || initialValue || ''
+  )
+  const [unverifiedValue, setUnverifiedValue] = useDebounce(editorValue, 1000)
+
   useEffect(() => {
     async function parseMdx() {
       try {
-        // Replace tokens with asset ids
-        const processedValue = unverifiedValue
-          .replace(
-            /"randomImageId"/gi,
-            () =>
-              `"${images[Math.floor(Math.random() * images.length)].assetId}"`
-          )
-          .replace(
-            /"randomPictureId"/gi,
-            () =>
-              `"${
-                pictures[Math.floor(Math.random() * pictures.length)].assetId
-              }"`
-          )
-          .replace(
-            /"randomGraphicId"/gi,
-            () =>
-              `"${
-                graphics[Math.floor(Math.random() * graphics.length)].assetId
-              }"`
-          )
-          .replace(
-            /"randomVideoId"/gi,
-            () =>
-              `"${videos[Math.floor(Math.random() * videos.length)].assetId}"`
-          )
-          .replace(
-            /"randomInstagramPostId"/gi,
-            () =>
-              `"${
-                instagramPosts[
-                  Math.floor(Math.random() * instagramPosts.length)
-                ].id
-              }"`
-          )
-          .replace(
-            /"randomYoutubeVideoId"/gi,
-            () =>
-              `"${
-                youtubeVideos[Math.floor(Math.random() * youtubeVideos.length)]
-                  .videoId
-              }"`
-          )
-
         // Validate mdx by parsing it
-        await mdx(processedValue)
+        await mdx(unverifiedValue)
+
+        // Replace tokens with asset ids
+        const processedValue = replaceTokens(unverifiedValue)
 
         // Set valid raw value
         setError(null)
         localStorage.setItem(localStorageId, unverifiedValue)
         localStorage.setItem(`${localStorageId}-processed`, processedValue)
-        if (editorRef.current) {
-          editorRef.current.editor.resize()
-        }
       } catch (error) {
         console.error(error)
         setError(error)
@@ -199,16 +196,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
     }
 
     parseMdx()
-  }, [
-    unverifiedValue,
-    graphics,
-    images,
-    pictures,
-    videos,
-    instagramPosts,
-    youtubeVideos,
-    localStorageId,
-  ])
+  }, [unverifiedValue, localStorageId, replaceTokens])
 
   useEffect(() => {
     if (unverifiedValue !== editorValue && editorValue) {
@@ -218,8 +206,10 @@ function LiveEditor({ editorId, initialValue, layout }) {
 
   const isSSR = typeof window === 'undefined'
 
-  const handleEditorChange = (content) =>
-    setEditorValue(content.replace(/^[ \t]+$/gm, ''))
+  const handleEditorChange = useDebounceCallback(
+    (content) => setEditorValue(content.replace(/^[ \t]+$/gm, '')),
+    300
+  )
 
   const previewSrc = `/docs/preview?id=${`${localStorageId}-processed`}`
 
