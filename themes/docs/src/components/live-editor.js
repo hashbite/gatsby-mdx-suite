@@ -12,6 +12,8 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
+import Image from 'gatsby-image'
+import prettyBytes from 'pretty-bytes'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
@@ -39,16 +41,37 @@ const LiveEditorWrapper = styled.section(
         `
       : css`
           ${tw`w-screen`}
-          grid-template-columns: ${previewExpanded ? '768px' : '420px'} 1fr;
+          grid-template-columns: ${previewExpanded
+            ? '768px'
+            : '420px'} 1fr max-content;
           grid-template-rows: min-content 1fr min-content;
           grid-template-areas:
-            'toolbar-preview toolbar-editor'
-            'preview editor'
-            'error error';
+            'toolbar-preview toolbar-editor toolbar-editor'
+            'preview editor sidebar'
+            'preview error sidebar';
           height: 100%;
         `}
   `
 )
+
+const LiveEditorSidebar = styled.div`
+  grid-area: sidebar;
+  width: 360px;
+
+  ${tw`bg-gray-300 p-content-gap overflow-y-scroll`}
+`
+
+const LiveEditorSidebarMediaAsset = styled.figure`
+  ${tw`cursor-pointer mb-content-gap p-0`}
+`
+const LiveEditorSidebarMediaAssetThumbnail = styled(Image)`
+  max-width: 300px;
+  ${tw`block! mx-auto mb-1`}
+`
+const LiveEditorSidebarMediaAssetCaption = styled.figcaption`
+  ${tw`text-center text-xs text-gray-800`}
+`
+
 const LiveEditorPreviewWrapper = styled.div`
   ${tw`relative shadow-inner w-full h-full`}
   grid-area: preview;
@@ -167,12 +190,20 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const [error, setError] = useState()
   const [errorDetailsVisible, setErrorDetailsVisible] = useState(false)
   const {
-    data: { full, youtubeVideos, instagramPosts },
+    data: { docs, youtubeVideos, instagramPosts },
   } = useContext(MdxSuiteContext)
 
+  const media = useMemo(() => {
+    const mediaMap = new Map()
+    docs.forEach((asset) => {
+      mediaMap.set(asset.assetId, asset)
+    })
+    return Array.from(mediaMap.values())
+  }, [docs])
+
   const images = useMemo(
-    () => full.filter(({ file: { contentType } }) => !isVideo(contentType)),
-    [full]
+    () => docs.filter(({ file: { contentType } }) => !isVideo(contentType)),
+    [docs]
   )
 
   const pictures = useMemo(
@@ -191,8 +222,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
   )
 
   const videos = useMemo(
-    () => full.filter(({ file: { contentType } }) => isVideo(contentType)),
-    [full]
+    () => docs.filter(({ file: { contentType } }) => isVideo(contentType)),
+    [docs]
   )
 
   const replaceTokens = useCallback(
@@ -331,6 +362,13 @@ function LiveEditor({ editorId, initialValue, layout }) {
     setErrorDetailsVisible((v) => !v)
   }, [])
 
+  const injectMediaId = useCallback(
+    (assetId) => {
+      editorRef.current.editor.insert(assetId)
+    },
+    [editorRef]
+  )
+
   return (
     <LiveEditorWrapper layout={layout} previewExpanded={previewExpanded}>
       {error && (
@@ -410,6 +448,28 @@ function LiveEditor({ editorId, initialValue, layout }) {
           </React.Suspense>
         )}
       </LiveEditorEditor>
+      {layout !== 'horizontal' && (
+        <LiveEditorSidebar>
+          <h2>Media:</h2>
+          {media.map((asset) => (
+            <LiveEditorSidebarMediaAsset
+              key={asset.assetId}
+              onClick={() => injectMediaId(asset.assetId)}
+            >
+              <LiveEditorSidebarMediaAssetThumbnail
+                fixed={
+                  (asset?.videoScreenshots &&
+                    asset.videoScreenshots[0]?.childImageSharp?.fixed) ||
+                  asset.fixed
+                }
+              />
+              <LiveEditorSidebarMediaAssetCaption>
+                {asset.title} ({prettyBytes(asset.file.details.size)})
+              </LiveEditorSidebarMediaAssetCaption>
+            </LiveEditorSidebarMediaAsset>
+          ))}
+        </LiveEditorSidebar>
+      )}
     </LiveEditorWrapper>
   )
 }

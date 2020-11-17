@@ -184,6 +184,30 @@ export const MdxSuiteMediaCollectionEigthDocs = graphql`
   }
 `
 
+export const MdxSuiteMediaDocs = graphql`
+  fragment MdxSuiteMediaDocs on ContentfulAsset {
+    ...MdxSuiteContentfulAsset
+    fixed(width: 300) {
+      ...GatsbyContentfulFixed_noBase64
+    }
+    file {
+      details {
+        size
+      }
+    }
+    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
+      path
+    }
+    videoScreenshots(timestamps: ["0"], width: 300) {
+      childImageSharp {
+        fixed(width: 300) {
+          ...GatsbyImageSharpFixed_noBase64
+        }
+      }
+    }
+  }
+`
+
 export const MdxSuiteMediaCollections = graphql`
   fragment MdxSuiteMediaCollections on Mdx {
     screen: media(collectionType: "screen") {

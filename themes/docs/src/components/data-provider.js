@@ -44,6 +44,11 @@ const DocsDataProvider = ({ children }) => {
           ...MdxSuiteMediaCollectionEigthDocs
         }
       }
+      docs: allContentfulAsset {
+        nodes {
+          ...MdxSuiteMediaDocs
+        }
+      }
     }
   `)
 
