@@ -92,37 +92,47 @@ const LiveEditorError = styled.div`
   grid-area: error;
 `
 const LiveEditorErrorMessage = tw.pre`text-sm`
-const LiveEditorEditor = styled.div`
-  grid-area: editor;
-  min-height: 4rem;
 
-  .ace_heading {
-    ${tw`font-bold text-blue-600`}
-  }
+const LiveEditorEditor = styled.div(
+  ({ hasError }) => css`
+    grid-area: editor;
+    min-height: 4rem;
 
-  .ace_xml,
-  .ace_html {
-    &.ace_punctuation,
-    &.ace_tag-name {
-      ${tw`font-bold text-green-600`}
+    .ace_heading {
+      ${tw`font-bold text-blue-600`}
     }
 
-    &.ace_attribute-name {
-      ${tw`font-bold text-red-600`}
+    .ace_xml,
+    .ace_html {
+      &.ace_punctuation,
+      &.ace_tag-name {
+        ${tw`font-bold text-green-600`}
+      }
+
+      &.ace_attribute-name {
+        ${tw`font-bold text-red-600`}
+      }
+
+      &.ace_attribute-value {
+        ${tw`font-bold text-orange-600`}
+      }
     }
 
-    &.ace_attribute-value {
-      ${tw`font-bold text-orange-600`}
+    .ace_emphasis {
+      ${tw`italic`}
     }
-  }
+    .ace_strong {
+      ${tw`font-bold`}
+    }
 
-  .ace_emphasis {
-    ${tw`italic`}
-  }
-  .ace_strong {
-    ${tw`font-bold`}
-  }
-`
+    ${hasError &&
+    css`
+      .ace_active-line {
+        background-color: #5c424b !important;
+      }
+    `}
+  `
+)
 
 const isVideo = (mimeType) => mimeType.indexOf('video') === 0
 
@@ -333,7 +343,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
           <ButtonLabel>Reset</ButtonLabel>
         </Button>
       </LiveEditorToolbar>
-      <LiveEditorEditor>
+      <LiveEditorEditor hasError={!!error}>
         {!isSSR && (
           <React.Suspense fallback={<Loading />}>
             <AceEditor
