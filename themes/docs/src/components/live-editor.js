@@ -87,11 +87,36 @@ const ButtonIcon = styled(Icon)`
   }
 `
 
-const LiveEditorError = styled.div`
-  ${tw`p-4 border-4 border-dashed border-red-400 bg-red-700 text-white`}
-  grid-area: error;
-`
-const LiveEditorErrorMessage = tw.pre`text-sm`
+const LiveEditorErrorBar = styled.div(
+  () => css`
+    grid-area: error;
+    ${tw`
+      flex justify-between items-center flex-wrap
+      p-4
+      border border-red-400
+      bg-red-700 text-white`}
+  `
+)
+const LiveEditorErrorTitle = styled.div(() => css``)
+const LiveEditorErrorToggle = styled.button(
+  () => css`
+    ${tw`rounded bg-red-500 px-2 py-1 cursor-pointer`}
+
+    :focus {
+      ${tw`outline-none bg-red-400`}
+    }
+  `
+)
+const LiveEditorErrorDetails = styled.pre(
+  ({ visible }) => css`
+    ${tw`
+      hidden flex-none w-full
+      pt-content-gap
+      text-sm
+    `}
+    ${visible && tw`block`}
+  `
+)
 
 const LiveEditorEditor = styled.div(
   ({ hasError }) => css`
@@ -140,6 +165,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const localStorageId = `mdx-suite-live-editor-${editorId}`
   const editorRef = useRef(null)
   const [error, setError] = useState()
+  const [errorDetailsVisible, setErrorDetailsVisible] = useState(false)
   const {
     data: { full, youtubeVideos, instagramPosts },
   } = useContext(MdxSuiteContext)
@@ -231,11 +257,19 @@ function LiveEditor({ editorId, initialValue, layout }) {
         localStorage.setItem(`${localStorageId}-processed`, processedValue)
       } catch (error) {
         console.error(error)
-        error.message = error.message
+
+        const fixedLines = error.message
           .replace(/[> ]+([0-9]+) \|/g, (a, b) => a.replace(b, parseInt(b) - 4))
           .replace(/\(([0-9]+):[0-9]+\)/, (a, b) =>
             a.replace(b, parseInt(b) - 4)
           )
+          .replace(/unknown:/g, '')
+        const lines = fixedLines
+          .split('\n')
+          .map((s) => s.trim())
+          .filter(Boolean)
+        error.message = lines.shift()
+        error.details = lines.join('\n')
         setError(error)
         if (editorRef.current) {
           editorRef.current.editor.resize()
@@ -293,13 +327,24 @@ function LiveEditor({ editorId, initialValue, layout }) {
     [initialValue]
   )
 
+  const toggleErrorDetailsVisible = useCallback(() => {
+    setErrorDetailsVisible((v) => !v)
+  }, [])
+
   return (
     <LiveEditorWrapper layout={layout} previewExpanded={previewExpanded}>
       {error && (
-        <LiveEditorError>
-          <h3>Oops, something went wrong:</h3>
-          <LiveEditorErrorMessage>{error.message}</LiveEditorErrorMessage>
-        </LiveEditorError>
+        <LiveEditorErrorBar>
+          <LiveEditorErrorTitle>
+            <strong>Oops, something went wrong:</strong> {error.message}
+          </LiveEditorErrorTitle>
+          <LiveEditorErrorToggle onClick={toggleErrorDetailsVisible}>
+            <Icon icon="search" verticalAlign="middle" /> Details
+          </LiveEditorErrorToggle>
+          <LiveEditorErrorDetails visible={errorDetailsVisible}>
+            {error.details}
+          </LiveEditorErrorDetails>
+        </LiveEditorErrorBar>
       )}
       <LivePreviewToolbar>
         <Button target="_blank" href={previewSrc} as="a">
