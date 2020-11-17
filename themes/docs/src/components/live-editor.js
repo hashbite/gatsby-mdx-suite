@@ -14,6 +14,7 @@ import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
 import Image from 'gatsby-image'
 import prettyBytes from 'pretty-bytes'
+import Fuse from 'fuse.js'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
@@ -60,9 +61,12 @@ const LiveEditorSidebar = styled.div`
 
   ${tw`bg-gray-300 p-content-gap overflow-y-scroll`}
 `
+const LiveEditorSidebarSearch = styled.input`
+  ${tw`rounded w-full px-2 py-2 mb-4`}
+`
 
 const LiveEditorSidebarMediaAsset = styled.figure`
-  ${tw`cursor-pointer mb-content-gap p-0`}
+  ${tw`cursor-pointer mt-content-gap p-0`}
 `
 const LiveEditorSidebarMediaAssetThumbnail = styled(Image)`
   max-width: 300px;
@@ -189,11 +193,12 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const editorRef = useRef(null)
   const [error, setError] = useState()
   const [errorDetailsVisible, setErrorDetailsVisible] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
   const {
     data: { docs, youtubeVideos, instagramPosts },
   } = useContext(MdxSuiteContext)
 
-  const media = useMemo(() => {
+  const uniqueMedia = useMemo(() => {
     const mediaMap = new Map()
     docs.forEach((asset) => {
       mediaMap.set(asset.assetId, asset)
@@ -201,9 +206,21 @@ function LiveEditor({ editorId, initialValue, layout }) {
     return Array.from(mediaMap.values())
   }, [docs])
 
+  const fuse = useMemo(() => {
+    return new Fuse(uniqueMedia, { keys: ['title'] })
+  }, [uniqueMedia])
+
+  const media = useMemo(() => {
+    if (!searchTerm) {
+      return uniqueMedia
+    }
+    return fuse.search(searchTerm).map(({ item }) => item)
+  }, [searchTerm, fuse, uniqueMedia])
+
   const images = useMemo(
-    () => docs.filter(({ file: { contentType } }) => !isVideo(contentType)),
-    [docs]
+    () =>
+      uniqueMedia.filter(({ file: { contentType } }) => !isVideo(contentType)),
+    [uniqueMedia]
   )
 
   const pictures = useMemo(
@@ -222,8 +239,9 @@ function LiveEditor({ editorId, initialValue, layout }) {
   )
 
   const videos = useMemo(
-    () => docs.filter(({ file: { contentType } }) => isVideo(contentType)),
-    [docs]
+    () =>
+      uniqueMedia.filter(({ file: { contentType } }) => isVideo(contentType)),
+    [uniqueMedia]
   )
 
   const replaceTokens = useCallback(
@@ -369,6 +387,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
     [editorRef]
   )
 
+  const searchMedia = useCallback((e) => setSearchTerm(e.target.value), [])
+
   return (
     <LiveEditorWrapper layout={layout} previewExpanded={previewExpanded}>
       {error && (
@@ -450,7 +470,12 @@ function LiveEditor({ editorId, initialValue, layout }) {
       </LiveEditorEditor>
       {layout !== 'horizontal' && (
         <LiveEditorSidebar>
-          <h2>Media:</h2>
+          <LiveEditorSidebarSearch
+            type="search"
+            onChange={searchMedia}
+            defaultValue={searchTerm}
+            placeholder="Search for media..."
+          />
           {media.map((asset) => (
             <LiveEditorSidebarMediaAsset
               key={asset.assetId}
