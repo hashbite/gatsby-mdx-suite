@@ -78,6 +78,17 @@ const FontPreview = styled.div`
   }
 `
 
+const Sizes = tw.div`mb-content-gap`
+const Size = tw.div`whitespace-no-wrap`
+const Length = styled.div(
+  ({ width }) => css`
+    ${tw`border border-red-300 text-center inline-block mr-2`}
+    width: ${width};
+    min-height: 0.8rem;
+    border-top: none;
+  `
+)
+
 function LiveEditorSidebar({ editorRef, tab }) {
   const [searchTerm, setSearchTerm] = useState('')
   const { media } = useMedia()
@@ -290,6 +301,19 @@ function LiveEditorSidebar({ editorRef, tab }) {
                 </p>
               </FontPreview>
             ))}
+        </>
+      )}
+      {tab === 'sizes' && (
+        <>
+          <h1>Sizes:</h1>
+          <Sizes>
+            {Object.keys(theme.spacing).map((size) => (
+              <Size>
+                <Length width={theme.spacing[size]} />
+                {size}
+              </Size>
+            ))}
+          </Sizes>
         </>
       )}
     </LiveEditorSidebarWrapper>
