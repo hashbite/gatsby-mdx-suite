@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from './layout/layout'
 import LayoutMain from './layout/main'
-import LiveEditor from './live-editor'
+import LiveEditor from './live-editor/live-editor'
 import DataProvider from './data-provider'
 
 const defaultMDX = `<Header>
