@@ -1,9 +1,7 @@
 import React from 'react'
-import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css, keyframes } from '@emotion/core'
 import tw from 'twin.macro'
-import { Field } from 'react-final-form'
 
 const SwitchInputWrapper = styled.div`
   ${tw`relative inline-block w-16 mr-2 align-middle select-none transition duration-200 ease-in`}
@@ -53,30 +51,18 @@ const SwitchInput = styled.input(
   `
 )
 
-const SwitchField = ({ disabled, ...fieldProps }) => (
-  <Field {...fieldProps} type="checkbox">
-    {({ input }) => {
-      const id = `checkbox-${input.name}`
-      return (
-        <SwitchInputWrapper>
-          <SwitchInput
-            type="checkbox"
-            name={input.name}
-            id={id}
-            checked={input.checked}
-            // eslint-disable-next-line react/jsx-handler-names
-            onChange={input.onChange}
-            disabled={disabled}
-          />
-          <SwitchInputFakeLabel htmlFor={id} className="toggle-label" />
-        </SwitchInputWrapper>
-      )
-    }}
-  </Field>
-)
+const SwitchLabel = styled.label`
+  ${tw`cursor-pointer`}
+`
 
-SwitchField.propTypes = {
-  disabled: propTypes.bool,
-}
+const SwitchField = ({ children, ...props }) => (
+  <>
+    <SwitchInputWrapper>
+      <SwitchInput type="checkbox" {...props} />
+      <SwitchInputFakeLabel htmlFor={props.id} />
+    </SwitchInputWrapper>
+    {children && <SwitchLabel htmlFor={props.id}>{children}</SwitchLabel>}
+  </>
+)
 
 export default SwitchField
