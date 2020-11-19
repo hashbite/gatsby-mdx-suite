@@ -137,6 +137,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const [editorInstance, setEditorInstance] = useState(null)
 
   const [autoReload, setAutoReload] = useState(true)
+  const [debugMode, setDebugMode] = useState(false)
 
   const [error, setError] = useState()
   const [errorDetailsVisible, setErrorDetailsVisible] = useState(false)
@@ -223,11 +224,12 @@ function LiveEditor({ editorId, initialValue, layout }) {
     parseMdx()
   }, [unverifiedValue, localStorageId, replaceTokens])
 
-  const previewSrc = `/docs/preview?id=${`${localStorageId}-processed`}`
+  const previewSrc = `/docs/preview?id=${`${localStorageId}-processed${
+    debugMode ? `&debug=true` : ``
+  }`}`
 
   const onToggleDebugMode = useCallback((e) => {
-    console.log('called onToggleDebugMode', e)
-    alert('This feature is currenty still in development')
+    setDebugMode((v) => !v)
   }, [])
 
   const onClickReload = useCallback(
@@ -281,12 +283,17 @@ function LiveEditor({ editorId, initialValue, layout }) {
         </LiveEditorErrorBar>
       )}
       <LivePreviewToolbar>
+        <ToolbarSection>
+          <Switch
+            id="debug-mode"
+            onClick={onToggleDebugMode}
+            checked={debugMode}
+          >
+            <Icon icon="search" verticalAlign="middle" /> Debug
+          </Switch>
+        </ToolbarSection>
         <Button target="_blank" href={previewSrc} as="a">
           <ButtonIcon icon="external-link" /> <ButtonLabel>Preview</ButtonLabel>
-        </Button>
-        <Button onClick={onToggleDebugMode} disabled>
-          <ButtonIcon icon="search" />
-          <ButtonLabel>Debug</ButtonLabel>
         </Button>
         <Button onClick={onTogglePreviewExpanded}>
           <ButtonIcon icon="switch" />

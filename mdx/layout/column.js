@@ -9,6 +9,7 @@ import Observer from '@researchgate/react-intersection-observer'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
+import debugMode from '@gatsby-mdx-suite/helpers/styling/debug-mode'
 
 const StyledColumn = styled.div(
   ({ theme, minAspectRatio, backgroundImage }) => css`
@@ -41,6 +42,8 @@ const StyledColumn = styled.div(
       background-size: cover;
       background-repeat: no-repeat;
     `}
+
+    ${debugMode({ title: 'Column', color: 'green', labelPosition: 'sideways' })}
   `
 )
 

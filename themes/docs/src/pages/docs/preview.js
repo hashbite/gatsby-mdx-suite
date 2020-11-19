@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import propTypes from 'prop-types'
 import tw from 'twin.macro'
-import styled from '@emotion/styled'
 import useEventListener from '@use-it/event-listener'
 
 import DataProvider from '../../components/data-provider'
@@ -13,8 +12,6 @@ const MDX = React.lazy(() =>
 )
 
 const PreviewFailedWrapper = tw.div`flex flex-col justify-center text-center w-screen h-screen`
-
-const ContentWrapper = styled.div``
 
 class MDXErrorBoundary extends React.Component {
   constructor(props) {
@@ -48,6 +45,7 @@ class MDXErrorBoundary extends React.Component {
 const DocsPreviewPage = () => {
   const searchParams = new URLSearchParams(window.location.search)
   const localStorageId = searchParams.get('id')
+  const debugModeEnabled = !!searchParams.get('debug')
 
   const [content, setContent] = useState(localStorage.getItem(localStorageId))
 
@@ -66,24 +64,17 @@ const DocsPreviewPage = () => {
 
   return (
     <DataProvider>
-      <ContentWrapper>
-        <MDXErrorBoundary>
-          {!isSSR && (
-            <React.Suspense fallback={<Loading />}>
+      <MDXErrorBoundary>
+        {!isSSR && (
+          <React.Suspense fallback={<Loading />}>
+            <div className={debugModeEnabled && 'debug'}>
               <MDX>{content}</MDX>
-            </React.Suspense>
-          )}
-        </MDXErrorBoundary>
-      </ContentWrapper>
+            </div>
+          </React.Suspense>
+        )}
+      </MDXErrorBoundary>
     </DataProvider>
   )
 }
 
-const DocsPreviewBrowserOnlyWrapper = (props) =>
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement ? (
-    <DocsPreviewPage {...props} />
-  ) : null
-
-export default DocsPreviewBrowserOnlyWrapper
+export default DocsPreviewPage
