@@ -1,10 +1,14 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import tw from 'twin.macro'
+import styled from '@emotion/styled'
 
 import ListItem from './list-item'
 
-const StyledList = tw.ul``
+import debugMode from '@gatsby-mdx-suite/helpers/styling/debug-mode'
+
+const StyledList = styled.ul`
+  ${debugMode({ color: 'tomato', title: 'List', labelPosition: 'outside' })}
+`
 
 /**
  * @example

@@ -11,6 +11,7 @@ import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 import convertToFlexAlignment from '@gatsby-mdx-suite/helpers/styling/convert-to-flex-alignment'
 import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
+import debugMode from '@gatsby-mdx-suite/helpers/styling/debug-mode'
 
 const BackgroundVideo = styled(Video)`
   ${tw`static`}
@@ -32,14 +33,14 @@ const SectionWrapper = styled.section(({ textShadow, theme, minHeight }) => {
     css`
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
     `}
+
+    ${debugMode({ color: 'red', title: 'Section', type: 'border' })}
   `
 })
 
 const SectionContentWrapper = styled.section(
   ({ minHeight, verticalAlign, horizontalAlign }) => {
     return css`
-      ${tw`relative`}
-
       ${(minHeight || horizontalAlign) && tw`flex flex-col h-full w-full`}
 
       ${minHeight &&
@@ -64,6 +65,12 @@ const SectionContent = styled.div(
 
     margin-top: ${calcGapValue(props.gap, props.theme)};
     margin-bottom: ${calcGapValue(props.gap, props.theme)};
+
+    ${debugMode({
+      color: 'tomato',
+      title: 'Section Content',
+      labelPosition: 'outside',
+    })}
   `
 )
 
