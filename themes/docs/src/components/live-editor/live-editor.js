@@ -1,25 +1,17 @@
-import React, {
-  useCallback,
-  useState,
-  useEffect,
-  useContext,
-  useRef,
-  useMemo,
-} from 'react'
+import React, { useCallback, useState, useEffect, useRef, useMemo } from 'react'
 import { useDebounce } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
-import Image from 'gatsby-image'
-import prettyBytes from 'pretty-bytes'
-import Fuse from 'fuse.js'
 
-import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 import Editor from '@monaco-editor/react'
+
+import LiveEditorSidebar from './sidebar'
+import { useMedia } from './hooks'
 
 const LiveEditorWrapper = styled.section(
   ({ layout, previewExpanded }) => css`
@@ -51,27 +43,6 @@ const LiveEditorWrapper = styled.section(
         `}
   `
 )
-
-const LiveEditorSidebar = styled.div`
-  grid-area: sidebar;
-  width: 360px;
-
-  ${tw`bg-gray-300 p-content-gap overflow-y-scroll`}
-`
-const LiveEditorSidebarSearch = styled.input`
-  ${tw`rounded w-full px-2 py-2 mb-4`}
-`
-
-const LiveEditorSidebarMediaAsset = styled.figure`
-  ${tw`cursor-pointer mt-content-gap p-0`}
-`
-const LiveEditorSidebarMediaAssetThumbnail = styled(Image)`
-  max-width: 300px;
-  ${tw`block! mx-auto mb-1`}
-`
-const LiveEditorSidebarMediaAssetCaption = styled.figcaption`
-  ${tw`text-center text-xs text-gray-800`}
-`
 
 const LiveEditorPreviewWrapper = styled.div`
   ${tw`relative shadow-inner w-full h-full`}
@@ -161,17 +132,11 @@ const LiveEditorEditor = styled.div(
   `
 )
 
-const isVideo = (mimeType) => mimeType.indexOf('video') === 0
-
 function LiveEditor({ editorId, initialValue, layout }) {
   const localStorageId = `mdx-suite-live-editor-${editorId}`
   const editorRef = useRef(null)
   const [error, setError] = useState()
   const [errorDetailsVisible, setErrorDetailsVisible] = useState(false)
-  const [searchTerm, setSearchTerm] = useState('')
-  const {
-    data: { docs, youtubeVideos, instagramPosts },
-  } = useContext(MdxSuiteContext)
 
   const editorValue = useMemo(
     () => localStorage.getItem(localStorageId) || initialValue || '',
@@ -190,92 +155,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
     [setUnverifiedValue]
   )
 
-  const uniqueMedia = useMemo(() => {
-    const mediaMap = new Map()
-    docs.forEach((asset) => {
-      mediaMap.set(asset.assetId, asset)
-    })
-    return Array.from(mediaMap.values())
-  }, [docs])
-
-  const fuse = useMemo(() => {
-    return new Fuse(uniqueMedia, { keys: ['title'] })
-  }, [uniqueMedia])
-
-  const media = useMemo(() => {
-    if (!searchTerm) {
-      return uniqueMedia
-    }
-    return fuse.search(searchTerm).map(({ item }) => item)
-  }, [searchTerm, fuse, uniqueMedia])
-
-  const images = useMemo(
-    () =>
-      uniqueMedia.filter(({ file: { contentType } }) => !isVideo(contentType)),
-    [uniqueMedia]
-  )
-
-  const pictures = useMemo(
-    () =>
-      images.filter(
-        ({ file: { contentType } }) => contentType.indexOf('svg') === -1
-      ),
-    [images]
-  )
-  const graphics = useMemo(
-    () =>
-      images.filter(
-        ({ file: { contentType } }) => contentType.indexOf('svg') !== -1
-      ),
-    [images]
-  )
-
-  const videos = useMemo(
-    () =>
-      uniqueMedia.filter(({ file: { contentType } }) => isVideo(contentType)),
-    [uniqueMedia]
-  )
-
-  const replaceTokens = useCallback(
-    (mdx) => {
-      return mdx
-        .replace(
-          /"randomImageId"/gi,
-          () => `"${images[Math.floor(Math.random() * images.length)].assetId}"`
-        )
-        .replace(
-          /"randomPictureId"/gi,
-          () =>
-            `"${pictures[Math.floor(Math.random() * pictures.length)].assetId}"`
-        )
-        .replace(
-          /"randomGraphicId"/gi,
-          () =>
-            `"${graphics[Math.floor(Math.random() * graphics.length)].assetId}"`
-        )
-        .replace(
-          /"randomVideoId"/gi,
-          () => `"${videos[Math.floor(Math.random() * videos.length)].assetId}"`
-        )
-        .replace(
-          /"randomInstagramPostId"/gi,
-          () =>
-            `"${
-              instagramPosts[Math.floor(Math.random() * instagramPosts.length)]
-                .id
-            }"`
-        )
-        .replace(
-          /"randomYoutubeVideoId"/gi,
-          () =>
-            `"${
-              youtubeVideos[Math.floor(Math.random() * youtubeVideos.length)]
-                .videoId
-            }"`
-        )
-    },
-    [graphics, images, pictures, videos, instagramPosts, youtubeVideos]
-  )
+  const { replaceTokens } = useMedia()
 
   useEffect(() => {
     async function parseMdx() {
@@ -350,15 +230,6 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const toggleErrorDetailsVisible = useCallback(() => {
     setErrorDetailsVisible((v) => !v)
   }, [])
-
-  const injectMediaId = useCallback(
-    (assetId) => {
-      editorRef.current.trigger('keyboard', 'type', { text: assetId })
-    },
-    [editorRef]
-  )
-
-  const searchMedia = useCallback((e) => setSearchTerm(e.target.value), [])
 
   return (
     <LiveEditorWrapper layout={layout} previewExpanded={previewExpanded}>
@@ -439,31 +310,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
               </select>
             </ToolbarSection>
           </LiveEditorSidebarToolbar>
-          <LiveEditorSidebar>
-            <LiveEditorSidebarSearch
-              type="search"
-              onChange={searchMedia}
-              defaultValue={searchTerm}
-              placeholder="Search for media..."
-            />
-            {media.map((asset) => (
-              <LiveEditorSidebarMediaAsset
-                key={asset.assetId}
-                onClick={() => injectMediaId(asset.assetId)}
-              >
-                <LiveEditorSidebarMediaAssetThumbnail
-                  fixed={
-                    (asset?.videoScreenshots &&
-                      asset.videoScreenshots[0]?.childImageSharp?.fixed) ||
-                    asset.fixed
-                  }
-                />
-                <LiveEditorSidebarMediaAssetCaption>
-                  {asset.title} ({prettyBytes(asset.file.details.size)})
-                </LiveEditorSidebarMediaAssetCaption>
-              </LiveEditorSidebarMediaAsset>
-            ))}
-          </LiveEditorSidebar>
+          <LiveEditorSidebar editorRef={editorRef} />
         </>
       )}
     </LiveEditorWrapper>
@@ -481,11 +328,4 @@ LiveEditor.propTypes = {
   layout: propTypes.string,
 }
 
-const LiveEditorBrowserOnlyWrapper = (props) =>
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement ? (
-    <LiveEditor {...props} />
-  ) : null
-
-export default LiveEditorBrowserOnlyWrapper
+export default LiveEditor

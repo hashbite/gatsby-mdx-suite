@@ -14,7 +14,7 @@ import ComponentsMenu from '../components/layout/components-menu'
 import Layout from '../components/layout/layout'
 import LayoutMain from '../components/layout/main'
 import DataProvider from '../components/data-provider'
-import LiveEditor from '../components/live-editor'
+import LiveEditor from '../components/live-editor/live-editor'
 import Props from '../components/props'
 
 const Tabs = styled.div`
