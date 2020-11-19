@@ -44,7 +44,7 @@ const LiveEditorWrapper = styled.section(
             : '420px'} 1fr max-content;
           grid-template-rows: min-content 1fr min-content;
           grid-template-areas:
-            'toolbar-preview toolbar-editor toolbar-editor'
+            'toolbar-preview toolbar-editor toolbar-sidebar'
             'preview editor sidebar'
             'preview error sidebar';
           height: 100%;
@@ -93,6 +93,10 @@ const LivePreviewToolbar = styled.div`
 const LiveEditorToolbar = styled.div`
   ${toolbarStyles}
   grid-area: toolbar-editor;
+`
+const LiveEditorSidebarToolbar = styled.div`
+  ${toolbarStyles}
+  grid-area: toolbar-sidebar;
 `
 const ToolbarSection = styled.div``
 const Button = styled.button`
@@ -423,31 +427,44 @@ function LiveEditor({ editorId, initialValue, layout }) {
         />
       </LiveEditorEditor>
       {layout !== 'horizontal' && (
-        <LiveEditorSidebar>
-          <LiveEditorSidebarSearch
-            type="search"
-            onChange={searchMedia}
-            defaultValue={searchTerm}
-            placeholder="Search for media..."
-          />
-          {media.map((asset) => (
-            <LiveEditorSidebarMediaAsset
-              key={asset.assetId}
-              onClick={() => injectMediaId(asset.assetId)}
-            >
-              <LiveEditorSidebarMediaAssetThumbnail
-                fixed={
-                  (asset?.videoScreenshots &&
-                    asset.videoScreenshots[0]?.childImageSharp?.fixed) ||
-                  asset.fixed
-                }
-              />
-              <LiveEditorSidebarMediaAssetCaption>
-                {asset.title} ({prettyBytes(asset.file.details.size)})
-              </LiveEditorSidebarMediaAssetCaption>
-            </LiveEditorSidebarMediaAsset>
-          ))}
-        </LiveEditorSidebar>
+        <>
+          <LiveEditorSidebarToolbar>
+            <ToolbarSection>
+              <select>
+                <option>Media</option>
+                <option>Icons</option>
+                <option>Colors</option>
+                <option>Fonts</option>
+                <option>Sizes</option>
+              </select>
+            </ToolbarSection>
+          </LiveEditorSidebarToolbar>
+          <LiveEditorSidebar>
+            <LiveEditorSidebarSearch
+              type="search"
+              onChange={searchMedia}
+              defaultValue={searchTerm}
+              placeholder="Search for media..."
+            />
+            {media.map((asset) => (
+              <LiveEditorSidebarMediaAsset
+                key={asset.assetId}
+                onClick={() => injectMediaId(asset.assetId)}
+              >
+                <LiveEditorSidebarMediaAssetThumbnail
+                  fixed={
+                    (asset?.videoScreenshots &&
+                      asset.videoScreenshots[0]?.childImageSharp?.fixed) ||
+                    asset.fixed
+                  }
+                />
+                <LiveEditorSidebarMediaAssetCaption>
+                  {asset.title} ({prettyBytes(asset.file.details.size)})
+                </LiveEditorSidebarMediaAssetCaption>
+              </LiveEditorSidebarMediaAsset>
+            ))}
+          </LiveEditorSidebar>
+        </>
       )}
     </LiveEditorWrapper>
   )
