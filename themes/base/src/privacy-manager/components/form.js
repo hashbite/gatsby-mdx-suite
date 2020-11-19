@@ -10,7 +10,7 @@ import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 import Logo from 'gatsby-theme-mdx-suite-base/src/components/header/logo.js'
 
-import SwitchField from './switch-field'
+import SwitchField from '../../components/form/fields/switch'
 import { useTranslation } from 'react-i18next'
 
 const PrivacyManagerWrapper = styled.div`
