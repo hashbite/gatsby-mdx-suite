@@ -5,9 +5,13 @@ import tw from 'twin.macro'
 import Image from 'gatsby-image'
 import prettyBytes from 'pretty-bytes'
 import Fuse from 'fuse.js'
+import { css } from '@emotion/core'
+import { useTheme } from 'emotion-theming'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import CTA from '@gatsby-mdx-suite/mdx-link/cta'
+import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import Search from 'gatsby-theme-mdx-suite-base/src/components/form/fields/search'
 
 import { useMedia } from './hooks'
@@ -41,10 +45,38 @@ const IconsGridItem = tw.div`text-center bg-gray-100 rounded p-2 cursor-pointer`
 const IconsGridItemTitle = tw.div`mt-4 text-sm text-gray-800`
 const IconsGridItemContent = tw.div``
 
+const Color = tw.div``
+const ColorWrapper = tw.div`mb-content-gap`
+const ColorSwatches = tw.div`flex gap-2`
+const ColorSwatchWrapper = tw.div`
+  bg-gray-100 p-2
+  text-center`
+const ColorSwatch = styled.div(
+  ({ color, onClick }) => css`
+    ${tw`
+    inline-block align-middle
+    w-8 h-8 mr-2
+    rounded
+    `}
+    ${!!onClick && tw`cursor-pointer`}
+    background: ${color};
+  `
+)
+const ColorSwatchVariantTitle = tw.span`text-xs text-gray-700`
+
+const ColorSets = tw.div`grid gap-grid-gap grid-cols-1`
+const ColorSetWrapper = styled.div`
+  ${tw`p-4`}
+  background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.text};
+`
+const ColorSetTitle = tw.h2`mb-4`
+
 function LiveEditorSidebar({ editorRef, tab }) {
   const [searchTerm, setSearchTerm] = useState('')
   const { media } = useMedia()
   const icons = useContext(IconsContext)
+  const theme = useTheme()
 
   const fuse = useMemo(() => {
     return new Fuse(media, { keys: ['title'] })
@@ -67,6 +99,14 @@ function LiveEditorSidebar({ editorRef, tab }) {
     (name) => {
       editorRef.current.trigger('keyboard', 'type', {
         text: `<Icon icon="${name}"/>`,
+      })
+    },
+    [editorRef]
+  )
+  const injectColor = useCallback(
+    (color) => {
+      editorRef.current.trigger('keyboard', 'type', {
+        text: color,
       })
     },
     [editorRef]
@@ -119,6 +159,99 @@ function LiveEditorSidebar({ editorRef, tab }) {
               )
             })}
           </IconsGrid>
+        </>
+      )}
+      {tab === 'colors' && (
+        <>
+          <h1>Colors:</h1>
+          {Object.keys(theme.colors)
+            .sort((a, b) => a.localeCompare(b))
+            .sort((a, b) => {
+              const isObjectA = typeof theme.colors[a] === 'object'
+              const isObjectB = typeof theme.colors[b] === 'object'
+              if (isObjectA && isObjectB) {
+                return 0
+              }
+
+              return isObjectB ? -1 : 1
+            })
+            .filter((name) => name !== 'sets')
+            .map((name) => {
+              const colorData = theme.colors[name]
+              return (
+                <ColorWrapper>
+                  {typeof colorData === 'object' ? (
+                    <>
+                      <Color>{name}:</Color>
+                      <ColorSwatches>
+                        {Object.keys(colorData).map((colorVariant, i) => (
+                          <ColorSwatchWrapper key={i}>
+                            <ColorSwatch
+                              color={colorData[colorVariant]}
+                              onClick={() =>
+                                injectColor(`${name}-${colorVariant}`)
+                              }
+                            />
+                            <ColorSwatchVariantTitle>
+                              {colorVariant}
+                            </ColorSwatchVariantTitle>
+                          </ColorSwatchWrapper>
+                        ))}
+                      </ColorSwatches>
+                    </>
+                  ) : (
+                    <Color>
+                      {name}:{' '}
+                      {colorData === 'inherit' ? (
+                        'current color'
+                      ) : (
+                        <ColorSwatch
+                          color={colorData}
+                          onClick={() => injectColor(name)}
+                        />
+                      )}
+                    </Color>
+                  )}
+                </ColorWrapper>
+              )
+            })}
+          <h1>Color Sets:</h1>
+          <ColorSets>
+            {Object.keys(theme.colors.sets)
+              .sort((a, b) => a.localeCompare(b))
+              .map((name) => {
+                const setData = theme.colors.sets[name]
+                return (
+                  <ColorSet key={name} name={name}>
+                    <ColorSetWrapper>
+                      <ColorSetTitle>
+                        Color set: <strong>{name}</strong>
+                      </ColorSetTitle>
+                      <p>This is an example for the {name} color set.</p>
+                      <p>
+                        <CTA href="#">Example CTA</CTA>
+                      </p>
+                      <h2>Colors:</h2>
+                      {Object.keys(setData)
+                        .sort((a, b) => a.localeCompare(b))
+                        .map((color) =>
+                          Array.isArray(setData[color]) ? (
+                            setData[color].map((value, i) => (
+                              <ColorSwatch
+                                key={i}
+                                color={value}
+                                title={color}
+                              />
+                            ))
+                          ) : (
+                            <ColorSwatch color={setData[color]} title={color} />
+                          )
+                        )}
+                    </ColorSetWrapper>
+                  </ColorSet>
+                )
+              })}
+          </ColorSets>
         </>
       )}
     </LiveEditorSidebarWrapper>
