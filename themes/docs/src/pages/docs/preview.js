@@ -66,15 +66,24 @@ const DocsPreviewPage = () => {
     <DataProvider>
       <MDXErrorBoundary>
         {!isSSR && (
-          <React.Suspense fallback={<Loading />}>
-            <div className={debugModeEnabled && 'debug'}>
+          <div className={debugModeEnabled && 'debug'}>
+            <React.Suspense fallback={<Loading />}>
               <MDX>{content}</MDX>
-            </div>
-          </React.Suspense>
+            </React.Suspense>
+          </div>
         )}
       </MDXErrorBoundary>
     </DataProvider>
   )
 }
 
-export default DocsPreviewPage
+const DocsPreviewPageBrowserOnlyWrapper = (props) =>
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement ? (
+    <DocsPreviewPage {...props} />
+  ) : (
+    <Loading />
+  )
+
+export default DocsPreviewPageBrowserOnlyWrapper
