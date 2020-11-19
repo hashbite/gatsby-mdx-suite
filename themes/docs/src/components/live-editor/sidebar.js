@@ -72,6 +72,12 @@ const ColorSetWrapper = styled.div`
 `
 const ColorSetTitle = tw.h2`mb-4`
 
+const FontPreview = styled.div`
+  & + & {
+    ${tw`mt-12`}
+  }
+`
+
 function LiveEditorSidebar({ editorRef, tab }) {
   const [searchTerm, setSearchTerm] = useState('')
   const { media } = useMedia()
@@ -252,6 +258,38 @@ function LiveEditorSidebar({ editorRef, tab }) {
                 )
               })}
           </ColorSets>
+        </>
+      )}
+      {tab === 'fonts' && (
+        <>
+          <h1>Fonts:</h1>
+          {Object.keys(theme.fontFamily)
+            .sort((a, b) => a.localeCompare(b))
+            .map((font) => (
+              <FontPreview key={font} font={font}>
+                <h1
+                  css={css`
+                    font-family: ${theme.fontFamily[font].join(', ')};
+                  `}
+                >
+                  {font}
+                </h1>
+                <p
+                  css={css`
+                    font-family: ${theme.fontFamily[font].join(', ')};
+                  `}
+                >
+                  The quick brown fox jumps over the lazy dog.
+                </p>
+                <p>
+                  Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+                </p>
+                <p>
+                  <strong>Font families: </strong>
+                  {theme.fontFamily[font].join(', ')}
+                </p>
+              </FontPreview>
+            ))}
         </>
       )}
     </LiveEditorSidebarWrapper>
