@@ -12,6 +12,7 @@ import Editor from '@monaco-editor/react'
 
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 import Select from 'gatsby-theme-mdx-suite-base/src/components/form/fields/select'
+import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 
 import LiveEditorSidebar from './sidebar'
 import { useMedia } from './hooks'
@@ -332,4 +333,13 @@ LiveEditor.propTypes = {
   layout: propTypes.string,
 }
 
-export default LiveEditor
+const LiveEditorBrowserOnlyWrapper = (props) =>
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement ? (
+    <LiveEditor {...props} />
+  ) : (
+    <Loading />
+  )
+
+export default LiveEditorBrowserOnlyWrapper
