@@ -2,7 +2,12 @@ import React, { useMemo } from 'react'
 
 import { MatomoProvider, createInstance } from '@datapunt/matomo-tracker-react'
 
-export default ({ urlBase, siteId, ...props }) => {
+export interface MatomoComponentProps {
+  urlBase: string
+  siteId: number
+}
+
+const MatomoComponent: React.FC<MatomoComponentProps> = ({ urlBase, siteId, ...props }) => {
   const instance = useMemo(() => {
     return createInstance({
       urlBase,
@@ -17,3 +22,5 @@ export default ({ urlBase, siteId, ...props }) => {
   }, [urlBase, siteId])
   return <MatomoProvider value={instance} {...props} />
 }
+
+export default MatomoComponent

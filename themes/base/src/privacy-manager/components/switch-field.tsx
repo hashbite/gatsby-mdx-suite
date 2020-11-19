@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css, keyframes } from '@emotion/core'
 import tw from 'twin.macro'
-import { Field } from 'react-final-form'
+import { Field, FieldProps, FieldRenderProps } from 'react-final-form'
 
 const SwitchInputWrapper = styled.div`
   ${tw`relative inline-block w-16 mr-2 align-middle select-none transition duration-200 ease-in`}
@@ -53,7 +53,11 @@ const SwitchInput = styled.input(
   `
 )
 
-const SwitchField = ({ disabled, ...fieldProps }) => (
+export type SwitchFieldProps = FieldProps<boolean, FieldRenderProps<boolean, HTMLInputElement>, HTMLInputElement> & {
+  disabled?: boolean
+}
+
+const SwitchField: React.FC<SwitchFieldProps> = ({ disabled, ...fieldProps }) => (
   <Field {...fieldProps} type="checkbox">
     {({ input }) => {
       const id = `checkbox-${input.name}`

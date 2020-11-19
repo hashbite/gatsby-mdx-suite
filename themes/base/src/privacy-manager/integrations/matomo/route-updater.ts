@@ -1,6 +1,15 @@
+import type { GatsbyBrowser, RouteUpdateArgs } from 'gatsby'
+
 let first = true
 
-function getDuration() {
+declare global {
+  interface Window {
+    start: Date
+    dev: boolean
+  }
+}
+
+function getDuration(): number {
   const start = window.start || new Date()
   const now = new Date()
   const difference = now.getTime() - start.getTime()
@@ -12,7 +21,9 @@ function getDuration() {
   return difference
 }
 
-export const onRouteUpdate = ({ location, prevLocation }, pluginOptions) => {
+type PrivacyManagerRouteUpdateArgs = RouteUpdateArgs & { prevLocation: Location }
+
+export const onRouteUpdate: GatsbyBrowser["onRouteUpdate"] = ({ location, prevLocation }: PrivacyManagerRouteUpdateArgs, pluginOptions) => {
   if (!window._paq) return
 
   const { _paq, dev } = window

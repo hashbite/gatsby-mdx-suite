@@ -3,7 +3,18 @@ import propTypes from 'prop-types'
 
 import ReactGA from 'react-ga'
 
-const GoogleTagAnalytics = ({ children, trackingId }) => {
+declare global {
+  interface Window {
+    ga: (...args: any[]) => void
+    ReactGA: unknown
+  }
+}
+
+export interface GoogleAnalyticsProps {
+  trackingId: string
+}
+
+const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ children, trackingId }) => {
   const [initialized, setInitialized] = useState(false)
   useEffect(() => {
     if (!initialized) {
@@ -15,11 +26,11 @@ const GoogleTagAnalytics = ({ children, trackingId }) => {
     }
   }, [initialized, trackingId])
 
-  return children
+  return <>children</>
 }
 
-GoogleTagAnalytics.propTypes = {
+GoogleAnalytics.propTypes = {
   trackingId: propTypes.string.isRequired,
 }
 
-export default GoogleTagAnalytics
+export default GoogleAnalytics

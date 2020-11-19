@@ -61,6 +61,7 @@
     "use-persisted-state": "^0.3.0"
   },
   "devDependencies": {
+    "@types/react-gtm-module": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "4.7.0",
     "@typescript-eslint/parser": "4.7.0",
     "webpack-stats-plugin": "^1.0.2"

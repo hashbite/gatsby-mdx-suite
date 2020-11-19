@@ -64,7 +64,7 @@ const PrivacyManagerPreviewContent = styled.div`
   ${centerToContentColumn()}
 `
 
-const PrivacyManagerPanel = styled.div(
+const PrivacyManagerPanel = styled.div<{ blur?: boolean }>(
   ({ blur }) => css`
     ${tw`flex flex-col items-center justify-end h-screen`}
     ${blur
@@ -192,7 +192,7 @@ const PrivacyManagerForm = ({
       const appRoot = document.getElementById('___gatsby')
 
       if (!node || !privacyModeActive) {
-        appRoot.style.paddingTop = 0
+        (appRoot as any).style.paddingTop = 0
         return
       }
 
@@ -266,12 +266,11 @@ const PrivacyManagerForm = ({
                         </IntegrationFieldsWrapper>
                       </PrivacyFormContent>
                       <PrivacyManagerControls>
-                        <SaveButton type="primary" htmlType="submit">
+                        <SaveButton type="submit">
                           {t('save')}
                         </SaveButton>
                         <CloseButton
-                          type="secondary"
-                          htmlType="button"
+                          type="button"
                           onClick={handleClose}
                         >
                           <Icon icon="close" verticalAlign="middle" />

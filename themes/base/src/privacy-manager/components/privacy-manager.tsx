@@ -1,24 +1,40 @@
-import React, { useState, useMemo, useCallback } from 'react'
-import propTypes from 'prop-types'
+import React, { useState, useMemo, useCallback, ComponentType } from 'react'
 import createPersistedState from 'use-persisted-state'
 import { useMDXComponents } from '@mdx-js/react'
 
-import PrivacyManagerForm from './form.js'
+import PrivacyManagerForm from './form'
 
-import Tracking from './tracking'
+import Tracking, { PrivacyManagerTrackingProps } from './tracking'
 
 import { enhanceState } from '../helpers'
 import { PRIVACY_MANAGER_DATA_STRUCTURE_VERSION } from '../config'
 
 import PrivacyManagerContext from '../context'
 
+
+interface PrivacyManagerComponentStaticAnnotation {
+  id: string
+  category: string
+  trackingConfig: {}
+}
+
+interface PrivacyManagerConfig {
+  integrations: {},
+  privacyPolicyId: string
+  trackingConfig: PrivacyManagerTrackingProps
+}
+
+interface ComponentDictionary {
+  [name: string]: ComponentType<any> & { privacy?: PrivacyManagerComponentStaticAnnotation }
+}
+
 const usePrivacyManagerState = createPersistedState('privacy-manager')
 
-const PrivacyManager = ({
+const PrivacyManager: React.FC<{ config: PrivacyManagerConfig }> = ({
   children,
   config = { integrations: {}, privacyPolicyId: 'privacyPolicy' },
 }) => {
-  const MDXComponents = useMDXComponents()
+  const MDXComponents: ComponentDictionary = useMDXComponents()
 
   const integrations = useMemo(() => {
     const locatedIntegrations = {}
@@ -146,11 +162,6 @@ const PrivacyManager = ({
       />
     </PrivacyManagerContext.Provider>
   )
-}
-
-PrivacyManager.propTypes = {
-  children: propTypes.node.isRequired,
-  config: propTypes.object.isRequired,
 }
 
 export default PrivacyManager

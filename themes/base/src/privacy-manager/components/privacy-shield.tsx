@@ -39,7 +39,12 @@ const PrivacyShieldLink = styled.a`
   ${tw`text-current underline hover:no-underline hover:text-current`}
 `
 
-const PrivacyShield = ({ config, fallbackUrl = false, children }) => {
+interface PrivacyShieldProps {
+  config: any
+  fallbackUrl?: string
+}
+
+const PrivacyShield: React.FC<PrivacyShieldProps> = ({ config, fallbackUrl = '', children }) => {
   const { t } = useTranslation()
   const { id, category, title, url = '#', icon, description } = config
   const privacyContextData = useContext(PrivacyManagerContext)
@@ -84,12 +89,13 @@ const PrivacyShield = ({ config, fallbackUrl = false, children }) => {
       </PrivacyShieldWrapper>
     )
   }
-  return children
+  return <>{children}</>
 }
 
 PrivacyShield.propTypes = {
   config: propTypes.object.isRequired,
-  children: propTypes.node.isRequired,
+  // TODO: what's going on here with TypeScript?
+  // children: propTypes.node.isRequired,
 }
 
 export default PrivacyShield

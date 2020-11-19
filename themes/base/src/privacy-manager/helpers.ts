@@ -5,7 +5,7 @@ import { PRIVACY_MANAGER_DATA_STRUCTURE_VERSION } from './config'
  *
  * Based on: https://stackoverflow.com/questions/6122571/simple-non-secure-hash-function-for-javascript
  */
-function fastSimpleHash(source) {
+function fastSimpleHash(source: string): number {
   let hash = 0
   if (source.length === 0) {
     return hash
@@ -23,7 +23,7 @@ function fastSimpleHash(source) {
  *
  * This avoids silent aggreements by the user to any data processing.
  */
-export function enhanceState(defaultState, virginState) {
+export function enhanceState(defaultState: any, virginState: any) {
   return {
     ...virginState,
     version: PRIVACY_MANAGER_DATA_STRUCTURE_VERSION,

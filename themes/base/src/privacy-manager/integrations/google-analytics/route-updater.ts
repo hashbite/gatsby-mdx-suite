@@ -1,4 +1,17 @@
-export const onRouteUpdate = ({ location }, pluginOptions = {}) => {
+import { GatsbyBrowser, PluginOptions } from "gatsby"
+
+
+declare global {
+  interface Window {
+    excludeGAPaths?: RegExp[]
+  }
+}
+
+type PrivacyManagerPluginOptions = PluginOptions & {
+  pageTransitionDelay?: number
+}
+
+export const onRouteUpdate: GatsbyBrowser["onRouteUpdate"] = ({ location }, pluginOptions: PrivacyManagerPluginOptions = { plugins: [] }) => {
   //if (process.env.NODE_ENV !== `production` || typeof ga !== `function`) {
   if (typeof window.ga !== `function`) {
     return null
