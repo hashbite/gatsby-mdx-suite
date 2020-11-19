@@ -25,7 +25,8 @@
 
 ### ![Work in progress features](https://img.shields.io/badge/Status-Work_in_progress-yellowgreen?style=flat)
 
-* Upcoming support of WYSIWYG editors. Waiting for https://github.com/blocks/blocks to get more progress, in the meantime, we developed our own split-screen editor using [Ace Editor](https://ace.c9.io/) and [MDX runtime](https://mdxjs.com/advanced/runtime). Curious? [The playground in the docs]( Demo: https://gatsby-mdx-suite-example-full.netlify.app/docs/playground) is powered by it.
+* Upcoming support of WYSIWYG editors. Waiting for https://github.com/blocks/blocks to get more progress, in the meantime, we developed our own split-screen editor using [Monaco Editor
+](https://microsoft.github.io/monaco-editor/) and [MDX runtime](https://mdxjs.com/advanced/runtime). Curious? [The playground in the docs]( Demo: https://gatsby-mdx-suite-example-full.netlify.app/docs/playground) is powered by it.
 * We are closing the last bugs and finish documentation for the beta release.
 * Build & Website performance improvements
 * More components to come. Always. Feel free to submit your own!
