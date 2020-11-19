@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect, useRef, useMemo } from 'react'
+import React, { useCallback, useState, useEffect, useMemo } from 'react'
 import { useDebounce } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
@@ -12,6 +12,7 @@ import Editor from '@monaco-editor/react'
 
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 import Select from 'gatsby-theme-mdx-suite-base/src/components/form/fields/select'
+import Switch from 'gatsby-theme-mdx-suite-base/src/components/form/fields/switch'
 import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 
 import LiveEditorSidebar from './sidebar'
@@ -58,7 +59,7 @@ const LiveEditorPreview = styled.iframe`
 
 const toolbarStyles = css`
   ${tw`flex justify-between items-center p-2`}
-  ${tw`bg-gray-900`}
+  ${tw`bg-gray-900 text-white`}
 `
 const LivePreviewToolbar = styled.div`
   ${toolbarStyles}
@@ -133,9 +134,13 @@ const LiveEditorEditor = styled.div(
 
 function LiveEditor({ editorId, initialValue, layout }) {
   const localStorageId = `mdx-suite-live-editor-${editorId}`
-  const editorRef = useRef(null)
+  const [editorInstance, setEditorInstance] = useState(null)
+
+  const [autoReload, setAutoReload] = useState(true)
+
   const [error, setError] = useState()
   const [errorDetailsVisible, setErrorDetailsVisible] = useState(false)
+
   const [sidebarTab, setSidebarTab] = useState('media')
   const onChangeSidebarTab = useCallback((e) => {
     setSidebarTab(e.currentTarget.value)
@@ -146,17 +151,39 @@ function LiveEditor({ editorId, initialValue, layout }) {
     [localStorageId, initialValue]
   )
 
-  const [unverifiedValue, setUnverifiedValue] = useDebounce(editorValue, 1000)
+  const [unverifiedValue, setUnverifiedValue] = useDebounce(editorValue, 500)
 
-  const handleEditorDidMount = useCallback(
-    (_, editor) => {
-      editorRef.current = editor
-      editorRef.current.onDidChangeModelContent((ev) => {
-        setUnverifiedValue(editorRef.current.getValue())
+  const validateCurrentEditorValue = useCallback(() => {
+    setUnverifiedValue(editorInstance.getValue())
+  }, [setUnverifiedValue, editorInstance])
+
+  // eslint-disable-next-line no-unused-vars
+  const [changeEventListener, setChangeEventListener] = useState(null)
+
+  const handleEditorDidMount = (_, editor) => {
+    setEditorInstance(editor)
+  }
+
+  useEffect(() => {
+    if (!editorInstance) {
+      return
+    }
+    setChangeEventListener((oldListener) => {
+      if (oldListener) {
+        oldListener.dispose()
+      }
+      return editorInstance.onDidChangeModelContent((ev) => {
+        if (autoReload) {
+          validateCurrentEditorValue()
+        }
       })
-    },
-    [setUnverifiedValue]
-  )
+    })
+  }, [
+    editorInstance,
+    autoReload,
+    validateCurrentEditorValue,
+    setChangeEventListener,
+  ])
 
   const { replaceTokens } = useMedia()
 
@@ -203,14 +230,18 @@ function LiveEditor({ editorId, initialValue, layout }) {
     alert('This feature is currenty still in development')
   }, [])
 
-  const onClickReload = useCallback((e) => {
-    console.log('called onClickReload', e)
-    alert('This feature is currenty still in development')
-  }, [])
-  const onToggleAutoReload = useCallback((e) => {
-    console.log('called onToggleAutoReload', e)
-    alert('This feature is currenty still in development')
-  }, [])
+  const onClickReload = useCallback(
+    (e) => {
+      validateCurrentEditorValue()
+    },
+    [validateCurrentEditorValue]
+  )
+  const onToggleAutoReload = (e) => {
+    if (!autoReload) {
+      validateCurrentEditorValue()
+    }
+    setAutoReload(!autoReload)
+  }
   const onOpenToolbar = useCallback((e) => {
     console.log('called onOpenToolbar', e)
     alert('This feature is currenty still in development')
@@ -224,10 +255,10 @@ function LiveEditor({ editorId, initialValue, layout }) {
     (e) => {
       // eslint-disable-next-line no-restricted-globals
       if (confirm('Are you sure you want to reset your progress?')) {
-        editorRef.current.setValue(initialValue)
+        editorInstance.setValue(initialValue)
       }
     },
-    [initialValue]
+    [initialValue, editorInstance]
   )
 
   const toggleErrorDetailsVisible = useCallback(() => {
@@ -269,14 +300,16 @@ function LiveEditor({ editorId, initialValue, layout }) {
       </LiveEditorPreviewWrapper>
       <LiveEditorToolbar>
         <ToolbarSection>
-          <Button onClick={onClickReload} disabled>
+          <Button onClick={onClickReload}>
             <ButtonIcon icon="repeat" />
-          </Button>
-          <Button onClick={onToggleAutoReload} disabled>
-            <ButtonIcon icon="repeat" />
-            <ButtonIcon icon={true ? 'lock' : 'unlock'} />
+          </Button>{' '}
+          <Switch
+            id="auto-reload"
+            onClick={onToggleAutoReload}
+            checked={autoReload}
+          >
             Auto Reload
-          </Button>
+          </Switch>
         </ToolbarSection>
         <Button onClick={() => onOpenToolbar('snippets')} disabled>
           <ButtonIcon icon="snippets" />
@@ -314,7 +347,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
               <option value="sizes">Sizes</option>
             </ToolbarSelect>
           </LiveEditorSidebarToolbar>
-          <LiveEditorSidebar editorRef={editorRef} tab={sidebarTab} />
+          <LiveEditorSidebar editorInstance={editorInstance} tab={sidebarTab} />
         </>
       )}
     </LiveEditorWrapper>

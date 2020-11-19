@@ -89,7 +89,7 @@ const Length = styled.div(
   `
 )
 
-function LiveEditorSidebar({ editorRef, tab }) {
+function LiveEditorSidebar({ editorInstance, tab }) {
   const [searchTerm, setSearchTerm] = useState('')
   const { media } = useMedia()
   const icons = useContext(IconsContext)
@@ -108,25 +108,25 @@ function LiveEditorSidebar({ editorRef, tab }) {
 
   const injectMediaId = useCallback(
     (assetId) => {
-      editorRef.current.trigger('keyboard', 'type', { text: assetId })
+      editorInstance.trigger('keyboard', 'type', { text: assetId })
     },
-    [editorRef]
+    [editorInstance]
   )
   const injectIcon = useCallback(
     (name) => {
-      editorRef.current.trigger('keyboard', 'type', {
+      editorInstance.trigger('keyboard', 'type', {
         text: `<Icon icon="${name}"/>`,
       })
     },
-    [editorRef]
+    [editorInstance]
   )
   const injectColor = useCallback(
     (color) => {
-      editorRef.current.trigger('keyboard', 'type', {
+      editorInstance.trigger('keyboard', 'type', {
         text: color,
       })
     },
-    [editorRef]
+    [editorInstance]
   )
 
   const searchMedia = useCallback((e) => setSearchTerm(e.target.value), [])
