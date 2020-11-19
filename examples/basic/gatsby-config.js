@@ -33,6 +33,11 @@ module.exports = {
     // Basic layout, SEO, Analytics and more
     {
       resolve: `gatsby-theme-mdx-suite-base`,
+      options: {
+        privacy: {
+          integrations: {},
+        },
+      },
     },
     // Project specific configuration
     `gatsby-transformer-video`,
