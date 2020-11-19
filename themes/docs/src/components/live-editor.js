@@ -6,7 +6,7 @@ import React, {
   useRef,
   useMemo,
 } from 'react'
-import { useDebounce, useDebounceCallback } from '@react-hook/debounce'
+import { useDebounce } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
@@ -18,11 +18,8 @@ import Fuse from 'fuse.js'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
-import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 
-const AceEditor = React.lazy(() =>
-  import(/* webpackChunkName: "ace-editor" */ './ace-editor')
-)
+import Editor from '@monaco-editor/react'
 
 const LiveEditorWrapper = styled.section(
   ({ layout, previewExpanded }) => css`
@@ -150,37 +147,11 @@ const LiveEditorEditor = styled.div(
     grid-area: editor;
     min-height: 4rem;
 
-    .ace_heading {
-      ${tw`font-bold text-blue-600`}
-    }
-
-    .ace_xml,
-    .ace_html {
-      &.ace_punctuation,
-      &.ace_tag-name {
-        ${tw`font-bold text-green-600`}
-      }
-
-      &.ace_attribute-name {
-        ${tw`font-bold text-red-600`}
-      }
-
-      &.ace_attribute-value {
-        ${tw`font-bold text-orange-600`}
-      }
-    }
-
-    .ace_emphasis {
-      ${tw`italic`}
-    }
-    .ace_strong {
-      ${tw`font-bold`}
-    }
-
     ${hasError &&
     css`
-      .ace_active-line {
-        background-color: #5c424b !important;
+      .monaco-editor .view-overlays .current-line {
+        background-color: #5c424b;
+        border: none;
       }
     `}
   `
@@ -197,6 +168,23 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const {
     data: { docs, youtubeVideos, instagramPosts },
   } = useContext(MdxSuiteContext)
+
+  const editorValue = useMemo(
+    () => localStorage.getItem(localStorageId) || initialValue || '',
+    [localStorageId, initialValue]
+  )
+
+  const [unverifiedValue, setUnverifiedValue] = useDebounce(editorValue, 1000)
+
+  const handleEditorDidMount = useCallback(
+    (_, editor) => {
+      editorRef.current = editor
+      editorRef.current.onDidChangeModelContent((ev) => {
+        setUnverifiedValue(editorRef.current.getValue())
+      })
+    },
+    [setUnverifiedValue]
+  )
 
   const uniqueMedia = useMemo(() => {
     const mediaMap = new Map()
@@ -285,11 +273,6 @@ function LiveEditor({ editorId, initialValue, layout }) {
     [graphics, images, pictures, videos, instagramPosts, youtubeVideos]
   )
 
-  const [editorValue, setEditorValue] = useState(
-    localStorage.getItem(localStorageId) || initialValue || ''
-  )
-  const [unverifiedValue, setUnverifiedValue] = useDebounce(editorValue, 1000)
-
   useEffect(() => {
     async function parseMdx() {
       try {
@@ -320,27 +303,11 @@ function LiveEditor({ editorId, initialValue, layout }) {
         error.message = lines.shift()
         error.details = lines.join('\n')
         setError(error)
-        if (editorRef.current) {
-          editorRef.current.editor.resize()
-        }
       }
     }
 
     parseMdx()
   }, [unverifiedValue, localStorageId, replaceTokens])
-
-  useEffect(() => {
-    if (unverifiedValue !== editorValue && editorValue) {
-      setUnverifiedValue(editorValue)
-    }
-  }, [editorValue, setUnverifiedValue, unverifiedValue])
-
-  const isSSR = typeof window === 'undefined'
-
-  const handleEditorChange = useDebounceCallback(
-    (content) => setEditorValue(content.replace(/^[ \t]+$/gm, '')),
-    300
-  )
 
   const previewSrc = `/docs/preview?id=${`${localStorageId}-processed`}`
 
@@ -370,7 +337,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
     (e) => {
       // eslint-disable-next-line no-restricted-globals
       if (confirm('Are you sure you want to reset your progress?')) {
-        setEditorValue(initialValue)
+        editorRef.current.setValue(initialValue)
       }
     },
     [initialValue]
@@ -382,7 +349,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
 
   const injectMediaId = useCallback(
     (assetId) => {
-      editorRef.current.editor.insert(assetId)
+      editorRef.current.trigger('keyboard', 'type', { text: assetId })
     },
     [editorRef]
   )
@@ -447,26 +414,13 @@ function LiveEditor({ editorId, initialValue, layout }) {
         </Button>
       </LiveEditorToolbar>
       <LiveEditorEditor hasError={!!error}>
-        {!isSSR && (
-          <React.Suspense fallback={<Loading />}>
-            <AceEditor
-              mode="markdown"
-              theme="dracula"
-              ref={editorRef}
-              enableEmmet
-              enableLiveAutocompletion
-              tabSize={2}
-              onChange={handleEditorChange}
-              name={`docs-ace-editor-${editorId}`}
-              editorProps={{
-                $blockScrolling: true,
-              }}
-              value={editorValue}
-              width="100%"
-              height="100%"
-            />
-          </React.Suspense>
-        )}
+        <Editor
+          height="100%"
+          editorDidMount={handleEditorDidMount}
+          language="markdown"
+          theme="dark"
+          value={editorValue}
+        />
       </LiveEditorEditor>
       {layout !== 'horizontal' && (
         <LiveEditorSidebar>
