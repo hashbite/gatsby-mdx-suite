@@ -10,6 +10,9 @@ import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 import Editor from '@monaco-editor/react'
 
+import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
+import Select from 'gatsby-theme-mdx-suite-base/src/components/form/fields/select'
+
 import LiveEditorSidebar from './sidebar'
 import { useMedia } from './hooks'
 
@@ -53,14 +56,13 @@ const LiveEditorPreview = styled.iframe`
 `
 
 const toolbarStyles = css`
-  ${tw`flex justify-between`}
-  ${tw`bg-gray-900 p-1`}
+  ${tw`flex justify-between items-center p-2`}
+  ${tw`bg-gray-900`}
 `
 const LivePreviewToolbar = styled.div`
   ${toolbarStyles}
   grid-area: toolbar-preview;
 `
-
 const LiveEditorToolbar = styled.div`
   ${toolbarStyles}
   grid-area: toolbar-editor;
@@ -70,12 +72,8 @@ const LiveEditorSidebarToolbar = styled.div`
   grid-area: toolbar-sidebar;
 `
 const ToolbarSection = styled.div``
-const Button = styled.button`
-  ${tw`rounded bg-gray-200 text-gray-900 px-2 py-1 m-1`}
-
-  :disabled {
-    ${tw`text-gray-600`}
-  }
+const ToolbarSelect = styled(Select)`
+  ${tw`w-full rounded overflow-hidden`}
 `
 
 const ButtonLabel = styled.span``
@@ -137,6 +135,11 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const editorRef = useRef(null)
   const [error, setError] = useState()
   const [errorDetailsVisible, setErrorDetailsVisible] = useState(false)
+  const [sidebarTab, setSidebarTab] = useState('icons')
+
+  const onChangeSidebarTab = useCallback((e) => {
+    setSidebarTab(e.currentTarget.value)
+  }, [])
 
   const editorValue = useMemo(
     () => localStorage.getItem(localStorageId) || initialValue || '',
@@ -300,17 +303,18 @@ function LiveEditor({ editorId, initialValue, layout }) {
       {layout !== 'horizontal' && (
         <>
           <LiveEditorSidebarToolbar>
-            <ToolbarSection>
-              <select>
-                <option>Media</option>
-                <option>Icons</option>
-                <option>Colors</option>
-                <option>Fonts</option>
-                <option>Sizes</option>
-              </select>
-            </ToolbarSection>
+            <ToolbarSelect
+              onChange={onChangeSidebarTab}
+              defaultValue={sidebarTab}
+            >
+              <option value="media">Media</option>
+              <option value="icons">Icons</option>
+              <option value="colors">Colors</option>
+              <option value="fonts">Fonts</option>
+              <option value="sizes">Sizes</option>
+            </ToolbarSelect>
           </LiveEditorSidebarToolbar>
-          <LiveEditorSidebar editorRef={editorRef} />
+          <LiveEditorSidebar editorRef={editorRef} tab={sidebarTab} />
         </>
       )}
     </LiveEditorWrapper>
