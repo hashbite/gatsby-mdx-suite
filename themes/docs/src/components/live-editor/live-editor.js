@@ -136,7 +136,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const editorRef = useRef(null)
   const [error, setError] = useState()
   const [errorDetailsVisible, setErrorDetailsVisible] = useState(false)
-  const [sidebarTab, setSidebarTab] = useState('colors')
+  const [sidebarTab, setSidebarTab] = useState('media')
   const onChangeSidebarTab = useCallback((e) => {
     setSidebarTab(e.currentTarget.value)
   }, [])
