@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import propTypes from 'prop-types'
 import tw from 'twin.macro'
 import useEventListener from '@use-it/event-listener'
+import { useLocation } from '@reach/router'
 
 import DataProvider from '../../components/data-provider'
 
@@ -43,7 +44,8 @@ class MDXErrorBoundary extends React.Component {
 }
 
 const DocsPreviewPage = () => {
-  const searchParams = new URLSearchParams(window.location.search)
+  const location = useLocation()
+  const searchParams = new URLSearchParams(location)
   const localStorageId = searchParams.get('id')
   const debugModeEnabled = !!searchParams.get('debug')
 
