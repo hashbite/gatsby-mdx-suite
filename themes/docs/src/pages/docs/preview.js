@@ -79,13 +79,4 @@ const DocsPreviewPage = () => {
   )
 }
 
-const DocsPreviewPageBrowserOnlyWrapper = (props) =>
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement ? (
-    <DocsPreviewPage {...props} />
-  ) : (
-    <Loading />
-  )
-
-export default DocsPreviewPageBrowserOnlyWrapper
+export default DocsPreviewPage
