@@ -67,7 +67,7 @@ function createMdxComponentPropsProposals({ monaco, component, range }: { monaco
   return component.props.map((prop) => {
     return {
       label: prop.name,
-      kind: monaco.languages.CompletionItemKind.Function,
+      kind: monaco.languages.CompletionItemKind.Property,
       documentation: prop.description,
       insertText: prop.name,
       range: range,
