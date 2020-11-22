@@ -1,5 +1,5 @@
-import { monaco, Monaco } from "@monaco-editor/react";
-import { useEffect, useMemo, useState } from "react";
+import { monaco, Monaco } from '@monaco-editor/react'
+import { useEffect, useMemo, useState } from 'react'
 import { useMDXComponents } from '@mdx-js/react'
 
 interface Range {
@@ -9,7 +9,15 @@ interface Range {
   endColumn: number
 }
 
-function createMdxComponentProposals({ monaco, components, range }: { monaco: Monaco, components: ComponentDescriptorMap, range: Range }) {
+function createMdxComponentProposals({
+  monaco,
+  components,
+  range,
+}: {
+  monaco: Monaco
+  components: ComponentDescriptorMap
+  range: Range
+}) {
   const completionProposals = []
   for (const componentDescriptor of components.values()) {
     completionProposals.push({
@@ -23,28 +31,38 @@ function createMdxComponentProposals({ monaco, components, range }: { monaco: Mo
   return completionProposals
 }
 
-export function registerMdxComponentAutocomplete ({ monaco, components }: { monaco: Monaco, components: ComponentDescriptorMap }) {
+export function registerMdxComponentAutocomplete({
+  monaco,
+  components,
+}: {
+  monaco: Monaco
+  components: ComponentDescriptorMap
+}) {
   monaco.languages.registerCompletionItemProvider('markdown', {
     triggerCharacters: ['<'],
-    provideCompletionItems: function(model, position) {
-        const textUntilPosition = model.getValueInRange({startLineNumber: position.lineNumber, startColumn: Math.min(0, position.column - 1), endLineNumber: position.lineNumber, endColumn: position.column});
-        const match = textUntilPosition === '<'
-        if (!match) {
-            return { suggestions: [] };
-        }
-        const word = model.getWordUntilPosition(position);
-        const range = {
-            startLineNumber: position.lineNumber,
-            endLineNumber: position.lineNumber,
-            startColumn: word.startColumn,
-            endColumn: word.endColumn
-        };
-        return {
-
-            suggestions: createMdxComponentProposals({ monaco, components, range })
-        };
-    }
-  });
+    provideCompletionItems: function (model, position) {
+      const textUntilPosition = model.getValueInRange({
+        startLineNumber: position.lineNumber,
+        startColumn: Math.min(0, position.column - 1),
+        endLineNumber: position.lineNumber,
+        endColumn: position.column,
+      })
+      const match = textUntilPosition === '<'
+      if (!match) {
+        return { suggestions: [] }
+      }
+      const word = model.getWordUntilPosition(position)
+      const range = {
+        startLineNumber: position.lineNumber,
+        endLineNumber: position.lineNumber,
+        startColumn: word.startColumn,
+        endColumn: word.endColumn,
+      }
+      return {
+        suggestions: createMdxComponentProposals({ monaco, components, range }),
+      }
+    },
+  })
 }
 
 interface ComponentProps {
@@ -63,7 +81,15 @@ interface ComponentDescriptor {
 
 type ComponentDescriptorMap = Map<string, ComponentDescriptor>
 
-function createMdxComponentPropsProposals({ monaco, component, range }: { monaco: Monaco, component: ComponentDescriptor, range: Range }) {
+function createMdxComponentPropsProposals({
+  monaco,
+  component,
+  range,
+}: {
+  monaco: Monaco
+  component: ComponentDescriptor
+  range: Range
+}) {
   return component.props.map((prop) => {
     return {
       label: prop.name,
@@ -75,55 +101,71 @@ function createMdxComponentPropsProposals({ monaco, component, range }: { monaco
   })
 }
 
-export function registerMdxComponentPropertyAutocomplete ({ monaco, components }: { monaco: Monaco, components: ComponentDescriptorMap }) {
+export function registerMdxComponentPropertyAutocomplete({
+  monaco,
+  components,
+}: {
+  monaco: Monaco
+  components: ComponentDescriptorMap
+}) {
   monaco.languages.registerCompletionItemProvider('markdown', {
     triggerCharacters: [' '],
-    provideCompletionItems: function(model, position) {
-        const textUntilPosition = model.getValueInRange({startLineNumber: 1, startColumn: 1, endLineNumber: position.lineNumber, endColumn: position.column});
-        const match = textUntilPosition.match(MATCH_COMPONENT_NAME)
-        if (!match) {
-            return { suggestions: [] };
-        }
-        const component = match[1]
+    provideCompletionItems: function (model, position) {
+      const textUntilPosition = model.getValueInRange({
+        startLineNumber: 1,
+        startColumn: 1,
+        endLineNumber: position.lineNumber,
+        endColumn: position.column,
+      })
+      const match = textUntilPosition.match(MATCH_COMPONENT_NAME)
+      if (!match) {
+        return { suggestions: [] }
+      }
+      const component = match[1]
 
-        const componentDescriptor = components.get(component)
+      const componentDescriptor = components.get(component)
 
-        const word = model.getWordUntilPosition(position);
-        const range = {
-            startLineNumber: position.lineNumber,
-            endLineNumber: position.lineNumber,
-            startColumn: word.startColumn,
-            endColumn: word.endColumn
-        };
-        return {
-            suggestions: createMdxComponentPropsProposals({ monaco, component: componentDescriptor, range })
-        };
-    }
-  });
+      const word = model.getWordUntilPosition(position)
+      const range = {
+        startLineNumber: position.lineNumber,
+        endLineNumber: position.lineNumber,
+        startColumn: word.startColumn,
+        endColumn: word.endColumn,
+      }
+      return {
+        suggestions: createMdxComponentPropsProposals({
+          monaco,
+          component: componentDescriptor,
+          range,
+        }),
+      }
+    },
+  })
 }
 
-
-export function useMonaco () {
+export function useMonaco() {
   const [monacoInstance, setMonacoInstance] = useState<Monaco>(null)
 
   useEffect(() => {
-    monaco.init().then(monaco => {
+    monaco.init().then((monaco) => {
       setMonacoInstance(monaco)
-    });
+    })
   }, [setMonacoInstance])
 
   return monacoInstance
 }
 
-
 export const MATCH_COMPONENT_NAME = /<(\w+)(?:\s+[^>]+)?\s+$/
-
 
 export function useComponentDescriptorMap(result: any): ComponentDescriptorMap {
   const mdxComponents = useMDXComponents()
   const memoizedComponentDescriptorMap = useMemo(() => {
-    const rawComponentDescriptors = result.allComponentMetadata.nodes.filter((n) => mdxComponents.hasOwnProperty(n.displayName))
-    const componentDescriptors = (rawComponentDescriptors as any[]).map<ComponentDescriptor>((raw) => {
+    const rawComponentDescriptors = result.allComponentMetadata.nodes.filter(
+      (n) => mdxComponents.hasOwnProperty(n.displayName)
+    )
+    const componentDescriptors = (rawComponentDescriptors as any[]).map<
+      ComponentDescriptor
+    >((raw) => {
       return {
         name: raw.displayName,
         description: raw.description.text,
@@ -133,13 +175,15 @@ export function useComponentDescriptorMap(result: any): ComponentDescriptorMap {
             type: rawProp.type?.name,
             defaultValue: rawProp.defaultValue?.value,
             description: rawProp.description.text,
-            required: rawProp.required
+            required: rawProp.required,
           }
-        })
+        }),
       }
     })
 
-    return new Map<string, ComponentDescriptor>(componentDescriptors.map((d) => [d.name, d]))
+    return new Map<string, ComponentDescriptor>(
+      componentDescriptors.map((d) => [d.name, d])
+    )
   }, [result, mdxComponents])
 
   return memoizedComponentDescriptorMap
