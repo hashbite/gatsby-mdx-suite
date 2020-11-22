@@ -9,6 +9,7 @@ import tw from 'twin.macro'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 import Editor from '@monaco-editor/react'
+import { useMDXComponents } from '@mdx-js/react'
 
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 import Select from 'gatsby-theme-mdx-suite-base/src/components/form/fields/select'
@@ -17,6 +18,8 @@ import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 
 import LiveEditorSidebar from './sidebar'
 import { useMedia } from './hooks'
+
+import { registerAutocomplete, useMonaco } from './autocompletion'
 
 const LiveEditorWrapper = styled.section(
   ({ layout, previewExpanded }) => css`
@@ -164,6 +167,17 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const handleEditorDidMount = (_, editor) => {
     setEditorInstance(editor)
   }
+
+  const monaco = useMonaco()
+  const mdxComponents = useMDXComponents()
+
+  useEffect(() => {
+    if (!monaco) {
+      return
+    }
+    const components = Object.keys(mdxComponents)
+    registerAutocomplete({ monaco, components })
+  }, [monaco, mdxComponents])
 
   useEffect(() => {
     if (!editorInstance) {
