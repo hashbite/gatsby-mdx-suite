@@ -20,11 +20,27 @@ function createMdxComponentProposals({
 }) {
   const completionProposals = []
   for (const componentDescriptor of components.values()) {
+    const hasChildren = componentDescriptor.props.find(
+      ({ name }) => name === 'children'
+    )
+    const requiredProps = componentDescriptor.props.filter(
+      ({ required }) => !!required
+    )
+    const requirePropsSnippets = requiredProps
+      .map(({ name }, i) => `${name}="\${${i + 1}}"`)
+      .join(` `)
+    const cursorPos = requiredProps.length + 1
+    const snippetCloseTag = hasChildren
+      ? `>\${${requiredProps.length + 2}:}</${componentDescriptor.name}`
+      : `/`
+
     completionProposals.push({
       label: componentDescriptor.name,
       kind: monaco.languages.CompletionItemKind.Function,
       detail: componentDescriptor.description,
-      insertText: componentDescriptor.name,
+      insertText: `${componentDescriptor.name} ${requirePropsSnippets}\${${cursorPos}:}${snippetCloseTag}`,
+      insertTextRules:
+        monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
       range: range,
     })
   }
