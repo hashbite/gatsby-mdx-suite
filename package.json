@@ -8,7 +8,7 @@
     "examples/*"
   ],
   "scripts": {
-    "format": "prettier --write '{./**/*.{js,jsx},*.{js,json}}'",
+    "format": "prettier --write '{./**/*.{js,jsx,tx},*.{ts,js,json}}'",
     "lint": "eslint .",
     "publish": "lerna publish --conventional-commits",
     "check-dependencies": "lerna exec \"pwd && npx depcheck --ignore-dirs '.cache,public' .\" --no-bail --concurrency 1",
