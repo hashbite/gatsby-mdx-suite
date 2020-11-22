@@ -44,8 +44,8 @@ class MDXErrorBoundary extends React.Component {
 }
 
 const DocsPreviewPage = () => {
-  const location = useLocation()
-  const searchParams = new URLSearchParams(location)
+  const { search } = useLocation()
+  const searchParams = new URLSearchParams(search)
   const localStorageId = searchParams.get('id')
   const debugModeEnabled = !!searchParams.get('debug')
 
@@ -62,18 +62,14 @@ const DocsPreviewPage = () => {
     return null
   }
 
-  const isSSR = typeof window === 'undefined'
-
   return (
     <DataProvider>
       <MDXErrorBoundary>
-        {!isSSR && (
-          <div className={debugModeEnabled && 'debug'}>
-            <React.Suspense fallback={<Loading />}>
-              <MDX>{content}</MDX>
-            </React.Suspense>
-          </div>
-        )}
+        <div className={debugModeEnabled && 'debug'}>
+          <React.Suspense fallback={<Loading />}>
+            <MDX>{content}</MDX>
+          </React.Suspense>
+        </div>
       </MDXErrorBoundary>
     </DataProvider>
   )
