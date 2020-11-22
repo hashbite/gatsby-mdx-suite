@@ -9,7 +9,6 @@ import tw from 'twin.macro'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 import Editor from '@monaco-editor/react'
-import { useMDXComponents } from '@mdx-js/react'
 
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 import Select from 'gatsby-theme-mdx-suite-base/src/components/form/fields/select'
@@ -19,7 +18,13 @@ import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 import LiveEditorSidebar from './sidebar'
 import { useMedia } from './hooks'
 
-import { registerAutocomplete, useMonaco } from './autocompletion'
+import {
+  registerMdxComponentAutocomplete,
+  registerMdxComponentPropertyAutocomplete,
+  useMonaco,
+  useComponentDescriptorMap,
+} from './autocompletion'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const LiveEditorWrapper = styled.section(
   ({ layout, previewExpanded }) => css`
@@ -135,6 +140,32 @@ const LiveEditorEditor = styled.div(
   `
 )
 
+const COMPONENT_DESCRIPTOR_QUERY = graphql`
+  query MonacoCompletinoComponentDescriptors {
+    allComponentMetadata {
+      nodes {
+        displayName
+        description {
+          text
+        }
+        props {
+          name
+          type {
+            name
+          }
+          required
+          defaultValue {
+            value
+          }
+          description {
+            text
+          }
+        }
+      }
+    }
+  }
+`
+
 function LiveEditor({ editorId, initialValue, layout }) {
   const localStorageId = `mdx-suite-live-editor-${editorId}`
   const [editorInstance, setEditorInstance] = useState(null)
@@ -169,15 +200,24 @@ function LiveEditor({ editorId, initialValue, layout }) {
   }
 
   const monaco = useMonaco()
-  const mdxComponents = useMDXComponents()
+  const componentDescriptorsResult = useStaticQuery(COMPONENT_DESCRIPTOR_QUERY)
+  const componentDescriptorMap = useComponentDescriptorMap(
+    componentDescriptorsResult
+  )
 
   useEffect(() => {
     if (!monaco) {
       return
     }
-    const components = Object.keys(mdxComponents)
-    registerAutocomplete({ monaco, components })
-  }, [monaco, mdxComponents])
+    registerMdxComponentAutocomplete({
+      monaco,
+      components: componentDescriptorMap,
+    })
+    registerMdxComponentPropertyAutocomplete({
+      monaco,
+      components: componentDescriptorMap,
+    })
+  }, [monaco, componentDescriptorMap])
 
   useEffect(() => {
     if (!editorInstance) {
