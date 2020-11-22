@@ -14703,6 +14703,11 @@ moment@^2.27.0:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.0.tgz#fcbef955844d91deb55438613ddcec56e86a3425"
   integrity sha512-z6IJ5HXYiuxvFTI6eiQ9dm77uE0gyy1yXNApVHqTcnIKfY9tIwEjlzsZ6u1LQXvVgKeTnv9Xm7NDvJ7lso3MtA==
 
+monaco-editor@^0.21.2:
+  version "0.21.2"
+  resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.21.2.tgz#37054e63e480d51a2dd17d609dcfb192304d5605"
+  integrity sha512-jS51RLuzMaoJpYbu7F6TPuWpnWTLD4kjRW0+AZzcryvbxrTwhNy1KC9yboyKpgMTahpUbDUsuQULoo0GV1EPqg==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"

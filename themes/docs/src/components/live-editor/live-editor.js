@@ -6,9 +6,9 @@ import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
 
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
-
 import Editor from '@monaco-editor/react'
+
+import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 import Select from 'gatsby-theme-mdx-suite-base/src/components/form/fields/select'
@@ -17,6 +17,8 @@ import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 
 import LiveEditorSidebar from './sidebar'
 import { useMedia } from './hooks'
+import { useRegisterAutocomplete } from './autocompletion'
+import { improveMdxError } from './helpers'
 
 const LiveEditorWrapper = styled.section(
   ({ layout, previewExpanded }) => css`
@@ -139,14 +141,11 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const [autoReload, setAutoReload] = useState(true)
   const [debugMode, setDebugMode] = useState(false)
 
+  // Error Handling
   const [error, setError] = useState()
   const [errorDetailsVisible, setErrorDetailsVisible] = useState(false)
 
-  const [sidebarTab, setSidebarTab] = useState('media')
-  const onChangeSidebarTab = useCallback((e) => {
-    setSidebarTab(e.currentTarget.value)
-  }, [])
-
+  // Editor value change handing
   const editorValue = useMemo(
     () => localStorage.getItem(localStorageId) || initialValue || '',
     [localStorageId, initialValue]
@@ -158,12 +157,46 @@ function LiveEditor({ editorId, initialValue, layout }) {
     setUnverifiedValue(editorInstance.getValue())
   }, [setUnverifiedValue, editorInstance])
 
+  const { replaceTokens } = useMedia()
+
+  // Validate MDX and update error/preview
+  useEffect(() => {
+    async function parseMdx() {
+      try {
+        // Validate mdx by parsing it
+        await mdx(unverifiedValue)
+
+        // Replace tokens with asset ids
+        const processedValue = replaceTokens(unverifiedValue)
+
+        // Set valid raw value
+        setError(null)
+        localStorage.setItem(localStorageId, unverifiedValue)
+
+        localStorage.setItem(`${localStorageId}-processed`, processedValue)
+      } catch (error) {
+        console.error(error)
+        improveMdxError(error)
+        setError(error)
+      }
+    }
+
+    parseMdx()
+  }, [unverifiedValue, localStorageId, replaceTokens])
+
+  // Editor mounting
+  const registerAutocomplete = useRegisterAutocomplete()
+
   // eslint-disable-next-line no-unused-vars
   const [changeEventListener, setChangeEventListener] = useState(null)
 
-  const handleEditorDidMount = (_, editor) => {
-    setEditorInstance(editor)
-  }
+  const handleEditorDidMount = useCallback(
+    (_, editor) => {
+      registerAutocomplete()
+      setEditorInstance(editor)
+    },
+    [registerAutocomplete, setEditorInstance]
+  )
 
   useEffect(() => {
     if (!editorInstance) {
@@ -186,47 +219,14 @@ function LiveEditor({ editorId, initialValue, layout }) {
     setChangeEventListener,
   ])
 
-  const { replaceTokens } = useMedia()
-
-  useEffect(() => {
-    async function parseMdx() {
-      try {
-        // Validate mdx by parsing it
-        await mdx(unverifiedValue)
-
-        // Replace tokens with asset ids
-        const processedValue = replaceTokens(unverifiedValue)
-
-        // Set valid raw value
-        setError(null)
-        localStorage.setItem(localStorageId, unverifiedValue)
-
-        localStorage.setItem(`${localStorageId}-processed`, processedValue)
-      } catch (error) {
-        console.error(error)
-
-        const fixedLines = error.message
-          .replace(/[> ]+([0-9]+) \|/g, (a, b) => a.replace(b, parseInt(b) - 4))
-          .replace(/\(([0-9]+):[0-9]+\)/, (a, b) =>
-            a.replace(b, parseInt(b) - 4)
-          )
-          .replace(/unknown:/g, '')
-        const lines = fixedLines
-          .split('\n')
-          .map((s) => s.trim())
-          .filter(Boolean)
-        error.message = lines.shift()
-        error.details = lines.join('\n')
-        setError(error)
-      }
-    }
-
-    parseMdx()
-  }, [unverifiedValue, localStorageId, replaceTokens])
-
-  const previewSrc = `/docs/preview?id=${`${localStorageId}-processed${
-    debugMode ? `&debug=true` : ``
-  }`}`
+  // UI functions
+  const previewSrc = useMemo(
+    () =>
+      `/docs/preview?id=${`${localStorageId}-processed${
+        debugMode ? `&debug=true` : ``
+      }`}`,
+    [localStorageId, debugMode]
+  )
 
   const onToggleDebugMode = useCallback((e) => {
     setDebugMode((v) => !v)
@@ -265,6 +265,11 @@ function LiveEditor({ editorId, initialValue, layout }) {
 
   const toggleErrorDetailsVisible = useCallback(() => {
     setErrorDetailsVisible((v) => !v)
+  }, [])
+
+  const [sidebarTab, setSidebarTab] = useState('media')
+  const onChangeSidebarTab = useCallback((e) => {
+    setSidebarTab(e.currentTarget.value)
   }, [])
 
   return (
@@ -338,6 +343,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
           language="markdown"
           theme="dark"
           value={editorValue}
+          options={{ autoClosingBrackets: false }}
+          wrapperClassName="monaco-wrapper"
         />
       </LiveEditorEditor>
       {layout !== 'horizontal' && (
