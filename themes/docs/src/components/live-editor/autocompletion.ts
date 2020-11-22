@@ -111,7 +111,9 @@ function createMdxComponentPropsProposals({
       label: prop.name,
       kind: monaco.languages.CompletionItemKind.Property,
       documentation: prop.description,
-      insertText: prop.name,
+      insertText: `${prop.name}="\${1:}"`,
+      insertTextRules:
+        monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
       range: range,
     }
   })
