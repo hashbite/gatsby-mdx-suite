@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
-
+import { useWindowSize } from '@react-hook/window-size'
 import Editor from '@monaco-editor/react'
 
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
@@ -37,7 +37,7 @@ const LiveEditorWrapper = styled.section(
           max-height: calc(80vh);
         `
       : css`
-          ${tw`w-screen`}
+          ${tw`w-full h-full`}
           grid-template-columns: ${previewExpanded
             ? '768px'
             : '420px'} 1fr max-content;
@@ -46,7 +46,6 @@ const LiveEditorWrapper = styled.section(
             'toolbar-preview toolbar-editor toolbar-sidebar'
             'preview editor sidebar'
             'preview error sidebar';
-          height: 100%;
         `}
   `
 )
@@ -119,7 +118,7 @@ const LiveEditorErrorDetails = styled.pre(
   `
 )
 
-const LiveEditorEditor = styled.div(
+const LiveEditorContainer = styled.div(
   ({ hasError }) => css`
     grid-area: editor;
     min-height: 4rem;
@@ -131,6 +130,12 @@ const LiveEditorEditor = styled.div(
         border: none;
       }
     `}
+
+    // Responsive editor
+    ${tw`relative overflow-hidden`}
+    .monaco-wrapper {
+      ${tw`absolute! inset-0`}
+    }
   `
 )
 
@@ -250,8 +255,13 @@ function LiveEditor({ editorId, initialValue, layout }) {
   }, [])
   const [previewExpanded, setPreviewExpanded] = useState(false)
   const onTogglePreviewExpanded = useCallback(
-    (e) => setPreviewExpanded((v) => !v),
-    []
+    (e) => {
+      if (editorInstance) {
+        setTimeout(() => editorInstance.layout(), 0)
+      }
+      setPreviewExpanded((v) => !v)
+    },
+    [editorInstance]
   )
   const onReset = useCallback(
     (e) => {
@@ -271,6 +281,14 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const onChangeSidebarTab = useCallback((e) => {
     setSidebarTab(e.currentTarget.value)
   }, [])
+
+  const [width, height] = useWindowSize()
+
+  useEffect(() => {
+    if (editorInstance) {
+      editorInstance.layout()
+    }
+  }, [width, height, editorInstance])
 
   return (
     <LiveEditorWrapper layout={layout} previewExpanded={previewExpanded}>
@@ -336,17 +354,16 @@ function LiveEditor({ editorId, initialValue, layout }) {
           <ButtonLabel>Reset</ButtonLabel>
         </Button>
       </LiveEditorToolbar>
-      <LiveEditorEditor hasError={!!error}>
+      <LiveEditorContainer hasError={!!error}>
         <Editor
           height="100%"
           editorDidMount={handleEditorDidMount}
           language="markdown"
           theme="dark"
           value={editorValue}
-          options={{ autoClosingBrackets: false }}
           wrapperClassName="monaco-wrapper"
         />
-      </LiveEditorEditor>
+      </LiveEditorContainer>
       {layout !== 'horizontal' && (
         <>
           <LiveEditorSidebarToolbar>

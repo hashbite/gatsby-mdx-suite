@@ -33,6 +33,7 @@
     "@mdx-js/runtime": "^1.6.21",
     "@monaco-editor/react": "^3.7.0",
     "@react-hook/debounce": "^3.0.0",
+    "@react-hook/window-size": "^3.0.7",
     "@use-it/event-listener": "^0.1.5",
     "fuse.js": "^6.4.3",
     "gatsby-link": "^2.5.0",
