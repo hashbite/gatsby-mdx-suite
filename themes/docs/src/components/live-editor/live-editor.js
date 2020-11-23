@@ -249,10 +249,6 @@ function LiveEditor({ editorId, initialValue, layout }) {
     }
     setAutoReload(!autoReload)
   }
-  const onOpenToolbar = useCallback((e) => {
-    console.log('called onOpenToolbar', e)
-    alert('This feature is currenty still in development')
-  }, [])
   const [previewExpanded, setPreviewExpanded] = useState(false)
   const onTogglePreviewExpanded = useCallback(
     (e) => {
@@ -341,14 +337,6 @@ function LiveEditor({ editorId, initialValue, layout }) {
             Auto Reload
           </Switch>
         </ToolbarSection>
-        <Button onClick={() => onOpenToolbar('snippets')} disabled>
-          <ButtonIcon icon="snippets" />
-          <ButtonLabel>Snippets</ButtonLabel>
-        </Button>
-        <Button onClick={() => onOpenToolbar('help')} disabled>
-          <ButtonIcon icon="question" />
-          <ButtonLabel>Help</ButtonLabel>
-        </Button>
         <Button onClick={onReset}>
           <ButtonIcon icon="trash" />
           <ButtonLabel>Reset</ButtonLabel>
@@ -377,6 +365,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
               <option value="colors">Colors</option>
               <option value="fonts">Fonts</option>
               <option value="sizes">Sizes</option>
+              <option value="help">Help</option>
             </ToolbarSelect>
           </LiveEditorSidebarToolbar>
           <LiveEditorSidebar editorInstance={editorInstance} tab={sidebarTab} />

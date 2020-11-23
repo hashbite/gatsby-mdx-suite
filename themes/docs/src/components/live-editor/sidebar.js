@@ -89,6 +89,27 @@ const Length = styled.div(
   `
 )
 
+const Help = styled.div`
+  & kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+      0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+    color: #333;
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 3px 6px;
+    white-space: nowrap;
+  }
+  & code {
+    ${tw`bg-gray-100 whitespace-no-wrap`}
+    padding: 2px 4px;
+  }
+`
+
 function LiveEditorSidebar({ editorInstance, tab }) {
   const [searchTerm, setSearchTerm] = useState('')
   const { media } = useMedia()
@@ -130,6 +151,12 @@ function LiveEditorSidebar({ editorInstance, tab }) {
   )
 
   const searchMedia = useCallback((e) => setSearchTerm(e.target.value), [])
+
+  const isMac = window?.navigator?.platform.toUpperCase().indexOf('MAC') >= 0
+  const controlKey = isMac ? '⌘ CMD' : 'STRG'
+  const shiftKey = '⇧ Shift'
+  const altKey = isMac ? '⌥ OPTION' : 'ALT'
+  const tabKey = '↹ Tab'
 
   return (
     <LiveEditorSidebarWrapper>
@@ -315,6 +342,72 @@ function LiveEditorSidebar({ editorInstance, tab }) {
             ))}
           </Sizes>
         </>
+      )}
+      {tab === 'help' && (
+        <Help>
+          <h1>Help:</h1>
+          <h2>Hotkeys:</h2>
+          <ul>
+            <li>
+              <kbd>F1</kbd>: Open command menu
+            </li>
+            <li>
+              <kbd>{controlKey}</kbd> + <kbd>F</kbd>: Open search
+            </li>
+            <li>
+              {isMac ? (
+                <>
+                  <kbd>{controlKey}</kbd> + <kbd>{altKey}</kbd> + <kbd>F</kbd>
+                </>
+              ) : (
+                <>
+                  <kbd>{controlKey}</kbd> + <kbd>H</kbd>
+                </>
+              )}
+              : Open search &amp; replace
+            </li>
+          </ul>
+          <h3>Indentation:</h3>
+          <p>
+            Select multiple lines and change the indentation with these hotkeys:
+          </p>
+          <ul>
+            <li>
+              <kbd>{tabKey}</kbd>: Indent lines
+            </li>
+            <li>
+              <kbd>{shiftKey}</kbd> + <kbd>{tabKey}</kbd>: Unindent lines
+            </li>
+          </ul>
+          <h2>Tokens:</h2>
+          <p>
+            The editor supports multiple tokens which are replaced by Contentful
+            ids. These tokens are for demonstration purposes and will work in
+            the preview mode only.
+          </p>
+          <ul>
+            <li>
+              <code>randomImageId</code>: A random image (pixel &amp; vector)
+            </li>
+            <li>
+              <code>randomGraphicId</code>: A random vector graphic
+            </li>
+            <li>
+              <code>randomPictureId</code>: A random pixel image
+            </li>
+            <li>
+              <code>randomVideoId</code>: A random video id
+            </li>
+          </ul>
+          <h3>Example: </h3>
+          <p>
+            <code>&lt;Image id="randomImageId"/&gt;</code>
+            <br />
+            will be rendered as
+            <br />
+            <code>&lt;Image id="a1b2c3d4e5f6g7h8"/&gt;</code>
+          </p>
+        </Help>
       )}
     </LiveEditorSidebarWrapper>
   )
