@@ -43,7 +43,7 @@ const LiveEditorWrapper = styled.section(
             : '420px'} 1fr max-content;
           grid-template-rows: min-content 1fr min-content;
           grid-template-areas:
-            'toolbar-preview toolbar-editor toolbar-sidebar'
+            'toolbar-preview toolbar-editor toolbar-editor'
             'preview editor sidebar'
             'preview error sidebar';
         `}
@@ -70,13 +70,10 @@ const LiveEditorToolbar = styled.div`
   ${toolbarStyles}
   grid-area: toolbar-editor;
 `
-const LiveEditorSidebarToolbar = styled.div`
-  ${toolbarStyles}
-  grid-area: toolbar-sidebar;
-`
 const ToolbarSection = styled.div``
 const ToolbarSelect = styled(Select)`
-  ${tw`w-full rounded overflow-hidden`}
+  ${tw`rounded overflow-hidden`}
+  width: 280px;
 `
 
 const ButtonLabel = styled.span``
@@ -273,7 +270,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
     setErrorDetailsVisible((v) => !v)
   }, [])
 
-  const [sidebarTab, setSidebarTab] = useState('media')
+  const [sidebarTab, setSidebarTab] = useState('closed')
   const onChangeSidebarTab = useCallback((e) => {
     setSidebarTab(e.currentTarget.value)
   }, [])
@@ -341,6 +338,22 @@ function LiveEditor({ editorId, initialValue, layout }) {
           <ButtonIcon icon="trash" />
           <ButtonLabel>Reset</ButtonLabel>
         </Button>
+        {layout !== 'horizontal' && (
+          <ToolbarSelect
+            onChange={onChangeSidebarTab}
+            defaultValue={sidebarTab}
+          >
+            <option value="closed">
+              {sidebarTab !== 'closed' ? 'Close sidebar' : 'Open sidebar'}
+            </option>
+            <option value="media">Media</option>
+            <option value="icons">Icons</option>
+            <option value="colors">Colors</option>
+            <option value="fonts">Fonts</option>
+            <option value="sizes">Sizes</option>
+            <option value="help">Help</option>
+          </ToolbarSelect>
+        )}
       </LiveEditorToolbar>
       <LiveEditorContainer hasError={!!error}>
         <Editor
@@ -353,23 +366,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
           options={{ scrollBeyondLastLine: false, autoClosingBrackets: false }}
         />
       </LiveEditorContainer>
-      {layout !== 'horizontal' && (
-        <>
-          <LiveEditorSidebarToolbar>
-            <ToolbarSelect
-              onChange={onChangeSidebarTab}
-              defaultValue={sidebarTab}
-            >
-              <option value="media">Media</option>
-              <option value="icons">Icons</option>
-              <option value="colors">Colors</option>
-              <option value="fonts">Fonts</option>
-              <option value="sizes">Sizes</option>
-              <option value="help">Help</option>
-            </ToolbarSelect>
-          </LiveEditorSidebarToolbar>
-          <LiveEditorSidebar editorInstance={editorInstance} tab={sidebarTab} />
-        </>
+      {layout !== 'horizontal' && sidebarTab !== 'closed' && (
+        <LiveEditorSidebar editorInstance={editorInstance} tab={sidebarTab} />
       )}
     </LiveEditorWrapper>
   )
