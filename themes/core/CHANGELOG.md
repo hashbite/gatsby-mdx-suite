@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.5.5...gatsby-theme-mdx-suite-core@0.6.0) (2020-11-23)
+
+
+### Features
+
+* **live-editor:** media sidebar simplify id injection ([46143a1](https://github.com/axe312ger/gatsby-mdx-suite/commit/46143a19442d003eff53b1ed86b609f4b14e53d2))
+
+
+
+
+
 ## [0.5.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.5.4...gatsby-theme-mdx-suite-core@0.5.5) (2020-11-13)
 
 

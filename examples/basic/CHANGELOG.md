@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.4.5...gatsby-mdx-suite-example-basic@0.4.6) (2020-11-23)
+
+
+### Bug Fixes
+
+* **theme-config:** add example config for privacy manager ([4b43862](https://github.com/axe312ger/gatsby-mdx-suite/commit/4b4386276f0c2df37ff7e5dd836d12db6714f7c5))
+
+
+
+
+
 ## [0.4.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.4.4...gatsby-mdx-suite-example-basic@0.4.5) (2020-11-13)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-basic

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.23.1...@gatsby-mdx-suite/mdx-layout@0.24.0) (2020-11-23)
+
+
+### Features
+
+* **live-editor:** first version of debug mode ([5a812d3](https://github.com/axe312ger/gatsby-mdx-suite/commit/5a812d349afc79c2bc4fc177929f435c4f6ada29))
+
+
+
+
+
 ## [0.23.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.23.0...@gatsby-mdx-suite/mdx-layout@0.23.1) (2020-11-13)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout

@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.4.2...gatsby-theme-mdx-suite-docs@0.5.0) (2020-11-23)
+
+
+### Bug Fixes
+
+* **live-editor:** do not auto close brackets and disable scroll beyond last line ([4fdb018](https://github.com/axe312ger/gatsby-mdx-suite/commit/4fdb018f7ea40ba16b5c5dfa21e3e5123075150b))
+* **live-editor:** ensure editor resizes on window and preview size changes ([87ff804](https://github.com/axe312ger/gatsby-mdx-suite/commit/87ff804eae77977382ab17250e115cd11bc8a7a7))
+* **live-editor:** fix error message line numbers ([17a6aa7](https://github.com/axe312ger/gatsby-mdx-suite/commit/17a6aa79b5902e5f15b5419a4eacc9e96ebf8962))
+* **live-editor:** improve loading behavior ([226bc97](https://github.com/axe312ger/gatsby-mdx-suite/commit/226bc97be8db6c6ee9286ecb23e8042f69bbaaa5))
+* **preview:** do not try to render preview on SSR ([d34907c](https://github.com/axe312ger/gatsby-mdx-suite/commit/d34907c93d9e8cd8ca652b167ff5ab5b6fb786c5))
+* **preview:** fix SSR and preview rendering ([e6ada17](https://github.com/axe312ger/gatsby-mdx-suite/commit/e6ada170cdd4349c20ca6d2c034421597eaa231b))
+
+
+### Features
+
+* **live-editor:** active line turns red if validation error is present ([39e7159](https://github.com/axe312ger/gatsby-mdx-suite/commit/39e71598641d39c00b00a0fd1a769e66cb42af9c))
+* **live-editor:** add dropdown to sidebar ([bda5450](https://github.com/axe312ger/gatsby-mdx-suite/commit/bda5450fa24903fdb65ca832a87a434cf021adb8))
+* **live-editor:** add fuzzy search to media sidebar ([f839cd3](https://github.com/axe312ger/gatsby-mdx-suite/commit/f839cd32761a254bb0f0b3906f180c66b66080d4))
+* **live-editor:** add help section and remove postponed snippets ([4c0b262](https://github.com/axe312ger/gatsby-mdx-suite/commit/4c0b2623701b560273986c5d7365f8e01613175f))
+* **live-editor:** add icon listing and quick add ([e153a72](https://github.com/axe312ger/gatsby-mdx-suite/commit/e153a721276d0dda9846d05d4cdfb055415bc831))
+* **live-editor:** add reload button and toggle for auto reload ([5b3bed9](https://github.com/axe312ger/gatsby-mdx-suite/commit/5b3bed9615fd5f767424c2f10cfc4040c9eafc18))
+* **live-editor:** add reset button ([13af771](https://github.com/axe312ger/gatsby-mdx-suite/commit/13af771219dcb856a04ad18ffdab97b3e82bfd4a))
+* **live-editor:** add sidebar tab for colors and color sets ([445cb5c](https://github.com/axe312ger/gatsby-mdx-suite/commit/445cb5cff12bb1b429b2b903f9b809ef255a8fca))
+* **live-editor:** add sidebar tab for fonts ([e570574](https://github.com/axe312ger/gatsby-mdx-suite/commit/e5705745b3fc1956aa5b0e82c20cd38d99248264))
+* **live-editor:** add sidebar tab for sizes ([df8a030](https://github.com/axe312ger/gatsby-mdx-suite/commit/df8a03039eb25f424f8549e2d8526fbc035466de))
+* **live-editor:** first version of debug mode ([5a812d3](https://github.com/axe312ger/gatsby-mdx-suite/commit/5a812d349afc79c2bc4fc177929f435c4f6ada29))
+* **live-editor:** introduce toolbar for editor and preview ([a9e3847](https://github.com/axe312ger/gatsby-mdx-suite/commit/a9e3847dc2b207970b9a4dba9f09fa52e7172c82))
+* **live-editor:** make validation error message more subtle and add details button ([cd9b232](https://github.com/axe312ger/gatsby-mdx-suite/commit/cd9b23245f853322a11200d25394c80c38fb2fd7))
+* **live-editor:** media sidebar simplify id injection ([46143a1](https://github.com/axe312ger/gatsby-mdx-suite/commit/46143a19442d003eff53b1ed86b609f4b14e53d2))
+* **live-editor:** mention autocomplete in help ([d7a13fe](https://github.com/axe312ger/gatsby-mdx-suite/commit/d7a13febe7c7f17e771cecd81a3c994d01c9cdee))
+* **live-editor:** provide autocompletions for component name and properties ([e6d9a66](https://github.com/axe312ger/gatsby-mdx-suite/commit/e6d9a66b5490b77e555bdf04cf5051da8280c586))
+* **live-editor:** sidebar is closed by default ([560bbc3](https://github.com/axe312ger/gatsby-mdx-suite/commit/560bbc3224afcc5137f262b49fa541b15042bb49))
+* **live-editor:** toggle preview between mobile and tablet screen width ([6eae41d](https://github.com/axe312ger/gatsby-mdx-suite/commit/6eae41d7251eec958da88aac0c3dd68a983fe59e))
+
+
+### Performance Improvements
+
+* **live-editor:** reduce MDX validation efford and increase change debounce ([7cb53ce](https://github.com/axe312ger/gatsby-mdx-suite/commit/7cb53cef0beb50aae988487a5d88731b09718d52))
+
+
+
+
+
 ## [0.4.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.4.1...gatsby-theme-mdx-suite-docs@0.4.2) (2020-11-13)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-docs

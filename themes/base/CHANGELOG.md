@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.7.1...gatsby-theme-mdx-suite-base@0.8.0) (2020-11-23)
+
+
+### Bug Fixes
+
+* **form-fields:** ensure select drop down icon is visible ([b15e2f3](https://github.com/axe312ger/gatsby-mdx-suite/commit/b15e2f3b78e854ee371e3c3ee2a2c8b7a064feb9))
+
+
+### Features
+
+* **forms:** introduce common generic form components build with tailwind ([391cbeb](https://github.com/axe312ger/gatsby-mdx-suite/commit/391cbeb1d5488ed4a78294dfab31af3340ab0802))
+* **icons:** extend default icons and use Icon component everywhere ([2fd5c35](https://github.com/axe312ger/gatsby-mdx-suite/commit/2fd5c35cd287a0f05b49fd3c3ef29a4c0926fe3d))
+
+
+
+
+
 ## [0.7.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.7.0...gatsby-theme-mdx-suite-base@0.7.1) (2020-11-13)
 
 
