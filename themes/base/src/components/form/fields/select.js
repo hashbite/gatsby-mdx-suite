@@ -4,17 +4,18 @@ import tw from 'twin.macro'
 
 import { textFieldStyle, focusStyle } from './styles'
 
+const SelectWrapper = styled.div`
+  ${tw`relative text-gray-900`}
+`
+
 const SelectElement = styled.select`
   ${textFieldStyle}
 
-  ${tw`relative z-0 pr-10 cursor-pointer text-gray-900`}
+  ${tw`relative z-0 pr-10 cursor-pointer text-current`}
 
   ${focusStyle}
 `
 
-const SelectWrapper = styled.div`
-  ${tw`relative`}
-`
 const SelectLabel = styled.label`
   ${tw`absolute z-10`}
   right: 0.75em;
