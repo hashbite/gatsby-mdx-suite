@@ -157,6 +157,7 @@ function LiveEditorSidebar({ editorInstance, tab }) {
   const shiftKey = '⇧ Shift'
   const altKey = isMac ? '⌥ OPTION' : 'ALT'
   const tabKey = '↹ Tab'
+  const spaceKey = 'Space'
 
   return (
     <LiveEditorSidebarWrapper>
@@ -349,10 +350,10 @@ function LiveEditorSidebar({ editorInstance, tab }) {
           <h2>Hotkeys:</h2>
           <ul>
             <li>
-              <kbd>F1</kbd>: Open command menu
+              <kbd>{controlKey}</kbd> + <kbd>{spaceKey}</kbd>: Autocompletion
             </li>
             <li>
-              <kbd>{controlKey}</kbd> + <kbd>F</kbd>: Open search
+              <kbd>{controlKey}</kbd> + <kbd>F</kbd>: Search
             </li>
             <li>
               {isMac ? (
@@ -364,7 +365,10 @@ function LiveEditorSidebar({ editorInstance, tab }) {
                   <kbd>{controlKey}</kbd> + <kbd>H</kbd>
                 </>
               )}
-              : Open search &amp; replace
+              : Search &amp; replace
+            </li>
+            <li>
+              <kbd>F1</kbd>: Open command menu
             </li>
           </ul>
           <h3>Indentation:</h3>
