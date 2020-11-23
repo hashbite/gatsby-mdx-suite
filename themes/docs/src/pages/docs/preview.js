@@ -6,11 +6,7 @@ import { useLocation } from '@reach/router'
 
 import DataProvider from '../../components/data-provider'
 
-import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
-
-const MDX = React.lazy(() =>
-  import(/* webpackChunkName: "mdx-runtime" */ '@mdx-js/runtime')
-)
+import MDX from '@mdx-js/runtime'
 
 const PreviewFailedWrapper = tw.div`flex flex-col justify-center text-center w-screen h-screen`
 
@@ -66,9 +62,7 @@ const DocsPreviewPage = () => {
     <DataProvider>
       <MDXErrorBoundary>
         <div className={debugModeEnabled && 'debug'}>
-          <React.Suspense fallback={<Loading />}>
-            <MDX>{content}</MDX>
-          </React.Suspense>
+          <MDX>{content}</MDX>
         </div>
       </MDXErrorBoundary>
     </DataProvider>
@@ -80,8 +74,6 @@ const DocsPreviewPageBrowserOnlyWrapper = (props) =>
   window.document &&
   window.document.createElement ? (
     <DocsPreviewPage {...props} />
-  ) : (
-    <Loading />
-  )
+  ) : null
 
 export default DocsPreviewPageBrowserOnlyWrapper
