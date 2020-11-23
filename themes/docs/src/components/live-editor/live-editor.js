@@ -362,6 +362,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
           theme="dark"
           value={editorValue}
           wrapperClassName="monaco-wrapper"
+          options={{ scrollBeyondLastLine: false, autoClosingBrackets: false }}
         />
       </LiveEditorContainer>
       {layout !== 'horizontal' && (
