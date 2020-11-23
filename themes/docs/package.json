@@ -34,12 +34,12 @@
     "@monaco-editor/react": "^3.7.0",
     "@react-hook/debounce": "^3.0.0",
     "@react-hook/window-size": "^3.0.7",
-    "@use-it/event-listener": "^0.1.5",
+    "@use-it/event-listener": "^0.1.6",
     "fuse.js": "^6.4.3",
-    "gatsby-link": "^2.5.0",
-    "gatsby-source-filesystem": "^2.5.0",
-    "gatsby-transformer-documentationjs": "^4.4.0",
-    "gatsby-transformer-react-docgen": "^5.3.0",
+    "gatsby-link": "^2.6.0",
+    "gatsby-source-filesystem": "^2.6.1",
+    "gatsby-transformer-documentationjs": "^4.5.0",
+    "gatsby-transformer-react-docgen": "^5.4.0",
     "monaco-editor": "^0.21.2",
     "pretty-bytes": "^5.4.1"
   }
