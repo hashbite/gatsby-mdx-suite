@@ -41,6 +41,7 @@ const SectionWrapper = styled.section(({ textShadow, theme, minHeight }) => {
 const SectionContentWrapper = styled.section(
   ({ minHeight, verticalAlign, horizontalAlign }) => {
     return css`
+      ${tw`relative`}
       ${(minHeight || horizontalAlign) && tw`flex flex-col h-full w-full`}
 
       ${minHeight &&
