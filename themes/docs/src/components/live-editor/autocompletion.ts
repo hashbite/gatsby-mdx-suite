@@ -36,6 +36,18 @@ interface Range {
   endColumn: number
 }
 
+function getPropertySnippet({ name, type }, index = 1) {
+  if (type === 'bool') {
+    return name
+  }
+
+  if (type === 'object') {
+    return `${name}={{\${${index}:}}}`
+  }
+
+  return `${name}="\${${index}:}"`
+}
+
 function createMdxComponentProposals({
   monaco,
   components,
@@ -54,7 +66,7 @@ function createMdxComponentProposals({
       ({ required }) => !!required
     )
     const requirePropsSnippets = requiredProps
-      .map(({ name }, i) => `${name}="\${${i + 1}}"`)
+      .map((prop, i) => getPropertySnippet(prop, i + 1))
       .join(` `)
     const cursorPos = requiredProps.length + 1
     const snippetCloseTag = hasChildren
@@ -123,18 +135,6 @@ interface ComponentDescriptor {
 }
 
 type ComponentDescriptorMap = Map<string, ComponentDescriptor>
-
-function getPropertySnippet({ name, type }) {
-  if (type === 'bool') {
-    return name
-  }
-
-  if (type === 'object') {
-    return `${name}={{\${1:}}}`
-  }
-
-  return `${name}="\${1:}"`
-}
 
 function createMdxComponentPropsProposals({
   monaco,
