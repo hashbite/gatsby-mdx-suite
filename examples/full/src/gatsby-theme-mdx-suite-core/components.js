@@ -22,6 +22,8 @@ import Modal from '@gatsby-mdx-suite/mdx-modal/modal'
 import Anchor from '@gatsby-mdx-suite/mdx-scroll-effects/anchor'
 import AnchorHook from '@gatsby-mdx-suite/mdx-scroll-effects/anchor-hook'
 
+import Animate from '@gatsby-mdx-suite/mdx-animation/animate'
+
 // Project specific components
 import Header from 'gatsby-theme-mdx-suite-base/src/components/header/header'
 import CustomComponent from '../components/custom-component'
@@ -46,6 +48,8 @@ export default {
   // Scroll effects
   Anchor,
   AnchorHook,
+  // Animations
+  Animate,
   // Project specific
   Header,
   CustomComponent,

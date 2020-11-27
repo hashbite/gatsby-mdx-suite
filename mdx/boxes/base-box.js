@@ -62,8 +62,6 @@ const BaseBox = styled('div', {
   `
 })
 
-BaseBox.displayName = 'BaseBox'
-
 BaseBox.defaultProps = {
   children: null,
   width: null,

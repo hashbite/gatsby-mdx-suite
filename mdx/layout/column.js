@@ -3,12 +3,9 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
-import { cx } from 'emotion'
-import Observer from '@researchgate/react-intersection-observer'
 
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
-import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
 import debugMode from '@gatsby-mdx-suite/helpers/styling/debug-mode'
 
 const StyledColumn = styled.div(
@@ -199,43 +196,25 @@ const Column = ({
   center,
   ...columnProps
 }) => {
-  const { animationClass, animationObserverProps } = useAnimation({
-    show: showAnimation,
-  })
-
-  if (showAnimation) {
-    columnProps.className = cx(columnProps.className, animationClass)
-  }
-
   const hasBackground = !!colorSet || !!colors.background || !!backgroundImageId
   const contentPadding = padding || (hasBackground ? 'content-gap' : null)
 
-  let columnContent = (
-    <StyledColumn
-      minAspectRatio={minAspectRatio}
-      backgroundImage={backgroundImage}
-      {...columnProps}
-    >
-      {children && (
-        <ColumnContentWrapper center={center}>
-          <ColumnContent padding={contentPadding}>{children}</ColumnContent>
-        </ColumnContentWrapper>
-      )}
-      {backgroundImageId && (
-        <BackgroundImage id={backgroundImageId} fit="cover" />
-      )}
-    </StyledColumn>
-  )
-
-  if (showAnimation) {
-    columnContent = (
-      <Observer {...animationObserverProps}>{columnContent}</Observer>
-    )
-  }
-
   return (
     <ColorSet name={colorSet} {...colors}>
-      {columnContent}
+      <StyledColumn
+        minAspectRatio={minAspectRatio}
+        backgroundImage={backgroundImage}
+        {...columnProps}
+      >
+        {children && (
+          <ColumnContentWrapper center={center}>
+            <ColumnContent padding={contentPadding}>{children}</ColumnContent>
+          </ColumnContentWrapper>
+        )}
+        {backgroundImageId && (
+          <BackgroundImage id={backgroundImageId} fit="cover" />
+        )}
+      </StyledColumn>
     </ColorSet>
   )
 }
