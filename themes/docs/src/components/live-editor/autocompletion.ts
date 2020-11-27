@@ -62,9 +62,9 @@ function createMdxComponentProposals({
     const hasChildren = componentDescriptor.props.find(
       ({ name }) => name === 'children'
     )
-    const requiredProps = componentDescriptor.props.filter(
-      ({ required }) => !!required
-    )
+    const requiredProps = componentDescriptor.props
+      .filter(({ required }) => !!required)
+      .filter(({ name }) => name !== 'children')
     const requirePropsSnippets = requiredProps
       .map((prop, i) => getPropertySnippet(prop, i + 1))
       .join(` `)
@@ -145,18 +145,19 @@ function createMdxComponentPropsProposals({
   component: ComponentDescriptor
   range: Range
 }) {
-  return component.props.map(({ name, description, type }) => {
-    console.log(name, type)
-    return {
-      label: name,
-      kind: monaco.languages.CompletionItemKind.Property,
-      documentation: description,
-      insertText: getPropertySnippet({ name, type }),
-      insertTextRules:
-        monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-      range: range,
-    }
-  })
+  return component.props
+    .filter(({ name }) => name !== 'children')
+    .map(({ name, description, type }) => {
+      return {
+        label: name,
+        kind: monaco.languages.CompletionItemKind.Property,
+        documentation: description,
+        insertText: getPropertySnippet({ name, type }),
+        insertTextRules:
+          monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+        range: range,
+      }
+    })
 }
 
 function registerMdxComponentPropertyAutocomplete({
