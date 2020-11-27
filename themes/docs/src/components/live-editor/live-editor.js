@@ -8,7 +8,7 @@ import tw from 'twin.macro'
 import { useWindowSize } from '@react-hook/window-size'
 import Editor from '@monaco-editor/react'
 
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 import Select from 'gatsby-theme-mdx-suite-base/src/components/form/fields/select'
@@ -291,7 +291,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
             <strong>Oops, something went wrong:</strong> {error.message}
           </LiveEditorErrorTitle>
           <LiveEditorErrorToggle onClick={toggleErrorDetailsVisible}>
-            <Icon icon="search" verticalAlign="middle" /> Details
+            <Icon icon="search" /> Details
           </LiveEditorErrorToggle>
           <LiveEditorErrorDetails visible={errorDetailsVisible}>
             {error.details}
@@ -305,7 +305,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
             onClick={onToggleDebugMode}
             checked={debugMode}
           >
-            <Icon icon="search" verticalAlign="middle" /> Debug
+            <Icon icon="search" /> Debug
           </Switch>
         </ToolbarSection>
         <Button target="_blank" href={previewSrc} as="a">

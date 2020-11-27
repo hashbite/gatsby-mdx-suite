@@ -8,7 +8,7 @@ import tw from 'twin.macro'
 import ScrollLock from 'react-scrolllock'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 import Logo from './logo'
 import LanguageSwitch from '../i18n/language-switch'
@@ -180,7 +180,7 @@ const NavigationMobile = ({ rootMenuItemId }) => {
           <HeaderControls>
             <LanguageSwitch />
             <HeaderMenuToggle onClick={handleClickMenuToggle}>
-              <Icon icon="menu" verticalAlign="middle" />
+              <Icon icon="menu" />
             </HeaderMenuToggle>
           </HeaderControls>
         </NavigationMobileTopContent>

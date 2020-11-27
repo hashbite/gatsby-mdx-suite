@@ -10,7 +10,7 @@ import {
   generatePageMap,
   getPageWithFallback,
 } from '@gatsby-mdx-suite/helpers/routing'
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 const List = tw.ul`
   flex m-0 mb-0! p-0 list-none uppercase whitespace-no-wrap

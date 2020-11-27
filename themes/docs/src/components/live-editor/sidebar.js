@@ -9,7 +9,7 @@ import { css } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 import CTA from '@gatsby-mdx-suite/mdx-link/cta'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import Search from 'gatsby-theme-mdx-suite-base/src/components/form/fields/search'
