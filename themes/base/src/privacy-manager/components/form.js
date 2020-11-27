@@ -4,7 +4,7 @@ import tw from 'twin.macro'
 import { Form } from 'react-final-form'
 import { css } from '@emotion/core'
 
-import Link from '@gatsby-mdx-suite/mdx-link/link'
+import Link from '@gatsby-mdx-suite/mdx-link/link-renderer'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'

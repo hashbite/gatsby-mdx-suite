@@ -4,8 +4,8 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
-import Image from '@gatsby-mdx-suite/mdx-image/image'
-import Video from '@gatsby-mdx-suite/mdx-video/video'
+import Image from '@gatsby-mdx-suite/mdx-image/image-renderer'
+import Video from '@gatsby-mdx-suite/mdx-video/video-renderer'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
 const BackgroundVideo = styled(Video)`
