@@ -1,12 +1,15 @@
-import React, { useRef, useContext } from 'react'
+import React, { useRef, useContext, useCallback } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import Observer from '@researchgate/react-intersection-observer'
 import tw from 'twin.macro'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const VideoWrapper = styled.div(
   ({ aspectRatio, maxWidth }) => css`
@@ -72,6 +75,50 @@ export default function Video({
 
   const videos = data[contextKey]
 
+  const handleVideoIntersection = useCallback(
+    (isActive) => {
+      // Autoplay as soon video is visible to the user.
+      if (autoplay && isActive && refVideo.current) {
+        return refVideo.current.play()
+      }
+      // Stop video when user leaves the viewport.
+      // Only active when controls are enabled to allow background videos to loop.
+      if (controls && !isActive && refVideo.current) {
+        return refVideo.current.pause()
+      }
+    },
+    [autoplay, controls]
+  )
+
+  const handleVideoMouseEnter = useCallback(() => {
+    if (autoplay && pauseOnHover) {
+      refVideo.current.pause()
+    }
+  }, [refVideo, autoplay, pauseOnHover])
+
+  const handleVideoMouseLeave = useCallback(() => {
+    if (autoplay && pauseOnHover) {
+      refVideo.current.play()
+    }
+  }, [refVideo, autoplay, pauseOnHover])
+
+  const initScrollTrigger = useCallback(
+    (node) => {
+      if (!node) {
+        return
+      }
+      const scrollTriggerInstance = ScrollTrigger.create({
+        trigger: node,
+        start: 'top bottom',
+        end: 'bottom top',
+        onToggle: ({ isActive }) => handleVideoIntersection(isActive),
+      })
+
+      return scrollTriggerInstance?.kill
+    },
+    [handleVideoIntersection]
+  )
+
   if (!videos) {
     console.error(
       new Error(
@@ -86,28 +133,9 @@ export default function Video({
   )
 
   if (!video) {
-    console.error(
-      new Error(
-        `No data located for video:\n\n${JSON.stringify(arguments[0], null, 2)}`
-      )
+    throw new Error(
+      `No data located for video:\n\n${JSON.stringify(arguments[0], null, 2)}`
     )
-    return null
-  }
-
-  const handleVideoIntersection = async (event) => {
-    try {
-      // Autoplay as soon video is visible to the user.
-      if (autoplay && event.isIntersecting && refVideo.current) {
-        await refVideo.current.play()
-      }
-      // Stop video when user leaves the viewport.
-      // Only active when controls are enabled to allow background videos to loop.
-      if (controls && !event.isIntersecting && refVideo.current) {
-        await refVideo.current.pause()
-      }
-    } catch (err) {
-      console.error(err)
-    }
   }
 
   const sources = [
@@ -128,48 +156,32 @@ export default function Video({
     return null
   }
 
-  const handleVideoMouseEnter = () => {
-    if (autoplay && pauseOnHover) {
-      refVideo.current.pause()
-    }
-  }
-  const handleVideoMouseLeave = () => {
-    if (autoplay && pauseOnHover) {
-      refVideo.current.play()
-    }
-  }
-
   return (
-    <LazyComponent forceRendering={forceRendering}>
-      <Observer
-        treshold={0.33}
-        onChange={handleVideoIntersection}
-        threshold={0.3}
+    <LazyComponent forceRendering={true}>
+      <VideoWrapper
+        maxWidth={maxWidth}
+        aspectRatio={aspectRatio}
+        className={className}
+        ref={initScrollTrigger}
       >
-        <VideoWrapper
-          maxWidth={maxWidth}
+        <VideoTag
+          ref={refVideo}
+          onMouseEnter={handleVideoMouseEnter}
+          onMouseLeave={handleVideoMouseLeave}
+          controls={controls}
+          playsInline={autoplay || !controls}
+          preload={preload}
+          muted={autoplay || muted}
+          poster={
+            video.videoScreenshots &&
+            video.videoScreenshots[screenshotIndex].publicURL
+          }
           aspectRatio={aspectRatio}
-          className={className}
+          {...props}
         >
-          <VideoTag
-            ref={refVideo}
-            onMouseEnter={handleVideoMouseEnter}
-            onMouseLeave={handleVideoMouseLeave}
-            controls={controls}
-            playsInline={autoplay || !controls}
-            preload={preload}
-            muted={autoplay || muted}
-            poster={
-              video.videoScreenshots &&
-              video.videoScreenshots[screenshotIndex].publicURL
-            }
-            aspectRatio={aspectRatio}
-            {...props}
-          >
-            {sources}
-          </VideoTag>
-        </VideoWrapper>
-      </Observer>
+          {sources}
+        </VideoTag>
+      </VideoWrapper>
     </LazyComponent>
   )
 }
