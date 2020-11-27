@@ -3,14 +3,11 @@ import propTypes from 'prop-types'
 
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { cx } from 'emotion'
 import isPropValid from '@emotion/is-prop-valid'
-import Observer from '@researchgate/react-intersection-observer'
 
 import Link from '@gatsby-mdx-suite/mdx-link/link'
 import Image from '@gatsby-mdx-suite/mdx-image/image'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
-import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
 
 import BaseBox from './base-box'
 
@@ -91,16 +88,20 @@ const BackgroundImageWrapper = styled('div', { shouldForwardProp })(
  * # Set and custom Colors
  *
  * </Box>
- * <Box colorSet="green" showAnimation="fadeIn 3s">
+ * <Animate show="fadeIn 3s">
+ * <Box colorSet="green">
  *
  * # Fade in animation
  *
  * </Box>
- * <Box colorSet="green" showAnimation="fadeInRight 3s 0.5s">
+ * </Animate>
+ * <Box colorSet="yellow">
+ * <Animate show="fadeInRight 3s 0.5s">
  *
  * # Fly in animation
  *
  * </Box>
+ * </Animate>
  * </Boxes>
  * </Section>
  */
@@ -116,13 +117,8 @@ const Box = ({
   title,
   colorSet,
   colors,
-  showAnimation,
   ...boxProps
 }) => {
-  const { animationClass, animationObserverProps } = useAnimation({
-    show: showAnimation,
-  })
-
   const minSize = Math.min(
     ...[boxProps.width, boxProps.height].filter((size) => size > 0)
   )
@@ -151,14 +147,6 @@ const Box = ({
   )
   if (linkId) {
     boxContent = <Link {...linkProps}>{boxContent}</Link>
-  }
-  if (showAnimation) {
-    boxContent = (
-      <Observer {...animationObserverProps}>
-        <div>{boxContent}</div>
-      </Observer>
-    )
-    boxProps.className = cx(boxProps.className, animationClass)
   }
   return (
     <ColorSet name={colorSet} {...colors}>
@@ -225,8 +213,6 @@ Box.propTypes = {
   colorSet: propTypes.string,
   /** Overwrite specific colors */
   colors: propTypes.object,
-  /** Apply show animation */
-  showAnimation: propTypes.string,
 }
 
 export default Box

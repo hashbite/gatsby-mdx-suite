@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useCallback, useState, useMemo, useEffect } from 'react'
 import propTypes from 'prop-types'
 import { cx } from 'emotion'
-import styled from '@emotion/styled'
-import Observer from '@researchgate/react-intersection-observer'
+
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
 
-const ObserverWrapper = styled.div``
-const AnimationWrapper = styled.div``
+gsap.registerPlugin(ScrollTrigger)
 
 /**
  * Animate one or more elements.
@@ -31,24 +31,67 @@ const AnimationWrapper = styled.div``
  * </Animate>
  * </Section>
  */
-const Animate = ({ children, show }) => {
-  const { animationClass, animationObserverProps } = useAnimation({ show })
+const Animate = ({ children, markers, show }) => {
+  const [isVisible, setIsVisible] = useState(false)
+  const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
+  const { animationClass } = useAnimation({ show, isVisible })
 
-  return (
-    <ObserverWrapper>
-      <Observer {...animationObserverProps}>
-        <div>
-          <AnimationWrapper className={cx(animationClass)}>
-            {children}
-          </AnimationWrapper>
-        </div>
-      </Observer>
-    </ObserverWrapper>
+  useEffect(
+    function cleanUpScrollTrigger() {
+      if (scrollTriggerInstance && isVisible) {
+        scrollTriggerInstance.kill()
+        setScrollTriggerInstance(null)
+      }
+    },
+    [scrollTriggerInstance, isVisible]
   )
+
+  const initScrollTrigger = useCallback(
+    (node) => {
+      if (!node) {
+        return
+      }
+      const scrollTriggerInstance = ScrollTrigger.create({
+        trigger: node,
+        start: 'top 62.8%',
+        end: 'bottom top',
+        markers,
+        onToggle: ({ isActive }) => isActive && setIsVisible(true),
+      })
+      setScrollTriggerInstance(scrollTriggerInstance)
+      return scrollTriggerInstance?.kill
+    },
+    [setIsVisible, markers]
+  )
+
+  const node = useMemo(() => {
+    const count = React.Children.count(children)
+
+    let wrappedChildren = children
+
+    if (
+      typeof children === 'string' ||
+      !count ||
+      count > 1 ||
+      typeof children?.type?.render === 'function'
+    ) {
+      wrappedChildren = <div>{children}</div>
+    }
+
+    return React.cloneElement(wrappedChildren, {
+      className: cx(animationClass),
+      ref: initScrollTrigger,
+    })
+  }, [children, animationClass, initScrollTrigger])
+
+  return node
 }
+
+Animate.displayName = 'Animate'
 
 Animate.defaultProps = {
   show: 'fadeIn 1s',
+  markers: false,
 }
 
 Animate.propTypes = {
@@ -62,6 +105,10 @@ Animate.propTypes = {
    * Full animation syntax is supported: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
    */
   show: propTypes.string,
+  /**
+   * Show trigger and scroll frame markers for debugging.
+   */
+  markers: propTypes.bool,
 }
 
 export default Animate

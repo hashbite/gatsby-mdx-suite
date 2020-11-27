@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import { css } from 'emotion'
 import * as animations from './animations'
 
-const useAnimation = ({ show }) => {
-  const [isVisible, setIsVisible] = useState(false)
-
+const useAnimation = ({ show, isVisible }) => {
   if (typeof show !== 'string') {
     return {}
   }
@@ -24,21 +21,8 @@ const useAnimation = ({ show }) => {
     animation-play-state: ${isVisible ? 'running' : 'paused'};
   `
 
-  const handleIntersection = (e) => {
-    if (e.isIntersecting && !isVisible) {
-      setIsVisible(true)
-    }
-  }
-
-  const animationObserverProps = {
-    threshold: 0.7,
-    onChange: handleIntersection,
-    rootMargin: '-12% 0px -12% 0px',
-  }
-
   return {
     animationClass,
-    animationObserverProps,
   }
 }
 

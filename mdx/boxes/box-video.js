@@ -3,11 +3,8 @@ import propTypes from 'prop-types'
 
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { cx } from 'emotion'
-import Observer from '@researchgate/react-intersection-observer'
 
 import Video from '@gatsby-mdx-suite/mdx-video/video'
-import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
 
 import BaseBox from './base-box'
 
@@ -43,12 +40,8 @@ const BoxVideo = ({
   loop,
   muted,
   pauseOnHover,
-  showAnimation,
   ...boxProps
 }) => {
-  const { animationClass, animationObserverProps } = useAnimation({
-    show: showAnimation,
-  })
   const videoProps = {
     id: videoId,
     videoFit,
@@ -59,17 +52,12 @@ const BoxVideo = ({
     loop,
     pauseOnHover,
   }
-  let boxContent = <StyledVideo {...videoProps} />
 
-  if (showAnimation) {
-    boxContent = (
-      <Observer {...animationObserverProps}>
-        <div>{boxContent}</div>
-      </Observer>
-    )
-    boxProps.className = cx(boxProps.className, animationClass)
-  }
-  return <BaseBox {...boxProps}>{boxContent}</BaseBox>
+  return (
+    <BaseBox {...boxProps}>
+      <StyledVideo {...videoProps} />
+    </BaseBox>
+  )
 }
 
 BoxVideo.defaultProps = {
@@ -131,8 +119,6 @@ BoxVideo.propTypes = {
    * Mute audio. Always true when autoplay is enabled.
    */
   muted: propTypes.bool,
-  /* Apply show animation */
-  showAnimation: propTypes,
 }
 
 export default BoxVideo
