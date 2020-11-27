@@ -6,7 +6,7 @@ import tw from 'twin.macro'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 import Layout from './layout/layout'
 import LayoutMain from './layout/main'

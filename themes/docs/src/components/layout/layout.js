@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 const DocsWrapper = styled.div`
   ${tw`grid h-screen w-screen`}

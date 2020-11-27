@@ -5,7 +5,7 @@ import { Form } from 'react-final-form'
 import { css } from '@emotion/core'
 
 import Link from '@gatsby-mdx-suite/mdx-link/link-renderer'
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 import Logo from 'gatsby-theme-mdx-suite-base/src/components/header/logo.js'
@@ -211,7 +211,7 @@ const PrivacyManagerForm = ({
           <IntegrationField key={fieldId}>
             <SwitchField name={fieldId} />
             <div>
-              {/* <IntegrationIcon icon={icon} verticalAlign="middle" /> */}
+              {/* <IntegrationIcon icon={icon} /> */}
               <IntegrationTitle>{title}</IntegrationTitle>
             </div>
           </IntegrationField>
@@ -274,7 +274,7 @@ const PrivacyManagerForm = ({
                           htmlType="button"
                           onClick={handleClose}
                         >
-                          <Icon icon="close" verticalAlign="middle" />
+                          <Icon icon="close" />
                         </CloseButton>
                       </PrivacyManagerControls>
                     </PrivacyForm>
@@ -290,7 +290,7 @@ const PrivacyManagerForm = ({
           onClick={handleOpenPrivacyManager}
           title="Change your privacy settings"
         >
-          <Icon icon="settings" verticalAlign="middle" />
+          <Icon icon="settings" />
         </PrivacyManagerToggle>
       )}
     </>

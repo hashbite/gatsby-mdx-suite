@@ -12,7 +12,7 @@ import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 import Columns from '@gatsby-mdx-suite/mdx-layout/columns'
 import Section from '@gatsby-mdx-suite/mdx-layout/section'
 import Cta from '@gatsby-mdx-suite/mdx-link/cta'
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 import BlogPostTeaser from '../components/blog-post-teaser'
 

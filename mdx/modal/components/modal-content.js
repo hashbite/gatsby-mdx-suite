@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
 
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 const ModalContentWrapper = styled.div`
   ${tw`

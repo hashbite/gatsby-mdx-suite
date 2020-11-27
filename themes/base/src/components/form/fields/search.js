@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
 
-import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
+import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 import { textFieldStyle } from './styles'
 
