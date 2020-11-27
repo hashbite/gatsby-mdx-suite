@@ -1,15 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useCallback } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
-import Observer from '@researchgate/react-intersection-observer'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useWindowWidth } from '@react-hook/window-size/throttled'
 
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 
 import HeaderBar from './header-bar'
 import Hero from './hero'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const HeaderWrapper = styled.div(
   ({ theme, hasBackgroundMedia, shouldRenderHero }) => css`
@@ -47,16 +50,36 @@ const Header = ({
   const windowWidth = useWindowWidth()
 
   // Fixed header logic with ghost element
-  const handleHeaderIntersection = async (event) => {
-    setHeaderPassed(!event.isIntersecting)
-    setHeaderVisibleAgain(headerPassed && event.isIntersecting)
-  }
-
   useEffect(() => {
     if (headerBarRef.current) {
       setHeaderBarHeight(headerBarRef.current.getBoundingClientRect().height)
     }
   }, [headerBarRef, windowWidth])
+
+  const handleHeaderBarIntersection = useCallback(
+    (isActive) => {
+      setHeaderPassed(!isActive)
+      setHeaderVisibleAgain(headerPassed && isActive)
+    },
+    [setHeaderPassed, setHeaderVisibleAgain, headerPassed]
+  )
+
+  const initScrollTrigger = useCallback(
+    (node) => {
+      if (!node) {
+        return
+      }
+      const scrollTriggerInstance = ScrollTrigger.create({
+        trigger: node,
+        start: 'top bottom',
+        end: 'bottom top',
+        onToggle: ({ isActive }) => handleHeaderBarIntersection(isActive),
+      })
+
+      return scrollTriggerInstance?.kill
+    },
+    [handleHeaderBarIntersection]
+  )
 
   // Visual transparency depends on user config, scroll position and menu open state
   useEffect(() => {
@@ -88,17 +111,16 @@ const Header = ({
 
   return (
     <ColorSet name={colorSet} {...colors}>
-      <Observer onChange={handleHeaderIntersection}>
-        <HeaderWrapper
-          hasBackgroundMedia={hasBackgroundMedia}
-          shouldRenderHero={shouldRenderHero}
-        >
-          <div style={{ height: headerBarHeight }}>
-            <HeaderBar {...headerBarProps} wrapperRef={headerBarRef} />
-          </div>
-          {shouldRenderHero && <Hero {...heroProps} />}
-        </HeaderWrapper>
-      </Observer>
+      <HeaderWrapper
+        hasBackgroundMedia={hasBackgroundMedia}
+        shouldRenderHero={shouldRenderHero}
+        ref={initScrollTrigger}
+      >
+        <div style={{ height: headerBarHeight }}>
+          <HeaderBar {...headerBarProps} wrapperRef={headerBarRef} />
+        </div>
+        {shouldRenderHero && <Hero {...heroProps} />}
+      </HeaderWrapper>
     </ColorSet>
   )
 }
