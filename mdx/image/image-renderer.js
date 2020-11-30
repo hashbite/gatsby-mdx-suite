@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import GatsbyImage from 'gatsby-image'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import isPropValid from '@emotion/is-prop-valid'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'

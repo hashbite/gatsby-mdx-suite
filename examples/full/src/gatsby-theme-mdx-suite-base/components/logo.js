@@ -1,7 +1,7 @@
 import Logo from 'gatsby-theme-mdx-suite-base/src/assets/logo.svg'
 
 import styled from '@emotion/styled'
-import { keyframes } from '@emotion/core'
+import { keyframes } from '@emotion/react'
 
 // Use this extra file for dynamic logos or when you can not use SVGs.
 // Otherwise just shadow the svg from above.

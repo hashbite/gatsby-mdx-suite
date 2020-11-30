@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useMemo } from 'react'
 import propTypes from 'prop-types'
-import { cx } from 'emotion'
+import { cx } from '@emotion/css'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'

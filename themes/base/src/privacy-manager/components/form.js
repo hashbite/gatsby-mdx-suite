@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useMemo } from 'react'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
 import { Form } from 'react-final-form'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import Link from '@gatsby-mdx-suite/mdx-link/link-renderer'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'

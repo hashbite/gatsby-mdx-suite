@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import { styleCTA } from '@gatsby-mdx-suite/mdx-link/cta'
 

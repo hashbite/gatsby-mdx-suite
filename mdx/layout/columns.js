@@ -1,7 +1,7 @@
 import React, { useMemo, useEffect, useState } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 
 import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'

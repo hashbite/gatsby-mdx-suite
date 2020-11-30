@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { css, keyframes } from '@emotion/core'
+import { css, keyframes } from '@emotion/react'
 import tw from 'twin.macro'
 
 const SwitchInputWrapper = styled.div`

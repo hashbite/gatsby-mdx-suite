@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'

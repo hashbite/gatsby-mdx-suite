@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import Font from './font'
 

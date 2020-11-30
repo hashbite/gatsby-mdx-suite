@@ -1,4 +1,4 @@
-import { css } from 'emotion'
+import { css } from '@emotion/css'
 import * as animations from 'gatsby-theme-mdx-suite-core/src/animations/index'
 
 const useAnimation = ({ show, isVisible }) => {

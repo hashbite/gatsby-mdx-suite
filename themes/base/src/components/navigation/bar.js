@@ -1,11 +1,10 @@
 import React, { useState, useCallback } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css, useTheme } from '@emotion/react'
 import tw from 'twin.macro'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useTheme } from 'emotion-theming'
 
 import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 

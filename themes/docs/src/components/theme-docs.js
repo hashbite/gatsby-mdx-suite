@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
-import { useTheme } from 'emotion-theming'
+import { css, useTheme } from '@emotion/react'
 import tw from 'twin.macro'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'

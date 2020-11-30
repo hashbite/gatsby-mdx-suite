@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 
 export const focusStyle = tw`focus:outline-none focus:shadow focus:border-primary`
