@@ -346,11 +346,14 @@ function LiveEditor({ editorId, initialValue, layout }) {
             <option value="closed">
               {sidebarTab !== 'closed' ? 'Close sidebar' : 'Open sidebar'}
             </option>
-            <option value="media">Media</option>
-            <option value="icons">Icons</option>
+            <option disabled>---</option>
+            <option value="animations">Animations</option>
             <option value="colors">Colors</option>
             <option value="fonts">Fonts</option>
+            <option value="icons">Icons</option>
+            <option value="media">Media</option>
             <option value="sizes">Sizes</option>
+            <option disabled>---</option>
             <option value="help">Help</option>
           </ToolbarSelect>
         )}
