@@ -13,6 +13,7 @@ import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 import CTA from '@gatsby-mdx-suite/mdx-link/cta'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import Search from 'gatsby-theme-mdx-suite-base/src/components/form/fields/search'
+import * as animations from 'gatsby-theme-mdx-suite-core/src/animations/index'
 
 import { useMedia } from './hooks'
 
@@ -110,6 +111,16 @@ const Help = styled.div`
   }
 `
 
+const AnimationsGrid = styled.div``
+const AnimationsGridItem = styled.h2(
+  ({ name }) => css`
+    animation: 2s ${animations[name].keyframes};
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    ${tw`cursor-pointer`}
+  `
+)
+
 function LiveEditorSidebar({ editorInstance, tab }) {
   const [searchTerm, setSearchTerm] = useState('')
   const { media } = useMedia()
@@ -145,6 +156,14 @@ function LiveEditorSidebar({ editorInstance, tab }) {
     (color) => {
       editorInstance.trigger('keyboard', 'type', {
         text: color,
+      })
+    },
+    [editorInstance]
+  )
+  const injectAnimation = useCallback(
+    (name) => {
+      editorInstance.trigger('keyboard', 'type', {
+        text: `<Animate show="2s ${name}">\n\n# Animated\n\n</Animate>`,
       })
     },
     [editorInstance]
@@ -412,6 +431,24 @@ function LiveEditorSidebar({ editorInstance, tab }) {
             <code>&lt;Image id="a1b2c3d4e5f6g7h8"/&gt;</code>
           </p>
         </Help>
+      )}
+      {tab === 'animations' && (
+        <>
+          <h1>Animations:</h1>
+          <AnimationsGrid>
+            {Object.keys(animations).map((name) => {
+              return (
+                <AnimationsGridItem
+                  key={name}
+                  name={name}
+                  onClick={() => injectAnimation(name)}
+                >
+                  {name}
+                </AnimationsGridItem>
+              )
+            })}
+          </AnimationsGrid>
+        </>
       )}
     </LiveEditorSidebarWrapper>
   )

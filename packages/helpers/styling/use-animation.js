@@ -1,5 +1,5 @@
 import { css } from 'emotion'
-import * as animations from './animations'
+import * as animations from 'gatsby-theme-mdx-suite-core/src/animations/index'
 
 const useAnimation = ({ show, isVisible }) => {
   if (typeof show !== 'string') {

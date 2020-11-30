@@ -24,7 +24,11 @@ import ResponsiveTextBlock from '@gatsby-mdx-suite/mdx-copy/responsive-text-bloc
 import Claim from '@gatsby-mdx-suite/mdx-copy/claim'
 import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 
+// Animation
+import Animate from '@gatsby-mdx-suite/mdx-animation/animate'
+
 const components = {
+  Animate,
   Center,
   Claim,
   ColorSet,
