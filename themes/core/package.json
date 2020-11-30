@@ -39,6 +39,7 @@
     "lodash": "^4.17.20",
     "postcss": "^8.1.10",
     "postcss-csso": "^5.0.0",
-    "tailwindcss": "^1.9.6"
+    "postcss-loader": "^4.1.0",
+    "tailwindcss": "^2.0.1"
   }
 }

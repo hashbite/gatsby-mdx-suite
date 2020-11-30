@@ -17,7 +17,7 @@ const DocsWrapper = styled.div`
 
 const LayoutHeader = styled.div`
   ${tw`
-    p-4 flex justify-between items-center flex-no-wrap
+    p-4 flex justify-between items-center flex-nowrap
     shadow-lg
   `}
   grid-area: head;
