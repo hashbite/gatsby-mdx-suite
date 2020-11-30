@@ -23,7 +23,7 @@ const ComponentMenuMenuPackage = tw.div``
 const ComponentMenuMenuPackageName = tw.div`
   pt-8 px-2 pb-1
   shadow-inner
-  text-sm whitespace-no-wrap text-gray-500`
+  text-sm whitespace-nowrap text-gray-500`
 
 function ComponentsMenu() {
   const mdxComponents = useMDXComponents()
