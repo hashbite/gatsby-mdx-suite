@@ -2,19 +2,20 @@ export default function selectColor(colors, color) {
   if (!color) {
     return null
   }
-  // color = `red-500`
-  const result = color.match(/(.*)-([0-9])[0]*$/)
+
+  // Matched color palette, return specific color
+  const result = color.match(/(.*)-([0-9]+)$/)
   if (result && colors[result[1]]) {
     return colors[result[1]][result[2]]
   }
 
   const themeColor = colors[color]
 
-  // color = `red`
-  if (Array.isArray(themeColor)) {
-    return themeColor[5]
+  // Matched color palette, return default color
+  if (typeof themeColor === 'object') {
+    return themeColor['500']
   }
 
-  // color = `nonArrayColor` || `#123456`
+  // Return non-palette color or fall back to input value
   return themeColor || color
 }
