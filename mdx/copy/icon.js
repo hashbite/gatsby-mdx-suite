@@ -4,7 +4,7 @@ import propTypes from 'prop-types'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 /**
- * Renders an icon from entypo. Only a subset of all entypo icons are available due to performance reasons.
+ * Renders an icon. The available icons can be found in the <Link to="/docs/theme#icons">theme documentation for icons</Link>
  *
  * @example
  * <Icon icon="star" />

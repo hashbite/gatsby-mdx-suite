@@ -37,7 +37,7 @@ const IconWrapper = styled.span(
 )
 
 /**
- * Renders an icon from entypo. Only a subset of all entypo icons are available due to performance reasons.
+ * Renders an icon. Icons are registered via IconsContext in your gatsby-browser.js
  *
  * @example
  * <Icon icon="star" />
