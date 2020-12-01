@@ -5,6 +5,9 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useTheme } from 'emotion-theming'
+
+import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 
 import NavigationDesktop from './desktop'
 import NavigationMobile from './mobile'
@@ -12,30 +15,45 @@ import NavigationMobile from './mobile'
 gsap.registerPlugin(ScrollTrigger)
 
 const NavigationBarWrapper = styled.div(
-  ({ transparent, positionAbsolute }) => css`
+  ({
+    transparent,
+    textColor,
+    background,
+    transparentTextColor,
+    transparentBackground,
+  }) => css`
     ${tw`shadow-xl`}
-    z-index: 9999;
-
-    ${positionAbsolute &&
-    css`
-      ${tw`absolute left-0 top-0 w-full`}
-    `}
+    z-index: 100;
 
     ${transparent
       ? css`
+          ${tw`absolute left-0 top-0 w-full`}
           ${tw`text-white`}
-          background: rgba(0,0,0,0.1);
+          color: ${transparentTextColor};
+          background: ${transparentBackground};
         `
       : css`
-          ${tw`bg-root-background text-text`}
+          color: ${textColor};
+          background: ${background};
         `};
   `
 )
 
-const NavigationBar = ({ transparent, sticky }) => {
+const NavigationBar = ({
+  transparent,
+  sticky,
+  background,
+  textColor,
+  transparentTextColor,
+  transparentBackground,
+}) => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [renderTransparent, setRenderTransparent] = useState(transparent)
-  const positionAbsolute = transparent
+  const theme = useTheme()
+
+  background = selectColor(theme.colors, background)
+  textColor = selectColor(theme.colors, textColor)
+  transparentTextColor = selectColor(theme.colors, transparentTextColor)
+  transparentBackground = selectColor(theme.colors, transparentBackground)
 
   const initScrollTrigger = useCallback(
     (node) => {
@@ -60,12 +78,21 @@ const NavigationBar = ({ transparent, sticky }) => {
         // Switch back to non-transparent rendering as soon we leave the parent section
         if (transparent) {
           instances.push(
-            ScrollTrigger.create({
-              onToggle: ({ isActive, progress }) => {
-                setRenderTransparent(progress < 1)
-              },
-              trigger: positionParent,
-            })
+            gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: positionParent,
+                  start: `bottom-=${node.clientHeight * 2} top`,
+                  end: `bottom-=${node.clientHeight} top`,
+                  scrub: true,
+                  // toggleActions: 'play none reverse none',
+                  invalidateOnRefresh: true,
+                },
+              })
+              .to(node, {
+                color: textColor,
+                backgroundColor: background,
+              })
           )
         }
       }
@@ -74,13 +101,16 @@ const NavigationBar = ({ transparent, sticky }) => {
         instances.forEach((t) => t.kill())
       }
     },
-    [sticky, transparent]
+    [sticky, transparent, background, textColor]
   )
   return (
     <NavigationBarWrapper
-      transparent={renderTransparent}
+      transparent={transparent}
       ref={initScrollTrigger}
-      positionAbsolute={positionAbsolute}
+      background={background}
+      textColor={textColor}
+      transparentTextColor={transparentTextColor}
+      transparentBackground={transparentBackground}
     >
       <NavigationDesktop />
       <NavigationMobile menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
@@ -91,11 +121,19 @@ const NavigationBar = ({ transparent, sticky }) => {
 NavigationBar.defaultProps = {
   transparent: false,
   sticky: true,
+  background: 'root-background',
+  textColor: 'root-text',
+  transparentTextColor: 'white',
+  transparentBackground: 'rgba(0,0,0,0.1);',
 }
 
 NavigationBar.propTypes = {
   transparent: propTypes.bool,
   sticky: propTypes.bool,
+  background: propTypes.string,
+  textColor: propTypes.string,
+  transparentTextColor: propTypes.string,
+  transparentBackground: propTypes.string,
 }
 
 export default NavigationBar

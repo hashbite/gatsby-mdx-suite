@@ -21,6 +21,7 @@ module.exports = merge(
           primary: defaultTailwindTheme.colors.blue['500'],
           secondary: defaultTailwindTheme.colors.orange['300'],
           text: defaultTailwindTheme.colors.gray['900'],
+          'root-text': defaultTailwindTheme.colors.gray['900'], // allows us to access default font color in any color context
           headline: 'inherit',
           sets: {
             'background-image': {
