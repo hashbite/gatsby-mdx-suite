@@ -6,13 +6,12 @@ import YoutubeVideo from '@gatsby-mdx-suite/mdx-youtube/youtube-video'
 import VimeoVideo from '@gatsby-mdx-suite/mdx-vimeo/vimeo-video'
 
 // Project specific components
-// @todo header might be a bad example?
-import Header from 'gatsby-theme-mdx-suite-base/src/components/header/header'
+import NavBar from 'gatsby-theme-mdx-suite-base/src/components/mdx/navbar'
 
 export default {
   ...defaultComponents,
   Video,
-  Header,
+  NavBar,
   YoutubeVideo,
   VimeoVideo,
 }

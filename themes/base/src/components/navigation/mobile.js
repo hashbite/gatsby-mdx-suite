@@ -10,7 +10,7 @@ import ScrollLock from 'react-scrolllock'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
-import Logo from './logo'
+import Logo from '../logo'
 import LanguageSwitch from '../i18n/language-switch'
 import MenuRecursive from '../menu/menu-recursive'
 import MenuTitle from '../menu/menu-title'
@@ -21,7 +21,7 @@ import MenuUl from '../menu/menu-ul'
 const NavigationMobileWrapper = styled.div(
   ({ menuOpen }) => css`
     ${tw`flex flex-col md:hidden`}
-    ${menuOpen && tw`h-screen`}
+    ${menuOpen && tw`h-screen bg-root-background`}
   `
 )
 const NavigationMobileTop = styled.div``

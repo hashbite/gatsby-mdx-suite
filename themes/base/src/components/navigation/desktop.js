@@ -8,7 +8,7 @@ import tw from 'twin.macro'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 
-import Logo from './logo'
+import Logo from '../logo'
 import LanguageSwitch from '../i18n/language-switch'
 import MenuLevel from '../menu/menu-level'
 import MenuLink from '../menu/menu-link'
