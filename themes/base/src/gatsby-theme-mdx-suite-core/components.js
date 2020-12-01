@@ -14,6 +14,7 @@ import Gap from '@gatsby-mdx-suite/mdx-layout/gap'
 import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
 import Section from '@gatsby-mdx-suite/mdx-layout/section'
 import Hide from '@gatsby-mdx-suite/mdx-layout/hide'
+import Offset from '@gatsby-mdx-suite/mdx-layout/offset'
 
 // Copy
 import List from '@gatsby-mdx-suite/mdx-copy/list'
@@ -43,6 +44,7 @@ const components = {
   Section,
   TextBlock,
   Hide,
+  Offset,
   // Overwrite standard html elements with our custom components
   ul: (props) => <List type="unordered" {...props} />,
   ol: (props) => <List type="ordered" {...props} />,
