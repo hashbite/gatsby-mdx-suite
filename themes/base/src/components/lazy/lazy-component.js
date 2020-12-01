@@ -32,6 +32,7 @@ export default function LazyComponent({
         markers,
         start: 'top 120%',
         end: 'bottom top',
+        once: true,
         onToggle: ({ isActive }) => isActive && setShouldRender(true),
       })
       setScrollTrigger(scrollTriggerInstance)
