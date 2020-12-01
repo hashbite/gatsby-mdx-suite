@@ -129,7 +129,7 @@ const HeaderMenuLevel1 = styled.div`
   }
 `
 
-const NavigationDesktop = ({ rootMenuItemId, isNavigationTransparent }) => {
+const NavigationDesktop = ({ rootMenuItemId }) => {
   const result = useStaticQuery(graphql`
     query NavigationDesktopQuery {
       site {

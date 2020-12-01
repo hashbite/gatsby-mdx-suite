@@ -24,9 +24,8 @@ import AnchorHook from '@gatsby-mdx-suite/mdx-scroll-effects/anchor-hook'
 
 import Animate from '@gatsby-mdx-suite/mdx-animation/animate'
 
-// Project specific components
-import Header from 'gatsby-theme-mdx-suite-base/src/components/header/header'
-import CustomComponent from '../components/custom-component'
+// Shadowed components
+import NavBar from 'gatsby-theme-mdx-suite-base/src/components/mdx/navbar'
 
 export default {
   ...defaultComponents,
@@ -51,6 +50,5 @@ export default {
   // Animations
   Animate,
   // Project specific
-  Header,
-  CustomComponent,
+  NavBar,
 }

@@ -7,8 +7,11 @@ import { useTranslation } from 'react-i18next'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
-import Header from 'gatsby-theme-mdx-suite-base/src/components/header/header'
 import Seo from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
+
+import NavBar from 'gatsby-theme-mdx-suite-base/src/components/mdx/navbar'
+import Section from '@gatsby-mdx-suite/mdx-layout/section'
+import Claim from '@gatsby-mdx-suite/mdx-copy/claim'
 
 function BlogPostTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
@@ -36,7 +39,10 @@ function BlogPostTemplate({ data, pageContext }) {
         ogImage={image && `${image.file.url}?w=1200&h=630&fit=fill`}
         twitterImage={image && `${image.file.url}?w=1200&h=628&fit=fill`}
       />
-      <Header backgroundImageId={image.assetId}>{title}</Header>
+      <NavBar />
+      <Section backgroundImageId={image.assetId} minHeight="61.8vh">
+        <Claim>{title}</Claim>
+      </Section>
       <MDXRenderer>{content && content.childMdx.body}</MDXRenderer>
     </MdxSuiteContext.Provider>
   )
