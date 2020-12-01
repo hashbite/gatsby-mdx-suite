@@ -38,7 +38,7 @@ const SectionWrapper = styled.section(({ textShadow, theme, minHeight }) => {
   `
 })
 
-const SectionContentWrapper = styled.section(
+const SectionContentWrapper = styled.div(
   ({ minHeight, verticalAlign, horizontalAlign }) => {
     return css`
       ${tw`relative`}
