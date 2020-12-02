@@ -19,7 +19,7 @@ const BackgroundVideo = styled(Video)`
 
 const SectionWrapper = styled.section(({ textShadow, theme, minHeight }) => {
   return css`
-    ${tw`relative overflow-hidden`}
+    ${tw`relative`}
 
     background: ${theme.colors.background};
     color: ${theme.colors.text};
@@ -64,8 +64,8 @@ const SectionContent = styled.div(
       ? tw`px-content-column-padding`
       : centerToContentColumn(props)}
 
-    margin-top: ${calcGapValue(props.gap, props.theme)};
-    margin-bottom: ${calcGapValue(props.gap, props.theme)};
+    padding-top: ${calcGapValue(props.gap, props.theme)};
+    padding-bottom: ${calcGapValue(props.gap, props.theme)};
 
     ${debugMode({
       color: 'tomato',
