@@ -13,8 +13,11 @@ import Column from '@gatsby-mdx-suite/mdx-layout/column'
 import Gap from '@gatsby-mdx-suite/mdx-layout/gap'
 import Grid from '@gatsby-mdx-suite/mdx-layout/grid'
 import Section from '@gatsby-mdx-suite/mdx-layout/section'
+
+// Modifiers
 import Hide from '@gatsby-mdx-suite/mdx-layout/hide'
 import Offset from '@gatsby-mdx-suite/mdx-layout/offset'
+import Parallax from '@gatsby-mdx-suite/mdx-layout/parallax'
 
 // Copy
 import List from '@gatsby-mdx-suite/mdx-copy/list'
@@ -49,6 +52,7 @@ const components = {
   TextBlock,
   Hide,
   Offset,
+  Parallax,
   // Overwrite standard html elements with our custom components
   ul: (props) => <List type="unordered" {...props} />,
   ol: (props) => <List type="ordered" {...props} />,
