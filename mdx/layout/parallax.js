@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback, useEffect } from 'react'
 import propTypes from 'prop-types'
 
 import { gsap } from 'gsap'
@@ -8,7 +8,7 @@ import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// @todo seems like rerenders in the playground still cause instance duplication/overflows
+// This helper kills the time line and the attached ScrollTrigger instance
 function killScrollTrigger(instance) {
   if (!instance) {
     return
@@ -19,10 +19,11 @@ function killScrollTrigger(instance) {
   instance.kill()
 }
 
-const Parallax = ({ children, till, from, yDistance, markers }) => {
+const Parallax = ({ children, till, from, speed, markers }) => {
   const activeBreakpoints = useBreakpoint()
   const [instance, setInstance] = useState(null)
 
+  // Activate effect based on props
   const effectActive = useMemo(() => {
     if (
       (!till && !from) ||
@@ -37,20 +38,21 @@ const Parallax = ({ children, till, from, yDistance, markers }) => {
     return false
   }, [till, from, activeBreakpoints, instance])
 
+  // Calculate css transform values based on effect state
   const [transformStart, transformEnd] = useMemo(
     () => [
-      effectActive ? `translateY(${yDistance})` : '',
-      effectActive ? `translateY(-${yDistance})` : '',
+      effectActive ? `translateY(${speed})` : '',
+      effectActive ? `translateY(-${speed})` : '',
     ],
-    [yDistance, effectActive]
+    [speed, effectActive]
   )
 
+  // Initialize ScrollTrigger on child mount
   const initScrollTrigger = useCallback(
     (node) => {
       if (!node || !effectActive) {
         return
       }
-
       const positionParent = node.closest('section,#___gatsby')
 
       const gsapInstance = gsap
@@ -62,22 +64,27 @@ const Parallax = ({ children, till, from, yDistance, markers }) => {
             start: `top center`,
             end: `bottom center`,
             invalidateOnRefresh: true,
+            onToggle: (...args) => console.log('toggle', args),
           },
         })
         .to(node, {
           transform: transformEnd,
         })
 
-      setInstance((i) => {
-        killScrollTrigger(i)
-        return gsapInstance
-      })
-
-      return () => killScrollTrigger(gsapInstance)
+      setInstance(gsapInstance)
     },
     [effectActive, transformEnd, markers]
   )
 
+  // Kill ScrollTrigger on unmount
+  useEffect(
+    () => () => {
+      killScrollTrigger(instance)
+    },
+    [till, from, instance]
+  )
+
+  // Wrap children if they are no regular components to apply styling
   const styledChild = useMemo(() => {
     const count = React.Children.count(children)
     let wrappedChildren = children
@@ -101,17 +108,21 @@ const Parallax = ({ children, till, from, yDistance, markers }) => {
 }
 
 Parallax.defaultProps = {
-  yDistance: '50%',
+  speed: '50%',
   from: 'sm',
   markers: false,
 }
 
 Parallax.propTypes = {
   children: propTypes.node.isRequired,
-  /** Distance the component will travel parallax on the Y-axis. Usually a value between 25% and 100% */
-  yDistance: propTypes.string,
+  /** Speed of the component while traveling parallax on the Y-axis. Usually a value between 25% and 100% */
+  speed: propTypes.string,
   /** Add the debug attribute to render markers to debug the parallax animation */
   markers: propTypes.bool,
+  /** Enable parallax scrolling of the component till given screen size is reached */
+  till: propTypes.oneOf(['sm', 'md', 'lg', 'xl']),
+  /** Enable parallax scrolling of the component as soon given screen size is reached */
+  from: propTypes.oneOf(['sm', 'md', 'lg', 'xl']),
 }
 
 export default Parallax
