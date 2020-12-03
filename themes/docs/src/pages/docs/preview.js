@@ -24,13 +24,33 @@ class MDXErrorBoundary extends React.Component {
     children: propTypes.node.isRequired,
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.content !== prevProps.content) {
+      this.setState({ error: null })
+    }
+  }
+
   render() {
     if (this.state.error) {
+      // Cheap dirty workaround till we find out why pinned ScrollTrigger does not properly unmount
+      if (
+        this.state.error.message.indexOf(
+          `Failed to execute 'removeChild' on 'Node'`
+        ) !== -1
+      ) {
+        window.location.reload()
+      }
+
       // You can render any custom fallback UI
       return (
         <PreviewFailedWrapper>
-          <h2>Something went wrong rendering the preview.</h2>
-          <pre>{this.state.error.message}</pre>
+          <h2>Something went wrong rendering the preview:</h2>
+          <p>
+            <code>{this.state.error.message}</code>
+          </p>
+          <button onClick={() => window.location.reload()}>
+            Reload preview
+          </button>
         </PreviewFailedWrapper>
       )
     }
@@ -60,7 +80,7 @@ const DocsPreviewPage = () => {
 
   return (
     <DataProvider>
-      <MDXErrorBoundary>
+      <MDXErrorBoundary content={content}>
         <div className={debugModeEnabled && 'debug'}>
           <MDX>{content}</MDX>
         </div>
