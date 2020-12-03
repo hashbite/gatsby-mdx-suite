@@ -127,7 +127,7 @@ const NavigationBar = ({
 
 NavigationBar.defaultProps = {
   transparent: false,
-  sticky: true,
+  sticky: false,
   background: 'root-background',
   textColor: 'root-text',
   transparentTextColor: 'white',
