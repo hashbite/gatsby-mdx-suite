@@ -162,7 +162,7 @@ export default function Video({
   }
 
   return (
-    <LazyComponent forceRendering={true}>
+    <LazyComponent forceRendering={forceRendering}>
       <VideoWrapper
         maxWidth={maxWidth}
         aspectRatio={aspectRatio}
