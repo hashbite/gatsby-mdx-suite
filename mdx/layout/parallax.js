@@ -1,27 +1,21 @@
-import React, { useState, useMemo, useCallback, useEffect } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 import propTypes from 'prop-types'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
+import {
+  killScrollTrigger,
+  useKillScrollTrigger,
+} from '@gatsby-mdx-suite/helpers/styling/gsap'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// This helper kills the time line and the attached ScrollTrigger instance
-function killScrollTrigger(instance) {
-  if (!instance) {
-    return
-  }
-  if (instance.scrollTrigger) {
-    instance.scrollTrigger.kill()
-  }
-  instance.kill()
-}
-
 const Parallax = ({ children, till, from, speed, markers }) => {
   const activeBreakpoints = useBreakpoint()
-  const [instance, setInstance] = useState(null)
+  const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
+  useKillScrollTrigger(scrollTriggerInstance)
 
   // Activate effect based on props
   const effectActive = useMemo(() => {
@@ -33,10 +27,10 @@ const Parallax = ({ children, till, from, speed, markers }) => {
       return true
     }
 
-    killScrollTrigger(instance)
+    killScrollTrigger(scrollTriggerInstance)
 
     return false
-  }, [till, from, activeBreakpoints, instance])
+  }, [till, from, activeBreakpoints, scrollTriggerInstance])
 
   // Calculate css transform values based on effect state
   const [transformStart, transformEnd] = useMemo(
@@ -64,24 +58,15 @@ const Parallax = ({ children, till, from, speed, markers }) => {
             start: `top center`,
             end: `bottom center`,
             invalidateOnRefresh: true,
-            onToggle: (...args) => console.log('toggle', args),
           },
         })
         .to(node, {
           transform: transformEnd,
         })
 
-      setInstance(gsapInstance)
+      setScrollTriggerInstance(gsapInstance)
     },
     [effectActive, transformEnd, markers]
-  )
-
-  // Kill ScrollTrigger on unmount
-  useEffect(
-    () => () => {
-      killScrollTrigger(instance)
-    },
-    [till, from, instance]
   )
 
   // Wrap children if they are no regular components to apply styling

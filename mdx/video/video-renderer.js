@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useCallback } from 'react'
+import React, { useRef, useState, useContext, useCallback } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
+import { useKillScrollTrigger } from '@gatsby-mdx-suite/helpers/styling/gsap'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -72,6 +73,8 @@ export default function Video({
     pageContext: { locale: activeLocale },
   } = useContext(MdxSuiteContext)
   const refVideo = useRef(null)
+  const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
+  useKillScrollTrigger(scrollTriggerInstance)
 
   const videos = data[contextKey]
 
@@ -107,14 +110,16 @@ export default function Video({
       if (!node) {
         return
       }
-      const scrollTriggerInstance = ScrollTrigger.create({
-        trigger: node,
-        start: 'top bottom',
-        end: 'bottom top',
-        onToggle: ({ isActive }) => handleVideoIntersection(isActive),
-      })
 
-      return scrollTriggerInstance?.kill
+      setScrollTriggerInstance(
+        ScrollTrigger.create({
+          trigger: node,
+          start: 'top bottom',
+          end: 'bottom top',
+          invalidateOnRefresh: true,
+          onToggle: ({ isActive }) => handleVideoIntersection(isActive),
+        })
+      )
     },
     [handleVideoIntersection]
   )
