@@ -21,7 +21,7 @@ import NavigationBar from '../navigation/bar'
 const NavBar = (props) => <NavigationBar {...props} />
 
 NavBar.defaultProps = {
-  sticky: true,
+  sticky: false,
   transparent: false,
 }
 
