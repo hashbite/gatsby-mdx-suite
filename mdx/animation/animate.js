@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useMemo, useEffect } from 'react'
+import React, { useCallback, useState, useMemo } from 'react'
 import propTypes from 'prop-types'
 import { cx } from 'emotion'
 
@@ -6,6 +6,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
+import { useKillScrollTrigger } from '@gatsby-mdx-suite/helpers/styling/gsap'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -35,31 +36,22 @@ const Animate = ({ children, markers, show }) => {
   const [isVisible, setIsVisible] = useState(false)
   const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
   const { animationClass } = useAnimation({ show, isVisible })
-
-  useEffect(
-    function cleanUpScrollTrigger() {
-      if (scrollTriggerInstance && isVisible) {
-        scrollTriggerInstance.kill()
-        setScrollTriggerInstance(null)
-      }
-    },
-    [scrollTriggerInstance, isVisible]
-  )
+  useKillScrollTrigger(scrollTriggerInstance)
 
   const initScrollTrigger = useCallback(
     (node) => {
       if (!node) {
         return
       }
-      const scrollTriggerInstance = ScrollTrigger.create({
-        trigger: node,
-        start: 'top 62.8%',
-        end: 'bottom top',
-        markers,
-        onToggle: ({ isActive }) => isActive && setIsVisible(true),
-      })
-      setScrollTriggerInstance(scrollTriggerInstance)
-      return scrollTriggerInstance?.kill
+      setScrollTriggerInstance(
+        ScrollTrigger.create({
+          trigger: node,
+          start: 'top 62.8%',
+          end: 'bottom top',
+          markers,
+          onToggle: ({ isActive }) => isActive && setIsVisible(true),
+        })
+      )
     },
     [setIsVisible, markers]
   )

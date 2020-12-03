@@ -11,6 +11,7 @@ import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 
 import NavigationDesktop from './desktop'
 import NavigationMobile from './mobile'
+import { useKillScrollTrigger } from '@gatsby-mdx-suite/helpers/styling/gsap'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -49,6 +50,16 @@ const NavigationBar = ({
 }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const theme = useTheme()
+  const [
+    scrollTriggerInstancePinning,
+    setScrollTriggerInstancePinning,
+  ] = useState(null)
+  const [scrollTriggerInstanceFade, setScrollTriggerInstanceFade] = useState(
+    null
+  )
+
+  useKillScrollTrigger(scrollTriggerInstancePinning)
+  useKillScrollTrigger(scrollTriggerInstanceFade)
 
   background = selectColor(theme.colors, background)
   textColor = selectColor(theme.colors, textColor)
@@ -61,23 +72,23 @@ const NavigationBar = ({
         return
       }
       const positionParent = node.closest('section,#___gatsby')
-      const instances = []
 
       if (sticky) {
-        instances.push(
+        setScrollTriggerInstancePinning(
           ScrollTrigger.create({
             trigger: node,
-            pin: true,
-            pinSpacing: false,
             endTrigger: 'body',
             end: 'bottom bottom-=1',
+            pin: true,
+            pinSpacing: false,
             pinType: 'fixed',
+            invalidateOnRefresh: true,
           })
         )
 
         // Switch back to non-transparent rendering as soon we leave the parent section
         if (transparent) {
-          instances.push(
+          setScrollTriggerInstanceFade(
             gsap
               .timeline({
                 scrollTrigger: {
@@ -95,10 +106,6 @@ const NavigationBar = ({
               })
           )
         }
-      }
-
-      return () => {
-        instances.forEach((t) => t.kill())
       }
     },
     [sticky, transparent, background, textColor]
