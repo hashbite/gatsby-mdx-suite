@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.6.0...gatsby-theme-mdx-suite-core@0.7.0) (2020-12-04)
+
+
+### Features
+
+* **animations:** make configurable, have a useful default, add sidebar section to live editor ([4029e46](https://github.com/axe312ger/gatsby-mdx-suite/commit/4029e4654686f80ad4ba43f4f2106a9c6b7044ea))
+* **menu:** animate transparent transition and add more configuration options ([2dc1584](https://github.com/axe312ger/gatsby-mdx-suite/commit/2dc1584df18f57345bfb38e21c586043b2ac8d50))
+
+
+
+
+
 # [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.5.5...gatsby-theme-mdx-suite-core@0.6.0) (2020-11-23)
 
 

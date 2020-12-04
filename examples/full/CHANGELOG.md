@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.6.3...gatsby-mdx-suite-example-full@0.7.0) (2020-12-04)
+
+
+### Features
+
+* **animate:** animate any other component and improve performance ([c6e2c90](https://github.com/axe312ger/gatsby-mdx-suite/commit/c6e2c90bb13d29ff5e8b444f7f6d5b36800ab994))
+
+
+
+
+
 ## [0.6.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.6.2...gatsby-mdx-suite-example-full@0.6.3) (2020-11-26)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-full

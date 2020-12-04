@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.5.0...gatsby-theme-mdx-suite-docs@0.6.0) (2020-12-04)
+
+
+### Bug Fixes
+
+* **live-editor:** exclude children from all property suggestions ([5870c2a](https://github.com/axe312ger/gatsby-mdx-suite/commit/5870c2a79c7185fbeaa742f238f434642d01d809))
+* **live-editor:** use helper to pregenerate required props in autocomplete ([34752ec](https://github.com/axe312ger/gatsby-mdx-suite/commit/34752ecccadf679fb69e827bd9614a133b1210f1))
+
+
+### Features
+
+* **animations:** make configurable, have a useful default, add sidebar section to live editor ([4029e46](https://github.com/axe312ger/gatsby-mdx-suite/commit/4029e4654686f80ad4ba43f4f2106a9c6b7044ea))
+* **live-editor:** improve preview error handling ([3a0040a](https://github.com/axe312ger/gatsby-mdx-suite/commit/3a0040a54a3c6f92d3504dfefcea8079f19f864b))
+
+
+
+
+
 # [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.4.2...gatsby-theme-mdx-suite-docs@0.5.0) (2020-11-23)
 
 

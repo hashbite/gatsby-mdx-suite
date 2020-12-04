@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.24.1...@gatsby-mdx-suite/mdx-layout@0.25.0) (2020-12-04)
+
+
+### Bug Fixes
+
+* **layout:** throw error when Hide has no condition ([48ea467](https://github.com/axe312ger/gatsby-mdx-suite/commit/48ea467d20e29f8e6a1e2b9afc22d88cb10c9a27))
+* **section:** allow section content like Parallax to overflow the section dimensions ([ad79c3c](https://github.com/axe312ger/gatsby-mdx-suite/commit/ad79c3cb91f64834cbcc283b10e2a3d641ed0488))
+
+
+### Features
+
+* **animate:** animate any other component and improve performance ([c6e2c90](https://github.com/axe312ger/gatsby-mdx-suite/commit/c6e2c90bb13d29ff5e8b444f7f6d5b36800ab994))
+* **layout:** introduce Offset component ([8486e58](https://github.com/axe312ger/gatsby-mdx-suite/commit/8486e5832bf00a6159100b1cfa5be5378671c9c6))
+* **layout:** introduce simple Parallax component ([432cd22](https://github.com/axe312ger/gatsby-mdx-suite/commit/432cd22f17907607f251cf556654f285a2479f72))
+
+
+### Performance Improvements
+
+* remove intersection observer in favor of GSAP.ScrollTrigger ([eda78e5](https://github.com/axe312ger/gatsby-mdx-suite/commit/eda78e503285714a1d8c0a7a735d2e452feb54b5))
+
+
+
+
+
 ## [0.24.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.24.0...@gatsby-mdx-suite/mdx-layout@0.24.1) (2020-11-26)
 
 

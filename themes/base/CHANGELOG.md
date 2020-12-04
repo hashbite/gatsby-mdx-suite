@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.8.1...gatsby-theme-mdx-suite-base@0.9.0) (2020-12-04)
+
+
+### Bug Fixes
+
+* **navbar:** temporarily disable sticky by default as it causes issues with routing ([#230](https://github.com/axe312ger/gatsby-mdx-suite/issues/230)) ([9b4d3fc](https://github.com/axe312ger/gatsby-mdx-suite/commit/9b4d3fcea25e5efe758b436616b71676971825ce))
+* **privacy-manager:** use final form switch field instead of plain ([79ab2cd](https://github.com/axe312ger/gatsby-mdx-suite/commit/79ab2cd136fa41263b0d249d96db3f3e813abc32))
+
+
+### Features
+
+* **animations:** make configurable, have a useful default, add sidebar section to live editor ([4029e46](https://github.com/axe312ger/gatsby-mdx-suite/commit/4029e4654686f80ad4ba43f4f2106a9c6b7044ea))
+* **layout:** introduce Offset component ([8486e58](https://github.com/axe312ger/gatsby-mdx-suite/commit/8486e5832bf00a6159100b1cfa5be5378671c9c6))
+* **layout:** introduce simple Parallax component ([432cd22](https://github.com/axe312ger/gatsby-mdx-suite/commit/432cd22f17907607f251cf556654f285a2479f72))
+* **menu:** animate transparent transition and add more configuration options ([2dc1584](https://github.com/axe312ger/gatsby-mdx-suite/commit/2dc1584df18f57345bfb38e21c586043b2ac8d50))
+
+
+### Performance Improvements
+
+* **lazy:** ensure to kill our listeners as soon the lazy section is rendered ([d0a774a](https://github.com/axe312ger/gatsby-mdx-suite/commit/d0a774a8951f490fc950e4fe500b2a528302f2f6))
+* remove intersection observer in favor of GSAP.ScrollTrigger ([eda78e5](https://github.com/axe312ger/gatsby-mdx-suite/commit/eda78e503285714a1d8c0a7a735d2e452feb54b5))
+* **header:** replace intersection observer with GSAP scrolltrigger ([823a234](https://github.com/axe312ger/gatsby-mdx-suite/commit/823a234aae59a49b74384f565310508ccf611ce7))
+
+
+
+
+
 ## [0.8.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.8.0...gatsby-theme-mdx-suite-base@0.8.1) (2020-11-26)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base

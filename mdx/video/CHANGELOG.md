@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.7.0...@gatsby-mdx-suite/mdx-video@0.7.1) (2020-12-04)
+
+
+### Bug Fixes
+
+* **video:** ensure rendering is only forced when desired ([ca2330a](https://github.com/axe312ger/gatsby-mdx-suite/commit/ca2330a28ea7865a2c6492f86c0906da484b31fc))
+
+
+### Performance Improvements
+
+* remove intersection observer in favor of GSAP.ScrollTrigger ([eda78e5](https://github.com/axe312ger/gatsby-mdx-suite/commit/eda78e503285714a1d8c0a7a735d2e452feb54b5))
+* **video:** replace intersection observer with GSAP scrollTrigger ([1befaef](https://github.com/axe312ger/gatsby-mdx-suite/commit/1befaefde42620b14ac94f5f5af5eba388fe6cb9))
+
+
+
+
+
 # [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.6.3...@gatsby-mdx-suite/mdx-video@0.7.0) (2020-11-10)
 
 

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.13.0...@gatsby-mdx-suite/helpers@0.14.0) (2020-12-04)
+
+
+### Bug Fixes
+
+* **coloring:** adjust color selection to support color palettes ([5796064](https://github.com/axe312ger/gatsby-mdx-suite/commit/579606412f2804d77566277211d486fb8a9939de))
+
+
+### Features
+
+* **animate:** animate any other component and improve performance ([c6e2c90](https://github.com/axe312ger/gatsby-mdx-suite/commit/c6e2c90bb13d29ff5e8b444f7f6d5b36800ab994))
+* **animations:** make configurable, have a useful default, add sidebar section to live editor ([4029e46](https://github.com/axe312ger/gatsby-mdx-suite/commit/4029e4654686f80ad4ba43f4f2106a9c6b7044ea))
+
+
+
+
+
 # [0.13.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.12.0...@gatsby-mdx-suite/helpers@0.13.0) (2020-11-23)
 
 

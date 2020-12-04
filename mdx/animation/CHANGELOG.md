@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.1.15...@gatsby-mdx-suite/mdx-animation@0.2.0) (2020-12-04)
+
+
+### Features
+
+* **animate:** animate any other component and improve performance ([c6e2c90](https://github.com/axe312ger/gatsby-mdx-suite/commit/c6e2c90bb13d29ff5e8b444f7f6d5b36800ab994))
+
+
+### Performance Improvements
+
+* remove intersection observer in favor of GSAP.ScrollTrigger ([eda78e5](https://github.com/axe312ger/gatsby-mdx-suite/commit/eda78e503285714a1d8c0a7a735d2e452feb54b5))
+
+
+
+
+
 ## [0.1.15](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.1.14...@gatsby-mdx-suite/mdx-animation@0.1.15) (2020-11-23)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation
