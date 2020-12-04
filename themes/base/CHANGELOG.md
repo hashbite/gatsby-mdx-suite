@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.9.0...gatsby-theme-mdx-suite-base@0.9.1) (2020-12-04)
+
+
+### Bug Fixes
+
+* **components:** ensure NavBar is included by default ([50089e4](https://github.com/axe312ger/gatsby-mdx-suite/commit/50089e4464db1f92106ba871ddcf82816802c879))
+
+
+
+
+
 # [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.8.1...gatsby-theme-mdx-suite-base@0.9.0) (2020-12-04)
 
 
