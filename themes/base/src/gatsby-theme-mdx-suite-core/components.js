@@ -31,6 +31,9 @@ import Icon from '@gatsby-mdx-suite/mdx-copy/icon'
 // Animation
 import Animate from '@gatsby-mdx-suite/mdx-animation/animate'
 
+// Navigation
+import NavBar from '../components/mdx/navbar'
+
 const components = {
   Animate,
   Center,
@@ -53,6 +56,7 @@ const components = {
   Hide,
   Offset,
   Parallax,
+  NavBar,
   // Overwrite standard html elements with our custom components
   ul: (props) => <List type="unordered" {...props} />,
   ol: (props) => <List type="ordered" {...props} />,
