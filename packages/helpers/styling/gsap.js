@@ -8,15 +8,16 @@ export function killScrollTrigger(instance) {
   if (instance.scrollTrigger) {
     instance.scrollTrigger.kill(true)
   }
-  instance.kill()
-  console.log('he is dead')
+  if (typeof instance.clear === 'function') {
+    instance.clear()
+  }
+  instance.kill(true)
 }
 
 // Hook to kill ScrollTrigger instances automatically
 export function useKillScrollTrigger(scrollTriggerInstance) {
   useEffect(() => () => {
     if (Array.isArray(scrollTriggerInstance)) {
-      console.log('array kill')
       return scrollTriggerInstance.map(killScrollTrigger)
     }
     killScrollTrigger(scrollTriggerInstance)
