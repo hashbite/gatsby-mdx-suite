@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.28](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.4.27...@gatsby-mdx-suite/mdx-media-gallery@0.4.28) (2020-12-07)
+
+
+### Bug Fixes
+
+* update code of media-gallery to work again with images ([2803708](https://github.com/axe312ger/gatsby-mdx-suite/commit/2803708fe2c7887ff2fc3f6d94b1da28e77d7740))
+
+
+
+
+
 ## [0.4.27](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.4.26...@gatsby-mdx-suite/mdx-media-gallery@0.4.27) (2020-12-04)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
