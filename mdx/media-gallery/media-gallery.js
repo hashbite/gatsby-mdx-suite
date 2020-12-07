@@ -22,13 +22,6 @@ const StyledContainer = tw.div`absolute bg-black z-10 inset-0`
 
 const ViewWrapper = styled.div`
   ${tw`relative h-screen py-8 flex items-center justify-center`}
-
-  /* @todo replace this by settings property on gatsby-image */
-  & .gatsby-image-wrapper {
-    & img {
-      object-fit: contain !important;
-    }
-  }
 `
 
 const View = ({ data, index, currentIndex }) => {
@@ -101,10 +94,12 @@ const mediaParsers = {
   Image: ({ element, props }) => {
     const { id } = props
 
+    const fullScreen = React.cloneElement(element, { fit: 'contain' })
+
     return {
       id,
       thumbnail: element,
-      content: element,
+      content: fullScreen,
     }
   },
 }
@@ -156,13 +151,14 @@ export default function MediaGallery({ children }) {
   useEffect(() => {
     setViews(
       React.Children.map(children, (element) => {
-        if (typeof element !== 'object') {
+        if (typeof element !== 'object' || !element.props.mdxType) {
           return null
         }
 
-        const { props, type } = element
-        const parserId = type.displayName
+        const { props } = element
+        const parserId = props.mdxType
         const parser = mediaParsers[parserId]
+
         if (!parser) {
           console.error(
             new Error(`Unable to render media gallery item of type ${parserId}`)
@@ -195,8 +191,7 @@ export default function MediaGallery({ children }) {
             styles={{
               positioner: (base, state) => ({
                 ...base,
-                zIndex: 1000,
-                background: 'red',
+                zIndex: 2000,
               }),
             }}
           >
