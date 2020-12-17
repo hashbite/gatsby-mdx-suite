@@ -55,10 +55,10 @@ const SwitchLabel = styled.label`
   ${tw`cursor-pointer`}
 `
 
-const SwitchField = ({ children, ...props }) => (
+const SwitchField = ({ children, checked, ...props }) => (
   <>
     <SwitchInputWrapper>
-      <SwitchInput type="checkbox" {...props} />
+      <SwitchInput type="checkbox" {...props} defaultChecked={checked} />
       <SwitchInputFakeLabel htmlFor={props.id} />
     </SwitchInputWrapper>
     {children && <SwitchLabel htmlFor={props.id}>{children}</SwitchLabel>}
