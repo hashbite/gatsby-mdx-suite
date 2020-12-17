@@ -5,19 +5,25 @@ import LayoutMain from './layout/main'
 import LiveEditor from './live-editor/live-editor'
 import DataProvider from './data-provider'
 
-const defaultMDX = `<Header>
+const defaultMDX = `<Section backgroundImageId="randomPictureId" minHeight="42vh">
 
-# Playground
+<NavBar transparent />
 
-</Header>
+# Headline
+
+</Section>
 <Section>
 
-## Welcome
+## Welcome to this page
+
+Some paragraph without special formatting.
 
 * This
 * Is
 * A
 * List
+
+### Example Image:
 
 <Image id="randomImageId" />
 
