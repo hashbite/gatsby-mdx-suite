@@ -81,7 +81,7 @@ const DocsPreviewPage = () => {
   return (
     <DataProvider>
       <MDXErrorBoundary content={content}>
-        <div className={debugModeEnabled && 'debug'}>
+        <div className={debugModeEnabled ? 'debug' : ''}>
           <MDX>{content}</MDX>
         </div>
       </MDXErrorBoundary>
