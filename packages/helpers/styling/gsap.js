@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 
 // This helper kills the time line and the attached ScrollTrigger instance
 export function killScrollTrigger(instance) {
@@ -6,7 +6,10 @@ export function killScrollTrigger(instance) {
     return
   }
   if (instance.scrollTrigger) {
-    instance.scrollTrigger.kill(true)
+    killScrollTrigger(instance.scrollTrigger)
+  }
+  if (typeof instance.disable === 'function') {
+    instance.disable(true)
   }
   if (typeof instance.clear === 'function') {
     instance.clear()
@@ -16,7 +19,7 @@ export function killScrollTrigger(instance) {
 
 // Hook to kill ScrollTrigger instances automatically
 export function useKillScrollTrigger(scrollTriggerInstance) {
-  useEffect(() => () => {
+  useLayoutEffect(() => () => {
     if (Array.isArray(scrollTriggerInstance)) {
       return scrollTriggerInstance.map(killScrollTrigger)
     }
