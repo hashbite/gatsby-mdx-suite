@@ -28,12 +28,6 @@ const SelectLabel = styled.label`
 const Select = ({ defaultValue, onChange, className, children, ...props }) => {
   const [value, setValue] = useState(defaultValue)
 
-  const options = React.Children.map(children, (child) =>
-    React.cloneElement(child, {
-      selected: child.props.value === defaultValue,
-    })
-  )
-
   // Attach .placeholder class if default value is selected
   const wrappedOnChange = useCallback(
     (e) => {
@@ -47,10 +41,11 @@ const Select = ({ defaultValue, onChange, className, children, ...props }) => {
     <SelectWrapper className={className}>
       <SelectElement
         {...props}
+        defaultValue={defaultValue}
         className={!value && `placeholder`}
         onChange={wrappedOnChange}
       >
-        {options}
+        {children}
       </SelectElement>
       <SelectLabel htmlFor={props.id}>
         <svg
