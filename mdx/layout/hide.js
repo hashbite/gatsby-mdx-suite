@@ -26,12 +26,14 @@ import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
  *
  * </Hide>
  */
-const Hide = ({ children, till, from }) => {
+const Hide = ({ children, till, from, ...props }) => {
   const activeBreakpoints = useBreakpoint()
 
   if (!till && !from) {
     throw new Error('Can not hide element without "from" or "till"')
   }
+
+  console.log({ activeBreakpoints, till, from })
 
   const styledChild = useMemo(() => {
     if (
@@ -39,13 +41,16 @@ const Hide = ({ children, till, from }) => {
       (from && activeBreakpoints[from])
     ) {
       return React.cloneElement(children, {
+        ...props,
         style: { display: 'none' },
       })
     }
-    return children
+    return React.cloneElement(children, {
+      ...props,
+    })
   }, [children, from, till, activeBreakpoints])
 
-  return <>{styledChild}</>
+  return styledChild
 }
 
 Hide.displayName = 'Hide'

@@ -11,7 +11,7 @@ import { css } from '@emotion/core'
  * * Offset something as long we are within a given screen size (till)
  * * Offset something as soon we reach a given screen size (from)
  */
-const Offset = ({ children, till, from, x, y }) => {
+const Offset = ({ children, till, from, x, y, ...props }) => {
   const activeBreakpoints = useBreakpoint()
 
   const offset = css`
@@ -25,11 +25,12 @@ const Offset = ({ children, till, from, x, y }) => {
       (from && activeBreakpoints[from])
     ) {
       return React.cloneElement(children, {
+        ...props,
         css: offset,
       })
     }
     return children
-  }, [children, from, till, activeBreakpoints, offset])
+  }, [children, from, till, activeBreakpoints, offset, props])
 
   return <>{styledChild}</>
 }
