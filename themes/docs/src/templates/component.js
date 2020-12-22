@@ -52,8 +52,10 @@ function DocsComponentTemplate({ data, pageContext }) {
   } = data.componentMetadata
 
   const tabs = [
-    displayName,
-    ...(examples ? examples.map((v, i) => `Example ${i + 1}`) : []),
+    `<${displayName} />`,
+    ...(examples
+      ? examples.map((example, i) => example.caption || `Example ${i + 1}`)
+      : []),
   ]
 
   const hasChildren = componentProps.some(({ name }) => name === 'children')
@@ -136,6 +138,7 @@ export const pageQuery = graphql`
       }
       examples {
         raw
+        caption
       }
     }
   }
