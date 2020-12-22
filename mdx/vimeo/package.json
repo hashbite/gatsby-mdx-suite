@@ -28,7 +28,7 @@
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
-    "@u-wave/react-vimeo": "^0.9.1"
+    "@u-wave/react-vimeo": "^0.9.2"
   },
   "publishConfig": {
     "access": "public"
