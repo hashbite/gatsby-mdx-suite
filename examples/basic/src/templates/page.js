@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
-import Seo from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
+import SEO from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
 
 function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
@@ -29,7 +29,7 @@ function PageTemplate({ data, pageContext }) {
         data: [content.childMdx],
       })}
     >
-      <Seo
+      <SEO
         title={title}
         description={metaDescription}
         language={pageContext.locale}
