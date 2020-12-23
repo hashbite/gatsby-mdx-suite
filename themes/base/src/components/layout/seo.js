@@ -1,9 +1,17 @@
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useLocation } from '@reach/router'
-import { useHead } from 'hoofd'
+import { useHead, useTitleTemplate } from 'hoofd'
 
-function SEO({ description, lang, meta, title, ogImage, twitterImage, url }) {
+function SEO({
+  description,
+  language,
+  meta,
+  title,
+  ogImage,
+  twitterImage,
+  url,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,11 +29,17 @@ function SEO({ description, lang, meta, title, ogImage, twitterImage, url }) {
   const metaDescription = description || site.siteMetadata.description
   const metaUrl = url || site.siteMetadata.siteUrl
   const location = useLocation()
+  const siteTitle = site.siteMetadata.title
+
+  if (!title) {
+    title = siteTitle
+  }
+
+  useTitleTemplate(title !== siteTitle && `%s | ${siteTitle}`)
 
   useHead({
     title,
-    language: lang,
-    titleTemplate: `%s | ${title}`,
+    language,
     metas: [
       {
         name: `description`,
@@ -92,7 +106,7 @@ function SEO({ description, lang, meta, title, ogImage, twitterImage, url }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  language: `en`,
   meta: [],
   description: ``,
   ogImage: ``,
@@ -101,7 +115,7 @@ SEO.defaultProps = {
 
 SEO.propTypes = {
   description: PropTypes.string,
-  lang: PropTypes.string,
+  language: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
   ogImage: PropTypes.string,

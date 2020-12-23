@@ -30,7 +30,11 @@ function PageTemplate({ data, pageContext }) {
         data: [content.childMdx],
       })}
     >
-      <Seo title={title} description={metaDescription} />
+      <Seo
+        title={title}
+        description={metaDescription}
+        language={pageContext.locale}
+      />
       <MDXRenderer>{content.childMdx.body}</MDXRenderer>
     </MdxSuiteContext.Provider>
   )

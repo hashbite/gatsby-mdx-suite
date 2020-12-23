@@ -38,6 +38,7 @@ function BlogPostTemplate({ data, pageContext }) {
         description={metaDescription}
         ogImage={image && `${image.file.url}?w=1200&h=630&fit=fill`}
         twitterImage={image && `${image.file.url}?w=1200&h=628&fit=fill`}
+        language={locale}
       />
       <NavBar />
       <Section backgroundImageId={image.assetId} minHeight="61.8vh">
