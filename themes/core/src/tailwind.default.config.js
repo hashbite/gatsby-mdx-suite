@@ -152,13 +152,6 @@ module.exports = {
     lg: '0.5rem',
     full: '9999px',
   },
-  borderWidth: {
-    default: '1px',
-    0: '0',
-    2: '2px',
-    4: '4px',
-    8: '8px',
-  },
   boxShadow: {
     xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
     sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
@@ -172,20 +165,6 @@ module.exports = {
     inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
     outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
     none: 'none',
-  },
-  flex: {
-    1: '1 1 0%',
-    auto: '1 1 auto',
-    initial: '0 1 auto',
-    none: 'none',
-  },
-  flexGrow: {
-    0: '0',
-    default: '1',
-  },
-  flexShrink: {
-    0: '0',
-    default: '1',
   },
   fontFamily: {
     sans: [
@@ -235,69 +214,6 @@ module.exports = {
     bold: '700',
     extrabold: '800',
     black: '900',
-  },
-  height: (theme) => ({
-    auto: 'auto',
-    ...theme('spacing'),
-    full: '100%',
-    screen: '100vh',
-  }),
-  letterSpacing: {
-    tighter: '-0.05em',
-    tight: '-0.025em',
-    normal: '0',
-    wide: '0.025em',
-    wider: '0.05em',
-    widest: '0.1em',
-  },
-  lineHeight: {
-    none: '1',
-    tight: '1.25',
-    snug: '1.375',
-    normal: '1.5',
-    relaxed: '1.625',
-    loose: '2',
-    3: '.75rem',
-    4: '1rem',
-    5: '1.25rem',
-    6: '1.5rem',
-    7: '1.75rem',
-    8: '2rem',
-    9: '2.25rem',
-    10: '2.5rem',
-  },
-  listStyleType: {
-    none: 'none',
-    disc: 'disc',
-    decimal: 'decimal',
-  },
-  maxHeight: {
-    full: '100%',
-    screen: '100vh',
-  },
-  maxWidth: (theme, { breakpoints }) => ({
-    none: 'none',
-    xs: '20rem',
-    sm: '24rem',
-    md: '28rem',
-    lg: '32rem',
-    xl: '36rem',
-    '2xl': '42rem',
-    '3xl': '48rem',
-    '4xl': '56rem',
-    '5xl': '64rem',
-    '6xl': '72rem',
-    full: '100%',
-    ...breakpoints(theme('screens')),
-  }),
-  minHeight: {
-    0: '0',
-    full: '100%',
-    screen: '100vh',
-  },
-  minWidth: {
-    0: '0',
-    full: '100%',
   },
   width: (theme) => ({
     auto: 'auto',
@@ -363,47 +279,5 @@ module.exports = {
     4: 'repeat(4, minmax(0, 1fr))',
     5: 'repeat(5, minmax(0, 1fr))',
     6: 'repeat(6, minmax(0, 1fr))',
-  },
-  translate: (theme, { negative }) => ({
-    ...theme('spacing'),
-    ...negative(theme('spacing')),
-    '-full': '-100%',
-    '-1/2': '-50%',
-    '1/2': '50%',
-    full: '100%',
-  }),
-  transitionTimingFunction: {
-    linear: 'linear',
-    in: 'cubic-bezier(0.4, 0, 1, 1)',
-    out: 'cubic-bezier(0, 0, 0.2, 1)',
-    'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
-  },
-  animation: {
-    none: 'none',
-    spin: 'spin 1s linear infinite',
-    ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
-    pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-    bounce: 'bounce 1s infinite',
-  },
-  keyframes: {
-    spin: {
-      to: { transform: 'rotate(360deg)' },
-    },
-    ping: {
-      '75%, 100%': { transform: 'scale(2)', opacity: '0' },
-    },
-    pulse: {
-      '50%': { opacity: '.5' },
-    },
-    bounce: {
-      '0%, 100%': {
-        transform: 'translateY(-25%)',
-        animationTimingFunction: 'cubic-bezier(0.8,0,1,1)',
-      },
-      '50%': {
-        transform: 'none',
-        animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
-      },
-    },
   },
 }
