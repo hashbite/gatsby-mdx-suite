@@ -13,7 +13,7 @@ function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
   const MdxSuiteData = useContext(MdxSuiteContext)
 
-  const { title, content, metaDescription } = data.contentfulPage
+  const { title, content, metaDescription, metaImage } = data.contentfulPage
 
   // Set current i18next translation language based on page locale
   useEffect(() => {
@@ -33,6 +33,10 @@ function PageTemplate({ data, pageContext }) {
         title={title}
         description={metaDescription}
         language={pageContext.locale}
+        ogImage={metaImage && `${metaImage.file.url}?w=1200&h=630&fit=fill`}
+        twitterImage={
+          metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
+        }
       />
       <MDXRenderer>{content.childMdx.body}</MDXRenderer>
     </MdxSuiteContext.Provider>
@@ -54,6 +58,9 @@ export const pageQuery = graphql`
       slug
       title
       metaDescription
+      metaImage {
+        ...MdxSuiteMediaCollectionScreen
+      }
       content {
         childMdx {
           body

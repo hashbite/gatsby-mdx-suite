@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useLocation } from '@reach/router'
-import { useHead, useTitleTemplate } from 'hoofd'
+import { useTitle, useLang, useTitleTemplate, useMeta } from 'hoofd'
 
 function SEO({
   description,
@@ -36,11 +36,11 @@ function SEO({
   }
 
   useTitleTemplate(title !== siteTitle && `%s | ${siteTitle}`)
+  useTitle(title)
+  useLang(language)
 
-  useHead({
-    title,
-    language,
-    metas: [
+  useMeta(
+    [
       {
         name: `description`,
         content: metaDescription,
@@ -99,8 +99,8 @@ function SEO({
       },
     ]
       .filter(Boolean)
-      .concat(meta),
-  })
+      .concat(meta)
+  )
 
   return null
 }

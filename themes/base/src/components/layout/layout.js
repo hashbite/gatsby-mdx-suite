@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import { useLocation } from '@reach/router'
 
 import Footer from './footer'
-import Seo from './seo'
 
 const Wrapper = styled.div``
 
@@ -14,7 +13,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Seo />
       <Wrapper>
         <main>{children}</main>
         {!isDocs && <Footer />}
