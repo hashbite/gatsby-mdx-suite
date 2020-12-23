@@ -44,7 +44,7 @@ const BackIcon = tw(Icon)`cursor-pointer w-6 align-middle pb-1`
 const Layout = ({ children, title }) => {
   return (
     <DocsWrapper>
-      <SEO title={title} />
+      <SEO title={title} titleTemplate={`%s | Docs`} />
       <LayoutHeader>
         <DocsTitle>
           <MenuLink to="/">

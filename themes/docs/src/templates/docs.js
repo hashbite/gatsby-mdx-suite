@@ -19,7 +19,7 @@ const ContentWrapper = tw.div`mx-auto max-w-6xl px-4 py-8`
 
 const DocsPage = ({ children, pageContext }) => (
   <Layout title={pageContext.frontmatter.title}>
-    <SEO title={pageContext.frontmatter.title} />
+    <SEO title={pageContext.frontmatter.title} titleTemplate={`%s | Docs`} />
     <LayoutMain>
       <ContentWrapper>
         <MDXProvider

@@ -8,6 +8,7 @@ function SEO({
   language,
   meta,
   title,
+  titleTemplate,
   ogImage,
   twitterImage,
   url,
@@ -35,7 +36,9 @@ function SEO({
     title = siteTitle
   }
 
-  useTitleTemplate(title !== siteTitle && `%s | ${siteTitle}`)
+  useTitleTemplate(
+    titleTemplate || (title !== siteTitle && `%s | ${siteTitle}`)
+  )
   useTitle(title)
   useLang(language)
 
@@ -121,6 +124,7 @@ SEO.propTypes = {
   ogImage: PropTypes.string,
   twitterImage: PropTypes.string,
   url: PropTypes.string,
+  titleTemplate: PropTypes.string,
 }
 
 export default SEO
