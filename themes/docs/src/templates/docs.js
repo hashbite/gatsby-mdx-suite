@@ -13,11 +13,13 @@ import TextBlock from '@gatsby-mdx-suite/mdx-copy/text-block'
 
 import Layout from '../components/layout/layout'
 import LayoutMain from '../components/layout/main'
+import SEO from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
 
 const ContentWrapper = tw.div`mx-auto max-w-6xl px-4 py-8`
 
 const DocsPage = ({ children, pageContext }) => (
   <Layout title={pageContext.frontmatter.title}>
+    <SEO title={pageContext.frontmatter.title} titleTemplate={`%s | Docs`} />
     <LayoutMain>
       <ContentWrapper>
         <MDXProvider

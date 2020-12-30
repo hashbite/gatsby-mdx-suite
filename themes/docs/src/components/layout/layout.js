@@ -6,6 +6,7 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
+import SEO from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
 
 const DocsWrapper = styled.div`
   ${tw`grid h-screen w-screen`}
@@ -43,6 +44,7 @@ const BackIcon = tw(Icon)`cursor-pointer w-6 align-middle pb-1`
 const Layout = ({ children, title }) => {
   return (
     <DocsWrapper>
+      <SEO title={title} titleTemplate={`%s | Docs`} />
       <LayoutHeader>
         <DocsTitle>
           <MenuLink to="/">

@@ -15,6 +15,7 @@ import Cta from '@gatsby-mdx-suite/mdx-link/cta'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 import BlogPostTeaser from '../components/blog-post-teaser'
+import SEO from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
 
 const Pagination = styled.div`
   ${tw`flex justify-between`}
@@ -28,7 +29,7 @@ const BlogPostList = ({ data, pageContext }) => {
     <BlogPostTeaser key={i} blogPost={blogPost} />
   ))
 
-  const content = data.contentfulPage.content
+  const { title, content, metaDescription, metaImage } = data.contentfulPage
 
   return (
     <MdxSuiteContext.Provider
@@ -37,6 +38,15 @@ const BlogPostList = ({ data, pageContext }) => {
         data: [content && content.childMdx],
       })}
     >
+      <SEO
+        title={title}
+        description={metaDescription}
+        language={pageContext.locale}
+        ogImage={metaImage && `${metaImage.file.url}?w=1200&h=630&fit=fill`}
+        twitterImage={
+          metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
+        }
+      />
       <MDXRenderer>{content && content.childMdx.body}</MDXRenderer>
       <Section>
         <Columns maxColumns={2}>{blogPosts}</Columns>
@@ -73,6 +83,11 @@ BlogPostList.propTypes = {
 export const blogPostListQuery = graphql`
   query blogPostListQuery($skip: Int!, $limit: Int!, $locale: String!) {
     contentfulPage(slug: { eq: "blog" }) {
+      title
+      metaDescription
+      metaImage {
+        ...MdxSuiteMediaCollectionScreen
+      }
       content {
         childMdx {
           body

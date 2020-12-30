@@ -8,13 +8,13 @@ import { useTranslation } from 'react-i18next'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
-import Seo from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
+import SEO from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
 
 function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
   const MdxSuiteData = useContext(MdxSuiteContext)
 
-  const { title, content, metaDescription } = data.contentfulPage
+  const { title, content, metaDescription, metaImage } = data.contentfulPage
 
   // Set current i18next translation language based on page locale
   useEffect(() => {
@@ -30,7 +30,15 @@ function PageTemplate({ data, pageContext }) {
         data: [content.childMdx],
       })}
     >
-      <Seo title={title} description={metaDescription} />
+      <SEO
+        title={title}
+        description={metaDescription}
+        ogImage={metaImage && `${metaImage.file.url}?w=1200&h=630&fit=fill`}
+        twitterImage={
+          metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
+        }
+        language={pageContext.locale}
+      />
       <MDXRenderer>{content.childMdx.body}</MDXRenderer>
     </MdxSuiteContext.Provider>
   )
@@ -51,6 +59,9 @@ export const pageQuery = graphql`
       slug
       title
       metaDescription
+      metaImage {
+        ...MdxSuiteMediaCollectionScreen
+      }
       content {
         childMdx {
           body

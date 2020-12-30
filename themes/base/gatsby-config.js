@@ -13,7 +13,7 @@ module.exports = ({ renderDocs = true } = {}) => ({
      * SEO
      */
     `gatsby-plugin-remove-trailing-slashes`,
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-hoofd`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

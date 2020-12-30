@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
-import Seo from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
+import SEO from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
 
 import NavBar from 'gatsby-theme-mdx-suite-base/src/components/mdx/navbar'
 import Section from '@gatsby-mdx-suite/mdx-layout/section'
@@ -33,11 +33,12 @@ function BlogPostTemplate({ data, pageContext }) {
         data: [content.childMdx, { screen: [image] }],
       })}
     >
-      <Seo
+      <SEO
         title={title}
         description={metaDescription}
         ogImage={image && `${image.file.url}?w=1200&h=630&fit=fill`}
         twitterImage={image && `${image.file.url}?w=1200&h=628&fit=fill`}
+        language={locale}
       />
       <NavBar />
       <Section backgroundImageId={image.assetId} minHeight="61.8vh">
@@ -62,7 +63,7 @@ export const pageQuery = graphql`
       pageId: contentful_id
       slug
       title
-      # metaDescription
+      metaDescription
       image {
         ...MdxSuiteMediaCollectionScreen
       }
