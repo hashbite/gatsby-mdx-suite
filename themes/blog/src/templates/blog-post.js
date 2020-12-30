@@ -63,7 +63,7 @@ export const pageQuery = graphql`
       pageId: contentful_id
       slug
       title
-      # metaDescription
+      metaDescription
       image {
         ...MdxSuiteMediaCollectionScreen
       }

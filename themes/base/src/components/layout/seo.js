@@ -1,7 +1,8 @@
+import { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useLocation } from '@reach/router'
-import { useTitle, useLang, useTitleTemplate, useMeta } from 'hoofd'
+import { useHead, useTitleTemplate } from 'hoofd'
 
 function SEO({
   description,
@@ -36,74 +37,88 @@ function SEO({
     title = siteTitle
   }
 
+  const metas = useMemo(
+    () =>
+      [
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          property: 'og:url',
+          content: `${metaUrl}/${location.pathname}`,
+        },
+        ogImage && {
+          property: 'og:image',
+          content: ogImage,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        twitterImage && {
+          property: 'twitter:image:src',
+          content: twitterImage,
+        },
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1',
+        },
+        {
+          name: 'apple-mobile-web-app-capable',
+          content: 'yes',
+        },
+        {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: 'black-translucent',
+        },
+        {
+          name: 'format-detection',
+          content: 'telephone=no',
+        },
+      ]
+        .filter(Boolean)
+        .concat(meta),
+    [
+      location.pathname,
+      meta,
+      metaDescription,
+      metaUrl,
+      ogImage,
+      title,
+      twitterImage,
+    ]
+  )
+
   useTitleTemplate(
     titleTemplate || (title !== siteTitle && `%s | ${siteTitle}`)
   )
-  useTitle(title)
-  useLang(language)
 
-  useMeta(
-    [
-      {
-        name: `description`,
-        content: metaDescription,
-      },
-      {
-        property: `og:title`,
-        content: title,
-      },
-      {
-        property: `og:description`,
-        content: metaDescription,
-      },
-      {
-        property: `og:type`,
-        content: `website`,
-      },
-      {
-        property: 'og:url',
-        content: `${metaUrl}/${location.pathname}`,
-      },
-      ogImage && {
-        property: 'og:image',
-        content: ogImage,
-      },
-      {
-        name: `twitter:card`,
-        content: `summary`,
-      },
-      {
-        name: `twitter:title`,
-        content: title,
-      },
-      {
-        name: `twitter:description`,
-        content: metaDescription,
-      },
-      twitterImage && {
-        property: 'twitter:image:src',
-        content: twitterImage,
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-      {
-        name: 'apple-mobile-web-app-capable',
-        content: 'yes',
-      },
-      {
-        name: 'apple-mobile-web-app-status-bar-style',
-        content: 'black-translucent',
-      },
-      {
-        name: 'format-detection',
-        content: 'telephone=no',
-      },
-    ]
-      .filter(Boolean)
-      .concat(meta)
-  )
+  useHead({
+    title,
+    language,
+    metas,
+  })
 
   return null
 }

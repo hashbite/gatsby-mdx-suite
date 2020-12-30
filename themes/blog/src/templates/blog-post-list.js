@@ -83,13 +83,13 @@ BlogPostList.propTypes = {
 export const blogPostListQuery = graphql`
   query blogPostListQuery($skip: Int!, $limit: Int!, $locale: String!) {
     contentfulPage(slug: { eq: "blog" }) {
+      title
+      metaDescription
+      metaImage {
+        ...MdxSuiteMediaCollectionScreen
+      }
       content {
         childMdx {
-          title
-          metaDescription
-          metaImage {
-            ...MdxSuiteMediaCollectionScreen
-          }
           body
           ...MdxSuiteMediaCollections
         }
