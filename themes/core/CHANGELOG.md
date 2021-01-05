@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.7.1...gatsby-theme-mdx-suite-core@0.7.2) (2021-01-05)
+
+
+### Performance Improvements
+
+* **theming:** reduce default theme config payload again ([#236](https://github.com/axe312ger/gatsby-mdx-suite/issues/236)) ([c17eb71](https://github.com/axe312ger/gatsby-mdx-suite/commit/c17eb717894b445b875376f96e66ed73a91158cb))
+
+
+
+
+
 ## [0.7.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.7.0...gatsby-theme-mdx-suite-core@0.7.1) (2020-12-04)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-core

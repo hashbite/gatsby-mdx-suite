@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-blog@0.3.7...gatsby-theme-mdx-suite-blog@0.3.8) (2021-01-05)
+
+
+### Performance Improvements
+
+* **metadata:** replace react-helmet with smaller hoofd ([#237](https://github.com/axe312ger/gatsby-mdx-suite/issues/237)) ([32f46d5](https://github.com/axe312ger/gatsby-mdx-suite/commit/32f46d5b6be77adba4d95513ef497eee025861a7))
+
+
+
+
+
 ## [0.3.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-blog@0.3.6...gatsby-theme-mdx-suite-blog@0.3.7) (2020-12-04)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-blog

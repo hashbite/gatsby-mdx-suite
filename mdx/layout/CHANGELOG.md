@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.25.1...@gatsby-mdx-suite/mdx-layout@0.26.0) (2021-01-05)
+
+
+### Features
+
+* **docs:** introduce example caption support ([#181](https://github.com/axe312ger/gatsby-mdx-suite/issues/181)) ([3e0bc03](https://github.com/axe312ger/gatsby-mdx-suite/commit/3e0bc036407f39054dea0a28912bd8e5abe18c6c))
+
+
+
+
+
 ## [0.25.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.25.0...@gatsby-mdx-suite/mdx-layout@0.25.1) (2020-12-04)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout

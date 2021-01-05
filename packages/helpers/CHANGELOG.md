@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.14.1...@gatsby-mdx-suite/helpers@0.14.2) (2021-01-05)
+
+
+### Bug Fixes
+
+* **navbar:** reenable sticky mode thanks to useLayoutEffect ([0df6c88](https://github.com/axe312ger/gatsby-mdx-suite/commit/0df6c8843b8b4fac34c6532ac4bd95ffe9f61dc3))
+
+
+
+
+
 ## [0.14.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.14.0...@gatsby-mdx-suite/helpers@0.14.1) (2020-12-04)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/helpers

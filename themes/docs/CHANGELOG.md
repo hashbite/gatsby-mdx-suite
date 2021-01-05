@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.6.1...gatsby-theme-mdx-suite-docs@0.7.0) (2021-01-05)
+
+
+### Bug Fixes
+
+* **live-editor:** properly set class name for debug mode ([5bd5189](https://github.com/axe312ger/gatsby-mdx-suite/commit/5bd51894856971b1e414efe52ba58f6367b65593))
+
+
+### Features
+
+* **docs:** introduce example caption support ([#181](https://github.com/axe312ger/gatsby-mdx-suite/issues/181)) ([3e0bc03](https://github.com/axe312ger/gatsby-mdx-suite/commit/3e0bc036407f39054dea0a28912bd8e5abe18c6c))
+
+
+### Performance Improvements
+
+* **metadata:** replace react-helmet with smaller hoofd ([#237](https://github.com/axe312ger/gatsby-mdx-suite/issues/237)) ([32f46d5](https://github.com/axe312ger/gatsby-mdx-suite/commit/32f46d5b6be77adba4d95513ef497eee025861a7))
+
+
+
+
+
 ## [0.6.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.6.0...gatsby-theme-mdx-suite-docs@0.6.1) (2020-12-04)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-docs

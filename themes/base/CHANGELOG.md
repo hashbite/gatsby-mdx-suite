@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.9.1...gatsby-theme-mdx-suite-base@0.9.2) (2021-01-05)
+
+
+### Bug Fixes
+
+* **form-fields:** properly use select defaultValue ([8a7491f](https://github.com/axe312ger/gatsby-mdx-suite/commit/8a7491f979e9020b4b505d9b790c62ead90ec3bd))
+* **form-fields:** use defaultChecked for switch ([13751b6](https://github.com/axe312ger/gatsby-mdx-suite/commit/13751b611e0557826592bcf5961ab823ed171e14))
+* **navbar:** reenable sticky mode thanks to useLayoutEffect ([0df6c88](https://github.com/axe312ger/gatsby-mdx-suite/commit/0df6c8843b8b4fac34c6532ac4bd95ffe9f61dc3))
+
+
+### Performance Improvements
+
+* **metadata:** replace react-helmet with smaller hoofd ([#237](https://github.com/axe312ger/gatsby-mdx-suite/issues/237)) ([32f46d5](https://github.com/axe312ger/gatsby-mdx-suite/commit/32f46d5b6be77adba4d95513ef497eee025861a7))
+
+
+
+
+
 ## [0.9.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.9.0...gatsby-theme-mdx-suite-base@0.9.1) (2020-12-04)
 
 
