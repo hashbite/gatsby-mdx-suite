@@ -7,6 +7,7 @@ import prettyBytes from 'pretty-bytes'
 import Fuse from 'fuse.js'
 import { css } from '@emotion/react'
 import { useTheme } from '@emotion/react'
+import { useMDXComponents } from '@mdx-js/react'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
@@ -114,11 +115,33 @@ const AnimationsGridItem = styled.h2(
   `
 )
 
+const SnippetsGrid = styled.div``
+const Snippet = styled.div(
+  ({ name }) => css`
+    ${tw`cursor-pointer`}
+  `
+)
+
 function LiveEditorSidebar({ editorInstance, tab }) {
   const [searchTerm, setSearchTerm] = useState('')
   const { media } = useMedia()
   const icons = useContext(IconsContext)
   const theme = useTheme()
+  const mdxComponents = useMDXComponents()
+  const snippets = useMemo(() => {
+    let list = []
+
+    for (const mdxComponentName in mdxComponents) {
+      const mdxComponent = mdxComponents[mdxComponentName]
+      if (mdxComponent?.snippets?.length > 0) {
+        list = list.concat(mdxComponent.snippets)
+      }
+    }
+
+    return list
+  }, [mdxComponents])
+
+  console.log({ mdxComponents, snippets })
 
   const fuse = useMemo(() => {
     return new Fuse(media, { keys: ['title'] })
@@ -157,6 +180,35 @@ function LiveEditorSidebar({ editorInstance, tab }) {
     (name) => {
       editorInstance.trigger('keyboard', 'type', {
         text: `<Animate show="2s ${name}">\n\n# Animated\n\n</Animate>`,
+      })
+    },
+    [editorInstance]
+  )
+
+  const injectSnippet = useCallback(
+    (snippet) => {
+      editorInstance.focus()
+      const position = editorInstance.getPosition()
+
+      // If not at first position of line, add new empty line below cursor
+      if (position.column !== 1) {
+        editorInstance.setPosition({
+          column: 1,
+          lineNumber: position.lineNumber + 1,
+        })
+        editorInstance.trigger('keyboard', 'type', {
+          text: `\n`,
+        })
+      }
+
+      // Add snippet to editor
+      const snippetController =
+        editorInstance.getContribution('snippetController2')
+      snippetController.insert(snippet)
+
+      // Get into new line after snippet
+      editorInstance.trigger('keyboard', 'type', {
+        text: `\n`,
       })
     },
     [editorInstance]
@@ -428,6 +480,21 @@ function LiveEditorSidebar({ editorInstance, tab }) {
               )
             })}
           </AnimationsGrid>
+        </>
+      )}
+      {tab === 'snippets' && (
+        <>
+          <h1>Snippets:</h1>
+          <SnippetsGrid>
+            {snippets.map(({ title, icon, snippet }) => {
+              return (
+                <Snippet key={title} onClick={() => injectSnippet(snippet)}>
+                  {icon}
+                  {title}
+                </Snippet>
+              )
+            })}
+          </SnippetsGrid>
         </>
       )}
     </LiveEditorSidebarWrapper>

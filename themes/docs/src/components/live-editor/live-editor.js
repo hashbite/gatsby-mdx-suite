@@ -292,7 +292,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
     setErrorDetailsVisible((v) => !v)
   }, [])
 
-  const [sidebarTab, setSidebarTab] = useState('closed')
+  const [sidebarTab, setSidebarTab] = useState('snippets')
   const onChangeSidebarTab = useCallback((e) => {
     setSidebarTab(e.currentTarget.value)
   }, [])
@@ -386,6 +386,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
             <option value="fonts">Fonts</option>
             <option value="icons">Icons</option>
             <option value="media">Media</option>
+            <option value="snippets">Snippets</option>
             <option value="sizes">Sizes</option>
             <option disabled>---</option>
             <option value="help">Help</option>
