@@ -44,7 +44,7 @@ Offset.defaultProps = {
 }
 
 Offset.propTypes = {
-  children: propTypes.element.isRequired,
+  children: propTypes.node.isRequired,
   /** X-axis offset */
   x: propTypes.string,
   /** Y-axis offset */

@@ -34,17 +34,15 @@ const Hide = ({ children, till, from, ...props }) => {
   }
 
   const styledChild = useMemo(() => {
+    const hiddenStyle = {}
     if (
       (till && !activeBreakpoints[till]) ||
       (from && activeBreakpoints[from])
     ) {
-      return React.cloneElement(children, {
-        ...props,
-        style: { display: 'none' },
-      })
+      hiddenStyle.display = 'none'
     }
-    return children
-  }, [till, activeBreakpoints, from, children, props])
+    return <div style={hiddenStyle}>{children}</div>
+  }, [till, activeBreakpoints, from, children])
 
   return styledChild
 }
@@ -55,7 +53,7 @@ Hide.defaultProps = {}
 
 Hide.propTypes = {
   /** The component that should be hidden */
-  children: propTypes.element.isRequired,
+  children: propTypes.node.isRequired,
   /** Hide the component till given screen size is reached */
   till: propTypes.oneOf(['sm', 'md', 'lg', 'xl']),
   /** Hide the component as soon given screen size is reached */
