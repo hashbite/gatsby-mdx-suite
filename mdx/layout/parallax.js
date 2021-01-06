@@ -12,7 +12,7 @@ import {
 
 gsap.registerPlugin(ScrollTrigger)
 
-const Parallax = ({ children, till, from, speed, markers }) => {
+const Parallax = ({ children, till, from, speed, markers, ...props }) => {
   const activeBreakpoints = useBreakpoint()
   const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
   useKillScrollTrigger(scrollTriggerInstance)
@@ -70,7 +70,11 @@ const Parallax = ({ children, till, from, speed, markers }) => {
   )
 
   return (
-    <div ref={initScrollTrigger} style={{ transform: transformStart }}>
+    <div
+      {...props}
+      ref={initScrollTrigger}
+      style={{ transform: transformStart }}
+    >
       {children}
     </div>
   )

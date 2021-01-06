@@ -25,7 +25,7 @@ const Offset = ({ children, till, from, x, y, ...props }) => {
       (from && activeBreakpoints[from])
     ) {
       return (
-        <div css={offset} {...props}>
+        <div {...props} css={offset}>
           {children}
         </div>
       )

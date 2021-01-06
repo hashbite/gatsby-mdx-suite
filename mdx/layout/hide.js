@@ -41,8 +41,12 @@ const Hide = ({ children, till, from, ...props }) => {
     ) {
       hiddenStyle.display = 'none'
     }
-    return <div style={hiddenStyle}>{children}</div>
-  }, [till, activeBreakpoints, from, children])
+    return (
+      <div {...props} style={hiddenStyle}>
+        {children}
+      </div>
+    )
+  }, [till, activeBreakpoints, from, props, children])
 
   return styledChild
 }
