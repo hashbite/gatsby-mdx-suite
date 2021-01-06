@@ -1,8 +1,8 @@
-import React, { useCallback, useRef, useMemo } from 'react'
+import React, { useState, useCallback, useRef, useMemo } from 'react'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
 import { Form } from 'react-final-form'
-import { css } from '@emotion/core'
+import { css, keyframes } from '@emotion/core'
 
 import Link from '@gatsby-mdx-suite/mdx-link/link-renderer'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
@@ -64,8 +64,15 @@ const PrivacyManagerPreviewContent = styled.div`
   ${centerToContentColumn()}
 `
 
+const animationShowPrivacyManager = keyframes`
+  to {
+    opacity: 1;
+    margin-bottom: 0%;
+  }
+`
+
 const PrivacyManagerPanel = styled.div(
-  ({ blur }) => css`
+  ({ blur, showDelay }) => css`
     ${tw`flex flex-col items-center justify-end h-screen`}
     ${blur
       ? css`
@@ -74,19 +81,26 @@ const PrivacyManagerPanel = styled.div(
       : css`
           pointer-events: none;
         `}
+    opacity: 0;
+    margin-bottom: -100%;
+    animation: 1s ${animationShowPrivacyManager} ease ${showDelay} both;
   `
 )
 
-const PrivacyManagerPanelWrapper = styled.div`
-  ${tw`
-      relative
-      md:flex flex-wrap gap-grid-gap items-center
-      bg-white text-gray-900 w-screen
-    `}
-  pointer-events: all;
-  box-shadow: 0 -20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 -10px 10px -5px rgba(0, 0, 0, 0.04);
-`
+const PrivacyManagerPanelWrapper = styled.div(
+  ({ showDelay }) => css`
+    ${tw`
+        relative
+        md:flex flex-wrap gap-grid-gap items-center
+        bg-white text-gray-900 w-screen
+      `}
+    pointer-events: all;
+    box-shadow: 0 -20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 -10px 10px -5px rgba(0, 0, 0, 0.04);
+    margin-bottom: -100%;
+    animation: 1s ${animationShowPrivacyManager} ease ${showDelay} both;
+  `
+)
 
 const PrivacyManagerPanelContent = styled.div`
   ${centerToContentColumn}
@@ -154,6 +168,8 @@ const PrivacyManagerForm = ({
   const refForm = useRef(null)
   const { t } = useTranslation()
 
+  const [showDelay, setShowDelay] = useState('2s')
+
   const {
     enablePrivacyModeToolbar = false,
     blurBackdrop = false,
@@ -184,6 +200,7 @@ const PrivacyManagerForm = ({
   )
 
   const handleOpenPrivacyManager = useCallback(() => {
+    setShowDelay('0s')
     setOpen(true)
   }, [setOpen])
 
@@ -238,8 +255,8 @@ const PrivacyManagerForm = ({
           </PrivacyManagerPreview>
         )}
         {open && (
-          <PrivacyManagerPanel blur={blurBackdrop}>
-            <PrivacyManagerPanelWrapper>
+          <PrivacyManagerPanel blur={blurBackdrop} showDelay={showDelay}>
+            <PrivacyManagerPanelWrapper showDelay={showDelay}>
               <PrivacyManagerPanelContent>
                 <Form
                   onSubmit={handleFormSubmit}
