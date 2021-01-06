@@ -20,7 +20,7 @@ import MenuUl from '../menu/menu-ul'
 
 const NavigationMobileWrapper = styled.div(
   ({ menuOpen }) => css`
-    ${tw`flex flex-col md:hidden`}
+    ${tw`flex flex-col md:hidden text-text`}
     ${menuOpen && tw`h-screen bg-root-background`}
   `
 )
