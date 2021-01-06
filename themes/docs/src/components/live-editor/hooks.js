@@ -26,7 +26,7 @@ export const useMedia = () => {
   const pictures = useMemo(
     () =>
       images.filter(
-        ({ file: { contentType } }) => contentType.indexOf('svg') === -1
+        ({ file: { contentType } }) => contentType.indexOf('jpeg') !== -1
       ),
     [images]
   )
