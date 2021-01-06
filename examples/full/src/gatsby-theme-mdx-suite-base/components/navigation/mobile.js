@@ -29,7 +29,7 @@ const NavigationMobileWrapper = styled.div(
 const NavigationMobileBar = styled.div``
 const NavigationMobileFlyout = styled.div(
   ({ menuOpen }) => css`
-    ${tw`relative overflow-hidden hidden`}
+    ${tw`relative overflow-hidden hidden text-text`}
 
     &:after {
       content: '';
