@@ -33,8 +33,6 @@ const Hide = ({ children, till, from, ...props }) => {
     throw new Error('Can not hide element without "from" or "till"')
   }
 
-  console.log({ activeBreakpoints, till, from })
-
   const styledChild = useMemo(() => {
     if (
       (till && !activeBreakpoints[till]) ||
@@ -45,10 +43,8 @@ const Hide = ({ children, till, from, ...props }) => {
         style: { display: 'none' },
       })
     }
-    return React.cloneElement(children, {
-      ...props,
-    })
-  }, [children, from, till, activeBreakpoints])
+    return children
+  }, [till, activeBreakpoints, from, children, props])
 
   return styledChild
 }
