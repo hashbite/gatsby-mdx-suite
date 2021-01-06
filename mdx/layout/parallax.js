@@ -78,7 +78,6 @@ const Parallax = ({ children, till, from, speed, markers }) => {
 
 Parallax.defaultProps = {
   speed: '50%',
-  from: 'sm',
   markers: false,
 }
 

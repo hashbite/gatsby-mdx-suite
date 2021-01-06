@@ -24,10 +24,11 @@ const Offset = ({ children, till, from, x, y, ...props }) => {
       (till && !activeBreakpoints[till]) ||
       (from && activeBreakpoints[from])
     ) {
-      return React.cloneElement(children, {
-        ...props,
-        css: offset,
-      })
+      return (
+        <div css={offset} {...props}>
+          {children}
+        </div>
+      )
     }
     return children
   }, [children, from, till, activeBreakpoints, offset, props])
