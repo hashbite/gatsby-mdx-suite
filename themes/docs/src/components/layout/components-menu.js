@@ -1,12 +1,12 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
 import { useMDXComponents } from '@mdx-js/react'
 
-const ComponentMenuMenuLink = styled.a(
+const ComponentMenuMenuLink = styled(Link)(
   ({ active }) => css`
     ${tw`
       block p-2
@@ -95,7 +95,7 @@ function ComponentsMenu() {
           <ul>
             {componentsByPackage[packageName].map((component) => (
               <li key={component.id}>
-                <ComponentMenuMenuLink href={component.path}>
+                <ComponentMenuMenuLink to={component.path}>
                   {component.displayName}
                 </ComponentMenuMenuLink>
               </li>
