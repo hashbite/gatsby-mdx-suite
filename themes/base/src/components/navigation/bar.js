@@ -83,6 +83,11 @@ const NavigationBar = ({
             pinSpacing: false,
             pinType: 'fixed',
             invalidateOnRefresh: true,
+            onLeaveBack: () => {
+              // Fix a bug in iOS safari which will draw the sticky element
+              // above viewport if you do the pull refresh gesture
+              node.style.transform = null
+            },
           })
         )
 
