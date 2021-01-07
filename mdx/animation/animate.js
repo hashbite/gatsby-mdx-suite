@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useMemo } from 'react'
+import React, { useCallback, useState } from 'react'
 import propTypes from 'prop-types'
 import { cx } from 'emotion'
 
@@ -32,7 +32,7 @@ gsap.registerPlugin(ScrollTrigger)
  * </Animate>
  * </Section>
  */
-const Animate = ({ children, markers, show }) => {
+const Animate = ({ children, markers, show, className, ...props }) => {
   const [isVisible, setIsVisible] = useState(false)
   const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
   const { animationClass } = useAnimation({ show, isVisible })
@@ -56,27 +56,15 @@ const Animate = ({ children, markers, show }) => {
     [setIsVisible, markers]
   )
 
-  const node = useMemo(() => {
-    const count = React.Children.count(children)
-
-    let wrappedChildren = children
-
-    if (
-      typeof children === 'string' ||
-      !count ||
-      count > 1 ||
-      typeof children?.type?.render === 'function'
-    ) {
-      wrappedChildren = <div>{children}</div>
-    }
-
-    return React.cloneElement(wrappedChildren, {
-      className: cx(animationClass),
-      ref: initScrollTrigger,
-    })
-  }, [children, animationClass, initScrollTrigger])
-
-  return node
+  return (
+    <div
+      {...props}
+      ref={initScrollTrigger}
+      className={cx(animationClass, className)}
+    >
+      {children}
+    </div>
+  )
 }
 
 Animate.displayName = 'Animate'

@@ -12,7 +12,7 @@ import {
 
 gsap.registerPlugin(ScrollTrigger)
 
-const Parallax = ({ children, till, from, speed, markers }) => {
+const Parallax = ({ children, till, from, speed, markers, ...props }) => {
   const activeBreakpoints = useBreakpoint()
   const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
   useKillScrollTrigger(scrollTriggerInstance)
@@ -69,32 +69,19 @@ const Parallax = ({ children, till, from, speed, markers }) => {
     [effectActive, transformEnd, markers]
   )
 
-  // Wrap children if they are no regular components to apply styling
-  const styledChild = useMemo(() => {
-    const count = React.Children.count(children)
-    let wrappedChildren = children
-
-    if (
-      typeof children === 'string' ||
-      !count ||
-      count > 1 ||
-      typeof children?.type?.render === 'function'
-    ) {
-      wrappedChildren = <div>{children}</div>
-    }
-
-    return React.cloneElement(wrappedChildren, {
-      style: { transform: transformStart },
-      ref: initScrollTrigger,
-    })
-  }, [children, transformStart, initScrollTrigger])
-
-  return <>{styledChild}</>
+  return (
+    <div
+      {...props}
+      ref={initScrollTrigger}
+      style={{ transform: transformStart }}
+    >
+      {children}
+    </div>
+  )
 }
 
 Parallax.defaultProps = {
   speed: '50%',
-  from: 'sm',
   markers: false,
 }
 
