@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.26.0...@gatsby-mdx-suite/mdx-layout@0.26.1) (2021-01-08)
+
+
+### Bug Fixes
+
+* allow any combinations of modifier components ([982596a](https://github.com/axe312ger/gatsby-mdx-suite/commit/982596aeee2435efac2cb4ab069cc4a286341773))
+
+
+
+
+
 # [0.26.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.25.1...@gatsby-mdx-suite/mdx-layout@0.26.0) (2021-01-05)
 
 

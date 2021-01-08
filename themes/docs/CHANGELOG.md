@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.7.0...gatsby-theme-mdx-suite-docs@0.7.1) (2021-01-08)
+
+
+### Bug Fixes
+
+* **docs:** use Gatsby Link for components menu to avoid reloads ([2df5ea3](https://github.com/axe312ger/gatsby-mdx-suite/commit/2df5ea3fea0344bcf923a1545591bfaa36f8746f))
+* **live-editor:** use JPEG encoded images for random pictures ([487b02c](https://github.com/axe312ger/gatsby-mdx-suite/commit/487b02c0860f8dd9237f6fcb3b90411acca94e05))
+
+
+
+
+
 # [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.6.1...gatsby-theme-mdx-suite-docs@0.7.0) (2021-01-05)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.7.2...gatsby-mdx-suite-example-full@0.7.3) (2021-01-08)
+
+
+### Bug Fixes
+
+* **navbar:** use default text color for mobile menu items ([d6b362f](https://github.com/axe312ger/gatsby-mdx-suite/commit/d6b362f6507dc00a1b326fa3366daabdc519a49a))
+
+
+
+
+
 ## [0.7.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.7.1...gatsby-mdx-suite-example-full@0.7.2) (2021-01-05)
 
 

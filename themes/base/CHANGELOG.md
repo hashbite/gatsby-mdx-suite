@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.9.2...gatsby-theme-mdx-suite-base@0.9.3) (2021-01-08)
+
+
+### Bug Fixes
+
+* **navbar:** keep navbar within viewport after pull refresh on iOS ([225a6ee](https://github.com/axe312ger/gatsby-mdx-suite/commit/225a6ee939cfc1e8ab4110cbc582cc641d5828b5))
+* **navbar:** use default text color for mobile menu items ([d6b362f](https://github.com/axe312ger/gatsby-mdx-suite/commit/d6b362f6507dc00a1b326fa3366daabdc519a49a))
+* **privacy-manager:** hide form from initial rendering to avoid flicker ([652cbca](https://github.com/axe312ger/gatsby-mdx-suite/commit/652cbcab53af2d7b2f718f314f4886edc5cc156f))
+
+
+
+
+
 ## [0.9.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.9.1...gatsby-theme-mdx-suite-base@0.9.2) (2021-01-05)
 
 

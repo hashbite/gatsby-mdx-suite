@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.2...@gatsby-mdx-suite/mdx-animation@0.2.3) (2021-01-08)
+
+
+### Bug Fixes
+
+* allow any combinations of modifier components ([982596a](https://github.com/axe312ger/gatsby-mdx-suite/commit/982596aeee2435efac2cb4ab069cc4a286341773))
+
+
+
+
+
 ## [0.2.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.1...@gatsby-mdx-suite/mdx-animation@0.2.2) (2021-01-05)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation
