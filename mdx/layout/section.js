@@ -83,6 +83,7 @@ function calcGapValue(gap, theme) {
 const BackgroundMediaWrapper = styled.div(
   ({ backgroundImageOpacity }) => css`
     ${tw`absolute z-0 inset-0`}
+    overflow: hidden;
 
     /* Hack gatsby-image to act as background image */
     & .gatsby-image-wrapper {
