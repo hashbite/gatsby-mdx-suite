@@ -6,7 +6,6 @@ import tw from 'twin.macro'
 
 import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 import verticalRhythm from '@gatsby-mdx-suite/helpers/styling/vertical-rhythm'
-import debugMode from '@gatsby-mdx-suite/helpers/styling/debug-mode'
 
 const ColumnsWrapper = styled.div(
   ({ theme, minColumns, maxColumns, template, templateAt, center }) => {
