@@ -189,23 +189,32 @@ function LiveEditorSidebar({ editorInstance, tab }) {
             defaultValue={searchTerm}
             placeholder="Search for media..."
           />
-          {filteredMedia.map((asset) => (
-            <LiveEditorSidebarMediaAsset
-              key={asset.assetId}
-              onClick={() => injectMediaId(asset.assetId)}
-            >
-              <LiveEditorSidebarMediaAssetThumbnail
-                fixed={
-                  (asset?.videoScreenshots &&
-                    asset.videoScreenshots[0]?.childImageSharp?.fixed) ||
-                  asset.fixed
-                }
-              />
-              <LiveEditorSidebarMediaAssetCaption>
-                {asset.title} ({prettyBytes(asset.file.details.size)})
-              </LiveEditorSidebarMediaAssetCaption>
-            </LiveEditorSidebarMediaAsset>
-          ))}
+          {filteredMedia.map((asset) => {
+            const metadata = [
+              prettyBytes(asset.file.details.size),
+              asset?.videoH264 &&
+                `${asset.videoH264.width}×${asset.videoH264.height}`,
+              asset?.videoH264?.aspectRatio &&
+                `1∶${parseFloat(asset.videoH264.aspectRatio.toFixed(3))}`,
+            ].filter(Boolean)
+            return (
+              <LiveEditorSidebarMediaAsset
+                key={asset.assetId}
+                onClick={() => injectMediaId(asset.assetId)}
+              >
+                <LiveEditorSidebarMediaAssetThumbnail
+                  fixed={
+                    (asset?.videoScreenshots &&
+                      asset.videoScreenshots[0]?.childImageSharp?.fixed) ||
+                    asset.fixed
+                  }
+                />
+                <LiveEditorSidebarMediaAssetCaption>
+                  {asset.title} ({metadata.join(', ')})
+                </LiveEditorSidebarMediaAssetCaption>
+              </LiveEditorSidebarMediaAsset>
+            )
+          })}
         </>
       )}
       {tab === 'icons' && (

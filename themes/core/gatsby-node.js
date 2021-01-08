@@ -211,6 +211,9 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
     typeDefs.push(`
       type FakeVideo implements Node @dontInfer  {
         path: String
+        aspectRatio: Float
+        width: Int
+        height: Int
       }
     `)
     typeDefs.push(

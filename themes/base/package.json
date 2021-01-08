@@ -48,7 +48,7 @@
     "gatsby-theme-mdx-suite-core": "^0.7.2",
     "gatsby-theme-mdx-suite-docs": "^0.7.0",
     "gatsby-transformer-inline-svg": "^0.0.7",
-    "gatsby-transformer-video": "^0.2.1",
+    "gatsby-transformer-video": "^0.2.2",
     "gsap": "^3.5.1",
     "heroicons": "^0.4.2",
     "hoofd": "^1.0.2",
