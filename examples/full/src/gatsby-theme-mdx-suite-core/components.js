@@ -18,11 +18,10 @@ import VimeoVideo from '@gatsby-mdx-suite/mdx-vimeo/vimeo-video'
 // Modal support
 import Modal from '@gatsby-mdx-suite/mdx-modal/modal'
 
-// Add some basic scroll effects
+// Scroll effects
 import Anchor from '@gatsby-mdx-suite/mdx-scroll-effects/anchor'
 import AnchorHook from '@gatsby-mdx-suite/mdx-scroll-effects/anchor-hook'
-
-import Animate from '@gatsby-mdx-suite/mdx-animation/animate'
+import SectionZoom from '@gatsby-mdx-suite/mdx-scroll-effects/section-zoom'
 
 // Shadowed components
 import NavBar from 'gatsby-theme-mdx-suite-base/src/components/mdx/navbar'
@@ -47,8 +46,7 @@ export default {
   // Scroll effects
   Anchor,
   AnchorHook,
-  // Animations
-  Animate,
+  SectionZoom,
   // Project specific
-  NavBar,
+  NavBar, // Overwrites default NavBar
 }
