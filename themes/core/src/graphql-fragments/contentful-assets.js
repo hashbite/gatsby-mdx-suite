@@ -24,18 +24,10 @@ export const MdxSuiteMediaCollectionScreen = graphql`
     }
     videoH264(maxWidth: 1920) {
       path
+      aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 1920) {
       publicURL
-    }
-  }
-`
-
-export const MdxSuiteMediaCollectionScreenDocs = graphql`
-  fragment MdxSuiteMediaCollectionScreenDocs on ContentfulAsset {
-    ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
-      path
     }
   }
 `
@@ -48,18 +40,10 @@ export const MdxSuiteMediaCollectionFull = graphql`
     }
     videoH264(maxWidth: 1200) {
       path
+      aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 1200) {
       publicURL
-    }
-  }
-`
-
-export const MdxSuiteMediaCollectionFullDocs = graphql`
-  fragment MdxSuiteMediaCollectionFullDocs on ContentfulAsset {
-    ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
-      path
     }
   }
 `
@@ -72,18 +56,10 @@ export const MdxSuiteMediaCollectionHalf = graphql`
     }
     videoH264(maxWidth: 600) {
       path
+      aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 600) {
       publicURL
-    }
-  }
-`
-
-export const MdxSuiteMediaCollectionHalfDocs = graphql`
-  fragment MdxSuiteMediaCollectionHalfDocs on ContentfulAsset {
-    ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
-      path
     }
   }
 `
@@ -96,18 +72,10 @@ export const MdxSuiteMediaCollectionThird = graphql`
     }
     videoH264(maxWidth: 400) {
       path
+      aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 400) {
       publicURL
-    }
-  }
-`
-
-export const MdxSuiteMediaCollectionThirdDocs = graphql`
-  fragment MdxSuiteMediaCollectionThirdDocs on ContentfulAsset {
-    ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
-      path
     }
   }
 `
@@ -120,18 +88,10 @@ export const MdxSuiteMediaCollectionQuarter = graphql`
     }
     videoH264(maxWidth: 300) {
       path
+      aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 300) {
       publicURL
-    }
-  }
-`
-
-export const MdxSuiteMediaCollectionQuarterDocs = graphql`
-  fragment MdxSuiteMediaCollectionQuarterDocs on ContentfulAsset {
-    ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
-      path
     }
   }
 `
@@ -144,18 +104,10 @@ export const MdxSuiteMediaCollectionSixth = graphql`
     }
     videoH264(maxWidth: 200) {
       path
+      aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 200) {
       publicURL
-    }
-  }
-`
-
-export const MdxSuiteMediaCollectionSixthDocs = graphql`
-  fragment MdxSuiteMediaCollectionSixthDocs on ContentfulAsset {
-    ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
-      path
     }
   }
 `
@@ -168,18 +120,10 @@ export const MdxSuiteMediaCollectionEigth = graphql`
     }
     videoH264(maxWidth: 150) {
       path
+      aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 150) {
       publicURL
-    }
-  }
-`
-
-export const MdxSuiteMediaCollectionEigthDocs = graphql`
-  fragment MdxSuiteMediaCollectionEigthDocs on ContentfulAsset {
-    ...MdxSuiteContentfulAsset
-    videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
-      path
     }
   }
 `
@@ -197,6 +141,9 @@ export const MdxSuiteMediaDocs = graphql`
     }
     videoH264(fps: 12, duration: 2, preset: "ultrafast", maxWidth: 300) {
       path
+      aspectRatio
+      width
+      height
     }
     videoScreenshots(timestamps: ["0"], width: 300) {
       childImageSharp {

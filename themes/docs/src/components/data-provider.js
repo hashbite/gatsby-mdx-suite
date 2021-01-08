@@ -11,37 +11,37 @@ const DocsDataProvider = ({ children }) => {
     query DocsAssetData {
       screen: allContentfulAsset {
         nodes {
-          ...MdxSuiteMediaCollectionScreenDocs
+          ...MdxSuiteMediaDocs
         }
       }
       full: allContentfulAsset {
         nodes {
-          ...MdxSuiteMediaCollectionFullDocs
+          ...MdxSuiteMediaDocs
         }
       }
       half: allContentfulAsset {
         nodes {
-          ...MdxSuiteMediaCollectionHalfDocs
+          ...MdxSuiteMediaDocs
         }
       }
       third: allContentfulAsset {
         nodes {
-          ...MdxSuiteMediaCollectionThirdDocs
+          ...MdxSuiteMediaDocs
         }
       }
       quarter: allContentfulAsset {
         nodes {
-          ...MdxSuiteMediaCollectionQuarterDocs
+          ...MdxSuiteMediaDocs
         }
       }
       sixth: allContentfulAsset {
         nodes {
-          ...MdxSuiteMediaCollectionSixthDocs
+          ...MdxSuiteMediaDocs
         }
       }
       eigth: allContentfulAsset {
         nodes {
-          ...MdxSuiteMediaCollectionEigthDocs
+          ...MdxSuiteMediaDocs
         }
       }
       docs: allContentfulAsset {

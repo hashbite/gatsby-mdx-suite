@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext, useCallback } from 'react'
+import React, { useRef, useState, useCallback } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
@@ -6,9 +6,10 @@ import tw from 'twin.macro'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
 import { useKillScrollTrigger } from '@gatsby-mdx-suite/helpers/styling/gsap'
+
+import { useVideo } from './hooks'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -68,15 +69,10 @@ export default function Video({
   forceRendering,
   ...props
 }) {
-  const {
-    data,
-    pageContext: { locale: activeLocale },
-  } = useContext(MdxSuiteContext)
+  const videoData = useVideo({ contextKey, id })
   const refVideo = useRef(null)
   const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
   useKillScrollTrigger(scrollTriggerInstance)
-
-  const videos = data[contextKey]
 
   const handleVideoIntersection = useCallback(
     (isActive) => {
@@ -124,48 +120,11 @@ export default function Video({
     [handleVideoIntersection]
   )
 
-  if (!videos) {
-    console.error(
-      new Error(
-        `The media context "${contextKey}" does not exist or does not contain any data.`
-      )
-    )
-    return null
-  }
-
-  const video = videos.find(
-    ({ assetId, locale }) => assetId === id && locale === activeLocale
-  )
-
-  if (!video) {
-    throw new Error(
-      `No data located for video:\n\n${JSON.stringify(arguments[0], null, 2)}`
-    )
-  }
-
-  const sources = [
-    { name: 'videoH265', type: 'video/mp4; codecs=hevc' },
-    { name: 'videoVP9', type: 'video/webm; codecs=vp9,opus' },
-    { name: 'videoH264', type: 'video/mp4; codecs=avc1.4d4032' },
-  ]
-    .filter(({ name }) => !!video[name])
-    .map(({ name, type }) => (
-      <source key={name} src={video[name].path} type={type} />
-    ))
-
-  if (!sources) {
-    console.error(
-      new Error(`No sources found for video:\n\n${JSON.stringify(video)}`)
-    )
-
-    return null
-  }
-
   return (
     <LazyComponent forceRendering={forceRendering}>
       <VideoWrapper
         maxWidth={maxWidth}
-        aspectRatio={aspectRatio}
+        aspectRatio={aspectRatio || videoData.aspectRatio}
         className={className}
         ref={initScrollTrigger}
       >
@@ -177,14 +136,11 @@ export default function Video({
           playsInline={autoplay || !controls}
           preload={preload}
           muted={autoplay || muted}
-          poster={
-            video.videoScreenshots &&
-            video.videoScreenshots[screenshotIndex].publicURL
-          }
+          poster={videoData?.screenshots?.[screenshotIndex]?.publicURL}
           aspectRatio={aspectRatio}
           {...props}
         >
-          {sources}
+          {videoData.sources}
         </VideoTag>
       </VideoWrapper>
     </LazyComponent>

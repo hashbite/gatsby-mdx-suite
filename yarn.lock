@@ -9975,10 +9975,10 @@ gatsby-transformer-sharp@^2.9.0:
     semver "^7.3.2"
     sharp "^0.26.3"
 
-gatsby-transformer-video@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-video/-/gatsby-transformer-video-0.2.1.tgz#d5edb0b07fea5443c7f400b3ce7f9f43684526da"
-  integrity sha512-19xOTyQGOG2n4mcHQhLmNHNzCf5vu+/rXHVaKcN0rRgK3/uKDwCnjZQZjP2vLeO4WRuSXA3BfhIOXhcsARdD3g==
+gatsby-transformer-video@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-video/-/gatsby-transformer-video-0.2.2.tgz#2802b80110eb372aec751665e46b15c6dc528c62"
+  integrity sha512-Sl95A6aBM6LM6oEBMud9/Ywd1r5Nqa7fGo30Uy+3x+LSX9vxWAA5GfhO+aVfQWfa9cLUklT1vx3FcByEtY14LA==
   dependencies:
     execa "^4.0.3"
     fluent-ffmpeg "^2.1.2"
