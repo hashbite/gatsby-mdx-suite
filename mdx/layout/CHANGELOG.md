@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.26.1...@gatsby-mdx-suite/mdx-layout@0.26.2) (2021-01-12)
+
+
+### Bug Fixes
+
+* **section:** ensure background media does not exceed the section ([35af5c5](https://github.com/axe312ger/gatsby-mdx-suite/commit/35af5c585095f0492f5f06acb26ab5b249a2d545))
+
+
+
+
+
 ## [0.26.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.26.0...@gatsby-mdx-suite/mdx-layout@0.26.1) (2021-01-08)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.4.11...gatsby-mdx-suite-example-basic@0.5.0) (2021-01-12)
+
+
+### Features
+
+* **video:** restructure video rendering code and show dimensions in sidebar ([65e2eb1](https://github.com/axe312ger/gatsby-mdx-suite/commit/65e2eb1e030b4b30820432c3470439d55427df26))
+
+
+
+
+
 ## [0.4.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.4.10...gatsby-mdx-suite-example-basic@0.4.11) (2021-01-08)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-basic

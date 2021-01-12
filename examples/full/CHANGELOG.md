@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.7.3...gatsby-mdx-suite-example-full@0.8.0) (2021-01-12)
+
+
+### Features
+
+* **scroll-effects:** introduce SectionZoom component ([e5632d8](https://github.com/axe312ger/gatsby-mdx-suite/commit/e5632d88142f2f4052a5063a9821a6ed9b2eddda))
+
+
+
+
+
 ## [0.7.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.7.2...gatsby-mdx-suite-example-full@0.7.3) (2021-01-08)
 
 
