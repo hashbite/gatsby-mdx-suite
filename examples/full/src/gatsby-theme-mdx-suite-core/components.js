@@ -23,6 +23,9 @@ import Anchor from '@gatsby-mdx-suite/mdx-scroll-effects/anchor'
 import AnchorHook from '@gatsby-mdx-suite/mdx-scroll-effects/anchor-hook'
 import SectionZoom from '@gatsby-mdx-suite/mdx-scroll-effects/section-zoom'
 
+// Integrations
+import MailchimpSignup from '@gatsby-mdx-suite/mdx-mailchimp/mailchimp-signup'
+
 // Shadowed components
 import NavBar from 'gatsby-theme-mdx-suite-base/src/components/mdx/navbar'
 
@@ -47,6 +50,8 @@ export default {
   Anchor,
   AnchorHook,
   SectionZoom,
+  // Integrations
+  MailchimpSignup,
   // Project specific
   NavBar, // Overwrites default NavBar
 }
