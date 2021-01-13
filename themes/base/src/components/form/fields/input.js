@@ -1,9 +1,21 @@
+import React from 'react'
 import styled from '@emotion/styled'
+import tw from 'twin.macro'
 
+import { ErrorMessage } from './generic'
 import { textFieldStyle } from './styles'
+
+const InputWrapper = styled.div`
+  ${tw`w-full`}
+`
 
 const Input = styled.input`
   ${textFieldStyle}
 `
 
-export default Input
+export default ({ error, ...props }) => (
+  <InputWrapper>
+    <Input {...props} />
+    {error && <ErrorMessage>{error}</ErrorMessage>}
+  </InputWrapper>
+)
