@@ -1,68 +1,44 @@
 import React from 'react'
-import styled from '@emotion/styled'
-import { css, keyframes } from '@emotion/core'
 import tw from 'twin.macro'
 
-const SwitchInputWrapper = styled.div`
-  ${tw`relative inline-block w-16 mr-2 align-middle select-none transition duration-200 ease-in`}
-`
+import { ErrorMessage } from './generic'
 
-const SwitchInputFakeLabel = styled.label`
-  ${tw`block overflow-hidden h-8 rounded-full bg-gray-300 cursor-pointer`}
-  transition: background 0.15s;
-`
+const SwitchInputLabel = tw.label`flex items-center cursor-pointer`
+const SwitchInputWrapper = tw.div`relative`
+const SwitchInputDescription = tw.div`ml-6 text-gray-700 text-sm`
+const SwitchInputInput = tw.input`hidden`
+const SwitchInputBackground = tw.div`w-10 h-4 bg-gray-400 rounded-full shadow-inner`
+const SwitchInputToggle = tw.div`absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 left-0`
 
-const slideAnimation = keyframes`
-  from { left: 0; }
-  to {
-    left: 100%;
-    transform: translateX(-100%);
-  }
-`
-
-const SwitchInput = styled.input(
-  ({ theme }) => css`
-    ${tw`
-      absolute block w-8 h-8
-      rounded-full bg-white
-      border-4 border-gray-300
-      appearance-none cursor-pointer
-      `}
-
-    &:focus, &:hover {
-      ${tw`outline-none border-green-400`}
-    }
-
-    &:checked {
-      animation: ${slideAnimation} 0.15s both;
-
-      & + ${SwitchInputFakeLabel} {
-        ${tw`bg-green-400`}
-      }
-    }
-
-    &:disabled {
-      ${tw`cursor-not-allowed`}
-
-      & + ${SwitchInputFakeLabel} {
-        ${tw`bg-gray-400 cursor-not-allowed`}
-      }
-    }
-  `
-)
-
-const SwitchLabel = styled.label`
-  ${tw`cursor-pointer`}
-`
-
-const SwitchField = ({ children, checked, ...props }) => (
-  <>
+const SwitchField = ({ children, checked, id, error, ...props }) => (
+  <SwitchInputLabel htmlFor={id}>
     <SwitchInputWrapper>
-      <SwitchInput type="checkbox" {...props} defaultChecked={checked} />
-      <SwitchInputFakeLabel htmlFor={props.id} />
+      <SwitchInputInput
+        id={id}
+        type="checkbox"
+        defaultChecked={checked}
+        {...props}
+      />
+      <SwitchInputBackground
+        style={{
+          backgroundColor: checked && '#48bb78',
+          transition: 'background-color 0.3s ease-out',
+        }}
+      />
+      <SwitchInputToggle
+        style={{
+          top: '-.25rem',
+          left: '-.25rem',
+          transition: 'transform 0.3s ease-in-out',
+          transform: checked && 'translateX(100%)',
+        }}
+      />
     </SwitchInputWrapper>
-    {children && <SwitchLabel htmlFor={props.id}>{children}</SwitchLabel>}
-  </>
+    <SwitchInputDescription>
+      {children}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+    </SwitchInputDescription>
+  </SwitchInputLabel>
 )
 
 export default SwitchField

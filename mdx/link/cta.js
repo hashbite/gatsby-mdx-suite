@@ -5,11 +5,13 @@ import tw from 'twin.macro'
 
 import Link from './link'
 
-export const styleCTA = ({ theme }) => css`
+export const styleCTA = ({ theme, disabled }) => css`
   ${tw`font-bold py-2 px-4 rounded shadow`}
 
   background: ${theme.colors.primary};
   color: ${theme.colors['root-background']};
+
+  ${disabled && tw`bg-gray-600 cursor-not-allowed`}
 `
 
 const StyledCTA = styled(Link)(styleCTA)

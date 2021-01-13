@@ -3,9 +3,21 @@ import { Field } from 'react-final-form'
 
 import Switch from '../fields/switch'
 
-const SwitchField = ({ disabled, ...fieldProps }) => (
+const SwitchField = ({ disabled, children, ...fieldProps }) => (
   <Field {...fieldProps} type="checkbox">
-    {({ input }) => <Switch id={`checkbox-${input.name}`} {...input} />}
+    {({ input, meta }) => (
+      <Switch
+        id={`checkbox-${input.name}`}
+        {...input}
+        error={
+          (meta.error || meta.submitError) &&
+          meta.touched &&
+          (meta.error || meta.submitError)
+        }
+      >
+        {children}
+      </Switch>
+    )}
   </Field>
 )
 
