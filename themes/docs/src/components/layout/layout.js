@@ -56,7 +56,7 @@ const Layout = ({ children, title }) => {
           <MenuLink to="/docs">Start</MenuLink>
           <MenuLink to="/docs/playground">Playground</MenuLink>
           <MenuLink to="/docs/components">Components</MenuLink>
-          <MenuLink to="/docs/theme">Theme</MenuLink>
+          <MenuLink to="/docs/style-guide">Style Guide</MenuLink>
         </Menu>
       </LayoutHeader>
       {children}
