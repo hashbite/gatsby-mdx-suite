@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
 
-import { ErrorMessage } from './generic'
+import ErrorMessage from '../decoration/error-message'
 import { textFieldStyle } from './styles'
 
 const InputWrapper = styled.div`
