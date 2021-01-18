@@ -11,7 +11,7 @@ const Button = styled.button`
   }
 
   :disabled {
-    ${tw`text-gray-600`}
+    ${tw`text-gray-600 cursor-not-allowed`}
   }
 
   ${focusStyle}
