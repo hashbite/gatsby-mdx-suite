@@ -145,13 +145,6 @@ export const MdxSuiteMediaDocs = graphql`
       width
       height
     }
-    videoScreenshots(timestamps: ["0"], width: 300) {
-      childImageSharp {
-        fixed(width: 300) {
-          ...GatsbyImageSharpFixed_noBase64
-        }
-      }
-    }
   }
 `
 
