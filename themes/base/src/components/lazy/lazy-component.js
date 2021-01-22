@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useCallback } from 'react'
 import propTypes from 'prop-types'
 
 import { gsap } from 'gsap'
@@ -17,44 +17,29 @@ export default function LazyComponent({
   loading = <DefaultLoading />,
   forceRendering = false,
 }) {
-  const [scrollTrigger, setScrollTrigger] = useState(false)
   const [shouldRender, setShouldRender] = useState(forceRendering)
-  const [wrapperHeight, setWrapperHeight] = useState(null)
 
   const initScrollTrigger = useCallback(
     (node) => {
-      // Do not init when rendering is forced or wrapper is not yet mounted.
-      if (!node || forceRendering) {
+      if (!node) {
         return
       }
-      const scrollTriggerInstance = ScrollTrigger.create({
+      ScrollTrigger.create({
         trigger: node,
         markers,
-        start: 'top 120%',
-        end: 'bottom top',
+        start: 'top 200%',
+        end: 'bottom -100%',
+        refreshPriority: 10,
         once: true,
         onToggle: ({ isActive }) => isActive && setShouldRender(true),
       })
-      setScrollTrigger(scrollTriggerInstance)
-      setWrapperHeight(node.clientHeight)
-      return scrollTriggerInstance.kill
     },
-    [markers, forceRendering]
+    [markers]
   )
 
-  // Remove Scroll trigger as soon chunk starts loading
-  useEffect(() => {
-    if (scrollTrigger && shouldRender) {
-      scrollTrigger.kill()
-      setScrollTrigger(null)
-    }
-  }, [scrollTrigger, shouldRender])
-
-  return shouldRender ? (
-    children
-  ) : (
-    <div ref={initScrollTrigger} style={{ minHeight: wrapperHeight }}>
-      {loading}
+  return (
+    <div ref={!forceRendering && initScrollTrigger}>
+      {shouldRender || forceRendering ? children : loading}
     </div>
   )
 }
