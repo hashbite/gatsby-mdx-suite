@@ -46,8 +46,8 @@ const Animate = ({ children, markers, show, className, ...props }) => {
       setScrollTriggerInstance(
         ScrollTrigger.create({
           trigger: node,
-          start: 'top 62.8%',
-          end: 'bottom top',
+          start: 'top 61.8%',
+          end: 'bottom 38.2%',
           markers,
           onToggle: ({ isActive }) => isActive && setIsVisible(true),
         })
