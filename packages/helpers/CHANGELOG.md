@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.14.2...@gatsby-mdx-suite/helpers@0.14.3) (2021-01-22)
+
+
+### Bug Fixes
+
+* **gsap:** ensure ScrollTrigger cleanup is initialized properly ([1de2821](https://github.com/axe312ger/gatsby-mdx-suite/commit/1de28214965e87aab02fc3dd4663dbf1ca412101))
+
+
+
+
+
 ## [0.14.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.14.1...@gatsby-mdx-suite/helpers@0.14.2) (2021-01-05)
 
 

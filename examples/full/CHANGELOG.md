@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.8.0...gatsby-mdx-suite-example-full@0.9.0) (2021-01-22)
+
+
+### Features
+
+* **mailchimp:** introduce Mailchimp signup form component ([9343da8](https://github.com/axe312ger/gatsby-mdx-suite/commit/9343da8f4c9dcbbe45ba3ba1c44a8941867c2e04))
+
+
+
+
+
 # [0.8.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.7.3...gatsby-mdx-suite-example-full@0.8.0) (2021-01-12)
 
 

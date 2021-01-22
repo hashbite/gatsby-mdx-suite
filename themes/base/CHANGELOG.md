@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.10.0...gatsby-theme-mdx-suite-base@0.11.0) (2021-01-22)
+
+
+### Bug Fixes
+
+* **lazy:** simplify and speed up lazy loading ([5e85bc7](https://github.com/axe312ger/gatsby-mdx-suite/commit/5e85bc771e989323216b39af5fb8bb00f8f239d6))
+
+
+### Features
+
+* **forms:** improve Switch and add final form adapter for input ([a7c507e](https://github.com/axe312ger/gatsby-mdx-suite/commit/a7c507ef676cd7a3abfa8d79c94ce7b91b6e08bb))
+* **loading:** default loading placeholder now maintains a aspect ratio ([7132542](https://github.com/axe312ger/gatsby-mdx-suite/commit/71325422ca454750752f63769601c0e4cc166f0f))
+
+
+
+
+
 # [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.9.3...gatsby-theme-mdx-suite-base@0.10.0) (2021-01-12)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.8.8...@gatsby-mdx-suite/mdx-link@0.9.0) (2021-01-22)
+
+
+### Features
+
+* **forms:** improve Switch and add final form adapter for input ([a7c507e](https://github.com/axe312ger/gatsby-mdx-suite/commit/a7c507ef676cd7a3abfa8d79c94ce7b91b6e08bb))
+
+
+
+
+
 ## [0.8.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.8.7...@gatsby-mdx-suite/mdx-link@0.8.8) (2021-01-05)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-link

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.3...@gatsby-mdx-suite/mdx-animation@0.2.4) (2021-01-22)
+
+
+### Bug Fixes
+
+* **animation:** trigger animations properly based on golden ratio ([843f6f2](https://github.com/axe312ger/gatsby-mdx-suite/commit/843f6f24e41b53ba9f80c8632406ce8e8916a3dc))
+
+
+
+
+
 ## [0.2.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.2...@gatsby-mdx-suite/mdx-animation@0.2.3) (2021-01-08)
 
 

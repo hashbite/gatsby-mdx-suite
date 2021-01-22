@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-layout",
-  "version": "0.26.2",
+  "version": "0.26.3",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -27,8 +27,8 @@
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/helpers": "^0.14.2",
-    "@gatsby-mdx-suite/mdx-color-set": "^0.4.10",
+    "@gatsby-mdx-suite/helpers": "^0.14.3",
+    "@gatsby-mdx-suite/mdx-color-set": "^0.4.11",
     "@gatsby-mdx-suite/mdx-image": "^0.8.4"
   },
   "publishConfig": {
