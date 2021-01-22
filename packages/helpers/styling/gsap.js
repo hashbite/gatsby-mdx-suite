@@ -19,10 +19,16 @@ export function killScrollTrigger(instance) {
 
 // Hook to kill ScrollTrigger instances automatically
 export function useKillScrollTrigger(scrollTriggerInstance) {
-  useLayoutEffect(() => () => {
-    if (Array.isArray(scrollTriggerInstance)) {
-      return scrollTriggerInstance.map(killScrollTrigger)
-    }
-    killScrollTrigger(scrollTriggerInstance)
-  })
+  useLayoutEffect(
+    () => () => {
+      if (!scrollTriggerInstance) {
+        return null
+      }
+      if (Array.isArray(scrollTriggerInstance)) {
+        return scrollTriggerInstance.map(killScrollTrigger)
+      }
+      killScrollTrigger(scrollTriggerInstance)
+    },
+    [scrollTriggerInstance]
+  )
 }
