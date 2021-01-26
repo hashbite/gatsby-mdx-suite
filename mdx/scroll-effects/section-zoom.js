@@ -24,6 +24,8 @@ const SectionWrapper = styled.section(({ theme }) => {
     color: ${theme.colors.text};
     overflow: hidden;
 
+    will-change: background;
+
     ${debugMode({ color: 'red', title: 'Section Video Zoom', type: 'border' })}
   `
 })
@@ -52,7 +54,9 @@ const BackgroundVideoContainer = styled.div(
     overflow: hidden;
     width: 62.8%;
     margin: 0 auto;
-    ${tw`shadow-2xl`}
+    ${tw`shadow-2xl z-10`}
+
+    will-change: transform, border-radius;
 
     &::before {
       content: '';
@@ -67,6 +71,15 @@ const BackgroundVideoContainer = styled.div(
       display: table;
       clear: both;
     }
+  `
+)
+
+const BackgroundVideoOverlay = styled.div(
+  ({ backgroundColor }) => css`
+    ${tw`absolute inset-0 z-10 bg-black`}
+
+    opacity: 0;
+    will-change: opacity;
   `
 )
 
@@ -103,6 +116,8 @@ const SectionContent = styled.div(
     padding-top: ${calcGapValue(props.gap, props.theme)};
     padding-bottom: ${calcGapValue(props.gap, props.theme)};
 
+    will-change: opacity;
+
     ${debugMode({
       color: 'tomato',
       title: 'SectionVideoZoom Content',
@@ -133,6 +148,7 @@ const SectionZoom = ({
 
   const refVideo = useRef()
   const refVideoContainer = useRef()
+  const refVideoOverlay = useRef()
   const refContent = useRef()
 
   const [viewportWidth, viewportHeight] = useWindowSize()
@@ -141,8 +157,6 @@ const SectionZoom = ({
     viewportWidth,
     viewportHeight,
   ])
-
-  const theme = useTheme()
 
   useKillScrollTrigger(scrollTriggerInstanceVideo)
 
@@ -165,6 +179,7 @@ const SectionZoom = ({
               scrub: true,
               pin: refVideoContainer.current,
               anticipatePin: 1,
+              refreshPriority: 10,
               invalidateOnRefresh: true,
               markers: false,
               end: 'bottom center',
@@ -184,10 +199,9 @@ const SectionZoom = ({
             },
             0
           )
-          .set(node, { backgroundColor: theme.colors.black })
           .set(refContent.current, { alpha: 0 })
-          .to(refVideoContainer.current, {
-            alpha: 0,
+          .to(refVideoOverlay.current, {
+            alpha: 1,
             ease: 'power1.slow',
             duration: 1.5,
           })
@@ -203,13 +217,7 @@ const SectionZoom = ({
           .to({}, { duration: 0.75 })
       )
     },
-    [
-      theme.colors.black,
-      videoData.aspectRatio,
-      viewportAspectRatio,
-      viewportHeight,
-      viewportWidth,
-    ]
+    [videoData.aspectRatio, viewportAspectRatio, viewportHeight, viewportWidth]
   )
 
   return (
@@ -231,6 +239,7 @@ const SectionZoom = ({
             >
               {videoData.sources}
             </BackgroundVideo>
+            <BackgroundVideoOverlay ref={refVideoOverlay} />
           </BackgroundVideoContainer>
         </BackgroundVideoWrapper>
         {children && (
