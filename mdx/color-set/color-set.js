@@ -70,8 +70,9 @@ const ColorSet = ({ name, children, ...colors }) => {
 }
 
 ColorSet.propTypes = {
-  name: propTypes.string,
-  children: propTypes.node,
+  children: propTypes.node.isRequired,
+  /** Name of color set to apply */
+  name: propTypes.string.isRequired,
 }
 
 export default ColorSet
