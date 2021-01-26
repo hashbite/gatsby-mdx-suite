@@ -19,6 +19,7 @@ const useAnimation = ({ show, isVisible }) => {
     ${additionalStyles};
     animation-fill-mode: both;
     animation-play-state: ${isVisible ? 'running' : 'paused'};
+    will-change: transform, opacity;
   `
 
   return {
