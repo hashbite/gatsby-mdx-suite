@@ -1,4 +1,13 @@
-import { useLayoutEffect } from 'react'
+import { useLayoutEffect, useEffect } from 'react'
+
+/**
+ * As we use useLayoutEffect only for cleanup, this work around prevents
+ * warnings about using useLayoutEffect in SSR environment.
+ *
+ * See: https://medium.com/@alexandereardon/uselayouteffect-and-ssr-192986cdcf7a
+ */
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 // This helper kills the time line and the attached ScrollTrigger instance
 export function killScrollTrigger(instance) {
@@ -19,7 +28,7 @@ export function killScrollTrigger(instance) {
 
 // Hook to kill ScrollTrigger instances automatically
 export function useKillScrollTrigger(scrollTriggerInstance) {
-  useLayoutEffect(
+  useIsomorphicLayoutEffect(
     () => () => {
       if (!scrollTriggerInstance) {
         return null
