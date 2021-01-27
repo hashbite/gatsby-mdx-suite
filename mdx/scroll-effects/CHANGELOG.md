@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.2.1...@gatsby-mdx-suite/mdx-scroll-effects@0.2.2) (2021-01-27)
+
+
+### Bug Fixes
+
+* **scroll-detection:** ensure scrolling up triggers lazy loading and animation ([2742402](https://github.com/axe312ger/gatsby-mdx-suite/commit/27424028b96fd691b4dcd644a461797e3f272a97))
+
+
+### Performance Improvements
+
+* **animation:** use will-change to improve rendering performance ([503c046](https://github.com/axe312ger/gatsby-mdx-suite/commit/503c04634fb54b939c377e70eba29c0263b458e5))
+
+
+
+
+
 ## [0.2.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.2.0...@gatsby-mdx-suite/mdx-scroll-effects@0.2.1) (2021-01-22)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-scroll-effects

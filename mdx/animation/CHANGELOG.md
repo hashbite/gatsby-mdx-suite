@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.4...@gatsby-mdx-suite/mdx-animation@0.2.5) (2021-01-27)
+
+
+### Bug Fixes
+
+* **animation:** ensure animations trigger above the fold ([3be212e](https://github.com/axe312ger/gatsby-mdx-suite/commit/3be212ed9a5e8aa420ce87756ae1d397c387a469))
+* **scroll-detection:** ensure scrolling up triggers lazy loading and animation ([2742402](https://github.com/axe312ger/gatsby-mdx-suite/commit/27424028b96fd691b4dcd644a461797e3f272a97))
+
+
+
+
+
 ## [0.2.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.3...@gatsby-mdx-suite/mdx-animation@0.2.4) (2021-01-22)
 
 

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.14.3...@gatsby-mdx-suite/helpers@0.14.4) (2021-01-27)
+
+
+### Bug Fixes
+
+* **scroll-detection:** ensure scrolling up triggers lazy loading and animation ([2742402](https://github.com/axe312ger/gatsby-mdx-suite/commit/27424028b96fd691b4dcd644a461797e3f272a97))
+* **SSR:** useIsomorphicLayoutEffect for GSAP cleanup ([4a42adf](https://github.com/axe312ger/gatsby-mdx-suite/commit/4a42adf0977f82eacef2a54fef68fb61afc47969))
+
+
+### Performance Improvements
+
+* **animation:** use will-change to improve rendering performance ([503c046](https://github.com/axe312ger/gatsby-mdx-suite/commit/503c04634fb54b939c377e70eba29c0263b458e5))
+
+
+
+
+
 ## [0.14.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.14.2...@gatsby-mdx-suite/helpers@0.14.3) (2021-01-22)
 
 

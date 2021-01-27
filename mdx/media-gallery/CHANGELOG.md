@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.31](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.4.30...@gatsby-mdx-suite/mdx-media-gallery@0.4.31) (2021-01-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
 ## [0.4.30](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.4.29...@gatsby-mdx-suite/mdx-media-gallery@0.4.30) (2021-01-22)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery

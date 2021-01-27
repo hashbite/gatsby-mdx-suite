@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.8.0...@gatsby-mdx-suite/mdx-video@0.8.1) (2021-01-27)
+
+
+### Bug Fixes
+
+* **scroll-detection:** ensure scrolling up triggers lazy loading and animation ([2742402](https://github.com/axe312ger/gatsby-mdx-suite/commit/27424028b96fd691b4dcd644a461797e3f272a97))
+
+
+
+
+
 # [0.8.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.7.1...@gatsby-mdx-suite/mdx-video@0.8.0) (2021-01-12)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.8.1...gatsby-theme-mdx-suite-core@0.8.2) (2021-01-27)
+
+
+### Bug Fixes
+
+* **animation:** remove faulty animations ([5aad1b2](https://github.com/axe312ger/gatsby-mdx-suite/commit/5aad1b2f0a42913e7f398b9da7e3a3c86f54615c))
+
+
+
+
+
 ## [0.8.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.8.0...gatsby-theme-mdx-suite-core@0.8.1) (2021-01-22)
 
 
