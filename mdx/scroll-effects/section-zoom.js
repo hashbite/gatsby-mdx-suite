@@ -6,9 +6,8 @@ import tw from 'twin.macro'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useWindowSize } from '@react-hook/window-size'
-import { useTheme } from 'emotion-theming'
 
-import { useKillScrollTrigger } from '@gatsby-mdx-suite/helpers/styling/gsap'
+import { useKillScrollTriggerOnCleanup } from '@gatsby-mdx-suite/helpers/styling/gsap'
 import { useVideo } from '@gatsby-mdx-suite/mdx-video/hooks'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
@@ -158,7 +157,7 @@ const SectionZoom = ({
     viewportHeight,
   ])
 
-  useKillScrollTrigger(scrollTriggerInstanceVideo)
+  useKillScrollTriggerOnCleanup(scrollTriggerInstanceVideo)
 
   const initScrollTriggerVideo = useCallback(
     (node) => {

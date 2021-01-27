@@ -27,7 +27,7 @@ export function killScrollTrigger(instance) {
 }
 
 // Hook to kill ScrollTrigger instances automatically
-export function useKillScrollTrigger(scrollTriggerInstance) {
+export function useKillScrollTriggerOnCleanup(scrollTriggerInstance) {
   useIsomorphicLayoutEffect(
     () => () => {
       if (!scrollTriggerInstance) {
@@ -40,4 +40,12 @@ export function useKillScrollTrigger(scrollTriggerInstance) {
     },
     [scrollTriggerInstance]
   )
+}
+
+export function useKillScrollTriggerWhenTrue(scrollTriggerInstance, condition) {
+  useEffect(() => {
+    if (condition) {
+      killScrollTrigger(scrollTriggerInstance)
+    }
+  }, [condition, scrollTriggerInstance])
 }

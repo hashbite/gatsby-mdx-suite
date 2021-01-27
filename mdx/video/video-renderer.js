@@ -7,7 +7,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
-import { useKillScrollTrigger } from '@gatsby-mdx-suite/helpers/styling/gsap'
+import { useKillScrollTriggerOnCleanup } from '@gatsby-mdx-suite/helpers/styling/gsap'
 
 import { useVideo } from './hooks'
 
@@ -72,7 +72,7 @@ export default function Video({
   const videoData = useVideo({ contextKey, id })
   const refVideo = useRef(null)
   const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
-  useKillScrollTrigger(scrollTriggerInstance)
+  useKillScrollTriggerOnCleanup(scrollTriggerInstance)
 
   const handleVideoIntersection = useCallback(
     (isActive) => {

@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 import {
   killScrollTrigger,
-  useKillScrollTrigger,
+  useKillScrollTriggerOnCleanup,
 } from '@gatsby-mdx-suite/helpers/styling/gsap'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger)
 const Parallax = ({ children, till, from, speed, markers, ...props }) => {
   const activeBreakpoints = useBreakpoint()
   const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
-  useKillScrollTrigger(scrollTriggerInstance)
+  useKillScrollTriggerOnCleanup(scrollTriggerInstance)
 
   // Activate effect based on props
   const effectActive = useMemo(() => {

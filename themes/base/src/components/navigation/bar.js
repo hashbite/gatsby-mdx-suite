@@ -11,7 +11,7 @@ import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 
 import NavigationDesktop from './desktop'
 import NavigationMobile from './mobile'
-import { useKillScrollTrigger } from '@gatsby-mdx-suite/helpers/styling/gsap'
+import { useKillScrollTriggerOnCleanup } from '@gatsby-mdx-suite/helpers/styling/gsap'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -58,8 +58,8 @@ const NavigationBar = ({
     null
   )
 
-  useKillScrollTrigger(scrollTriggerInstancePinning)
-  useKillScrollTrigger(scrollTriggerInstanceFade)
+  useKillScrollTriggerOnCleanup(scrollTriggerInstancePinning)
+  useKillScrollTriggerOnCleanup(scrollTriggerInstanceFade)
 
   background = selectColor(theme.colors, background)
   textColor = selectColor(theme.colors, textColor)

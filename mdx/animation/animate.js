@@ -6,7 +6,10 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
-import { useKillScrollTrigger } from '@gatsby-mdx-suite/helpers/styling/gsap'
+import {
+  useKillScrollTriggerOnCleanup,
+  useKillScrollTriggerWhenTrue,
+} from '@gatsby-mdx-suite/helpers/styling/gsap'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -36,7 +39,6 @@ const Animate = ({ children, markers, show, className, ...props }) => {
   const [isVisible, setIsVisible] = useState(false)
   const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
   const { animationClass } = useAnimation({ show, isVisible })
-  useKillScrollTrigger(scrollTriggerInstance)
 
   const initScrollTrigger = useCallback(
     (node) => {
@@ -47,7 +49,6 @@ const Animate = ({ children, markers, show, className, ...props }) => {
         ScrollTrigger.create({
           trigger: node,
           start: 'top 61.8%',
-          once: true,
           markers,
           onToggle: ({ isActive }) => isActive && setIsVisible(true),
         })
@@ -55,6 +56,9 @@ const Animate = ({ children, markers, show, className, ...props }) => {
     },
     [setIsVisible, markers]
   )
+
+  useKillScrollTriggerOnCleanup(scrollTriggerInstance)
+  useKillScrollTriggerWhenTrue(scrollTriggerInstance, isVisible)
 
   return (
     <div
