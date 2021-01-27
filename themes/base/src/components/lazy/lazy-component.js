@@ -4,6 +4,11 @@ import propTypes from 'prop-types'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import {
+  useKillScrollTriggerOnCleanup,
+  useKillScrollTriggerWhenTrue,
+} from '@gatsby-mdx-suite/helpers/styling/gsap'
+
 import DefaultLoading from './loading'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -18,24 +23,29 @@ export default function LazyComponent({
   forceRendering = false,
 }) {
   const [shouldRender, setShouldRender] = useState(forceRendering)
+  const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
 
   const initScrollTrigger = useCallback(
     (node) => {
       if (!node) {
         return
       }
-      ScrollTrigger.create({
-        trigger: node,
-        markers,
-        start: 'top 200%',
-        end: 'bottom -100%',
-        refreshPriority: 10,
-        once: true,
-        onToggle: ({ isActive }) => isActive && setShouldRender(true),
-      })
+      setScrollTriggerInstance(
+        ScrollTrigger.create({
+          trigger: node,
+          markers,
+          start: 'top 200%',
+          end: 'bottom -100%',
+          refreshPriority: 10,
+          onToggle: ({ isActive }) => isActive && setShouldRender(true),
+        })
+      )
     },
     [markers]
   )
+
+  useKillScrollTriggerOnCleanup(scrollTriggerInstance)
+  useKillScrollTriggerWhenTrue(scrollTriggerInstance, shouldRender)
 
   return (
     <div ref={!forceRendering && initScrollTrigger}>
