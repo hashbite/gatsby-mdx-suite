@@ -199,24 +199,32 @@ const Column = ({
   const hasBackground = !!colorSet || !!colors.background || !!backgroundImageId
   const contentPadding = padding || (hasBackground ? 'content-gap' : null)
 
-  return (
-    <ColorSet name={colorSet} {...colors}>
-      <StyledColumn
-        minAspectRatio={minAspectRatio}
-        backgroundImage={backgroundImage}
-        {...columnProps}
-      >
-        {children && (
-          <ColumnContentWrapper center={center}>
-            <ColumnContent padding={contentPadding}>{children}</ColumnContent>
-          </ColumnContentWrapper>
-        )}
-        {backgroundImageId && (
-          <BackgroundImage id={backgroundImageId} fit="cover" />
-        )}
-      </StyledColumn>
-    </ColorSet>
+  const columnContent = (
+    <StyledColumn
+      minAspectRatio={minAspectRatio}
+      backgroundImage={backgroundImage}
+      {...columnProps}
+    >
+      {children && (
+        <ColumnContentWrapper center={center}>
+          <ColumnContent padding={contentPadding}>{children}</ColumnContent>
+        </ColumnContentWrapper>
+      )}
+      {backgroundImageId && (
+        <BackgroundImage id={backgroundImageId} fit="cover" />
+      )}
+    </StyledColumn>
   )
+
+  if (colorSet) {
+    return (
+      <ColorSet name={colorSet} {...colors}>
+        {columnContent}
+      </ColorSet>
+    )
+  }
+
+  return columnContent
 }
 
 Column.defaultProps = {

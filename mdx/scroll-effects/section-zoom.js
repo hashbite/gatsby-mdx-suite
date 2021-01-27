@@ -219,45 +219,53 @@ const SectionZoom = ({
     [videoData.aspectRatio, viewportAspectRatio, viewportHeight, viewportWidth]
   )
 
-  return (
-    <ColorSet name={colorSet} {...colors}>
-      <SectionWrapper {...props} ref={initScrollTriggerVideo}>
-        <BackgroundVideoWrapper>
-          <BackgroundVideoContainer
-            ref={refVideoContainer}
-            aspectRatio={videoData.aspectRatio}
+  const sectionContent = (
+    <SectionWrapper {...props} ref={initScrollTriggerVideo}>
+      <BackgroundVideoWrapper>
+        <BackgroundVideoContainer
+          ref={refVideoContainer}
+          aspectRatio={videoData.aspectRatio}
+        >
+          <BackgroundVideo
+            ref={refVideo}
+            autoPlay
+            playsInline
+            muted
+            loop
+            poster={videoData?.screenshots?.[0]?.publicURL}
+            {...props}
           >
-            <BackgroundVideo
-              ref={refVideo}
-              autoPlay
-              playsInline
-              muted
-              loop
-              poster={videoData?.screenshots?.[0]?.publicURL}
-              {...props}
-            >
-              {videoData.sources}
-            </BackgroundVideo>
-            <BackgroundVideoOverlay ref={refVideoOverlay} />
-          </BackgroundVideoContainer>
-        </BackgroundVideoWrapper>
-        {children && (
-          <SectionContentWrapper
-            verticalAlign={convertToFlexAlignment(verticalAlign)}
+            {videoData.sources}
+          </BackgroundVideo>
+          <BackgroundVideoOverlay ref={refVideoOverlay} />
+        </BackgroundVideoContainer>
+      </BackgroundVideoWrapper>
+      {children && (
+        <SectionContentWrapper
+          verticalAlign={convertToFlexAlignment(verticalAlign)}
+          horizontalAlign={convertToFlexAlignment(horizontalAlign)}
+        >
+          <SectionContent
+            gap={gap}
             horizontalAlign={convertToFlexAlignment(horizontalAlign)}
+            ref={refContent}
           >
-            <SectionContent
-              gap={gap}
-              horizontalAlign={convertToFlexAlignment(horizontalAlign)}
-              ref={refContent}
-            >
-              {children}
-            </SectionContent>
-          </SectionContentWrapper>
-        )}
-      </SectionWrapper>
-    </ColorSet>
+            {children}
+          </SectionContent>
+        </SectionContentWrapper>
+      )}
+    </SectionWrapper>
   )
+
+  if (colorSet) {
+    return (
+      <ColorSet name={colorSet} {...colors}>
+        {sectionContent}
+      </ColorSet>
+    )
+  }
+
+  return sectionContent
 }
 
 SectionZoom.defaultProps = {
