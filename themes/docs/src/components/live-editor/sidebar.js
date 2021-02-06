@@ -65,12 +65,6 @@ const ColorSwatch = styled.div(
 const ColorSwatchVariantTitle = tw.span`text-xs text-gray-700`
 
 const ColorSets = tw.div`grid gap-grid-gap grid-cols-1`
-const ColorSetWrapper = styled.div`
-  ${tw`p-4`}
-  background: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.text};
-`
-const ColorSetTitle = tw.h2`mb-4`
 
 const FontPreview = styled.div`
   & + & {
@@ -257,7 +251,7 @@ function LiveEditorSidebar({ editorInstance, tab }) {
                       <Color>{name}:</Color>
                       <ColorSwatches>
                         {Object.keys(colorData).map((colorVariant, i) => (
-                          <ColorSwatchWrapper key={i}>
+                          <ColorSwatchWrapper key={colorVariant}>
                             <ColorSwatch
                               color={colorData[colorVariant]}
                               onClick={() =>
