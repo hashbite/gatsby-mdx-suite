@@ -10,12 +10,11 @@ import { useTheme } from 'emotion-theming'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
-import CTA from '@gatsby-mdx-suite/mdx-link/cta'
-import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import Search from 'gatsby-theme-mdx-suite-base/src/components/form/fields/search'
 import * as animations from 'gatsby-theme-mdx-suite-core/src/animations/index'
 
 import { useMedia } from './hooks'
+import ColorSet from '../style-guide/components/color-set'
 
 const LiveEditorSidebarWrapper = styled.div`
   grid-area: sidebar;
@@ -292,38 +291,9 @@ function LiveEditorSidebar({ editorInstance, tab }) {
           <ColorSets>
             {Object.keys(theme.colors.sets)
               .sort((a, b) => a.localeCompare(b))
-              .map((name) => {
-                const setData = theme.colors.sets[name]
-                return (
-                  <ColorSet key={name} name={name}>
-                    <ColorSetWrapper>
-                      <ColorSetTitle>
-                        Color set: <strong>{name}</strong>
-                      </ColorSetTitle>
-                      <p>This is an example for the {name} color set.</p>
-                      <p>
-                        <CTA href="#">Example CTA</CTA>
-                      </p>
-                      <h2>Colors:</h2>
-                      {Object.keys(setData)
-                        .sort((a, b) => a.localeCompare(b))
-                        .map((color) =>
-                          Array.isArray(setData[color]) ? (
-                            setData[color].map((value, i) => (
-                              <ColorSwatch
-                                key={i}
-                                color={value}
-                                title={color}
-                              />
-                            ))
-                          ) : (
-                            <ColorSwatch color={setData[color]} title={color} />
-                          )
-                        )}
-                    </ColorSetWrapper>
-                  </ColorSet>
-                )
-              })}
+              .map((name) => (
+                <ColorSet name={name} data={theme.colors.sets[name]} />
+              ))}
           </ColorSets>
         </>
       )}
