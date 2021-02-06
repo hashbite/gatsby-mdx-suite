@@ -28,7 +28,7 @@ const ColorSetDemo = ({ name, data }) => (
         {Object.keys(data)
           .sort((a, b) => a.localeCompare(b))
           .map((color) => (
-            <ColorSwatch color={data[color]} name={color} />
+            <ColorSwatch key={color} color={data[color]} name={color} />
           ))}
       </ColorSwatches>
     </ColorSetWrapper>

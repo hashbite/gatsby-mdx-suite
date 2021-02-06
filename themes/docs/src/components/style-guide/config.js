@@ -67,16 +67,16 @@ function StyleGuideConfig() {
       <>
         <h2>Core Colors</h2>
         <ColorSwatches>
-          {singleColors.map(({ name, value }, i) => (
-            <ColorSwatch key={i} color={value} name={name} />
+          {singleColors.map(({ name, value }) => (
+            <ColorSwatch key={name} color={value} name={name} />
           ))}
         </ColorSwatches>
         <h2>Color Palettes</h2>
         {palettes.map(({ name, value }, i) => (
-          <ColorSwatches>
-            {Object.keys(value).map((colorVariant, i) => (
+          <ColorSwatches key={name}>
+            {Object.keys(value).map((colorVariant) => (
               <ColorSwatch
-                key={i}
+                key={colorVariant}
                 color={value[colorVariant]}
                 name={`${name}-${colorVariant}`}
               />
@@ -90,7 +90,9 @@ function StyleGuideConfig() {
   const colorSets = useMemo(() => {
     return Object.keys(theme.colors.sets)
       .sort((a, b) => a.localeCompare(b))
-      .map((name) => <ColorSet name={name} data={theme.colors.sets[name]} />)
+      .map((name) => (
+        <ColorSet key={name} name={name} data={theme.colors.sets[name]} />
+      ))
   }, [theme.colors])
 
   return (
@@ -141,15 +143,17 @@ function StyleGuideConfig() {
         <StyleGuideSectionHeader>Sizes</StyleGuideSectionHeader>
         <StyleGuideSectionContent>
           <Sizes>
-            {Object.keys(theme.spacing).map((size) => (
-              <tr key={size}>
-                <td>{size}</td>
-                <td>{theme.spacing[size]}</td>
-                <td>
-                  <Length width={theme.spacing[size]} />
-                </td>
-              </tr>
-            ))}
+            <tbody>
+              {Object.keys(theme.spacing).map((size) => (
+                <tr key={size}>
+                  <td>{size}</td>
+                  <td>{theme.spacing[size]}</td>
+                  <td>
+                    <Length width={theme.spacing[size]} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </Sizes>
         </StyleGuideSectionContent>
       </StyleGuideSection>

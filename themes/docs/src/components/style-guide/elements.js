@@ -48,7 +48,11 @@ function StyleGuideConfig() {
                 <mdxComponents.li>Two</mdxComponents.li>
                 <mdxComponents.li>3</mdxComponents.li>
                 <mdxComponents.li>④</mdxComponents.li>
-                <mdxComponents.li>5️⃣</mdxComponents.li>
+                <mdxComponents.li>
+                  <span role="img" aria-label="5">
+                    5️⃣
+                  </span>
+                </mdxComponents.li>
               </mdxComponents.ul>
             </div>
             <div>
@@ -58,7 +62,11 @@ function StyleGuideConfig() {
                 <mdxComponents.li>Two</mdxComponents.li>
                 <mdxComponents.li>3</mdxComponents.li>
                 <mdxComponents.li>④</mdxComponents.li>
-                <mdxComponents.li>5️⃣</mdxComponents.li>
+                <mdxComponents.li>
+                  <span role="img" aria-label="5">
+                    5️⃣
+                  </span>
+                </mdxComponents.li>
               </mdxComponents.ol>
             </div>
             <div>
@@ -68,7 +76,11 @@ function StyleGuideConfig() {
                 <mdxComponents.li>Two</mdxComponents.li>
                 <mdxComponents.li>3</mdxComponents.li>
                 <mdxComponents.li>④</mdxComponents.li>
-                <mdxComponents.li>5️⃣</mdxComponents.li>
+                <mdxComponents.li>
+                  <span role="img" aria-label="5">
+                    5️⃣
+                  </span>
+                </mdxComponents.li>
               </mdxComponents.ul>
             </div>
           </GridThreeColumns>
