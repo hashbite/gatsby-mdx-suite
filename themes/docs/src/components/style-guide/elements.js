@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import tw from 'twin.macro'
+import { useMDXComponents } from '@mdx-js/react'
 
 import Label from 'gatsby-theme-mdx-suite-base/src/components/form/decoration/label'
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
@@ -19,19 +20,58 @@ import {
   StyleGuideSectionContent,
   StyleGuideSectionHeader,
   Table,
+  GridTwoColumns,
+  GridThreeColumns,
 } from './styles'
 import ErrorMessage from 'gatsby-theme-mdx-suite-base/src/components/form/decoration/error-message'
 
 const fieldDescription =
   'Some description that gives the user more details about what to enter.'
 
-const InputGrid = tw.div`grid grid-cols-1 md:grid-cols-2 gap-4`
-
 function StyleGuideConfig() {
   const noop = () => {}
   const [switchState, setSwitchState] = useState(false)
+  const mdxComponents = useMDXComponents()
+
   return (
     <>
+      <StyleGuideSection>
+        <StyleGuideSectionHeader>Lists</StyleGuideSectionHeader>
+        <StyleGuideSectionContent>
+          <GridThreeColumns>
+            <div>
+              <h2>Unordered List</h2>
+              <mdxComponents.ul>
+                <mdxComponents.li>One</mdxComponents.li>
+                <mdxComponents.li>Two</mdxComponents.li>
+                <mdxComponents.li>3</mdxComponents.li>
+                <mdxComponents.li>④</mdxComponents.li>
+                <mdxComponents.li>5️⃣</mdxComponents.li>
+              </mdxComponents.ul>
+            </div>
+            <div>
+              <h2>Ordered List</h2>
+              <mdxComponents.ol>
+                <mdxComponents.li>One</mdxComponents.li>
+                <mdxComponents.li>Two</mdxComponents.li>
+                <mdxComponents.li>3</mdxComponents.li>
+                <mdxComponents.li>④</mdxComponents.li>
+                <mdxComponents.li>5️⃣</mdxComponents.li>
+              </mdxComponents.ol>
+            </div>
+            <div>
+              <h2>Custom List</h2>
+              <mdxComponents.ul defaultIcon="star">
+                <mdxComponents.li>One</mdxComponents.li>
+                <mdxComponents.li>Two</mdxComponents.li>
+                <mdxComponents.li>3</mdxComponents.li>
+                <mdxComponents.li>④</mdxComponents.li>
+                <mdxComponents.li>5️⃣</mdxComponents.li>
+              </mdxComponents.ul>
+            </div>
+          </GridThreeColumns>
+        </StyleGuideSectionContent>
+      </StyleGuideSection>
       <StyleGuideSection>
         <StyleGuideSectionHeader>Form Elements</StyleGuideSectionHeader>
         <StyleGuideSectionContent>
@@ -70,52 +110,55 @@ function StyleGuideConfig() {
         <StyleGuideSectionContent>
           <h2>Inputs</h2>
           <h3>Text</h3>
-          <InputGrid>
+          <GridTwoColumns>
             <FieldGroup>
               <Label htmlFor="example-text">Default:</Label>
               <Input id="example-text" type="text" />
               <FieldHelp>{fieldDescription}</FieldHelp>
             </FieldGroup>
             <FieldGroup>
-              <Label htmlFor="example-text">Error:</Label>
+              <Label htmlFor="example-text-error">Error:</Label>
               <Input
-                id="example-text"
+                id="example-text-error"
                 type="text"
                 error="Something went wrong"
               />
               <FieldHelp>{fieldDescription}</FieldHelp>
             </FieldGroup>
-          </InputGrid>
+          </GridTwoColumns>
           <h3>Search</h3>
-          <InputGrid>
+          <GridTwoColumns>
             <FieldGroup>
               <Label htmlFor="example-search">Default:</Label>
               <Search id="example-search" />
               <FieldHelp>{fieldDescription}</FieldHelp>
             </FieldGroup>
             <FieldGroup>
-              <Label htmlFor="example-search">Error:</Label>
-              <Search id="example-search" error="Something went wrong" />
+              <Label htmlFor="example-search-error">Error:</Label>
+              <Search id="example-search-error" error="Something went wrong" />
               <FieldHelp>{fieldDescription}</FieldHelp>
             </FieldGroup>
-          </InputGrid>
+          </GridTwoColumns>
           <h3>Text area</h3>
-          <InputGrid>
+          <GridTwoColumns>
             <FieldGroup>
               <Label htmlFor="example-text-area">Default:</Label>
               <TextArea id="example-text-area" />
               <FieldHelp>{fieldDescription}</FieldHelp>
             </FieldGroup>
             <FieldGroup>
-              <Label htmlFor="example-text-area">Error:</Label>
-              <TextArea id="example-text-area" error="Something went wrong" />
+              <Label htmlFor="example-text-area-error">Error:</Label>
+              <TextArea
+                id="example-text-area-error"
+                error="Something went wrong"
+              />
               <FieldHelp>{fieldDescription}</FieldHelp>
             </FieldGroup>
-          </InputGrid>
+          </GridTwoColumns>
         </StyleGuideSectionContent>
         <StyleGuideSectionContent>
           <h2>Controls</h2>
-          <InputGrid>
+          <GridTwoColumns>
             <FieldGroupInline>
               <CheckBox id="example-check-box" />
               <Label htmlFor="example-check-box">Example check box</Label>
@@ -125,8 +168,8 @@ function StyleGuideConfig() {
               <Label htmlFor="example-check-box">Example check box</Label>
               <ErrorMessage>Something went wrong</ErrorMessage>
             </FieldGroupInline>
-          </InputGrid>
-          <InputGrid>
+          </GridTwoColumns>
+          <GridTwoColumns>
             <FieldGroup>
               <Switch
                 checked={switchState}
@@ -144,8 +187,8 @@ function StyleGuideConfig() {
                 Example switch
               </Switch>
             </FieldGroup>
-          </InputGrid>
-          <InputGrid>
+          </GridTwoColumns>
+          <GridTwoColumns>
             <FieldGroup>
               <Label htmlFor="example-select">Select:</Label>
               <Select id="example-select" onChange={noop}>
@@ -161,7 +204,7 @@ function StyleGuideConfig() {
               </Select>
               <ErrorMessage>Something went wrong</ErrorMessage>
             </FieldGroup>
-          </InputGrid>
+          </GridTwoColumns>
         </StyleGuideSectionContent>
       </StyleGuideSection>
     </>
