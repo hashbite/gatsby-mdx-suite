@@ -30,3 +30,11 @@ export const StyleGuideSectionContent = styled.div(
 )
 
 export const ColorSwatches = tw.div`flex gap-4 mb-8 flex-wrap`
+
+export const Table = styled.table`
+  ${tw`table-auto w-full`}
+
+  th, td {
+    ${tw`border border-gray-300 p-2`}
+  }
+`
