@@ -1,44 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 import tw from 'twin.macro'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
-import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
+
+import ColorSwatch from './components/color-swatch'
+import ColorSet from './components/color-set'
 
 import {
   StyleGuideSection,
   StyleGuideSectionContent,
   StyleGuideSectionHeader,
+  ColorSwatches,
 } from './styles'
 
 const RawWrapper = tw.pre`my-4 p-4 border border-gray-500 overflow-scroll bg-gray-200`
-const ColorSets = tw.div`grid gap-grid-gap grid-cols-2 md:grid-cols-3 lg:grid-cols-4`
-
-const ColorSetWrapper = styled.div`
-  ${tw`p-4`}
-  background: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.text};
-`
-
-const ColorSwatch = styled.div(
-  ({ color }) => css`
-    ${tw`
-    inline-block px-2 py-1
-    rounded
-    text-sm
-    `}
-    background: ${color};
-
-    &:before {
-      content: '${color}';
-      color: white;
-      mix-blend-mode: difference;
-    }
-  `
-)
+const ColorSets = tw.div`grid gap-grid-gap grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`
 
 const Breakpoints = tw.div`flex flex-col items-center overflow-x-scroll`
 
@@ -73,113 +53,64 @@ const GridItem = tw.div`text-center`
 const GridItemTitle = tw.div`mt-4 text-sm text-gray-800`
 const GridItemContent = tw.div``
 
-const ColorSetTitle = tw.h2`mb-4`
-
-const ColorSwatches = tw.div`flex gap-4`
-const ColorSwatchWrapper = tw.div``
-
 function StyleGuideConfig() {
   const theme = useTheme()
   const icons = useContext(IconsContext)
 
+  const colors = useMemo(() => {
+    const presortedColors = Object.keys(theme.colors)
+      .filter((name) => name !== 'sets')
+      .sort((a, b) => a.localeCompare(b))
+
+    const singleColors = presortedColors
+      .filter((name) => typeof theme.colors[name] === 'string')
+      .map((name) => ({ name, value: theme.colors[name] }))
+    const palettes = presortedColors
+      .filter((name) => typeof theme.colors[name] === 'object')
+      .map((name) => ({ name, value: theme.colors[name] }))
+
+    return (
+      <>
+        <h2>Core Colors</h2>
+        <ColorSwatches>
+          {singleColors.map(({ name, value }, i) => (
+            <ColorSwatch key={i} color={value} name={name} />
+          ))}
+        </ColorSwatches>
+        <h2>Color Palettes</h2>
+        {palettes.map(({ name, value }, i) => (
+          <ColorSwatches>
+            {Object.keys(value).map((colorVariant, i) => (
+              <ColorSwatch
+                key={i}
+                color={value[colorVariant]}
+                name={`${name}-${colorVariant}`}
+              />
+            ))}
+          </ColorSwatches>
+        ))}
+      </>
+    )
+  }, [theme.colors])
+
+  const colorSets = useMemo(() => {
+    return Object.keys(theme.colors.sets)
+      .sort((a, b) => a.localeCompare(b))
+      .map((name) => <ColorSet name={name} data={theme.colors.sets[name]} />)
+  }, [theme.colors])
+
   return (
     <>
       <StyleGuideSection>
-        <StyleGuideSectionHeader>Style Guide Config</StyleGuideSectionHeader>
-        <StyleGuideSectionContent>
-          <p>
-            This gives you an overview about the theme configuration of this
-            project.
-          </p>
-        </StyleGuideSectionContent>
-      </StyleGuideSection>
-      <StyleGuideSection>
         <div id="colors" />
         <StyleGuideSectionHeader>Colors</StyleGuideSectionHeader>
-        <StyleGuideSectionContent>
-          <table>
-            <tbody>
-              {Object.keys(theme.colors)
-                .sort((a, b) => a.localeCompare(b))
-                .filter((name) => name !== 'sets')
-                .map((name) => {
-                  const colorData = theme.colors[name]
-                  return (
-                    <tr key={name}>
-                      <td>
-                        <strong>{name}:</strong>
-                      </td>
-                      <td>
-                        {typeof colorData === 'object' ? (
-                          <ColorSwatches>
-                            {Object.keys(colorData).map((colorVariant, i) => (
-                              <ColorSwatchWrapper key={i}>
-                                <ColorSwatch color={colorData[colorVariant]} />
-                                <br />
-                                {colorVariant}
-                              </ColorSwatchWrapper>
-                            ))}
-                          </ColorSwatches>
-                        ) : (
-                          <ColorSwatch color={colorData} />
-                        )}
-                      </td>
-                    </tr>
-                  )
-                })}
-            </tbody>
-          </table>
-        </StyleGuideSectionContent>
+        <StyleGuideSectionContent>{colors}</StyleGuideSectionContent>
       </StyleGuideSection>
       <StyleGuideSection>
         <div id="color-sets" />
-        <StyleGuideSectionHeader>
-          <h1>Color Sets</h1>
-        </StyleGuideSectionHeader>
-        <StyleGuideSectionContent>
-          <ColorSets>
-            {Object.keys(theme.colors.sets)
-              .sort((a, b) => a.localeCompare(b))
-              .map((name) => {
-                const setData = theme.colors.sets[name]
-
-                return (
-                  <ColorSet key={name} name={name}>
-                    <ColorSetWrapper>
-                      <ColorSetTitle>{name}</ColorSetTitle>
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>Color</th>
-                            <th>Value</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {Object.keys(setData)
-                            .sort((a, b) => a.localeCompare(b))
-                            .map((color) => (
-                              <tr key={color}>
-                                <td>
-                                  <strong>{color}:</strong>
-                                </td>
-                                <td>
-                                  {Array.isArray(setData[color]) ? (
-                                    setData[color].map((value, i) => (
-                                      <ColorSwatch key={i} color={value} />
-                                    ))
-                                  ) : (
-                                    <ColorSwatch color={setData[color]} />
-                                  )}
-                                </td>
-                              </tr>
-                            ))}
-                        </tbody>
-                      </table>
-                    </ColorSetWrapper>
-                  </ColorSet>
-                )
-              })}
-          </ColorSets>
+        <StyleGuideSectionHeader>Color Sets</StyleGuideSectionHeader>
+        <StyleGuideSectionContent fullWidth>
+          <ColorSets>{colorSets}</ColorSets>
         </StyleGuideSectionContent>
       </StyleGuideSection>
       <StyleGuideSection>
