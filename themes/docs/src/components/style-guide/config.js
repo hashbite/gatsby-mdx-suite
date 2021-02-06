@@ -42,12 +42,6 @@ const Length = styled.div(
 
 const Sizes = tw.table`table-auto`
 
-const FontPreview = styled.div`
-  & + & {
-    ${tw`mt-12`}
-  }
-`
-
 const Grid = tw.div`grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4`
 const GridItem = tw.div`text-center`
 const GridItemTitle = tw.div`mt-4 text-sm text-gray-800`
@@ -157,76 +151,6 @@ function StyleGuideConfig() {
               </tr>
             ))}
           </Sizes>
-        </StyleGuideSectionContent>
-      </StyleGuideSection>
-      <StyleGuideSection>
-        <div id="fonts" />
-        <StyleGuideSectionHeader>Fonts</StyleGuideSectionHeader>
-        <StyleGuideSectionContent>
-          {Object.keys(theme.fontFamily).map((font) => (
-            <FontPreview key={font} font={font}>
-              <h1
-                css={css`
-                  font-family: ${theme.fontFamily[font].join(', ')};
-                `}
-              >
-                <strong>{font} h1:</strong> The quick brown fox jumps over the
-                lazy dog
-              </h1>
-              <h2
-                css={css`
-                  font-family: ${theme.fontFamily[font].join(', ')};
-                `}
-              >
-                <strong>{font} h2:</strong> The quick brown fox jumps over the
-                lazy dog
-              </h2>
-              <h3
-                css={css`
-                  font-family: ${theme.fontFamily[font].join(', ')};
-                `}
-              >
-                <strong>{font} h3:</strong> The quick brown fox jumps over the
-                lazy dog
-              </h3>
-              <h4
-                css={css`
-                  font-family: ${theme.fontFamily[font].join(', ')};
-                `}
-              >
-                <strong>{font} h4:</strong> The quick brown fox jumps over the
-                lazy dog
-              </h4>
-              <h5
-                css={css`
-                  font-family: ${theme.fontFamily[font].join(', ')};
-                `}
-              >
-                <strong>{font} h5:</strong> The quick brown fox jumps over the
-                lazy dog
-              </h5>
-              <h6
-                css={css`
-                  font-family: ${theme.fontFamily[font].join(', ')};
-                `}
-              >
-                <strong>{font} h6:</strong> The quick brown fox jumps over the
-                lazy dog
-              </h6>
-              <p
-                css={css`
-                  font-family: ${theme.fontFamily[font].join(', ')};
-                `}
-              >
-                <strong>{font} p:</strong> The quick brown fox jumps over the
-                lazy dog
-              </p>
-              <p>
-                <strong>Font families: </strong>
-                {theme.fontFamily[font].join(', ')}
-              </p>
-            </FontPreview>
-          ))}
         </StyleGuideSectionContent>
       </StyleGuideSection>
       <StyleGuideSection>

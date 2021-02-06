@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import tw from 'twin.macro'
 import { useMDXComponents } from '@mdx-js/react'
 
 import Label from 'gatsby-theme-mdx-suite-base/src/components/form/decoration/label'
@@ -25,6 +24,8 @@ import {
 } from './styles'
 import ErrorMessage from 'gatsby-theme-mdx-suite-base/src/components/form/decoration/error-message'
 
+import SectionTypography from './sections/typography'
+
 const fieldDescription =
   'Some description that gives the user more details about what to enter.'
 
@@ -35,6 +36,7 @@ function StyleGuideConfig() {
 
   return (
     <>
+      <SectionTypography />
       <StyleGuideSection>
         <StyleGuideSectionHeader>Lists</StyleGuideSectionHeader>
         <StyleGuideSectionContent>
