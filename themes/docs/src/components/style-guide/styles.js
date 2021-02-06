@@ -38,3 +38,5 @@ export const Table = styled.table`
     ${tw`border border-gray-300 p-2`}
   }
 `
+export const GridTwoColumns = tw.div`grid grid-cols-1 md:grid-cols-2 gap-4`
+export const GridThreeColumns = tw.div`grid grid-cols-1 sm:grid-cols-3 gap-4`

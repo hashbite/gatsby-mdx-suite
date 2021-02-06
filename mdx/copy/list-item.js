@@ -63,6 +63,7 @@ const ListItem = ({ icon, iconColor, children, type, ...props }) => {
 
 ListItem.defaultProps = {
   type: 'unordered',
+  icon: 'dot',
 }
 
 ListItem.propTypes = {

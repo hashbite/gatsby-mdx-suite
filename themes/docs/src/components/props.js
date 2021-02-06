@@ -23,13 +23,7 @@ const PropWrapper = styled.tr(
 )
 const DescriptionWrapper = styled.div`
   ${tw`text-sm whitespace-normal`}
-  & ul {
-    list-style-type: disc;
-  }
-  & li {
-    padding-bottom: 0;
-    margin-bottom: 0.1rem;
-  }
+
   & a {
     color: inherit;
     text-decoration: underline;

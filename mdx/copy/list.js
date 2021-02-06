@@ -1,12 +1,14 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import tw from 'twin.macro'
 
 import ListItem from './list-item'
 
 import debugMode from '@gatsby-mdx-suite/helpers/styling/debug-mode'
 
 const StyledList = styled.ul`
+  ${tw`list-none`}
   ${debugMode({ color: 'tomato', title: 'List', labelPosition: 'outside' })}
 `
 
@@ -77,13 +79,13 @@ export default function List({
     children = [children]
   }
 
-  children = children.map((child, i) =>
-    child.props &&
-    (child.type.name === 'ListItem' || child.type.name === 'li') ? (
+  children = children.map((child, i) => {
+    const elementType = child?.type?.name || child?.props?.mdxType
+    return child.props && ['ListItem', 'li'].includes(elementType) ? (
       <ListItem
         key={i}
-        icon={child.props.icon || defaultIcon}
-        iconColor={child.props.iconColor || defaultIconColor}
+        icon={child.props?.icon || defaultIcon}
+        iconColor={child.props?.iconColor || defaultIconColor}
         type={type}
       >
         {child.props.children}
@@ -98,7 +100,7 @@ export default function List({
         {child}
       </ListItem>
     )
-  )
+  })
 
   return <StyledList as={type === 'ordered' && 'ol'}>{children}</StyledList>
 }
