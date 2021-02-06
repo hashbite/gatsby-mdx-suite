@@ -79,7 +79,7 @@ export default function List({
 
   children = children.map((child, i) =>
     child.props &&
-    (child.props.mdxType === 'li' || child.props.mdxType === 'ListItem') ? (
+    (child.type.name === 'ListItem' || child.type.name === 'li') ? (
       <ListItem
         key={i}
         icon={child.props.icon || defaultIcon}
