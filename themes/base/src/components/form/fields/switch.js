@@ -5,7 +5,7 @@ import { ErrorMessage } from './generic'
 
 const SwitchInputLabel = tw.label`flex items-center cursor-pointer`
 const SwitchInputWrapper = tw.div`relative`
-const SwitchInputDescription = tw.div`ml-6 text-gray-700 text-sm`
+const SwitchInputDescription = tw.div`ml-2 text-sm`
 const SwitchInputInput = tw.input`hidden`
 const SwitchInputBackground = tw.div`w-10 h-4 bg-gray-400 rounded-full shadow-inner`
 const SwitchInputToggle = tw.div`absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 left-0`
