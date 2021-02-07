@@ -136,6 +136,15 @@ const LiveEditorContainer = styled.div(
   `
 )
 
+const FloatingControls = styled.div(
+  ({ previewExpanded }) => css`
+    ${tw`absolute`}
+    top: 50%;
+    left: ${previewExpanded ? '768px' : '420px'};
+    transform: translate(-50%, 100%);
+  `
+)
+
 function LiveEditor({ editorId, initialValue, layout }) {
   const localStorageId = `mdx-suite-live-editor-${editorId}`
   const [editorInstance, setEditorInstance] = useState(null)
@@ -311,12 +320,6 @@ function LiveEditor({ editorId, initialValue, layout }) {
         <Button target="_blank" href={previewSrc} as="a">
           <ButtonIcon icon="external-link" /> <ButtonLabel>Preview</ButtonLabel>
         </Button>
-        <Button onClick={onTogglePreviewExpanded}>
-          <ButtonIcon icon="switch" />
-          <ButtonLabel>
-            {previewExpanded ? 'Mobile View' : 'Tablet View'}
-          </ButtonLabel>
-        </Button>
       </LivePreviewToolbar>
       <LiveEditorPreviewWrapper>
         <LiveEditorPreview src={previewSrc} />
@@ -372,6 +375,11 @@ function LiveEditor({ editorId, initialValue, layout }) {
       {layout !== 'horizontal' && sidebarTab !== 'closed' && (
         <LiveEditorSidebar editorInstance={editorInstance} tab={sidebarTab} />
       )}
+      <FloatingControls previewExpanded={previewExpanded}>
+        <Button onClick={onTogglePreviewExpanded}>
+          <ButtonIcon icon="switch" />
+        </Button>
+      </FloatingControls>
     </LiveEditorWrapper>
   )
 }
