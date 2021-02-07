@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect, useMemo } from 'react'
+import React, { useCallback, useState, useEffect, useMemo, useRef } from 'react'
 import { useDebounce } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
@@ -290,8 +290,21 @@ function LiveEditor({ editorId, initialValue, layout }) {
     setSidebarTab(e.currentTarget.value)
   }, [])
 
-  const [width, height] = useWindowSize()
+  const previewRef = useRef(null)
 
+  const onReload = useCallback(
+    (e) => {
+      if (!previewRef.current) {
+        return
+      }
+
+      previewRef.current.contentWindow.location.reload()
+    },
+    [previewRef]
+  )
+
+  // Update monaco layout when window resizes
+  const [width, height] = useWindowSize()
   useEffect(() => {
     if (editorInstance) {
       editorInstance.layout()
@@ -314,18 +327,16 @@ function LiveEditor({ editorId, initialValue, layout }) {
         </LiveEditorErrorBar>
       )}
       <LivePreviewToolbar>
-        <ToolbarSection>
-          <Switch
-            id="debug-mode"
-            onClick={onToggleDebugMode}
-            checked={debugMode}
-          >
-            Debug Mode {debugMode && <Icon icon="search" />}
-          </Switch>
-        </ToolbarSection>
+        <Switch id="debug-mode" onClick={onToggleDebugMode} checked={debugMode}>
+          Debug Mode {debugMode && <Icon icon="search" />}
+        </Switch>
+        <Button onClick={onReload}>
+          <ButtonIcon icon="repeat" />
+          <ButtonLabel>Reload Preview</ButtonLabel>
+        </Button>
       </LivePreviewToolbar>
       <LiveEditorPreviewWrapper>
-        <LiveEditorPreview src={previewSrc} />
+        <LiveEditorPreview src={previewSrc} ref={previewRef} />
         <FloatingControls>
           <Button
             target="_blank"
