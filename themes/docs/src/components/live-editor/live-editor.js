@@ -27,14 +27,13 @@ const LiveEditorWrapper = styled.section(
     ${layout === 'horizontal'
       ? css`
           grid-template-columns: 1fr;
-          grid-template-rows: min-content 50vh min-content 30vh min-content;
+          grid-template-rows: min-content 40vh min-content 20vh min-content;
           grid-template-areas:
             'toolbar-preview'
             'preview'
             'toolbar-editor'
             'editor'
             'error';
-          max-height: calc(80vh);
         `
       : css`
           ${tw`w-full h-full`}
