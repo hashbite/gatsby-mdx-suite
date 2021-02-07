@@ -36,11 +36,11 @@
     "@react-hook/window-size": "^3.0.7",
     "@use-it/event-listener": "^0.1.6",
     "fuse.js": "^6.4.6",
-    "gatsby-link": "^2.11.0",
-    "gatsby-source-filesystem": "^2.11.0",
-    "gatsby-transformer-documentationjs": "^4.10.0",
-    "gatsby-transformer-react-docgen": "^5.9.0",
-    "monaco-editor": "^0.22.3",
+    "gatsby-link": "^2.10.0",
+    "gatsby-source-filesystem": "^2.10.0",
+    "gatsby-transformer-documentationjs": "^4.9.0",
+    "gatsby-transformer-react-docgen": "^5.8.0",
+    "monaco-editor": "^0.21.3",
     "pretty-bytes": "^5.5.0"
   }
 }
