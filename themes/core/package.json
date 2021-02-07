@@ -15,8 +15,7 @@
     "gatsby-theme-mdx-suite-docs": "^0.0.0",
     "prop-types": "^15.7.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-i18next": "^11.7.2"
+    "react-dom": "^16.9.0"
   },
   "dependencies": {
     "@emotion/core": "^10.1.1",
@@ -39,6 +38,7 @@
     "lodash": "^4.17.20",
     "postcss": "^8.2.5",
     "postcss-csso": "^5.0.0",
+    "react-i18next": "^11.8.5",
     "tailwindcss": "^1.9.6"
   }
 }
