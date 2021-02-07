@@ -60,7 +60,7 @@ const LiveEditorPreview = styled.iframe`
 
 const toolbarStyles = css`
   ${tw`flex justify-between items-center p-2`}
-  ${tw`bg-gray-900 text-white`}
+  ${tw`bg-gray-800 text-white`}
 `
 const LivePreviewToolbar = styled.div`
   ${toolbarStyles}
@@ -70,7 +70,9 @@ const LiveEditorToolbar = styled.div`
   ${toolbarStyles}
   grid-area: toolbar-editor;
 `
-const ToolbarSection = styled.div``
+const ToolbarSection = styled.div`
+  ${tw`flex gap-4`}
+`
 const ToolbarSelect = styled(Select)`
   ${tw`rounded overflow-hidden`}
   width: 280px;
@@ -137,11 +139,15 @@ const LiveEditorContainer = styled.div(
 )
 
 const FloatingControls = styled.div(
-  ({ previewExpanded }) => css`
-    ${tw`absolute`}
+  () => css`
+    ${tw`absolute z-10 flex flex-col gap-4`}
     top: 50%;
-    left: ${previewExpanded ? '768px' : '420px'};
-    transform: translate(-50%, 100%);
+    right: 0;
+    transform: translate(50%, -50%);
+
+    > button {
+      ${tw`shadow`}
+    }
   `
 )
 
@@ -314,28 +320,43 @@ function LiveEditor({ editorId, initialValue, layout }) {
             onClick={onToggleDebugMode}
             checked={debugMode}
           >
-            <Icon icon="search" /> Debug
+            Debug Mode {debugMode && <Icon icon="search" />}
           </Switch>
         </ToolbarSection>
-        <Button target="_blank" href={previewSrc} as="a">
-          <ButtonIcon icon="external-link" /> <ButtonLabel>Preview</ButtonLabel>
-        </Button>
       </LivePreviewToolbar>
       <LiveEditorPreviewWrapper>
         <LiveEditorPreview src={previewSrc} />
+        <FloatingControls>
+          <Button
+            target="_blank"
+            href={previewSrc}
+            as="a"
+            title="Open preview in new tab"
+          >
+            <ButtonIcon icon="external-link" />
+          </Button>
+          <Button
+            onClick={onTogglePreviewExpanded}
+            title="Resize preview column"
+          >
+            <ButtonIcon icon="switch" />
+          </Button>
+        </FloatingControls>
       </LiveEditorPreviewWrapper>
       <LiveEditorToolbar>
         <ToolbarSection>
-          <Button onClick={onClickReload}>
-            <ButtonIcon icon="repeat" />
-          </Button>{' '}
           <Switch
             id="auto-reload"
             onClick={onToggleAutoReload}
             checked={autoReload}
           >
-            Auto Reload
+            Auto Reload {autoReload && <Icon icon="repeat" />}
           </Switch>
+          {!autoReload && (
+            <Button onClick={onClickReload}>
+              <ButtonLabel>Update Preview</ButtonLabel>
+            </Button>
+          )}
         </ToolbarSection>
         <Button onClick={onReset}>
           <ButtonIcon icon="trash" />
@@ -375,11 +396,6 @@ function LiveEditor({ editorId, initialValue, layout }) {
       {layout !== 'horizontal' && sidebarTab !== 'closed' && (
         <LiveEditorSidebar editorInstance={editorInstance} tab={sidebarTab} />
       )}
-      <FloatingControls previewExpanded={previewExpanded}>
-        <Button onClick={onTogglePreviewExpanded}>
-          <ButtonIcon icon="switch" />
-        </Button>
-      </FloatingControls>
     </LiveEditorWrapper>
   )
 }
