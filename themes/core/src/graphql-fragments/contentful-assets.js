@@ -19,9 +19,7 @@ export const MdxSuiteContentfulAsset = graphql`
 export const MdxSuiteMediaCollectionScreen = graphql`
   fragment MdxSuiteMediaCollectionScreen on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 2048) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 2048)
     videoH264(maxWidth: 1920) {
       path
       aspectRatio
@@ -35,9 +33,7 @@ export const MdxSuiteMediaCollectionScreen = graphql`
 export const MdxSuiteMediaCollectionFull = graphql`
   fragment MdxSuiteMediaCollectionFull on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 1200) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 1200)
     videoH264(maxWidth: 1200) {
       path
       aspectRatio
@@ -51,9 +47,7 @@ export const MdxSuiteMediaCollectionFull = graphql`
 export const MdxSuiteMediaCollectionHalf = graphql`
   fragment MdxSuiteMediaCollectionHalf on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 600) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 600)
     videoH264(maxWidth: 600) {
       path
       aspectRatio
@@ -67,9 +61,7 @@ export const MdxSuiteMediaCollectionHalf = graphql`
 export const MdxSuiteMediaCollectionThird = graphql`
   fragment MdxSuiteMediaCollectionThird on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 400) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 400)
     videoH264(maxWidth: 400) {
       path
       aspectRatio
@@ -83,9 +75,7 @@ export const MdxSuiteMediaCollectionThird = graphql`
 export const MdxSuiteMediaCollectionQuarter = graphql`
   fragment MdxSuiteMediaCollectionQuarter on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 300) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 300)
     videoH264(maxWidth: 300) {
       path
       aspectRatio
@@ -99,9 +89,7 @@ export const MdxSuiteMediaCollectionQuarter = graphql`
 export const MdxSuiteMediaCollectionSixth = graphql`
   fragment MdxSuiteMediaCollectionSixth on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 200) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 200)
     videoH264(maxWidth: 200) {
       path
       aspectRatio
@@ -115,9 +103,7 @@ export const MdxSuiteMediaCollectionSixth = graphql`
 export const MdxSuiteMediaCollectionEigth = graphql`
   fragment MdxSuiteMediaCollectionEigth on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 150) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 150)
     videoH264(maxWidth: 150) {
       path
       aspectRatio
@@ -131,9 +117,7 @@ export const MdxSuiteMediaCollectionEigth = graphql`
 export const MdxSuiteMediaDocs = graphql`
   fragment MdxSuiteMediaDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fixed(width: 300) {
-      ...GatsbyContentfulFixed_noBase64
-    }
+    gatsbyImageData(width: 800)
     file {
       details {
         size
