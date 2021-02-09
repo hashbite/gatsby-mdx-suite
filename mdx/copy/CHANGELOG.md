@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.13.5...@gatsby-mdx-suite/mdx-copy@0.14.0) (2021-02-09)
+
+
+### Bug Fixes
+
+* **lists:** properly detect child type ([f3f84b9](https://github.com/axe312ger/gatsby-mdx-suite/commit/f3f84b929fc4c92848b85f0525c45d9083c6ab14))
+
+
+### Features
+
+* **style-guide:** add lists section ([3a15494](https://github.com/axe312ger/gatsby-mdx-suite/commit/3a15494ee422ee00ad545851cc0fce23d35b93b0))
+
+
+
+
+
 ## [0.13.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.13.4...@gatsby-mdx-suite/mdx-copy@0.13.5) (2021-01-27)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-copy

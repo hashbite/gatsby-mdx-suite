@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.8.2...gatsby-theme-mdx-suite-docs@0.9.0) (2021-02-09)
+
+
+### Bug Fixes
+
+* **examples:** ensure editor fits onto very most screens ([5fc2087](https://github.com/axe312ger/gatsby-mdx-suite/commit/5fc208760f94f6c1b0e20e1939e6b34dbdbbbbf0))
+
+
+### Features
+
+* **playground:** add preview reload button ([f2b2d57](https://github.com/axe312ger/gatsby-mdx-suite/commit/f2b2d579ceec15a3d0b014270bf92f4447f91b13))
+* **style-guide:** add lists section ([3a15494](https://github.com/axe312ger/gatsby-mdx-suite/commit/3a15494ee422ee00ad545851cc0fce23d35b93b0))
+* **style-guide:** add typography sheets for all font families ([58e603c](https://github.com/axe312ger/gatsby-mdx-suite/commit/58e603c80707d22938240f540ed6cf8a01684d13))
+* **style-guide:** clean up color and color set display ([2938048](https://github.com/axe312ger/gatsby-mdx-suite/commit/2938048a79afcf676e58bb9bb65d03687e6599c8))
+* **style-guide:** show error state and other variants of form elements ([931895e](https://github.com/axe312ger/gatsby-mdx-suite/commit/931895e71c2cfaa90dd1b02ee89a19c581603866))
+
+
+### Reverts
+
+* Revert "build: upgrade dependencies for Gatsby v2.32" ([c901347](https://github.com/axe312ger/gatsby-mdx-suite/commit/c901347c55e16edf4b0f0a911357b6f745fae660))
+
+
+
+
+
 ## [0.8.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.8.1...gatsby-theme-mdx-suite-docs@0.8.2) (2021-01-27)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-docs

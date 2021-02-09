@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.11.1...gatsby-theme-mdx-suite-base@0.11.2) (2021-02-09)
+
+
+### Bug Fixes
+
+* **forms:** improve buttons ([61f72f8](https://github.com/axe312ger/gatsby-mdx-suite/commit/61f72f8e4e444615bd6a3bcdca16df68fdaa0529))
+* **forms:** switch label now adjusts to background ([5fd18c5](https://github.com/axe312ger/gatsby-mdx-suite/commit/5fd18c5b8765b3afed7b9fe2fff7933491aad76c))
+
+
+### Reverts
+
+* Revert "build: upgrade dependencies for Gatsby v2.32" ([c901347](https://github.com/axe312ger/gatsby-mdx-suite/commit/c901347c55e16edf4b0f0a911357b6f745fae660))
+
+
+
+
+
 ## [0.11.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.11.0...gatsby-theme-mdx-suite-base@0.11.1) (2021-01-27)
 
 
