@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
-import GatsbyImage from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import isPropValid from '@emotion/is-prop-valid'
@@ -63,6 +63,9 @@ export const ImageWrapper = styled('div', {
   `
 )
 
+// eslint-disable-next-line jsx-a11y/alt-text
+const StaticImage = (props) => <img {...props} loading="lazy" />
+
 /**
  * Renders an image from an internal or external source.
  *
@@ -84,9 +87,7 @@ export default function Image({
   position,
   src,
   alt,
-  previewDataURI,
-  file,
-  fluid,
+  // @todo
   ...restProps
 }) {
   const {
@@ -95,135 +96,96 @@ export default function Image({
     themeConfig: { defaultLocale },
   } = useContext(MdxSuiteContext)
 
-  // Locate image data from context if id is passed
-  if (id) {
-    if (!data[contextKey]) {
-      console.error(
-        new Error(
-          `The media context "${contextKey}" does not exist or does not contain any data.`
-        )
-      )
-      return null
-    }
-
-    const images = data[contextKey].filter(Boolean)
-    if (!images) {
-      console.error(new Error(`No images available in context "${contextKey}"`))
-      return null
-    }
-
-    // Get all available image data in all locales
-    const matches = images.filter((asset) => asset.assetId === id)
-
-    // Get data from active locale
-    let imageData = matches.find(({ locale }) => locale === activeLocale)
-
-    // Fall back to data with default locale
-    if (!imageData) {
-      imageData = matches.find(({ locale }) => locale === defaultLocale)
-    }
-
-    // Fall back to first available data from any locale
-    if (!imageData && matches.length) {
-      imageData = matches[0]
-    }
-
-    if (!imageData) {
-      console.error(
-        new Error(
-          `No data located for image:\n\n${JSON.stringify(
-            arguments[0],
-            null,
-            2
-          )}`
-        )
-      )
-      return null
-    }
-
-    // Use located data if no overwrites are passed
-    fluid = fluid || imageData.fluid
-    previewDataURI =
-      previewDataURI ||
-      // Support string & object structure to simplify GraphQL queries
-      (imageData.previewDataURI &&
-        (typeof imageData.previewDataURI === 'string'
-          ? imageData.previewDataURI
-          : imageData.previewDataURI.dataURI))
-    file = file || imageData.file
-  }
-
-  // Enhance data
-  if (previewDataURI) {
-    fluid = { ...fluid, base64: previewDataURI }
+  if (!id && !src) {
+    throw new Error(`Images need at least the id or src property.`)
   }
 
   // Image propery construction
   const imgProps = {}
+
+  // Either trim alt or render empty for decorative images. See: https://www.w3.org/WAI/tutorials/images/decorative/
   if (alt && alt.trim && alt.trim()) {
     imgProps.alt = alt.trim()
   } else {
-    imgProps.role = 'presentation'
+    imgProps.alt = ''
   }
 
-  const dimensionProps = {}
   if (width) {
-    dimensionProps.width = width
+    imgProps.width = width
   }
   if (height) {
-    dimensionProps.height = height
+    imgProps.height = height
   }
 
-  const fitsParent = fit || fit === 'none'
-
-  // Images with fluid data from gatsby-transformer-sharp
-  if (fluid) {
-    return (
-      <ImageWrapper
-        fit={fit}
-        position={position}
-        fitsParent={fitsParent}
-        {...dimensionProps}
-        {...restProps}
-      >
-        <GatsbyImage
-          fluid={fluid}
-          style={{ position: fitsParent ? 'static' : 'relative' }}
-          {...imgProps}
-          objectFit={fit}
-          objectPosition={position}
-        />
-      </ImageWrapper>
-    )
+  if (!id) {
+    return <StaticImage {...imgProps} src={src} />
   }
 
-  const imageSrc = src || (file && file.url)
-
-  if (!imageSrc) {
+  // Locate image data from context if id is passed
+  if (!data[contextKey]) {
     console.error(
       new Error(
-        `Unable to locate src image:\n\n${JSON.stringify(
-          arguments[0],
-          null,
-          2
-        )}`
+        `The media context "${contextKey}" does not exist or does not contain any data.`
       )
     )
     return null
   }
 
-  // Images without fluid data
+  const images = data[contextKey].filter(Boolean)
+  if (!images) {
+    console.error(new Error(`No images available in context "${contextKey}"`))
+    return null
+  }
+
+  // Get all available image data in all locales
+  const matches = images.filter((asset) => asset.assetId === id)
+
+  // Get data from active locale
+  let imageData = matches.find(({ locale }) => locale === activeLocale)
+
+  // Fall back to data with default locale
+  if (!imageData) {
+    imageData = matches.find(({ locale }) => locale === defaultLocale)
+  }
+
+  // Fall back to first available data from any locale
+  if (!imageData && matches.length) {
+    imageData = matches[0]
+  }
+
+  if (!imageData) {
+    throw new Error(
+      `Unable to locate image rendering data for ${id}`
+    )
+  }
+
+  if (!imageData.gatsbyImageData) {
+    if (!imageData.file.url) {
+      throw new Error(`Invalid image rendering data found for ${id}`)
+    }
+    return <StaticImage {...imgProps} src={imageData.file.url} />
+  }
+
+  // const fitsParent = fit || fit === 'none'
+
+  console.log('rendering:', {imgProps, imageData})
+
   return (
-    <ImageWrapper
-      fit={fit}
-      position={position}
-      fitsParent={fitsParent}
-      {...dimensionProps}
-      {...restProps}
-    >
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
-      <img src={imageSrc} {...imgProps} loading="lazy" />
-    </ImageWrapper>
+    // <ImageWrapper
+    //   fit={fit}
+    //   position={position}
+    //   fitsParent={fitsParent}
+    //   {...restProps}
+    // >
+    <GatsbyImage
+      // fluid={fluid}
+      // style={{ position: fitsParent ? 'static' : 'relative' }}
+      {...imgProps}
+      image={imageData.gatsbyImageData}
+      // objectFit={fit}
+      // objectPosition={position}
+    />
+    // </ImageWrapper>
   )
 }
 
@@ -297,27 +259,4 @@ Image.propTypes = {
    * Defines which image variant / context is used to locate the image data.
    */
   contextKey: propTypes.string,
-  /**
-   * Overwrite the embedded image preview with your own value.
-   *
-   * Will overwrite the value in fluid.base64
-   *
-   * For example via https://www.gatsbyjs.org/packages/gatsby-transformer-sqip/
-   */
-  previewDataURI: propTypes.object,
-  /**
-   * Used to render this component without context data.
-   */
-  file: propTypes.object,
-  /**
-   * Data to render the image via Gatsby Image as fluid/responsive image.
-   * Usually generated via a gatsby-transformer-sharp fragment.
-   *
-   * Requires file property to be set.
-   *
-   * See:
-   * * https://www.gatsbyjs.org/docs/gatsby-image/#images-that-stretch-across-a-fluid-container
-   * * https://www.gatsbyjs.org/docs/gatsby-image/#common-fragments-with-gatsby-transformer-sharp
-   */
-  fluid: propTypes.object,
 }

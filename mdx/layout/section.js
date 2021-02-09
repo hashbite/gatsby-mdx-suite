@@ -86,6 +86,7 @@ const BackgroundMediaWrapper = styled.div(
     overflow: hidden;
 
     /* Hack gatsby-image to act as background image */
+    // @todo
     & .gatsby-image-wrapper {
       position: static !important;
     }
