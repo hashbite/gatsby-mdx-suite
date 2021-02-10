@@ -1,6 +1,6 @@
 {
   "name": "gatsby-mdx-suite-example-basic",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Basic implementation of the MDX suite. Mostly for testing and demonstration purposes.",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
@@ -23,7 +23,7 @@
     "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",
     "gatsby": "^2.31.1",
-    "gatsby-theme-mdx-suite-base": "^0.11.2",
+    "gatsby-theme-mdx-suite-base": "^0.11.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

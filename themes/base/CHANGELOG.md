@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.11.2...gatsby-theme-mdx-suite-base@0.11.3) (2021-02-10)
+
+
+### Bug Fixes
+
+* **lazy:** forced rendering no more breaks page rendering ([bc19c24](https://github.com/axe312ger/gatsby-mdx-suite/commit/bc19c2467fa50be7516b6a4c0c4095c79992d97c))
+
+
+
+
+
 ## [0.11.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.11.1...gatsby-theme-mdx-suite-base@0.11.2) (2021-02-09)
 
 
