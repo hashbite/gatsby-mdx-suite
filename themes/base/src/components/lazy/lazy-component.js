@@ -47,11 +47,11 @@ export default function LazyComponent({
   useKillScrollTriggerOnCleanup(scrollTriggerInstance)
   useKillScrollTriggerWhenTrue(scrollTriggerInstance, shouldRender)
 
-  return (
-    <div ref={!forceRendering && initScrollTrigger}>
-      {shouldRender || forceRendering ? children : loading}
-    </div>
-  )
+  if (forceRendering) {
+    return children
+  }
+
+  return <div ref={initScrollTrigger}>{shouldRender ? children : loading}</div>
 }
 
 LazyComponent.defaultProps = {
