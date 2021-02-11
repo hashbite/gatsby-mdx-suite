@@ -6,7 +6,9 @@ import { ThemeProvider, useTheme } from 'emotion-theming'
 import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 
 /**
- * Apply a color set or single colors to a subset of elements.
+ * Apply a color set or single colors to all child elements.
+ *
+ * You can overwrite all colors found in the style-guide.
  *
  * @example
  * # Setting a color set
@@ -49,16 +51,22 @@ import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 const ColorSet = ({ name, children, ...colors }) => {
   const theme = useTheme()
 
-  const colorSetData = theme.colors.sets[name]
-  if (name && !colorSetData) {
-    throw new Error(`Color set "${name}" does not exist.`)
-  }
   const colorizedTheme = merge({}, theme)
-  if (colorSetData) {
+
+  // Read color set values
+  if (name) {
+    const colorSetData = theme.colors.sets[name]
+
+    if (!colorSetData) {
+      throw new Error(`Color set "${name}" does not exist or is empty.`)
+    }
+
     colorizedTheme.colors = merge(colorizedTheme.colors, colorSetData)
   }
+
+  // Overwrite with custom colors
   if (colors.constructor === Object && Object.entries(colors).length !== 0) {
-    // Support color palettes
+    // Support custom colors and color palettes
     Object.entries(colors).forEach(
       ([key, val]) => (colors[key] = selectColor(theme.colors, val))
     )
@@ -72,7 +80,15 @@ const ColorSet = ({ name, children, ...colors }) => {
 ColorSet.propTypes = {
   children: propTypes.node.isRequired,
   /** Name of color set to apply */
-  name: propTypes.string.isRequired,
+  name: propTypes.string,
+  /** Background color for child elements */
+  background: propTypes.string,
+  /** Text color for child elements */
+  text: propTypes.string,
+  /** Primary color for child elements */
+  primary: propTypes.string,
+  /** Secondary color for child elements */
+  secondary: propTypes.string,
 }
 
 export default ColorSet
