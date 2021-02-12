@@ -64,6 +64,18 @@ module.exports = ({
                     return true
                   }
 
+                  // Skip subdirectories in mdx packages as they contain helpers and not MDX components
+                  if (
+                    (path.indexOf(`/mdx/`) !== -1 &&
+                      path.split('/mdx/')[1].split('/').length > 2) ||
+                    (path.indexOf(`@gatsby-mdx-suite/mdx-`) !== -1 &&
+                      path.split('@gatsby-mdx-suite/mdx-')[1].split('/')
+                        .length > 3)
+                  ) {
+                    reporter.verbose(`Ignoring: ${path}`)
+                    return true
+                  }
+
                   // If it is a dir and did not match filter above, continue file lookup
                   const stats = lstatSync(path)
                   if (stats.isSymbolicLink() || stats.isDirectory()) {
