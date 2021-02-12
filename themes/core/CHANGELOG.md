@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.8.2...gatsby-theme-mdx-suite-core@0.9.0) (2021-02-12)
+
+
+### Features
+
+* **contentful:** allow setting of environment via env variable ([e216d44](https://github.com/axe312ger/gatsby-mdx-suite/commit/e216d44122cc35d68729924b117ff28f7ce5ca12))
+
+
+### Reverts
+
+* Revert "build: upgrade dependencies for Gatsby v2.32" ([c901347](https://github.com/axe312ger/gatsby-mdx-suite/commit/c901347c55e16edf4b0f0a911357b6f745fae660))
+
+
+
+
+
 ## [0.8.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.8.1...gatsby-theme-mdx-suite-core@0.8.2) (2021-01-27)
 
 

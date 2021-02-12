@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.9.0...gatsby-theme-mdx-suite-docs@0.9.1) (2021-02-12)
+
+
+### Bug Fixes
+
+* **components:** do not parse MDX components in subdirs ([3b0a223](https://github.com/axe312ger/gatsby-mdx-suite/commit/3b0a2239840c4265c60573e6f6123c36bd6455b9))
+
+
+
+
+
 # [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.8.2...gatsby-theme-mdx-suite-docs@0.9.0) (2021-02-09)
 
 

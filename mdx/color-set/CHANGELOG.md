@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.12...@gatsby-mdx-suite/mdx-color-set@0.4.13) (2021-02-12)
+
+
+### Bug Fixes
+
+* **color-sets:** allow overwriting single colors without using a color set ([b6e0df5](https://github.com/axe312ger/gatsby-mdx-suite/commit/b6e0df5cde3e8763fa78fdee0952fbb4fab55f7a))
+
+
+
+
+
 ## [0.4.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.11...@gatsby-mdx-suite/mdx-color-set@0.4.12) (2021-01-27)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set
