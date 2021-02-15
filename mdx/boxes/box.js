@@ -6,7 +6,7 @@ import { css } from '@emotion/core'
 import isPropValid from '@emotion/is-prop-valid'
 
 import Link from '@gatsby-mdx-suite/mdx-link/link-renderer'
-import Image from '@gatsby-mdx-suite/mdx-image/image-renderer'
+import Image from 'gatsby-theme-mdx-suite-core/src/components/image'
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
 
 import BaseBox from './base-box'
