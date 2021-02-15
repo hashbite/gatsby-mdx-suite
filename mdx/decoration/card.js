@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import tw from 'twin.macro'
 
-import Image from '@gatsby-mdx-suite/mdx-image/image-renderer'
+import Image from 'gatsby-theme-mdx-suite-core/src/components/image'
 
 const CardWrapper = tw.div`rounded overflow-hidden shadow-lg bg-white`
 

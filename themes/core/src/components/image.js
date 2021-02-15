@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import isPropValid from '@emotion/is-prop-valid'
 
-import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
+import useImageDataFromContext from '../hooks/use-image-data-from-context'
 
 const parseCssValue = (v) => (isNaN(v) ? v : `${v}px`)
 
@@ -87,21 +87,20 @@ export default function Image({
   position,
   src,
   alt,
-  // @todo
+  imageData,
   ...restProps
 }) {
-  const {
-    data,
-    pageContext: { locale: activeLocale },
-    themeConfig: { defaultLocale },
-  } = useContext(MdxSuiteContext)
+  const contextData = useImageDataFromContext({ id, contextKey })
 
-  if (!id && !src) {
-    throw new Error(`Images need at least the id or src property.`)
+  if (!id && !src && !imageData) {
+    throw new Error(
+      `Images need at least the id, src or imageData property to render.`
+    )
   }
 
   // Image propery construction
-  const imgProps = {}
+  const imgProps = { ...restProps }
+  const imgStyle = {}
 
   // Either trim alt or render empty for decorative images. See: https://www.w3.org/WAI/tutorials/images/decorative/
   if (alt && alt.trim && alt.trim()) {
@@ -111,58 +110,28 @@ export default function Image({
   }
 
   if (width) {
-    imgProps.width = width
+    imgStyle.width = width
   }
   if (height) {
-    imgProps.height = height
+    imgStyle.height = height
   }
 
-  if (!id) {
-    return <StaticImage {...imgProps} src={src} />
+  if (src) {
+    return <StaticImage {...imgProps} style={imgStyle} src={src} />
   }
 
-  // Locate image data from context if id is passed
-  if (!data[contextKey]) {
-    throw new Error(
-      `The media context "${contextKey}" does not exist or does not contain any data.`
+  const renderData = imageData || contextData
+
+  if (!renderData.gatsbyImageData) {
+    if (!renderData.file.url) {
+      throw new Error(`Invalid image rendering data found for ${id}`)
+    }
+    return (
+      <StaticImage {...imgProps} style={imgStyle} src={renderData.file.url} />
     )
   }
 
-  const images = data[contextKey].filter(Boolean)
-  if (!images) {
-    throw new Error(`No images available in context "${contextKey}"`)
-  }
-
-  // Get all available image data in all locales
-  const matches = images.filter((asset) => asset.assetId === id)
-
-  // Get data from active locale
-  let imageData = matches.find(({ locale }) => locale === activeLocale)
-
-  // Fall back to data with default locale
-  if (!imageData) {
-    imageData = matches.find(({ locale }) => locale === defaultLocale)
-  }
-
-  // Fall back to first available data from any locale
-  if (!imageData && matches.length) {
-    imageData = matches[0]
-  }
-
-  if (!imageData) {
-    throw new Error(`Unable to locate image rendering data for ${id}`)
-  }
-
-  if (!imageData.gatsbyImageData) {
-    if (!imageData.file.url) {
-      throw new Error(`Invalid image rendering data found for ${id}`)
-    }
-    return <StaticImage {...imgProps} src={imageData.file.url} />
-  }
-
-  // const fitsParent = fit || fit === 'none'
-
-  console.log('rendering:', { imgProps, imageData })
+  const fitsParent = fit || fit === 'none'
 
   return (
     // <ImageWrapper
@@ -172,14 +141,12 @@ export default function Image({
     //   {...restProps}
     // >
     <GatsbyImage
-      // fluid={fluid}
-      // style={{ position: fitsParent ? 'static' : 'relative' }}
       {...imgProps}
-      image={imageData.gatsbyImageData}
-      // objectFit={fit}
-      // objectPosition={position}
+      style={imgStyle}
+      image={renderData.gatsbyImageData}
+      objectFit={fit}
+      objectPosition={position}
     />
-    // </ImageWrapper>
   )
 }
 
@@ -188,7 +155,6 @@ Image.displayName = 'Image'
 Image.defaultProps = {
   contextKey: 'full',
   width: '100%',
-  fit: null,
   position: 'center center',
 }
 

@@ -5,7 +5,7 @@ import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
-import Image from '@gatsby-mdx-suite/mdx-image/image-renderer'
+import Image from 'gatsby-theme-mdx-suite-core/src/components/image'
 import debugMode from '@gatsby-mdx-suite/helpers/styling/debug-mode'
 
 const StyledColumn = styled.div(
