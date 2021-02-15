@@ -123,18 +123,14 @@ export default function Image({
 
   // Locate image data from context if id is passed
   if (!data[contextKey]) {
-    console.error(
-      new Error(
-        `The media context "${contextKey}" does not exist or does not contain any data.`
-      )
+    throw new Error(
+      `The media context "${contextKey}" does not exist or does not contain any data.`
     )
-    return null
   }
 
   const images = data[contextKey].filter(Boolean)
   if (!images) {
-    console.error(new Error(`No images available in context "${contextKey}"`))
-    return null
+    throw new Error(`No images available in context "${contextKey}"`)
   }
 
   // Get all available image data in all locales
@@ -154,9 +150,7 @@ export default function Image({
   }
 
   if (!imageData) {
-    throw new Error(
-      `Unable to locate image rendering data for ${id}`
-    )
+    throw new Error(`Unable to locate image rendering data for ${id}`)
   }
 
   if (!imageData.gatsbyImageData) {
@@ -168,7 +162,7 @@ export default function Image({
 
   // const fitsParent = fit || fit === 'none'
 
-  console.log('rendering:', {imgProps, imageData})
+  console.log('rendering:', { imgProps, imageData })
 
   return (
     // <ImageWrapper
