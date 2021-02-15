@@ -9,9 +9,12 @@ export const MdxSuiteContentfulAsset = graphql`
     file {
       contentType
       url
-    }
-    svg {
-      content
+      details {
+        image {
+          height
+          width
+        }
+      }
     }
   }
 `
