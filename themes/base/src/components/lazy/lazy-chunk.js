@@ -12,11 +12,19 @@ export default function LazyChunk({
   loading = <DefaultLoading />,
   ...props
 }) {
-  const isSSR = typeof window === 'undefined'
+  const [hasMounted, setHasMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    return <LazyComponent {...props} />
+  }
 
   return (
     <LazyComponent {...props}>
-      {!isSSR && <React.Suspense fallback={loading}>{children}</React.Suspense>}
+      <React.Suspense fallback={loading}>{children}</React.Suspense>
     </LazyComponent>
   )
 }

@@ -32,7 +32,7 @@ const Hide = ({ children, till, from, ...props }) => {
   if (!till && !from) {
     throw new Error('Can not hide element without "from" or "till"')
   }
-
+  // maybe SSRISSUE
   const styledChild = useMemo(() => {
     const hiddenStyle = {}
     if (

@@ -42,7 +42,7 @@ export function useVideo({ contextKey, id }) {
     console.error(
       new Error(`No sources found for video:\n\n${JSON.stringify(video)}`)
     )
-
+    // @todo throw error here
     return null
   }
 

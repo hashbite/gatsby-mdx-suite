@@ -86,6 +86,7 @@ export default function YoutubeFeed() {
   }, [youtubeVideos])
 
   if (!youtubeVideos) {
+    // @todo throw error here
     return null
   }
 
