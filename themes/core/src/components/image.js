@@ -1,70 +1,11 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import styled from '@emotion/styled'
-import { css } from '@emotion/core'
-import isPropValid from '@emotion/is-prop-valid'
 
 import useImageDataFromContext from '../hooks/use-image-data-from-context'
 
-const parseCssValue = (v) => (isNaN(v) ? v : `${v}px`)
-
-export const ImageWrapper = styled('div', {
-  shouldForwardProp: (prop) =>
-    isPropValid(prop) &&
-    ![
-      'id',
-      'src',
-      'alt',
-      'width',
-      'height',
-      'fluid',
-      'file',
-      'fit',
-      'position',
-    ].includes(prop),
-})(
-  ({ width, height, fitsParent, fit, position, ...props }) => css`
-    ${fitsParent
-      ? css`
-          display: block;
-        `
-      : css`
-          display: inline-block;
-          position: relative;
-        `}
-
-    ${width &&
-    css`
-      max-width: ${parseCssValue(width)};
-      width: 100%;
-    `}
-    ${height &&
-    css`
-      max-height: ${parseCssValue(height)};
-      height: 100%;
-    `}
-
-    img {
-      display: block;
-      width: 100%;
-
-      ${fit &&
-      css`
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: ${fit} !important;
-        object-position: ${position} !important;
-      `}
-    }
-  `
-)
-
 // eslint-disable-next-line jsx-a11y/alt-text
-const StaticImage = (props) => <img {...props} loading="lazy" />
+const StaticImage = (props) => <img {...props} />
 
 /**
  * Renders an image from an internal or external source.
@@ -88,6 +29,7 @@ export default function Image({
   src,
   alt,
   imageData,
+  loading,
   ...restProps
 }) {
   const contextData = useImageDataFromContext({ id, contextKey })
@@ -99,7 +41,7 @@ export default function Image({
   }
 
   // Image propery construction
-  const imgProps = { ...restProps }
+  const imgProps = { loading, ...restProps }
   const imgStyle = {}
 
   // Either trim alt or render empty for decorative images. See: https://www.w3.org/WAI/tutorials/images/decorative/
@@ -131,15 +73,7 @@ export default function Image({
     )
   }
 
-  const fitsParent = fit || fit === 'none'
-
   return (
-    // <ImageWrapper
-    //   fit={fit}
-    //   position={position}
-    //   fitsParent={fitsParent}
-    //   {...restProps}
-    // >
     <GatsbyImage
       {...imgProps}
       style={imgStyle}
@@ -156,6 +90,7 @@ Image.defaultProps = {
   contextKey: 'full',
   width: '100%',
   position: 'center center',
+  loading: 'lazy',
 }
 
 Image.propTypes = {
@@ -219,4 +154,5 @@ Image.propTypes = {
    * Defines which image variant / context is used to locate the image data.
    */
   contextKey: propTypes.string,
+  loading: propTypes.oneOf(['eager', 'lazy']),
 }
