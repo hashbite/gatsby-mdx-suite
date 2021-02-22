@@ -9,19 +9,16 @@
     "url": "https://github.com/axe312ger/gatsby-mdx-suite"
   },
   "peerDependencies": {
-    "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/core": "^11.0.0",
+    "@emotion/styled": "^11.1.5",
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",
-    "emotion": "^10.0.27",
-    "emotion-theming": "^11.0.0",
     "gatsby": "^3.1.2",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.7.2",
-    "tailwindcss": "^1.8.10",
-    "twin.macro": "^1.9.0"
+    "twin.macro": "^2.0.0"
   },
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.6",
@@ -52,7 +49,8 @@
     "gsap": "^3.6.0",
     "hoofd": "^1.2.2",
     "react-final-form": "^6.5.2",
-    "react-scrolllock": "^5.0.1"
+    "react-scrolllock": "^5.0.1",
+    "use-persisted-state": "^0.3.3"
   },
   "devDependencies": {
     "webpack-stats-plugin": "^1.0.3"

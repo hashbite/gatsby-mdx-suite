@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import { cx } from 'emotion'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import { findActiveTrail } from '@gatsby-mdx-suite/helpers/menu'
@@ -72,7 +71,7 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
     return null
   }
 
-  const levelClass = cx(`level-${level}`)
+  const levelClass = `level-${level}`
 
   return (
     <MenuUl className={levelClass}>

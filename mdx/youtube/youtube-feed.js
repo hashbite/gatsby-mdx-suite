@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
@@ -48,7 +48,7 @@ const ThumbnailTitle = styled.div`
   ${tw`
     absolute z-20 bottom-0 left-0 right-0
     px-4 py-2
-    text-white text-sm overflow-hidden whitespace-no-wrap text-center
+    text-white text-sm overflow-hidden whitespace-nowrap text-center
   `}
 
   background: rgba(0, 0, 0, 0.25);

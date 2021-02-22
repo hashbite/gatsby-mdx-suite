@@ -9,15 +9,15 @@
     "url": "https://github.com/axe312ger/gatsby-mdx-suite"
   },
   "peerDependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/core": "^11.0.0",
+    "@emotion/styled": "^11.1.5",
     "gatsby": "^3.1.2",
     "gatsby-plugin-mdx": "^2.1.0",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.7.2",
-    "twin.macro": "^1.9.0"
+    "twin.macro": "^2.0.0"
   },
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.6",

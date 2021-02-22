@@ -1,8 +1,8 @@
 import React from 'react'
 import { useMDXComponents } from '@mdx-js/react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
-import { useTheme } from 'emotion-theming'
+import { css } from '@emotion/react'
+import { useTheme } from '@emotion/react'
 import tw from 'twin.macro'
 import {
   StyleGuideSection,

@@ -1,12 +1,14 @@
-import React, { useCallback, useState, useMemo, useContext } from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
+import { useCallback, useState, useMemo, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
 import {GatsbyImage} from 'gatsby-plugin-image'
 import prettyBytes from 'pretty-bytes'
 import Fuse from 'fuse.js'
-import { css } from '@emotion/core'
-import { useTheme } from 'emotion-theming'
+import { css } from '@emotion/react'
+import { useTheme } from '@emotion/react'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
@@ -73,7 +75,7 @@ const FontPreview = styled.div`
 `
 
 const Sizes = tw.div`mb-content-gap`
-const Size = tw.div`whitespace-no-wrap`
+const Size = tw.div`whitespace-nowrap`
 const Length = styled.div(
   ({ width }) => css`
     ${tw`border border-red-300 text-center inline-block mr-2`}
@@ -99,7 +101,7 @@ const Help = styled.div`
     white-space: nowrap;
   }
   & code {
-    ${tw`bg-gray-100 whitespace-no-wrap`}
+    ${tw`bg-gray-100 whitespace-nowrap`}
     padding: 2px 4px;
   }
 `

@@ -21,7 +21,7 @@
     "styling"
   ],
   "peerDependencies": {
-    "emotion-theming": "^10.0.27",
+    "@emotion/react": "^11.0.0",
     "prop-types": "^15.7.0",
     "react": "^17.0.1"
   },

@@ -19,15 +19,14 @@
     "layout"
   ],
   "peerDependencies": {
-    "@emotion/styled": "^10.0.27",
-    "emotion": "^10.0.27",
+    "@emotion/styled": "^11.1.5",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
-    "twin.macro": "^1.10.0"
+    "twin.macro": "^2.0.0"
   },
   "dependencies": {
-    "@emotion/core": "^10.1.1",
-    "@emotion/is-prop-valid": "^0.8.8",
+    "@emotion/core": "^11.0.0",
+    "@emotion/is-prop-valid": "^1.1.0",
     "@gatsby-mdx-suite/helpers": "^0.15.1",
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.15",
     "@gatsby-mdx-suite/mdx-image": "^0.8.6",

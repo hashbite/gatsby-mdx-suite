@@ -24,7 +24,7 @@ const FieldWrapper = styled.div`
 `
 
 const FieldLabel = styled.label`
-  ${tw`whitespace-no-wrap w-32 mr-4`}
+  ${tw`whitespace-nowrap w-32 mr-4`}
 `
 
 const required = (value) => (value ? undefined : 'Required')

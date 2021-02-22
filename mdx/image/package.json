@@ -21,14 +21,14 @@
     "media"
   ],
   "peerDependencies": {
-    "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/core": "^11.0.0",
+    "@emotion/styled": "^11.1.5",
     "gatsby-plugin-image": "^1.4.0",
     "prop-types": "^15.7.0",
     "react": "^17.0.1"
   },
   "dependencies": {
-    "@emotion/is-prop-valid": "^0.8.8",
+    "@emotion/is-prop-valid": "^1.1.0",
     "@gatsby-mdx-suite/contexts": "^0.3.6"
   },
   "publishConfig": {

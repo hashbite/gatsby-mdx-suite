@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 
@@ -21,7 +21,7 @@ const ColorSwatchColor = styled.div(
 )
 const ColorSwatchName = styled.div(
   ({ theme }) => css`
-    ${tw`font-bold mb-1 whitespace-no-wrap`}
+    ${tw`font-bold mb-1 whitespace-nowrap`}
     color: ${selectColor(theme.colors, 'text')};
   `
 )
