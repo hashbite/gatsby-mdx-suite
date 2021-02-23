@@ -50,6 +50,7 @@
     "hoofd": "^1.2.2",
     "react-final-form": "^6.5.2",
     "react-scrolllock": "^5.0.1",
+    "tailwindcss": "^2.0.3",
     "use-persisted-state": "^0.3.3"
   },
   "devDependencies": {
