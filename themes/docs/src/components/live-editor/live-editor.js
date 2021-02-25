@@ -397,7 +397,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
           height="100%"
           onMount={handleEditorOnMount}
           language="markdown"
-          theme="dark"
+          theme="vs-dark"
           value={editorValue}
           wrapperClassName="monaco-wrapper"
           options={{ scrollBeyondLastLine: false, autoClosingBrackets: false }}
