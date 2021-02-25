@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.11.4...gatsby-theme-mdx-suite-base@0.11.5) (2021-02-25)
+
+
+### Bug Fixes
+
+* **anchor:** AnchorHook CTA now uses theme button style ([6d7dfad](https://github.com/axe312ger/gatsby-mdx-suite/commit/6d7dfadf15834f99682b8d1d6b673f4d1dbd55c9))
+* **SSR:** improve hydration behaviour ([d2bf249](https://github.com/axe312ger/gatsby-mdx-suite/commit/d2bf24933469cd61aa57f1d45b76da7bf29043b0))
+
+
+
+
+
 ## [0.11.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.11.3...gatsby-theme-mdx-suite-base@0.11.4) (2021-02-12)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base

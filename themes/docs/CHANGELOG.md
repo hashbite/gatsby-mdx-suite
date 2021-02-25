@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.9.1...gatsby-theme-mdx-suite-docs@0.9.2) (2021-02-25)
+
+
+### Bug Fixes
+
+* **live-editor:** ensure dark theme is used ([6a02c0f](https://github.com/axe312ger/gatsby-mdx-suite/commit/6a02c0f7065514776f4d1b7a4d1a57af71ddd038))
+* **SSR:** improve hydration behaviour ([d2bf249](https://github.com/axe312ger/gatsby-mdx-suite/commit/d2bf24933469cd61aa57f1d45b76da7bf29043b0))
+
+
+
+
+
 ## [0.9.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.9.0...gatsby-theme-mdx-suite-docs@0.9.1) (2021-02-12)
 
 

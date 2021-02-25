@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.2.2...@gatsby-mdx-suite/mdx-scroll-effects@0.2.3) (2021-02-25)
+
+
+### Bug Fixes
+
+* **anchor:** AnchorHook CTA now uses theme button style ([6d7dfad](https://github.com/axe312ger/gatsby-mdx-suite/commit/6d7dfadf15834f99682b8d1d6b673f4d1dbd55c9))
+
+
+
+
+
 ## [0.2.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.2.1...@gatsby-mdx-suite/mdx-scroll-effects@0.2.2) (2021-01-27)
 
 
