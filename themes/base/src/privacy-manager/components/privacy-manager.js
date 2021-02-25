@@ -127,10 +127,6 @@ const PrivacyManager = ({
     setHasMounted(true)
   }, [])
 
-  if (!hasMounted) {
-    return children
-  }
-
   return (
     <PrivacyManagerContext.Provider
       value={{
@@ -139,20 +135,26 @@ const PrivacyManager = ({
         setOpen,
       }}
     >
-      {shouldTrack ? (
-        <Tracking {...config.trackingConfig}>{children}</Tracking>
+      {hasMounted ? (
+        <>
+          {shouldTrack ? (
+            <Tracking {...config.trackingConfig}>{children}</Tracking>
+          ) : (
+            children
+          )}
+          <PrivacyManagerForm
+            integrations={integrations}
+            activeState={activeState}
+            updateState={updateState}
+            privacyModeActive={privacyModeActive}
+            open={open}
+            setOpen={setOpen}
+            config={config}
+          />
+        </>
       ) : (
         children
       )}
-      <PrivacyManagerForm
-        integrations={integrations}
-        activeState={activeState}
-        updateState={updateState}
-        privacyModeActive={privacyModeActive}
-        open={open}
-        setOpen={setOpen}
-        config={config}
-      />
     </PrivacyManagerContext.Provider>
   )
 }
