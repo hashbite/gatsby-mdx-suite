@@ -121,6 +121,15 @@ const PrivacyManager = ({
       ),
     [isValidState, userState]
   )
+  const [hasMounted, setHasMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    return children
+  }
 
   return (
     <PrivacyManagerContext.Provider

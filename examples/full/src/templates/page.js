@@ -24,25 +24,23 @@ function PageTemplate({ data, pageContext }) {
   }, [pageContext.locale, i18n])
 
   return (
-    <div data-test="hello-ssr">
-      <MdxSuiteContext.Provider
-        value={mergeContextData(MdxSuiteData, {
-          pageContext,
-          data: [content.childMdx],
-        })}
-      >
-        <SEO
-          title={title}
-          description={metaDescription}
-          ogImage={metaImage && `${metaImage.file.url}?w=1200&h=630&fit=fill`}
-          twitterImage={
-            metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
-          }
-          language={pageContext.locale}
-        />
-        <MDXRenderer>{content.childMdx.body}</MDXRenderer>
-      </MdxSuiteContext.Provider>
-    </div>
+    <MdxSuiteContext.Provider
+      value={mergeContextData(MdxSuiteData, {
+        pageContext,
+        data: [content.childMdx],
+      })}
+    >
+      <SEO
+        title={title}
+        description={metaDescription}
+        ogImage={metaImage && `${metaImage.file.url}?w=1200&h=630&fit=fill`}
+        twitterImage={
+          metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
+        }
+        language={pageContext.locale}
+      />
+      <MDXRenderer>{content.childMdx.body}</MDXRenderer>
+    </MdxSuiteContext.Provider>
   )
 }
 
