@@ -83,6 +83,7 @@ export default function Link({
   const pages = result.allSitePage.nodes
 
   if (!pages) {
+    // @todo throw errors here
     return null
   }
 
@@ -99,6 +100,7 @@ export default function Link({
       `Unable to find page with id ${id} and locale ${locale} including fallbacks`,
       pageMap
     )
+    // @todo throw errors here
     return null
   }
 
@@ -106,6 +108,7 @@ export default function Link({
 
   if (!path) {
     console.error('Found page does not have any path to link to', page)
+    // @todo throw errors here
     return null
   }
 

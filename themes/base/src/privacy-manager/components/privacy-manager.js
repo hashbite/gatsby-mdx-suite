@@ -121,6 +121,11 @@ const PrivacyManager = ({
       ),
     [isValidState, userState]
   )
+  const [hasMounted, setHasMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setHasMounted(true)
+  }, [])
 
   return (
     <PrivacyManagerContext.Provider
@@ -130,20 +135,26 @@ const PrivacyManager = ({
         setOpen,
       }}
     >
-      {shouldTrack ? (
-        <Tracking {...config.trackingConfig}>{children}</Tracking>
+      {hasMounted ? (
+        <>
+          {shouldTrack ? (
+            <Tracking {...config.trackingConfig}>{children}</Tracking>
+          ) : (
+            children
+          )}
+          <PrivacyManagerForm
+            integrations={integrations}
+            activeState={activeState}
+            updateState={updateState}
+            privacyModeActive={privacyModeActive}
+            open={open}
+            setOpen={setOpen}
+            config={config}
+          />
+        </>
       ) : (
         children
       )}
-      <PrivacyManagerForm
-        integrations={integrations}
-        activeState={activeState}
-        updateState={updateState}
-        privacyModeActive={privacyModeActive}
-        open={open}
-        setOpen={setOpen}
-        config={config}
-      />
     </PrivacyManagerContext.Provider>
   )
 }

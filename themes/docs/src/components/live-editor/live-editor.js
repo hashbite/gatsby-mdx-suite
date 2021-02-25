@@ -421,13 +421,18 @@ LiveEditor.propTypes = {
   layout: propTypes.string,
 }
 
-const LiveEditorBrowserOnlyWrapper = (props) =>
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement ? (
-    <LiveEditor {...props} />
-  ) : (
-    <Loading />
-  )
+const LiveEditorBrowserOnlyWrapper = (props) => {
+  const [hasMounted, setHasMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    return <Loading />
+  }
+
+  return <LiveEditor {...props} />
+}
 
 export default LiveEditorBrowserOnlyWrapper

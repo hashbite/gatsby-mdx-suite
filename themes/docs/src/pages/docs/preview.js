@@ -4,6 +4,8 @@ import tw from 'twin.macro'
 import useEventListener from '@use-it/event-listener'
 import { useLocation } from '@reach/router'
 
+import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
+
 import DataProvider from '../../components/data-provider'
 
 import MDX from '@mdx-js/runtime'
@@ -89,11 +91,18 @@ const DocsPreviewPage = () => {
   )
 }
 
-const DocsPreviewPageBrowserOnlyWrapper = (props) =>
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement ? (
-    <DocsPreviewPage {...props} />
-  ) : null
+const DocsPreviewPageBrowserOnlyWrapper = (props) => {
+  const [hasMounted, setHasMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    return <Loading />
+  }
+
+  return <DocsPreviewPage {...props} />
+}
 
 export default DocsPreviewPageBrowserOnlyWrapper
