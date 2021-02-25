@@ -1,15 +1,10 @@
 import React, { useCallback } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
 
-import { styleCTA } from '@gatsby-mdx-suite/mdx-link/cta'
+import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 
-const AnchorHookLink = styled.a(
-  ({ renderAsCTA, ...props }) => css`
-    ${renderAsCTA && styleCTA(props)}
-  `
-)
+const AnchorHookLink = styled.a``
 
 /**
  * A trigger to let the user scroll to a certain position of the page.
@@ -76,7 +71,7 @@ export default function AnchorHook({ to, as, verticalAlign, children }) {
 
   return (
     <AnchorHookLink
-      renderAsCTA={as === 'CTA'}
+      as={as === 'CTA' && Button}
       onClick={handleOnClick}
       href={href}
     >
