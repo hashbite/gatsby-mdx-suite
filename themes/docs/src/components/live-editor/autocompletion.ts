@@ -1,4 +1,4 @@
-import { monaco, Monaco } from '@monaco-editor/react'
+import { Monaco, useMonaco } from '@monaco-editor/react'
 import { useEffect, useMemo, useState } from 'react'
 import { useMDXComponents } from '@mdx-js/react'
 import { graphql, useStaticQuery } from 'gatsby'
@@ -202,18 +202,6 @@ function registerMdxComponentPropertyAutocomplete({
   })
 }
 
-function useMonaco() {
-  const [monacoInstance, setMonacoInstance] = useState<Monaco>(null)
-
-  useEffect(() => {
-    monaco.init().then((monaco) => {
-      setMonacoInstance(monaco)
-    })
-  }, [setMonacoInstance])
-
-  return monacoInstance
-}
-
 const MATCH_COMPONENT_NAME = /<(\w+)(?:\s+[^>]+)?\s+$/
 
 function useComponentDescriptorMap(result: any): ComponentDescriptorMap {
@@ -222,23 +210,23 @@ function useComponentDescriptorMap(result: any): ComponentDescriptorMap {
     const rawComponentDescriptors = result.allComponentMetadata.nodes.filter(
       (n) => mdxComponents.hasOwnProperty(n.displayName)
     )
-    const componentDescriptors = (rawComponentDescriptors as any[]).map<
-      ComponentDescriptor
-    >((raw) => {
-      return {
-        name: raw.displayName,
-        description: raw.description.text,
-        props: (raw.props as any[]).map((rawProp) => {
-          return {
-            name: rawProp.name,
-            type: rawProp.type?.name,
-            defaultValue: rawProp.defaultValue?.value,
-            description: rawProp.description.text,
-            required: rawProp.required,
-          }
-        }),
+    const componentDescriptors = (rawComponentDescriptors as any[]).map<ComponentDescriptor>(
+      (raw) => {
+        return {
+          name: raw.displayName,
+          description: raw.description.text,
+          props: (raw.props as any[]).map((rawProp) => {
+            return {
+              name: rawProp.name,
+              type: rawProp.type?.name,
+              defaultValue: rawProp.defaultValue?.value,
+              description: rawProp.description.text,
+              required: rawProp.required,
+            }
+          }),
+        }
       }
-    })
+    )
 
     return new Map<string, ComponentDescriptor>(
       componentDescriptors.map((d) => [d.name, d])

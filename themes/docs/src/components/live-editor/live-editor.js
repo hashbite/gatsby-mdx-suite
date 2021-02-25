@@ -206,8 +206,8 @@ function LiveEditor({ editorId, initialValue, layout }) {
   // eslint-disable-next-line no-unused-vars
   const [changeEventListener, setChangeEventListener] = useState(null)
 
-  const handleEditorDidMount = useCallback(
-    (_, editor) => {
+  const handleEditorOnMount = useCallback(
+    (editor) => {
       registerAutocomplete()
       setEditorInstance(editor)
     },
@@ -395,7 +395,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
       <LiveEditorContainer hasError={!!error}>
         <Editor
           height="100%"
-          editorDidMount={handleEditorDidMount}
+          onMount={handleEditorOnMount}
           language="markdown"
           theme="dark"
           value={editorValue}
