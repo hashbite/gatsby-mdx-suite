@@ -216,7 +216,7 @@ const Column = ({
     </StyledColumn>
   )
 
-  if (colorSet) {
+  if (colorSet || (colors && Object.keys(colors).length)) {
     return (
       <ColorSet name={colorSet} {...colors}>
         {columnContent}
