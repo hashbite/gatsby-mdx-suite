@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.18...gatsby-mdx-suite-example-minmal@0.2.19) (2021-03-04)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
 ## [0.2.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.17...gatsby-mdx-suite-example-minmal@0.2.18) (2021-02-25)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-minmal

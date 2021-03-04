@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.26.5...@gatsby-mdx-suite/mdx-layout@0.26.6) (2021-03-04)
+
+
+### Bug Fixes
+
+* **column:** allow coloring without color set ([f52c1a0](https://github.com/axe312ger/gatsby-mdx-suite/commit/f52c1a0236992a1f0a058e58823eaeca906bc264))
+
+
+
+
+
 ## [0.26.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.26.4...@gatsby-mdx-suite/mdx-layout@0.26.5) (2021-02-12)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
