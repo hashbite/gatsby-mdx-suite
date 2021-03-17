@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 
 import Layout from './src/components/layout/layout'
-import PrivacyManager from './src/privacy-manager/components/privacy-manager'
+// import PrivacyManager from './src/privacy-manager/components/privacy-manager'
 import defaultIcons from './src/default-icons'
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 
@@ -26,13 +26,13 @@ wrapRootElement.propTypes = {
 
 export const wrapPageElement = ({ element }, pluginConfig) => {
   return (
-    <PrivacyManager config={pluginConfig.privacy}>
-      <Layout {...element.props}>{element}</Layout>
-    </PrivacyManager>
+    // <PrivacyManager config={pluginConfig.privacy}>
+    <Layout {...element.props}>{element}</Layout>
+    // </PrivacyManager>
   )
 }
 
-export { onRouteUpdate } from './src/privacy-manager/route-updater'
+// export { onRouteUpdate } from './src/privacy-manager/route-updater'
 
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
