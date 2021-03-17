@@ -37,9 +37,10 @@
     "gatsby-transformer-sharp": "^3.4.0",
     "i18next": "^19.8.4",
     "lodash": "^4.17.20",
-    "postcss": "^8",
+    "postcss": "^8.2.7",
     "postcss-csso": "^5.0.0",
     "process": "^0.11.10",
+    "react-i18next": "^11.8.8",
     "tailwindcss": "^2.0.3"
   }
 }
