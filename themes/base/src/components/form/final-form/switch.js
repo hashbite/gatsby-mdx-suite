@@ -9,7 +9,6 @@ const SwitchField = ({ disabled, children, ...fieldProps }) => (
       <Switch
         id={`checkbox-${input.name}`}
         {...input}
-        checked={!!input.value}
         error={
           (meta.error || meta.submitError) &&
           meta.touched &&

@@ -83,6 +83,7 @@ const MailchimpSignup = ({
                     id="mailchimp-signup-gdpr"
                     name="gdpr"
                     validate={required}
+                    type="checkbox"
                   >
                     Yes, I accept data processing and saving for future
                     information and contact. My data will be deleted immediately
