@@ -34,6 +34,8 @@
     "@gatsby-mdx-suite/mdx-video": "^0.8.2",
     "@reach/router": "^1.3.4",
     "@react-hook/window-size": "^3.0.7",
+    "@consent-manager/core": "^0.4.0",
+    "@consent-manager/interface-default": "^0.4.0",
     "deepmerge": "^4.2.2",
     "final-form": "^4.20.1",
     "flag-icon-css": "^3.5.0",
