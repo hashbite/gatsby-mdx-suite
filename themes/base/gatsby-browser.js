@@ -7,7 +7,7 @@ import defaultIcons from './src/default-icons'
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 
 export const wrapRootElement = ({ element }) => {
-  // @todo move configuration to gatsby-config?
+  // @todo move configuration to gatsby-config & components!
   const page = <ConsentManagerWrapper>{element}</ConsentManagerWrapper>
 
   // Only set default icons when project does not define any icons
@@ -30,14 +30,4 @@ export const wrapPageElement = ({ element }) => {
   return <Layout {...element.props}>{element}</Layout>
 }
 
-// @todo
-// export { onRouteUpdate } from './src/privacy-manager/route-updater'
-
-export const onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm(
-    `This website has been updated.\n\nReload to display the latest version?`
-  )
-  if (answer === true) {
-    window.location.reload()
-  }
-}
+export { default as onRouteUpdate } from './src/consent-manager/on-route-update'
