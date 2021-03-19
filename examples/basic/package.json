@@ -16,12 +16,12 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
+    "@consent-manager/integration-matomo": "^0.4.1",
+    "@consent-manager/integration-youtube": "^0.4.1",
     "@gatsby-mdx-suite/contexts": "^0.3.5",
     "@gatsby-mdx-suite/helpers": "^0.14.4",
     "@gatsby-mdx-suite/mdx-video": "^0.8.2",
     "@mdx-js/react": "^1.6.22",
-    "@consent-manager/integration-matomo": "^0.4.0",
-    "@consent-manager/integration-youtube": "^0.4.0",
     "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",
     "gatsby": "^2.31.1",
