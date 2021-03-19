@@ -1219,10 +1219,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@consent-manager/core@^0.4.1":
-  version "0.4.1"
-  resolved "http://localhost:4873/@consent-manager%2fcore/-/core-0.4.1.tgz#38eaf3384dbff7c10a2f964819524d54c5b15a62"
-  integrity sha512-/AdPPibiA1m8Q3i4lLAlNyvI9ykQh8T751mgvcbi2Wc/NmH/zkjoa4LE75Vo/VBsKTB+wMnH3kaGq+8j58kRdQ==
+"@consent-manager/core@^0.4.2":
+  version "0.4.2"
+  resolved "http://localhost:4873/@consent-manager%2fcore/-/core-0.4.2.tgz#9a8210ab3211770033b439254a9b8c343c85928d"
+  integrity sha512-k4qSTbQ37oEO5DIAK2csZMtVT7Gg/GQ9ZT//f+VYEvMj+ILAe8HQvk91LOy111LrzR0bXEOzEQMYQSLWFcyqYA==
   dependencies:
     "@types/history" "^4.7.8"
     history "^5.0.0"
@@ -1230,29 +1230,29 @@
     tslib "^2.0.0"
     wcag-contrast "^3.0.0"
 
-"@consent-manager/integration-matomo@^0.4.1":
-  version "0.4.1"
-  resolved "http://localhost:4873/@consent-manager%2fintegration-matomo/-/integration-matomo-0.4.1.tgz#8bb8547e4be6248c7841017485a860da6bd86fdf"
-  integrity sha512-cWewQAd1f1EYF5++pGXNL9suDkAcIeaSk9kHqrmyUl2KX8+N0x3Znl58Vp8NI4sqCYFAQNtgUv7yQA4SEm2V5Q==
+"@consent-manager/integration-matomo@^0.4.2":
+  version "0.4.2"
+  resolved "http://localhost:4873/@consent-manager%2fintegration-matomo/-/integration-matomo-0.4.2.tgz#34a6e2ff74671f42e97c7142b3f31ec28d4b3a32"
+  integrity sha512-pM6qzG+IEnsVpP1e1tHhCgxE/pSHX6gCbBi4f/djB2czgcHStmH8f3iY+zXN+feZKD5N7UjqWvbMvQxrLkx6fA==
   dependencies:
-    "@consent-manager/core" "^0.4.1"
+    "@consent-manager/core" "^0.4.2"
     simple-icons "^4.14.0"
 
-"@consent-manager/integration-youtube@^0.4.1":
-  version "0.4.1"
-  resolved "http://localhost:4873/@consent-manager%2fintegration-youtube/-/integration-youtube-0.4.1.tgz#68072a71a6d665a5f045cb212debc96715cb96b8"
-  integrity sha512-DZVW4qfy+6iJuAQ0GDeboRrlmHOMyi0lLTl6Ftza3rMyJMxeLczW2h9b8TLK6e6lNtnEqp9mHKe3Uwqafs/ZFg==
+"@consent-manager/integration-youtube@^0.4.2":
+  version "0.4.2"
+  resolved "http://localhost:4873/@consent-manager%2fintegration-youtube/-/integration-youtube-0.4.2.tgz#0d05d6b38a3feb6802e9fadf620927f4e95053cf"
+  integrity sha512-PCgXMFS35RMEjrrr+YT7oq/AUzJ4+2giCdsQ1blJdslDfg7JuNzRE39qBfiWeft7VMkcCJWZLQok57D+E+aBVw==
   dependencies:
-    "@consent-manager/core" "^0.4.1"
+    "@consent-manager/core" "^0.4.2"
     react-youtube "^7.13.1"
     simple-icons "^4.14.0"
 
-"@consent-manager/interface-default@^0.4.1":
-  version "0.4.1"
-  resolved "http://localhost:4873/@consent-manager%2finterface-default/-/interface-default-0.4.1.tgz#2c34cf1a497eb146ead574260f989832b6316566"
-  integrity sha512-1kkGeXHwrwQoqs37wMcUh/KXGJiB/sF9qSVmzf5nz57sh0ACnyh6kkC4IcJ9RDGkMUMBpukgDLVVnWAOyTG0kA==
+"@consent-manager/interface-default@^0.4.2":
+  version "0.4.2"
+  resolved "http://localhost:4873/@consent-manager%2finterface-default/-/interface-default-0.4.2.tgz#3618c75021fa770a69a54d24299c2d9bb6c72d0b"
+  integrity sha512-QGp+6Zo5MuE7gsg8XzocnTyK0CYcRiIZlky/9kqgh6SXV9Zbt0rll+QdPomZ2CRkWWmRGKqy4nX0lmI+zmqekA==
   dependencies:
-    "@consent-manager/core" "^0.4.1"
+    "@consent-manager/core" "^0.4.2"
     clsx "^1.1.1"
     react-anime "^4.0.4"
     react-final-form "^6.5.2"
