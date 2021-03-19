@@ -1,9 +1,19 @@
+/**
+ * This file integrates consent-manager to protect our visitors privacy
+ * and supports us to align with GDPR and CCPA.
+ *
+ * Learn more: https://github.com/techboi/consent-manager
+ */
+
 import React from 'react'
 
 import { ConsentManager, ConsentManagerForm } from '@consent-manager/core'
 import createPersistedState from 'use-persisted-state'
 
-import { matomoIntegration } from '@consent-manager/integration-matomo'
+import {
+  matomoIntegration,
+  getMatomoTracker,
+} from '@consent-manager/integration-matomo'
 import { youtubeIntegration } from '@consent-manager/integration-youtube'
 
 import {
@@ -45,6 +55,12 @@ const consentManagerConfig = {
   ],
 }
 
+/**
+ * Wraps the apps root element with consent-manager
+ * See:
+ * * https://github.com/techboi/consent-manager
+ * * https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/#wrapRootElement
+ */
 export function ConsentManagerWrapper({ children }) {
   const storage = useConsentStateStore()
 
@@ -64,4 +80,28 @@ export function ConsentManagerWrapper({ children }) {
       />
     </ConsentManager>
   )
+}
+
+/**
+ * Called when the user changes routes, including on the initial load of the app
+ * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/#onRouteUpdate
+ */
+export function onRouteUpdate({ location, prevLocation }) {
+  const { trackPageViewSPA } = getMatomoTracker()
+
+  // This ensures plugins like react-helmet finished their work
+  window.setTimeout(() => {
+    const trackResult = trackPageViewSPA({ location, prevLocation })
+
+    // Debug logging
+    if (process.env.gatsby_log_level === `verbose`) {
+      const { url, title } = trackResult
+      if (!trackResult) {
+        return console.debug(
+          `[Matomo] Failed to track page view: ${url} - ${title}`
+        )
+      }
+      console.debug(`[Matomo] Page view for: ${url} - ${title}`)
+    }
+  }, 0)
 }

@@ -1,12 +1,19 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import icons from './src/icons'
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
+import icons from './src/icons'
 
-// Inject custom icons in browser
+import { ConsentManagerWrapper } from './src/consent-manager'
+export { onRouteUpdate } from './src/consent-manager'
+
+// Inject required contexts
 export const wrapRootElement = ({ element }) => {
-  return <IconsContext.Provider value={icons}>{element}</IconsContext.Provider>
+  return (
+    <ConsentManagerWrapper>
+      <IconsContext.Provider value={icons}>{element}</IconsContext.Provider>
+    </ConsentManagerWrapper>
+  )
 }
 wrapRootElement.propTypes = {
   element: propTypes.element.isRequired,
