@@ -11,11 +11,6 @@ import { ConsentManager, ConsentManagerForm } from '@consent-manager/core'
 import createPersistedState from 'use-persisted-state'
 
 import {
-  matomoIntegration,
-  getMatomoTracker,
-} from '@consent-manager/integration-matomo'
-
-import {
   FallbackComponent,
   UnobtrusiveConsentControlUI,
 } from '@consent-manager/interface-default'
@@ -32,11 +27,7 @@ const useConsentStateStore = createPersistedState('consent-manager-docs')
 
 const consentManagerConfig = {
   integrations: [
-    matomoIntegration({
-      // You might want to store these values in environment variables
-      matomoURL: 'https://trackboi.uber.space/',
-      siteID: 9,
-    }),
+    // Add your analytics here
   ],
 }
 
@@ -72,22 +63,4 @@ export function ConsentManagerWrapper({ children }) {
  * Called when the user changes routes, including on the initial load of the app
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/#onRouteUpdate
  */
-export function onRouteUpdate({ location, prevLocation }) {
-  const { trackPageViewSPA } = getMatomoTracker()
-
-  // This ensures plugins like react-helmet finished their work
-  window.setTimeout(() => {
-    const trackResult = trackPageViewSPA({ location, prevLocation })
-
-    // Debug logging
-    if (process.env.gatsby_log_level === `verbose`) {
-      const { url, title } = trackResult
-      if (!trackResult) {
-        return console.debug(
-          `[Matomo] Failed to track page view: ${url} - ${title}`
-        )
-      }
-      console.debug(`[Matomo] Page view for: ${url} - ${title}`)
-    }
-  }, 0)
-}
+//  export function onRouteUpdate({ location, prevLocation }) {}
