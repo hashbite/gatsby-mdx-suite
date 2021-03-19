@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 
 import LazyChunk from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-chunk'
 import { PrivacyShield } from '@consent-manager/core'
+import { youtubeIntegration } from '@consent-manager/integration-youtube'
 
 const YoutubeVideoRenderer = React.lazy(() =>
   import(
@@ -32,14 +33,7 @@ export default function YoutubeVideo(props) {
   )
 }
 
-YoutubeVideo.privacy = {
-  category: 'social',
-  id: 'youtube',
-  title: 'YouTube',
-  icon: 'youtube',
-  url: 'https://policies.google.com/privacy?hl=en',
-  description: 'privacyDescriptionYoutube',
-}
+YoutubeVideo.privacy = youtubeIntegration()
 
 YoutubeVideo.displayName = 'YoutubeVideo'
 

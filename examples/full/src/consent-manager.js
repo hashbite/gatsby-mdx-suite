@@ -14,7 +14,6 @@ import {
   matomoIntegration,
   getMatomoTracker,
 } from '@consent-manager/integration-matomo'
-import { youtubeIntegration } from '@consent-manager/integration-youtube'
 
 import {
   FallbackComponent,
@@ -25,6 +24,10 @@ import '@consent-manager/interface-default/dist/default.min.css'
 import SwitchField from 'gatsby-theme-mdx-suite-base/src/components/form/final-form/switch'
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 
+import components from 'gatsby-theme-mdx-suite-core/src/components'
+
+import { useConsentManagerConfig } from '@gatsby-mdx-suite/helpers/hooks/use-consent-manager-config'
+
 const useConsentStateStore = createPersistedState('consent-manager-docs')
 
 const consentManagerConfig = {
@@ -34,7 +37,6 @@ const consentManagerConfig = {
       matomoURL: 'https://trackboi.uber.space/',
       siteID: 9,
     }),
-    youtubeIntegration(),
     {
       id: 'vimeo',
       title: 'vimeo@todo',
@@ -63,10 +65,11 @@ const consentManagerConfig = {
  */
 export function ConsentManagerWrapper({ children }) {
   const storage = useConsentStateStore()
+  const config = useConsentManagerConfig(components, consentManagerConfig)
 
   return (
     <ConsentManager
-      config={consentManagerConfig}
+      config={config}
       store={storage}
       fallbackComponent={(props) => (
         <FallbackComponent Button={Button} {...props} />
