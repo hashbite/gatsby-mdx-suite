@@ -20,8 +20,9 @@ const useConsentStateStore = createPersistedState('consent-manager-docs')
 const consentManagerConfig = {
   integrations: [
     matomoIntegration({
-      matomoURL: process.env.GATSBY_MATOMO_URL,
-      siteID: process.env.GATSBY_MATOMO_SITE_ID,
+      // You might want to store these values in environment variables
+      matomoURL: 'https://trackboi.uber.space/',
+      siteID: 9,
     }),
     youtubeIntegration(),
     {
