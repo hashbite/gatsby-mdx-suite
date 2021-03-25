@@ -34,9 +34,9 @@ VimeoVideo.privacy = {
   category: 'social',
   id: 'vimeo',
   title: 'Vimeo',
-  icon: 'vimeo',
   url: 'https://vimeo.com/privacy',
   description: 'privacyDescriptionVimeo',
+  Icon: () => 'vimeo',
 }
 
 VimeoVideo.displayName = 'VimeoVideo'

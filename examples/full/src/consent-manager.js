@@ -6,6 +6,7 @@
  */
 
 import React from 'react'
+import tw from 'twin.macro'
 
 import { ConsentManager, ConsentManagerForm } from '@consent-manager/core'
 import createPersistedState from 'use-persisted-state'
@@ -40,6 +41,8 @@ const consentManagerConfig = {
   ],
 }
 
+const SubmitButton = tw(Button)`w-full`
+
 /**
  * Wraps the apps root element with consent-manager
  * See:
@@ -62,7 +65,7 @@ export function ConsentManagerWrapper({ children }) {
       <ConsentManagerForm
         formComponent={UnobtrusiveConsentControlUI}
         Switch={SwitchField}
-        SubmitButton={Button}
+        SubmitButton={SubmitButton}
       />
     </ConsentManager>
   )
