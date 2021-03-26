@@ -1219,10 +1219,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@consent-manager/core@0.0.1-next.0", "@consent-manager/core@^0.0.1-next.0":
-  version "0.0.1-next.0"
-  resolved "https://registry.yarnpkg.com/@consent-manager/core/-/core-0.0.1-next.0.tgz#47074ecd688d3b37082523d39d8738ecb6f913c3"
-  integrity sha512-ovZCRb0fVD8Qmhd6etQB8q3Z5RVIdjHP+WU2zlciRc01KStmO/eWh5O5FkgfOxCAWT4AZFbfmWF+fUqiHjfNUQ==
+"@consent-manager/core@*", "@consent-manager/core@0.0.1-next.1", "@consent-manager/core@^0.0.1-next.1":
+  version "0.0.1-next.1"
+  resolved "https://registry.yarnpkg.com/@consent-manager/core/-/core-0.0.1-next.1.tgz#7fc1d74f9e421ea431c4a64899790776c0728269"
+  integrity sha512-iSqNYlPvsLUZngYIl93S9f4h8CSyoyANLqRZnlo0aRx9EIDMBYOoFfVJsrk8C530vMH2ZIEFm2G56PqH5Bg3XQ==
   dependencies:
     "@types/history" "^4.7.8"
     history "^5.0.0"
@@ -1230,29 +1230,37 @@
     tslib "^2.0.0"
     wcag-contrast "^3.0.0"
 
-"@consent-manager/integration-matomo@^0.0.1-next.0":
-  version "0.0.1-next.0"
-  resolved "https://registry.yarnpkg.com/@consent-manager/integration-matomo/-/integration-matomo-0.0.1-next.0.tgz#e7ccdeae9a168b3a89f66c4e5b55bfc95eef7e60"
-  integrity sha512-H1fcmweZ23KAgGDe8+oXynyGgHUA3k5RB0RQYiPib2MwMvBT7nTOAS//cYFv/Al6MdBwCNtUK4lsS7yWviMBPQ==
+"@consent-manager/integration-matomo@^0.0.1-next.1":
+  version "0.0.1-next.1"
+  resolved "https://registry.yarnpkg.com/@consent-manager/integration-matomo/-/integration-matomo-0.0.1-next.1.tgz#b44601c44f88b781997620716a0034d58b2a31ac"
+  integrity sha512-6wLP0RWgixEaEKIPU2uPumFYVsy059qJqx4asSevr0StQalb4p80yPm4XmoQwDdyR0Oi8v5QEJ87BbV/yzT0tg==
   dependencies:
-    "@consent-manager/core" "0.0.1-next.0"
+    "@consent-manager/core" "0.0.1-next.1"
     simple-icons "^4.14.0"
 
-"@consent-manager/integration-youtube@^0.0.1-next.0":
+"@consent-manager/integration-vimeo@^0.0.1-next.0":
   version "0.0.1-next.0"
-  resolved "https://registry.yarnpkg.com/@consent-manager/integration-youtube/-/integration-youtube-0.0.1-next.0.tgz#060847ad00c44daf21c196bfdd793b05a8433ac6"
-  integrity sha512-s1DV2puBVmj3QGSLt+Q9f7TXs4In1wuQ08Eqn4C2L8YSwthOSZ/21DITxWpSfq6pWzbWUYrdoO7HDwiG8r9gLQ==
+  resolved "https://registry.yarnpkg.com/@consent-manager/integration-vimeo/-/integration-vimeo-0.0.1-next.0.tgz#d4cd40d4a565f095699e9ff1baa72403eb48c928"
+  integrity sha512-2FD3s98noW7vKwaCe/9wMizSmbnx2q6tvTvbhInW6POa6lThFyF3YDCjuTj+bWtVCyR7RuieKTItPdceiqAmdw==
   dependencies:
-    "@consent-manager/core" "0.0.1-next.0"
-    react-youtube "^7.13.1"
+    "@consent-manager/core" "0.0.1-next.1"
     simple-icons "^4.14.0"
 
-"@consent-manager/interface-default@^0.0.1-next.0":
-  version "0.0.1-next.0"
-  resolved "https://registry.yarnpkg.com/@consent-manager/interface-default/-/interface-default-0.0.1-next.0.tgz#e57e2df936dbdca0eeed27f752723ccf28dfc581"
-  integrity sha512-mOy+dXvI6UeHe5SIEWAZFsaxJK2K2OhYpBC/nKoVDDIVsnQ+Hnu8GgdwmClX5AnkN1LYg5bkhOhg3ErNo3gRrQ==
+"@consent-manager/integration-youtube@^0.0.1-next.1":
+  version "0.0.1-next.1"
+  resolved "https://registry.yarnpkg.com/@consent-manager/integration-youtube/-/integration-youtube-0.0.1-next.1.tgz#fdbd1496cd5970079c84d1fc18a65a12db66eeb7"
+  integrity sha512-3nrkE/w/78frP5xJM/eWIZJ+ZnQfFs3N2qvd5otu1eXBe2AXMlIvqg9LMt/BNzY7oZz1EixdSQrNbRkSUbcXow==
   dependencies:
-    "@consent-manager/core" "0.0.1-next.0"
+    "@consent-manager/core" "0.0.1-next.1"
+    simple-icons "^4.14.0"
+
+"@consent-manager/interface-default@^0.0.1-next.1":
+  version "0.0.1-next.1"
+  resolved "https://registry.yarnpkg.com/@consent-manager/interface-default/-/interface-default-0.0.1-next.1.tgz#e17f5471eb53b03e97af5a271d00f2b4edd141c3"
+  integrity sha512-gdTOuewXjKb8QW6xRfKYZOEX8z1cEG0MnCJJ1YiPPtEHeZa6SZGZtgrLKIX8YCN2zLIcfFShqpRJzBVByQw4Wg==
+  dependencies:
+    "@consent-manager/core" "0.0.1-next.1"
+    activity-detector-ssr "^3.0.0"
     body-scroll-lock "^3.1.5"
     clsx "^1.1.1"
     react-div-100vh "^0.5.6"
@@ -3946,6 +3954,11 @@ acorn@^7.0.0, acorn@^7.1.1, acorn@^7.4.0:
   version "7.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
+
+activity-detector-ssr@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/activity-detector-ssr/-/activity-detector-ssr-3.0.0.tgz#c4fb90461eadab491219bab65828c6a1593d770e"
+  integrity sha512-GbsOeCUxcCx9+BA2SjmOf+vV31a9pK7lmkSEGjeIQlcwCtIooThw6oaM/ADlJvTEGSC5wxjv0L7hNJQbVBfZ3A==
 
 add-stream@^1.0.0:
   version "1.0.0"
@@ -17891,7 +17904,7 @@ react-view-pager@^0.6.0:
     resize-observer-polyfill "1.5.0"
     tabbable "1.1.2"
 
-react-youtube@7.13.1, react-youtube@^7.13.1:
+react-youtube@7.13.1:
   version "7.13.1"
   resolved "https://registry.yarnpkg.com/react-youtube/-/react-youtube-7.13.1.tgz#3b327599a687bf22e071468818522920b36bcb57"
   integrity sha512-b++TLHmHDpd0ZBS1wcbYabbuchU+W4jtx5A2MUQX0BINNKKsaIQX29sn/aLvZ9v5luwAoceia3VGtyz9blaB9w==
