@@ -1219,10 +1219,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@consent-manager/core@*", "@consent-manager/core@0.0.1-next.1", "@consent-manager/core@^0.0.1-next.1":
-  version "0.0.1-next.1"
-  resolved "https://registry.yarnpkg.com/@consent-manager/core/-/core-0.0.1-next.1.tgz#7fc1d74f9e421ea431c4a64899790776c0728269"
-  integrity sha512-iSqNYlPvsLUZngYIl93S9f4h8CSyoyANLqRZnlo0aRx9EIDMBYOoFfVJsrk8C530vMH2ZIEFm2G56PqH5Bg3XQ==
+"@consent-manager/core@0.0.1-next.2", "@consent-manager/core@^0.0.1-next.0", "@consent-manager/core@^0.0.1-next.1":
+  version "0.0.1-next.2"
+  resolved "https://registry.yarnpkg.com/@consent-manager/core/-/core-0.0.1-next.2.tgz#20fe4af2cf6bd14849005d054135e6624428d4fc"
+  integrity sha512-nvBLOdrt9Fngexm69apAuzarPD8okyudtoKosfI85CPmd98I3UM9Cbiv2hJeaYUpyfm1cL1POrjeLDIsCucIlQ==
   dependencies:
     "@types/history" "^4.7.8"
     history "^5.0.0"
@@ -1231,35 +1231,35 @@
     wcag-contrast "^3.0.0"
 
 "@consent-manager/integration-matomo@^0.0.1-next.1":
-  version "0.0.1-next.1"
-  resolved "https://registry.yarnpkg.com/@consent-manager/integration-matomo/-/integration-matomo-0.0.1-next.1.tgz#b44601c44f88b781997620716a0034d58b2a31ac"
-  integrity sha512-6wLP0RWgixEaEKIPU2uPumFYVsy059qJqx4asSevr0StQalb4p80yPm4XmoQwDdyR0Oi8v5QEJ87BbV/yzT0tg==
+  version "0.0.1-next.2"
+  resolved "https://registry.yarnpkg.com/@consent-manager/integration-matomo/-/integration-matomo-0.0.1-next.2.tgz#436d8d2ea9ab345fa2fa035f0a8516c4ad1c97fb"
+  integrity sha512-AcZRyYxguZcMzKmLpMkdfAvzYFlUOzjAWWc0pMGWJCFw9srP1tnMxDI+P6y7BO0dDRCUQkoSpJ0kh6tKIzbkpQ==
   dependencies:
-    "@consent-manager/core" "0.0.1-next.1"
+    "@consent-manager/core" "0.0.1-next.2"
     simple-icons "^4.14.0"
 
 "@consent-manager/integration-vimeo@^0.0.1-next.0":
-  version "0.0.1-next.0"
-  resolved "https://registry.yarnpkg.com/@consent-manager/integration-vimeo/-/integration-vimeo-0.0.1-next.0.tgz#d4cd40d4a565f095699e9ff1baa72403eb48c928"
-  integrity sha512-2FD3s98noW7vKwaCe/9wMizSmbnx2q6tvTvbhInW6POa6lThFyF3YDCjuTj+bWtVCyR7RuieKTItPdceiqAmdw==
+  version "0.0.1-next.1"
+  resolved "https://registry.yarnpkg.com/@consent-manager/integration-vimeo/-/integration-vimeo-0.0.1-next.1.tgz#ba0892c14285223946b62393eb2c766a09494a7c"
+  integrity sha512-LkfSgjEqMPh8eBtwE1l0TshWuvAS8AHBnJlJ6cRNWwWQ1jXAAKYsYQsWJGSu3lV1jVqVWYQqXwlksYIA5Et+VQ==
   dependencies:
-    "@consent-manager/core" "0.0.1-next.1"
+    "@consent-manager/core" "^0.0.1-next.0"
     simple-icons "^4.14.0"
 
 "@consent-manager/integration-youtube@^0.0.1-next.1":
-  version "0.0.1-next.1"
-  resolved "https://registry.yarnpkg.com/@consent-manager/integration-youtube/-/integration-youtube-0.0.1-next.1.tgz#fdbd1496cd5970079c84d1fc18a65a12db66eeb7"
-  integrity sha512-3nrkE/w/78frP5xJM/eWIZJ+ZnQfFs3N2qvd5otu1eXBe2AXMlIvqg9LMt/BNzY7oZz1EixdSQrNbRkSUbcXow==
+  version "0.0.1-next.2"
+  resolved "https://registry.yarnpkg.com/@consent-manager/integration-youtube/-/integration-youtube-0.0.1-next.2.tgz#5d4c9bee434b62e32209e4be13a66785ac9a74b7"
+  integrity sha512-cB9ZGx8zM9x9rlydQND2puo1tihgJW1Or+2Dd/u4o5BdsuQeytrRxUNObAcfMH/Exfrfuy1CMp4bi9b6djBVng==
   dependencies:
-    "@consent-manager/core" "0.0.1-next.1"
+    "@consent-manager/core" "^0.0.1-next.0"
     simple-icons "^4.14.0"
 
 "@consent-manager/interface-default@^0.0.1-next.1":
-  version "0.0.1-next.1"
-  resolved "https://registry.yarnpkg.com/@consent-manager/interface-default/-/interface-default-0.0.1-next.1.tgz#e17f5471eb53b03e97af5a271d00f2b4edd141c3"
-  integrity sha512-gdTOuewXjKb8QW6xRfKYZOEX8z1cEG0MnCJJ1YiPPtEHeZa6SZGZtgrLKIX8YCN2zLIcfFShqpRJzBVByQw4Wg==
+  version "0.0.1-next.2"
+  resolved "https://registry.yarnpkg.com/@consent-manager/interface-default/-/interface-default-0.0.1-next.2.tgz#17cb605c300ff1bb03bd9bd18f4260a39e696e75"
+  integrity sha512-gBTo+j73KTzCvKw1K1c4woFD+7q79qbNYdqHOkyWQsX+XxH7OnMTYYtdMpEYuO4KA1pUB4iq4Td2InH9bX72Nw==
   dependencies:
-    "@consent-manager/core" "0.0.1-next.1"
+    "@consent-manager/core" "^0.0.1-next.0"
     activity-detector-ssr "^3.0.0"
     body-scroll-lock "^3.1.5"
     clsx "^1.1.1"
@@ -17636,9 +17636,9 @@ react-error-overlay@^3.0.0:
   integrity sha512-XzgvowFrwDo6TWcpJ/WTiarb9UI6lhA4PMzS7n1joK3sHfBBBOQHUc0U4u57D6DWO9vHv6lVSWx2Q/Ymfyv4hw==
 
 react-final-form@^6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-6.5.2.tgz#d04d1eb7d92eabc6f6c35206bb0eebfc4bfd924b"
-  integrity sha512-c5l45FYOoxtfpvsvMFh3w2WW8KNxbuebBUrM16rUrooQkewTs0Zahmv0TuKFX5jsC9BKn5Fo84j3ZVXQdURS4w==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-6.5.3.tgz#b60955837fe9d777456ae9d9c48e3e2f21547d29"
+  integrity sha512-FCs6GC0AMWJl2p6YX7kM+a0AvuSLAZUgbVNtRBskOs4g984t/It0qGtx51O+9vgqnqk6JyoxmIzxKMq+7ch/vg==
   dependencies:
     "@babel/runtime" "^7.12.1"
 
@@ -21032,7 +21032,12 @@ tslib@^1.0.0, tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.0, tslib@^2.0.1, tslib@~2.0.1:
+tslib@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
+  integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
+
+tslib@^2.0.1, tslib@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
   integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
