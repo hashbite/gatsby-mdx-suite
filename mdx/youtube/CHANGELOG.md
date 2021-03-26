@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.9.8...@gatsby-mdx-suite/mdx-youtube@0.10.0) (2021-03-26)
+
+
+### Features
+
+* **consent-manager:** MDX components now define required integrations as default ([98e0cf7](https://github.com/axe312ger/gatsby-mdx-suite/commit/98e0cf73801379a329bfd21e10613d9b449021c8))
+* **consent-manager:** new vimeo integration and improved UI ([4d0b525](https://github.com/axe312ger/gatsby-mdx-suite/commit/4d0b525748554e2e0b149263e58ee44bd0ed6f12))
+
+
+
+
+
 ## [0.9.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.9.7...@gatsby-mdx-suite/mdx-youtube@0.9.8) (2021-02-25)
 
 

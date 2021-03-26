@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.5.2...@gatsby-mdx-suite/mdx-vimeo@0.6.0) (2021-03-26)
+
+
+### Bug Fixes
+
+* improve consent-manager integration ([6a39c2e](https://github.com/axe312ger/gatsby-suite-mdx/commit/6a39c2e2f2c6257ae8cacf38686f1ce13072d540))
+
+
+### Features
+
+* **consent-manager:** new vimeo integration and improved UI ([4d0b525](https://github.com/axe312ger/gatsby-suite-mdx/commit/4d0b525748554e2e0b149263e58ee44bd0ed6f12))
+
+
+
+
+
 ## [0.5.2](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.5.1...@gatsby-mdx-suite/mdx-vimeo@0.5.2) (2021-01-05)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-vimeo
