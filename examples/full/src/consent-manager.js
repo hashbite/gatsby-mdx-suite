@@ -18,7 +18,7 @@ import {
 
 import {
   FallbackComponent,
-  UnobtrusiveConsentControlUI,
+  InterfaceDefault,
 } from '@consent-manager/interface-default'
 import '@consent-manager/interface-default/dist/default.min.css'
 
@@ -63,7 +63,7 @@ export function ConsentManagerWrapper({ children }) {
     >
       {children}
       <ConsentManagerForm
-        formComponent={UnobtrusiveConsentControlUI}
+        formComponent={InterfaceDefault}
         Switch={SwitchField}
         SubmitButton={SubmitButton}
       />

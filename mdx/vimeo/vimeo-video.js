@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 
 import LazyChunk from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-chunk'
 import { PrivacyShield } from '@consent-manager/core'
+import { vimeoIntegration } from '@consent-manager/integration-vimeo'
 
 const VimeoVideoRenderer = React.lazy(() =>
   import(/* webpackChunkName: "vimeo-video-player" */ './vimeo-video-renderer')
@@ -30,14 +31,7 @@ export default function VimeoVideo(props) {
   )
 }
 
-VimeoVideo.privacy = {
-  category: 'social',
-  id: 'vimeo',
-  title: 'Vimeo',
-  url: 'https://vimeo.com/privacy',
-  description: 'privacyDescriptionVimeo',
-  Icon: () => 'vimeo',
-}
+VimeoVideo.privacy = vimeoIntegration()
 
 VimeoVideo.displayName = 'VimeoVideo'
 
