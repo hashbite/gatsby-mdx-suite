@@ -29,8 +29,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/mdx-copy": "^0.14.1",
-    "@gatsby-mdx-suite/mdx-link": "^0.9.3",
+    "gatsby-theme-mdx-suite-base": "^0.11.7",
     "react-modal": "^3.12.1"
   }
 }

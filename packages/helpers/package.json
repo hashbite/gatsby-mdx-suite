@@ -21,7 +21,8 @@
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
-    "deepmerge": "^4.2.2"
+    "deepmerge": "^4.2.2",
+    "gatsby-theme-mdx-suite-core": "^0.9.1"
   },
   "publishConfig": {
     "access": "public"
