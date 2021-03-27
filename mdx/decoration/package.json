@@ -21,7 +21,7 @@
   ],
   "peerDependencies": {
     "prop-types": "^15.7.0",
-    "react": "^16.9.0",
+    "react": "^17.0.1",
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
