@@ -28,5 +28,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@gatsby-mdx-suite/helpers": "^0.15.0"
   }
 }
