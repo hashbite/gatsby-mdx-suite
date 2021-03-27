@@ -12,7 +12,7 @@ import createPersistedState from 'use-persisted-state'
 
 import {
   FallbackComponent,
-  UnobtrusiveConsentControlUI,
+  InterfaceDefault,
 } from '@consent-manager/interface-default'
 import '@consent-manager/interface-default/dist/default.min.css'
 
@@ -51,7 +51,7 @@ export function ConsentManagerWrapper({ children }) {
     >
       {children}
       <ConsentManagerForm
-        formComponent={UnobtrusiveConsentControlUI}
+        formComponent={InterfaceDefault}
         Switch={SwitchField}
         SubmitButton={Button}
       />
@@ -63,4 +63,4 @@ export function ConsentManagerWrapper({ children }) {
  * Called when the user changes routes, including on the initial load of the app
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/#onRouteUpdate
  */
-//  export function onRouteUpdate({ location, prevLocation }) {}
+export function onRouteUpdate({ location, prevLocation }) {}
