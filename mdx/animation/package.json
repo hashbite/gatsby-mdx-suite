@@ -23,7 +23,7 @@
     "@emotion/styled": "^10.0.27",
     "emotion": "^10.0.27",
     "prop-types": "^15.7.0",
-    "react": "^16.9.0"
+    "react": "^17.0.1"
   },
   "dependencies": {
     "@gatsby-mdx-suite/helpers": "^0.15.0"

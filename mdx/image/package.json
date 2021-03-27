@@ -24,7 +24,7 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "prop-types": "^15.7.0",
-    "react": "^16.9.0"
+    "react": "^17.0.1"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^0.8.8",

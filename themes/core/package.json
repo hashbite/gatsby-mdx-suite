@@ -14,8 +14,8 @@
     "gatsby": "^2.19.0",
     "gatsby-theme-mdx-suite-docs": "^0.0.0",
     "prop-types": "^15.7.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-i18next": "^11.7.2"
   },
   "dependencies": {
