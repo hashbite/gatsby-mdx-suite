@@ -23,6 +23,7 @@
   "peerDependencies": {
     "@emotion/styled": "^10.0.23",
     "final-form": "^4.20.1",
+    "gatsby-theme-mdx-suite-base": "^0.11.7",
     "prop-types": "^15.7.0",
     "react": "^16.9.0",
     "react-final-form": "^6.5.2",
@@ -33,7 +34,6 @@
   },
   "dependencies": {
     "@gatsby-mdx-suite/mdx-link": "^0.9.3",
-    "gatsby-theme-mdx-suite-base": "^0.11.7",
     "react-mailchimp-subscribe": "^2.1.0"
   }
 }
