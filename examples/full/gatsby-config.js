@@ -75,7 +75,8 @@ module.exports = {
     `gatsby-transformer-video`,
     ...(isProduction
       ? [
-          `gatsby-plugin-offline`,
+          // Enable offline functionallity. Currently can cause issues for recurring users.
+          // `gatsby-plugin-offline`,
           // Enable if you build on Netlify. Gatsby cloud users do not need this.
           // {
           //   resolve: 'gatsby-plugin-netlify-cache',
