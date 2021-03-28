@@ -35,8 +35,8 @@
     "@react-icons/all-files": "^4.1.0",
     "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.31.1",
-    "gatsby-plugin-manifest": "^2.11.0",
+    "gatsby": "^3.1.2",
+    "gatsby-plugin-manifest": "^3.1.0",
     "gatsby-theme-mdx-suite-base": "^0.12.2",
     "gatsby-theme-mdx-suite-blog": "^0.3.23",
     "gatsby-theme-mdx-suite-core": "^0.9.3",
@@ -51,6 +51,6 @@
   "peerDependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "gatsby-plugin-mdx": "^1.2.40"
+    "gatsby-plugin-mdx": "^2.1.0"
   }
 }
