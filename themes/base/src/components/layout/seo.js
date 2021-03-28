@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useLocation } from '@reach/router'
-import { useHead, useTitleTemplate } from 'hoofd'
+// import { useHead, useTitleTemplate } from 'hoofd'
 
 function SEO({
   description,
@@ -110,15 +110,15 @@ function SEO({
     ]
   )
 
-  useTitleTemplate(
-    titleTemplate || (title !== siteTitle && `%s | ${siteTitle}`)
-  )
+  // useTitleTemplate(
+  //   titleTemplate || (title !== siteTitle && `%s | ${siteTitle}`)
+  // )
 
-  useHead({
-    title,
-    language,
-    metas,
-  })
+  // useHead({
+  //   title,
+  //   language,
+  //   metas,
+  // })
 
   return null
 }
