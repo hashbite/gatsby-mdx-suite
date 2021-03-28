@@ -21,7 +21,7 @@ import '@consent-manager/interface-default/dist/default.min.css'
 import SwitchField from 'gatsby-theme-mdx-suite-base/src/components/form/final-form/switch'
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 
-import components from 'gatsby-theme-mdx-suite-core/src/components'
+import components from './gatsby-theme-mdx-suite-core/components'
 
 import { useConsentManagerConfig } from '@gatsby-mdx-suite/helpers/hooks/use-consent-manager-config'
 
