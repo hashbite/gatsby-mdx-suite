@@ -1,17 +1,27 @@
 const { resolve } = require('path')
 const cheerio = require('cheerio')
 const merge = require('deepmerge')
+const webpack = require('webpack')
 
 const minimumConfig = require('./minimum-config')
 
 /**
- * Ensure @mdx-js dependencies build via webpack
+ * Ensure webpack works with Gatsby & MDX
  */
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
-    node: {
-      fs: 'empty',
+    resolve: {
+      fallback: {
+        fs: false,
+        path: false,
+        assert: false,
+      },
     },
+    plugins: [
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+      }),
+    ],
   })
 }
 
