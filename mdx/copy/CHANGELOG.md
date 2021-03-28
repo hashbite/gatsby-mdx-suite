@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.14.1...@gatsby-mdx-suite/mdx-copy@0.14.2) (2021-03-28)
+
+
+### Reverts
+
+* Revert "build: clean up and align dependencies" ([4c6836b](https://github.com/axe312ger/gatsby-mdx-suite/commit/4c6836b3b3acb1cde4498b5608e2c179676d91c0))
+
+
+
+
+
 ## [0.14.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.14.0...@gatsby-mdx-suite/mdx-copy@0.14.1) (2021-03-26)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-copy

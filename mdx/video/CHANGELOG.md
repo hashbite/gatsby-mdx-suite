@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.8.2...@gatsby-mdx-suite/mdx-video@0.8.3) (2021-03-28)
+
+
+### Reverts
+
+* Revert "build: clean up and align dependencies" ([4c6836b](https://github.com/axe312ger/gatsby-mdx-suite/commit/4c6836b3b3acb1cde4498b5608e2c179676d91c0))
+
+
+
+
+
 ## [0.8.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.8.1...@gatsby-mdx-suite/mdx-video@0.8.2) (2021-02-25)
 
 

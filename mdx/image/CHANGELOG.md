@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.8.5...@gatsby-mdx-suite/mdx-image@0.8.6) (2021-03-28)
+
+
+### Reverts
+
+* Revert "build: upgrade dependencies for Gatsby v2.32" ([c901347](https://github.com/axe312ger/gatsby-mdx-suite/commit/c901347c55e16edf4b0f0a911357b6f745fae660))
+
+
+
+
+
 ## [0.8.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.8.4...@gatsby-mdx-suite/mdx-image@0.8.5) (2021-01-27)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-image

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.10.0...gatsby-mdx-suite-example-full@0.10.1) (2021-03-28)
+
+
+### Bug Fixes
+
+* disable gatsby-plugin-offline as current version causes issues ([e82a40a](https://github.com/axe312ger/gatsby-mdx-suite/commit/e82a40a853e84c3a8f0db76cb900889e649fc45b))
+
+
+
+
+
 # [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.9.6...gatsby-mdx-suite-example-full@0.10.0) (2021-03-26)
 
 

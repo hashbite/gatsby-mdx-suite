@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-link",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Render a link to an internal or external site",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -30,8 +30,8 @@
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/contexts": "^0.3.5",
-    "@gatsby-mdx-suite/helpers": "^0.15.0"
+    "@gatsby-mdx-suite/contexts": "^0.3.6",
+    "@gatsby-mdx-suite/helpers": "^0.15.1"
   },
   "publishConfig": {
     "access": "public"

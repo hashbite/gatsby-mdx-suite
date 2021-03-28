@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.11.7...gatsby-theme-mdx-suite-base@0.11.8) (2021-03-28)
+
+
+### Reverts
+
+* Revert "build: clean up and align dependencies" ([4c6836b](https://github.com/axe312ger/gatsby-mdx-suite/commit/4c6836b3b3acb1cde4498b5608e2c179676d91c0))
+
+
+
+
+
 ## [0.11.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.11.6...gatsby-theme-mdx-suite-base@0.11.7) (2021-03-26)
 
 
