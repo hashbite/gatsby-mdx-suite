@@ -5,7 +5,7 @@ import { HiCheck } from '@react-icons/all-files/hi/HiCheck'
 import { HiStar } from '@react-icons/all-files/hi/HiStar'
 import { HiPhone } from '@react-icons/all-files/hi/HiPhone'
 import { HiMail } from '@react-icons/all-files/hi/HiMail'
-import { HiClose } from '@react-icons/all-files/hi/HiX'
+import { HiX } from '@react-icons/all-files/hi/HiX'
 import { HiChevronRight } from '@react-icons/all-files/hi/HiChevronRight'
 import { HiChevronLeft } from '@react-icons/all-files/hi/HiChevronLeft'
 import { HiMenu } from '@react-icons/all-files/hi/HiMenu'
@@ -57,7 +57,7 @@ export default new Map(
     dot: { icon: Dot },
     dotSmall: { icon: Dot, scale: 0.6 },
     star: { icon: HiStar },
-    close: { icon: HiClose },
+    close: { icon: HiX },
     next: { icon: HiChevronRight },
     previous: { icon: HiChevronLeft },
     menu: { icon: HiMenu },
