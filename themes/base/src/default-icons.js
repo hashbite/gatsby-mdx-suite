@@ -1,39 +1,37 @@
 import React from 'react'
 
 // Basic pictograms via from https://heroicons.dev/
-import Check from 'heroicons/solid/check.svg'
-import Star from 'heroicons/solid/star.svg'
-import Phone from 'heroicons/solid/phone.svg'
-import Mail from 'heroicons/solid/mail.svg'
-import Close from 'heroicons/solid/x.svg'
-import ChevronRight from 'heroicons/outline/chevron-right.svg'
-import ChevronLeft from 'heroicons/outline/chevron-left.svg'
-import Menu from 'heroicons/outline/menu.svg'
-import Cog from 'heroicons/solid/cog.svg'
-import Chart from 'heroicons/solid/chart-square-bar.svg'
-import ExternalLink from 'heroicons/outline/external-link.svg'
+import { HiCheck } from '@react-icons/all-files/hi/HiCheck'
+import { HiStar } from '@react-icons/all-files/hi/HiStar'
+import { HiPhone } from '@react-icons/all-files/hi/HiPhone'
+import { HiMail } from '@react-icons/all-files/hi/HiMail'
+import { HiX } from '@react-icons/all-files/hi/HiX'
+import { HiChevronRight } from '@react-icons/all-files/hi/HiChevronRight'
+import { HiChevronLeft } from '@react-icons/all-files/hi/HiChevronLeft'
+import { HiMenu } from '@react-icons/all-files/hi/HiMenu'
+import { HiCog } from '@react-icons/all-files/hi/HiCog'
+import { HiExternalLink } from '@react-icons/all-files/hi/HiExternalLink'
+import { HiOutlineSwitchHorizontal } from '@react-icons/all-files/hi/HiOutlineSwitchHorizontal'
 
-// Brand logos via https://simpleicons.org/ & https://react-icons.github.io/react-icons/
-import {
-  SiFacebook,
-  SiInstagram,
-  SiLinkedin,
-  SiYoutube,
-  SiTwitter,
-  SiVimeo,
-} from 'react-icons/si'
+// Brand logos via https://simpleicons.org/
+import { SiFacebook } from '@react-icons/all-files/si/SiFacebook'
+import { SiInstagram } from '@react-icons/all-files/si/SiInstagram'
+import { SiLinkedin } from '@react-icons/all-files/si/SiLinkedin'
+import { SiYoutube } from '@react-icons/all-files/si/SiYoutube'
+import { SiTwitter } from '@react-icons/all-files/si/SiTwitter'
+import { SiVimeo } from '@react-icons/all-files/si/SiVimeo'
 
-import { BsArrowRepeat, BsCodeSlash } from 'react-icons/bs'
-import { MdContentPaste } from 'react-icons/md'
-import {
-  AiOutlineDelete,
-  AiOutlineInfoCircle,
-  AiOutlineLock,
-  AiOutlineQuestionCircle,
-  AiOutlineUnlock,
-  AiOutlineSearch,
-} from 'react-icons/ai'
-import { HiOutlineSwitchHorizontal } from 'react-icons/hi'
+import { BsArrowRepeat } from '@react-icons/all-files/bs/BsArrowRepeat'
+import { BsCodeSlash } from '@react-icons/all-files/bs/BsCodeSlash'
+
+import { MdContentPaste } from '@react-icons/all-files/md/MdContentPaste'
+
+import { AiOutlineDelete } from '@react-icons/all-files/ai/AiOutlineDelete'
+import { AiOutlineInfoCircle } from '@react-icons/all-files/ai/AiOutlineInfoCircle'
+import { AiOutlineLock } from '@react-icons/all-files/ai/AiOutlineLock'
+import { AiOutlineQuestionCircle } from '@react-icons/all-files/ai/AiOutlineQuestionCircle'
+import { AiOutlineUnlock } from '@react-icons/all-files/ai/AiOutlineUnlock'
+import { AiOutlineSearch } from '@react-icons/all-files/ai/AiOutlineSearch'
 
 // Country flags via https://flagicons.lipis.dev/
 import FlagDe from 'flag-icon-css/flags/4x3/de.svg'
@@ -54,17 +52,17 @@ const Circle = () => (
 
 export default new Map(
   Object.entries({
-    check: { icon: Check, scale: 1.2 },
+    check: { icon: HiCheck, scale: 1.2 },
     circle: { icon: Circle },
     dot: { icon: Dot },
     dotSmall: { icon: Dot, scale: 0.6 },
-    star: { icon: Star },
-    close: { icon: Close },
-    next: { icon: ChevronRight },
-    previous: { icon: ChevronLeft },
-    menu: { icon: Menu },
-    settings: { icon: Cog },
-    'external-link': { icon: ExternalLink },
+    star: { icon: HiStar },
+    close: { icon: HiX },
+    next: { icon: HiChevronRight },
+    previous: { icon: HiChevronLeft },
+    menu: { icon: HiMenu },
+    settings: { icon: HiCog },
+    'external-link': { icon: HiExternalLink },
     repeat: { icon: BsArrowRepeat },
     search: { icon: AiOutlineSearch },
     lock: { icon: AiOutlineLock },
@@ -75,15 +73,14 @@ export default new Map(
     info: { icon: AiOutlineInfoCircle },
     snippets: { icon: MdContentPaste },
     switch: { icon: HiOutlineSwitchHorizontal },
-    phone: { icon: Phone },
-    mail: { icon: Mail },
+    phone: { icon: HiPhone },
+    mail: { icon: HiMail },
     facebook: { icon: SiFacebook },
     instagram: { icon: SiInstagram },
     youtube: { icon: SiYoutube },
     linkedin: { icon: SiLinkedin },
     twitter: { icon: SiTwitter },
     vimeo: { icon: SiVimeo },
-    matomo: { icon: Chart },
     'flag-de': { icon: FlagDe },
     'flag-en-US': { icon: FlagEn },
   })

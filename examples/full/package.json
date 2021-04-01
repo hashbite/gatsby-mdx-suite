@@ -30,6 +30,7 @@
     "@gatsby-mdx-suite/mdx-video": "^0.8.3",
     "@gatsby-mdx-suite/mdx-vimeo": "^0.6.2",
     "@gatsby-mdx-suite/mdx-youtube": "^0.10.2",
+    "@react-icons/all-files": "^4.1.0",
     "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",
     "gatsby": "^2.31.1",
@@ -41,7 +42,6 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.8.5",
-    "react-icons": "^4.2.0",
     "react-scrolllock": "^5.0.1",
     "twin.macro": "^1.12.1",
     "use-persisted-state": "^0.3.3"
@@ -49,7 +49,6 @@
   "peerDependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "gatsby-plugin-mdx": "^1.2.40",
-    "heroicons": "^0.4.2"
+    "gatsby-plugin-mdx": "^1.2.40"
   }
 }
