@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.20](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-blog@0.3.19...gatsby-theme-mdx-suite-blog@0.3.20) (2021-04-01)
+
+
+### Performance Improvements
+
+* migrate all icons to @react-icons/all-files ([#272](https://github.com/axe312ger/gatsby-mdx-suite/issues/272)) ([f1cc5d7](https://github.com/axe312ger/gatsby-mdx-suite/commit/f1cc5d759aae87a82951aa934c7b05dba0aee499))
+
+
+
+
+
 ## [0.3.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-blog@0.3.18...gatsby-theme-mdx-suite-blog@0.3.19) (2021-03-28)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-blog
