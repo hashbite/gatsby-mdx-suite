@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.10.1...gatsby-mdx-suite-example-full@0.10.2) (2021-04-01)
+
+
+### Bug Fixes
+
+* **build:** migrate to latest consent-manager ([0aca7c4](https://github.com/axe312ger/gatsby-mdx-suite/commit/0aca7c4f6378c7f3d1172f30b62071e109bb6059))
+
+
+
+
+
 ## [0.10.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.10.0...gatsby-mdx-suite-example-full@0.10.1) (2021-03-28)
 
 

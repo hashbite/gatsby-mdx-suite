@@ -1,6 +1,6 @@
 {
   "name": "gatsby-mdx-suite-example-full",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Full implementation of the MDX suite. Mostly for testing and demonstration purposes.",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
@@ -28,8 +28,8 @@
     "@gatsby-mdx-suite/mdx-scroll-effects": "^0.2.5",
     "@gatsby-mdx-suite/mdx-timeline": "^0.7.1",
     "@gatsby-mdx-suite/mdx-video": "^0.8.3",
-    "@gatsby-mdx-suite/mdx-vimeo": "^0.6.1",
-    "@gatsby-mdx-suite/mdx-youtube": "^0.10.1",
+    "@gatsby-mdx-suite/mdx-vimeo": "^0.6.2",
+    "@gatsby-mdx-suite/mdx-youtube": "^0.10.2",
     "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",
     "gatsby": "^2.31.1",
