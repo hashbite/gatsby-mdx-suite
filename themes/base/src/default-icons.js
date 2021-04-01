@@ -11,7 +11,7 @@ import HiChevronLeft from '@react-icons/all-files/hi/HiChevronLeft'
 import HiMenu from '@react-icons/all-files/hi/HiMenu'
 import HiCog from '@react-icons/all-files/hi/HiCog'
 import HiExternalLink from '@react-icons/all-files/hi/HiExternalLink'
-import HiOutlineSwitchHorizontal from '@react-icons/all-files/hi'
+import HiOutlineSwitchHorizontal from '@react-icons/all-files/hi/HiOutlineSwitchHorizontal'
 
 // Brand logos via https://simpleicons.org/
 import SiFacebook from '@react-icons/all-files/si/SiFacebook'
