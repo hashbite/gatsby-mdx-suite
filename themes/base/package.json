@@ -49,10 +49,8 @@
     "gatsby-transformer-inline-svg": "^0.0.8",
     "gatsby-transformer-video": "^0.2.2",
     "gsap": "^3.6.0",
-    "heroicons": "^0.4.2",
     "hoofd": "^1.0.2",
     "react-final-form": "^6.5.2",
-    "react-icons": "^3.11.0",
     "react-scrolllock": "^5.0.1"
   },
   "devDependencies": {
