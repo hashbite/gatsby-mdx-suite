@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.14.2...@gatsby-mdx-suite/mdx-copy@0.14.3) (2021-04-07)
+
+
+### Bug Fixes
+
+* **bullet-points:** ensure bullet points are in the center of the first line ([84e41e9](https://github.com/axe312ger/gatsby-mdx-suite/commit/84e41e964a24a5764a25cd908f781a60be9228bc))
+
+
+
+
+
 ## [0.14.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.14.1...@gatsby-mdx-suite/mdx-copy@0.14.2) (2021-03-28)
 
 

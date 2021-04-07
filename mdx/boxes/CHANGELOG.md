@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.13.9...@gatsby-mdx-suite/mdx-boxes@0.14.0) (2021-04-07)
+
+
+### Features
+
+* **layout:** more consistent adaptive behaviour and breakpoint settings ([7c3bbdd](https://github.com/axe312ger/gatsby-mdx-suite/commit/7c3bbdda0da1d487a9c3eda3c97df18180a54123))
+
+
+
+
+
 ## [0.13.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.13.8...@gatsby-mdx-suite/mdx-boxes@0.13.9) (2021-03-28)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
