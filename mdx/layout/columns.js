@@ -27,20 +27,20 @@ const ColumnsWrapper = styled.div(
           `
         : css`
             grid-template-columns: ${theme.gridTemplateColumns[minColumns]};
-            ${maxColumns === 2 && tw`sm:grid-cols-2`}
-            ${maxColumns === 3 && tw`sm:grid-cols-3`}
-            ${maxColumns === 4 && tw`sm:grid-cols-2 md:grid-cols-4`}
-            ${maxColumns === 5 && tw`grid-cols-2 sm:grid-cols-2 md:grid-cols-5`}
-            ${maxColumns === 6 && tw`grid-cols-2 sm:grid-cols-3 md:grid-cols-6`}
-            ${maxColumns === 7 && tw`grid-cols-2 sm:grid-cols-4 md:grid-cols-7`}
-            ${maxColumns === 8 && tw`grid-cols-2 sm:grid-cols-4 md:grid-cols-8`}
-            ${maxColumns === 9 && tw`grid-cols-3 sm:grid-cols-5 md:grid-cols-9`}
+            ${maxColumns === 2 && tw`md:grid-cols-2`}
+            ${maxColumns === 3 && tw`md:grid-cols-3`}
+            ${maxColumns === 4 && tw`md:grid-cols-2 lg:grid-cols-4`}
+            ${maxColumns === 5 && tw`grid-cols-2 md:grid-cols-2 lg:grid-cols-5`}
+            ${maxColumns === 6 && tw`grid-cols-2 md:grid-cols-3 lg:grid-cols-6`}
+            ${maxColumns === 7 && tw`grid-cols-2 md:grid-cols-4 lg:grid-cols-7`}
+            ${maxColumns === 8 && tw`grid-cols-2 md:grid-cols-4 lg:grid-cols-8`}
+            ${maxColumns === 9 && tw`grid-cols-3 md:grid-cols-5 lg:grid-cols-9`}
             ${maxColumns === 10 &&
-            tw`grid-cols-3 sm:grid-cols-5 md:grid-cols-10`}
+            tw`grid-cols-3 md:grid-cols-5 lg:grid-cols-10`}
             ${maxColumns === 11 &&
-            tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-11`}
+            tw`grid-cols-4 md:grid-cols-6 lg:grid-cols-11`}
             ${maxColumns === 12 &&
-            tw`grid-cols-4 sm:grid-cols-6 md:grid-cols-12`};
+            tw`grid-cols-4 md:grid-cols-6 lg:grid-cols-12`};
           `}
 
     ${center &&

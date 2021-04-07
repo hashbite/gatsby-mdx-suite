@@ -6,8 +6,8 @@ module.exports = merge(defaultTheme, {
   theme: {
     extend: {
       screens: {
-        // We prever sm to trigger earlier
-        sm: '480px',
+        sm: '420px', // Just above iphone vertical width
+        md: '668px', // Just above iphone horizontal width
       },
       colors: {
         primary: defaultTailwindTheme.colors.blue['500'],
