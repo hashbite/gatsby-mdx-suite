@@ -3,7 +3,7 @@ const plugin = require('tailwindcss/plugin')
 const defaultTailwindTheme = require('./src/tailwind.default.config')
 
 module.exports = merge(
-  { theme: { extend: { defaultTailwindTheme } } },
+  { theme: { extend: defaultTailwindTheme } },
   {
     theme: {
       extend: {
