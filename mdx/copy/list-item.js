@@ -10,6 +10,7 @@ import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 const StyledListItem = styled.li(
   ({ iconColor, type }) => css`
     ${tw`relative pl-6`}
+    line-height: 2em;
 
     ${type === 'ordered' &&
     css`
@@ -24,9 +25,8 @@ const StyledListItem = styled.li(
 )
 
 const ListItemIcon = styled(Icon)`
-  ${tw`absolute left-0`}
-  top: 0.8em;
-  transform: translateY(-50%);
+  ${tw`absolute left-0 top-0 flex items-center`}
+  height: 2em;
 `
 /**
  * Renders a list with an optional title and customizable bullet points.
