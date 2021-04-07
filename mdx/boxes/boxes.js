@@ -16,7 +16,7 @@ const StyledBoxes = styled.div(
       grid-template-columns: 1fr;
       grid-auto-rows: auto;
 
-      @media screen and (min-width: ${theme.screens.sm}) {
+      @media screen and (min-width: ${theme.screens.md}) {
         grid-template-columns: repeat(48, 1fr);
         grid-auto-rows: 1fr;
       }
