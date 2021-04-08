@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.14.3...@gatsby-mdx-suite/mdx-copy@0.14.4) (2021-04-08)
+
+
+### Bug Fixes
+
+* **bullet-points:** reduce line height and add spacing between bullet point ([1d4fb32](https://github.com/axe312ger/gatsby-mdx-suite/commit/1d4fb32f59f49c7103f2fdc3eeec7bb43bc3beb1))
+* **font:** font family now works for <Font/> <Claim/> <TextBox/> and so on ([61dc078](https://github.com/axe312ger/gatsby-mdx-suite/commit/61dc078c8b54697f9edcfbb9882d1f6ab26844d0))
+
+
+
+
+
 ## [0.14.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.14.2...@gatsby-mdx-suite/mdx-copy@0.14.3) (2021-04-07)
 
 
