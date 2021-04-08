@@ -66,7 +66,7 @@ const StyledFont = styled.span(
     ${family &&
       family !== Font.defaultProps.family &&
       css`
-        font-family: ${fontFamily[family] || family};
+        font-family: ${fontFamily[family].join(', ') || family};
       `}
     ${weight &&
       weight !== Font.defaultProps.weight &&
