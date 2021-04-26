@@ -1306,6 +1306,20 @@
   dependencies:
     simple-icons "^4.14.0"
 
+"@consent-manager/integration-vimeo@^0.0.1-next.8":
+  version "0.0.1-next.8"
+  resolved "https://registry.yarnpkg.com/@consent-manager/integration-vimeo/-/integration-vimeo-0.0.1-next.8.tgz#d0f829e203fe1533eec0528505638fe9ff8b183a"
+  integrity sha512-20mkYSZ45zj/EFE4Z0Ltm+l+KkUq0MpX14QHykbrjH2pUTAu5iGCisek1TNPoJhGYgL2nLwj3hUJwn9Y9BBGSw==
+  dependencies:
+    simple-icons "^4.14.0"
+
+"@consent-manager/integration-youtube@^0.0.1-next.9":
+  version "0.0.1-next.9"
+  resolved "https://registry.yarnpkg.com/@consent-manager/integration-youtube/-/integration-youtube-0.0.1-next.9.tgz#1e7a4c13209daa9afd67e6bef889a4313bf4d0ad"
+  integrity sha512-iTChOE/aCygiLdFeAGVSLiUBTsKulnkVG7RrRzClQ85hC/ea0HZ5yS3cdj0AfYJz+0NGfA0sdEwcsGMAYN6vTA==
+  dependencies:
+    simple-icons "^4.14.0"
+
 "@consent-manager/interface-default@^0.0.1-next.8":
   version "0.0.1-next.8"
   resolved "https://registry.yarnpkg.com/@consent-manager/interface-default/-/interface-default-0.0.1-next.8.tgz#a40e8d0ee31d6728143167eccb5a4c9f0a68e050"

@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@consent-manager/core": "^0.0.1-next.9",
+    "@consent-manager/integration-vimeo": "^0.0.1-next.8",
+    "@consent-manager/integration-youtube": "^0.0.1-next.9",
     "@consent-manager/interface-default": "^0.0.1-next.8",
     "@gatsby-mdx-suite/contexts": "^0.3.6",
     "@gatsby-mdx-suite/helpers": "^0.15.1",
