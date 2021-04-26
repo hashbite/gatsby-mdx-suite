@@ -1276,9 +1276,9 @@
     minimist "^1.2.0"
 
 "@consent-manager/core@^0.0.1-next.9":
-  version "0.0.1-next.12"
-  resolved "https://registry.yarnpkg.com/@consent-manager/core/-/core-0.0.1-next.12.tgz#8faf9b6679e3171c57d1a616cd86231dee0503b8"
-  integrity sha512-FxYxA/KSh48oz9Pg+KWJuEz8V8cm0fpePDI31MaSwAX8NcLlFlGBmxRiGtkpkCEdVLmwRv0B4QERA8BbbcEL+A==
+  version "0.0.1-next.13"
+  resolved "https://registry.yarnpkg.com/@consent-manager/core/-/core-0.0.1-next.13.tgz#4fc44389254a601c327c74b9c08b2d2be734e1b4"
+  integrity sha512-kt/YNU12noaSSt1r4Un5KW0odr1GWN5oJjI9ZqiLU3yYwAquG0U0kxqXRCFEvYxQgYVp/20ovlfz9E3J8b09Iw==
   dependencies:
     "@types/history" "^4.7.8"
     history "^5.0.0"
@@ -1307,9 +1307,9 @@
     simple-icons "^4.14.0"
 
 "@consent-manager/interface-default@^0.0.1-next.8":
-  version "0.0.1-next.13"
-  resolved "https://registry.yarnpkg.com/@consent-manager/interface-default/-/interface-default-0.0.1-next.13.tgz#dd99cafd555b95d1454e5f94b3453b84e42a1de5"
-  integrity sha512-vtKCVj60xeKPygUv3i7ReZgh8V0BLd7XpW4vlKGNf6MARBGvZXORNV4Sh1DC8S33KPmN5aHpLZJ0LtqFizNSkw==
+  version "0.0.1-next.14"
+  resolved "https://registry.yarnpkg.com/@consent-manager/interface-default/-/interface-default-0.0.1-next.14.tgz#71e36b04e841b6a996ceb12bd75a6a6ac9089a02"
+  integrity sha512-by8aA57qVnmXKXoPgrINx5i5yyAUQo5ocTr93by7dxJOanYpIlAd21y1+WJQoy2Hx68h/kCURYgXq8CNrqNIgQ==
   dependencies:
     "@react-icons/all-files" "^4.1.0"
     activity-detector-ssr "^3.0.0"
@@ -17520,9 +17520,9 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.11, postcss@^7.0.18, postcss@^7.0.2
     supports-color "^6.1.0"
 
 postcss@^8.2.4:
-  version "8.2.12"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.12.tgz#81248a1a87e0f575cc594a99a08207fd1c4addc4"
-  integrity sha512-BJnGT5+0q2tzvs6oQfnY2NpEJ7rIXNfBnZtQOKCIsweeWXBXeDd5k31UgTdS3d/c02ouspufn37mTaHWkJyzMQ==
+  version "8.2.13"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.13.tgz#dbe043e26e3c068e45113b1ed6375d2d37e2129f"
+  integrity sha512-FCE5xLH+hjbzRdpbRb1IMCvPv9yZx2QnDarBEYSN0N0HYk+TcXsEhwdFcFb+SRWOKzKGErhIEbBK2ogyLdTtfQ==
   dependencies:
     colorette "^1.2.2"
     nanoid "^3.1.22"
