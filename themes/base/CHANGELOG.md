@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.12.1...gatsby-theme-mdx-suite-base@0.12.2) (2021-04-26)
+
+
+### Bug Fixes
+
+* **lazy:** lazy components should now properly load on initial visit ([1af51c8](https://github.com/axe312ger/gatsby-mdx-suite/commit/1af51c875363269d12997b1b42463cb8e31c6f4a))
+
+
+
+
+
 ## [0.12.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.12.0...gatsby-theme-mdx-suite-base@0.12.1) (2021-04-08)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base

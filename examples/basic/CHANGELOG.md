@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.6.5...gatsby-mdx-suite-example-basic@0.7.0) (2021-04-26)
+
+
+### Features
+
+* new consent-manager design with improved UX and copy ([700beca](https://github.com/axe312ger/gatsby-mdx-suite/commit/700beca5dd095e0354f53ec25d43e73d54b42747))
+
+
+
+
+
 ## [0.6.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.6.4...gatsby-mdx-suite-example-basic@0.6.5) (2021-04-08)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-basic
