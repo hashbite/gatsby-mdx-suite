@@ -19,7 +19,7 @@ export default function LazyChunk({
   }, [])
 
   if (!hasMounted) {
-    return <LazyComponent {...props} />
+    return loading
   }
 
   return (
