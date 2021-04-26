@@ -8,7 +8,6 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import { ConsentManager, ConsentManagerForm } from '@consent-manager/core'
 import createPersistedState from 'use-persisted-state'
 
 import {
@@ -16,10 +15,7 @@ import {
   getMatomoTracker,
 } from '@consent-manager/integration-matomo'
 
-import {
-  FallbackComponent,
-  InterfaceDefault,
-} from '@consent-manager/interface-default'
+import { ConsentManagerDefaultInterface } from '@consent-manager/interface-default'
 import '@consent-manager/interface-default/dist/default.min.css'
 
 import SwitchField from 'gatsby-theme-mdx-suite-base/src/components/form/final-form/switch'
@@ -54,20 +50,14 @@ export function ConsentManagerWrapper({ children }) {
   const config = useConsentManagerConfig(components, consentManagerConfig)
 
   return (
-    <ConsentManager
+    <ConsentManagerDefaultInterface
       config={config}
       store={storage}
-      fallbackComponent={(props) => (
-        <FallbackComponent Button={Button} {...props} />
-      )}
+      Switch={SwitchField}
+      Button={Button}
     >
       {children}
-      <ConsentManagerForm
-        formComponent={InterfaceDefault}
-        Switch={SwitchField}
-        SubmitButton={SubmitButton}
-      />
-    </ConsentManager>
+    </ConsentManagerDefaultInterface>
   )
 }
 
