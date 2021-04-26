@@ -7,13 +7,9 @@
 
 import React from 'react'
 
-import { ConsentManager, ConsentManagerForm } from '@consent-manager/core'
 import createPersistedState from 'use-persisted-state'
 
-import {
-  FallbackComponent,
-  InterfaceDefault,
-} from '@consent-manager/interface-default'
+import { ConsentManagerDefaultInterface } from '@consent-manager/interface-default'
 import '@consent-manager/interface-default/dist/default.min.css'
 
 import SwitchField from 'gatsby-theme-mdx-suite-base/src/components/form/final-form/switch'
@@ -42,20 +38,14 @@ export function ConsentManagerWrapper({ children }) {
   const config = useConsentManagerConfig(components, consentManagerConfig)
 
   return (
-    <ConsentManager
+    <ConsentManagerDefaultInterface
       config={config}
       store={storage}
-      fallbackComponent={(props) => (
-        <FallbackComponent Button={Button} {...props} />
-      )}
+      Button={Button}
+      Switch={SwitchField}
     >
       {children}
-      <ConsentManagerForm
-        formComponent={InterfaceDefault}
-        Switch={SwitchField}
-        SubmitButton={Button}
-      />
-    </ConsentManager>
+    </ConsentManagerDefaultInterface>
   )
 }
 
