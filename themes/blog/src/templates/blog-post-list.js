@@ -109,11 +109,11 @@ export const blogPostListQuery = graphql`
         image {
           ...MdxSuiteMediaCollectionHalf
         }
-        # content {
-        #   childMdx {
-        #     timeToRead
-        #   }
-        # }
+        content {
+          childMdx {
+            timeToRead
+          }
+        }
         teaser {
           childMdx {
             body
