@@ -1,17 +1,27 @@
 const { resolve } = require('path')
 const cheerio = require('cheerio')
 const merge = require('deepmerge')
+const webpack = require('webpack')
 
 const minimumConfig = require('./minimum-config')
 
 /**
- * Ensure @mdx-js dependencies build via webpack
+ * Ensure webpack works with Gatsby & MDX
  */
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
-    node: {
-      fs: 'empty',
+    resolve: {
+      fallback: {
+        fs: false,
+        path: false,
+        assert: false,
+      },
     },
+    plugins: [
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+      }),
+    ],
   })
 }
 
@@ -142,56 +152,21 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
 
   const typeDefs = [
     `
-    type ContentfulAsset implements Node @derivedTypes @dontInfer {
-      contentful_id: String
-      spaceId: String
-      createdAt: Date @dateformat
-      updatedAt: Date @dateformat
-      file: ContentfulAssetFile
-      title: String
-      description: String
-      node_locale: String
-      sys: ContentfulAssetSys
+    type ContentfulAsset implements Node @derivedTypes {
       svg: InlineSvg
-    }
-
-    type ContentfulAssetFile @derivedTypes {
-      url: String
-      details: ContentfulAssetFileDetails
-      fileName: String
-      contentType: String
-    }
-
-    type ContentfulAssetFileDetails @derivedTypes {
-      size: Int
-      image: ContentfulAssetFileDetailsImage
-    }
-
-    type ContentfulAssetFileDetailsImage {
-      width: Int
-      height: Int
-    }
-
-    type ContentfulAssetSys {
-      type: String
-      revision: Int
     }
     type InlineSvg @derivedTypes {
       content: String
     }
-    type ContentfulMenuItem implements Node {
-      contentful_id: String
-      title: String
-      node_locale: String
+    type ContentfulMenuItem implements Node  @derivedTypes {
       internalSlug: String
       externalUri: String
       openInNewTab: Boolean
       hiddenOnMobile: Boolean
-      subitems: [ContentfulMenuItem]
     }
     `,
     `
-    type SitePageContext implements Node @dontInfer {
+    type SitePageContext implements Node @derivedTypes {
       pageNumber: Int
       title: String
       locale: String
