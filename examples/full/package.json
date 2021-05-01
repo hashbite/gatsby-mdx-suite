@@ -35,7 +35,7 @@
     "@react-icons/all-files": "^4.1.0",
     "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",
-    "gatsby": "^3.4.0",
+    "gatsby": "^3.5.0-next.2",
     "gatsby-plugin-manifest": "^3.4.0",
     "gatsby-theme-mdx-suite-base": "^0.12.2",
     "gatsby-theme-mdx-suite-blog": "^0.3.23",

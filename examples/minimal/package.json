@@ -22,7 +22,7 @@
     "@gatsby-mdx-suite/mdx-layout": "^0.27.0",
     "@gatsby-mdx-suite/mdx-link": "^0.9.4",
     "deepmerge": "^4.2.2",
-    "gatsby": "^3.4.0",
+    "gatsby": "^3.5.0-next.2",
     "gatsby-theme-mdx-suite-core": "^0.9.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
