@@ -45,11 +45,12 @@
     "react-dom": "^17.0.1",
     "react-i18next": "^11.8.5",
     "react-scrolllock": "^5.0.1",
-    "twin.macro": "^2.3.0",
+    "twin.macro": "^2.4.1",
     "use-persisted-state": "^0.3.3"
   },
   "peerDependencies": {
     "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.1.5",
     "gatsby-plugin-mdx": "^2.1.0"
   }

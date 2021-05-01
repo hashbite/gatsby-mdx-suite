@@ -19,7 +19,9 @@
     "layout"
   ],
   "peerDependencies": {
+    "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.1.5",
+    "gatsby-theme-mdx-suite-core": "^0.9.3",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
     "twin.macro": "^2.0.0"

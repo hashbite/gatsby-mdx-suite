@@ -8,7 +8,7 @@ import tw from 'twin.macro'
 import ScrollLock from 'react-scrolllock'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
-import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
+import Icon from '../icon'
 
 import Logo from '../logo'
 import LanguageSwitch from '../i18n/language-switch'

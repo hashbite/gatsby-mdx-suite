@@ -20,7 +20,9 @@
   ],
   "peerDependencies": {
     "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.1.5",
+    "gatsby-theme-mdx-suite-core": "^0.9.3",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
     "twin.macro": "^1.9.0"
@@ -28,7 +30,6 @@
   "dependencies": {
     "@gatsby-mdx-suite/helpers": "^0.15.1",
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.15",
-    "@gatsby-mdx-suite/mdx-image": "^0.8.6",
     "@gatsby-mdx-suite/mdx-video": "^0.8.3",
     "gsap": "^3.6.1"
   },

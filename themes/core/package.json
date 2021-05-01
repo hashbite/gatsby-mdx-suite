@@ -16,18 +16,19 @@
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-i18next": "^11.7.2"
+    "react-i18next": "^11.7.2",
+    "webpack": "^5.0.0"
   },
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.0.0",
-    "@emotion/styled": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
     "@gatsby-mdx-suite/contexts": "^0.3.6",
     "@gatsby-mdx-suite/helpers": "^0.15.1",
     "autoprefixer": "^10.2.3",
     "cheerio": "0.22.0",
     "deepmerge": "^4.2.2",
-    "gatsby-plugin-emotion": "^4.5.0",
+    "gatsby-plugin-emotion": "^6.4.0",
     "gatsby-plugin-image": "^1.4.0",
     "gatsby-plugin-mdx": "^2.4.0",
     "gatsby-plugin-postcss": "^4.4.0",
@@ -38,9 +39,9 @@
     "i18next": "^19.8.4",
     "lodash": "^4.17.20",
     "postcss": "^8.2.7",
-    "postcss-csso": "^5.0.0",
+    "postcss-csso": "^5.0.1",
     "process": "^0.11.10",
     "react-i18next": "^11.8.8",
-    "tailwindcss": "^2.0.3"
+    "tailwindcss": "^2.1.2"
   }
 }
