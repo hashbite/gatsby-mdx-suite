@@ -32,9 +32,9 @@ const BlogPostTeaser = ({ blogPost, ...props }) => {
           new Date(blogPost.publicationDate)
         )}{' '}
         -{' '}
-        {/* {t('newsTimeToRead', {
+        {t('newsTimeToRead', {
           minutes: blogPost.content.childMdx.timeToRead,
-        })} */}
+        })}
       </BlogPostTeaserMeta>
 
       {blogPost.teaser && (
