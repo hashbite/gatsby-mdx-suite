@@ -22,7 +22,12 @@ export const MdxSuiteContentfulAsset = graphql`
 export const MdxSuiteMediaCollectionScreen = graphql`
   fragment MdxSuiteMediaCollectionScreen on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 2048, placeholder: BLURRED, layout: CONSTRAINED)
+    gatsbyImageData(
+      width: 2048
+      quality: 35
+      placeholder: BLURRED
+      layout: CONSTRAINED
+    )
     videoH264(maxWidth: 1920) {
       path
       aspectRatio
@@ -36,7 +41,12 @@ export const MdxSuiteMediaCollectionScreen = graphql`
 export const MdxSuiteMediaCollectionFull = graphql`
   fragment MdxSuiteMediaCollectionFull on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 1200, placeholder: BLURRED, layout: CONSTRAINED)
+    gatsbyImageData(
+      width: 1200
+      quality: 40
+      placeholder: BLURRED
+      layout: CONSTRAINED
+    )
     videoH264(maxWidth: 1200) {
       path
       aspectRatio
@@ -120,7 +130,7 @@ export const MdxSuiteMediaCollectionEigth = graphql`
 export const MdxSuiteMediaDocs = graphql`
   fragment MdxSuiteMediaDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 800, placeholder: BLURRED, layout: CONSTRAINED)
+    gatsbyImageData(width: 800, layout: CONSTRAINED, quality: 35)
     file {
       details {
         size
