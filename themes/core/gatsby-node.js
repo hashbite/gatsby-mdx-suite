@@ -163,6 +163,7 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
       externalUri: String
       openInNewTab: Boolean
       hiddenOnMobile: Boolean
+      subitems: [ContentfulMenuItem]
     }
     `,
     `
