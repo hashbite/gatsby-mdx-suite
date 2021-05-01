@@ -4,9 +4,10 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import isPropValid from '@emotion/is-prop-valid'
+import tw from 'twin.macro'
 
 import Link from '@gatsby-mdx-suite/mdx-link/link-renderer'
-import Image from '@gatsby-mdx-suite/mdx-image/image-renderer'
+import Image from 'gatsby-theme-mdx-suite-core/src/components/image'
 
 import { Slide } from 'pure-react-carousel'
 
@@ -26,18 +27,10 @@ const SlideContent = styled('div', {
   `
 )
 
-const SlideBackgroundImageWrapper = styled('div', {
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'scale',
-})(
-  () => css`
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  `
-)
+const BackgroundImage = styled(Image)`
+  ${tw`absolute inset-0`}
+`
+
 /**
  * Creates a carousel slide for. Must be within a `<BoxCarousel />` component.
  *
@@ -73,16 +66,12 @@ const BoxCarouselSlide = ({
     <>
       {children && <SlideContent>{children}</SlideContent>}
       {backgroundImageId && (
-        <SlideBackgroundImageWrapper
-          backgroundImageFit={backgroundImageFit}
-          backgroundImagePosition={backgroundImagePosition}
-        >
-          <Image
-            id={backgroundImageId}
-            fit={backgroundImageFit}
-            position={backgroundImagePosition}
-          />
-        </SlideBackgroundImageWrapper>
+        <BackgroundImage
+          id={backgroundImageId}
+          contextKey="quarter"
+          fit={backgroundImageFit}
+          position={backgroundImagePosition}
+        />
       )}
     </>
   )

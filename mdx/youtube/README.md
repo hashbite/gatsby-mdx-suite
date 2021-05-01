@@ -12,6 +12,7 @@ Example fragment:
           dataURI
         }
         fluid(maxWidth: 500) {
+          # @todo
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }

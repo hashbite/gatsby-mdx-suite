@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
-import Image from '@gatsby-mdx-suite/mdx-image/image-renderer'
+import Image from 'gatsby-theme-mdx-suite-core/src/components/image'
 import Video from '@gatsby-mdx-suite/mdx-video/video-renderer'
 
 import ColorSet from '@gatsby-mdx-suite/mdx-color-set/color-set'
@@ -81,28 +81,23 @@ function calcGapValue(gap, theme) {
 }
 
 const BackgroundMediaWrapper = styled.div(
-  ({ backgroundImageOpacity }) => css`
+  () => css`
     ${tw`absolute z-0 inset-0`}
     overflow: hidden;
-
-    /* Hack gatsby-image to act as background image */
-    & .gatsby-image-wrapper {
-      position: static !important;
-    }
-
-    & img {
-      height: 100%;
-      ${backgroundImageOpacity !== '1' &&
-      css`
-        opacity: ${backgroundImageOpacity};
-      `}
-    }
 
     & video {
       ${tw`absolute inset-0 z-10 object-cover object-center w-full h-full`}
     }
   `
 )
+
+const BackgroundImage = styled(Image)(({ backgroundImageOpacity }) => [
+  tw`absolute inset-0 block`,
+  backgroundImageOpacity !== '1' &&
+    css`
+      opacity: ${backgroundImageOpacity};
+    `,
+])
 
 const BackgroundMediaOverlay = styled.div(
   ({ overlayColor, overlayOpacity, theme }) => css`
@@ -194,9 +189,7 @@ export default function Section({
     <ColorSet name={colorSet} {...colors}>
       <SectionWrapper textShadow={textShadow} minHeight={minHeight} {...props}>
         {hasBackgroundMedia && (
-          <BackgroundMediaWrapper
-            backgroundImageOpacity={backgroundImageOpacity}
-          >
+          <BackgroundMediaWrapper>
             {parseFloat(overlayOpacity) > 0 && (
               <BackgroundMediaOverlay
                 overlayOpacity={overlayOpacity}
@@ -204,7 +197,12 @@ export default function Section({
               />
             )}
             {backgroundImageId && (
-              <Image contextKey="screen" id={backgroundImageId} fit="cover" />
+              <BackgroundImage
+                backgroundImageOpacity={backgroundImageOpacity}
+                contextKey="screen"
+                id={backgroundImageId}
+                fit="cover"
+              />
             )}
             {backgroundVideoId && (
               <BackgroundVideo

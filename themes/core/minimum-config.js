@@ -138,9 +138,12 @@ module.exports = {
       selector: [
         'Image[id][contextKey="quarter"]',
         'Video[id][contextKey="quarter"]',
+        'BoxCarouselSlide[backgroundImageId]',
       ].join(','),
       attribute: (el) => {
         switch (el.name) {
+          case 'boxcarouselslide':
+            return 'backgroundimageid'
           default:
             return 'id'
         }
