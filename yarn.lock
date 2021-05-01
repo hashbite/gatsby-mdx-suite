@@ -11400,10 +11400,10 @@ hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0:
   dependencies:
     react-is "^16.7.0"
 
-hoofd@^1.0.2:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/hoofd/-/hoofd-1.2.1.tgz#95c93684786b86fa31eb6545a97c1882c4bdbccf"
-  integrity sha512-wE7NLBU+vOEI21OzhF2yyv+fsvymSdaFtFZRhSdRm/3Wf/I/wscLVtZBZiYMwCB7MgLsDsaPe79FInYAwi9tDA==
+hoofd@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/hoofd/-/hoofd-1.2.2.tgz#67ebded9edf45337c293bad40ba0aec543d560c6"
+  integrity sha512-kkJDsAWF5PQFXjCgqqkr6qNm8oFsC59piTcvciWrMBTojT+WEXAMKfa/iOTGY3oLP1Vidkp2mkJKnFFhv2HNSw==
 
 hosted-git-info@^2.1.4, hosted-git-info@^2.7.1:
   version "2.8.8"
