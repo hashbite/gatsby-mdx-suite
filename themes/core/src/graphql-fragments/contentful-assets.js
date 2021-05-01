@@ -23,10 +23,9 @@ export const MdxSuiteMediaCollectionScreen = graphql`
   fragment MdxSuiteMediaCollectionScreen on ContentfulAsset {
     ...MdxSuiteContentfulAsset
     gatsbyImageData(
-      width: 2048
-      quality: 35
       placeholder: BLURRED
-      layout: CONSTRAINED
+      layout: FULL_WIDTH
+      breakpoints: [750, 1080, 1366, 1920, 2560]
     )
     videoH264(maxWidth: 1920) {
       path
@@ -41,12 +40,7 @@ export const MdxSuiteMediaCollectionScreen = graphql`
 export const MdxSuiteMediaCollectionFull = graphql`
   fragment MdxSuiteMediaCollectionFull on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(
-      width: 1200
-      quality: 40
-      placeholder: BLURRED
-      layout: CONSTRAINED
-    )
+    gatsbyImageData(width: 1200, placeholder: BLURRED, layout: CONSTRAINED)
     videoH264(maxWidth: 1200) {
       path
       aspectRatio
