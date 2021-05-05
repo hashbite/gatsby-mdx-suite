@@ -23,8 +23,9 @@
   "peerDependencies": {
     "@consent-manager/core": "^0.0.1-next.9",
     "@consent-manager/integration-vimeo": "^0.0.1-next.7",
-    "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.23",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.1.5",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
     "twin.macro": "^1.9.0"

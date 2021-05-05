@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import propTypes from 'prop-types'
-import { cx } from 'emotion'
+import { ClassNames } from '@emotion/react'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -61,13 +61,17 @@ const Animate = ({ children, markers, show, className, ...props }) => {
   useKillScrollTriggerWhenTrue(scrollTriggerInstance, isVisible)
 
   return (
-    <div
-      {...props}
-      ref={initScrollTrigger}
-      className={cx(animationClass, className)}
-    >
-      {children}
-    </div>
+    <ClassNames>
+      {({ cx }) => (
+        <div
+          {...props}
+          ref={initScrollTrigger}
+          className={cx(animationClass, className)}
+        >
+          {children}
+        </div>
+      )}
+    </ClassNames>
   )
 }
 

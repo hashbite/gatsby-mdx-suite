@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
-import Link from 'gatsby-link'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
 
@@ -13,7 +12,7 @@ import {
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 const List = tw.ul`
-  flex m-0 mb-0! p-0 list-none uppercase whitespace-no-wrap
+  flex m-0 mb-0! p-0 list-none uppercase whitespace-nowrap
 `
 
 const ListItem = styled.li({

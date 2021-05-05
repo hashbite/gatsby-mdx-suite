@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import propTypes from 'prop-types'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'

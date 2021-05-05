@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import { cx } from 'emotion'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import { findActiveTrail } from '@gatsby-mdx-suite/helpers/menu'
@@ -61,7 +60,7 @@ MenuRecursive.propTypes = {
 }
 
 function RecursiveMenu({ children, activeTrail, depth = 0 }) {
-  const depthClass = cx(`depth-${depth}`)
+  const depthClass = `depth-${depth}`
 
   return (
     <MenuUl className={depthClass}>

@@ -1,6 +1,8 @@
-import React, { useContext } from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
+import { useContext } from 'react'
 import propTypes from 'prop-types'
-import { cx, css } from 'emotion'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
@@ -38,13 +40,13 @@ const MenuItem = ({
     `
 
   let content = (
-    <MenuTitle className={cx(className, activeClass, hiddenClass)}>
+    <MenuTitle className={className} css={[activeClass, hiddenClass]}>
       {title}
     </MenuTitle>
   )
 
   const linkProps = {
-    className: cx(className, activeClass),
+    className: activeClass,
     title,
     openInNewTab,
   }
@@ -64,7 +66,8 @@ const MenuItem = ({
   return (
     <MenuLi
       key={menuItemId}
-      className={cx(className, activeClass, hiddenClass)}
+      className={className}
+      css={[activeClass, hiddenClass]}
     >
       {content}
       {children}

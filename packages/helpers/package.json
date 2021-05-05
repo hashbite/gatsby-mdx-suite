@@ -14,9 +14,9 @@
     "helpers"
   ],
   "peerDependencies": {
-    "@emotion/core": "^10.0.27",
-    "emotion": "^10.0.27",
-    "gatsby-theme-mdx-suite-core": "^0.9.1",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.0.0",
+    "gatsby-theme-mdx-suite-core": "^0.9.3",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
     "twin.macro": "^1.9.0"

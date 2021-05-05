@@ -19,8 +19,9 @@
     "modal"
   ],
   "peerDependencies": {
-    "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.23",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.1.5",
     "gatsby-theme-mdx-suite-base": "^0.11.7",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",

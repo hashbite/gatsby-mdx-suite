@@ -4,7 +4,7 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import merge from 'deepmerge'
 import { MDXProvider } from '@mdx-js/react'
-import { ThemeProvider } from 'emotion-theming'
+import { ThemeProvider } from '@emotion/react'
 
 import MdxSuiteContextProvider from '@gatsby-mdx-suite/contexts/provider'
 import { BreakpointProvider } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'

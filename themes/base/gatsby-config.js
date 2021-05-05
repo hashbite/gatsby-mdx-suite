@@ -8,7 +8,8 @@ module.exports = ({ renderDocs = true } = {}) => ({
      * Media
      */
     `gatsby-plugin-react-svg`,
-    `gatsby-transformer-inline-svg`,
+    // @todo migrate to gatsby v3
+    // `gatsby-transformer-inline-svg`,
     /**
      * SEO
      */
