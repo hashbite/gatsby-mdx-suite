@@ -15,12 +15,12 @@ module.exports = ({ renderDocs = true } = {}) => ({
      */
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-hoofd`,
-    // {
-    //   resolve: `gatsby-plugin-sitemap`,
-    //   options: {
-    //     exclude: [`/docs`, `/docs/*`, `/docs/**/*`],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        excludes: [`/docs`, `/docs/*`, `/docs/**/*`],
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
