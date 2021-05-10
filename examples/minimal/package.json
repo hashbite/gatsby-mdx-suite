@@ -24,10 +24,10 @@
     "deepmerge": "^4.2.2",
     "gatsby": "^3.5.0-next.4",
     "gatsby-theme-mdx-suite-core": "^0.9.3",
-    "postcss": "^8.2.13",
+    "postcss": "^8.2.14",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-i18next": "^11.8.8",
     "twin.macro": "^2.4.1"
   },

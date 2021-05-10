@@ -34,6 +34,6 @@
   },
   "dependencies": {
     "@gatsby-mdx-suite/mdx-link": "^0.9.4",
-    "react-mailchimp-subscribe": "^2.1.0"
+    "react-mailchimp-subscribe": "^2.1.3"
   }
 }
