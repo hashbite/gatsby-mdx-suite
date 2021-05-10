@@ -34,7 +34,6 @@
     "@gatsby-mdx-suite/mdx-youtube": "^0.11.0",
     "@react-icons/all-files": "^4.1.0",
     "deepmerge": "^4.2.2",
-    "dotenv": "^8.2.0",
     "gatsby": "^3.5.0-next.4",
     "gatsby-plugin-manifest": "^3.4.0",
     "gatsby-theme-mdx-suite-base": "^0.12.2",
@@ -54,5 +53,8 @@
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.1.5",
     "gatsby-plugin-mdx": "^2.1.0"
+  },
+  "devDependencies": {
+    "dotenv": "^9.0.1"
   }
 }

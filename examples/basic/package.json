@@ -27,7 +27,6 @@
     "@gatsby-mdx-suite/mdx-youtube": "^0.11.0",
     "@mdx-js/react": "^1.6.22",
     "deepmerge": "^4.2.2",
-    "dotenv": "^8.2.0",
     "gatsby": "^3.5.0-next.4",
     "gatsby-theme-mdx-suite-base": "^0.12.2",
     "gatsby-theme-mdx-suite-core": "^0.9.3",
@@ -41,5 +40,8 @@
   },
   "peerDependencies": {
     "gatsby-plugin-mdx": "^2.1.0"
+  },
+  "devDependencies": {
+    "dotenv": "^9.0.1"
   }
 }

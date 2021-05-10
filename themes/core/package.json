@@ -36,7 +36,7 @@
     "gatsby-source-contentful": "^5.4.0",
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-sharp": "^3.4.0",
-    "i18next": "^19.8.4",
+    "i18next": "^20.2.2",
     "lodash": "^4.17.20",
     "postcss": "^8.2.14",
     "postcss-csso": "^5.0.1",
