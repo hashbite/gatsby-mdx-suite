@@ -35,7 +35,6 @@
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.6",
     "@gatsby-mdx-suite/helpers": "^0.15.1",
-    "@gatsby-mdx-suite/mdx-image": "^0.8.6",
     "react-youtube": "7.13.1"
   },
   "publishConfig": {

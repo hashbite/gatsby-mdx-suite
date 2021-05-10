@@ -31,7 +31,6 @@
     "@emotion/is-prop-valid": "^1.1.0",
     "@gatsby-mdx-suite/helpers": "^0.15.1",
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.15",
-    "@gatsby-mdx-suite/mdx-image": "^0.8.6",
     "@gatsby-mdx-suite/mdx-link": "^0.9.4",
     "@gatsby-mdx-suite/mdx-video": "^0.8.3",
     "pure-react-carousel": "^1.27.6"

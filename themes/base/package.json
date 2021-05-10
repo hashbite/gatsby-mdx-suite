@@ -51,8 +51,7 @@
     "hoofd": "^1.2.2",
     "react-final-form": "^6.5.3",
     "react-scrolllock": "^5.0.1",
-    "tailwindcss": "^2.1.2",
-    "use-persisted-state": "^0.3.3"
+    "tailwindcss": "^2.1.2"
   },
   "devDependencies": {
     "webpack-stats-plugin": "^1.0.3"
