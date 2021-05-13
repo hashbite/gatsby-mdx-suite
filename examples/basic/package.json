@@ -19,7 +19,7 @@
     "@consent-manager/core": "^0.0.1-next.9",
     "@consent-manager/integration-vimeo": "^0.0.1-next.8",
     "@consent-manager/integration-youtube": "^0.0.1-next.9",
-    "@consent-manager/interface-default": "^0.0.1-next.8",
+    "@consent-manager/interface-default": "^0.0.1-next.16",
     "@gatsby-mdx-suite/contexts": "^0.3.6",
     "@gatsby-mdx-suite/helpers": "^0.15.1",
     "@gatsby-mdx-suite/mdx-video": "^0.8.3",
@@ -27,7 +27,7 @@
     "@gatsby-mdx-suite/mdx-youtube": "^0.11.0",
     "@mdx-js/react": "^1.6.22",
     "deepmerge": "^4.2.2",
-    "gatsby": "^3.5.0-next.4",
+    "gatsby": "^3.5.0",
     "gatsby-theme-mdx-suite-base": "^0.12.2",
     "gatsby-theme-mdx-suite-core": "^0.9.3",
     "prop-types": "^15.7.2",
@@ -41,6 +41,6 @@
     "gatsby-plugin-mdx": "^2.1.0"
   },
   "devDependencies": {
-    "dotenv": "^9.0.1"
+    "dotenv": "^9.0.2"
   }
 }
