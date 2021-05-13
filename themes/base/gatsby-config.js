@@ -30,6 +30,5 @@ module.exports = ({ renderDocs = true } = {}) => ({
     /**
      * Performance
      */ `gatsby-plugin-bundle-stats`,
-    `gatsby-plugin-webpack-size`,
   ].filter(Boolean),
 })

@@ -42,7 +42,6 @@
     "gatsby-plugin-remove-trailing-slashes": "^3.5.0",
     "gatsby-plugin-robots-txt": "^1.6.2",
     "gatsby-plugin-sitemap": "^4.1.0",
-    "gatsby-plugin-webpack-size": "^2.0.1",
     "gatsby-theme-mdx-suite-core": "^0.9.3",
     "gatsby-theme-mdx-suite-docs": "^0.9.7",
     "gatsby-transformer-inline-svg": "^0.1.0",
