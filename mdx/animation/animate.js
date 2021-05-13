@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useMemo } from 'react'
 import propTypes from 'prop-types'
 import { ClassNames } from '@emotion/react'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
+import * as animations from 'gatsby-theme-mdx-suite-core/src/animations/index'
 import {
   useKillScrollTriggerOnCleanup,
   useKillScrollTriggerWhenTrue,
@@ -38,7 +38,6 @@ gsap.registerPlugin(ScrollTrigger)
 const Animate = ({ children, markers, show, className, ...props }) => {
   const [isVisible, setIsVisible] = useState(false)
   const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
-  const { animationClass } = useAnimation({ show, isVisible })
 
   const initScrollTrigger = useCallback(
     (node) => {
@@ -60,13 +59,41 @@ const Animate = ({ children, markers, show, className, ...props }) => {
   useKillScrollTriggerOnCleanup(scrollTriggerInstance)
   useKillScrollTriggerWhenTrue(scrollTriggerInstance, isVisible)
 
+  const { animation, animationProps } = useMemo(() => {
+    if (typeof show !== 'string') {
+      return {}
+    }
+
+    const [animationName, ...rawAnimationProps] = show.split(' ')
+    const animation = animations[animationName]
+
+    if (!animation) {
+      throw new Error(`Unable to locate animation ${show}`)
+    }
+
+    const animationProps = rawAnimationProps
+      ? rawAnimationProps.join(' ')
+      : '1s'
+
+    return { animation, animationProps }
+  }, [show])
+
   return (
     <ClassNames>
-      {({ cx }) => (
+      {({ cx, css }) => (
         <div
           {...props}
           ref={initScrollTrigger}
-          className={cx(animationClass, className)}
+          className={cx(
+            css`
+              animation: ${animation.keyframes} ${animationProps};
+              animation-fill-mode: both;
+              animation-play-state: ${isVisible ? 'running' : 'paused'};
+              will-change: transform, opacity;
+              ${animation.styles};
+            `,
+            className
+          )}
         >
           {children}
         </div>
