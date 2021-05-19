@@ -11,6 +11,7 @@
     "format": "prettier --write '{**/*.{js,jsx,ts,tsx},*.{ts,js,json}}'",
     "lint": "eslint .",
     "publish": "lerna publish --conventional-commits",
+    "publish:prerelease": "npx lerna publish --conventional-commits --conventional-prerelease --force-publish --no-git-tag-version",
     "check-dependencies": "lerna exec \"pwd && npx depcheck --ignore-dirs '.cache,public' .\" --no-bail --concurrency 1",
     "test": "jest",
     "build-examples": "npx lerna run build --stream --scope 'gatsby-mdx-suite-example*' -- --no-uglify",
