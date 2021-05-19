@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.3-alpha.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.12.2...gatsby-theme-mdx-suite-base@0.12.3-alpha.1) (2021-05-19)
+
+
+### Bug Fixes
+
+* reenable sitemap and fix typo in config ([1c503a4](https://github.com/axe312ger/gatsby-mdx-suite/commit/1c503a4fbf54caef18e0fb66cee056e0836d8919))
+
+
+
+
+
+## [0.12.3-alpha.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.12.2...gatsby-theme-mdx-suite-base@0.12.3-alpha.0) (2021-05-19)
+
+
+### Bug Fixes
+
+* reenable sitemap and fix typo in config ([1c503a4](https://github.com/axe312ger/gatsby-mdx-suite/commit/1c503a4fbf54caef18e0fb66cee056e0836d8919))
+
+
+
+
+
 ## [0.12.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.12.1...gatsby-theme-mdx-suite-base@0.12.2) (2021-04-26)
 
 

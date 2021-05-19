@@ -18,9 +18,9 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       },
     },
     plugins: [
-      new webpack.ProvidePlugin({
-        process: 'process/browser',
-      }),
+      // new webpack.ProvidePlugin({
+      //   process: 'process/browser',
+      // }),
     ],
   })
 }

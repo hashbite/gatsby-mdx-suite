@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-video",
-  "version": "0.8.3",
+  "version": "0.8.4-alpha.1",
   "description": "A video player for internal videos",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -30,11 +30,12 @@
     "twin.macro": "^2.0.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/contexts": "^0.3.6",
-    "@gatsby-mdx-suite/helpers": "^0.15.1",
+    "@gatsby-mdx-suite/contexts": "^0.3.7-alpha.1",
+    "@gatsby-mdx-suite/helpers": "^0.15.2-alpha.1",
     "gsap": "^3.6.1"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "4514994238138b60aa6c7e20ac74b845ce2ee842"
 }

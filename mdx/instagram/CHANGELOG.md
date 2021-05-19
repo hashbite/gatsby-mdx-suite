@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-alpha.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.33...@gatsby-mdx-suite/mdx-instagram@0.4.0-alpha.1) (2021-05-19)
+
+
+### Features
+
+* migrate to Gatsby plugin image ([#271](https://github.com/axe312ger/gatsby-mdx-suite/issues/271)) ([07678f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/07678f440e9abc844e16e156d68f8405d0e875e7))
+
+
+
+
+
+# [0.4.0-alpha.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.33...@gatsby-mdx-suite/mdx-instagram@0.4.0-alpha.0) (2021-05-19)
+
+
+### Features
+
+* migrate to Gatsby plugin image ([#271](https://github.com/axe312ger/gatsby-mdx-suite/issues/271)) ([07678f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/07678f440e9abc844e16e156d68f8405d0e875e7))
+
+
+
+
+
 ## [0.3.33](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.32...@gatsby-mdx-suite/mdx-instagram@0.3.33) (2021-03-28)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram

@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/helpers",
-  "version": "0.15.1",
+  "version": "0.15.2-alpha.1",
   "description": "> TODO: description",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -26,5 +26,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "4514994238138b60aa6c7e20ac74b845ce2ee842"
 }

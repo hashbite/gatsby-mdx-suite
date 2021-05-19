@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-layout",
-  "version": "0.27.0",
+  "version": "0.28.0-alpha.1",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -28,12 +28,13 @@
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/helpers": "^0.15.1",
-    "@gatsby-mdx-suite/mdx-color-set": "^0.4.15",
-    "@gatsby-mdx-suite/mdx-video": "^0.8.3",
+    "@gatsby-mdx-suite/helpers": "^0.15.2-alpha.1",
+    "@gatsby-mdx-suite/mdx-color-set": "^0.4.16-alpha.1",
+    "@gatsby-mdx-suite/mdx-video": "^0.8.4-alpha.1",
     "gsap": "^3.6.1"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "4514994238138b60aa6c7e20ac74b845ce2ee842"
 }

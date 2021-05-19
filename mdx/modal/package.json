@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-modal",
-  "version": "0.1.17",
+  "version": "0.1.18-alpha.1",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -31,7 +31,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/mdx-link": "^0.9.4",
+    "@gatsby-mdx-suite/mdx-link": "^0.9.5-alpha.1",
     "react-modal": "^3.13.1"
-  }
+  },
+  "gitHead": "4514994238138b60aa6c7e20ac74b845ce2ee842"
 }
