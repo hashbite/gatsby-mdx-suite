@@ -15,7 +15,7 @@ module.exports = {
     description: `Gatsby MDX suite with i18n and blog features`,
     siteUrl: 'https://gatsbymdxsuiteexamplesfull.gtsb.io',
   },
-  flags: { FAST_DEV: true, FAST_REFRESH: true },
+  flags: { FAST_DEV: true },
   plugins: [
     {
       resolve: `gatsby-theme-mdx-suite-core`,

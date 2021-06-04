@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "@gatsby-mdx-suite/mdx-link": "^0.9.4",
-    "react-modal": "^3.12.1"
+    "react-modal": "^3.14.2"
   }
 }

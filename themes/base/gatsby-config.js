@@ -17,7 +17,7 @@ module.exports = ({ renderDocs = true } = {}) => ({
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/docs`, `/docs/*`, `/docs/**/*`],
+        excludes: [`/docs`, `/docs/*`, `/docs/**/*`],
       },
     },
     {
@@ -29,6 +29,5 @@ module.exports = ({ renderDocs = true } = {}) => ({
     /**
      * Performance
      */ `gatsby-plugin-bundle-stats`,
-    `gatsby-plugin-webpack-size`,
   ].filter(Boolean),
 })
