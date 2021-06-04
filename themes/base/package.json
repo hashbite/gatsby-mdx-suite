@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-suite-base",
-  "version": "0.12.3-alpha.1",
+  "version": "0.12.3-alpha.17",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -9,7 +9,6 @@
     "url": "https://github.com/axe312ger/gatsby-mdx-suite"
   },
   "peerDependencies": {
-    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.1.5",
     "@mdx-js/mdx": "^1.5.5",
@@ -22,38 +21,38 @@
     "twin.macro": "^2.0.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/contexts": "^0.3.7-alpha.1",
-    "@gatsby-mdx-suite/helpers": "^0.15.2-alpha.1",
-    "@gatsby-mdx-suite/mdx-animation": "^0.2.8-alpha.1",
-    "@gatsby-mdx-suite/mdx-color-set": "^0.4.16-alpha.1",
-    "@gatsby-mdx-suite/mdx-copy": "^0.14.5-alpha.1",
-    "@gatsby-mdx-suite/mdx-image": "^0.9.0-alpha.1",
-    "@gatsby-mdx-suite/mdx-layout": "^0.28.0-alpha.1",
-    "@gatsby-mdx-suite/mdx-link": "^0.9.5-alpha.1",
+    "@gatsby-mdx-suite/contexts": "^0.3.7-alpha.17",
+    "@gatsby-mdx-suite/helpers": "^0.15.2-alpha.17",
+    "@gatsby-mdx-suite/mdx-animation": "^0.2.8-alpha.17",
+    "@gatsby-mdx-suite/mdx-color-set": "^0.4.16-alpha.17",
+    "@gatsby-mdx-suite/mdx-copy": "^0.14.5-alpha.17",
+    "@gatsby-mdx-suite/mdx-image": "^0.9.0-alpha.17",
+    "@gatsby-mdx-suite/mdx-layout": "^0.28.0-alpha.17",
+    "@gatsby-mdx-suite/mdx-link": "^0.9.5-alpha.17",
     "@reach/router": "^1.3.4",
     "@react-icons/all-files": "^4.1.0",
     "deepmerge": "^4.2.2",
     "final-form": "^4.20.1",
     "flag-icon-css": "^3.5.0",
-    "gatsby-link": "^3.5.0",
-    "gatsby-plugin-bundle-stats": "^2.8.2",
-    "gatsby-plugin-hoofd": "^0.1.1",
+    "gatsby-link": "^3.6.0",
+    "gatsby-plugin-bundle-stats": "^3.0.0",
+    "gatsby-plugin-hoofd": "^0.2.0",
     "gatsby-plugin-react-svg": "^3.0.1",
-    "gatsby-plugin-remove-trailing-slashes": "^3.5.0",
+    "gatsby-plugin-remove-trailing-slashes": "^3.6.0",
     "gatsby-plugin-robots-txt": "^1.6.2",
-    "gatsby-plugin-sitemap": "^4.1.0",
-    "gatsby-theme-mdx-suite-core": "^0.10.0-alpha.1",
-    "gatsby-theme-mdx-suite-docs": "^0.10.0-alpha.1",
+    "gatsby-plugin-sitemap": "^4.2.0",
+    "gatsby-theme-mdx-suite-core": "^0.10.0-alpha.17",
+    "gatsby-theme-mdx-suite-docs": "^0.10.0-alpha.17",
     "gatsby-transformer-inline-svg": "^0.1.0",
     "gatsby-transformer-video": "^0.2.4",
     "gsap": "^3.6.0",
-    "hoofd": "^1.2.2",
+    "hoofd": "^1.3.0",
     "react-final-form": "^6.5.3",
     "react-scrolllock": "^5.0.1",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.4"
   },
   "devDependencies": {
     "webpack-stats-plugin": "^1.0.3"
   },
-  "gitHead": "4514994238138b60aa6c7e20ac74b845ce2ee842"
+  "gitHead": "9d09b0800241c6f6c62c559ad3100177300c2505"
 }

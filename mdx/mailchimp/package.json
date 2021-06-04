@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-mailchimp",
-  "version": "0.1.9-alpha.1",
+  "version": "0.1.9-alpha.17",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -33,8 +33,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/mdx-link": "^0.9.5-alpha.1",
+    "@gatsby-mdx-suite/mdx-link": "^0.9.5-alpha.17",
     "react-mailchimp-subscribe": "^2.1.3"
   },
-  "gitHead": "4514994238138b60aa6c7e20ac74b845ce2ee842"
+  "gitHead": "9d09b0800241c6f6c62c559ad3100177300c2505"
 }

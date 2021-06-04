@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-form",
-  "version": "0.4.53-alpha.1",
+  "version": "0.4.53-alpha.17",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -14,7 +14,6 @@
     "mdx"
   ],
   "peerDependencies": {
-    "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.1.5",
     "gatsby": "^3.1.2",
     "prop-types": "^15.7.0",
@@ -24,12 +23,12 @@
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/contexts": "^0.3.7-alpha.1",
-    "@gatsby-mdx-suite/helpers": "^0.15.2-alpha.1",
-    "@gatsby-mdx-suite/mdx-layout": "^0.28.0-alpha.1"
+    "@gatsby-mdx-suite/contexts": "^0.3.7-alpha.17",
+    "@gatsby-mdx-suite/helpers": "^0.15.2-alpha.17",
+    "@gatsby-mdx-suite/mdx-layout": "^0.28.0-alpha.17"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "4514994238138b60aa6c7e20ac74b845ce2ee842"
+  "gitHead": "9d09b0800241c6f6c62c559ad3100177300c2505"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-layout",
-  "version": "0.28.0-alpha.1",
+  "version": "0.28.0-alpha.17",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -19,7 +19,6 @@
     "layout"
   ],
   "peerDependencies": {
-    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.1.5",
     "gatsby-theme-mdx-suite-core": "^0.9.3",
@@ -28,13 +27,13 @@
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/helpers": "^0.15.2-alpha.1",
-    "@gatsby-mdx-suite/mdx-color-set": "^0.4.16-alpha.1",
-    "@gatsby-mdx-suite/mdx-video": "^0.8.4-alpha.1",
+    "@gatsby-mdx-suite/helpers": "^0.15.2-alpha.17",
+    "@gatsby-mdx-suite/mdx-color-set": "^0.4.16-alpha.17",
+    "@gatsby-mdx-suite/mdx-video": "^0.8.4-alpha.17",
     "gsap": "^3.6.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "4514994238138b60aa6c7e20ac74b845ce2ee842"
+  "gitHead": "9d09b0800241c6f6c62c559ad3100177300c2505"
 }

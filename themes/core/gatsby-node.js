@@ -1,7 +1,6 @@
 const { resolve } = require('path')
 const cheerio = require('cheerio')
 const merge = require('deepmerge')
-const webpack = require('webpack')
 
 const minimumConfig = require('./minimum-config')
 
@@ -13,15 +12,10 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     resolve: {
       fallback: {
         fs: false,
-        path: false,
+        path: require.resolve('path-browserify'),
         assert: false,
       },
     },
-    plugins: [
-      // new webpack.ProvidePlugin({
-      //   process: 'process/browser',
-      // }),
-    ],
   })
 }
 

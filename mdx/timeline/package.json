@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-timeline",
-  "version": "0.7.2-alpha.1",
+  "version": "0.7.2-alpha.17",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -20,7 +20,6 @@
     "timeline"
   ],
   "peerDependencies": {
-    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.1.5",
     "prop-types": "^15.7.0",
@@ -31,7 +30,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/helpers": "^0.15.2-alpha.1"
+    "@gatsby-mdx-suite/helpers": "^0.15.2-alpha.17"
   },
-  "gitHead": "4514994238138b60aa6c7e20ac74b845ce2ee842"
+  "gitHead": "9d09b0800241c6f6c62c559ad3100177300c2505"
 }
