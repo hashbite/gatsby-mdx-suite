@@ -12,6 +12,7 @@ module.exports = {
     description: `Basic implementation of the suite.`,
     siteUrl: `https://gatsbymdxsuiteexamplesbasic.gtsb.io`,
   },
+  flags: { FAST_DEV: true },
   plugins: [
     {
       resolve: `gatsby-theme-mdx-suite-core`,

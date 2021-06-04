@@ -28,7 +28,7 @@ export const wrapRootElement = ({ element }, config) => {
     .use(initReactI18next)
     .init({
       resources: translations,
-      whitelist: langs,
+      supportedLngs: langs,
       debug: process.env.NODE_ENV === 'development',
       lng: defaultLocale,
       fallbackLng: defaultLocale,
