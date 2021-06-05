@@ -41,7 +41,7 @@ Gap.defaultProps = {
 }
 
 Gap.propTypes = {
-  /** Actual gap to be applied. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  /** Actual gap to be applied. See <Link to="/docs/style-guide/#sizes">theme documentation for available sizes</Link> */
   gap: propTypes.oneOfType([propTypes.number, propTypes.string]),
 }
 

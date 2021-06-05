@@ -140,9 +140,8 @@ const SectionZoom = ({
   backgroundVideoId,
   ...props
 }) => {
-  const [scrollTriggerInstanceVideo, setScrollTriggerInstanceVideo] = useState(
-    null
-  )
+  const [scrollTriggerInstanceVideo, setScrollTriggerInstanceVideo] =
+    useState(null)
   const videoData = useVideo({ id: backgroundVideoId, contextKey: 'screen' })
 
   const refVideo = useRef()
@@ -152,10 +151,10 @@ const SectionZoom = ({
 
   const [viewportWidth, viewportHeight] = useWindowSize()
 
-  const viewportAspectRatio = useMemo(() => viewportWidth / viewportHeight, [
-    viewportWidth,
-    viewportHeight,
-  ])
+  const viewportAspectRatio = useMemo(
+    () => viewportWidth / viewportHeight,
+    [viewportWidth, viewportHeight]
+  )
 
   useKillScrollTriggerOnCleanup(scrollTriggerInstanceVideo)
 
@@ -280,7 +279,7 @@ SectionZoom.propTypes = {
   colorSet: propTypes.string,
   /** Overwrite specific colors */
   colors: propTypes.object,
-  /** Overwrite default vertical margin. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  /** Overwrite default vertical margin. See <Link to="/docs/style-guide/#sizes">theme documentation for available sizes</Link> */
   gap: propTypes.string,
   /** Vertical alignment if the available space exceeds the content height */
   verticalAlign: propTypes.oneOf(['start', 'center', 'end']),

@@ -153,7 +153,7 @@
           }
         },
         "content": {
-          "en-US": "<Header>\n\n# Done! You are ready!\n\n</Header>\n\n<Section>\n\nYour next steps:\n\n* Start editing your website now via [Contentful](https://app.contentful.com/)\n* Learn more about how to edit this website in the [project documentation](/docs).\n* Try out the [editor playground](/docs/playground).\n\n</Section>\n\n<Section>\n\n# Media Rendering Demo:\n\n## Pixel image:\n\n<Image id=\"exampleImagePng\" />\n\n## Vector image:\n\n<Image id=\"exampleImageSvg\" />\n\n## Video:\n\n<Video id=\"exampleVideo\" />\n\n</Section>"
+          "en-US": "<Header>\n\n# Done! You are ready!\n\n</Header>\n\n<Section>\n\nYour next steps:\n\n* Start editing your website now via [Contentful](https://app.contentful.com/)\n* Learn more about how to edit this website in the [project documentation](/docs).\n* Try out the [editor playground](/docs/playground/).\n\n</Section>\n\n<Section>\n\n# Media Rendering Demo:\n\n## Pixel image:\n\n<Image id=\"exampleImagePng\" />\n\n## Vector image:\n\n<Image id=\"exampleImageSvg\" />\n\n## Video:\n\n<Video id=\"exampleVideo\" />\n\n</Section>"
         }
       }
     },

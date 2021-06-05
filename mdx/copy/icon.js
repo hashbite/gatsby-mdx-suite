@@ -4,7 +4,7 @@ import propTypes from 'prop-types'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
 
 /**
- * Renders an icon. The available icons can be found in the <Link to="/docs/theme#icons">theme documentation for icons</Link>
+ * Renders an icon. The available icons can be found in the <Link to="/docs/style-guide/#icons">theme documentation for icons</Link>
  *
  * @example
  * <Icon icon="star" />
@@ -19,7 +19,7 @@ MdxIcon.defaultProps = {
 }
 
 MdxIcon.propTypes = {
-  /** Name of the icon to render. The available icons can be found in the <Link to="/docs/theme#icons">theme documentation for icons</Link> */
+  /** Name of the icon to render. The available icons can be found in the <Link to="/docs/style-guide/#icons">theme documentation for icons</Link> */
   icon: propTypes.string.isRequired,
   /** Color of the icon. Will use current text color by default.*/
   color: propTypes.string,

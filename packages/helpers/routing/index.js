@@ -10,7 +10,7 @@ function createPath({ slug, locale, pageType, config }) {
     slug === 'index' ? null : slug,
   ].filter(Boolean)
 
-  return pathSegments.length ? `/${pathSegments.join('/')}` : '/'
+  return pathSegments.length ? `/${pathSegments.join('/')}/` : '/'
 }
 
 function generatePageMap({ pages, activePageId }) {

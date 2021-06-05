@@ -1,12 +1,13 @@
 const { resolve } = require('path')
 
-const REGEX_DEPENDENCY_COMPONENT = /node_modules\/(@[^\\/]+\/[^@\\/]+|[^@\\/]+)\//
+const REGEX_DEPENDENCY_COMPONENT =
+  /node_modules\/(@[^\\/]+\/[^@\\/]+|[^@\\/]+)\//
 
 const generateComponentSlug = ({ packageName, parentName }) =>
   encodeURIComponent([packageName, parentName].filter((v) => !!v).join('/'))
     .replace(/%2F/g, '/')
     .replace(/%40/g, '')
-    .toLowerCase()
+    .toLowerCase() + '/'
 
 exports.createResolvers = ({ createResolvers }, { mediaCollections = {} }) => {
   const resolvers = {
