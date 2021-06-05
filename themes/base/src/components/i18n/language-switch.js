@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
-import Link from 'gatsby-link'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
 

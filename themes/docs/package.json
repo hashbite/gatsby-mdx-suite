@@ -39,7 +39,6 @@
     "@use-it/event-listener": "^0.1.6",
     "fuse.js": "^6.4.6",
     "gatsby-image": "^3.6.0",
-    "gatsby-link": "^3.6.0",
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-transformer-documentationjs": "^5.6.0",
     "gatsby-transformer-react-docgen": "^6.6.0",
