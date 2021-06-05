@@ -2,8 +2,17 @@ const { resolve } = require('path')
 const cheerio = require('cheerio')
 const merge = require('deepmerge')
 const webpack = require('webpack')
+const {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLInt,
+} = require(`gatsby/graphql`)
 
 const minimumConfig = require('./minimum-config')
+
+const {
+  schemes: { ImageResizingBehavior, ImageCropFocusType },
+} = require(`gatsby-source-contentful`)
 
 /**
  * Ensure webpack works with Gatsby & MDX
@@ -211,6 +220,62 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
             args: {
               width: 'Int',
               timestamps: ['String'],
+            },
+          },
+        },
+        interfaces: ['Node'],
+      })
+    )
+  }
+
+  // Make gatsby-transformer-sqip optional
+  if (!enabledPlugins.includes('gatsby-transformer-sqip')) {
+    typeDefs.push(
+      schema.buildObjectType({
+        name: 'ContentfulAsset',
+        fields: {
+          sqip: {
+            type: new GraphQLObjectType({
+              name: `SqipContentful`,
+              fields: {
+                svg: { type: GraphQLString },
+                dataURI: { type: GraphQLString },
+              },
+            }),
+            args: {
+              blur: {
+                type: GraphQLInt,
+                defaultValue: 1,
+              },
+              numberOfPrimitives: {
+                type: GraphQLInt,
+                defaultValue: 10,
+              },
+              mode: {
+                type: GraphQLInt,
+                defaultValue: 0,
+              },
+              width: {
+                type: GraphQLInt,
+                defaultValue: 256,
+              },
+              height: {
+                type: GraphQLInt,
+              },
+              resizingBehavior: {
+                type: ImageResizingBehavior,
+              },
+              cropFocus: {
+                type: ImageCropFocusType,
+                defaultValue: null,
+              },
+              background: {
+                type: GraphQLString,
+                defaultValue: null,
+              },
+            },
+            async resolve(asset, fieldArgs, context) {
+              return null
             },
           },
         },
