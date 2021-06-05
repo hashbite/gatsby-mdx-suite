@@ -1186,6 +1186,13 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@7.12.5":
+  version "7.12.5"
+  resolved "http://containers.hashbite.net:4873/@babel%2fruntime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
+  integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.14.0"
   resolved "https://registry.yarnpkg.com/@babel%2fruntime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
@@ -9653,6 +9660,13 @@ gatsby-plugin-emotion@^4.5.0:
     "@babel/runtime" "^7.12.5"
     "@emotion/babel-preset-css-prop" "^10.0.27"
 
+gatsby-plugin-force-trailing-slashes@^1.0.5:
+  version "1.0.5"
+  resolved "http://containers.hashbite.net:4873/gatsby-plugin-force-trailing-slashes/-/gatsby-plugin-force-trailing-slashes-1.0.5.tgz#22d2f16bf4dea4fca79c129cf9cbd29d9229d888"
+  integrity sha512-RxRdW++bvSHv4Mho999W0LLNdiQX1OMOvY0v1TlafcaYqJ93fYV/Jp3DDD6PKS0PAKNS8Q8DRsD67cipFmZCFA==
+  dependencies:
+    "@babel/runtime" "7.12.5"
+
 gatsby-plugin-hoofd@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-hoofd/-/gatsby-plugin-hoofd-0.2.0.tgz#cd36167c664d68beca89053944b1495f27652d69"
@@ -9758,13 +9772,6 @@ gatsby-plugin-react-svg@^3.0.0:
   integrity sha512-bjVSCAOeRWmf5a96/BL81sHITGFV/2Ql+IwP3ET5O5BZYOpt0f7QVCspkvCj0hsy4BJgCgANpzFstuaxUNsojA==
   dependencies:
     svg-react-loader "^0.4.4"
-
-gatsby-plugin-remove-trailing-slashes@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-remove-trailing-slashes/-/gatsby-plugin-remove-trailing-slashes-3.6.0.tgz#b26823c7286db6a614300837f1daf41baa738205"
-  integrity sha512-tRR0EiNujvpSwnfrBYUF3CZ69y+bFA/NB3S317pDZ+HAUPVETsfVsynmNA+jzxf8nORuameizqy4264vNG6cKw==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
 
 gatsby-plugin-robots-txt@^1.6.2:
   version "1.6.2"

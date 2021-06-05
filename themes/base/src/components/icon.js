@@ -65,7 +65,7 @@ Icon.defaultProps = {
 }
 
 Icon.propTypes = {
-  /** Name of the icon to render. The available icons can be found in the <Link to="/docs/theme#icons">theme documentation for icons</Link> */
+  /** Name of the icon to render. The available icons can be found in the <Link to="/docs/style-guide/#icons">theme documentation for icons</Link> */
   icon: propTypes.string.isRequired,
   /** Color of the icon. Will use current text color by default.*/
   color: propTypes.string,

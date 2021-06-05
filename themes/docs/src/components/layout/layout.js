@@ -50,13 +50,13 @@ const Layout = ({ children, title }) => {
           <MenuLink to="/">
             <BackIcon icon="previous" />
           </MenuLink>
-          <MenuLink to="/docs">Docs{title && ` - ${title}`}</MenuLink>
+          <MenuLink to="/docs/">Docs{title && ` - ${title}`}</MenuLink>
         </DocsTitle>
         <Menu>
-          <MenuLink to="/docs">Start</MenuLink>
-          <MenuLink to="/docs/playground">Playground</MenuLink>
-          <MenuLink to="/docs/components">Components</MenuLink>
-          <MenuLink to="/docs/style-guide">Style Guide</MenuLink>
+          <MenuLink to="/docs/">Start</MenuLink>
+          <MenuLink to="/docs/playground/">Playground</MenuLink>
+          <MenuLink to="/docs/components/">Components</MenuLink>
+          <MenuLink to="/docs/style-guide/">Style Guide</MenuLink>
         </Menu>
       </LayoutHeader>
       {children}

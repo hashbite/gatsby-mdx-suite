@@ -269,9 +269,9 @@ Section.propTypes = {
   colors: propTypes.object,
   /** Optional slight text shadow to increase readability when using background images */
   textShadow: propTypes.bool,
-  /** Overwrite default vertical margin. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  /** Overwrite default vertical margin. See <Link to="/docs/style-guide/#sizes">theme documentation for available sizes</Link> */
   gap: propTypes.string,
-  /** Set the minimum size for the section. Usually used with `100vh` to achieve full screen sizes. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  /** Set the minimum size for the section. Usually used with `100vh` to achieve full screen sizes. See <Link to="/docs/style-guide/#sizes">theme documentation for available sizes</Link> */
   minHeight: propTypes.string,
   /** Vertical alignment if the available space exceeds the content height */
   verticalAlign: propTypes.oneOf(['start', 'center', 'end']),

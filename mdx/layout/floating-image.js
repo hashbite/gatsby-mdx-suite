@@ -202,7 +202,7 @@ FloatingImage.propTypes = {
    * https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
    */
   fit: propTypes.string,
-  /** Set the minimum size for the section. Usually used with `100vh` to achieve full screen sizes. See <Link to="/docs/theme#sizes">theme documentation for available sizes</Link> */
+  /** Set the minimum size for the section. Usually used with `100vh` to achieve full screen sizes. See <Link to="/docs/style-guide/#sizes">theme documentation for available sizes</Link> */
   minHeight: propTypes.string,
   /** Vertical alignment if the available space exceeds the content height */
   verticalAlign: propTypes.oneOf(['start', 'center', 'end']),

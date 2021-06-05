@@ -238,7 +238,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
   // UI functions
   const previewSrc = useMemo(
     () =>
-      `/docs/preview?id=${`${localStorageId}-processed${
+      `/docs/preview/?id=${`${localStorageId}-processed${
         debugMode ? `&debug=true` : ``
       }`}`,
     [localStorageId, debugMode]
