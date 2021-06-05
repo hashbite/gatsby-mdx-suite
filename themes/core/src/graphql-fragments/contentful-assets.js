@@ -27,6 +27,14 @@ export const MdxSuiteMediaCollectionScreen = graphql`
       path
       aspectRatio
     }
+    videoH265(preset: "faster", maxWidth: 1920) {
+      path
+      aspectRatio
+    }
+    videoVP9(maxWidth: 1920) {
+      path
+      aspectRatio
+    }
     videoScreenshots(timestamps: ["0"], width: 1920) {
       childImageSharp {
         gatsbyImageData(width: 1920, layout: FIXED)
@@ -43,6 +51,14 @@ export const MdxSuiteMediaCollectionFull = graphql`
     ...MdxSuiteContentfulAsset
     gatsbyImageData(width: 1200, placeholder: BLURRED)
     videoH264(maxWidth: 1200) {
+      path
+      aspectRatio
+    }
+    videoH265(preset: "faster", maxWidth: 1200) {
+      path
+      aspectRatio
+    }
+    videoVP9(maxWidth: 1200) {
       path
       aspectRatio
     }
@@ -65,6 +81,14 @@ export const MdxSuiteMediaCollectionHalf = graphql`
       path
       aspectRatio
     }
+    videoH265(preset: "faster", maxWidth: 600) {
+      path
+      aspectRatio
+    }
+    videoVP9(maxWidth: 600) {
+      path
+      aspectRatio
+    }
     videoScreenshots(timestamps: ["0"], width: 600) {
       childImageSharp {
         gatsbyImageData(width: 600, layout: FIXED)
@@ -81,6 +105,14 @@ export const MdxSuiteMediaCollectionThird = graphql`
     ...MdxSuiteContentfulAsset
     gatsbyImageData(width: 400, placeholder: BLURRED)
     videoH264(maxWidth: 400) {
+      path
+      aspectRatio
+    }
+    videoH265(preset: "faster", maxWidth: 400) {
+      path
+      aspectRatio
+    }
+    videoVP9(maxWidth: 400) {
       path
       aspectRatio
     }
@@ -103,6 +135,14 @@ export const MdxSuiteMediaCollectionQuarter = graphql`
       path
       aspectRatio
     }
+    videoH265(preset: "faster", maxWidth: 300) {
+      path
+      aspectRatio
+    }
+    videoVP9(maxWidth: 300) {
+      path
+      aspectRatio
+    }
     videoScreenshots(timestamps: ["0"], width: 300) {
       childImageSharp {
         gatsbyImageData(width: 300, layout: FIXED)
@@ -122,6 +162,14 @@ export const MdxSuiteMediaCollectionSixth = graphql`
       path
       aspectRatio
     }
+    videoH265(preset: "faster", maxWidth: 200) {
+      path
+      aspectRatio
+    }
+    videoVP9(maxWidth: 200) {
+      path
+      aspectRatio
+    }
     videoScreenshots(timestamps: ["0"], width: 200) {
       childImageSharp {
         gatsbyImageData(width: 200, layout: FIXED)
@@ -138,6 +186,14 @@ export const MdxSuiteMediaCollectionEigth = graphql`
     ...MdxSuiteContentfulAsset
     gatsbyImageData(width: 150, placeholder: BLURRED)
     videoH264(maxWidth: 150) {
+      path
+      aspectRatio
+    }
+    videoH265(preset: "faster", maxWidth: 150) {
+      path
+      aspectRatio
+    }
+    videoVP9(maxWidth: 150) {
       path
       aspectRatio
     }
