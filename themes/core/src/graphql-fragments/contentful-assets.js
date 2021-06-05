@@ -9,9 +9,12 @@ export const MdxSuiteContentfulAsset = graphql`
     file {
       contentType
       url
-    }
-    svg {
-      content
+      details {
+        image {
+          height
+          width
+        }
+      }
     }
   }
 `
@@ -19,15 +22,15 @@ export const MdxSuiteContentfulAsset = graphql`
 export const MdxSuiteMediaCollectionScreen = graphql`
   fragment MdxSuiteMediaCollectionScreen on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 2048) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 2048, placeholder: BLURRED, layout: FULL_WIDTH)
     videoH264(maxWidth: 1920) {
       path
       aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 1920) {
-      publicURL
+      childImageSharp {
+        gatsbyImageData(width: 1920, layout: FIXED)
+      }
     }
   }
 `
@@ -35,15 +38,15 @@ export const MdxSuiteMediaCollectionScreen = graphql`
 export const MdxSuiteMediaCollectionFull = graphql`
   fragment MdxSuiteMediaCollectionFull on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 1200) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 1200, placeholder: BLURRED)
     videoH264(maxWidth: 1200) {
       path
       aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 1200) {
-      publicURL
+      childImageSharp {
+        gatsbyImageData(width: 1200, layout: FIXED)
+      }
     }
   }
 `
@@ -51,15 +54,15 @@ export const MdxSuiteMediaCollectionFull = graphql`
 export const MdxSuiteMediaCollectionHalf = graphql`
   fragment MdxSuiteMediaCollectionHalf on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 600) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 600, placeholder: BLURRED)
     videoH264(maxWidth: 600) {
       path
       aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 600) {
-      publicURL
+      childImageSharp {
+        gatsbyImageData(width: 600, layout: FIXED)
+      }
     }
   }
 `
@@ -67,15 +70,15 @@ export const MdxSuiteMediaCollectionHalf = graphql`
 export const MdxSuiteMediaCollectionThird = graphql`
   fragment MdxSuiteMediaCollectionThird on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 400) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 400, placeholder: BLURRED)
     videoH264(maxWidth: 400) {
       path
       aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 400) {
-      publicURL
+      childImageSharp {
+        gatsbyImageData(width: 400, layout: FIXED)
+      }
     }
   }
 `
@@ -83,15 +86,15 @@ export const MdxSuiteMediaCollectionThird = graphql`
 export const MdxSuiteMediaCollectionQuarter = graphql`
   fragment MdxSuiteMediaCollectionQuarter on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 300) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 300, placeholder: BLURRED)
     videoH264(maxWidth: 300) {
       path
       aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 300) {
-      publicURL
+      childImageSharp {
+        gatsbyImageData(width: 300, layout: FIXED)
+      }
     }
   }
 `
@@ -99,15 +102,15 @@ export const MdxSuiteMediaCollectionQuarter = graphql`
 export const MdxSuiteMediaCollectionSixth = graphql`
   fragment MdxSuiteMediaCollectionSixth on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 200) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 200, placeholder: BLURRED)
     videoH264(maxWidth: 200) {
       path
       aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 200) {
-      publicURL
+      childImageSharp {
+        gatsbyImageData(width: 200, layout: FIXED)
+      }
     }
   }
 `
@@ -115,15 +118,15 @@ export const MdxSuiteMediaCollectionSixth = graphql`
 export const MdxSuiteMediaCollectionEigth = graphql`
   fragment MdxSuiteMediaCollectionEigth on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fluid(maxWidth: 150) {
-      ...GatsbyContentfulFluid_withWebp
-    }
+    gatsbyImageData(width: 150, placeholder: BLURRED)
     videoH264(maxWidth: 150) {
       path
       aspectRatio
     }
     videoScreenshots(timestamps: ["0"], width: 150) {
-      publicURL
+      childImageSharp {
+        gatsbyImageData(width: 150, layout: FIXED)
+      }
     }
   }
 `
@@ -131,9 +134,7 @@ export const MdxSuiteMediaCollectionEigth = graphql`
 export const MdxSuiteMediaDocs = graphql`
   fragment MdxSuiteMediaDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    fixed(width: 300) {
-      ...GatsbyContentfulFixed_noBase64
-    }
+    gatsbyImageData(width: 300)
     file {
       details {
         size
@@ -144,6 +145,11 @@ export const MdxSuiteMediaDocs = graphql`
       aspectRatio
       width
       height
+    }
+    videoScreenshots(timestamps: ["0"], width: 300) {
+      childImageSharp {
+        gatsbyImageData(width: 300)
+      }
     }
   }
 `

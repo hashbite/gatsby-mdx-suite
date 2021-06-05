@@ -48,7 +48,7 @@ module.exports = (themeConfig) => {
         },
       },
       // Media
-      // `gatsby-plugin-image`,
+      `gatsby-plugin-image`,
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
     ].filter(Boolean),
