@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback } from 'react'
+import React, { useRef, useState, useCallback, useMemo } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
@@ -120,6 +120,13 @@ export default function Video({
     [handleVideoIntersection]
   )
 
+  const posterSrc = useMemo(
+    () =>
+      videoData?.screenshots?.[screenshotIndex]?.childImageSharp
+        ?.gatsbyImageData.images.fallback.src,
+    [screenshotIndex, videoData?.screenshots]
+  )
+
   return (
     <LazyComponent forceRendering={forceRendering}>
       <VideoWrapper
@@ -136,7 +143,7 @@ export default function Video({
           playsInline={autoplay || !controls}
           preload={preload}
           muted={autoplay || muted}
-          poster={videoData?.screenshots?.[screenshotIndex]?.publicURL}
+          poster={posterSrc}
           aspectRatio={aspectRatio}
           {...props}
         >

@@ -2,7 +2,7 @@ import React, { useCallback, useState, useMemo, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
-import Image from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import prettyBytes from 'pretty-bytes'
 import Fuse from 'fuse.js'
 import { css } from '@emotion/core'
@@ -32,7 +32,7 @@ const LiveEditorSidebarSearch = styled(Search)`
 const LiveEditorSidebarMediaAsset = styled.figure`
   ${tw`cursor-pointer mt-content-gap bg-gray-100 rounded p-2`}
 `
-const LiveEditorSidebarMediaAssetThumbnail = styled(Image)`
+const LiveEditorSidebarMediaAssetThumbnail = styled(GatsbyImage)`
   max-width: 300px;
   ${tw`block! mx-auto mb-1`}
 `
@@ -190,18 +190,25 @@ function LiveEditorSidebar({ editorInstance, tab }) {
               asset?.videoH264?.aspectRatio &&
                 `1∶${parseFloat(asset.videoH264.aspectRatio.toFixed(3))}`,
             ].filter(Boolean)
+            const thumbnailData =
+              (asset?.videoScreenshots &&
+                asset.videoScreenshots[0]?.childImageSharp?.gatsbyImageData) ||
+              asset.gatsbyImageData
+
+            const thumbnail = thumbnailData ? (
+              <LiveEditorSidebarMediaAssetThumbnail
+                image={thumbnailData}
+                alt={asset.title}
+              />
+            ) : (
+              <img src={asset.file.url} alt={asset.title} />
+            )
             return (
               <LiveEditorSidebarMediaAsset
                 key={asset.assetId}
                 onClick={() => injectMediaId(asset.assetId)}
               >
-                <LiveEditorSidebarMediaAssetThumbnail
-                  fixed={
-                    (asset?.videoScreenshots &&
-                      asset.videoScreenshots[0]?.childImageSharp?.fixed) ||
-                    asset.fixed
-                  }
-                />
+                {thumbnail}
                 <LiveEditorSidebarMediaAssetCaption>
                   {asset.title} ({metadata.join(', ')})
                 </LiveEditorSidebarMediaAssetCaption>

@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import ImageRenderer from './image-renderer'
+import ImageRenderer from 'gatsby-theme-mdx-suite-core/src/components/image'
 
 /**
  * Renders an image from an internal or external source.
