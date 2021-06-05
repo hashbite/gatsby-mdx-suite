@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Cta from '@gatsby-mdx-suite/mdx-link/cta'
-import Image from '@gatsby-mdx-suite/mdx-image/image-renderer'
+import Image from 'gatsby-theme-mdx-suite-core/src/components/image'
 import { useTranslation } from 'react-i18next'
 
 const BlogPostTeaserWrapper = tw.article`flex flex-col h-full`
@@ -23,9 +23,10 @@ const BlogPostTeaserImage = tw(Image)``
 
 const BlogPostTeaser = ({ blogPost, ...props }) => {
   const { t } = useTranslation()
+
   return (
     <BlogPostTeaserWrapper {...props}>
-      <BlogPostTeaserImage {...blogPost.image} />
+      <BlogPostTeaserImage imageData={blogPost.image} />
       <BlogPostTeaserHeadline>{blogPost.title}</BlogPostTeaserHeadline>
       <BlogPostTeaserMeta>
         {Intl.DateTimeFormat(blogPost.locale).format(

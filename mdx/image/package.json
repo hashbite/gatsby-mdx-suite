@@ -28,8 +28,7 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^0.8.8",
-    "@gatsby-mdx-suite/contexts": "^0.3.6",
-    "gatsby-image": "^3.6.0"
+    "@gatsby-mdx-suite/contexts": "^0.3.6"
   },
   "publishConfig": {
     "access": "public"
