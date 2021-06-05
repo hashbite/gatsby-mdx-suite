@@ -72,6 +72,8 @@ module.exports = {
         icon: `../../themes/base/src/assets/icon.svg`,
       },
     },
+    // Optional plugins:
+    `gatsby-transformer-sqip`,
     `gatsby-transformer-video`,
     ...(isProduction
       ? [

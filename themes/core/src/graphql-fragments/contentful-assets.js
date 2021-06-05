@@ -32,6 +32,9 @@ export const MdxSuiteMediaCollectionScreen = graphql`
         gatsbyImageData(width: 1920, layout: FIXED)
       }
     }
+    sqip(numberOfPrimitives: 120, blur: 0) {
+      dataURI
+    }
   }
 `
 
@@ -47,6 +50,9 @@ export const MdxSuiteMediaCollectionFull = graphql`
       childImageSharp {
         gatsbyImageData(width: 1200, layout: FIXED)
       }
+    }
+    sqip(numberOfPrimitives: 80, blur: 0) {
+      dataURI
     }
   }
 `
@@ -64,6 +70,9 @@ export const MdxSuiteMediaCollectionHalf = graphql`
         gatsbyImageData(width: 600, layout: FIXED)
       }
     }
+    sqip(numberOfPrimitives: 40, blur: 0) {
+      dataURI
+    }
   }
 `
 
@@ -79,6 +88,9 @@ export const MdxSuiteMediaCollectionThird = graphql`
       childImageSharp {
         gatsbyImageData(width: 400, layout: FIXED)
       }
+    }
+    sqip(numberOfPrimitives: 16, blur: 0) {
+      dataURI
     }
   }
 `
@@ -96,6 +108,9 @@ export const MdxSuiteMediaCollectionQuarter = graphql`
         gatsbyImageData(width: 300, layout: FIXED)
       }
     }
+    sqip(numberOfPrimitives: 16, blur: 0) {
+      dataURI
+    }
   }
 `
 
@@ -112,6 +127,9 @@ export const MdxSuiteMediaCollectionSixth = graphql`
         gatsbyImageData(width: 200, layout: FIXED)
       }
     }
+    sqip(numberOfPrimitives: 16, blur: 0) {
+      dataURI
+    }
   }
 `
 
@@ -127,6 +145,9 @@ export const MdxSuiteMediaCollectionEigth = graphql`
       childImageSharp {
         gatsbyImageData(width: 150, layout: FIXED)
       }
+    }
+    sqip(numberOfPrimitives: 16, blur: 0) {
+      dataURI
     }
   }
 `
