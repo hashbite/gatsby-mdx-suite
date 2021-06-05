@@ -58,20 +58,19 @@ export default function Image({
     imgStyle.height = height
   }
 
-  console.log('rendering:', {
-    id,
-    contextKey,
-    contextData,
-    imgProps,
-    imgStyle,
-    src,
-  })
-
   if (src) {
     return <StaticImage {...imgProps} style={imgStyle} src={src} />
   }
 
   const renderData = imageData || contextData
+
+  // optional SQIP support
+  if (renderData?.sqip?.dataURI) {
+    if (!renderData?.gatsbyImageData?.placeholder) {
+      renderData.gatsbyImageData.placeholder = {}
+    }
+    renderData.gatsbyImageData.placeholder.fallback = renderData.sqip.dataURI
+  }
 
   if (!renderData.gatsbyImageData) {
     if (!renderData.file.url) {
