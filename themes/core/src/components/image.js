@@ -64,6 +64,17 @@ export default function Image({
 
   const renderData = imageData || contextData
 
+  // Show pandas to devs if images not found
+  if (!renderData) {
+    return (
+      <StaticImage
+        {...imgProps}
+        style={imgStyle}
+        src={'https://source.unsplash.com/featured/?panda'}
+      />
+    )
+  }
+
   // optional SQIP support
   if (renderData?.sqip?.dataURI) {
     if (!renderData?.gatsbyImageData?.placeholder) {
@@ -72,7 +83,7 @@ export default function Image({
     renderData.gatsbyImageData.placeholder.fallback = renderData.sqip.dataURI
   }
 
-  if (!renderData.gatsbyImageData) {
+  if (!renderData?.gatsbyImageData) {
     if (!renderData.file.url) {
       throw new Error(`Invalid image rendering data found for ${id}`)
     }
