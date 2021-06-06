@@ -42,9 +42,13 @@ export default function useImageDataFromContext({ id, contextKey }) {
   }
 
   if (!imageData) {
-    throw new Error(
+    const error = new Error(
       `Unable to locate image rendering data for ${id}@${contextKey}`
     )
+    if (process.env.NODE_ENV === 'production') {
+      throw error
+    }
+    console.log(error)
   }
 
   return imageData
