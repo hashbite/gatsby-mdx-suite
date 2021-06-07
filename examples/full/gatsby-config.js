@@ -79,16 +79,6 @@ module.exports = {
       ? [
           // Enable offline functionallity. Currently can cause issues for recurring users.
           // `gatsby-plugin-offline`,
-          // Enable if you build on Netlify. Gatsby cloud users do not need this.
-          // {
-          //   resolve: 'gatsby-plugin-netlify-cache',
-          //   options: {
-          //     extraDirsToCache: [
-          //       join('node_modules', '.cache', 'gatsby-transformer-video'),
-          //       join('node_modules', '.cache', 'gatsby-transformer-video-bin'),
-          //     ],
-          //   },
-          // },
         ]
       : []),
   ].filter(Boolean),
