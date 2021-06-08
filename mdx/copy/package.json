@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-copy",
-  "version": "0.14.4",
+  "version": "0.15.0",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/helpers": "^0.15.1"
+    "@gatsby-mdx-suite/helpers": "^0.16.0"
   },
   "publishConfig": {
     "access": "public"

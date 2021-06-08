@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.9.3...gatsby-theme-mdx-suite-core@0.10.0) (2021-06-08)
+
+
+### Features
+
+* add h265 and VP9 video codecs ([f6985e3](https://github.com/axe312ger/gatsby-mdx-suite/commit/f6985e3a9852e253601a36dae1891bc825995549))
+* add optional support for SQIP image placeholders ([95ee5af](https://github.com/axe312ger/gatsby-mdx-suite/commit/95ee5af605fa33829afd0bfd940325d6a6f1595a))
+* improve URLs by enforcing trailing slash ([4102d07](https://github.com/axe312ger/gatsby-mdx-suite/commit/4102d07fa225c2627948b9af5c62c05d63b87816))
+* show pandas instead of broken pages to devs when images are missing ([68bcd66](https://github.com/axe312ger/gatsby-mdx-suite/commit/68bcd6606e70a4258bd28dab2a7a4f946efab9d5))
+* switch to new gatsby-plugin-image and enable video posters ([5bb4c6d](https://github.com/axe312ger/gatsby-mdx-suite/commit/5bb4c6d1ea3b2580134d680f9b3a451946a3ae0a))
+
+
+
+
+
 ## [0.9.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.9.2...gatsby-theme-mdx-suite-core@0.9.3) (2021-04-07)
 
 

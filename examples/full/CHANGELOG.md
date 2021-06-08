@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.11.0...gatsby-mdx-suite-example-full@0.12.0) (2021-06-08)
+
+
+### Features
+
+* add optional support for SQIP image placeholders ([95ee5af](https://github.com/axe312ger/gatsby-mdx-suite/commit/95ee5af605fa33829afd0bfd940325d6a6f1595a))
+
+
+
+
+
 # [0.11.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.10.5...gatsby-mdx-suite-example-full@0.11.0) (2021-04-26)
 
 
