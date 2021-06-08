@@ -192,6 +192,7 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
     typeDefs.push(`
       type FakeScreenshot implements Node @dontInfer {
         publicURL: String
+        childImageSharp: ImageSharp
       }
     `)
     typeDefs.push(`
@@ -207,6 +208,24 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
         name: 'ContentfulAsset',
         fields: {
           videoH264: {
+            type: 'FakeVideo',
+            args: {
+              preset: 'String',
+              fps: 'Int',
+              duration: 'Int',
+              maxWidth: 'Int',
+            },
+          },
+          videoH265: {
+            type: 'FakeVideo',
+            args: {
+              preset: 'String',
+              fps: 'Int',
+              duration: 'Int',
+              maxWidth: 'Int',
+            },
+          },
+          videoVP9: {
             type: 'FakeVideo',
             args: {
               preset: 'String',
