@@ -1,6 +1,6 @@
 {
   "name": "gatsby-mdx-suite-example-minmal",
-  "version": "0.2.24",
+  "version": "0.2.25",
   "description": "Most minimal implementation of the MDX suite. Mostly for testing purposes.",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
