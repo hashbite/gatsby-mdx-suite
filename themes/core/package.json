@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-suite-core",
-  "version": "0.10.4",
+  "version": "0.10.5",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -22,8 +22,8 @@
   "dependencies": {
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.27",
-    "@gatsby-mdx-suite/contexts": "^0.3.6",
-    "@gatsby-mdx-suite/helpers": "^0.16.0",
+    "@gatsby-mdx-suite/contexts": "^0.3.10",
+    "@gatsby-mdx-suite/helpers": "^0.16.4",
     "autoprefixer": "^10.2.3",
     "cheerio": "0.22.0",
     "deepmerge": "^4.2.2",
