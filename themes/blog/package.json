@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-suite-blog",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",

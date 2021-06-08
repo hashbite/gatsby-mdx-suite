@@ -1,6 +1,6 @@
 {
   "name": "gatsby-mdx-suite-example-full",
-  "version": "0.12.2",
+  "version": "0.12.3",
   "description": "Full implementation of the MDX suite. Mostly for testing and demonstration purposes.",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
