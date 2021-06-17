@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.4...@gatsby-mdx-suite/mdx-video@0.9.5) (2021-06-17)
+
+
+### Bug Fixes
+
+* **media:** unavailable images & videos do not break builds anymore ([6594433](https://github.com/axe312ger/gatsby-mdx-suite/commit/659443390f99f56da0224c786ca3dbdd4e35a551))
+
+
+
+
+
 # [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.8.3...@gatsby-mdx-suite/mdx-video@0.9.0) (2021-06-08)
 
 
