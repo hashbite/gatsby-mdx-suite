@@ -5,9 +5,11 @@ import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 export default function useImageDataFromContext({ id, contextKey }) {
   const {
     data,
-    pageContext: { locale: activeLocale },
+    pageContext,
     themeConfig: { defaultLocale },
   } = useContext(MdxSuiteContext)
+
+  const { locale: activeLocale } = pageContext
 
   if (!id) {
     return null
@@ -42,13 +44,24 @@ export default function useImageDataFromContext({ id, contextKey }) {
   }
 
   if (!imageData) {
-    const error = new Error(
-      `Unable to locate image rendering data for ${id}@${contextKey}`
+    /**
+     * @todo throw error here:
+     * figure out how to do multi line error messages via Gatsby OR use our own error catch logic
+     * */
+    console.warn(
+      [
+        `--- MDX ASSET ERROR ---`,
+        `Unable to locate image rendering data for ${id} for context ${contextKey}`,
+        `Page Details:\n ${JSON.stringify(
+          { ...pageContext, defaultLocale },
+          null,
+          2
+        )}`,
+        `Available Media:\n ${JSON.stringify(data, null, 2)}`,
+        `--- MDX ASSET ERROR ---`,
+      ].join(`\n\n`)
     )
-    if (process.env.NODE_ENV === 'production') {
-      throw error
-    }
-    console.log(error)
+    return null
   }
 
   return imageData

@@ -35,9 +35,7 @@ export default function Image({
   const contextData = useImageDataFromContext({ id, contextKey })
 
   if (!id && !src && !imageData) {
-    throw new Error(
-      `Images need at least the id, src or imageData property to render.`
-    )
+    return 'image unavailable'
   }
 
   // Image propery construction

@@ -127,6 +127,10 @@ export default function Video({
     [screenshotIndex, videoData?.screenshots]
   )
 
+  if (!videoData) {
+    return 'video unavailable'
+  }
+
   return (
     <LazyComponent forceRendering={forceRendering}>
       <VideoWrapper
