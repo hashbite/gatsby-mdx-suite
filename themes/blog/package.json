@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-suite-blog",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -24,10 +24,10 @@
     "@gatsby-mdx-suite/helpers": "^0.16.4",
     "@gatsby-mdx-suite/mdx-copy": "^0.15.4",
     "@gatsby-mdx-suite/mdx-image": "^0.9.4",
-    "@gatsby-mdx-suite/mdx-layout": "^0.28.5",
+    "@gatsby-mdx-suite/mdx-layout": "^0.28.6",
     "@gatsby-mdx-suite/mdx-link": "^0.9.9",
     "deepmerge": "^4.2.2",
     "gatsby-awesome-pagination": "^0.3.6",
-    "gatsby-theme-mdx-suite-base": "^0.13.5"
+    "gatsby-theme-mdx-suite-base": "^0.13.6"
   }
 }

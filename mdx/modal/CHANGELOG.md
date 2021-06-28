@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.23](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-modal@0.1.22...@gatsby-mdx-suite/mdx-modal@0.1.23) (2021-06-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-modal
+
+
+
+
+
 ## [0.1.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-modal@0.1.17...@gatsby-mdx-suite/mdx-modal@0.1.18) (2021-06-08)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-modal
