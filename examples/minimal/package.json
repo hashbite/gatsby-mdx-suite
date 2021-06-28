@@ -22,12 +22,12 @@
     "@gatsby-mdx-suite/mdx-layout": "^0.28.5",
     "@gatsby-mdx-suite/mdx-link": "^0.9.9",
     "deepmerge": "^4.2.2",
-    "gatsby": "^3.6.2",
+    "gatsby": "^3.8.0",
     "gatsby-theme-mdx-suite-core": "^0.10.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-i18next": "^11.10.0",
+    "react-i18next": "^11.11.0",
     "twin.macro": "^1.12.1"
   },
   "peerDependencies": {
