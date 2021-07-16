@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useLocation } from '@reach/router'
-import { useHead, useTitleTemplate } from 'hoofd'
+import { useHead, useTitleTemplate, useLink } from 'hoofd'
 
 function SEO({
   description,
@@ -119,6 +119,9 @@ function SEO({
     language,
     metas,
   })
+
+  useLink({ rel: 'preconnect', href: 'https://images.ctfassets.net' })
+  useLink({ rel: 'dns-prefetch', href: 'https://images.ctfassets.net' })
 
   return null
 }
