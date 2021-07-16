@@ -18,6 +18,7 @@ module.exports = {
         previous: 'previous',
         first: 'first',
         last: 'last',
+        menu: 'menu',
         newsReadMore: 'Read more...',
         newsTimeToRead: '{{minutes}} min. to read',
         privacyManagerPrivacyModeEnabled: 'privacy mode is on',
