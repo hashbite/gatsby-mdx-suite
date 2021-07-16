@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@gatsby-mdx-suite/helpers": "^0.16.4",
-    "gsap": "^3.7.0"
+    "gsap": "^3.7.1"
   },
   "publishConfig": {
     "access": "public"

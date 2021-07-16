@@ -31,7 +31,7 @@
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.20",
     "@gatsby-mdx-suite/mdx-image": "^0.9.4",
     "@gatsby-mdx-suite/mdx-video": "^0.9.6",
-    "gsap": "^3.7.0"
+    "gsap": "^3.7.1"
   },
   "publishConfig": {
     "access": "public"
