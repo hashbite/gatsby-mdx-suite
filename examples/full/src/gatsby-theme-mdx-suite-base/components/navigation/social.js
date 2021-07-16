@@ -9,7 +9,7 @@ const Social = (props) => (
     rel="noreferrer"
     {...props}
   >
-    <Icon icon="github" />
+    <Icon icon="github" title="Find us on GitHub" />
   </a>
 )
 
