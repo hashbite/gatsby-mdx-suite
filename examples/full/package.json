@@ -45,7 +45,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-i18next": "^11.11.0",
+    "react-i18next": "^11.11.3",
     "react-scrolllock": "^5.0.1",
     "twin.macro": "^2.6.2",
     "use-persisted-state": "^0.3.3"

@@ -34,6 +34,6 @@
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.20",
     "@gatsby-mdx-suite/mdx-video": "^0.9.6",
     "@react-hook/window-size": "^3.0.7",
-    "gsap": "^3.7.0"
+    "gsap": "^3.7.1"
   }
 }
