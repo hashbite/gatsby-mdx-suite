@@ -34,7 +34,7 @@
     "gatsby-plugin-mdx": "^2.9.0",
     "gatsby-plugin-postcss": "^4.9.0",
     "gatsby-plugin-sharp": "^3.9.0",
-    "gatsby-source-contentful": "^5.9.0-next.1",
+    "gatsby-source-contentful": "^5.11.0-next.0",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "i18next": "^20.3.2",
