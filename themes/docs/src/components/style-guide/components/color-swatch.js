@@ -21,7 +21,7 @@ const ColorSwatchColor = styled.div(
 )
 const ColorSwatchName = styled.div(
   ({ theme }) => css`
-    ${tw`font-bold mb-1 whitespace-no-wrap`}
+    ${tw`font-bold mb-1 whitespace-nowrap`}
     color: ${selectColor(theme.colors, 'text')};
   `
 )

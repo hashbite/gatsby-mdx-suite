@@ -75,7 +75,7 @@ const FontPreview = styled.div`
 `
 
 const Sizes = tw.div`mb-content-gap`
-const Size = tw.div`whitespace-no-wrap`
+const Size = tw.div`whitespace-nowrap`
 const Length = styled.div(
   ({ width }) => css`
     ${tw`border border-red-300 text-center inline-block mr-2`}
@@ -101,7 +101,7 @@ const Help = styled.div`
     white-space: nowrap;
   }
   & code {
-    ${tw`bg-gray-100 whitespace-no-wrap`}
+    ${tw`bg-gray-100 whitespace-nowrap`}
     padding: 2px 4px;
   }
 `
