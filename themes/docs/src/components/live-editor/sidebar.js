@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
 import React, { useCallback, useState, useMemo, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
@@ -5,8 +7,8 @@ import tw from 'twin.macro'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import prettyBytes from 'pretty-bytes'
 import Fuse from 'fuse.js'
-import { css } from '@emotion/core'
-import { useTheme } from 'emotion-theming'
+import { css } from '@emotion/react'
+import { useTheme } from '@emotion/react'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'

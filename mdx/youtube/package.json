@@ -23,8 +23,8 @@
   "peerDependencies": {
     "@consent-manager/core": "^0.0.1-next.9",
     "@consent-manager/integration-youtube": "^0.0.1-next.8",
-    "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.23",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "gatsby-theme-mdx-suite-base": "^0.11.7",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",

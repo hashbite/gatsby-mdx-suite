@@ -1,7 +1,9 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
 import React, { useMemo } from 'react'
 import propTypes from 'prop-types'
 import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 /**
  * Offset one component on given conditions.

@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import merge from 'deepmerge'
-import { ThemeProvider, useTheme } from 'emotion-theming'
+import { ThemeProvider, useTheme } from '@emotion/react'
 
 import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
 

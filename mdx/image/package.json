@@ -21,13 +21,13 @@
     "media"
   ],
   "peerDependencies": {
-    "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "prop-types": "^15.7.0",
     "react": "^17.0.1"
   },
   "dependencies": {
-    "@emotion/is-prop-valid": "^0.8.8",
+    "@emotion/is-prop-valid": "^1.1.0",
     "@gatsby-mdx-suite/contexts": "^0.3.10"
   },
   "publishConfig": {

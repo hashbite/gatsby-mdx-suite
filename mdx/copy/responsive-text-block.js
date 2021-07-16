@@ -1,6 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 import responsiveFont from '@gatsby-mdx-suite/helpers/styling/responsive-font'
