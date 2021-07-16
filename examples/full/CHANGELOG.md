@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.12.6...gatsby-mdx-suite-example-full@0.12.7) (2021-07-16)
+
+
+### Bug Fixes
+
+* **lighthouse:** add missing titles to icons ([99a5698](https://github.com/axe312ger/gatsby-mdx-suite/commit/99a5698eb75daece55fe39bcd58f4165549a9780))
+
+
+
+
+
 ## [0.12.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.12.5...gatsby-mdx-suite-example-full@0.12.6) (2021-06-28)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-full

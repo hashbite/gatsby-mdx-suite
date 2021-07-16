@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.10.7...gatsby-theme-mdx-suite-core@0.10.8) (2021-07-16)
+
+
+### Bug Fixes
+
+* **lighthouse:** add aria-label to mobile menu button ([6a5df83](https://github.com/axe312ger/gatsby-mdx-suite/commit/6a5df83ec4fbd63d7bae011cba64d307074565b3))
+* **lighthouse:** add width and height attributes to images ([99560d6](https://github.com/axe312ger/gatsby-mdx-suite/commit/99560d6b6cb6e6b63339e28cfea890f7739ec28b))
+
+
+
+
+
 ## [0.10.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.10.6...gatsby-theme-mdx-suite-core@0.10.7) (2021-06-28)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-core

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.6...gatsby-theme-mdx-suite-base@0.13.7) (2021-07-16)
+
+
+### Bug Fixes
+
+* **lighthouse:** add aria-label to mobile menu button ([6a5df83](https://github.com/axe312ger/gatsby-mdx-suite/commit/6a5df83ec4fbd63d7bae011cba64d307074565b3))
+
+
+### Performance Improvements
+
+* **browser:** preconnect and dns-prefetch Contentful Image API to reduce initial image loading time ([1702e05](https://github.com/axe312ger/gatsby-mdx-suite/commit/1702e057ca990ba26e942ee7510cd2ecebb3562f))
+
+
+
+
+
 ## [0.13.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.5...gatsby-theme-mdx-suite-base@0.13.6) (2021-06-28)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base
