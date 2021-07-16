@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 import { useMDXComponents } from '@mdx-js/react'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 import verticalRhythm from '@gatsby-mdx-suite/helpers/styling/vertical-rhythm'
 

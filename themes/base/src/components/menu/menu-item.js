@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
-import { cx, css } from 'emotion'
+import { cx, css } from '@emotion/css'
 import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'

@@ -51,8 +51,8 @@
     "use-persisted-state": "^0.3.3"
   },
   "peerDependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "gatsby-plugin-mdx": "^1.2.40"
   }
 }

@@ -1,4 +1,4 @@
-import { css, keyframes as emotionKeyframes } from 'emotion'
+import { css, keyframes as emotionKeyframes } from '@emotion/css'
 
 const keyframes = emotionKeyframes`
   40% {
