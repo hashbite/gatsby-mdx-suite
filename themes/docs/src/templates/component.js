@@ -44,12 +44,8 @@ function DocsComponentTemplate({ data, pageContext }) {
   const MdxSuiteData = useContext(MdxSuiteContext)
   const [activeTab, setActiveTab] = useState(0)
 
-  const {
-    displayName,
-    description,
-    componentProps,
-    examples,
-  } = data.componentMetadata
+  const { displayName, description, componentProps, examples } =
+    data.componentMetadata
 
   const tabs = [
     `<${displayName} />`,

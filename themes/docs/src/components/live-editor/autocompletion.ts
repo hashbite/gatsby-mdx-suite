@@ -210,23 +210,23 @@ function useComponentDescriptorMap(result: any): ComponentDescriptorMap {
     const rawComponentDescriptors = result.allComponentMetadata.nodes.filter(
       (n) => mdxComponents.hasOwnProperty(n.displayName)
     )
-    const componentDescriptors = (rawComponentDescriptors as any[]).map<ComponentDescriptor>(
-      (raw) => {
-        return {
-          name: raw.displayName,
-          description: raw.description.text,
-          props: (raw.props as any[]).map((rawProp) => {
-            return {
-              name: rawProp.name,
-              type: rawProp.type?.name,
-              defaultValue: rawProp.defaultValue?.value,
-              description: rawProp.description.text,
-              required: rawProp.required,
-            }
-          }),
-        }
+    const componentDescriptors = (
+      rawComponentDescriptors as any[]
+    ).map<ComponentDescriptor>((raw) => {
+      return {
+        name: raw.displayName,
+        description: raw.description.text,
+        props: (raw.props as any[]).map((rawProp) => {
+          return {
+            name: rawProp.name,
+            type: rawProp.type?.name,
+            defaultValue: rawProp.defaultValue?.value,
+            description: rawProp.description.text,
+            required: rawProp.required,
+          }
+        }),
       }
-    )
+    })
 
     return new Map<string, ComponentDescriptor>(
       componentDescriptors.map((d) => [d.name, d])
