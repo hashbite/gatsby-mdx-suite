@@ -50,13 +50,10 @@ const NavigationBar = ({
 }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const theme = useTheme()
-  const [
-    scrollTriggerInstancePinning,
-    setScrollTriggerInstancePinning,
-  ] = useState(null)
-  const [scrollTriggerInstanceFade, setScrollTriggerInstanceFade] = useState(
-    null
-  )
+  const [scrollTriggerInstancePinning, setScrollTriggerInstancePinning] =
+    useState(null)
+  const [scrollTriggerInstanceFade, setScrollTriggerInstanceFade] =
+    useState(null)
 
   useKillScrollTriggerOnCleanup(scrollTriggerInstancePinning)
   useKillScrollTriggerOnCleanup(scrollTriggerInstanceFade)

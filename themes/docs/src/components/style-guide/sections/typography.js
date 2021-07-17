@@ -20,62 +20,102 @@ const FontPreview = styled.div(
   `
 )
 
-const FontTitle = styled.div((props) => ({ theme, ...props }) => css`
-  ${tw`text-center text-6xl`}
-`)
-const FontWeights = styled.div((props) => ({ theme, ...props }) => css`
-  ${tw`
+const FontTitle = styled.div(
+  (props) =>
+    ({ theme, ...props }) =>
+      css`
+        ${tw`text-center text-6xl`}
+      `
+)
+const FontWeights = styled.div(
+  (props) =>
+    ({ theme, ...props }) =>
+      css`
+        ${tw`
       py-2
       border-2 border-gray-900 border-l-0 border-r-0
       uppercase text-center
     `}
-`)
-const FontWeight = styled.span((props) => ({ theme, weight, ...props }) => css`
-  font-weight: ${weight};
+      `
+)
+const FontWeight = styled.span(
+  (props) =>
+    ({ theme, weight, ...props }) =>
+      css`
+        font-weight: ${weight};
 
-  :not(:last-child)::after {
-    content: ' | ';
-  }
-`)
-const FontDetails = styled.div((props) => ({ theme, ...props }) => css`
-  ${tw`
+        :not(:last-child)::after {
+          content: ' | ';
+        }
+      `
+)
+const FontDetails = styled.div(
+  (props) =>
+    ({ theme, ...props }) =>
+      css`
+        ${tw`
     py-4
     grid grid-cols-2 md:grid-cols-3 gap-4 items-center
     border-b-2 border-gray-900`}
-`)
-const FontDescription = styled.div((props) => ({ theme, ...props }) => css`
-  ${tw`py-4 `}
-`)
-const FontMeta = styled.div((props) => ({ theme, ...props }) => css`
-  ${tw`
+      `
+)
+const FontDescription = styled.div(
+  (props) =>
+    ({ theme, ...props }) =>
+      css`
+        ${tw`py-4 `}
+      `
+)
+const FontMeta = styled.div(
+  (props) =>
+    ({ theme, ...props }) =>
+      css`
+        ${tw`
     py-4 px-4
     border-l-2 md:border-r-2 border-gray-900
   `}
-`)
-const FontInitials = styled.div((props) => ({ theme, ...props }) => css`
-  ${tw`text-center`}
-  font-size: 6rem;
-`)
-const FontAlphabet = styled.div((props) => ({ theme, ...props }) => css`
-  ${tw`text-center`}
-`)
-const FontFamilies = styled.div((props) => ({ theme, ...props }) => css`
-  ${tw`
+      `
+)
+const FontInitials = styled.div(
+  (props) =>
+    ({ theme, ...props }) =>
+      css`
+        ${tw`text-center`}
+        font-size: 6rem;
+      `
+)
+const FontAlphabet = styled.div(
+  (props) =>
+    ({ theme, ...props }) =>
+      css`
+        ${tw`text-center`}
+      `
+)
+const FontFamilies = styled.div(
+  (props) =>
+    ({ theme, ...props }) =>
+      css`
+        ${tw`
     py-4
     col-span-2 md:col-span-1
     border-t-2 md:border-t-0 border-gray-900
     `}
 
-  ul {
-    ${tw`grid grid-cols-2 md:grid-cols-1`}
-  }
-`)
-const FontHeadlines = styled.div((props) => ({ theme, ...props }) => css`
-  ${tw`
+        ul {
+          ${tw`grid grid-cols-2 md:grid-cols-1`}
+        }
+      `
+)
+const FontHeadlines = styled.div(
+  (props) =>
+    ({ theme, ...props }) =>
+      css`
+        ${tw`
     py-4
     border-b-2 border-gray-900
     `}
-`)
+      `
+)
 
 const coreFonts = ['headline', 'body']
 
