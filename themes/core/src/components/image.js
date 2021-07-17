@@ -76,12 +76,13 @@ export default function Image({
     )
   }
 
-  // optional SQIP support
-  if (renderData?.sqip?.dataURI) {
+  // custom placeholder support
+  if (renderData?.placeholder?.dataURI) {
     if (!renderData?.gatsbyImageData?.placeholder) {
       renderData.gatsbyImageData.placeholder = {}
     }
-    renderData.gatsbyImageData.placeholder.fallback = renderData.sqip.dataURI
+    renderData.gatsbyImageData.placeholder.fallback =
+      renderData.placeholder.dataURI
   }
 
   if (!renderData?.gatsbyImageData) {
