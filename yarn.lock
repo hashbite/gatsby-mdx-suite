@@ -4853,9 +4853,9 @@ babel-preset-current-node-syntax@^1.0.0:
     "@babel/plugin-syntax-optional-chaining" "^7.8.3"
     "@babel/plugin-syntax-top-level-await" "^7.8.3"
 
-babel-preset-gatsby@^1.8.0, babel-preset-gatsby@^1.9.0:
+babel-preset-gatsby@1.9.0, babel-preset-gatsby@^1.9.0:
   version "1.9.0"
-  resolved "https://registry.npmjs.org/babel-preset-gatsby/-/babel-preset-gatsby-1.9.0.tgz#d1822ea83822ed12851eb3860781f930b13e9ec6"
+  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-1.9.0.tgz#d1822ea83822ed12851eb3860781f930b13e9ec6"
   integrity sha512-dmGH+GgRARF/9pxCzu+eNZ3Owm0K2LEjwQFFnQkJ9Bav/4B/XyGqJtlNB7Egz6qcmqds791arfeWtEFEDYQ9mw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.0"
