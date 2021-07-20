@@ -53,6 +53,6 @@
     "react-scrolllock": "^5.0.1"
   },
   "devDependencies": {
-    "webpack-stats-plugin": "^1.0.3"
+    "webpack-stats-plugin": "1.0.3"
   }
 }
