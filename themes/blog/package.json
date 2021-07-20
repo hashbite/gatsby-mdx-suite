@@ -26,7 +26,7 @@
     "@gatsby-mdx-suite/mdx-layout": "^0.28.8",
     "@gatsby-mdx-suite/mdx-link": "^0.9.11",
     "deepmerge": "^4.2.2",
-    "gatsby-awesome-pagination": "^0.3.6",
+    "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-theme-mdx-suite-base": "^0.13.8",
     "gatsby-theme-mdx-suite-core": "^0.10.9"
   }
