@@ -25,7 +25,7 @@
     "twin.macro": "^1.9.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/mdx-image": "^0.9.5"
+    "gatsby-theme-mdx-suite-core": "^0.10.9"
   },
   "publishConfig": {
     "access": "public"
