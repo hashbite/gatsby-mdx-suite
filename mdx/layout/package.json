@@ -29,8 +29,8 @@
   "dependencies": {
     "@gatsby-mdx-suite/helpers": "^0.16.6",
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.22",
-    "@gatsby-mdx-suite/mdx-image": "^0.9.5",
     "@gatsby-mdx-suite/mdx-video": "^0.9.8",
+    "gatsby-theme-mdx-suite-core": "^0.10.9",
     "gsap": "^3.7.1"
   },
   "publishConfig": {

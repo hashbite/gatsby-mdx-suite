@@ -30,9 +30,9 @@
     "@emotion/is-prop-valid": "^1.1.0",
     "@gatsby-mdx-suite/helpers": "^0.16.6",
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.22",
-    "@gatsby-mdx-suite/mdx-image": "^0.9.5",
     "@gatsby-mdx-suite/mdx-link": "^0.9.11",
     "@gatsby-mdx-suite/mdx-video": "^0.9.8",
+    "gatsby-theme-mdx-suite-core": "^0.10.9",
     "pure-react-carousel": "^1.27.6"
   },
   "publishConfig": {
