@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.10](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.7.9...@gatsby-mdx-suite/mdx-vimeo@0.7.10) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-vimeo
+
+
+
+
+
 ## [0.7.9](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.7.8...@gatsby-mdx-suite/mdx-vimeo@0.7.9) (2021-07-16)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-vimeo

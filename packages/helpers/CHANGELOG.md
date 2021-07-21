@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.16.6...@gatsby-mdx-suite/helpers@0.16.7) (2021-07-21)
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([36d24fa](https://github.com/axe312ger/gatsby-mdx-suite/commit/36d24fa332a298039b82f151af1269482806d759))
+
+
+
+
+
 ## [0.16.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.16.5...@gatsby-mdx-suite/helpers@0.16.6) (2021-07-16)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/helpers

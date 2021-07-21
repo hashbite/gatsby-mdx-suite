@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.7.9...gatsby-mdx-suite-example-basic@0.8.0) (2021-07-21)
+
+
+### Features
+
+* projects can now define their own media collections ([9997fc5](https://github.com/axe312ger/gatsby-mdx-suite/commit/9997fc52d8787ed2fa292967abd83025f59a9a19))
+
+
+
+
+
 ## [0.7.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-basic@0.7.8...gatsby-mdx-suite-example-basic@0.7.9) (2021-07-16)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-basic

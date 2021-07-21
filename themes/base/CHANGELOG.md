@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.8...gatsby-theme-mdx-suite-base@0.13.9) (2021-07-21)
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([36d24fa](https://github.com/axe312ger/gatsby-mdx-suite/commit/36d24fa332a298039b82f151af1269482806d759))
+
+
+
+
+
 ## [0.13.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.7...gatsby-theme-mdx-suite-base@0.13.8) (2021-07-16)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base
