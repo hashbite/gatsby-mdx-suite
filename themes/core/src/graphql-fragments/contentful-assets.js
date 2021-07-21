@@ -31,7 +31,7 @@ export const MdxSuiteContentfulAsset = graphql`
 export const MdxSuiteMediaDocs = graphql`
   fragment MdxSuiteMediaDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 300, placeholder: DOMINANT_COLOR)
+    gatsbyImageData(width: 300, placeholder: NONE)
     file {
       details {
         size
