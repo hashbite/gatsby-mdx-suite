@@ -9373,10 +9373,10 @@ gatsby-plugin-force-trailing-slashes@^1.0.5:
   dependencies:
     "@babel/runtime" "7.12.5"
 
-gatsby-plugin-hoofd@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/gatsby-plugin-hoofd/-/gatsby-plugin-hoofd-0.2.0.tgz#cd36167c664d68beca89053944b1495f27652d69"
-  integrity sha512-1TdzVEnHc5I3wsJ+rsqOA+L5J8iBKZ3Sh55SuX+AqpqVSzgBH2zXamBzbctY74G+Ix4CFCg5S8jFZtDB2OU/fQ==
+gatsby-plugin-hoofd@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-hoofd/-/gatsby-plugin-hoofd-0.3.0.tgz#d18c370c3b8e5b97726afa77623c21b21dc811d7"
+  integrity sha512-JVuuCKk+xeGUylWnT2PSkI3C+HRPnPKfnvSXI9/BAf/1jbAEhTDB7AtwmhCGlapJZHuFAG4xq5Z9/XDr84qwqw==
 
 gatsby-plugin-image@^1.9.0:
   version "1.10.0"
