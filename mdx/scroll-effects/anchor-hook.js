@@ -1,6 +1,7 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import { useWindowSize, useSize } from 'react-use'
 
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 
@@ -56,17 +57,33 @@ const AnchorHookLink = styled.a``
  * </Section>
  */
 export default function AnchorHook({ to, as, verticalAlign, children }) {
-  const href = `#${to}`
+  const href = useMemo(() => `#${to}`, [to])
+  const { height: windowHeight } = useWindowSize()
 
   const handleOnClick = useCallback(
     (e) => {
       e.preventDefault()
-      document.querySelector(href).scrollIntoView({
-        behavior: 'smooth',
-        block: verticalAlign,
-      })
+      const anchor = document.querySelector(href)
+      const anchorTop = anchor.getBoundingClientRect().top
+      const anchorHeight = anchor.offsetHeight
+      const modifier = parseInt(
+        window
+          .getComputedStyle(document.body)
+          .getPropertyValue('--floating-header-height')
+      )
+
+      let scrollAlign = modifier
+      if (verticalAlign === 'center') {
+        scrollAlign = (windowHeight + modifier) / 2 - anchorHeight / 2
+      }
+      if (verticalAlign === 'end') {
+        scrollAlign = windowHeight - anchorHeight
+      }
+
+      const scrollPos = anchorTop - scrollAlign
+      window.scrollTo({ top: scrollPos, behavior: 'smooth' })
     },
-    [verticalAlign, href]
+    [href, verticalAlign, windowHeight]
   )
 
   return (
@@ -91,7 +108,7 @@ AnchorHook.propTypes = {
   /** Define how the component should look like */
   as: propTypes.oneOf(['Link', 'CTA']),
   /** Define where the element shoudl be positioned vertically after scrolling  */
-  verticalAlign: propTypes.oneOf(['start', 'center', 'end', 'nearest']),
+  verticalAlign: propTypes.oneOf(['start', 'center', 'end']),
   /** Title of the AnchorHook Link or CTA */
   children: propTypes.node.isRequired,
 }
