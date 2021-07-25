@@ -76,9 +76,19 @@ export default function Image({
     )
   }
 
+  // The alt test should describe whats in the image: https://moz.com/learn/seo/alt-text
+  imgProps.alt = renderData.description || renderData.title || imgProps.alt
+
+  // The title is used as tooltip.
+  // Will probably be removed as it comes with accessability problems:
+  // https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML#image_titles
+  if (renderData.title) {
+    imgProps.title = renderData.title
+  }
+
   // custom placeholder support
-  if (renderData?.placeholder?.dataURI) {
-    if (!renderData?.gatsbyImageData?.placeholder) {
+  if (renderData.placeholder?.dataURI) {
+    if (!renderData.gatsbyImageData?.placeholder) {
       renderData.gatsbyImageData.placeholder = {}
     }
     renderData.gatsbyImageData.placeholder.fallback =
