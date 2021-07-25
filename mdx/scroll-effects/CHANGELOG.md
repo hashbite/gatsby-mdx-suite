@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.4.0...@gatsby-mdx-suite/mdx-scroll-effects@0.4.1) (2021-07-25)
+
+
+### Bug Fixes
+
+* **anchor:** take current window scroll position into account ([b8d2ecc](https://github.com/axe312ger/gatsby-mdx-suite/commit/b8d2ecc2ea270fe41aaf725a87487de8167b0b88))
+
+
+
+
+
 # [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.3.9...@gatsby-mdx-suite/mdx-scroll-effects@0.4.0) (2021-07-25)
 
 
