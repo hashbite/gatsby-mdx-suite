@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.11.0...gatsby-theme-mdx-suite-core@0.11.1) (2021-07-25)
+
+
+### Bug Fixes
+
+* **images:** readd title and alt properties to images from Contentful ([3cdbade](https://github.com/axe312ger/gatsby-mdx-suite/commit/3cdbade6615be4cbb4eb922806767e52607eaeaf))
+
+
+### Performance Improvements
+
+* temporarily disable image placeholders in docs ([2f5478e](https://github.com/axe312ger/gatsby-mdx-suite/commit/2f5478edcbb4d8f01d311b6c582d75a67110966f))
+
+
+
+
+
 # [0.11.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.10.9...gatsby-theme-mdx-suite-core@0.11.0) (2021-07-21)
 
 

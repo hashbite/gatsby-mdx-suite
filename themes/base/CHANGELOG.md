@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.9...gatsby-theme-mdx-suite-base@0.14.0) (2021-07-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency gatsby-plugin-hoofd to ^0.3.0 ([e9606b5](https://github.com/axe312ger/gatsby-mdx-suite/commit/e9606b58ddad0e6a10907001b606e4802dd45e1a))
+
+
+### Features
+
+* **anchor:** Anchors now take the floating header into account to avoid overlaps ([89e9fbc](https://github.com/axe312ger/gatsby-mdx-suite/commit/89e9fbcece502538dbef618abc43a268d6e3ba20))
+
+
+
+
+
 ## [0.13.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.8...gatsby-theme-mdx-suite-base@0.13.9) (2021-07-21)
 
 

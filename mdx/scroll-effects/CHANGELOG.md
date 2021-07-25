@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.3.9...@gatsby-mdx-suite/mdx-scroll-effects@0.4.0) (2021-07-25)
+
+
+### Features
+
+* **anchor:** Anchors now take the floating header into account to avoid overlaps ([89e9fbc](https://github.com/axe312ger/gatsby-mdx-suite/commit/89e9fbcece502538dbef618abc43a268d6e3ba20))
+
+
+
+
+
 ## [0.3.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.3.8...@gatsby-mdx-suite/mdx-scroll-effects@0.3.9) (2021-07-21)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-scroll-effects
