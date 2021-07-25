@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import { Global, css } from '@emotion/react'
 import tw from 'twin.macro'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -48,6 +48,7 @@ const NavigationBar = ({
   transparentTextColor,
   transparentBackground,
 }) => {
+  const [headerHeight, setHeaderHeight] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
   const theme = useTheme()
   const [scrollTriggerInstancePinning, setScrollTriggerInstancePinning] =
@@ -71,6 +72,8 @@ const NavigationBar = ({
       const positionParent = node.closest('section,#___gatsby')
 
       if (sticky) {
+        setHeaderHeight(node.offsetHeight)
+
         setScrollTriggerInstancePinning(
           ScrollTrigger.create({
             trigger: node,
@@ -123,6 +126,13 @@ const NavigationBar = ({
     >
       <NavigationDesktop />
       <NavigationMobile menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Global
+        styles={css`
+          :root {
+            --floating-header-height: ${headerHeight}px;
+          }
+        `}
+      />
     </NavigationBarWrapper>
   )
 }

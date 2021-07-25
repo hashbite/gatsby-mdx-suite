@@ -4,7 +4,7 @@ import propTypes from 'prop-types'
 /**
  * Set a scroll position and use it as destination for an `<AnchorHook/>` component.
  *
- * Will be not visible to the visitor. Place it between `<Sections/>` to achieve the best scroll result.
+ * Will be not visible to the visitor. Wrap it around `<Sections/>` to achieve the best scroll result.
  *
  * @example
  *
@@ -37,8 +37,7 @@ import propTypes from 'prop-types'
  * <Image id="randomPictureid" />
  * <Image id="randomPictureid" />
  *
- * <Hook id="end-of-page" />
- *
+ * <Anchor id="end-of-page">
  * <Section>
  *
  * Welcome to the end of the page.
@@ -49,9 +48,10 @@ import propTypes from 'prop-types'
  * * <AnchorHook to="start-of-page">Back to the top</AnchorHook>
  *
  * </Section>
+ * </Anchor>
  */
-export default function Anchor({ id }) {
-  return <div id={id} />
+export default function Anchor({ id, children }) {
+  return <div id={id}>{children}</div>
 }
 
 Anchor.propTypes = {
