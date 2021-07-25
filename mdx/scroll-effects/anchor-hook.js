@@ -64,23 +64,27 @@ export default function AnchorHook({ to, as, verticalAlign, children }) {
     (e) => {
       e.preventDefault()
       const anchor = document.querySelector(href)
-      const anchorTop = anchor.getBoundingClientRect().top
+      const scrollDistance =
+        window.pageYOffset + anchor.getBoundingClientRect().top
       const anchorHeight = anchor.offsetHeight
-      const modifier = parseInt(
-        window
-          .getComputedStyle(document.body)
-          .getPropertyValue('--floating-header-height')
-      )
+      // Modifiy scroll offset via --floating-header-height css variable
+      const modifier =
+        parseInt(
+          window
+            .getComputedStyle(document.body)
+            .getPropertyValue('--floating-header-height')
+        ) || 0
 
-      let scrollAlign = modifier
+      // Adjust offset if vertical align is not top
+      let scrollOffset = modifier
       if (verticalAlign === 'center') {
-        scrollAlign = (windowHeight + modifier) / 2 - anchorHeight / 2
+        scrollOffset = (windowHeight + modifier) / 2 - anchorHeight / 2
       }
       if (verticalAlign === 'end') {
-        scrollAlign = windowHeight - anchorHeight
+        scrollOffset = windowHeight - anchorHeight
       }
 
-      const scrollPos = anchorTop - scrollAlign
+      const scrollPos = scrollDistance - scrollOffset
       window.scrollTo({ top: scrollPos, behavior: 'smooth' })
     },
     [href, verticalAlign, windowHeight]
