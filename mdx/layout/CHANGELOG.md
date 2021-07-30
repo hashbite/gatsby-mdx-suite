@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.11...@gatsby-mdx-suite/mdx-layout@0.28.12) (2021-07-30)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
 ## [0.28.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.10...@gatsby-mdx-suite/mdx-layout@0.28.11) (2021-07-30)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout

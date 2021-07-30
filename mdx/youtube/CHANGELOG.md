@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.9...@gatsby-mdx-suite/mdx-youtube@0.12.10) (2021-07-30)
+
+
+### Bug Fixes
+
+* ensure loading indicator is showing up till lazy component is loaded ([9bc55b7](https://github.com/axe312ger/gatsby-mdx-suite/commit/9bc55b7df5a314e5346a8abc48bbfaadf8302820))
+
+
+
+
+
 ## [0.12.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.8...@gatsby-mdx-suite/mdx-youtube@0.12.9) (2021-07-30)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.14](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.7.13...@gatsby-mdx-suite/mdx-vimeo@0.7.14) (2021-07-30)
+
+
+### Bug Fixes
+
+* ensure loading indicator is showing up till lazy component is loaded ([9bc55b7](https://github.com/axe312ger/gatsby-suite-mdx/commit/9bc55b7df5a314e5346a8abc48bbfaadf8302820))
+
+
+
+
+
 ## [0.7.13](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.7.12...@gatsby-mdx-suite/mdx-vimeo@0.7.13) (2021-07-30)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-vimeo
