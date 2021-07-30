@@ -6,7 +6,6 @@
  */
 
 import React from 'react'
-import tw from 'twin.macro'
 
 import createPersistedState from 'use-persisted-state'
 
@@ -31,13 +30,11 @@ const consentManagerConfig = {
   integrations: [
     matomoIntegration({
       // You might want to store these values in environment variables
-      matomoURL: 'https://trackboi.uber.space/',
+      matomoURL: 'https://statistics.hashbite.net/',
       siteID: 9,
     }),
   ],
 }
-
-const SubmitButton = tw(Button)`w-full`
 
 /**
  * Wraps the apps root element with consent-manager
