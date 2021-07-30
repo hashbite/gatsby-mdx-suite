@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import propTypes from 'prop-types'
+import { lazy } from '@loadable/component'
 
 import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
+import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 import { PrivacyShield } from '@consent-manager/core'
 import { youtubeIntegration } from '@consent-manager/integration-youtube'
-import loadable from '@loadable/component'
 
-const YoutubeVideoRenderer = loadable(() =>
+const YoutubeVideoRenderer = lazy(() =>
   import(
     /* webpackChunkName: "youtube-video-player" */ './youtube-video-renderer'
   )
@@ -28,7 +29,9 @@ export default function YoutubeVideo(props) {
       fallbackUrl={`https://www.youtube.com/watch?v=${props.id}`}
     >
       <LazyComponent>
-        <YoutubeVideoRenderer {...props} />
+        <Suspense fallback={<Loading />}>
+          <YoutubeVideoRenderer {...props} />
+        </Suspense>
       </LazyComponent>
     </PrivacyShield>
   )

@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import propTypes from 'prop-types'
 
 import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
+import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 import { PrivacyShield } from '@consent-manager/core'
 import { vimeoIntegration } from '@consent-manager/integration-vimeo'
-import loadable from '@loadable/component'
+import { lazy } from '@loadable/component'
 
-const VimeoVideoRenderer = loadable(() =>
+const VimeoVideoRenderer = lazy(() =>
   import(/* webpackChunkName: "vimeo-video-player" */ './vimeo-video-renderer')
 )
 
@@ -26,7 +27,9 @@ export default function VimeoVideo(props) {
       fallbackUrl={`https://vimeo.com/${props.id}`}
     >
       <LazyComponent>
-        <VimeoVideoRenderer {...props} />
+        <Suspense fallback={<Loading />}>
+          <VimeoVideoRenderer {...props} />
+        </Suspense>
       </LazyComponent>
     </PrivacyShield>
   )
