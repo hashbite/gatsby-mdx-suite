@@ -1,11 +1,12 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import LazyChunk from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-chunk'
+import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
 import { PrivacyShield } from '@consent-manager/core'
 import { youtubeIntegration } from '@consent-manager/integration-youtube'
+import loadable from '@loadable/component'
 
-const YoutubeVideoRenderer = React.lazy(() =>
+const YoutubeVideoRenderer = loadable(() =>
   import(
     /* webpackChunkName: "youtube-video-player" */ './youtube-video-renderer'
   )
@@ -26,9 +27,9 @@ export default function YoutubeVideo(props) {
       id={YoutubeVideo.privacy.id}
       fallbackUrl={`https://www.youtube.com/watch?v=${props.id}`}
     >
-      <LazyChunk>
+      <LazyComponent>
         <YoutubeVideoRenderer {...props} />
-      </LazyChunk>
+      </LazyComponent>
     </PrivacyShield>
   )
 }
