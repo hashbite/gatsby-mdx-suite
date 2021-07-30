@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.2...gatsby-theme-mdx-suite-base@0.15.3) (2021-07-30)
+
+
+### Bug Fixes
+
+* **icons:** improve icons center rendering ([a17f9fa](https://github.com/axe312ger/gatsby-mdx-suite/commit/a17f9faac8c9a826dc9c7b2a9e4143e4c4caa70d))
+
+
+
+
+
 ## [0.15.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.1...gatsby-theme-mdx-suite-base@0.15.2) (2021-07-30)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base
