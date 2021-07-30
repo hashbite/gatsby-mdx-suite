@@ -11,6 +11,7 @@ const DefaultLoadingWrapper = styled.div(
       px-content-gap
       py-16
     `}
+    height: 38.2vh;
   `
 )
 
