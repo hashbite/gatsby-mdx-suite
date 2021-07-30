@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.2...gatsby-mdx-suite-example-full@0.13.3) (2021-07-30)
+
+
+### Bug Fixes
+
+* **example/full:** use hashbite tracking ([55ae3ee](https://github.com/axe312ger/gatsby-mdx-suite/commit/55ae3eee6808130a4e165abc4c576a5b9926b6a2))
+
+
+
+
+
 ## [0.13.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.1...gatsby-mdx-suite-example-full@0.13.2) (2021-07-25)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-full

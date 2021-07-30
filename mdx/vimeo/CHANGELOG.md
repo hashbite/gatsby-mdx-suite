@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.12](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.7.11...@gatsby-mdx-suite/mdx-vimeo@0.7.12) (2021-07-30)
+
+
+### Bug Fixes
+
+* **lazy:** remove lazy-chunk and use @loadable/component ([cd453ff](https://github.com/axe312ger/gatsby-suite-mdx/commit/cd453ff070f108146b20d943eff615ef7a21fbee))
+
+
+
+
+
 ## [0.7.11](https://github.com/axe312ger/gatsby-suite-mdx/compare/@gatsby-mdx-suite/mdx-vimeo@0.7.10...@gatsby-mdx-suite/mdx-vimeo@0.7.11) (2021-07-25)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-vimeo

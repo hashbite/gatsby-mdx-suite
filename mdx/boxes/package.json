@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-boxes",
-  "version": "0.15.10",
+  "version": "0.15.11",
   "description": "Create layouts with grid of boxes",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -31,8 +31,8 @@
     "@gatsby-mdx-suite/helpers": "^0.16.7",
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.23",
     "@gatsby-mdx-suite/mdx-link": "^0.9.12",
-    "@gatsby-mdx-suite/mdx-video": "^0.9.9",
-    "gatsby-theme-mdx-suite-core": "^0.11.1",
+    "@gatsby-mdx-suite/mdx-video": "^0.9.10",
+    "gatsby-theme-mdx-suite-core": "^0.11.2",
     "pure-react-carousel": "^1.27.6"
   },
   "publishConfig": {

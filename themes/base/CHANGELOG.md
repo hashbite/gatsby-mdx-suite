@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.14.0...gatsby-theme-mdx-suite-base@0.15.0) (2021-07-30)
+
+
+### Bug Fixes
+
+* **lazy:** remove lazy-chunk and use @loadable/component ([cd453ff](https://github.com/axe312ger/gatsby-mdx-suite/commit/cd453ff070f108146b20d943eff615ef7a21fbee))
+
+
+### Features
+
+* **lazy:** improve style of default loading indicator ([cf35ad4](https://github.com/axe312ger/gatsby-mdx-suite/commit/cf35ad4077ed9b49db75bf44fcc3042ec16967a8))
+
+
+
+
+
 # [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.9...gatsby-theme-mdx-suite-base@0.14.0) (2021-07-25)
 
 

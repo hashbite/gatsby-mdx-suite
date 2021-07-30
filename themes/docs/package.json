@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-suite-docs",
-  "version": "0.10.9",
+  "version": "0.10.10",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -25,7 +25,7 @@
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.10",
     "@gatsby-mdx-suite/helpers": "^0.16.7",
-    "@gatsby-mdx-suite/mdx-boxes": "^0.15.10",
+    "@gatsby-mdx-suite/mdx-boxes": "^0.15.11",
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.23",
     "@gatsby-mdx-suite/mdx-copy": "^0.15.7",
     "@gatsby-mdx-suite/mdx-link": "^0.9.12",

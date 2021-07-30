@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.4.1...@gatsby-mdx-suite/mdx-scroll-effects@0.4.2) (2021-07-30)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-scroll-effects
+
+
+
+
+
 ## [0.4.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.4.0...@gatsby-mdx-suite/mdx-scroll-effects@0.4.1) (2021-07-25)
 
 

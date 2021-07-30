@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.9...@gatsby-mdx-suite/mdx-video@0.9.10) (2021-07-30)
+
+
+### Bug Fixes
+
+* **lazy:** remove lazy-chunk and use @loadable/component ([cd453ff](https://github.com/axe312ger/gatsby-mdx-suite/commit/cd453ff070f108146b20d943eff615ef7a21fbee))
+
+
+
+
+
 ## [0.9.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.8...@gatsby-mdx-suite/mdx-video@0.9.9) (2021-07-21)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-video
