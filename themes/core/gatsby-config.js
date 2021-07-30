@@ -51,6 +51,15 @@ module.exports = (themeConfig) => {
       `gatsby-plugin-image`,
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
+      // SSR
+      `gatsby-plugin-loadable-components-ssr`,
+      // Old browser support
+      {
+        resolve: `gatsby-plugin-polyfill-io`,
+        options: {
+          features: [`IntersectionObserverEntry`, `IntersectionObserver`],
+        },
+      },
     ].filter(Boolean),
   }
 }

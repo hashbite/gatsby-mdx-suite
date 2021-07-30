@@ -1,11 +1,12 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import LazyChunk from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-chunk'
+import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
 import { PrivacyShield } from '@consent-manager/core'
 import { vimeoIntegration } from '@consent-manager/integration-vimeo'
+import loadable from '@loadable/component'
 
-const VimeoVideoRenderer = React.lazy(() =>
+const VimeoVideoRenderer = loadable(() =>
   import(/* webpackChunkName: "vimeo-video-player" */ './vimeo-video-renderer')
 )
 
@@ -24,9 +25,9 @@ export default function VimeoVideo(props) {
       id={VimeoVideo.privacy.id}
       fallbackUrl={`https://vimeo.com/${props.id}`}
     >
-      <LazyChunk>
+      <LazyComponent>
         <VimeoVideoRenderer {...props} />
-      </LazyChunk>
+      </LazyComponent>
     </PrivacyShield>
   )
 }
