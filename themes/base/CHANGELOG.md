@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.0...gatsby-theme-mdx-suite-base@0.15.1) (2021-07-30)
+
+
+### Bug Fixes
+
+* **lazy:** add min height to loading indicator ([fcb76ff](https://github.com/axe312ger/gatsby-mdx-suite/commit/fcb76fff0e9e60a7ad8008a8df6eeb840a516fa9))
+
+
+
+
+
 # [0.15.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.14.0...gatsby-theme-mdx-suite-base@0.15.0) (2021-07-30)
 
 
