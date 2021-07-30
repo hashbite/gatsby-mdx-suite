@@ -28,7 +28,7 @@ const IconWrapper = styled.span(
       `}
 
       svg {
-        display: inline-block;
+        display: ${display};
         width: 1em;
         height: auto;
         vertical-align: baseline;
