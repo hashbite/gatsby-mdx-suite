@@ -25,7 +25,7 @@
     "react": "^17.0.1"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.0",
+    "@emotion/react": "^11.4.1",
     "@gatsby-mdx-suite/helpers": "^0.16.7",
     "deepmerge": "^4.2.2"
   },
