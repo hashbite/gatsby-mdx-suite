@@ -22,6 +22,7 @@ import Modal from '@gatsby-mdx-suite/mdx-modal/modal'
 import Anchor from '@gatsby-mdx-suite/mdx-scroll-effects/anchor'
 import AnchorHook from '@gatsby-mdx-suite/mdx-scroll-effects/anchor-hook'
 import SectionZoom from '@gatsby-mdx-suite/mdx-scroll-effects/section-zoom'
+import Parallax from '@gatsby-mdx-suite/mdx-scroll-effects/parallax'
 
 // Integrations
 import MailchimpSignup from '@gatsby-mdx-suite/mdx-mailchimp/mailchimp-signup'
@@ -50,6 +51,7 @@ export default {
   Anchor,
   AnchorHook,
   SectionZoom,
+  Parallax,
   // Integrations
   MailchimpSignup,
   // Project specific

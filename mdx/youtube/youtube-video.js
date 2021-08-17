@@ -9,7 +9,7 @@ import { youtubeIntegration } from '@consent-manager/integration-youtube'
 
 const YoutubeVideoRenderer = lazy(() =>
   import(
-    /* webpackChunkName: "youtube-video-player" */ './youtube-video-renderer'
+    /* webpackChunkName: "mdx--youtube-video-player" */ './youtube-video-renderer'
   )
 )
 
