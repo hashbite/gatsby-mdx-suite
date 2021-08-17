@@ -30,8 +30,7 @@
     "@gatsby-mdx-suite/helpers": "^0.16.7",
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.24",
     "@gatsby-mdx-suite/mdx-video": "^0.9.11",
-    "gatsby-theme-mdx-suite-core": "^0.11.3",
-    "gsap": "^3.7.1"
+    "gatsby-theme-mdx-suite-core": "^0.11.3"
   },
   "publishConfig": {
     "access": "public"

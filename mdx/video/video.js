@@ -6,7 +6,7 @@ import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-
 import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 
 const VideoRenderer = lazy(() =>
-  import(/* webpackChunkName: "video-player" */ './video-renderer')
+  import(/* webpackChunkName: "mdx--video-player" */ './video-renderer')
 )
 export default function MdxVideo(props) {
   return (

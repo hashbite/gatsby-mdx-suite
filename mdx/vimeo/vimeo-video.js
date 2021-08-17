@@ -8,7 +8,9 @@ import { vimeoIntegration } from '@consent-manager/integration-vimeo'
 import { lazy } from '@loadable/component'
 
 const VimeoVideoRenderer = lazy(() =>
-  import(/* webpackChunkName: "vimeo-video-player" */ './vimeo-video-renderer')
+  import(
+    /* webpackChunkName: "mdx--vimeo-video-player" */ './vimeo-video-renderer'
+  )
 )
 
 /**
