@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.10",
-    "@gatsby-mdx-suite/helpers": "^0.16.7",
-    "gsap": "^3.7.1"
+    "@loadable/component": "^5.15.0",
+    "react-use": "^17.2.4"
   },
   "publishConfig": {
     "access": "public"
