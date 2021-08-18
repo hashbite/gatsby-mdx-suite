@@ -1,5 +1,6 @@
 const { resolve } = require('path')
 const themeConfig = require('./tailwind.config.js')
+const messagesEn = require('./src/locales/en-US/messages')
 
 // Duplicate and rename .env.example to .env and fill in your credentials
 require('dotenv').config({ path: `.env` })
@@ -27,6 +28,9 @@ module.exports = {
           spaceId: `kkye7j4w7zwc`,
           accessToken: `yfNcvsaJfU6nmL6xzKwbP-WHw27vvDzjTCeFkg93pKk`,
           environment: `basic`,
+        },
+        translations: {
+          'en-US': messagesEn,
         },
       },
     },

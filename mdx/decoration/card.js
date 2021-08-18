@@ -6,7 +6,7 @@ import Image from 'gatsby-theme-mdx-suite-core/src/components/image'
 
 const CardWrapper = tw.div`rounded overflow-hidden shadow-lg bg-white`
 
-const CardHeadline = tw.div`font-heading text-3xl`
+const CardHeadline = tw.div`font-headline text-3xl`
 const CardSubline = tw.div`uppercase font-bold text-lg`
 const CardContent = tw.div`px-6 py-4`
 const CardImage = tw(Image)`w-full`

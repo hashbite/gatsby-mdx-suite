@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { useTranslation } from 'react-i18next'
+import { t } from '@lingui/macro'
+
 import { useStaticQuery, graphql } from 'gatsby'
 import tw from 'twin.macro'
 
@@ -53,7 +54,6 @@ const Submit = tw.input`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 
  * <ContactForm />
  */
 export default function ContactForm({ successPageId }) {
-  const [t] = useTranslation()
   const result = useStaticQuery(graphql`
     query ContactFormQuery {
       allSitePage {
@@ -92,7 +92,9 @@ export default function ContactForm({ successPageId }) {
       <SweetInput name="name" autoComplete="off" />
       <FormColumns availableSpace="600">
         <FormItem>
-          <Label for={`firstName${salt}`}>{t('contactFormFirstName')}</Label>
+          <Label for={`firstName${salt}`}>
+            {t({ id: 'contactFormFirstName' })}
+          </Label>
           <TextInput
             name={`firstName${salt}`}
             id={`firstName${salt}`}
@@ -100,17 +102,21 @@ export default function ContactForm({ successPageId }) {
           />
         </FormItem>
         <FormItem>
-          <Label for={`lastName${salt}`}>{t('contactFormLastName')}</Label>
+          <Label for={`lastName${salt}`}>
+            {t({ id: 'contactFormLastName' })}
+          </Label>
           <TextInput name={`lastName${salt}`} id={`lastName${salt}`} required />
         </FormItem>
       </FormColumns>
       <FormItem>
-        <Label for={`position${salt}`}>{t('contactFormPosition')}</Label>
+        <Label for={`position${salt}`}>
+          {t({ id: 'contactFormPosition' })}
+        </Label>
         <TextInput name={`position${salt}`} id={`position${salt}`} required />
       </FormItem>
       <FormItem>
         <Label for={`companyEmail${salt}`}>
-          {t('contactFormCompanyEmail')}
+          {t({ id: 'contactFormCompanyEmail' })}
         </Label>
         <TextInput
           type="email"
@@ -120,12 +126,12 @@ export default function ContactForm({ successPageId }) {
         />
       </FormItem>
       <FormItem>
-        <Label for={`company${salt}`}>{t('contactFormCompany')}</Label>
+        <Label for={`company${salt}`}>{t({ id: 'contactFormCompany' })}</Label>
         <TextInput name={`company${salt}`} id={`company${salt}`} required />
       </FormItem>
       <FormItem>
         <Label for={`numberOfEmployees${salt}`}>
-          {t('contactFormNumberOfEmployees')}
+          {t({ id: 'contactFormNumberOfEmployees' })}
         </Label>
         <TextInput
           type="number"
@@ -143,11 +149,11 @@ export default function ContactForm({ successPageId }) {
           required
         />
         <CheckBoxLabel for={`tosAccepted${salt}`}>
-          {t('contactFormTosAccepted')}
+          {t({ id: 'contactFormTosAccepted' })}
         </CheckBoxLabel>
       </FormItem>
       <SubmitWrapper>
-        <Submit type="submit" value={t('contactFormSubmit')} />
+        <Submit type="submit" value={t({ id: 'contactFormSubmit' })} />
       </SubmitWrapper>
     </Form>
   )

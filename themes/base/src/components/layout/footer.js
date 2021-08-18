@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { t } from '@lingui/macro'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import tw from 'twin.macro'
@@ -24,15 +24,17 @@ const FooterMenu = styled.div`
 const FooterCopy = tw.div`text-sm text-center`
 
 export default function Footer() {
-  const { t } = useTranslation()
-
   return (
     <FooterWrapper>
       <FooterMenu>
         <MenuRecursive rootMenuItemId="menuRootFooter" />
       </FooterMenu>
       <FooterCopy>
-        {t('copyright', { year: new Date().getFullYear() })}
+        {t({
+          id: 'copyright',
+          message: `© {year}`,
+          values: { year: new Date().getFullYear() },
+        })}
       </FooterCopy>
     </FooterWrapper>
   )

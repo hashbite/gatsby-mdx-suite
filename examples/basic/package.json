@@ -17,7 +17,9 @@
     "test": "start-server-and-test serve http://localhost:9000 test:cypress",
     "test:develop": "start-server-and-test serve http://localhost:9000 test:cypress:open",
     "test:cypress": "cypress run",
-    "test:cypress:open": "cypress open"
+    "test:cypress:open": "cypress open",
+    "i18n:extract": "lingui extract",
+    "i18n:compile": "lingui compile"
   },
   "dependencies": {
     "@consent-manager/core": "^0.0.1",
@@ -29,6 +31,8 @@
     "@gatsby-mdx-suite/mdx-video": "^0.9.12",
     "@gatsby-mdx-suite/mdx-vimeo": "^0.7.27",
     "@gatsby-mdx-suite/mdx-youtube": "^0.12.21",
+    "@lingui/cli": "^3.10.2",
+    "@lingui/macro": "^3.10.2",
     "@mdx-js/react": "^1.6.22",
     "deepmerge": "^4.2.2",
     "dotenv": "^10.0.0",

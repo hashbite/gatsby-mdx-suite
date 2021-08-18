@@ -1,7 +1,8 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
+import { i18n } from '@lingui/core'
+import { I18nProvider } from '@lingui/react'
+import { remoteLoader } from '@lingui/remote-loader'
 import merge from 'deepmerge'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from '@emotion/react'
@@ -19,39 +20,33 @@ export const wrapRootElement = ({ element }, config) => {
     arrayMerge: (destinationArray, sourceArray, options) => sourceArray,
   })
 
-  const { translations, langs, defaultLocale, themeConfig } = mergedConfig
+  const { defaultLocale, themeConfig } = mergedConfig
+
+  const { translations } = config
 
   const theme = merge(tailwindConfigStub, themeConfig.theme.extend)
 
-  i18n
-    // pass the i18n instance to react-i18next.
-    .use(initReactI18next)
-    .init({
-      resources: translations,
-      supportedLngs: langs,
-      debug: process.env.NODE_ENV === 'development',
-      lng: defaultLocale,
-      fallbackLng: defaultLocale,
-      load: 'currentOnly',
-      keySeparator: false, // we do not use keys in form messages.welcome
-      interpolation: {
-        escapeValue: false, // react already safes from xss
-      },
-    })
+  Object.keys(translations).forEach((locale) => {
+    i18n.load(locale, remoteLoader(translations[locale]))
+  })
+
+  i18n.activate(defaultLocale)
 
   delete mergedConfig.translations
   delete mergedConfig.themeConfig
   delete mergedConfig.mediaCollections
 
   return (
-    <MdxSuiteContextProvider themeConfig={mergedConfig}>
-      <ThemeProvider theme={theme}>
-        <BreakpointProvider screens={theme.screens}>
-          <Global styles={css(globalStyles)} />
-          <MDXProvider components={components}>{element}</MDXProvider>
-        </BreakpointProvider>
-      </ThemeProvider>
-    </MdxSuiteContextProvider>
+    <I18nProvider i18n={i18n}>
+      <MdxSuiteContextProvider themeConfig={mergedConfig}>
+        <ThemeProvider theme={theme}>
+          <BreakpointProvider screens={theme.screens}>
+            <Global styles={css(globalStyles)} />
+            <MDXProvider components={components}>{element}</MDXProvider>
+          </BreakpointProvider>
+        </ThemeProvider>
+      </MdxSuiteContextProvider>
+    </I18nProvider>
   )
 }
 wrapRootElement.propTypes = {
