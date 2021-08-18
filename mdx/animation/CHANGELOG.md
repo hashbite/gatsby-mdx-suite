@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.17](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.16...@gatsby-mdx-suite/mdx-animation@0.2.17) (2021-08-18)
+
+
+### Performance Improvements
+
+* async load GSAP library and improve bundle chunking ([d122ff6](https://github.com/axe312ger/gatsby-mdx-suite/commit/d122ff61d5363354fb482f820848c1204c13ddb2))
+
+
+
+
+
 ## [0.2.16](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.15...@gatsby-mdx-suite/mdx-animation@0.2.16) (2021-07-21)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation

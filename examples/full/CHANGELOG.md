@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.7...gatsby-mdx-suite-example-full@0.13.8) (2021-08-18)
+
+
+### Performance Improvements
+
+* async load GSAP library and improve bundle chunking ([d122ff6](https://github.com/axe312ger/gatsby-mdx-suite/commit/d122ff61d5363354fb482f820848c1204c13ddb2))
+* disable SQIP as download retry still has issues ([672381c](https://github.com/axe312ger/gatsby-mdx-suite/commit/672381c08cba23d00932e3b6899d3ca88e2cff7f))
+
+
+
+
+
 ## [0.13.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.6...gatsby-mdx-suite-example-full@0.13.7) (2021-08-13)
 
 

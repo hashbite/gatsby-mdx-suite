@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.4.4...@gatsby-mdx-suite/mdx-scroll-effects@0.4.5) (2021-08-18)
+
+
+### Performance Improvements
+
+* async load GSAP library and improve bundle chunking ([d122ff6](https://github.com/axe312ger/gatsby-mdx-suite/commit/d122ff61d5363354fb482f820848c1204c13ddb2))
+
+
+
+
+
 ## [0.4.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-scroll-effects@0.4.3...@gatsby-mdx-suite/mdx-scroll-effects@0.4.4) (2021-08-13)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-scroll-effects

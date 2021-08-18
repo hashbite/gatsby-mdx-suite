@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.4...gatsby-theme-mdx-suite-base@0.15.5) (2021-08-18)
+
+
+### Performance Improvements
+
+* async load GSAP library and improve bundle chunking ([d122ff6](https://github.com/axe312ger/gatsby-mdx-suite/commit/d122ff61d5363354fb482f820848c1204c13ddb2))
+* replace GSAP in NavBar with IntersectionObserver ([5c97c22](https://github.com/axe312ger/gatsby-mdx-suite/commit/5c97c2237840d74bc36354e676896b20c87d5d0c))
+
+
+
+
+
 ## [0.15.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.3...gatsby-theme-mdx-suite-base@0.15.4) (2021-08-13)
 
 
