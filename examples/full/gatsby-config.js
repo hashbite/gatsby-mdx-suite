@@ -73,7 +73,6 @@ module.exports = {
       },
     },
     // Optional plugins:
-    `gatsby-transformer-sqip`,
     `gatsby-transformer-video`,
     ...(isProduction
       ? [
