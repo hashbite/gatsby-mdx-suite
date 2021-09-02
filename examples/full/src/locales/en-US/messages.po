@@ -147,35 +147,35 @@ msgstr ""
 msgid "consent-manager.introduction.title"
 msgstr ""
 
-#: :129
+#: :121
 msgid "contactFormCompany"
 msgstr ""
 
-#: :119
+#: :112
 msgid "contactFormCompanyEmail"
 msgstr ""
 
-#: :96
+#: :95
 msgid "contactFormFirstName"
 msgstr ""
 
-#: :106
+#: :103
 msgid "contactFormLastName"
 msgstr ""
 
-#: :134
+#: :126
 msgid "contactFormNumberOfEmployees"
 msgstr ""
 
-#: :113
+#: :108
 msgid "contactFormPosition"
 msgstr ""
 
-#: :156
+#: :148
 msgid "contactFormSubmit"
 msgstr ""
 
-#: :152
+#: :144
 msgid "contactFormTosAccepted"
 msgstr ""
 

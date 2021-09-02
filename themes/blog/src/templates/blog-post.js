@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import * as PropTypes from 'prop-types'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { useTranslation } from 'react-i18next'
+import { useLingui } from '@lingui/react'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
@@ -14,17 +14,12 @@ import Section from '@gatsby-mdx-suite/mdx-layout/section'
 import Claim from '@gatsby-mdx-suite/mdx-copy/claim'
 
 function BlogPostTemplate({ data, pageContext }) {
-  const { i18n } = useTranslation()
+  const { i18n } = useLingui()
   const MdxSuiteData = useContext(MdxSuiteContext)
   const { locale } = pageContext
   const { title, image, metaDescription, content } = data.contentfulBlogPost
 
-  // Set current i18next translation language based on page locale
-  useEffect(() => {
-    if (locale !== i18n.language) {
-      i18n.changeLanguage(locale)
-    }
-  }, [locale, i18n])
+  i18n.activate(pageContext.locale)
 
   return (
     <MdxSuiteContext.Provider

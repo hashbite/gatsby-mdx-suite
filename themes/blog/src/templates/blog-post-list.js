@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import tw from 'twin.macro'
 import styled from '@emotion/styled'
-import { useTranslation } from 'react-i18next'
+import { t } from '@lingui/macro'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
@@ -23,7 +23,6 @@ const Pagination = styled.div`
 
 const BlogPostList = ({ data, pageContext }) => {
   const MdxSuiteData = useContext(MdxSuiteContext)
-  const { t } = useTranslation()
 
   const blogPosts = data.allContentfulBlogPost.nodes.map((blogPost, i) => (
     <BlogPostTeaser key={i} blogPost={blogPost} />

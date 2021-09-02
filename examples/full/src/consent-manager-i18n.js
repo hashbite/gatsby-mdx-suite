@@ -5,15 +5,15 @@ export const useMessages = () => {
   return useMemo(
     () => ({
       // General
-      'consent-manager.close': t({ id: 'consent-manager.close' }),
+      'consent-manager.close': t`consent-manager.close`,
 
       // Intro
       'consent-manager.introduction.title': () => (
         <Trans
           id="consent-manager.introduction.title"
-          defaults="Data protection enabled"
-          message="Data protection enabled"
-          default="Data protection enabled"
+          // defaults="Data protection enabled"
+          // message="Data protection enabled"
+          // default="Data protection enabled"
         >
           Data protection enabled
         </Trans>

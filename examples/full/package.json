@@ -38,8 +38,8 @@
     "@gatsby-mdx-suite/mdx-video": "^0.9.12",
     "@gatsby-mdx-suite/mdx-vimeo": "^0.7.27",
     "@gatsby-mdx-suite/mdx-youtube": "^0.12.21",
-    "@lingui/cli": "^3.10.2",
-    "@lingui/macro": "^3.10.2",
+    "@lingui/cli": "^3.12.1",
+    "@lingui/macro": "^3.12.1",
     "@react-icons/all-files": "^4.1.0",
     "deepmerge": "^4.2.2",
     "dotenv": "^10.0.0",
@@ -54,7 +54,6 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-i18next": "^11.11.4",
     "react-scrolllock": "^5.0.1",
     "twin.macro": "^2.7.0",
     "use-persisted-state": "^0.3.3"

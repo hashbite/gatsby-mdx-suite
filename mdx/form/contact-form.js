@@ -92,9 +92,7 @@ export default function ContactForm({ successPageId }) {
       <SweetInput name="name" autoComplete="off" />
       <FormColumns availableSpace="600">
         <FormItem>
-          <Label for={`firstName${salt}`}>
-            {t({ id: 'contactFormFirstName' })}
-          </Label>
+          <Label for={`firstName${salt}`}>{t`contactFormFirstName`}</Label>
           <TextInput
             name={`firstName${salt}`}
             id={`firstName${salt}`}
@@ -102,22 +100,16 @@ export default function ContactForm({ successPageId }) {
           />
         </FormItem>
         <FormItem>
-          <Label for={`lastName${salt}`}>
-            {t({ id: 'contactFormLastName' })}
-          </Label>
+          <Label for={`lastName${salt}`}>{t`contactFormLastName`}</Label>
           <TextInput name={`lastName${salt}`} id={`lastName${salt}`} required />
         </FormItem>
       </FormColumns>
       <FormItem>
-        <Label for={`position${salt}`}>
-          {t({ id: 'contactFormPosition' })}
-        </Label>
+        <Label for={`position${salt}`}>{t`contactFormPosition`}</Label>
         <TextInput name={`position${salt}`} id={`position${salt}`} required />
       </FormItem>
       <FormItem>
-        <Label for={`companyEmail${salt}`}>
-          {t({ id: 'contactFormCompanyEmail' })}
-        </Label>
+        <Label for={`companyEmail${salt}`}>{t`contactFormCompanyEmail`}</Label>
         <TextInput
           type="email"
           name={`companyEmail${salt}`}
@@ -126,12 +118,12 @@ export default function ContactForm({ successPageId }) {
         />
       </FormItem>
       <FormItem>
-        <Label for={`company${salt}`}>{t({ id: 'contactFormCompany' })}</Label>
+        <Label for={`company${salt}`}>{t`contactFormCompany`}</Label>
         <TextInput name={`company${salt}`} id={`company${salt}`} required />
       </FormItem>
       <FormItem>
         <Label for={`numberOfEmployees${salt}`}>
-          {t({ id: 'contactFormNumberOfEmployees' })}
+          {t`contactFormNumberOfEmployees`}
         </Label>
         <TextInput
           type="number"
@@ -149,11 +141,11 @@ export default function ContactForm({ successPageId }) {
           required
         />
         <CheckBoxLabel for={`tosAccepted${salt}`}>
-          {t({ id: 'contactFormTosAccepted' })}
+          {t`contactFormTosAccepted`}
         </CheckBoxLabel>
       </FormItem>
       <SubmitWrapper>
-        <Submit type="submit" value={t({ id: 'contactFormSubmit' })} />
+        <Submit type="submit" value={t`contactFormSubmit`} />
       </SubmitWrapper>
     </Form>
   )

@@ -36,7 +36,7 @@
 
 * React using mostly the hooks API & contexts
 * GatsbyJS with themes -> [Emotion](https://emotion.sh/) & [tailwindcss](https://tailwindcss.com/) via [twin.macro](https://github.com/ben-rogerson/twin.macro)
-* Internationalization support via [i18next](https://www.i18next.com/)
+* Internationalization support via [LinguiJS](https://lingui.js.org/)
 * Optional support for menu rendering, icons, themes, color sets, ...
 
 ## Project structure
@@ -46,8 +46,8 @@
     * Has some required configuration opions!
     * Connects to Contentful
     * Integrates MDX into your project
-    * Initializes the MDX data context and i18next
-    * Integrates i18next & emotion
+    * Initializes the MDX data context
+    * Integrates LinguiJS & emotion
   * `gatsby-theme-mdx-suite-base`:
       Adds default components to MDX (https://github.com/axe312ger/gatsby-mdx-suite/blob/master/themes/base/src/gatsby-plugin-theme-ui/components.js)
     * Adds SVG support

@@ -32,6 +32,7 @@ module.exports = {
           'en-US': '',
           de: 'de',
         },
+        // @todo
         // Will be passes as resources to i18next.
         // See https://www.i18next.com/overview/configuration-options
         translations: {

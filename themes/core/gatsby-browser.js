@@ -26,10 +26,11 @@ export const wrapRootElement = ({ element }, config) => {
 
   const theme = merge(tailwindConfigStub, themeConfig.theme.extend)
 
-  Object.keys(translations).forEach((locale) => {
-    i18n.load(locale, remoteLoader(translations[locale]))
-  })
-
+  if (translations) {
+    Object.keys(translations).forEach((locale) => {
+      i18n.load(locale, remoteLoader(translations[locale]))
+    })
+  }
   i18n.activate(defaultLocale)
 
   delete mergedConfig.translations

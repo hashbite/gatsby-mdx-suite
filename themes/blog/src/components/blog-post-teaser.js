@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Cta from '@gatsby-mdx-suite/mdx-link/cta'
 import Image from 'gatsby-theme-mdx-suite-core/src/components/image'
-import { useTranslation } from 'react-i18next'
+import { t } from '@lingui/macro'
 
 const BlogPostTeaserWrapper = tw.article`flex flex-col h-full`
 const BlogPostTeaserHeadline = styled.h1`
@@ -22,8 +22,6 @@ const BlogPostTeaserFooter = tw.div`mt-8`
 const BlogPostTeaserImage = tw(Image)``
 
 const BlogPostTeaser = ({ blogPost, ...props }) => {
-  const { t } = useTranslation()
-
   return (
     <BlogPostTeaserWrapper {...props}>
       <BlogPostTeaserImage imageData={blogPost.image} />

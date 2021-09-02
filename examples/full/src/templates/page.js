@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import * as propTypes from 'prop-types'
 
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { useTranslation } from 'react-i18next'
+import { useLingui } from '@lingui/react'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
@@ -11,17 +11,12 @@ import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 import SEO from 'gatsby-theme-mdx-suite-base/src/components/layout/seo'
 
 function PageTemplate({ data, pageContext }) {
-  const { i18n } = useTranslation()
+  const { i18n } = useLingui()
   const MdxSuiteData = useContext(MdxSuiteContext)
 
   const { title, content, metaDescription, metaImage } = data.contentfulPage
 
-  // Set current i18next translation language based on page locale
-  useEffect(() => {
-    if (pageContext.locale !== i18n.language) {
-      i18n.changeLanguage(pageContext.locale)
-    }
-  }, [pageContext.locale, i18n])
+  i18n.activate(pageContext.locale)
 
   return (
     <MdxSuiteContext.Provider

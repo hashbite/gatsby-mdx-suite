@@ -182,7 +182,7 @@ const NavigationMobile = ({ rootMenuItemId }) => {
             <LanguageSwitch />
             <HeaderMenuToggle
               onClick={handleClickMenuToggle}
-              aria-label={t({ id: 'menu' })}
+              aria-label={t`menu`}
             >
               <Icon icon="menu" />
             </HeaderMenuToggle>
