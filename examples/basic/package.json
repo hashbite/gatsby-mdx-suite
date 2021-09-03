@@ -28,7 +28,7 @@
     "@mdx-js/react": "^1.6.22",
     "deepmerge": "^4.2.2",
     "dotenv": "^10.0.0",
-    "gatsby": "^3.10.0-alpha-remote-fetch.41",
+    "gatsby": "^3.14.0-alpha-remote-fetch.78",
     "gatsby-theme-mdx-suite-base": "^0.15.6",
     "gatsby-theme-mdx-suite-core": "^0.11.3",
     "prop-types": "^15.7.2",
