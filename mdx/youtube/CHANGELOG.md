@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.14](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.13...@gatsby-mdx-suite/mdx-youtube@0.12.14) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
 ## [0.12.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.12...@gatsby-mdx-suite/mdx-youtube@0.12.13) (2021-09-03)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
