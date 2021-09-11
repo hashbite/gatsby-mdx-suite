@@ -30,6 +30,7 @@ export default function Image({
   alt,
   imageData,
   loading,
+  inline,
   ...restProps
 }) {
   const contextData = useImageDataFromContext({ id, contextKey })
@@ -40,7 +41,7 @@ export default function Image({
 
   // Image propery construction
   const imgProps = { loading, ...restProps }
-  const imgStyle = {}
+  const imgStyle = { display: inline ? 'inline-block' : 'block' }
 
   // Either trim alt or render empty for decorative images. See: https://www.w3.org/WAI/tutorials/images/decorative/
   if (alt && alt.trim && alt.trim()) {
@@ -53,10 +54,10 @@ export default function Image({
   const renderHeight = height || contextData?.file?.details?.image?.height
 
   if (renderWidth) {
-    imgProps.width = renderWidth
+    imgStyle.width = renderWidth
   }
   if (renderHeight) {
-    imgProps.height = renderHeight
+    imgStyle.height = renderHeight
   }
 
   if (src) {
@@ -64,17 +65,6 @@ export default function Image({
   }
 
   const renderData = imageData || contextData
-
-  // Show pandas to devs if images not found
-  if (!renderData) {
-    return (
-      <StaticImage
-        {...imgProps}
-        style={imgStyle}
-        src={'https://source.unsplash.com/featured/?panda'}
-      />
-    )
-  }
 
   // The alt test should describe whats in the image: https://moz.com/learn/seo/alt-text
   imgProps.alt = renderData.description || renderData.title || imgProps.alt
@@ -122,6 +112,8 @@ Image.defaultProps = {
   width: '100%',
   position: 'center center',
   loading: 'lazy',
+  fit: 'contain',
+  inline: false,
 }
 
 Image.propTypes = {
@@ -139,6 +131,12 @@ Image.propTypes = {
    * https://developer.mozilla.org/en-US/docs/Web/CSS/width
    */
   alt: propTypes.string,
+  /**
+   * Should the image be rendered inline?
+   *
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/display
+   */
+  inline: propTypes.bool,
   /**
    * Set the width of the image.
    *
