@@ -74,6 +74,7 @@ module.exports = {
     },
     // Optional plugins:
     `gatsby-transformer-video`,
+    `gatsby-transformer-sqip`,
     ...(isProduction
       ? [
           // Enable offline functionallity. Currently can cause issues for recurring users.

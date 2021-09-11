@@ -43,7 +43,7 @@ export const MdxSuiteMediaCollections = graphql`
 export const MdxSuiteMediaCollectionScreen = graphql`
   fragment MdxSuiteMediaCollectionScreen on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 2048, placeholder: BLURRED, layout: FULL_WIDTH)
+    gatsbyImageData(width: 2048, placeholder: NONE, layout: FULL_WIDTH)
     videoH264(maxWidth: 1920) {
       path
       aspectRatio
@@ -61,6 +61,9 @@ export const MdxSuiteMediaCollectionScreen = graphql`
         gatsbyImageData(width: 1920, layout: FIXED, placeholder: NONE)
       }
     }
+    placeholder: sqip(numberOfPrimitives: 120, blur: 0) {
+      dataURI
+    }
   }
 `
 
@@ -68,7 +71,7 @@ export const MdxSuiteMediaCollectionScreen = graphql`
 export const MdxSuiteMediaCollectionFull = graphql`
   fragment MdxSuiteMediaCollectionFull on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 1200, placeholder: BLURRED)
+    gatsbyImageData(width: 1200, placeholder: NONE)
     videoH264(maxWidth: 1200) {
       path
       aspectRatio
@@ -86,6 +89,9 @@ export const MdxSuiteMediaCollectionFull = graphql`
         gatsbyImageData(width: 1200, layout: FIXED, placeholder: NONE)
       }
     }
+    placeholder: sqip(numberOfPrimitives: 80, blur: 0) {
+      dataURI
+    }
   }
 `
 
@@ -93,7 +99,7 @@ export const MdxSuiteMediaCollectionFull = graphql`
 export const MdxSuiteMediaCollectionHalf = graphql`
   fragment MdxSuiteMediaCollectionHalf on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 600, placeholder: BLURRED)
+    gatsbyImageData(width: 600, placeholder: NONE)
     videoH264(maxWidth: 600) {
       path
       aspectRatio
@@ -111,6 +117,9 @@ export const MdxSuiteMediaCollectionHalf = graphql`
         gatsbyImageData(width: 600, layout: FIXED, placeholder: NONE)
       }
     }
+    placeholder: sqip(numberOfPrimitives: 40, blur: 0) {
+      dataURI
+    }
   }
 `
 
@@ -118,7 +127,7 @@ export const MdxSuiteMediaCollectionHalf = graphql`
 export const MdxSuiteMediaCollectionThird = graphql`
   fragment MdxSuiteMediaCollectionThird on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 400, placeholder: BLURRED)
+    gatsbyImageData(width: 400, placeholder: NONE)
     videoH264(maxWidth: 400) {
       path
       aspectRatio
@@ -136,6 +145,9 @@ export const MdxSuiteMediaCollectionThird = graphql`
         gatsbyImageData(width: 400, layout: FIXED, placeholder: NONE)
       }
     }
+    placeholder: sqip(numberOfPrimitives: 16, blur: 0) {
+      dataURI
+    }
   }
 `
 
@@ -143,7 +155,7 @@ export const MdxSuiteMediaCollectionThird = graphql`
 export const MdxSuiteMediaCollectionQuarter = graphql`
   fragment MdxSuiteMediaCollectionQuarter on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 300, placeholder: BLURRED)
+    gatsbyImageData(width: 300, placeholder: NONE)
     videoH264(maxWidth: 300) {
       path
       aspectRatio
@@ -161,6 +173,9 @@ export const MdxSuiteMediaCollectionQuarter = graphql`
         gatsbyImageData(width: 300, layout: FIXED, placeholder: NONE)
       }
     }
+    placeholder: sqip(numberOfPrimitives: 16, blur: 0) {
+      dataURI
+    }
   }
 `
 
@@ -168,7 +183,7 @@ export const MdxSuiteMediaCollectionQuarter = graphql`
 export const MdxSuiteMediaCollectionSixth = graphql`
   fragment MdxSuiteMediaCollectionSixth on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 200, placeholder: BLURRED)
+    gatsbyImageData(width: 200, placeholder: NONE)
     videoH264(maxWidth: 200) {
       path
       aspectRatio
@@ -186,6 +201,9 @@ export const MdxSuiteMediaCollectionSixth = graphql`
         gatsbyImageData(width: 200, layout: FIXED, placeholder: NONE)
       }
     }
+    placeholder: sqip(numberOfPrimitives: 16, blur: 0) {
+      dataURI
+    }
   }
 `
 
@@ -193,7 +211,7 @@ export const MdxSuiteMediaCollectionSixth = graphql`
 export const MdxSuiteMediaCollectionEigth = graphql`
   fragment MdxSuiteMediaCollectionEigth on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 150, placeholder: BLURRED)
+    gatsbyImageData(width: 150, placeholder: NONE)
     videoH264(maxWidth: 150) {
       path
       aspectRatio
@@ -210,6 +228,9 @@ export const MdxSuiteMediaCollectionEigth = graphql`
       childImageSharp {
         gatsbyImageData(width: 150, layout: FIXED, placeholder: NONE)
       }
+    }
+    placeholder: sqip(numberOfPrimitives: 16, blur: 0) {
+      dataURI
     }
   }
 `
