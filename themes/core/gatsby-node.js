@@ -164,12 +164,6 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
 
   const typeDefs = [
     `
-    type ContentfulAsset implements Node @derivedTypes {
-      svg: InlineSvg
-    }
-    type InlineSvg @derivedTypes {
-      content: String
-    }
     type ContentfulMenuItem implements Node  @derivedTypes {
       internalSlug: String
       externalUri: String
