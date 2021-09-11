@@ -31,7 +31,7 @@ export const MdxSuiteContentfulAsset = graphql`
 export const MdxSuiteMediaDocs = graphql`
   fragment MdxSuiteMediaDocs on ContentfulAsset {
     ...MdxSuiteContentfulAsset
-    gatsbyImageData(width: 300, placeholder: NONE)
+    gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
     file {
       details {
         size
@@ -45,7 +45,7 @@ export const MdxSuiteMediaDocs = graphql`
     }
     videoScreenshots(timestamps: ["0"], width: 300) {
       childImageSharp {
-        gatsbyImageData(width: 300)
+        gatsbyImageData(width: 300, placeholder: NONE)
       }
     }
   }
