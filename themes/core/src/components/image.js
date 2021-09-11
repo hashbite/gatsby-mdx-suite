@@ -50,14 +50,11 @@ export default function Image({
     imgProps.alt = ''
   }
 
-  const renderWidth = width || contextData?.file?.details?.image?.width
-  const renderHeight = height || contextData?.file?.details?.image?.height
-
-  if (renderWidth) {
-    imgStyle.width = renderWidth
+  if (width) {
+    imgStyle.width = width
   }
-  if (renderHeight) {
-    imgStyle.height = renderHeight
+  if (height) {
+    imgStyle.height = height
   }
 
   if (src) {
