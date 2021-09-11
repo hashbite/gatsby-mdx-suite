@@ -24,8 +24,9 @@ MdxImage.displayName = 'Image'
 MdxImage.defaultProps = {
   contextKey: 'full',
   width: '100%',
-  fit: null,
+  fit: 'contain',
   position: 'center center',
+  inline: true,
 }
 
 MdxImage.propTypes = {
@@ -38,11 +39,17 @@ MdxImage.propTypes = {
    */
   src: propTypes.string,
   /**
-   * Set the width of the image.
+   * Set an alternative alt description of the image.
    *
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/width
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/alt
    */
   alt: propTypes.string,
+  /**
+   * Should the image be rendered inline?
+   *
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/display
+   */
+  inline: propTypes.bool,
   /**
    * Set the width of the image.
    *
