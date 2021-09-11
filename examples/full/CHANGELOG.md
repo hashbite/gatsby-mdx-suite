@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.11...gatsby-mdx-suite-example-full@0.14.0) (2021-09-11)
+
+
+### Features
+
+* **sqip:** reenable sqip ([0166d75](https://github.com/axe312ger/gatsby-mdx-suite/commit/0166d754954e2a93df746121dce0ec7ae2cab519))
+
+
+
+
+
 ## [0.13.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.10...gatsby-mdx-suite-example-full@0.13.11) (2021-09-03)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-full

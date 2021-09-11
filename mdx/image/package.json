@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-image",
-  "version": "0.9.11",
+  "version": "0.9.12",
   "description": "Render a image from an internal or external source",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -27,7 +27,7 @@
     "react": "^17.0.1"
   },
   "dependencies": {
-    "gatsby-theme-mdx-suite-core": "^0.11.5"
+    "gatsby-theme-mdx-suite-core": "^0.12.0"
   },
   "publishConfig": {
     "access": "public"

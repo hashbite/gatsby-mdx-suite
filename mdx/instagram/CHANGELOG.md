@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.47](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.46...@gatsby-mdx-suite/mdx-instagram@0.3.47) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
 ## [0.3.46](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.45...@gatsby-mdx-suite/mdx-instagram@0.3.46) (2021-09-03)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
