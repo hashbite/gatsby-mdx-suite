@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.12...@gatsby-mdx-suite/mdx-image@0.10.0) (2021-09-11)
+
+
+### Features
+
+* ensure images within MDX content can be centered and are sized properly ([1ef7c5f](https://github.com/axe312ger/gatsby-mdx-suite/commit/1ef7c5ff6014b653eea78b8005e1a9dea20ad75c))
+
+
+
+
+
 ## [0.9.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.11...@gatsby-mdx-suite/mdx-image@0.9.12) (2021-09-11)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-image

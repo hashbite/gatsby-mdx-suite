@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.12.0...gatsby-theme-mdx-suite-core@0.13.0) (2021-09-11)
+
+
+### Bug Fixes
+
+* ensure default image dimensions are calculated automatically ([c7a6c90](https://github.com/axe312ger/gatsby-mdx-suite/commit/c7a6c90d34b25d685fd9655ff540870f28470549))
+
+
+### Features
+
+* ensure images within MDX content can be centered and are sized properly ([1ef7c5f](https://github.com/axe312ger/gatsby-mdx-suite/commit/1ef7c5ff6014b653eea78b8005e1a9dea20ad75c))
+* improve playground asset resolution ([1b7c07d](https://github.com/axe312ger/gatsby-mdx-suite/commit/1b7c07d9ac4a20ac312911a158f0137f6dc0e7e6))
+
+
+
+
+
 # [0.12.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.11.5...gatsby-theme-mdx-suite-core@0.12.0) (2021-09-11)
 
 
