@@ -1,0 +1,251 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+name: Build all examples
+jobs:
+  context:
+    name: Prepare
+    runs-on: [self-hosted, linux, x64]
+    outputs:
+      branch: ${{ steps.project-context.outputs.branch }}
+      commitMsg: ${{ steps.project-context.outputs.commitMsg }}
+      commitId: ${{ steps.project-context.outputs.commitId }}
+      environment: ${{ steps.contentful.outputs.environment }}
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout Project
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Get project context
+        id: project-context
+        uses: zero88/gh-project-context@v1
+
+  build:
+    name: Build
+    runs-on: [self-hosted, linux, x64]
+    needs: context
+    strategy:
+      fail-fast: false
+      matrix:
+        example: [minimal, basic, full]
+    steps:
+      - uses: actions/checkout@v2
+
+      # Cache
+      - name: Cache Gatsby .cache dir
+        uses: hashbite/github-action-cache-local-fs@main
+        id: gatsby-cache
+        env:
+          cache-name: gatsby-cache
+        with:
+          path: ./examples/${{ matrix.example }}/.cache
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-main
+
+      - name: Cache Gatsby public dir
+        uses: hashbite/github-action-cache-local-fs@main
+        id: gatsby-public
+        env:
+          cache-name: gatsby-public
+        with:
+          path: ./examples/${{ matrix.example }}/public
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-main
+
+      - name: Cache mono node_modules
+        uses: hashbite/github-action-cache-local-fs@main
+        id: node_modules
+        env:
+          cache-name: node_modules
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-main
+
+      # Install
+      - name: Install dependencies via yarn
+        run: yarn install --prefer-offline --frozen-lockfile --ignore-optional
+
+      # Build
+      - name: Build Gatsby site
+        run: npm run build -- --verbose
+        working-directory: examples/${{ matrix.example }}
+
+  deploy:
+    name: Deploy
+    runs-on: [self-hosted, linux, x64]
+    needs: [context, build]
+    strategy:
+      fail-fast: false
+      matrix:
+        example: [minimal, basic, full]
+    steps:
+      - uses: actions/checkout@v2
+
+      # Cache
+      - name: Cache Gatsby public dir
+        uses: hashbite/github-action-cache-local-fs@main
+        id: gatsby-public
+        env:
+          cache-name: gatsby-public
+        with:
+          path: ./examples/${{ matrix.example }}/public
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
+
+      # Deploy
+      - name: '[Production] Deploy to Netlify'
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && needs.context.outputs.branch == 'main'
+        run: npx netlify deploy --dir=public --debug --prod --message "${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})"
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_PRODUCTION }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      - name: '[Staging] Deploy to Netlify'
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && needs.context.outputs.branch != 'main'
+        run: npx netlify deploy --dir=public --debug --prod --message "${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})"
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_STAGING }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      - name: '[PR] Deploy to Netlify'
+        id: pr-deploy
+        if: github.event_name == 'pull_request'
+        run: echo "::set-output name=deploy-url::$(npx netlify deploy --dir=public --debug --message "${{github.head_ref}} - ${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})" | grep "Website Draft URL:" | grep -oE "[^ ]+$")"
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_STAGING }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      # Report
+      - name: '[PR] Deploy Status'
+        uses: Sibz/github-status-action@v1.1.6
+        if: github.event_name == 'pull_request'
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Netlify Build Preview
+          description: The deployment is ready. Click "Details".
+          state: success
+          sha: ${{github.event.pull_request.head.sha || github.sha}}
+          target_url: ${{ steps.pr-deploy.outputs.deploy-url }}
+
+  cypress:
+    name: Cypress
+    runs-on: [self-hosted, linux, x64]
+    needs: [context, build]
+    strategy:
+      fail-fast: false
+      matrix:
+        example: [minimal, basic, full]
+    steps:
+      - uses: actions/checkout@v2
+
+      # Cache
+      - name: Cache Gatsby public dir
+        uses: hashbite/github-action-cache-local-fs@main
+        id: gatsby-public
+        env:
+          cache-name: gatsby-public
+        with:
+          path: ./examples/${{ matrix.example }}/public
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
+
+      - name: Cache node_modules
+        uses: hashbite/github-action-cache-local-fs@main
+        id: cypress-node_modules
+        env:
+          cache-name: cypress-node_modules
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-staging
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-main
+
+      # Install
+      - name: Install optional dependencies
+        run: npx handpick --target=devDependencies --target=optionalDependencies --manager=yarn
+
+      # Test
+      - name: Test site via cypress
+        run: npm run test:integration:ci
+
+      - name: Upload video capture
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
+      - name: Upload screenshots in case of failure
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+  lighthouse:
+    name: Lighthouse
+    runs-on: [self-hosted, linux, x64]
+    needs: [context, build]
+    strategy:
+      fail-fast: false
+      matrix:
+        example: [minimal, basic, full]
+    steps:
+      - uses: actions/checkout@v2
+
+      # Cache
+      - name: Cache Gatsby public dir
+        uses: hashbite/github-action-cache-local-fs@main
+        id: gatsby-public
+        env:
+          cache-name: gatsby-public
+        with:
+          path: ./examples/${{ matrix.example }}/public
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
+
+      - name: Cache node_modules
+        uses: hashbite/github-action-cache-local-fs@main
+        id: lighthouse-node_modules
+        env:
+          cache-name: lighthouse-node_modules
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-${{ needs.context.outputs.branch }}-
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-staging
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.example }}-main
+
+      # Install
+      - name: Install Lighthouse CI
+        run: npm i @lhci/cli
+
+      # Test
+      - name: run Lighthouse CI
+        env:
+          LHCI_SERVER: ${{ secrets.LHCI_SERVER }}
+          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+          LHCI_USER: ${{ secrets.LHCI_USER }}
+          LHCI_PASSWORD: ${{ secrets.LHCI_PASSWORD }}
+        run: npx lhci autorun --collect.settings.chromeFlags="--no-sandbox"
