@@ -5,14 +5,13 @@ import { initReactI18next } from 'react-i18next'
 import merge from 'deepmerge'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from '@emotion/react'
-
+import { GlobalStyles } from 'twin.macro'
 import MdxSuiteContextProvider from '@gatsby-mdx-suite/contexts/provider'
 import { BreakpointProvider } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 
 import tailwindConfigStub from './src/tailwind.default.config'
 import minimumConfig from './minimum-config'
 import components from './src/components'
-import './src/tailwind.css'
 
 export const wrapRootElement = ({ element }, config) => {
   const mergedConfig = merge(minimumConfig, config, {
@@ -47,6 +46,7 @@ export const wrapRootElement = ({ element }, config) => {
     <MdxSuiteContextProvider themeConfig={mergedConfig}>
       <ThemeProvider theme={theme}>
         <BreakpointProvider screens={theme.screens}>
+          <GlobalStyles />
           <MDXProvider components={components}>{element}</MDXProvider>
         </BreakpointProvider>
       </ThemeProvider>
