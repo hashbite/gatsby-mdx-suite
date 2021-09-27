@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.18...gatsby-theme-mdx-suite-docs@0.10.19) (2021-09-27)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
 ## [0.10.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.17...gatsby-theme-mdx-suite-docs@0.10.18) (2021-09-27)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-docs
