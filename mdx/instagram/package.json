@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-instagram",
-  "version": "0.3.50",
+  "version": "0.3.51",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.10",
-    "@gatsby-mdx-suite/mdx-media-gallery": "^0.5.16",
+    "@gatsby-mdx-suite/mdx-media-gallery": "^0.5.17",
     "react-instagram-embed": "^1.5.0"
   },
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-vimeo",
-  "version": "0.7.24",
+  "version": "0.7.25",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "@gatsby-mdx-suite/helpers": "^0.16.7",
     "@loadable/component": "^5.15.0",
     "@u-wave/react-vimeo": "^0.9.5",
-    "gatsby-theme-mdx-suite-base": "^0.15.12"
+    "gatsby-theme-mdx-suite-base": "^0.15.13"
   },
   "publishConfig": {
     "access": "public"

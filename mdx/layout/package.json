@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-layout",
-  "version": "0.28.20",
+  "version": "0.28.21",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -30,7 +30,7 @@
     "@gatsby-mdx-suite/helpers": "^0.16.7",
     "@gatsby-mdx-suite/mdx-color-set": "^0.4.24",
     "@gatsby-mdx-suite/mdx-video": "^0.9.12",
-    "gatsby-theme-mdx-suite-core": "^0.13.2"
+    "gatsby-theme-mdx-suite-core": "^0.13.3"
   },
   "publishConfig": {
     "access": "public"

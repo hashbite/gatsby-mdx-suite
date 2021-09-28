@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.13.2...gatsby-theme-mdx-suite-core@0.13.3) (2021-09-28)
+
+
+### Bug Fixes
+
+* properly apply global styles via twin.macro and emotion v11 ([ac95e35](https://github.com/axe312ger/gatsby-mdx-suite/commit/ac95e35700bd5e1a532139192d3ae6678e3c1001))
+
+
+
+
+
 ## [0.13.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.13.1...gatsby-theme-mdx-suite-core@0.13.2) (2021-09-27)
 
 
