@@ -1,3 +1,4 @@
+const { resolve } = require('path')
 const themeConfig = require('./tailwind.config.js')
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -73,7 +74,14 @@ module.exports = {
       },
     },
     // Optional plugins:
-    `gatsby-transformer-video`,
+    {
+      resolve: `gatsby-transformer-video`,
+      options: {
+        // Move cache to node_modules to abuse Gatsby Cloud cache
+        cacheDirectory: resolve('node_modules', '.cache-video'),
+        cacheDirectoryBin: resolve('node_modules', '.cache-video-bin'),
+      },
+    },
     `gatsby-transformer-sqip`,
     ...(isProduction
       ? [

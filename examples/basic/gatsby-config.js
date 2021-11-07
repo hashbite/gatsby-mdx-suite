@@ -1,3 +1,4 @@
+const { resolve } = require('path')
 const themeConfig = require('./tailwind.config.js')
 
 // Duplicate and rename .env.example to .env and fill in your credentials
@@ -39,6 +40,13 @@ module.exports = {
       },
     },
     // Optional plugins:
-    `gatsby-transformer-video`,
+    {
+      resolve: `gatsby-transformer-video`,
+      options: {
+        // Move cache to node_modules to abuse Gatsby Cloud cache
+        cacheDirectory: resolve('node_modules', '.cache-video'),
+        cacheDirectoryBin: resolve('node_modules', '.cache-video-bin'),
+      },
+    },
   ].filter(Boolean),
 }
