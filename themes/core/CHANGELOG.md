@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.13.3...gatsby-theme-mdx-suite-core@0.14.0) (2021-11-09)
+
+
+### Features
+
+* migrate core code to Gatsby v4 ([5f771f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/5f771f4dce9332dc5a6d50ae9c28b4cb1db23290))
+
+
+
+
+
 ## [0.13.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.13.2...gatsby-theme-mdx-suite-core@0.13.3) (2021-09-28)
 
 

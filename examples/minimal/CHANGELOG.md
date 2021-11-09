@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.3.4...gatsby-mdx-suite-example-minmal@0.4.0) (2021-11-09)
+
+
+### Bug Fixes
+
+* add missing fragment config to minimal example ([ecc52b0](https://github.com/axe312ger/gatsby-mdx-suite/commit/ecc52b0ffdb596b20e2c8c850cba72ed24ee8f8d))
+
+
+### Features
+
+* migrate core code to Gatsby v4 ([5f771f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/5f771f4dce9332dc5a6d50ae9c28b4cb1db23290))
+
+
+
+
+
 ## [0.3.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.3.3...gatsby-mdx-suite-example-minmal@0.3.4) (2021-09-28)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-minmal
