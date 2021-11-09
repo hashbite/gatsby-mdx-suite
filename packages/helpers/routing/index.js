@@ -19,23 +19,25 @@ function generatePageMap({ pages, activePageId }) {
   }
 
   return pages
-    .filter(({ context }) => {
-      if (!context) {
+    .filter(({ pageContext }) => {
+      if (!pageContext) {
         return false
       }
       // Support for listing pages build with gatsby-awesome-pagination
       if (
-        Object.prototype.hasOwnProperty.call(context, 'pageNumber') &&
-        context.pageNumber !== null
+        Object.prototype.hasOwnProperty.call(pageContext, 'pageNumber') &&
+        pageContext.pageNumber !== null
       ) {
-        return context.pageId === activePageId && context.pageNumber === 0
+        return (
+          pageContext.pageId === activePageId && pageContext.pageNumber === 0
+        )
       }
-      return context.pageId === activePageId
+      return pageContext.pageId === activePageId
     })
     .reduce(
       (map, page) => ({
         ...map,
-        [page.context.locale]: { path: page.path, ...page.context },
+        [page.pageContext.locale]: { path: page.path, ...page.pageContext },
       }),
       {}
     )
@@ -63,7 +65,7 @@ function getPageWithFallback({ pageMap, locale, defaultLocale }) {
   }
 
   // Unable to locate any page.
-  // Either it is a generic gatsby page or the created page is missing context information.
+  // Either it is a generic gatsby page or the created page is missing pageContext information.
   if (!page) {
     return null
   }
