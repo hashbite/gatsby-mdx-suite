@@ -4773,10 +4773,10 @@ babel-preset-current-node-syntax@^1.0.0:
     "@babel/plugin-syntax-optional-chaining" "^7.8.3"
     "@babel/plugin-syntax-top-level-await" "^7.8.3"
 
-babel-preset-gatsby@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.1.1.tgz#9618bfc52a9208eef0558ff86ecd19367fb2886d"
-  integrity sha512-7IEsTDVT8aUYvY39TG92HJQennM8HnNsNzr/bJ4BTTuRBGUW8/WfytU/BwatFTqBJRIfTveOhlmnKiUPNGuk3A==
+babel-preset-gatsby@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.1.2.tgz#0230a50901965fb8f944e7018bcb81f13acd7f88"
+  integrity sha512-i9/o/MCQS4R4+vr6Bpy0QuoiAxhdkNEGwmfxGWdna7X+YVS3clkMigceMD38FTKwX0hc5ifoezBt+AFDQkUcwQ==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.0"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.14.5"
@@ -4791,7 +4791,7 @@ babel-preset-gatsby@2.1.1:
     babel-plugin-dynamic-import-node "^2.3.3"
     babel-plugin-macros "^2.8.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
-    gatsby-core-utils "^3.1.1"
+    gatsby-core-utils "^3.1.2"
     gatsby-legacy-polyfills "^2.1.0"
 
 babel-preset-gatsby@^2.1.0:
@@ -9293,10 +9293,10 @@ gatsby-core-utils@^3.0.0-zz-next.1, gatsby-core-utils@^3.1.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.1.1.tgz#ba4ac26c43c803ef7322f8825bc9b94bdf8c9003"
-  integrity sha512-Z7H0UtKct5oukYkyyBMlRi1zpJfD2hhE5+eV6fYpHQCjlzmx2aSdumgFcDuQfJeqcnCSnfhlZM1wcaJ8WxI5Jg==
+gatsby-core-utils@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.1.2.tgz#5e9bff98036ec55714079314ae027d6bcab51cb6"
+  integrity sha512-l3LUdGNDlM3fLrdxRUGnsd/Szu9e8yLEL/pZIV2LuhTHMNwjOStiycEQivezsUhHNPobep1r5t4yWzP6r2cw/Q==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
