@@ -9770,6 +9770,21 @@ gatsby-transformer-video@^0.3.1:
     imagemin-mozjpeg "^9.0.0"
     p-queue "^6.6.2"
 
+gatsby-transformer-video@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-video/-/gatsby-transformer-video-0.5.0.tgz#255aa859f3870aa2164798a0a57f4c722132a105"
+  integrity sha512-lscN7TLwKN3YDAs2kBm6DLah8l/WPeRt0oZP5Ul/lr7LfUIE7ZMwynaNU1h/vO0PWOo84YXKi+1/8txUNSdvXg==
+  dependencies:
+    command-exists "^1.2.9"
+    execa "^5.1.1"
+    fluent-ffmpeg "^2.1.2"
+    fs-extra "^10.0.0"
+    gatsby-core-utils "^3.1.2"
+    imagemin "^7.0.1"
+    imagemin-giflossy "^5.1.10"
+    imagemin-mozjpeg "^9.0.0"
+    p-queue "^6.6.2"
+
 gatsby-worker@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/gatsby-worker/-/gatsby-worker-1.1.0.tgz#25e69b2a84f9130383bbf5448bf168dfbb9e0ea0"
