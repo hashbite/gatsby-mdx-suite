@@ -180,7 +180,7 @@ const NavigationMobile = ({ rootMenuItemId }) => {
             <Logo />
           </LogoLink>
           <HeaderMenuToggle onClick={handleClickMenuToggle}>
-            <Icon icon="menu" title={t('menu')} />
+            <Icon icon="menu" title={t({ id: 'menu', message: 'Menu' })} />
           </HeaderMenuToggle>
         </NavigationMobileBarContent>
       </NavigationMobileBar>

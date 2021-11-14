@@ -1,13 +1,32 @@
 const { resolve } = require('path')
+const merge = require('deepmerge')
+
+const tailwindConfigStub = require('gatsby-theme-mdx-suite-core/src/tailwind.default.config')
+const minimumConfig = require('gatsby-theme-mdx-suite-core/minimum-config')
+
 const themeConfig = require('./tailwind.config.js')
+const localesEn = require('./src/locales/en-US/messages')
+const localesDe = require('./src/locales/de/messages')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
 // Duplicate and rename .env.example to .env and fill in your credentials
 require('dotenv').config({ path: `.env` })
 
-const translationsEn = require('./translations/en')
-const translationsDe = require('./translations/de')
+function prepareMdxSuiteOptions(config) {
+  const mergedConfig = merge(minimumConfig, config, {
+    arrayMerge: (destinationArray, sourceArray, options) => sourceArray,
+  })
+
+  const theme = merge(tailwindConfigStub, mergedConfig.themeConfig.theme.extend)
+
+  const cleanConfig = Object.entries(mergedConfig)
+    .filter(([key]) => !['themeConfig', 'mediaCollections'].includes(key))
+    .reduce((obj, [key, val]) => Object.assign(obj, { [key]: val }), {})
+
+  // @todo clean up this mess!
+  return { ...cleanConfig, cleanConfig, theme }
+}
 
 module.exports = {
   pathPrefix: ``,
@@ -20,7 +39,7 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-theme-mdx-suite-core`,
-      options: {
+      options: prepareMdxSuiteOptions({
         // Configure the MDX Suite
         themeConfig,
         /**
@@ -32,14 +51,14 @@ module.exports = {
           'en-US': '',
           de: 'de',
         },
-        // @todo
-        // Will be passes as resources to i18next.
-        // See https://www.i18next.com/overview/configuration-options
+        // Will be passed to LinguiJS.
+        // @todo can't we automatically import that in onPreInit?
         translations: {
-          'en-US': translationsEn,
-          de: translationsDe,
+          'en-US': localesEn.messages,
+          de: localesDe.messages,
         },
         /**
+         * @todo this is!!! exposed via page state json. Switch to env vars!!
          * Contentful credentials from environment variables will be used by default.
          * Never hardcode API credentials in your projects.
          * This is a exception for demonstration purposes.
@@ -49,7 +68,7 @@ module.exports = {
           accessToken: `yfNcvsaJfU6nmL6xzKwbP-WHw27vvDzjTCeFkg93pKk`,
           environment: `full`,
         },
-      },
+      }),
     },
     // Basic layout, SEO, Analytics and more
     {

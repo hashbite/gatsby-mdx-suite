@@ -30,10 +30,7 @@ const BlogPostTeaser = ({ blogPost, ...props }) => {
         {Intl.DateTimeFormat(blogPost.locale).format(
           new Date(blogPost.publicationDate)
         )}{' '}
-        -{' '}
-        {t('newsTimeToRead', {
-          minutes: blogPost.content.childMdx.timeToRead,
-        })}
+        - {t`${blogPost.content.childMdx.timeToRead} min. to read`}
       </BlogPostTeaserMeta>
 
       {blogPost.teaser && (
@@ -42,7 +39,7 @@ const BlogPostTeaser = ({ blogPost, ...props }) => {
         </BlogPostTeaserDescription>
       )}
       <BlogPostTeaserFooter>
-        <Cta id={blogPost.pageId}>{t('newsReadMore')}</Cta>
+        <Cta id={blogPost.pageId}>{t`newsReadMore`}</Cta>
       </BlogPostTeaserFooter>
     </BlogPostTeaserWrapper>
   )
