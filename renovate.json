@@ -10,6 +10,10 @@
       "matchPackagePatterns": ["^@consent-manager"],
       "groupName": "consent-manager",
       "prPriority": 4
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
     }
   ]
 }
