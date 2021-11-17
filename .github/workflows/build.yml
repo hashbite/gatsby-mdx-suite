@@ -84,6 +84,12 @@ jobs:
       - name: Install dependencies via yarn
         run: yarn install --prefer-offline --frozen-lockfile --ignore-optional
 
+      # Debug
+      - name: Where is msgpackr?
+        run: yarn why msgpackr
+      - name: Where is msgpackr? \#2
+        run: du -h -d 1 node_modules
+
       # Build
       - name: Build Gatsby site
         run: npm run build -- --verbose
