@@ -88,16 +88,12 @@ jobs:
       - name: Install dependencies via yarn
         run: yarn install --prefer-offline --frozen-lockfile
 
-      # Debug
-      - name: Where is msgpackr?
-        run: yarn why msgpackr
-      - name: Where is msgpackr? \#2
-        run: du -h -d 1 node_modules
-
       # Build
       - name: Build Gatsby site
         run: netlify build
-        working-directory: examples/${{ matrix.environment }}
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
   deploy:
     name: Deploy
