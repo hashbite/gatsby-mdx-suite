@@ -37,7 +37,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # do we need this include?
+        # @todo do we need this include?
         include:
           - environment: minimal
           - environment: basic
@@ -81,10 +81,10 @@ jobs:
           cache-name: node_modules
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
+            ${{ runner.os }}-${{ env.cache-name }}-${{ needs.context.outputs.branch }}-
+            ${{ runner.os }}-${{ env.cache-name }}-main
 
       # Install
       - name: Install dependencies via yarn
