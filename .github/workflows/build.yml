@@ -129,7 +129,7 @@ jobs:
       # Deploy
       - name: '[Production] Deploy to Netlify'
         if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && needs.context.outputs.branch == 'main'
-        run: npx netlify deploy --dir=public --debug --prod --message "${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})"
+        run: npx netlify deploy --debug --prod --message "${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})"
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -137,7 +137,7 @@ jobs:
       - name: '[PR] Deploy to Netlify'
         id: pr-deploy
         if: github.event_name == 'pull_request'
-        run: echo "::set-output name=deploy-url::$(npx netlify deploy --dir=public --debug --message "${{github.head_ref}} - ${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})" | grep "Website Draft URL:" | grep -oE "[^ ]+$")"
+        run: echo "::set-output name=deploy-url::$(npx netlify deploy --debug --message "${{github.head_ref}} - ${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})" | grep "Website Draft URL:" | grep -oE "[^ ]+$")"
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -181,9 +181,13 @@ jobs:
           path: ./examples/${{ matrix.environment }}/public
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
 
+      # Install dependencies (tmp - remove after adding to runners)
+      - name: TMP - install required test dependencies
+        run: yarn global add start-server-and-test gatsby-cli
+
       # Test
       - name: Test site via cypress
-        run: cypress run
+        run: start-server-and-test "gatsby serve" http://localhost:9000 "cypress run"
 
       - name: Upload video capture
         uses: actions/upload-artifact@v2
