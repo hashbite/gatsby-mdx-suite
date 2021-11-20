@@ -155,7 +155,7 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           authToken: ${{ secrets.GITHUB_TOKEN }}
-          context: Netlify Build Preview
+          context: Netlify Build Preview (${{ secrets.environment }})
           description: The deployment is ready. Click "Details".
           state: success
           sha: ${{github.event.pull_request.head.sha || github.sha}}
