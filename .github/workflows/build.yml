@@ -90,6 +90,12 @@ jobs:
       - name: Install dependencies via yarn
         run: yarn install --prefer-offline --frozen-lockfile
 
+      # Debug
+      - name: Show some secrets... or stars ;)
+        run: echo "NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}"
+      - name: Show some secrets... or stars ;)
+        run: echo "NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}"
+
       # Build
       - name: Build Gatsby site
         run: netlify build
