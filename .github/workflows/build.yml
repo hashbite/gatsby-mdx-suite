@@ -90,12 +90,6 @@ jobs:
       - name: Install dependencies via yarn
         run: yarn install --prefer-offline --frozen-lockfile
 
-      # Debug
-      - name: Show some secrets... or stars ;)
-        run: "echo 'NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}'"
-      - name: Show some secrets... or stars ;)
-        run: "echo 'NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}'"
-
       # Build
       - name: Build Gatsby site
         run: netlify build
@@ -198,11 +192,11 @@ jobs:
 
       # Install dependencies (tmp - remove after adding to runners)
       - name: TMP - install required test dependencies
-        run: yarn global add start-server-and-test gatsby-cli
+        run: yarn global add start-server-and-test serve
 
       # Test
       - name: Test site via cypress
-        run: start-server-and-test "gatsby serve" http://localhost:9000 "cypress run"
+        run: start-server-and-test "serve -l 9000 public" http://localhost:9000 "cypress run"
         working-directory: ${{ env.working-directory }}
 
       - name: Upload video capture
