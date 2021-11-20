@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build -- --verbose"
+  publish = "public"
+  environment = { NODE_ENV = "production" }
+
+[[plugins]]
+  package = "@netlify/plugin-gatsby"
