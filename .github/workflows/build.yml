@@ -44,6 +44,8 @@ jobs:
           - environment: full
     environment:
       name: ${{ matrix.environment }}
+    env:
+      working-directory: ./examples/${{ matrix.environment }}
     steps:
       - uses: actions/checkout@v2
 
@@ -54,7 +56,7 @@ jobs:
         env:
           cache-name: build-netlify
         with:
-          path: ./.netlify
+          path: ./examples/${{ matrix.environment }}/.netlify
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
@@ -91,6 +93,7 @@ jobs:
       # Build
       - name: Build Gatsby site
         run: netlify build
+        working-directory: ${{ env.working-directory }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -113,6 +116,8 @@ jobs:
     environment:
       url: ${{ matrix.url }}
       name: ${{ matrix.environment }}
+    env:
+      working-directory: ./examples/${{ matrix.environment }}
     steps:
       - uses: actions/checkout@v2
 
@@ -130,6 +135,7 @@ jobs:
       - name: '[Production] Deploy to Netlify'
         if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && needs.context.outputs.branch == 'main'
         run: npx netlify deploy --debug --prod --message "${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})"
+        working-directory: ${{ env.working-directory }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -138,6 +144,7 @@ jobs:
         id: pr-deploy
         if: github.event_name == 'pull_request'
         run: echo "::set-output name=deploy-url::$(npx netlify deploy --debug --message "${{github.head_ref}} - ${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})" | grep "Website Draft URL:" | grep -oE "[^ ]+$")"
+        working-directory: ${{ env.working-directory }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -168,6 +175,8 @@ jobs:
           - environment: full
     environment:
       name: ${{ matrix.environment }}
+    env:
+      working-directory: ./examples/${{ matrix.environment }}
     steps:
       - uses: actions/checkout@v2
 
@@ -188,6 +197,7 @@ jobs:
       # Test
       - name: Test site via cypress
         run: start-server-and-test "gatsby serve" http://localhost:9000 "cypress run"
+        working-directory: ${{ env.working-directory }}
 
       - name: Upload video capture
         uses: actions/upload-artifact@v2
@@ -217,6 +227,8 @@ jobs:
           - environment: full
     environment:
       name: ${{ matrix.environment }}
+    env:
+      working-directory: ./examples/${{ matrix.environment }}
     steps:
       - uses: actions/checkout@v2
 
@@ -233,6 +245,7 @@ jobs:
       # Test
       - name: run Lighthouse CI
         run: lhci autorun --collect.settings.chromeFlags="--no-sandbox"
+        working-directory: ${{ env.working-directory }}
         env:
           LHCI_SERVER: ${{ secrets.LHCI_SERVER }}
           LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
