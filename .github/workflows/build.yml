@@ -40,28 +40,23 @@ jobs:
         # do we need this include?
         include:
           - environment: minimal
-            url: https://gatsby-mdx-suite-minimal.netlify.app
           - environment: basic
-            url: https://gatsby-mdx-suite-basic.netlify.app
           - environment: full
-            url: https://gatsby-mdx-suite-full.netlify.app
     environment:
-      url: ${{ matrix.url }}
       name: ${{ matrix.environment }}
     steps:
       - uses: actions/checkout@v2
 
       # Cache
-      - name: Cache Gatsby .cache dir
+      - name: Cache .netlify
         uses: hashbite/github-action-cache-local-fs@main
-        id: gatsby-cache
+        id: build-netlify
         env:
-          cache-name: gatsby-cache
+          cache-name: build-netlify
         with:
-          path: ./examples/${{ matrix.environment }}/.cache
+          path: ./.netlify
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
 
@@ -77,7 +72,7 @@ jobs:
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
 
-      - name: Cache mono node_modules
+      - name: Cache node_modules
         uses: hashbite/github-action-cache-local-fs@main
         id: node_modules
         env:
@@ -86,7 +81,6 @@ jobs:
           path: ./node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
 
@@ -102,7 +96,7 @@ jobs:
 
       # Build
       - name: Build Gatsby site
-        run: npm run build -- --verbose
+        run: netlify build
         working-directory: examples/${{ matrix.environment }}
 
   deploy:
@@ -174,13 +168,9 @@ jobs:
         # do we need this include?
         include:
           - environment: minimal
-            url: https://gatsby-mdx-suite-minimal.netlify.app
           - environment: basic
-            url: https://gatsby-mdx-suite-basic.netlify.app
           - environment: full
-            url: https://gatsby-mdx-suite-full.netlify.app
     environment:
-      url: ${{ matrix.url }}
       name: ${{ matrix.environment }}
     steps:
       - uses: actions/checkout@v2
@@ -195,27 +185,9 @@ jobs:
           path: ./examples/${{ matrix.environment }}/public
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
 
-      - name: Cache node_modules
-        uses: hashbite/github-action-cache-local-fs@main
-        id: cypress-node_modules
-        env:
-          cache-name: cypress-node_modules
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-staging
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
-
-      # Install
-      - name: Install optional dependencies
-        run: npx handpick --target=devDependencies --target=optionalDependencies --manager=yarn
-
       # Test
       - name: Test site via cypress
-        run: npm run test:integration:ci
+        run: cypress run
 
       - name: Upload video capture
         uses: actions/upload-artifact@v2
@@ -241,13 +213,9 @@ jobs:
         # do we need this include?
         include:
           - environment: minimal
-            url: https://gatsby-mdx-suite-minimal.netlify.app
           - environment: basic
-            url: https://gatsby-mdx-suite-basic.netlify.app
           - environment: full
-            url: https://gatsby-mdx-suite-full.netlify.app
     environment:
-      url: ${{ matrix.url }}
       name: ${{ matrix.environment }}
     steps:
       - uses: actions/checkout@v2
@@ -262,29 +230,11 @@ jobs:
           path: ./examples/${{ matrix.environment }}/public
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
 
-      - name: Cache node_modules
-        uses: hashbite/github-action-cache-local-fs@main
-        id: lighthouse-node_modules
-        env:
-          cache-name: lighthouse-node_modules
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-staging
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
-
-      # Install
-      - name: Install Lighthouse CI
-        run: npm i @lhci/cli
-
       # Test
       - name: run Lighthouse CI
+        run: lhci autorun --collect.settings.chromeFlags="--no-sandbox"
         env:
           LHCI_SERVER: ${{ secrets.LHCI_SERVER }}
           LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
           LHCI_USER: ${{ secrets.LHCI_USER }}
           LHCI_PASSWORD: ${{ secrets.LHCI_PASSWORD }}
-        run: npx lhci autorun --collect.settings.chromeFlags="--no-sandbox"
