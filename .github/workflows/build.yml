@@ -134,7 +134,7 @@ jobs:
       # Deploy
       - name: '[Production] Deploy to Netlify'
         if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && needs.context.outputs.branch == 'main'
-        run: npx netlify deploy --debug --prod --message "${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})"
+        run: netlify deploy --debug --prod --message "${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})"
         working-directory: ${{ env.working-directory }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -143,7 +143,7 @@ jobs:
       - name: '[PR] Deploy to Netlify'
         id: pr-deploy
         if: github.event_name == 'pull_request'
-        run: echo "::set-output name=deploy-url::$(npx netlify deploy --debug --message "${{github.head_ref}} - ${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})" | grep "Website Draft URL:" | grep -oE "[^ ]+$")"
+        run: echo "::set-output name=deploy-url::$(netlify deploy --debug --message "${{github.head_ref}} - ${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})" | grep "Website Draft URL:" | grep -oE "[^ ]+$")"
         working-directory: ${{ env.working-directory }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -190,13 +190,28 @@ jobs:
           path: ./examples/${{ matrix.environment }}/public
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
 
-      # Install dependencies (tmp - remove after adding to runners)
-      - name: TMP - install required test dependencies
-        run: yarn global add start-server-and-test serve
+      - name: Cache node_modules
+        uses: hashbite/github-action-cache-local-fs@main
+        id: node_modules
+        env:
+          cache-name: node_modules
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-${{ needs.context.outputs.branch }}-
+            ${{ runner.os }}-${{ env.cache-name }}-main
+
+      # Install
+      - name: Install dependencies via yarn
+        run: yarn install --prefer-offline --frozen-lockfile
+
+      - name: Ensure cypress binaries are installed
+        run: npx cypress install
 
       # Test
-      - name: Test site via cypress
-        run: start-server-and-test "serve -l 9000 public" http://localhost:9000 "cypress run"
+      - name: Test site
+        run: npm run test
         working-directory: ${{ env.working-directory }}
 
       - name: Upload video capture

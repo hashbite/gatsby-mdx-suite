@@ -13,7 +13,11 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "test": "start-server-and-test serve http://localhost:9000 test:cypress",
+    "test:develop": "start-server-and-test serve http://localhost:9000 test:cypress:open",
+    "test:cypress": "cypress run",
+    "test:cypress:open": "cypress open"
   },
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.10",
@@ -32,5 +36,10 @@
   },
   "peerDependencies": {
     "gatsby-plugin-mdx": "^1.2.40"
+  },
+  "devDependencies": {
+    "cypress": "^9.0.0",
+    "serve": "^13.0.2",
+    "start-server-and-test": "^1.14.0"
   }
 }
