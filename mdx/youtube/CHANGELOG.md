@@ -3,6 +3,154 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.20](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.19...@gatsby-mdx-suite/mdx-youtube@0.12.20) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.18...@gatsby-mdx-suite/mdx-youtube@0.12.19) (2021-09-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.17...@gatsby-mdx-suite/mdx-youtube@0.12.18) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.17](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.16...@gatsby-mdx-suite/mdx-youtube@0.12.17) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.16](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.15...@gatsby-mdx-suite/mdx-youtube@0.12.16) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.15](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.14...@gatsby-mdx-suite/mdx-youtube@0.12.15) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.14](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.13...@gatsby-mdx-suite/mdx-youtube@0.12.14) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.12...@gatsby-mdx-suite/mdx-youtube@0.12.13) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.11...@gatsby-mdx-suite/mdx-youtube@0.12.12) (2021-08-18)
+
+
+### Performance Improvements
+
+* async load GSAP library and improve bundle chunking ([d122ff6](https://github.com/axe312ger/gatsby-mdx-suite/commit/d122ff61d5363354fb482f820848c1204c13ddb2))
+
+
+
+
+
+## [0.12.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.10...@gatsby-mdx-suite/mdx-youtube@0.12.11) (2021-08-13)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.9...@gatsby-mdx-suite/mdx-youtube@0.12.10) (2021-07-30)
+
+
+### Bug Fixes
+
+* ensure loading indicator is showing up till lazy component is loaded ([9bc55b7](https://github.com/axe312ger/gatsby-mdx-suite/commit/9bc55b7df5a314e5346a8abc48bbfaadf8302820))
+
+
+
+
+
+## [0.12.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.8...@gatsby-mdx-suite/mdx-youtube@0.12.9) (2021-07-30)
+
+
+### Bug Fixes
+
+* **lazy:** remove lazy-chunk and use @loadable/component ([cd453ff](https://github.com/axe312ger/gatsby-mdx-suite/commit/cd453ff070f108146b20d943eff615ef7a21fbee))
+
+
+
+
+
+## [0.12.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.7...@gatsby-mdx-suite/mdx-youtube@0.12.8) (2021-07-25)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.6...@gatsby-mdx-suite/mdx-youtube@0.12.7) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.5...@gatsby-mdx-suite/mdx-youtube@0.12.6) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+## [0.12.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.12.4...@gatsby-mdx-suite/mdx-youtube@0.12.5) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-youtube
+
+
+
+
+
+# [0.12.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.11.0...@gatsby-mdx-suite/mdx-youtube@0.12.0) (2021-06-08)
+
+
+### Features
+
+* switch to new gatsby-plugin-image and enable video posters ([5bb4c6d](https://github.com/axe312ger/gatsby-mdx-suite/commit/5bb4c6d1ea3b2580134d680f9b3a451946a3ae0a))
+
+
+
+
+
 # [0.11.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-youtube@0.10.2...@gatsby-mdx-suite/mdx-youtube@0.11.0) (2021-04-26)
 
 

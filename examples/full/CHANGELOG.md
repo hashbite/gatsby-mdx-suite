@@ -3,6 +3,223 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.14.4...gatsby-mdx-suite-example-full@0.15.0) (2021-11-09)
+
+
+### Features
+
+* migrate core code to Gatsby v4 ([5f771f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/5f771f4dce9332dc5a6d50ae9c28b4cb1db23290))
+
+
+
+
+
+## [0.14.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.14.3...gatsby-mdx-suite-example-full@0.14.4) (2021-09-28)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.14.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.14.2...gatsby-mdx-suite-example-full@0.14.3) (2021-09-27)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.14.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.14.1...gatsby-mdx-suite-example-full@0.14.2) (2021-09-27)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.14.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.14.0...gatsby-mdx-suite-example-full@0.14.1) (2021-09-11)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+# [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.11...gatsby-mdx-suite-example-full@0.14.0) (2021-09-11)
+
+
+### Features
+
+* **sqip:** reenable sqip ([0166d75](https://github.com/axe312ger/gatsby-mdx-suite/commit/0166d754954e2a93df746121dce0ec7ae2cab519))
+
+
+
+
+
+## [0.13.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.10...gatsby-mdx-suite-example-full@0.13.11) (2021-09-03)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.13.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.9...gatsby-mdx-suite-example-full@0.13.10) (2021-09-03)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.13.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.8...gatsby-mdx-suite-example-full@0.13.9) (2021-08-18)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.13.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.7...gatsby-mdx-suite-example-full@0.13.8) (2021-08-18)
+
+
+### Performance Improvements
+
+* async load GSAP library and improve bundle chunking ([d122ff6](https://github.com/axe312ger/gatsby-mdx-suite/commit/d122ff61d5363354fb482f820848c1204c13ddb2))
+* disable SQIP as download retry still has issues ([672381c](https://github.com/axe312ger/gatsby-mdx-suite/commit/672381c08cba23d00932e3b6899d3ca88e2cff7f))
+
+
+
+
+
+## [0.13.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.6...gatsby-mdx-suite-example-full@0.13.7) (2021-08-13)
+
+
+### Performance Improvements
+
+* **Contentful:** images from Contentful will now be downloaded reliably ([e0aabff](https://github.com/axe312ger/gatsby-mdx-suite/commit/e0aabff58afbfe2a134edb8654092288b13e6aa7))
+
+
+
+
+
+## [0.13.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.5...gatsby-mdx-suite-example-full@0.13.6) (2021-07-30)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.13.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.4...gatsby-mdx-suite-example-full@0.13.5) (2021-07-30)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.13.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.3...gatsby-mdx-suite-example-full@0.13.4) (2021-07-30)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.13.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.2...gatsby-mdx-suite-example-full@0.13.3) (2021-07-30)
+
+
+### Bug Fixes
+
+* **example/full:** use hashbite tracking ([55ae3ee](https://github.com/axe312ger/gatsby-mdx-suite/commit/55ae3eee6808130a4e165abc4c576a5b9926b6a2))
+
+
+
+
+
+## [0.13.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.1...gatsby-mdx-suite-example-full@0.13.2) (2021-07-25)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.13.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.13.0...gatsby-mdx-suite-example-full@0.13.1) (2021-07-25)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+# [0.13.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.12.8...gatsby-mdx-suite-example-full@0.13.0) (2021-07-21)
+
+
+### Features
+
+* projects can now define their own media collections ([9997fc5](https://github.com/axe312ger/gatsby-mdx-suite/commit/9997fc52d8787ed2fa292967abd83025f59a9a19))
+
+
+
+
+
+## [0.12.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.12.7...gatsby-mdx-suite-example-full@0.12.8) (2021-07-16)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.12.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.12.6...gatsby-mdx-suite-example-full@0.12.7) (2021-07-16)
+
+
+### Bug Fixes
+
+* **lighthouse:** add missing titles to icons ([99a5698](https://github.com/axe312ger/gatsby-mdx-suite/commit/99a5698eb75daece55fe39bcd58f4165549a9780))
+
+
+
+
+
+## [0.12.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.12.5...gatsby-mdx-suite-example-full@0.12.6) (2021-06-28)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.12.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.12.4...gatsby-mdx-suite-example-full@0.12.5) (2021-06-17)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+## [0.12.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.12.0...gatsby-mdx-suite-example-full@0.12.1) (2021-06-08)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-full
+
+
+
+
+
+# [0.12.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.11.0...gatsby-mdx-suite-example-full@0.12.0) (2021-06-08)
+
+
+### Features
+
+* add optional support for SQIP image placeholders ([95ee5af](https://github.com/axe312ger/gatsby-mdx-suite/commit/95ee5af605fa33829afd0bfd940325d6a6f1595a))
+
+
+
+
+
 # [0.11.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.10.5...gatsby-mdx-suite-example-full@0.11.0) (2021-04-26)
 
 

@@ -1,17 +1,11 @@
-import React, { useRef, useState, useCallback, useMemo } from 'react'
+import React, { useRef, useEffect, useCallback, useMemo } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
-import { useKillScrollTriggerOnCleanup } from '@gatsby-mdx-suite/helpers/styling/gsap'
+import { useIntersection } from 'react-use'
 
 import { useVideo } from './hooks'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const VideoWrapper = styled.div(
   ({ aspectRatio, maxWidth }) => css`
@@ -66,28 +60,10 @@ export default function Video({
   aspectRatio,
   contextKey,
   className,
-  forceRendering,
   ...props
 }) {
   const videoData = useVideo({ contextKey, id })
   const refVideo = useRef(null)
-  const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
-  useKillScrollTriggerOnCleanup(scrollTriggerInstance)
-
-  const handleVideoIntersection = useCallback(
-    (isActive) => {
-      // Autoplay as soon video is visible to the user.
-      if (autoplay && isActive && refVideo.current) {
-        return refVideo.current.play()
-      }
-      // Stop video when user leaves the viewport.
-      // Only active when controls are enabled to allow background videos to loop.
-      if (controls && !isActive && refVideo.current) {
-        return refVideo.current.pause()
-      }
-    },
-    [autoplay, controls]
-  )
 
   const handleVideoMouseEnter = useCallback(() => {
     if (autoplay && pauseOnHover) {
@@ -100,25 +76,35 @@ export default function Video({
       refVideo.current.play()
     }
   }, [refVideo, autoplay, pauseOnHover])
+  const intersectionRef = React.useRef(null)
+  const intersection = useIntersection(intersectionRef, {
+    root: null,
+    rootMargin: `0px 0px 0px 0px`,
+    threshold: 0,
+  })
 
-  const initScrollTrigger = useCallback(
-    (node) => {
-      if (!node) {
-        return
-      }
-
-      setScrollTriggerInstance(
-        ScrollTrigger.create({
-          trigger: node,
-          start: 'top bottom',
-          end: 'bottom top',
-          invalidateOnRefresh: true,
-          onToggle: ({ isActive }) => handleVideoIntersection(isActive),
-        })
-      )
-    },
-    [handleVideoIntersection]
+  const isVisible = useMemo(
+    () => intersection && intersection.intersectionRatio > 0,
+    [intersection]
   )
+
+  // Autoplay logic
+  useEffect(() => {
+    // Autoplay as soon video is visible to the user.
+    if (autoplay && isVisible && refVideo.current && refVideo.current.paused) {
+      return refVideo.current.play()
+    }
+    // Stop video when user leaves the viewport.
+    // Only active when controls are enabled to allow background videos to loop.
+    if (
+      controls &&
+      !isVisible &&
+      refVideo.current &&
+      !refVideo.current.paused
+    ) {
+      return refVideo.current.pause()
+    }
+  }, [autoplay, controls, isVisible])
 
   const posterSrc = useMemo(
     () =>
@@ -127,30 +113,32 @@ export default function Video({
     [screenshotIndex, videoData?.screenshots]
   )
 
+  if (!videoData) {
+    return 'video unavailable'
+  }
+
   return (
-    <LazyComponent forceRendering={forceRendering}>
-      <VideoWrapper
-        maxWidth={maxWidth}
-        aspectRatio={aspectRatio || videoData.aspectRatio}
-        className={className}
-        ref={initScrollTrigger}
+    <VideoWrapper
+      maxWidth={maxWidth}
+      aspectRatio={aspectRatio || videoData.aspectRatio}
+      className={className}
+      ref={intersectionRef}
+    >
+      <VideoTag
+        ref={refVideo}
+        onMouseEnter={handleVideoMouseEnter}
+        onMouseLeave={handleVideoMouseLeave}
+        controls={controls}
+        playsInline={autoplay || !controls}
+        preload={preload}
+        muted={autoplay || muted}
+        poster={posterSrc}
+        aspectRatio={aspectRatio}
+        {...props}
       >
-        <VideoTag
-          ref={refVideo}
-          onMouseEnter={handleVideoMouseEnter}
-          onMouseLeave={handleVideoMouseLeave}
-          controls={controls}
-          playsInline={autoplay || !controls}
-          preload={preload}
-          muted={autoplay || muted}
-          poster={posterSrc}
-          aspectRatio={aspectRatio}
-          {...props}
-        >
-          {videoData.sources}
-        </VideoTag>
-      </VideoWrapper>
-    </LazyComponent>
+        {videoData.sources}
+      </VideoTag>
+    </VideoWrapper>
   )
 }
 
@@ -163,7 +151,6 @@ Video.defaultProps = {
   preload: 'metadata',
   contextKey: 'screen',
   maxWidth: '100%',
-  forceRendering: false,
 }
 
 Video.propTypes = {
@@ -187,6 +174,4 @@ Video.propTypes = {
   preload: propTypes.string,
   /** Change rendering size of the video */
   contextKey: propTypes.string,
-  /** Force video to be rendered, even when user did not scroll close. Useful for components that will be displayed above the fold. */
-  forceRendering: propTypes.bool,
 }

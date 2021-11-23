@@ -3,6 +3,126 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.52](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.51...@gatsby-mdx-suite/mdx-instagram@0.3.52) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.51](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.50...@gatsby-mdx-suite/mdx-instagram@0.3.51) (2021-09-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.50](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.49...@gatsby-mdx-suite/mdx-instagram@0.3.50) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.49](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.48...@gatsby-mdx-suite/mdx-instagram@0.3.49) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.48](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.47...@gatsby-mdx-suite/mdx-instagram@0.3.48) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.47](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.46...@gatsby-mdx-suite/mdx-instagram@0.3.47) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.46](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.45...@gatsby-mdx-suite/mdx-instagram@0.3.46) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.45](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.44...@gatsby-mdx-suite/mdx-instagram@0.3.45) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.44](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.43...@gatsby-mdx-suite/mdx-instagram@0.3.44) (2021-08-13)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.43](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.42...@gatsby-mdx-suite/mdx-instagram@0.3.43) (2021-07-30)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.42](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.41...@gatsby-mdx-suite/mdx-instagram@0.3.42) (2021-07-25)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.41](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.40...@gatsby-mdx-suite/mdx-instagram@0.3.41) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.40](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.39...@gatsby-mdx-suite/mdx-instagram@0.3.40) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.39](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.38...@gatsby-mdx-suite/mdx-instagram@0.3.39) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
+## [0.3.34](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.33...@gatsby-mdx-suite/mdx-instagram@0.3.34) (2021-06-08)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram
+
+
+
+
+
 ## [0.3.33](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-instagram@0.3.32...@gatsby-mdx-suite/mdx-instagram@0.3.33) (2021-03-28)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-instagram

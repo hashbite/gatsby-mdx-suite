@@ -1,11 +1,10 @@
 import React, { useCallback, useState, useEffect, useMemo, useRef } from 'react'
-import { useDebounce } from '@react-hook/debounce'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import mdx from '@mdx-js/mdx'
 import tw from 'twin.macro'
-import { useWindowSize } from '@react-hook/window-size'
+import { useDebounce } from 'react-use'
 import Editor from '@monaco-editor/react'
 
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
@@ -161,17 +160,26 @@ function LiveEditor({ editorId, initialValue, layout }) {
   const [error, setError] = useState()
   const [errorDetailsVisible, setErrorDetailsVisible] = useState(false)
 
-  // Editor value change handing
+  // Editor value change handling
   const editorValue = useMemo(
     () => localStorage.getItem(localStorageId) || initialValue || '',
     [localStorageId, initialValue]
   )
 
-  const [unverifiedValue, setUnverifiedValue] = useDebounce(editorValue, 500)
+  const [unverifiedValue, setUnverifiedValue] = useState(editorValue)
+  const [currentValue, setCurrentValue] = useState(editorValue)
+
+  useDebounce(
+    () => {
+      setUnverifiedValue(currentValue)
+    },
+    500,
+    [currentValue, setUnverifiedValue]
+  )
 
   const validateCurrentEditorValue = useCallback(() => {
-    setUnverifiedValue(editorInstance.getValue())
-  }, [setUnverifiedValue, editorInstance])
+    setCurrentValue(editorInstance.getValue())
+  }, [setCurrentValue, editorInstance])
 
   const { replaceTokens } = useMedia()
 
@@ -284,7 +292,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
     setErrorDetailsVisible((v) => !v)
   }, [])
 
-  const [sidebarTab, setSidebarTab] = useState('closed')
+  const [sidebarTab, setSidebarTab] = useState('snippets')
   const onChangeSidebarTab = useCallback((e) => {
     setSidebarTab(e.currentTarget.value)
   }, [])
@@ -301,14 +309,6 @@ function LiveEditor({ editorId, initialValue, layout }) {
     },
     [previewRef]
   )
-
-  // Update monaco layout when window resizes
-  const [width, height] = useWindowSize()
-  useEffect(() => {
-    if (editorInstance) {
-      editorInstance.layout()
-    }
-  }, [width, height, editorInstance])
 
   return (
     <LiveEditorWrapper layout={layout} previewExpanded={previewExpanded}>
@@ -386,6 +386,7 @@ function LiveEditor({ editorId, initialValue, layout }) {
             <option value="fonts">Fonts</option>
             <option value="icons">Icons</option>
             <option value="media">Media</option>
+            <option value="snippets">Snippets</option>
             <option value="sizes">Sizes</option>
             <option disabled>---</option>
             <option value="help">Help</option>

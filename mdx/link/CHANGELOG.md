@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.9.12...@gatsby-mdx-suite/mdx-link@0.9.13) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-link
+
+
+
+
+
+## [0.9.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.9.11...@gatsby-mdx-suite/mdx-link@0.9.12) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-link
+
+
+
+
+
+## [0.9.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.9.10...@gatsby-mdx-suite/mdx-link@0.9.11) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-link
+
+
+
+
+
+## [0.9.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.9.9...@gatsby-mdx-suite/mdx-link@0.9.10) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-link
+
+
+
+
+
+## [0.9.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.9.4...@gatsby-mdx-suite/mdx-link@0.9.5) (2021-06-08)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-link
+
+
+
+
+
 ## [0.9.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-link@0.9.3...@gatsby-mdx-suite/mdx-link@0.9.4) (2021-03-28)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-link

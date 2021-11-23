@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import * as propTypes from 'prop-types'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
@@ -44,12 +44,8 @@ function DocsComponentTemplate({ data, pageContext }) {
   const MdxSuiteData = useContext(MdxSuiteContext)
   const [activeTab, setActiveTab] = useState(0)
 
-  const {
-    displayName,
-    description,
-    componentProps,
-    examples,
-  } = data.componentMetadata
+  const { displayName, description, componentProps, examples } =
+    data.componentMetadata
 
   const tabs = [
     `<${displayName} />`,

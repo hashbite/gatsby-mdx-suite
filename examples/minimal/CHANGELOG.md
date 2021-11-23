@@ -3,6 +3,180 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.3.4...gatsby-mdx-suite-example-minmal@0.4.0) (2021-11-09)
+
+
+### Bug Fixes
+
+* add missing fragment config to minimal example ([ecc52b0](https://github.com/axe312ger/gatsby-mdx-suite/commit/ecc52b0ffdb596b20e2c8c850cba72ed24ee8f8d))
+
+
+### Features
+
+* migrate core code to Gatsby v4 ([5f771f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/5f771f4dce9332dc5a6d50ae9c28b4cb1db23290))
+
+
+
+
+
+## [0.3.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.3.3...gatsby-mdx-suite-example-minmal@0.3.4) (2021-09-28)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.3.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.3.2...gatsby-mdx-suite-example-minmal@0.3.3) (2021-09-27)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.3.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.3.1...gatsby-mdx-suite-example-minmal@0.3.2) (2021-09-27)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.3.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.3.0...gatsby-mdx-suite-example-minmal@0.3.1) (2021-09-11)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+# [0.3.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.39...gatsby-mdx-suite-example-minmal@0.3.0) (2021-09-11)
+
+
+### Features
+
+* **sqip:** reenable sqip ([0166d75](https://github.com/axe312ger/gatsby-mdx-suite/commit/0166d754954e2a93df746121dce0ec7ae2cab519))
+
+
+
+
+
+## [0.2.39](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.38...gatsby-mdx-suite-example-minmal@0.2.39) (2021-09-03)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.38](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.37...gatsby-mdx-suite-example-minmal@0.2.38) (2021-09-03)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.37](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.36...gatsby-mdx-suite-example-minmal@0.2.37) (2021-08-18)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.36](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.35...gatsby-mdx-suite-example-minmal@0.2.36) (2021-08-13)
+
+
+### Performance Improvements
+
+* **Contentful:** images from Contentful will now be downloaded reliably ([e0aabff](https://github.com/axe312ger/gatsby-mdx-suite/commit/e0aabff58afbfe2a134edb8654092288b13e6aa7))
+
+
+
+
+
+## [0.2.35](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.34...gatsby-mdx-suite-example-minmal@0.2.35) (2021-07-30)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.34](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.33...gatsby-mdx-suite-example-minmal@0.2.34) (2021-07-30)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.33](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.32...gatsby-mdx-suite-example-minmal@0.2.33) (2021-07-25)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.32](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.31...gatsby-mdx-suite-example-minmal@0.2.32) (2021-07-21)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.31](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.30...gatsby-mdx-suite-example-minmal@0.2.31) (2021-07-16)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.30](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.29...gatsby-mdx-suite-example-minmal@0.2.30) (2021-07-16)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.29](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.28...gatsby-mdx-suite-example-minmal@0.2.29) (2021-06-28)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.28](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.27...gatsby-mdx-suite-example-minmal@0.2.28) (2021-06-17)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.24](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.23...gatsby-mdx-suite-example-minmal@0.2.24) (2021-06-08)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
+## [0.2.23](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.22...gatsby-mdx-suite-example-minmal@0.2.23) (2021-06-08)
+
+**Note:** Version bump only for package gatsby-mdx-suite-example-minmal
+
+
+
+
+
 ## [0.2.22](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.2.21...gatsby-mdx-suite-example-minmal@0.2.22) (2021-04-07)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-minmal

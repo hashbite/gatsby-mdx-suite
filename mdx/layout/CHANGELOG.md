@@ -3,6 +3,165 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.22](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.21...@gatsby-mdx-suite/mdx-layout@0.28.22) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.21](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.20...@gatsby-mdx-suite/mdx-layout@0.28.21) (2021-09-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.20](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.19...@gatsby-mdx-suite/mdx-layout@0.28.20) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.18...@gatsby-mdx-suite/mdx-layout@0.28.19) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.17...@gatsby-mdx-suite/mdx-layout@0.28.18) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.17](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.16...@gatsby-mdx-suite/mdx-layout@0.28.17) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.16](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.15...@gatsby-mdx-suite/mdx-layout@0.28.16) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.15](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.14...@gatsby-mdx-suite/mdx-layout@0.28.15) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.14](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.13...@gatsby-mdx-suite/mdx-layout@0.28.14) (2021-08-18)
+
+
+### Performance Improvements
+
+* async load GSAP library and improve bundle chunking ([d122ff6](https://github.com/axe312ger/gatsby-mdx-suite/commit/d122ff61d5363354fb482f820848c1204c13ddb2))
+
+
+
+
+
+## [0.28.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.12...@gatsby-mdx-suite/mdx-layout@0.28.13) (2021-08-13)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.11...@gatsby-mdx-suite/mdx-layout@0.28.12) (2021-07-30)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.10...@gatsby-mdx-suite/mdx-layout@0.28.11) (2021-07-30)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.9...@gatsby-mdx-suite/mdx-layout@0.28.10) (2021-07-25)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.8...@gatsby-mdx-suite/mdx-layout@0.28.9) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.7...@gatsby-mdx-suite/mdx-layout@0.28.8) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.6...@gatsby-mdx-suite/mdx-layout@0.28.7) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.5...@gatsby-mdx-suite/mdx-layout@0.28.6) (2021-06-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+## [0.28.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.4...@gatsby-mdx-suite/mdx-layout@0.28.5) (2021-06-17)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout
+
+
+
+
+
+# [0.28.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.27.0...@gatsby-mdx-suite/mdx-layout@0.28.0) (2021-06-08)
+
+
+### Features
+
+* improve URLs by enforcing trailing slash ([4102d07](https://github.com/axe312ger/gatsby-mdx-suite/commit/4102d07fa225c2627948b9af5c62c05d63b87816))
+* switch to new gatsby-plugin-image and enable video posters ([5bb4c6d](https://github.com/axe312ger/gatsby-mdx-suite/commit/5bb4c6d1ea3b2580134d680f9b3a451946a3ae0a))
+
+
+
+
+
 # [0.27.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.26.8...@gatsby-mdx-suite/mdx-layout@0.27.0) (2021-04-07)
 
 

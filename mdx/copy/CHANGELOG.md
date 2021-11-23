@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.15.7...@gatsby-mdx-suite/mdx-copy@0.15.8) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-copy
+
+
+
+
+
+## [0.15.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.15.6...@gatsby-mdx-suite/mdx-copy@0.15.7) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-copy
+
+
+
+
+
+## [0.15.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.15.5...@gatsby-mdx-suite/mdx-copy@0.15.6) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-copy
+
+
+
+
+
+## [0.15.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.15.4...@gatsby-mdx-suite/mdx-copy@0.15.5) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-copy
+
+
+
+
+
+# [0.15.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.14.4...@gatsby-mdx-suite/mdx-copy@0.15.0) (2021-06-08)
+
+
+### Features
+
+* improve URLs by enforcing trailing slash ([4102d07](https://github.com/axe312ger/gatsby-mdx-suite/commit/4102d07fa225c2627948b9af5c62c05d63b87816))
+
+
+
+
+
 ## [0.14.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-copy@0.14.3...@gatsby-mdx-suite/mdx-copy@0.14.4) (2021-04-08)
 
 

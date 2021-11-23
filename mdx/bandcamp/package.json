@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-bandcamp",
-  "version": "0.3.6",
+  "version": "0.3.11",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "bandcamp"
   ],
   "peerDependencies": {
-    "@emotion/styled": "^10.0.23",
+    "@emotion/styled": "^11.3.0",
     "prop-types": "^15.7.0",
     "react": "^17.0.1"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-copy",
-  "version": "0.14.4",
+  "version": "0.15.8",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -20,15 +20,15 @@
     "text"
   ],
   "peerDependencies": {
-    "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "gatsby-theme-mdx-suite-base": "^0.11.7",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
-    "twin.macro": "^1.9.0"
+    "twin.macro": "^1.9.0 || ^2.0.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/helpers": "^0.15.1"
+    "@gatsby-mdx-suite/helpers": "^0.17.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,3 +1,8 @@
+examples/*/.cache-video
+examples/*/.cache-video-rolling
+examples/*/cypress/screenshots
+examples/*/cypress/videos
+
 # Created by https://www.toptal.com/developers/gitignore/api/osx,node,code,linux,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=osx,node,code,linux,windows
 

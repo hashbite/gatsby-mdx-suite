@@ -3,6 +3,93 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.11...@gatsby-mdx-suite/mdx-video@0.9.12) (2021-08-18)
+
+
+### Performance Improvements
+
+* async load GSAP library and improve bundle chunking ([d122ff6](https://github.com/axe312ger/gatsby-mdx-suite/commit/d122ff61d5363354fb482f820848c1204c13ddb2))
+
+
+
+
+
+## [0.9.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.10...@gatsby-mdx-suite/mdx-video@0.9.11) (2021-07-30)
+
+
+### Bug Fixes
+
+* ensure loading indicator is showing up till lazy component is loaded ([9bc55b7](https://github.com/axe312ger/gatsby-mdx-suite/commit/9bc55b7df5a314e5346a8abc48bbfaadf8302820))
+
+
+
+
+
+## [0.9.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.9...@gatsby-mdx-suite/mdx-video@0.9.10) (2021-07-30)
+
+
+### Bug Fixes
+
+* **lazy:** remove lazy-chunk and use @loadable/component ([cd453ff](https://github.com/axe312ger/gatsby-mdx-suite/commit/cd453ff070f108146b20d943eff615ef7a21fbee))
+
+
+
+
+
+## [0.9.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.8...@gatsby-mdx-suite/mdx-video@0.9.9) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-video
+
+
+
+
+
+## [0.9.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.7...@gatsby-mdx-suite/mdx-video@0.9.8) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-video
+
+
+
+
+
+## [0.9.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.6...@gatsby-mdx-suite/mdx-video@0.9.7) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-video
+
+
+
+
+
+## [0.9.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.5...@gatsby-mdx-suite/mdx-video@0.9.6) (2021-06-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-video
+
+
+
+
+
+## [0.9.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.4...@gatsby-mdx-suite/mdx-video@0.9.5) (2021-06-17)
+
+
+### Bug Fixes
+
+* **media:** unavailable images & videos do not break builds anymore ([6594433](https://github.com/axe312ger/gatsby-mdx-suite/commit/659443390f99f56da0224c786ca3dbdd4e35a551))
+
+
+
+
+
+# [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.8.3...@gatsby-mdx-suite/mdx-video@0.9.0) (2021-06-08)
+
+
+### Features
+
+* switch to new gatsby-plugin-image and enable video posters ([5bb4c6d](https://github.com/axe312ger/gatsby-mdx-suite/commit/5bb4c6d1ea3b2580134d680f9b3a451946a3ae0a))
+
+
+
+
+
 ## [0.8.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.8.2...@gatsby-mdx-suite/mdx-video@0.8.3) (2021-03-28)
 
 

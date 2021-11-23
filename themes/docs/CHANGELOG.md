@@ -3,6 +3,165 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.21](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.20...gatsby-theme-mdx-suite-docs@0.10.21) (2021-11-09)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.20](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.19...gatsby-theme-mdx-suite-docs@0.10.20) (2021-09-28)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.18...gatsby-theme-mdx-suite-docs@0.10.19) (2021-09-27)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.17...gatsby-theme-mdx-suite-docs@0.10.18) (2021-09-27)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.17](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.16...gatsby-theme-mdx-suite-docs@0.10.17) (2021-09-11)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.16](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.15...gatsby-theme-mdx-suite-docs@0.10.16) (2021-09-11)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.15](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.14...gatsby-theme-mdx-suite-docs@0.10.15) (2021-09-03)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.14](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.13...gatsby-theme-mdx-suite-docs@0.10.14) (2021-09-03)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.12...gatsby-theme-mdx-suite-docs@0.10.13) (2021-08-18)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.11...gatsby-theme-mdx-suite-docs@0.10.12) (2021-08-13)
+
+
+### Performance Improvements
+
+* **Contentful:** images from Contentful will now be downloaded reliably ([e0aabff](https://github.com/axe312ger/gatsby-mdx-suite/commit/e0aabff58afbfe2a134edb8654092288b13e6aa7))
+
+
+
+
+
+## [0.10.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.10...gatsby-theme-mdx-suite-docs@0.10.11) (2021-07-30)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.9...gatsby-theme-mdx-suite-docs@0.10.10) (2021-07-30)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.8...gatsby-theme-mdx-suite-docs@0.10.9) (2021-07-25)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.7...gatsby-theme-mdx-suite-docs@0.10.8) (2021-07-21)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.6...gatsby-theme-mdx-suite-docs@0.10.7) (2021-07-16)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.5...gatsby-theme-mdx-suite-docs@0.10.6) (2021-07-16)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.4...gatsby-theme-mdx-suite-docs@0.10.5) (2021-06-28)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+## [0.10.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.3...gatsby-theme-mdx-suite-docs@0.10.4) (2021-06-17)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-docs
+
+
+
+
+
+# [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.9.7...gatsby-theme-mdx-suite-docs@0.10.0) (2021-06-08)
+
+
+### Features
+
+* improve URLs by enforcing trailing slash ([4102d07](https://github.com/axe312ger/gatsby-mdx-suite/commit/4102d07fa225c2627948b9af5c62c05d63b87816))
+* switch to new gatsby-plugin-image and enable video posters ([5bb4c6d](https://github.com/axe312ger/gatsby-mdx-suite/commit/5bb4c6d1ea3b2580134d680f9b3a451946a3ae0a))
+
+
+
+
+
 ## [0.9.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.9.6...gatsby-theme-mdx-suite-docs@0.9.7) (2021-04-08)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-docs

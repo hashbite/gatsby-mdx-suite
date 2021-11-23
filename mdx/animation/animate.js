@@ -1,17 +1,9 @@
-import React, { useCallback, useState } from 'react'
+import React, { useMemo, useRef } from 'react'
 import propTypes from 'prop-types'
-import { cx } from 'emotion'
-
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { cx } from '@emotion/css'
+import { useIntersection } from 'react-use'
 
 import useAnimation from '@gatsby-mdx-suite/helpers/styling/use-animation'
-import {
-  useKillScrollTriggerOnCleanup,
-  useKillScrollTriggerWhenTrue,
-} from '@gatsby-mdx-suite/helpers/styling/gsap'
-
-gsap.registerPlugin(ScrollTrigger)
 
 /**
  * Animate one or more elements.
@@ -35,38 +27,26 @@ gsap.registerPlugin(ScrollTrigger)
  * </Animate>
  * </Section>
  */
-const Animate = ({ children, markers, show, className, ...props }) => {
-  const [isVisible, setIsVisible] = useState(false)
-  const [scrollTriggerInstance, setScrollTriggerInstance] = useState(null)
-  const { animationClass } = useAnimation({ show, isVisible })
+const Animate = ({ children, show, className, ...props }) => {
+  const wrapperRef = useRef(null)
 
-  const initScrollTrigger = useCallback(
-    (node) => {
-      if (!node) {
-        return
-      }
-      setScrollTriggerInstance(
-        ScrollTrigger.create({
-          trigger: node,
-          start: 'top 61.8%',
-          markers,
-          onToggle: ({ isActive }) => isActive && setIsVisible(true),
-        })
-      )
-    },
-    [setIsVisible, markers]
+  const intersection = useIntersection(wrapperRef, {
+    rootMargin: `-25% 0px -25% 0px`,
+    threshold: 0.1,
+  })
+
+  const isVisible = useMemo(
+    () => intersection && intersection.isIntersecting,
+    [intersection]
   )
 
-  useKillScrollTriggerOnCleanup(scrollTriggerInstance)
-  useKillScrollTriggerWhenTrue(scrollTriggerInstance, isVisible)
+  const { animationClass } = useAnimation({ show, isVisible })
 
   return (
-    <div
-      {...props}
-      ref={initScrollTrigger}
-      className={cx(animationClass, className)}
-    >
-      {children}
+    <div ref={wrapperRef}>
+      <div {...props} className={cx(animationClass, className)}>
+        {children}
+      </div>
     </div>
   )
 }
@@ -75,7 +55,6 @@ Animate.displayName = 'Animate'
 
 Animate.defaultProps = {
   show: 'fadeIn 1s',
-  markers: false,
 }
 
 Animate.propTypes = {
@@ -89,10 +68,6 @@ Animate.propTypes = {
    * Full animation syntax is supported: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
    */
   show: propTypes.string,
-  /**
-   * Show trigger and scroll frame markers for debugging.
-   */
-  markers: propTypes.bool,
 }
 
 export default Animate

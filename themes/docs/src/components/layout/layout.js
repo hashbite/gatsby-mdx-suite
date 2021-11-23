@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import tw from 'twin.macro'
 
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
@@ -18,7 +18,7 @@ const DocsWrapper = styled.div`
 
 const LayoutHeader = styled.div`
   ${tw`
-    p-4 flex justify-between items-center flex-no-wrap
+    p-4 flex justify-between items-center flex-nowrap
     shadow-lg
   `}
   grid-area: head;

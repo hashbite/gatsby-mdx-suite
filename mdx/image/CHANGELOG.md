@@ -3,6 +3,124 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.10.3...@gatsby-mdx-suite/mdx-image@0.10.4) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.10.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.10.2...@gatsby-mdx-suite/mdx-image@0.10.3) (2021-09-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.10.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.10.1...@gatsby-mdx-suite/mdx-image@0.10.2) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.10.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.10.0...@gatsby-mdx-suite/mdx-image@0.10.1) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+# [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.12...@gatsby-mdx-suite/mdx-image@0.10.0) (2021-09-11)
+
+
+### Features
+
+* ensure images within MDX content can be centered and are sized properly ([1ef7c5f](https://github.com/axe312ger/gatsby-mdx-suite/commit/1ef7c5ff6014b653eea78b8005e1a9dea20ad75c))
+
+
+
+
+
+## [0.9.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.11...@gatsby-mdx-suite/mdx-image@0.9.12) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.9.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.10...@gatsby-mdx-suite/mdx-image@0.9.11) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.9.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.9...@gatsby-mdx-suite/mdx-image@0.9.10) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.9.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.8...@gatsby-mdx-suite/mdx-image@0.9.9) (2021-08-13)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.9.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.7...@gatsby-mdx-suite/mdx-image@0.9.8) (2021-07-30)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.9.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.6...@gatsby-mdx-suite/mdx-image@0.9.7) (2021-07-25)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.9.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.5...@gatsby-mdx-suite/mdx-image@0.9.6) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.9.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.9.4...@gatsby-mdx-suite/mdx-image@0.9.5) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+# [0.9.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.8.6...@gatsby-mdx-suite/mdx-image@0.9.0) (2021-06-08)
+
+
+### Features
+
+* switch to new gatsby-plugin-image and enable video posters ([5bb4c6d](https://github.com/axe312ger/gatsby-mdx-suite/commit/5bb4c6d1ea3b2580134d680f9b3a451946a3ae0a))
+
+
+
+
+
 ## [0.8.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.8.5...@gatsby-mdx-suite/mdx-image@0.8.6) (2021-03-28)
 
 

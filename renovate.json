@@ -1,0 +1,19 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "extends": "monorepo:gatsby",
+      "groupName": "gatsby monorepo",
+      "prPriority": 4
+    },
+    {
+      "matchPackagePatterns": ["^@consent-manager"],
+      "groupName": "consent-manager",
+      "prPriority": 4
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
+    }
+  ]
+}

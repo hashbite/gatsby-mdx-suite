@@ -3,6 +3,73 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.18...@gatsby-mdx-suite/mdx-animation@0.2.19) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation
+
+
+
+
+
+## [0.2.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.17...@gatsby-mdx-suite/mdx-animation@0.2.18) (2021-08-18)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation
+
+
+
+
+
+## [0.2.17](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.16...@gatsby-mdx-suite/mdx-animation@0.2.17) (2021-08-18)
+
+
+### Performance Improvements
+
+* async load GSAP library and improve bundle chunking ([d122ff6](https://github.com/axe312ger/gatsby-mdx-suite/commit/d122ff61d5363354fb482f820848c1204c13ddb2))
+
+
+
+
+
+## [0.2.16](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.15...@gatsby-mdx-suite/mdx-animation@0.2.16) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation
+
+
+
+
+
+## [0.2.15](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.14...@gatsby-mdx-suite/mdx-animation@0.2.15) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation
+
+
+
+
+
+## [0.2.14](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.13...@gatsby-mdx-suite/mdx-animation@0.2.14) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation
+
+
+
+
+
+## [0.2.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.12...@gatsby-mdx-suite/mdx-animation@0.2.13) (2021-06-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation
+
+
+
+
+
+## [0.2.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.7...@gatsby-mdx-suite/mdx-animation@0.2.8) (2021-06-08)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-animation
+
+
+
+
+
 ## [0.2.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-animation@0.2.6...@gatsby-mdx-suite/mdx-animation@0.2.7) (2021-03-28)
 
 

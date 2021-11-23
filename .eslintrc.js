@@ -1,8 +1,12 @@
 module.exports = {
+  extends: `react-app`,
+  plugins: ['cypress'],
+  env: {
+    'cypress/globals': true,
+  },
   globals: {
     __PATH_PREFIX__: true,
   },
-  extends: `react-app`,
   rules: {
     'import/no-anonymous-default-export': [0],
   },

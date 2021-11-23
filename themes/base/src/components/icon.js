@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import IconsContext from '@gatsby-mdx-suite/contexts/icons'
 import selectColor from '@gatsby-mdx-suite/helpers/styling/select-color'
@@ -28,7 +28,7 @@ const IconWrapper = styled.span(
       `}
 
       svg {
-        display: inline-block;
+        display: ${display};
         width: 1em;
         height: auto;
         vertical-align: baseline;

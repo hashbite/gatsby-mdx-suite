@@ -3,6 +3,129 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.17...@gatsby-mdx-suite/mdx-media-gallery@0.5.18) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.17](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.16...@gatsby-mdx-suite/mdx-media-gallery@0.5.17) (2021-09-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.16](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.15...@gatsby-mdx-suite/mdx-media-gallery@0.5.16) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.15](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.14...@gatsby-mdx-suite/mdx-media-gallery@0.5.15) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.14](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.13...@gatsby-mdx-suite/mdx-media-gallery@0.5.14) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.12...@gatsby-mdx-suite/mdx-media-gallery@0.5.13) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.11...@gatsby-mdx-suite/mdx-media-gallery@0.5.12) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.10...@gatsby-mdx-suite/mdx-media-gallery@0.5.11) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.9...@gatsby-mdx-suite/mdx-media-gallery@0.5.10) (2021-08-13)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.8...@gatsby-mdx-suite/mdx-media-gallery@0.5.9) (2021-07-30)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.7...@gatsby-mdx-suite/mdx-media-gallery@0.5.8) (2021-07-25)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.6...@gatsby-mdx-suite/mdx-media-gallery@0.5.7) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.5...@gatsby-mdx-suite/mdx-media-gallery@0.5.6) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+## [0.5.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.5.4...@gatsby-mdx-suite/mdx-media-gallery@0.5.5) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery
+
+
+
+
+
+# [0.5.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.4.33...@gatsby-mdx-suite/mdx-media-gallery@0.5.0) (2021-06-08)
+
+
+### Features
+
+* switch to new gatsby-plugin-image and enable video posters ([5bb4c6d](https://github.com/axe312ger/gatsby-mdx-suite/commit/5bb4c6d1ea3b2580134d680f9b3a451946a3ae0a))
+
+
+
+
+
 ## [0.4.33](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-media-gallery@0.4.32...@gatsby-mdx-suite/mdx-media-gallery@0.4.33) (2021-03-28)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-media-gallery

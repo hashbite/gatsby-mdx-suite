@@ -11,7 +11,7 @@ module.exports = merge(defaultTheme, {
       },
       colors: {
         primary: defaultTailwindTheme.colors.blue['500'],
-        secondary: defaultTailwindTheme.colors.orange['300'],
+        secondary: defaultTailwindTheme.colors.purple['300'],
         text: defaultTailwindTheme.colors.gray['900'],
         sets: {
           red: {
@@ -21,11 +21,11 @@ module.exports = merge(defaultTheme, {
             primary: defaultTailwindTheme.colors.red['100'],
             secondary: defaultTailwindTheme.colors.white,
           },
-          orange: {
-            background: defaultTailwindTheme.colors.orange['700'],
+          purple: {
+            background: defaultTailwindTheme.colors.purple['700'],
             text: defaultTailwindTheme.colors.white,
-            headline: defaultTailwindTheme.colors.orange['200'],
-            primary: defaultTailwindTheme.colors.orange['100'],
+            headline: defaultTailwindTheme.colors.purple['200'],
+            primary: defaultTailwindTheme.colors.purple['100'],
             secondary: defaultTailwindTheme.colors.white,
           },
           yellow: {
@@ -42,11 +42,11 @@ module.exports = merge(defaultTheme, {
             primary: defaultTailwindTheme.colors.green['100'],
             secondary: defaultTailwindTheme.colors.white,
           },
-          teal: {
-            background: defaultTailwindTheme.colors.teal['700'],
+          indigo: {
+            background: defaultTailwindTheme.colors.indigo['700'],
             text: defaultTailwindTheme.colors.white,
-            headline: defaultTailwindTheme.colors.teal['100'],
-            primary: defaultTailwindTheme.colors.teal['100'],
+            headline: defaultTailwindTheme.colors.indigo['100'],
+            primary: defaultTailwindTheme.colors.indigo['100'],
             secondary: defaultTailwindTheme.colors.white,
           },
           blue: {
@@ -54,20 +54,6 @@ module.exports = merge(defaultTheme, {
             text: defaultTailwindTheme.colors.white,
             headline: defaultTailwindTheme.colors.blue['200'],
             primary: defaultTailwindTheme.colors.blue['100'],
-            secondary: defaultTailwindTheme.colors.white,
-          },
-          indigo: {
-            background: defaultTailwindTheme.colors.indigo['700'],
-            text: defaultTailwindTheme.colors.white,
-            headline: defaultTailwindTheme.colors.indigo['200'],
-            primary: defaultTailwindTheme.colors.indigo['100'],
-            secondary: defaultTailwindTheme.colors.white,
-          },
-          purple: {
-            background: defaultTailwindTheme.colors.purple['700'],
-            text: defaultTailwindTheme.colors.white,
-            headline: defaultTailwindTheme.colors.purple['200'],
-            primary: defaultTailwindTheme.colors.purple['100'],
             secondary: defaultTailwindTheme.colors.white,
           },
           pink: {

@@ -1,6 +1,5 @@
+const { resolve } = require('path')
 const themeConfig = require('./tailwind.config.js')
-
-const isProduction = process.env.NODE_ENV === 'production'
 
 // Duplicate and rename .env.example to .env and fill in your credentials
 require('dotenv').config({ path: `.env` })
@@ -40,21 +39,14 @@ module.exports = {
         },
       },
     },
-    // Project specific configuration
-    `gatsby-transformer-video`,
-    ...(isProduction
-      ? [
-          // Enable if you build on Netlify. Gatsby cloud users do not need this.
-          // {
-          //   resolve: 'gatsby-plugin-netlify-cache',
-          //   options: {
-          //     extraDirsToCache: [
-          //       join('node_modules', '.cache', 'gatsby-transformer-video'),
-          //       join('node_modules', '.cache', 'gatsby-transformer-video-bin'),
-          //     ],
-          //   },
-          // },
-        ]
-      : []),
+    // Optional plugins:
+    {
+      resolve: `gatsby-transformer-video`,
+      options: {
+        // Move cache to node_modules to abuse Gatsby Cloud cache
+        cacheDirectory: resolve('node_modules', '.cache-video'),
+        cacheDirectoryBin: resolve('node_modules', '.cache-video-bin'),
+      },
+    },
   ].filter(Boolean),
 }

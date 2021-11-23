@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import propTypes from 'prop-types'
+import { lazy } from '@loadable/component'
 
-import VideoRenderer from './video-renderer'
+import LazyComponent from 'gatsby-theme-mdx-suite-base/src/components/lazy/lazy-component'
+import Loading from 'gatsby-theme-mdx-suite-base/src/components/lazy/loading'
 
+const VideoRenderer = lazy(() =>
+  import(/* webpackChunkName: "mdx--video-player" */ './video-renderer')
+)
 export default function MdxVideo(props) {
-  return <VideoRenderer {...props} />
+  return (
+    <LazyComponent forceRendering={props.forceRendering}>
+      <Suspense fallback={<Loading />}>
+        <VideoRenderer {...props} />
+      </Suspense>
+    </LazyComponent>
+  )
 }
 
 MdxVideo.defaultProps = {

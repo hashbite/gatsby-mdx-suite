@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-video",
-  "version": "0.8.3",
+  "version": "0.9.12",
   "description": "A video player for internal videos",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -20,18 +20,18 @@
     "media"
   ],
   "peerDependencies": {
-    "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "gatsby-theme-mdx-suite-base": "^0.11.7",
-    "gatsby-transformer-video": "^0.1.5",
+    "gatsby-transformer-video": "^0.3.0",
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
-    "twin.macro": "^1.10.0"
+    "twin.macro": "^1.10.0 || ^2.0.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/contexts": "^0.3.6",
-    "@gatsby-mdx-suite/helpers": "^0.15.1",
-    "gsap": "^3.6.1"
+    "@gatsby-mdx-suite/contexts": "^0.3.10",
+    "@loadable/component": "^5.15.0",
+    "react-use": "^17.2.4"
   },
   "publishConfig": {
     "access": "public"

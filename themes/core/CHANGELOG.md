@@ -3,6 +3,202 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.13.3...gatsby-theme-mdx-suite-core@0.14.0) (2021-11-09)
+
+
+### Features
+
+* migrate core code to Gatsby v4 ([5f771f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/5f771f4dce9332dc5a6d50ae9c28b4cb1db23290))
+
+
+
+
+
+## [0.13.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.13.2...gatsby-theme-mdx-suite-core@0.13.3) (2021-09-28)
+
+
+### Bug Fixes
+
+* properly apply global styles via twin.macro and emotion v11 ([ac95e35](https://github.com/axe312ger/gatsby-mdx-suite/commit/ac95e35700bd5e1a532139192d3ae6678e3c1001))
+
+
+
+
+
+## [0.13.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.13.1...gatsby-theme-mdx-suite-core@0.13.2) (2021-09-27)
+
+
+### Bug Fixes
+
+* **styling:** include global styles via twin.macro ([c46ac40](https://github.com/axe312ger/gatsby-mdx-suite/commit/c46ac40d0302f6a0e09f481cbc0e6ee97f06082a))
+
+
+
+
+
+## [0.13.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.13.0...gatsby-theme-mdx-suite-core@0.13.1) (2021-09-27)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-core
+
+
+
+
+
+# [0.13.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.12.0...gatsby-theme-mdx-suite-core@0.13.0) (2021-09-11)
+
+
+### Bug Fixes
+
+* ensure default image dimensions are calculated automatically ([c7a6c90](https://github.com/axe312ger/gatsby-mdx-suite/commit/c7a6c90d34b25d685fd9655ff540870f28470549))
+
+
+### Features
+
+* ensure images within MDX content can be centered and are sized properly ([1ef7c5f](https://github.com/axe312ger/gatsby-mdx-suite/commit/1ef7c5ff6014b653eea78b8005e1a9dea20ad75c))
+* improve playground asset resolution ([1b7c07d](https://github.com/axe312ger/gatsby-mdx-suite/commit/1b7c07d9ac4a20ac312911a158f0137f6dc0e7e6))
+
+
+
+
+
+# [0.12.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.11.5...gatsby-theme-mdx-suite-core@0.12.0) (2021-09-11)
+
+
+### Features
+
+* **sqip:** reenable sqip ([0166d75](https://github.com/axe312ger/gatsby-mdx-suite/commit/0166d754954e2a93df746121dce0ec7ae2cab519))
+
+
+
+
+
+## [0.11.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.11.4...gatsby-theme-mdx-suite-core@0.11.5) (2021-09-03)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-core
+
+
+
+
+
+## [0.11.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.11.3...gatsby-theme-mdx-suite-core@0.11.4) (2021-09-03)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-core
+
+
+
+
+
+## [0.11.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.11.2...gatsby-theme-mdx-suite-core@0.11.3) (2021-08-13)
+
+
+### Performance Improvements
+
+* **Contentful:** images from Contentful will now be downloaded reliably ([e0aabff](https://github.com/axe312ger/gatsby-mdx-suite/commit/e0aabff58afbfe2a134edb8654092288b13e6aa7))
+
+
+
+
+
+## [0.11.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.11.1...gatsby-theme-mdx-suite-core@0.11.2) (2021-07-30)
+
+
+### Bug Fixes
+
+* **lazy:** remove lazy-chunk and use @loadable/component ([cd453ff](https://github.com/axe312ger/gatsby-mdx-suite/commit/cd453ff070f108146b20d943eff615ef7a21fbee))
+
+
+
+
+
+## [0.11.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.11.0...gatsby-theme-mdx-suite-core@0.11.1) (2021-07-25)
+
+
+### Bug Fixes
+
+* **images:** readd title and alt properties to images from Contentful ([3cdbade](https://github.com/axe312ger/gatsby-mdx-suite/commit/3cdbade6615be4cbb4eb922806767e52607eaeaf))
+
+
+### Performance Improvements
+
+* temporarily disable image placeholders in docs ([2f5478e](https://github.com/axe312ger/gatsby-mdx-suite/commit/2f5478edcbb4d8f01d311b6c582d75a67110966f))
+
+
+
+
+
+# [0.11.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.10.9...gatsby-theme-mdx-suite-core@0.11.0) (2021-07-21)
+
+
+### Features
+
+* projects can now define their own media collections ([9997fc5](https://github.com/axe312ger/gatsby-mdx-suite/commit/9997fc52d8787ed2fa292967abd83025f59a9a19))
+
+
+
+
+
+## [0.10.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.10.8...gatsby-theme-mdx-suite-core@0.10.9) (2021-07-16)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-core
+
+
+
+
+
+## [0.10.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.10.7...gatsby-theme-mdx-suite-core@0.10.8) (2021-07-16)
+
+
+### Bug Fixes
+
+* **lighthouse:** add aria-label to mobile menu button ([6a5df83](https://github.com/axe312ger/gatsby-mdx-suite/commit/6a5df83ec4fbd63d7bae011cba64d307074565b3))
+* **lighthouse:** add width and height attributes to images ([99560d6](https://github.com/axe312ger/gatsby-mdx-suite/commit/99560d6b6cb6e6b63339e28cfea890f7739ec28b))
+
+
+
+
+
+## [0.10.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.10.6...gatsby-theme-mdx-suite-core@0.10.7) (2021-06-28)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-core
+
+
+
+
+
+## [0.10.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.10.5...gatsby-theme-mdx-suite-core@0.10.6) (2021-06-17)
+
+
+### Bug Fixes
+
+* **media:** unavailable images & videos do not break builds anymore ([6594433](https://github.com/axe312ger/gatsby-mdx-suite/commit/659443390f99f56da0224c786ca3dbdd4e35a551))
+
+
+
+
+
+## [0.10.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.10.0...gatsby-theme-mdx-suite-core@0.10.1) (2021-06-08)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-core
+
+
+
+
+
+# [0.10.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.9.3...gatsby-theme-mdx-suite-core@0.10.0) (2021-06-08)
+
+
+### Features
+
+* add h265 and VP9 video codecs ([f6985e3](https://github.com/axe312ger/gatsby-mdx-suite/commit/f6985e3a9852e253601a36dae1891bc825995549))
+* add optional support for SQIP image placeholders ([95ee5af](https://github.com/axe312ger/gatsby-mdx-suite/commit/95ee5af605fa33829afd0bfd940325d6a6f1595a))
+* improve URLs by enforcing trailing slash ([4102d07](https://github.com/axe312ger/gatsby-mdx-suite/commit/4102d07fa225c2627948b9af5c62c05d63b87816))
+* show pandas instead of broken pages to devs when images are missing ([68bcd66](https://github.com/axe312ger/gatsby-mdx-suite/commit/68bcd6606e70a4258bd28dab2a7a4f946efab9d5))
+* switch to new gatsby-plugin-image and enable video posters ([5bb4c6d](https://github.com/axe312ger/gatsby-mdx-suite/commit/5bb4c6d1ea3b2580134d680f9b3a451946a3ae0a))
+
+
+
+
+
 ## [0.9.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.9.2...gatsby-theme-mdx-suite-core@0.9.3) (2021-04-07)
 
 

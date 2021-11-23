@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.16.7...@gatsby-mdx-suite/helpers@0.17.0) (2021-11-09)
+
+
+### Features
+
+* migrate core code to Gatsby v4 ([5f771f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/5f771f4dce9332dc5a6d50ae9c28b4cb1db23290))
+
+
+
+
+
+## [0.16.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.16.6...@gatsby-mdx-suite/helpers@0.16.7) (2021-07-21)
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([36d24fa](https://github.com/axe312ger/gatsby-mdx-suite/commit/36d24fa332a298039b82f151af1269482806d759))
+
+
+
+
+
+## [0.16.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.16.5...@gatsby-mdx-suite/helpers@0.16.6) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/helpers
+
+
+
+
+
+## [0.16.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.16.4...@gatsby-mdx-suite/helpers@0.16.5) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/helpers
+
+
+
+
+
+# [0.16.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.15.1...@gatsby-mdx-suite/helpers@0.16.0) (2021-06-08)
+
+
+### Features
+
+* improve URLs by enforcing trailing slash ([4102d07](https://github.com/axe312ger/gatsby-mdx-suite/commit/4102d07fa225c2627948b9af5c62c05d63b87816))
+
+
+
+
+
 ## [0.15.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.15.0...@gatsby-mdx-suite/helpers@0.15.1) (2021-03-28)
 
 

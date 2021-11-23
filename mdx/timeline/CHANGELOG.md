@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.7.9...@gatsby-mdx-suite/mdx-timeline@0.7.10) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-timeline
+
+
+
+
+
+## [0.7.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.7.8...@gatsby-mdx-suite/mdx-timeline@0.7.9) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-timeline
+
+
+
+
+
+## [0.7.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.7.7...@gatsby-mdx-suite/mdx-timeline@0.7.8) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-timeline
+
+
+
+
+
+## [0.7.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.7.6...@gatsby-mdx-suite/mdx-timeline@0.7.7) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-timeline
+
+
+
+
+
+## [0.7.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.7.1...@gatsby-mdx-suite/mdx-timeline@0.7.2) (2021-06-08)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-timeline
+
+
+
+
+
 ## [0.7.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.7.0...@gatsby-mdx-suite/mdx-timeline@0.7.1) (2021-03-28)
 
 

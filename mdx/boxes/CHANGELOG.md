@@ -3,6 +3,161 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.22](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.21...@gatsby-mdx-suite/mdx-boxes@0.15.22) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.21](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.20...@gatsby-mdx-suite/mdx-boxes@0.15.21) (2021-09-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.20](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.19...@gatsby-mdx-suite/mdx-boxes@0.15.20) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.18...@gatsby-mdx-suite/mdx-boxes@0.15.19) (2021-09-27)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.17...@gatsby-mdx-suite/mdx-boxes@0.15.18) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.17](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.16...@gatsby-mdx-suite/mdx-boxes@0.15.17) (2021-09-11)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.16](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.15...@gatsby-mdx-suite/mdx-boxes@0.15.16) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.15](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.14...@gatsby-mdx-suite/mdx-boxes@0.15.15) (2021-09-03)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.14](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.13...@gatsby-mdx-suite/mdx-boxes@0.15.14) (2021-08-18)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.12...@gatsby-mdx-suite/mdx-boxes@0.15.13) (2021-08-13)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.11...@gatsby-mdx-suite/mdx-boxes@0.15.12) (2021-07-30)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.10...@gatsby-mdx-suite/mdx-boxes@0.15.11) (2021-07-30)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.9...@gatsby-mdx-suite/mdx-boxes@0.15.10) (2021-07-25)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.8...@gatsby-mdx-suite/mdx-boxes@0.15.9) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.7...@gatsby-mdx-suite/mdx-boxes@0.15.8) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.6...@gatsby-mdx-suite/mdx-boxes@0.15.7) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.5...@gatsby-mdx-suite/mdx-boxes@0.15.6) (2021-06-28)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+## [0.15.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.15.4...@gatsby-mdx-suite/mdx-boxes@0.15.5) (2021-06-17)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-boxes
+
+
+
+
+
+# [0.15.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.14.0...@gatsby-mdx-suite/mdx-boxes@0.15.0) (2021-06-08)
+
+
+### Features
+
+* switch to new gatsby-plugin-image and enable video posters ([5bb4c6d](https://github.com/axe312ger/gatsby-mdx-suite/commit/5bb4c6d1ea3b2580134d680f9b3a451946a3ae0a))
+
+
+
+
+
 # [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-boxes@0.13.9...@gatsby-mdx-suite/mdx-boxes@0.14.0) (2021-04-07)
 
 

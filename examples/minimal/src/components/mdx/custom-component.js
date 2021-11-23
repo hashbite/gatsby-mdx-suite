@@ -15,7 +15,11 @@ const CustomComponentWrapper = tw.div`bg-red-600 h-12`
  * </CustomComponent>
  */
 const CustomComponent = ({ children }) => {
-  return <CustomComponentWrapper>{children}</CustomComponentWrapper>
+  return (
+    <CustomComponentWrapper data-cypress="custom-component">
+      {children}
+    </CustomComponentWrapper>
+  )
 }
 
 CustomComponent.defaultProps = {

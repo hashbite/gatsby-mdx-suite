@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.25](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.24...@gatsby-mdx-suite/mdx-color-set@0.4.25) (2021-11-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set
+
+
+
+
+
+## [0.4.24](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.23...@gatsby-mdx-suite/mdx-color-set@0.4.24) (2021-08-13)
+
+
+### Performance Improvements
+
+* **Contentful:** images from Contentful will now be downloaded reliably ([e0aabff](https://github.com/axe312ger/gatsby-mdx-suite/commit/e0aabff58afbfe2a134edb8654092288b13e6aa7))
+
+
+
+
+
+## [0.4.23](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.22...@gatsby-mdx-suite/mdx-color-set@0.4.23) (2021-07-21)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set
+
+
+
+
+
+## [0.4.22](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.21...@gatsby-mdx-suite/mdx-color-set@0.4.22) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set
+
+
+
+
+
+## [0.4.21](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.20...@gatsby-mdx-suite/mdx-color-set@0.4.21) (2021-07-16)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set
+
+
+
+
+
+## [0.4.16](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.15...@gatsby-mdx-suite/mdx-color-set@0.4.16) (2021-06-08)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set
+
+
+
+
+
 ## [0.4.15](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.14...@gatsby-mdx-suite/mdx-color-set@0.4.15) (2021-03-28)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set

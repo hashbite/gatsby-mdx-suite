@@ -3,6 +3,236 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.13...gatsby-theme-mdx-suite-base@0.16.0) (2021-11-09)
+
+
+### Features
+
+* migrate core code to Gatsby v4 ([5f771f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/5f771f4dce9332dc5a6d50ae9c28b4cb1db23290))
+
+
+
+
+
+## [0.15.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.12...gatsby-theme-mdx-suite-base@0.15.13) (2021-09-28)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.15.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.11...gatsby-theme-mdx-suite-base@0.15.12) (2021-09-27)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.15.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.10...gatsby-theme-mdx-suite-base@0.15.11) (2021-09-27)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.15.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.9...gatsby-theme-mdx-suite-base@0.15.10) (2021-09-11)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.15.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.8...gatsby-theme-mdx-suite-base@0.15.9) (2021-09-11)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.15.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.7...gatsby-theme-mdx-suite-base@0.15.8) (2021-09-03)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.15.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.6...gatsby-theme-mdx-suite-base@0.15.7) (2021-09-03)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.15.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.5...gatsby-theme-mdx-suite-base@0.15.6) (2021-08-18)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.15.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.4...gatsby-theme-mdx-suite-base@0.15.5) (2021-08-18)
+
+
+### Performance Improvements
+
+* async load GSAP library and improve bundle chunking ([d122ff6](https://github.com/axe312ger/gatsby-mdx-suite/commit/d122ff61d5363354fb482f820848c1204c13ddb2))
+* replace GSAP in NavBar with IntersectionObserver ([5c97c22](https://github.com/axe312ger/gatsby-mdx-suite/commit/5c97c2237840d74bc36354e676896b20c87d5d0c))
+
+
+
+
+
+## [0.15.4](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.3...gatsby-theme-mdx-suite-base@0.15.4) (2021-08-13)
+
+
+### Performance Improvements
+
+* **Contentful:** images from Contentful will now be downloaded reliably ([e0aabff](https://github.com/axe312ger/gatsby-mdx-suite/commit/e0aabff58afbfe2a134edb8654092288b13e6aa7))
+
+
+
+
+
+## [0.15.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.2...gatsby-theme-mdx-suite-base@0.15.3) (2021-07-30)
+
+
+### Bug Fixes
+
+* **icons:** improve icons center rendering ([a17f9fa](https://github.com/axe312ger/gatsby-mdx-suite/commit/a17f9faac8c9a826dc9c7b2a9e4143e4c4caa70d))
+
+
+
+
+
+## [0.15.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.1...gatsby-theme-mdx-suite-base@0.15.2) (2021-07-30)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.15.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.15.0...gatsby-theme-mdx-suite-base@0.15.1) (2021-07-30)
+
+
+### Bug Fixes
+
+* **lazy:** add min height to loading indicator ([fcb76ff](https://github.com/axe312ger/gatsby-mdx-suite/commit/fcb76fff0e9e60a7ad8008a8df6eeb840a516fa9))
+
+
+
+
+
+# [0.15.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.14.0...gatsby-theme-mdx-suite-base@0.15.0) (2021-07-30)
+
+
+### Bug Fixes
+
+* **lazy:** remove lazy-chunk and use @loadable/component ([cd453ff](https://github.com/axe312ger/gatsby-mdx-suite/commit/cd453ff070f108146b20d943eff615ef7a21fbee))
+
+
+### Features
+
+* **lazy:** improve style of default loading indicator ([cf35ad4](https://github.com/axe312ger/gatsby-mdx-suite/commit/cf35ad4077ed9b49db75bf44fcc3042ec16967a8))
+
+
+
+
+
+# [0.14.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.9...gatsby-theme-mdx-suite-base@0.14.0) (2021-07-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency gatsby-plugin-hoofd to ^0.3.0 ([e9606b5](https://github.com/axe312ger/gatsby-mdx-suite/commit/e9606b58ddad0e6a10907001b606e4802dd45e1a))
+
+
+### Features
+
+* **anchor:** Anchors now take the floating header into account to avoid overlaps ([89e9fbc](https://github.com/axe312ger/gatsby-mdx-suite/commit/89e9fbcece502538dbef618abc43a268d6e3ba20))
+
+
+
+
+
+## [0.13.9](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.8...gatsby-theme-mdx-suite-base@0.13.9) (2021-07-21)
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([36d24fa](https://github.com/axe312ger/gatsby-mdx-suite/commit/36d24fa332a298039b82f151af1269482806d759))
+
+
+
+
+
+## [0.13.8](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.7...gatsby-theme-mdx-suite-base@0.13.8) (2021-07-16)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.13.7](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.6...gatsby-theme-mdx-suite-base@0.13.7) (2021-07-16)
+
+
+### Bug Fixes
+
+* **lighthouse:** add aria-label to mobile menu button ([6a5df83](https://github.com/axe312ger/gatsby-mdx-suite/commit/6a5df83ec4fbd63d7bae011cba64d307074565b3))
+
+
+### Performance Improvements
+
+* **browser:** preconnect and dns-prefetch Contentful Image API to reduce initial image loading time ([1702e05](https://github.com/axe312ger/gatsby-mdx-suite/commit/1702e057ca990ba26e942ee7510cd2ecebb3562f))
+
+
+
+
+
+## [0.13.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.5...gatsby-theme-mdx-suite-base@0.13.6) (2021-06-28)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.13.5](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.4...gatsby-theme-mdx-suite-base@0.13.5) (2021-06-17)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+## [0.13.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.13.0...gatsby-theme-mdx-suite-base@0.13.1) (2021-06-08)
+
+**Note:** Version bump only for package gatsby-theme-mdx-suite-base
+
+
+
+
+
+# [0.13.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.12.2...gatsby-theme-mdx-suite-base@0.13.0) (2021-06-08)
+
+
+### Features
+
+* improve URLs by enforcing trailing slash ([4102d07](https://github.com/axe312ger/gatsby-mdx-suite/commit/4102d07fa225c2627948b9af5c62c05d63b87816))
+
+
+
+
+
 ## [0.12.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.12.1...gatsby-theme-mdx-suite-base@0.12.2) (2021-04-26)
 
 
