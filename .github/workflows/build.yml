@@ -4,8 +4,7 @@ on:
     branches:
       - main
   pull_request:
-
-name: Build all examples
+name: Build and test all examples
 jobs:
   context:
     name: Prepare
@@ -105,7 +104,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # do we need this include?
         include:
           - environment: minimal
             url: https://gatsby-mdx-suite-minimal.netlify.app
@@ -168,7 +166,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # do we need this include?
         include:
           - environment: minimal
           - environment: basic
@@ -235,7 +232,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # do we need this include?
         include:
           - environment: minimal
           - environment: basic
