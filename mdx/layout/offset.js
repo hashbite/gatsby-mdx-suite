@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react'
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import propTypes from 'prop-types'
 import { useBreakpoint } from '@gatsby-mdx-suite/helpers/hooks/use-breakpoint'
 import { css } from '@emotion/react'

@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react'
-import { useCallback, useState, useMemo, useContext } from 'react'
+import React, { useCallback, useState, useMemo, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import tw from 'twin.macro'
