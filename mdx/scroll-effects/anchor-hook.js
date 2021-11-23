@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { useWindowSize, useSize } from 'react-use'
+import { useWindowSize } from 'react-use'
 
 import Button from 'gatsby-theme-mdx-suite-base/src/components/form/fields/button'
 
