@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-youtube",
-  "version": "0.12.20",
+  "version": "0.12.21",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -34,7 +34,7 @@
     "@gatsby-mdx-suite/contexts": "^0.3.10",
     "@gatsby-mdx-suite/helpers": "^0.17.0",
     "@loadable/component": "^5.15.0",
-    "gatsby-theme-mdx-suite-core": "^0.14.0",
+    "gatsby-theme-mdx-suite-core": "^0.14.1",
     "react-youtube": "7.13.1"
   },
   "publishConfig": {

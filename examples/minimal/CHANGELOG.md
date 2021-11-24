@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.5.0 (2021-11-24)
+
+
+### Bug Fixes
+
+* add missing fragment config to minimal example ([ecc52b0](https://github.com/axe312ger/gatsby-mdx-suite/commit/ecc52b0ffdb596b20e2c8c850cba72ed24ee8f8d))
+
+
+### Features
+
+* **helpers:** add mergeContextData to simplify merging context data ([bba7b56](https://github.com/axe312ger/gatsby-mdx-suite/commit/bba7b561799d6775eecc2318ef912313532819dc))
+* migrate core code to Gatsby v4 ([5f771f4](https://github.com/axe312ger/gatsby-mdx-suite/commit/5f771f4dce9332dc5a6d50ae9c28b4cb1db23290))
+* **seo:** add robots.txt ([d3bc8dd](https://github.com/axe312ger/gatsby-mdx-suite/commit/d3bc8dd72bf4a55ab2bddfaab061d806f4ad2a73))
+* **sqip:** reenable sqip ([0166d75](https://github.com/axe312ger/gatsby-mdx-suite/commit/0166d754954e2a93df746121dce0ec7ae2cab519))
+
+
+### Performance Improvements
+
+* **Contentful:** images from Contentful will now be downloaded reliably ([e0aabff](https://github.com/axe312ger/gatsby-mdx-suite/commit/e0aabff58afbfe2a134edb8654092288b13e6aa7))
+* remove loadable-component and migrate to React 17 ([89f29da](https://github.com/axe312ger/gatsby-mdx-suite/commit/89f29da1dc1a064638d77d6a614bfb5fad9efef9))
+* replace lodash with deepmerge ([85f48bd](https://github.com/axe312ger/gatsby-mdx-suite/commit/85f48bd1b80904e6df358bf2f4c233ee1b781d83))
+
+
+### Reverts
+
+* Revert "build: upgrade dependencies for Gatsby v2.32" ([c901347](https://github.com/axe312ger/gatsby-mdx-suite/commit/c901347c55e16edf4b0f0a911357b6f745fae660))
+
+
+
+
+
 # [0.4.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-minmal@0.3.4...gatsby-mdx-suite-example-minmal@0.4.0) (2021-11-09)
 
 

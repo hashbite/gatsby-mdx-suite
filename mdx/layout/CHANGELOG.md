@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.23](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.22...@gatsby-mdx-suite/mdx-layout@0.28.23) (2021-11-24)
+
+
+### Bug Fixes
+
+* use React for JSX rendering in all cases ([85a0a9b](https://github.com/axe312ger/gatsby-mdx-suite/commit/85a0a9b26ae439fa671b1d2d35315c57082aae83))
+
+
+
+
+
 ## [0.28.22](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-layout@0.28.21...@gatsby-mdx-suite/mdx-layout@0.28.22) (2021-11-09)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-layout

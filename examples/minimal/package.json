@@ -1,6 +1,6 @@
 {
   "name": "gatsby-mdx-suite-example-minimal",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Most minimal implementation of the MDX suite. Mostly for testing purposes.",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
@@ -22,12 +22,12 @@
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.10",
     "@gatsby-mdx-suite/helpers": "^0.17.0",
-    "@gatsby-mdx-suite/mdx-image": "^0.10.4",
-    "@gatsby-mdx-suite/mdx-layout": "^0.28.22",
+    "@gatsby-mdx-suite/mdx-image": "^0.10.5",
+    "@gatsby-mdx-suite/mdx-layout": "^0.28.23",
     "@gatsby-mdx-suite/mdx-link": "^0.9.13",
     "deepmerge": "^4.2.2",
     "gatsby": "^4.2.0",
-    "gatsby-theme-mdx-suite-core": "^0.14.0",
+    "gatsby-theme-mdx-suite-core": "^0.14.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.22](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.21...gatsby-theme-mdx-suite-docs@0.10.22) (2021-11-24)
+
+
+### Bug Fixes
+
+* use React for JSX rendering in all cases ([85a0a9b](https://github.com/axe312ger/gatsby-mdx-suite/commit/85a0a9b26ae439fa671b1d2d35315c57082aae83))
+
+
+
+
+
 ## [0.10.21](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.20...gatsby-theme-mdx-suite-docs@0.10.21) (2021-11-09)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-docs
