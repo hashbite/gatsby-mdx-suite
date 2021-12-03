@@ -10,4 +10,4 @@ import Section from '@gatsby-mdx-suite/mdx-layout/section'
 // Project specific components
 import CustomComponent from '../components/mdx/custom-component'
 
-export { Column, Columns, Image, Link, Section, CustomComponent }
+export default { Column, Columns, Image, Link, Section, CustomComponent }
