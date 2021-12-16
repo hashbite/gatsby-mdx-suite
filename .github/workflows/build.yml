@@ -138,12 +138,11 @@ jobs:
       - name: '[PR] Deploy to Netlify'
         id: pr-deploy
         if: github.event_name == 'pull_request'
-        run: echo "::set-output name=deploy-url::$(netlify deploy --debug --message "${{github.head_ref}} - ${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})" | grep "Website Draft URL:" | grep -oE "[^ ]+$")"
+        run: echo "::set-output name=deploy-url::$(netlify deploy --debug --message "${{github.head_ref}} - ${{ needs.context.outputs.commitMsg }} (${{ needs.context.outputs.commitId }})" | grep "Website Draft URL:" | grep -oE "https://[^ ]+$")"
         working-directory: ${{ env.working-directory }}
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NO_COLOR: true
 
       # Report
       - name: '[PR] Deploy Status'
