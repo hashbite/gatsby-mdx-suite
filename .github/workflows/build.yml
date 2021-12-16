@@ -63,7 +63,8 @@ jobs:
 
       # Restore .cache and public from netlify cache
       - name: Restore .cache and public from netlify cache
-        run: 'mv -v ./examples/${{ matrix.environment }}/.netlify/cache/cwd/.cache . || : && mv -v ./examples/${{ matrix.environment }}/.netlify/cache/cwd/public . || :'
+        run: 'mv -v .netlify/cache/cwd/.cache . || : && mv -v .netlify/cache/cwd/public . || :'
+        working-directory: ./examples/${{ matrix.environment }}/
 
       - name: Cache node_modules
         uses: hashbite/github-action-cache-local-fs@main
@@ -127,7 +128,8 @@ jobs:
 
       # Restore and public from netlify cache
       - name: Restore public from netlify cache
-        run: 'mv -v ./examples/${{ matrix.environment }}/.netlify/cache/cwd/public .'
+        run: 'mv -v .netlify/cache/cwd/public .'
+        working-directory: ./examples/${{ matrix.environment }}/
 
       # Deploy
       - name: '[Production] Deploy to Netlify'
@@ -193,7 +195,8 @@ jobs:
 
       # Restore and public from netlify cache
       - name: Restore public from netlify cache
-        run: 'mv -v ./examples/${{ matrix.environment }}/.netlify/cache/cwd/public .'
+        run: 'mv -v .netlify/cache/cwd/public .'
+        working-directory: ./examples/${{ matrix.environment }}/
 
       - name: Cache node_modules
         uses: hashbite/github-action-cache-local-fs@main
@@ -267,7 +270,8 @@ jobs:
 
       # Restore and public from netlify cache
       - name: Restore public from netlify cache
-        run: 'mv -v ./examples/${{ matrix.environment }}/.netlify/cache/cwd/public .'
+        run: 'mv -v .netlify/cache/cwd/public .'
+        working-directory: ./examples/${{ matrix.environment }}/
 
       # Test
       - name: run Lighthouse CI
