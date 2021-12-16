@@ -61,11 +61,6 @@ jobs:
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
 
-      # Restore .cache and public from netlify cache
-      - name: Restore .cache and public from netlify cache
-        run: 'mv -v .netlify/cache/cwd/.cache . || : && mv -v .netlify/cache/cwd/public . || :'
-        working-directory: ./examples/${{ matrix.environment }}/
-
       - name: Cache node_modules
         uses: hashbite/github-action-cache-local-fs@main
         id: node_modules
