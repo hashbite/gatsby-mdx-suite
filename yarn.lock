@@ -6756,6 +6756,14 @@ css-tree@^1.1.2:
     mdn-data "2.0.14"
     source-map "^0.6.1"
 
+css-tree@~2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-2.0.3.tgz#97c289475f2fde8d6bad5e95ee070cf56b1024db"
+  integrity sha512-hZAQj0YUpaFrjYVLe6582UcX8phT+AZy+bL/GIQpOJltL7s0apubsyi2X8o6jJWy0JJxlTN9hCJ9JjvikKjbWg==
+  dependencies:
+    mdn-data "2.0.23"
+    source-map-js "^1.0.1"
+
 css-unit-converter@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/css-unit-converter/-/css-unit-converter-1.1.2.tgz#4c77f5a1954e6dbff60695ecb214e3270436ab21"
@@ -6856,6 +6864,13 @@ csso@^4.0.2, csso@^4.2.0:
   integrity sha512-wvlcdIbf6pwKEk7vHj8/Bkc0B4ylXZruLvOgs9doS5eOsOpuodOV2zJChSpkp+pRpYQLQMeF04nr3Z68Sta9jA==
   dependencies:
     css-tree "^1.1.2"
+
+csso@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/csso/-/csso-5.0.1.tgz#cfc9b4d1f47d1f2bb8c7a49adb211e5d493adf0d"
+  integrity sha512-uXoapzRiivT0jPo7iFgMdCBncGWW4PVaARe+wiu6CGF4yHfdy5mN/ag+pTiy3N9kJlF+s8snRQH2xbYOEENiVA==
+  dependencies:
+    css-tree "~2.0.3"
 
 csso@~2.3.1:
   version "2.3.2"
@@ -14029,6 +14044,11 @@ mdn-data@2.0.14:
   resolved "https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
   integrity sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==
 
+mdn-data@2.0.23:
+  version "2.0.23"
+  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.23.tgz#dfb6c41e50a0edb808cf340973ab29321b70808e"
+  integrity sha512-IonVb7pfla2U4zW8rc7XGrtgq11BvYeCxWN8HS+KFBnLDE7XDK9AAMVhRuG6fj9BBsjc69Fqsp6WEActEdNTDQ==
+
 mdn-data@2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.4.tgz#699b3c38ac6f1d728091a64650b65d388502fd5b"
@@ -16052,12 +16072,12 @@ postcss-convert-values@^5.0.1:
   dependencies:
     postcss-value-parser "^4.1.0"
 
-postcss-csso@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.npmjs.org/postcss-csso/-/postcss-csso-5.0.1.tgz#023175280a4a8ff916d7763d3543c1fe55ed67a8"
-  integrity sha512-TI99uhhJK2L5IQXPuyNcT3XV9bffSvDPmNpHi5f+tBq+R/01ucgLsUCcTDcVNqKMxO28klI6NwgjrHrM99x9KA==
+postcss-csso@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-csso/-/postcss-csso-6.0.0.tgz#ff3ec8ce0694d797b75f7f7e10c4ac5a35e7780f"
+  integrity sha512-LsrU+LVR0mNIYauoTEbYVC81i+yXcGWa9kqW6Lvm+gYUZTaNTJmJT6Dbv+fqT8gOnwXAH1RV+5RXvAVoRtwO+g==
   dependencies:
-    csso "^4.0.2"
+    csso "^5.0.1"
 
 postcss-discard-comments@^5.0.1:
   version "5.0.1"
@@ -18600,6 +18620,11 @@ source-map-js@^0.6.2:
   version "0.6.2"
   resolved "https://registry.npmjs.org/source-map-js/-/source-map-js-0.6.2.tgz#0bb5de631b41cfbda6cfba8bd05a80efdfd2385e"
   integrity sha512-/3GptzWzu0+0MBQFrDKzw/DvvMTUORvgY6k6jd/VS6iCR4RDTKWH6v6WPwQoUO8667uQEf9Oe38DxAYWY5F/Ug==
+
+source-map-js@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.1.tgz#a1741c131e3c77d048252adfa24e23b908670caf"
+  integrity sha512-4+TN2b3tqOCd/kaGRJ/sTYA0tR0mdXx26ipdolxcwtJVqEnqNYvlCAt1q3ypy4QMlYus+Zh34RNtYLoq2oQ4IA==
 
 source-map-resolve@^0.5.0, source-map-resolve@^0.5.2:
   version "0.5.3"
