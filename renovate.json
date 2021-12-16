@@ -12,6 +12,11 @@
       "prPriority": 4
     },
     {
+      "matchPackagePatterns": ["^tailwind", "^twin"],
+      "groupName": "tailwind",
+      "prPriority": 3
+    },
+    {
       "matchDepTypes": ["devDependencies"],
       "automerge": true
     }
