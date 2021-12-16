@@ -56,22 +56,14 @@ jobs:
           cache-name: build-netlify
         with:
           path: ./examples/${{ matrix.environment }}/.netlify
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
-            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
-
-      - name: Cache Gatsby public dir
-        uses: hashbite/github-action-cache-local-fs@main
-        id: gatsby-public
-        env:
-          cache-name: gatsby-public
-        with:
-          path: ./examples/${{ matrix.environment }}/public
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
             ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
+
+      # Restore .cache and public from netlify cache
+      - name: Restore .cache and public from netlify cache
+        run: 'mv -v .netlify/cache/cwd/.cache . || : && mv -v .netlify/cache/cwd/public . || :'
 
       - name: Cache node_modules
         uses: hashbite/github-action-cache-local-fs@main
@@ -120,14 +112,22 @@ jobs:
       - uses: actions/checkout@v2
 
       # Cache
-      - name: Cache Gatsby public dir
+      - name: Cache .netlify
         uses: hashbite/github-action-cache-local-fs@main
-        id: gatsby-public
+        id: build-netlify
         env:
-          cache-name: gatsby-public
+          cache-name: build-netlify
         with:
-          path: ./examples/${{ matrix.environment }}/public
+          skip-save: true
+          path: ./examples/${{ matrix.environment }}/.netlify
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
+
+      # Restore and public from netlify cache
+      - name: Restore public from netlify cache
+        run: 'mv -v .netlify/cache/cwd/public .'
 
       # Deploy
       - name: '[Production] Deploy to Netlify'
@@ -178,14 +178,22 @@ jobs:
       - uses: actions/checkout@v2
 
       # Cache
-      - name: Cache Gatsby public dir
+      - name: Cache .netlify
         uses: hashbite/github-action-cache-local-fs@main
-        id: gatsby-public
+        id: build-netlify
         env:
-          cache-name: gatsby-public
+          cache-name: build-netlify
         with:
-          path: ./examples/${{ matrix.environment }}/public
+          skip-save: true
+          path: ./examples/${{ matrix.environment }}/.netlify
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
+
+      # Restore and public from netlify cache
+      - name: Restore public from netlify cache
+        run: 'mv -v .netlify/cache/cwd/public .'
 
       - name: Cache node_modules
         uses: hashbite/github-action-cache-local-fs@main
@@ -244,14 +252,22 @@ jobs:
       - uses: actions/checkout@v2
 
       # Cache
-      - name: Cache Gatsby public dir
+      - name: Cache .netlify
         uses: hashbite/github-action-cache-local-fs@main
-        id: gatsby-public
+        id: build-netlify
         env:
-          cache-name: gatsby-public
+          cache-name: build-netlify
         with:
-          path: ./examples/${{ matrix.environment }}/public
+          skip-save: true
+          path: ./examples/${{ matrix.environment }}/.netlify
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-${{ needs.context.outputs.branch }}-
+            ${{ runner.os }}-${{ env.cache-name }}-${{ matrix.environment }}-main
+
+      # Restore and public from netlify cache
+      - name: Restore public from netlify cache
+        run: 'mv -v .netlify/cache/cwd/public .'
 
       # Test
       - name: run Lighthouse CI
