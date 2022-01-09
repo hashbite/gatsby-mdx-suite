@@ -24,7 +24,7 @@
     "@typescript-eslint/parser": "4.29.1",
     "babel-eslint": "10.1.0",
     "babel-preset-gatsby": "2.4.0",
-    "depcheck": "1.4.2",
+    "depcheck": "1.4.3",
     "eslint": "7.32.0",
     "eslint-config-react-app": "7.0.0",
     "eslint-plugin-cypress": "2.12.1",
