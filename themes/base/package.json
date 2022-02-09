@@ -36,7 +36,7 @@
     "@react-icons/all-files": "^4.1.0",
     "deepmerge": "^4.2.2",
     "final-form": "^4.20.1",
-    "flag-icon-css": "^3.5.0",
+    "flag-icon-css": "^4.0.0",
     "gatsby-plugin-bundle-stats": "^3.2.4",
     "gatsby-plugin-force-trailing-slashes": "^1.0.5",
     "gatsby-plugin-hoofd": "^0.4.0",
