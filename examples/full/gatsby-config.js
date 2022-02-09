@@ -60,6 +60,8 @@ module.exports = {
       resolve: `gatsby-theme-mdx-suite-blog`,
       // options: {}
     },
+    // We deploy this example to Netlify, so:
+    `gatsby-plugin-netlify`,
     // Project specific configuration
     {
       resolve: `gatsby-plugin-manifest`,

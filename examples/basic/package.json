@@ -33,6 +33,7 @@
     "deepmerge": "^4.2.2",
     "dotenv": "^10.0.0",
     "gatsby": "^4.7.1",
+    "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-theme-mdx-suite-base": "^0.16.1",
     "gatsby-theme-mdx-suite-core": "^0.14.1",
     "prop-types": "^15.7.2",

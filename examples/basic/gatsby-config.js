@@ -39,6 +39,8 @@ module.exports = {
         },
       },
     },
+    // We deploy this example to Netlify, so:
+    `gatsby-plugin-netlify`,
     // Optional plugins:
     {
       resolve: `gatsby-transformer-video`,

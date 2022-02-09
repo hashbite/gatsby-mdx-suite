@@ -41,6 +41,7 @@
     "dotenv": "^10.0.0",
     "gatsby": "^4.7.1",
     "gatsby-plugin-manifest": "^4.7.0",
+    "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-theme-mdx-suite-base": "^0.16.1",
     "gatsby-theme-mdx-suite-blog": "^0.4.26",
     "gatsby-theme-mdx-suite-core": "^0.14.1",
