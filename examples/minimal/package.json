@@ -27,6 +27,7 @@
     "@gatsby-mdx-suite/mdx-link": "^0.9.13",
     "deepmerge": "^4.2.2",
     "gatsby": "^4.7.1",
+    "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-theme-mdx-suite-core": "^0.14.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

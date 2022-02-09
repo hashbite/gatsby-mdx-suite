@@ -26,6 +26,8 @@ module.exports = {
         },
       },
     },
+    // We deploy this example to Netlify, so:
+    `gatsby-plugin-netlify`,
     // Project specific plugins & configuration
     // ...
   ].filter(Boolean),
