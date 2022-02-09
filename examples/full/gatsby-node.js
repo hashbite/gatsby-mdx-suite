@@ -1,6 +1,17 @@
 const { resolve } = require('path')
 const { createPath } = require('@gatsby-mdx-suite/helpers/routing')
 
+// exports.onPreInit = async ({ store }, config) => {
+// const program = store.getState().program
+// const rootDir = program.directory
+// console.log({
+//   rootDir,
+//   store,
+//   key: Object.keys(store),
+//   state: store.getState(),
+// })
+// }
+
 exports.createPages = async ({ graphql, actions, getCache }) => {
   const { createPage, createRedirect } = actions
   const { config } = await getCache().get('mdx-suite')

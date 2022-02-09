@@ -16,7 +16,6 @@
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-i18next": "^11.7.2",
     "webpack": "^5.0.0"
   },
   "dependencies": {
@@ -25,6 +24,9 @@
     "@emotion/styled": "^11.3.0",
     "@gatsby-mdx-suite/contexts": "^0.3.10",
     "@gatsby-mdx-suite/helpers": "^0.17.0",
+    "@lingui/core": "^3.13.2",
+    "@lingui/react": "^3.13.2",
+    "@lingui/remote-loader": "^3.11.0",
     "autoprefixer": "^10.3.6",
     "cheerio": "0.22.0",
     "deepmerge": "^4.2.2",
@@ -38,7 +40,6 @@
     "gatsby-source-contentful": "^7.5.0",
     "gatsby-source-filesystem": "^4.7.0",
     "gatsby-transformer-sharp": "^4.7.0",
-    "i18next": "^20.4.0",
     "lodash": "^4.17.20",
     "path-browserify": "^1.0.1",
     "postcss": "^8.3.8",

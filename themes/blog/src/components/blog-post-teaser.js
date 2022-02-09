@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Cta from '@gatsby-mdx-suite/mdx-link/cta'
 import Image from 'gatsby-theme-mdx-suite-core/src/components/image'
-import { useTranslation } from 'react-i18next'
+import { t } from '@lingui/macro'
 
 const BlogPostTeaserWrapper = tw.article`flex flex-col h-full`
 const BlogPostTeaserHeadline = styled.h1`
@@ -22,8 +22,6 @@ const BlogPostTeaserFooter = tw.div`mt-8`
 const BlogPostTeaserImage = tw(Image)``
 
 const BlogPostTeaser = ({ blogPost, ...props }) => {
-  const { t } = useTranslation()
-
   return (
     <BlogPostTeaserWrapper {...props}>
       <BlogPostTeaserImage imageData={blogPost.image} />
@@ -32,10 +30,7 @@ const BlogPostTeaser = ({ blogPost, ...props }) => {
         {Intl.DateTimeFormat(blogPost.locale).format(
           new Date(blogPost.publicationDate)
         )}{' '}
-        -{' '}
-        {t('newsTimeToRead', {
-          minutes: blogPost.content.childMdx.timeToRead,
-        })}
+        - {t`${blogPost.content.childMdx.timeToRead} min. to read`}
       </BlogPostTeaserMeta>
 
       {blogPost.teaser && (
@@ -44,7 +39,7 @@ const BlogPostTeaser = ({ blogPost, ...props }) => {
         </BlogPostTeaserDescription>
       )}
       <BlogPostTeaserFooter>
-        <Cta id={blogPost.pageId}>{t('newsReadMore')}</Cta>
+        <Cta id={blogPost.pageId}>{t`newsReadMore`}</Cta>
       </BlogPostTeaserFooter>
     </BlogPostTeaserWrapper>
   )

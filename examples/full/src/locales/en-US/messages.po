@@ -1,0 +1,205 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#: src/consent-manager-i18n.js:8
+msgid "consent-manager.close"
+msgstr ""
+
+#: src/consent-manager-i18n.js:275
+msgid "consent-manager.fallback.algolia.title"
+msgstr ""
+
+#: src/consent-manager-i18n.js:99
+msgid "consent-manager.fallback.default.description"
+msgstr ""
+
+#: src/consent-manager-i18n.js:117
+msgid "consent-manager.fallback.default.enable"
+msgstr ""
+
+#: src/consent-manager-i18n.js:124
+msgid "consent-manager.fallback.default.learn-more"
+msgstr ""
+
+#: src/consent-manager-i18n.js:90
+msgid "consent-manager.fallback.default.title"
+msgstr ""
+
+#: src/consent-manager-i18n.js:272
+msgid "consent-manager.fallback.mapbox.title"
+msgstr ""
+
+#: src/consent-manager-i18n.js:281
+msgid "consent-manager.fallback.vimeo.title"
+msgstr ""
+
+#: src/consent-manager-i18n.js:278
+msgid "consent-manager.fallback.youtube.title"
+msgstr ""
+
+#: src/consent-manager-i18n.js:48
+msgid "consent-manager.form.description"
+msgstr ""
+
+#: src/consent-manager-i18n.js:79
+msgid "consent-manager.form.disable-all"
+msgstr ""
+
+#: src/consent-manager-i18n.js:73
+msgid "consent-manager.form.enable-all"
+msgstr ""
+
+#: src/consent-manager-i18n.js:42
+msgid "consent-manager.form.headline"
+msgstr ""
+
+#: src/consent-manager-i18n.js:70
+msgid "consent-manager.form.reset"
+msgstr ""
+
+#: src/consent-manager-i18n.js:85
+msgid "consent-manager.form.save"
+msgstr ""
+
+#: src/consent-manager-i18n.js:186
+msgid "consent-manager.integration.algolia.category"
+msgstr ""
+
+#: src/consent-manager-i18n.js:176
+msgid "consent-manager.integration.algolia.description"
+msgstr ""
+
+#: src/consent-manager-i18n.js:139
+msgid "consent-manager.integration.default.category"
+msgstr ""
+
+#: src/consent-manager-i18n.js:132
+msgid "consent-manager.integration.default.company"
+msgstr ""
+
+#: src/consent-manager-i18n.js:151
+msgid "consent-manager.integration.default.description"
+msgstr ""
+
+#: src/consent-manager-i18n.js:162
+msgid "consent-manager.integration.default.privacy-policy"
+msgstr ""
+
+#: src/consent-manager-i18n.js:145
+msgid "consent-manager.integration.default.title"
+msgstr ""
+
+#: src/consent-manager-i18n.js:206
+msgid "consent-manager.integration.mapbox.category"
+msgstr ""
+
+#: src/consent-manager-i18n.js:196
+msgid "consent-manager.integration.mapbox.description"
+msgstr ""
+
+#: src/consent-manager-i18n.js:226
+msgid "consent-manager.integration.matomo.category"
+msgstr ""
+
+#: src/consent-manager-i18n.js:216
+msgid "consent-manager.integration.matomo.description"
+msgstr ""
+
+#: src/consent-manager-i18n.js:246
+msgid "consent-manager.integration.vimeo.category"
+msgstr ""
+
+#: src/consent-manager-i18n.js:236
+msgid "consent-manager.integration.vimeo.description"
+msgstr ""
+
+#: src/consent-manager-i18n.js:266
+msgid "consent-manager.integration.youtube.category"
+msgstr ""
+
+#: src/consent-manager-i18n.js:256
+msgid "consent-manager.integration.youtube.description"
+msgstr ""
+
+#: src/consent-manager-i18n.js:22
+msgid "consent-manager.introduction.description"
+msgstr ""
+
+#: src/consent-manager-i18n.js:34
+msgid "consent-manager.introduction.enable-all"
+msgstr ""
+
+#: src/consent-manager-i18n.js:28
+msgid "consent-manager.introduction.learn-more"
+msgstr ""
+
+#: src/consent-manager-i18n.js:12
+msgid "consent-manager.introduction.title"
+msgstr ""
+
+#: :121
+msgid "contactFormCompany"
+msgstr ""
+
+#: :112
+msgid "contactFormCompanyEmail"
+msgstr ""
+
+#: :95
+msgid "contactFormFirstName"
+msgstr ""
+
+#: :103
+msgid "contactFormLastName"
+msgstr ""
+
+#: :126
+msgid "contactFormNumberOfEmployees"
+msgstr ""
+
+#: :108
+msgid "contactFormPosition"
+msgstr ""
+
+#: :148
+msgid "contactFormSubmit"
+msgstr ""
+
+#: :144
+msgid "contactFormTosAccepted"
+msgstr ""
+
+#: :33
+msgid "copyright"
+msgstr ""
+
+#: :185
+#: src/gatsby-theme-mdx-suite-base/components/navigation/mobile.js:183
+msgid "menu"
+msgstr ""
+
+#: :42
+msgid "newsReadMore"
+msgstr "Read more"
+
+#: :64
+msgid "next"
+msgstr ""
+
+#: :57
+msgid "previous"
+msgstr ""
+
+#: :33
+msgid "{0} min. to read"
+msgstr ""

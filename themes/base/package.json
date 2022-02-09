@@ -19,7 +19,6 @@
     "prop-types": "^15.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-i18next": "^11.7.2",
     "tailwindcss": "^1.8.10 || ^2.0.0",
     "twin.macro": "^1.9.0 || ^2.0.0"
   },

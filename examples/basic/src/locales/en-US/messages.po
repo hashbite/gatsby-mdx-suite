@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#: :129
+msgid "contactFormCompany"
+msgstr ""
+
+#: :119
+msgid "contactFormCompanyEmail"
+msgstr ""
+
+#: :96
+msgid "contactFormFirstName"
+msgstr ""
+
+#: :106
+msgid "contactFormLastName"
+msgstr ""
+
+#: :134
+msgid "contactFormNumberOfEmployees"
+msgstr ""
+
+#: :113
+msgid "contactFormPosition"
+msgstr ""
+
+#: :156
+msgid "contactFormSubmit"
+msgstr ""
+
+#: :152
+msgid "contactFormTosAccepted"
+msgstr ""
+
+#: :33
+msgid "copyright"
+msgstr ""
+
+#: :185
+msgid "menu"
+msgstr ""
+
+#: src/templates/page.js:43
+#~ msgid "translationTest"
+#~ msgstr "This is translated text"

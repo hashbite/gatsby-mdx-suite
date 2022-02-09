@@ -24,6 +24,8 @@ import components from 'gatsby-theme-mdx-suite-core/src/components'
 
 import { useConsentManagerConfig } from '@gatsby-mdx-suite/helpers/hooks/use-consent-manager-config'
 
+import { useMessages } from './consent-manager-i18n'
+
 const useConsentStateStore = createPersistedState('consent-manager-docs')
 
 const consentManagerConfig = {
@@ -45,6 +47,7 @@ const consentManagerConfig = {
 export function ConsentManagerWrapper({ children }) {
   const storage = useConsentStateStore()
   const config = useConsentManagerConfig(components, consentManagerConfig)
+  const messages = useMessages()
 
   return (
     <ConsentManagerDefaultInterface
@@ -52,6 +55,7 @@ export function ConsentManagerWrapper({ children }) {
       store={storage}
       Switch={SwitchField}
       Button={Button}
+      messages={messages}
     >
       {children}
     </ConsentManagerDefaultInterface>

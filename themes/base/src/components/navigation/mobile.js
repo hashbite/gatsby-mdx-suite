@@ -6,7 +6,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import tw from 'twin.macro'
 import ScrollLock from 'react-scrolllock'
-import { useTranslation } from 'react-i18next'
+import { t } from '@lingui/macro'
 
 import centerToContentColumn from '@gatsby-mdx-suite/helpers/styling/center-to-content-column'
 import Icon from 'gatsby-theme-mdx-suite-base/src/components/icon'
@@ -155,7 +155,6 @@ const HeaderMenuToggle = tw.button`
   border-none bg-transparent`
 
 const NavigationMobile = ({ rootMenuItemId }) => {
-  const { t } = useTranslation()
   const [menuOpen, setMenuOpen] = useState(false)
 
   const result = useStaticQuery(graphql`
@@ -183,7 +182,7 @@ const NavigationMobile = ({ rootMenuItemId }) => {
             <LanguageSwitch />
             <HeaderMenuToggle
               onClick={handleClickMenuToggle}
-              aria-label={t('menu')}
+              aria-label={t`menu`}
             >
               <Icon icon="menu" />
             </HeaderMenuToggle>

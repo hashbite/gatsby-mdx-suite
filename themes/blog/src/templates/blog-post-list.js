@@ -3,8 +3,9 @@ import propTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import tw from 'twin.macro'
 import styled from '@emotion/styled'
-import { useTranslation } from 'react-i18next'
+import { t } from '@lingui/macro'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { useLingui } from '@lingui/react'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
@@ -22,8 +23,9 @@ const Pagination = styled.div`
 `
 
 const BlogPostList = ({ data, pageContext }) => {
+  const { i18n } = useLingui()
   const MdxSuiteData = useContext(MdxSuiteContext)
-  const { t } = useTranslation()
+  i18n.activate(pageContext.locale)
 
   const blogPosts = data.allContentfulBlogPost.nodes.map((blogPost, i) => (
     <BlogPostTeaser key={i} blogPost={blogPost} />
@@ -55,14 +57,14 @@ const BlogPostList = ({ data, pageContext }) => {
             {pageContext.previousPagePath && (
               <Cta to={pageContext.previousPagePath}>
                 <Icon icon="previous" />
-                {t('previous')}
+                {t`previous`}
               </Cta>
             )}
           </div>
           <div>
             {pageContext.nextPagePath && (
               <Cta to={pageContext.nextPagePath}>
-                {t('next')}
+                {t`next`}
                 <Icon icon="next" />
               </Cta>
             )}

@@ -1,25 +1,20 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import * as propTypes from 'prop-types'
 
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { useTranslation } from 'react-i18next'
+import { useLingui } from '@lingui/react'
 
 import MdxSuiteContext from '@gatsby-mdx-suite/contexts/mdx-suite'
 import mergeContextData from '@gatsby-mdx-suite/helpers/data/merge-context-data'
 
 function PageTemplate({ data, pageContext }) {
-  const { i18n } = useTranslation()
+  const { i18n } = useLingui()
   const MdxSuiteData = useContext(MdxSuiteContext)
 
   const { content } = data.contentfulPage
 
-  // Set current i18next translation language based on page locale
-  useEffect(() => {
-    if (pageContext.locale !== i18n.language) {
-      i18n.changeLanguage(pageContext.locale)
-    }
-  }, [pageContext.locale, i18n])
+  i18n.activate(pageContext.locale)
 
   return (
     <MdxSuiteContext.Provider
