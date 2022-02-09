@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.14.1...gatsby-theme-mdx-suite-core@0.14.2) (2022-02-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency postcss-csso to v6 ([41597f3](https://github.com/axe312ger/gatsby-mdx-suite/commit/41597f38640d2c25ef93dbd6605cfbe02db7d5c6))
+
+
+
+
+
 ## [0.14.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.14.0...gatsby-theme-mdx-suite-core@0.14.1) (2021-11-24)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-core

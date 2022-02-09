@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.15.1...gatsby-mdx-suite-example-full@0.15.2) (2022-02-09)
+
+
+### Bug Fixes
+
+* netlify deploy ([4268a8b](https://github.com/axe312ger/gatsby-mdx-suite/commit/4268a8b604eb2408dc15e0b7364cd1b2bc2f25f2))
+
+
+
+
+
 ## [0.15.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-mdx-suite-example-full@0.15.0...gatsby-mdx-suite-example-full@0.15.1) (2021-11-24)
 
 **Note:** Version bump only for package gatsby-mdx-suite-example-full

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.19](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-decoration@0.5.18...@gatsby-mdx-suite/mdx-decoration@0.5.19) (2022-02-09)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-decoration
+
+
+
+
+
 ## [0.5.18](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-decoration@0.5.17...@gatsby-mdx-suite/mdx-decoration@0.5.18) (2021-11-24)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-decoration

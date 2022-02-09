@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.16.1...gatsby-theme-mdx-suite-base@0.16.2) (2022-02-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency gatsby-plugin-hoofd to ^0.4.0 ([6ee805f](https://github.com/axe312ger/gatsby-mdx-suite/commit/6ee805f89d6bd8a0aa970aeeaf4eee071b2ee17c))
+
+
+
+
+
 ## [0.16.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.16.0...gatsby-theme-mdx-suite-base@0.16.1) (2021-11-24)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base
