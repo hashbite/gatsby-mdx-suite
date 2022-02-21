@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-video",
-  "version": "0.9.12",
+  "version": "0.9.13",
   "description": "A video player for internal videos",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",

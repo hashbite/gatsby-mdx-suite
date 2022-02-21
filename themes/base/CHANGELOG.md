@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.16.2...gatsby-theme-mdx-suite-base@0.16.3) (2022-02-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency flag-icon-css to v4 ([507eece](https://github.com/axe312ger/gatsby-mdx-suite/commit/507eeceb5330027cb24542067ab53733d1b2208a))
+
+
+
+
+
 ## [0.16.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.16.1...gatsby-theme-mdx-suite-base@0.16.2) (2022-02-09)
 
 

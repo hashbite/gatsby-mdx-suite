@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.13](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.12...@gatsby-mdx-suite/mdx-video@0.9.13) (2022-02-21)
+
+
+### Bug Fixes
+
+* upgrade loadable-component ([b03854c](https://github.com/axe312ger/gatsby-mdx-suite/commit/b03854c3cae53bfe81df14981d21cb1537f2d8d0))
+
+
+
+
+
 ## [0.9.12](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-video@0.9.11...@gatsby-mdx-suite/mdx-video@0.9.12) (2021-08-18)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.3](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.14.2...gatsby-theme-mdx-suite-core@0.14.3) (2022-02-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency i18next to v21 ([d83700f](https://github.com/axe312ger/gatsby-mdx-suite/commit/d83700f8d20d1a8fd3ea3b009d64071cd344b989))
+* upgrade loadable-component ([b03854c](https://github.com/axe312ger/gatsby-mdx-suite/commit/b03854c3cae53bfe81df14981d21cb1537f2d8d0))
+
+
+
+
+
 ## [0.14.2](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-core@0.14.1...gatsby-theme-mdx-suite-core@0.14.2) (2022-02-09)
 
 
