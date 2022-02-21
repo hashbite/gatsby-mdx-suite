@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@gatsby-mdx-suite/helpers": "^0.17.0",
-    "@loadable/component": "^5.15.0",
+    "@loadable/component": "^5.15.2",
     "@u-wave/react-vimeo": "^0.9.5",
     "gatsby-theme-mdx-suite-base": "^0.16.2"
   },

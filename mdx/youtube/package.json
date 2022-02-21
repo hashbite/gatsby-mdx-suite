@@ -33,7 +33,7 @@
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.10",
     "@gatsby-mdx-suite/helpers": "^0.17.0",
-    "@loadable/component": "^5.15.0",
+    "@loadable/component": "^5.15.2",
     "gatsby-theme-mdx-suite-core": "^0.14.2",
     "react-youtube": "7.14.0"
   },
