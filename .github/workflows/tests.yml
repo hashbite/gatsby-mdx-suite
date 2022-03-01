@@ -7,7 +7,7 @@ jobs:
     runs-on: [self-hosted, linux, x64]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Cache node_modules
         uses: hashbite/github-action-cache-local-fs@main
         id: node_modules
