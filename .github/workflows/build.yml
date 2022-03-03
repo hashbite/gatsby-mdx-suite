@@ -218,14 +218,14 @@ jobs:
         working-directory: ${{ env.working-directory }}
 
       - name: Upload video capture
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-videos
           path: cypress/videos
 
       - name: Upload screenshots in case of failure
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
