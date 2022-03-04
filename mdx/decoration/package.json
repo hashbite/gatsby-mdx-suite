@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-decoration",
-  "version": "0.5.20",
+  "version": "0.5.21",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "twin.macro": "^1.9.0 || ^2.0.0"
   },
   "dependencies": {
-    "gatsby-theme-mdx-suite-core": "^0.14.3"
+    "gatsby-theme-mdx-suite-core": "^0.14.4"
   },
   "publishConfig": {
     "access": "public"
