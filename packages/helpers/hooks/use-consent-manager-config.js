@@ -8,12 +8,6 @@ export const useConsentManagerConfig = (components, userConfig) => {
   Object.keys(components).forEach((key) => {
     const integration = components[key]?.privacy
     if (integration && !uniqueIntegrations.has(integration.id)) {
-      if (process.env.gatsby_log_level === `verbose`) {
-        console.log('Located integration from MDX component:', {
-          component: components[key],
-          integration,
-        })
-      }
       uniqueIntegrations.set(integration.id, integration)
     }
   })
