@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.17.0...@gatsby-mdx-suite/helpers@0.17.1) (2022-03-04)
+
+
+### Performance Improvements
+
+* remove bloating logging ([8e0e172](https://github.com/axe312ger/gatsby-mdx-suite/commit/8e0e172bb4fe273d4bd24ee4580b5089b20c5845))
+
+
+
+
+
 # [0.17.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/helpers@0.16.7...@gatsby-mdx-suite/helpers@0.17.0) (2021-11-09)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-scroll-effects",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "description": "",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -30,8 +30,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/helpers": "^0.17.0",
-    "@gatsby-mdx-suite/mdx-color-set": "^0.4.25",
+    "@gatsby-mdx-suite/helpers": "^0.17.1",
+    "@gatsby-mdx-suite/mdx-color-set": "^0.4.26",
     "@gatsby-mdx-suite/mdx-video": "^0.9.13",
     "@react-hook/window-size": "^3.0.7",
     "gsap": "^3.7.1",

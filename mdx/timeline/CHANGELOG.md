@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.11](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.7.10...@gatsby-mdx-suite/mdx-timeline@0.7.11) (2022-03-04)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-timeline
+
+
+
+
+
 ## [0.7.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-timeline@0.7.9...@gatsby-mdx-suite/mdx-timeline@0.7.10) (2021-11-09)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-timeline

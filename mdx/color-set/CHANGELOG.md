@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.26](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.25...@gatsby-mdx-suite/mdx-color-set@0.4.26) (2022-03-04)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set
+
+
+
+
+
 ## [0.4.25](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-color-set@0.4.24...@gatsby-mdx-suite/mdx-color-set@0.4.25) (2021-11-09)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-color-set
