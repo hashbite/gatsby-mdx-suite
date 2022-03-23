@@ -1195,42 +1195,43 @@
     query-string "7.1.1"
     serialize-query-params "1.3.6"
 
-"@consent-manager/core@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/@consent-manager/core/-/core-0.0.1.tgz#a4e9601b59f4cc529c9155265847744259745125"
-  integrity sha512-M3A04rb1hPasW75JE8/9rUwkpo9S6mU2YAMZYvzK3LyRxA8Vp6zJ90fyIX7oZ4ox05KAAtQ7Yagahyv4zDFfKQ==
+"@consent-manager/core@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@consent-manager/core/-/core-1.0.0.tgz#bedfb8653b271d7aa613155f7349ad8273ab9ade"
+  integrity sha512-5en2sFML+F3/w78nIAr1wBlBf7yiUC1ofjUpmjHyfccYlzyvY+ua1iW+zGuoItDYQ79lF+xdosbiPj6DwKxnAA==
   dependencies:
     "@types/history" "^4.7.8"
     history "^5.0.0"
     react-use "^17.2.4"
     wcag-contrast "^3.0.0"
 
-"@consent-manager/integration-matomo@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/@consent-manager/integration-matomo/-/integration-matomo-0.0.1.tgz#2ea03039452d865587850cf673eb8fcc8bc5e2ee"
-  integrity sha512-O1QIoejbW253kn2E8DGyq4gqv/vPb4c9/F/ytwE6hv0qQ/LuNsdYKR0sjzlsX+H0ZZxhmSHCCaiRy5T3DIJTHQ==
+"@consent-manager/integration-matomo@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@consent-manager/integration-matomo/-/integration-matomo-1.0.0.tgz#7c9fb40ebd46d43f10d696d3026e6987eed8a6c7"
+  integrity sha512-aMXBxBFVnxU7+W/tlbewy/SmhrZTfs26cTFu8FGjxk+gDv66ivYgfyl2bX5r4didatvEcup+IHJhcRCv6Thaaw==
   dependencies:
     simple-icons "^4.14.0"
 
-"@consent-manager/integration-vimeo@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/@consent-manager/integration-vimeo/-/integration-vimeo-0.0.1.tgz#a79049442033839ca97c86bb7d7121d5305c6356"
-  integrity sha512-boBAiMWYFJiO9CBexzIEs336NS6cpvK8D23LGEt6vIWzEcfOfg5hjjYATDgD9AdTgia+tKsvlC+ZComOy0a47Q==
+"@consent-manager/integration-vimeo@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@consent-manager/integration-vimeo/-/integration-vimeo-1.0.0.tgz#d527e354ce020ac8515503809a78632c6b6a6f5b"
+  integrity sha512-6ZABo9tTpQrjqJBUWJw7W+v0HuylTsZqjN43e6tp64h1JD+BsB06AJOhGyCJVpyvZfAbVRNkP7gZyF7cSyXxPw==
   dependencies:
     simple-icons "^4.14.0"
 
-"@consent-manager/integration-youtube@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/@consent-manager/integration-youtube/-/integration-youtube-0.0.1.tgz#2a702372512ea12a8e3b881c41847b6585e1f2bb"
-  integrity sha512-2FplJX8tVNaoCCR1gu6lG2R/NWuxhMtO5p/e+ZpExbU44ukSc/rj2rtNLgtdks2WkQsVgfFfE7QRZDRcJ0pTCQ==
+"@consent-manager/integration-youtube@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@consent-manager/integration-youtube/-/integration-youtube-1.0.0.tgz#07116597a07ba7b0ea7ce343acf8949f6bc02539"
+  integrity sha512-vmDHkFZEnNsvFhlBynGHCTmBAWF1Zw/TB97hhaW1zFQdEuuRQxdkUFQxFvD7/Qk5aIhuxXy3sFfTBU9CJvoxCw==
   dependencies:
     simple-icons "^4.14.0"
 
-"@consent-manager/interface-default@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/@consent-manager/interface-default/-/interface-default-0.0.1.tgz#5852024bf48d29217f269b1b30bda340868c5f6f"
-  integrity sha512-2br5VObkk9OK/WTn4p/h7Aem5xKOybnE9y619t+5vswYOAlbpN1AhKguYYtU8DdmNKPtioOcIbnl/sjKkOQ+9w==
+"@consent-manager/interface-default@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@consent-manager/interface-default/-/interface-default-1.0.0.tgz#ca15fad6ebc796f9d9629035963ca0c4c8712405"
+  integrity sha512-FkeljipiDFEimrSeQQcM58yuSC9Q25E23Y0cW0C55AeMGQjL1M0A3tNP9pf50BmMltqhhHHQBfED/iyMkS0tRQ==
   dependencies:
+    "@loadable/component" "^5.15.0"
     "@react-icons/all-files" "^4.1.0"
     activity-detector-ssr "^3.0.0"
     body-scroll-lock "^3.1.5"
@@ -2804,7 +2805,7 @@
   dependencies:
     "@babel/plugin-syntax-dynamic-import" "^7.7.4"
 
-"@loadable/component@^5.15.2":
+"@loadable/component@^5.15.0", "@loadable/component@^5.15.2":
   version "5.15.2"
   resolved "https://registry.npmjs.org/@loadable/component/-/component-5.15.2.tgz#b6c418d592e0a64f16b1d614ca9d3b1443d3b498"
   integrity sha512-ryFAZOX5P2vFkUdzaAtTG88IGnr9qxSdvLRvJySXcUA4B4xVWurUNADu3AnKPksxOZajljqTrDEDcYjeL4lvLw==
