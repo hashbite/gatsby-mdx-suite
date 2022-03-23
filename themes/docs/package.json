@@ -39,7 +39,7 @@
     "gatsby-plugin-image": "^2.10.0",
     "gatsby-transformer-documentationjs": "^6.10.0",
     "gatsby-transformer-react-docgen": "^7.10.0",
-    "pretty-bytes": "^5.5.0",
+    "pretty-bytes": "^6.0.0",
     "react-use": "^17.2.4"
   }
 }
