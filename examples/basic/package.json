@@ -20,10 +20,10 @@
     "test:cypress:open": "cypress open"
   },
   "dependencies": {
-    "@consent-manager/core": "^0.0.1",
-    "@consent-manager/integration-vimeo": "^0.0.1",
-    "@consent-manager/integration-youtube": "^0.0.1",
-    "@consent-manager/interface-default": "^0.0.1",
+    "@consent-manager/core": "^1.0.0",
+    "@consent-manager/integration-vimeo": "^1.0.0",
+    "@consent-manager/integration-youtube": "^1.0.0",
+    "@consent-manager/interface-default": "^1.0.0",
     "@gatsby-mdx-suite/contexts": "^0.3.10",
     "@gatsby-mdx-suite/helpers": "^0.17.1",
     "@gatsby-mdx-suite/mdx-video": "^0.9.13",
