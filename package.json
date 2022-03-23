@@ -23,7 +23,7 @@
     "@typescript-eslint/eslint-plugin": "5.16.0",
     "@typescript-eslint/parser": "5.16.0",
     "babel-eslint": "10.1.0",
-    "babel-preset-gatsby": "2.10.0",
+    "babel-preset-gatsby": "2.10.1",
     "depcheck": "1.4.3",
     "eslint": "8.11.0",
     "eslint-config-react-app": "7.0.0",
