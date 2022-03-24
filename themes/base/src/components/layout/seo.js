@@ -122,6 +122,8 @@ function SEO({
 
   useLink({ rel: 'preconnect', href: 'https://images.ctfassets.net' })
   useLink({ rel: 'dns-prefetch', href: 'https://images.ctfassets.net' })
+  useLink({ rel: 'preconnect', href: 'https://cdn.polyfill.io' })
+  useLink({ rel: 'dns-prefetch', href: 'https://cdn.polyfill.io' })
 
   return null
 }
