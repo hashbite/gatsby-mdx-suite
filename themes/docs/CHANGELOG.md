@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.28-alpha.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.27...gatsby-theme-mdx-suite-docs@0.10.28-alpha.1) (2022-03-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency pretty-bytes to v6 ([94e89d5](https://github.com/axe312ger/gatsby-mdx-suite/commit/94e89d53eb0d2108517ddc534f72a011da19bfba))
+
+
+
+
+
+## [0.10.28-alpha.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.27...gatsby-theme-mdx-suite-docs@0.10.28-alpha.0) (2022-03-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency pretty-bytes to v6 ([94e89d5](https://github.com/axe312ger/gatsby-mdx-suite/commit/94e89d53eb0d2108517ddc534f72a011da19bfba))
+
+
+
+
+
 ## [0.10.27](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-docs@0.10.26...gatsby-theme-mdx-suite-docs@0.10.27) (2022-03-23)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-docs

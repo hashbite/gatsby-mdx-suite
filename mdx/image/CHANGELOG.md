@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.11-alpha.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.10.10...@gatsby-mdx-suite/mdx-image@0.10.11-alpha.1) (2022-03-24)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
+## [0.10.11-alpha.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.10.10...@gatsby-mdx-suite/mdx-image@0.10.11-alpha.0) (2022-03-24)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-image
+
+
+
+
+
 ## [0.10.10](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-image@0.10.9...@gatsby-mdx-suite/mdx-image@0.10.10) (2022-03-23)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-image

@@ -1,6 +1,6 @@
 {
   "name": "@gatsby-mdx-suite/mdx-color-set",
-  "version": "0.4.26",
+  "version": "0.4.27-alpha.1",
   "description": "Apply color sets on any content region",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -26,10 +26,11 @@
   },
   "dependencies": {
     "@emotion/react": "^11.4.1",
-    "@gatsby-mdx-suite/helpers": "^0.17.1",
+    "@gatsby-mdx-suite/helpers": "^0.17.2-alpha.1",
     "deepmerge": "^4.2.2"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "157fa4176db0a240096a1022433035df047c683a"
 }

@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-mdx-suite-docs",
-  "version": "0.10.27",
+  "version": "0.10.28-alpha.1",
   "main": "index.js",
   "author": "Benedikt Rötsch <opensource@axe312.dev>",
   "license": "MIT",
@@ -24,12 +24,12 @@
     "twin.macro": "^1.9.0 || ^2.0.0"
   },
   "dependencies": {
-    "@gatsby-mdx-suite/contexts": "^0.3.10",
-    "@gatsby-mdx-suite/helpers": "^0.17.1",
-    "@gatsby-mdx-suite/mdx-boxes": "^0.15.28",
-    "@gatsby-mdx-suite/mdx-color-set": "^0.4.26",
-    "@gatsby-mdx-suite/mdx-copy": "^0.15.9",
-    "@gatsby-mdx-suite/mdx-link": "^0.9.14",
+    "@gatsby-mdx-suite/contexts": "^0.3.11-alpha.1",
+    "@gatsby-mdx-suite/helpers": "^0.17.2-alpha.1",
+    "@gatsby-mdx-suite/mdx-boxes": "^0.15.29-alpha.1",
+    "@gatsby-mdx-suite/mdx-color-set": "^0.4.27-alpha.1",
+    "@gatsby-mdx-suite/mdx-copy": "^0.15.10-alpha.1",
+    "@gatsby-mdx-suite/mdx-link": "^0.9.15-alpha.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@mdx-js/runtime": "^1.6.22",
@@ -41,5 +41,6 @@
     "gatsby-transformer-react-docgen": "^7.10.0",
     "pretty-bytes": "^6.0.0",
     "react-use": "^17.2.4"
-  }
+  },
+  "gitHead": "157fa4176db0a240096a1022433035df047c683a"
 }

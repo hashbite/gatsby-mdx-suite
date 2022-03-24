@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.7-alpha.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.16.6...gatsby-theme-mdx-suite-base@0.16.7-alpha.1) (2022-03-24)
+
+
+### Performance Improvements
+
+* add polyfill.io to dns prefetching ([68caad0](https://github.com/axe312ger/gatsby-mdx-suite/commit/68caad0d99c9c4434372d927fafa0adbc66d79b1))
+
+
+
+
+
+## [0.16.7-alpha.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.16.6...gatsby-theme-mdx-suite-base@0.16.7-alpha.0) (2022-03-24)
+
+
+### Performance Improvements
+
+* add polyfill.io to dns prefetching ([68caad0](https://github.com/axe312ger/gatsby-mdx-suite/commit/68caad0d99c9c4434372d927fafa0adbc66d79b1))
+
+
+
+
+
 ## [0.16.6](https://github.com/axe312ger/gatsby-mdx-suite/compare/gatsby-theme-mdx-suite-base@0.16.5...gatsby-theme-mdx-suite-base@0.16.6) (2022-03-23)
 
 **Note:** Version bump only for package gatsby-theme-mdx-suite-base

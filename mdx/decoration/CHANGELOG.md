@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.24-alpha.1](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-decoration@0.5.23...@gatsby-mdx-suite/mdx-decoration@0.5.24-alpha.1) (2022-03-24)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-decoration
+
+
+
+
+
+## [0.5.24-alpha.0](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-decoration@0.5.23...@gatsby-mdx-suite/mdx-decoration@0.5.24-alpha.0) (2022-03-24)
+
+**Note:** Version bump only for package @gatsby-mdx-suite/mdx-decoration
+
+
+
+
+
 ## [0.5.23](https://github.com/axe312ger/gatsby-mdx-suite/compare/@gatsby-mdx-suite/mdx-decoration@0.5.22...@gatsby-mdx-suite/mdx-decoration@0.5.23) (2022-03-23)
 
 **Note:** Version bump only for package @gatsby-mdx-suite/mdx-decoration
