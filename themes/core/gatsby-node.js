@@ -52,7 +52,7 @@ exports.onPreBootstrap = async ({ getCache }, themeConfig) => {
 exports.createResolvers = ({ createResolvers, reporter }, themeConfig) => {
   const { mediaCollections } = merge(minimumConfig, themeConfig)
   const resolvers = {
-    ContentfulMenuItem: {
+    ContentfulContentTypeMenuItem: {
       /**
        * Since Gatsby & Contentful have issues with reference fields that support multiple target content types,
        * we determine the menu item target programatically in this resolver.
@@ -77,7 +77,7 @@ exports.createResolvers = ({ createResolvers, reporter }, themeConfig) => {
             id: source[linkedFields[0]],
           })
 
-          return linkedPage.contentful_id
+          return linkedPage.sys.id
         },
       },
     },
@@ -137,7 +137,7 @@ exports.createResolvers = ({ createResolvers, reporter }, themeConfig) => {
           const result = await context.nodeModel.runQuery({
             query: {
               filter: {
-                contentful_id: { in: mediaIds },
+                sys: { id: { in: mediaIds } },
               },
             },
             type: 'ContentfulAsset',

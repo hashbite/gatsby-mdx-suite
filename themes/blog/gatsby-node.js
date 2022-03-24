@@ -11,11 +11,15 @@ exports.createPages = async ({ graphql, actions, getCache }, themeConfig) => {
 
   const result = await graphql(`
     {
-      allContentfulBlogPost(sort: { fields: publicationDate, order: DESC }) {
+      allContentfulContentTypeBlogPost(
+        sort: { fields: publicationDate, order: DESC }
+      ) {
         nodes {
           id
-          pageId: contentful_id
-          locale: node_locale
+          sys {
+            pageId: id
+            locale: locale
+          }
           slug
           title
         }
@@ -28,7 +32,7 @@ exports.createPages = async ({ graphql, actions, getCache }, themeConfig) => {
   }
 
   // Create blog post pages
-  result.data.allContentfulBlogPost.nodes.forEach((node) => {
+  result.data.allContentfulContentTypeBlogPost.nodes.forEach((node) => {
     const { id, pageId, locale, slug, title } = node
 
     const path = createPath({ slug, locale, config, pageType: 'blogPost' })
@@ -48,9 +52,10 @@ exports.createPages = async ({ graphql, actions, getCache }, themeConfig) => {
 
   // Create blog post listing pages
   config.langs.forEach((locale) => {
-    const localizedBlogPosts = result.data.allContentfulBlogPost.nodes.filter(
-      (post) => post.locale === locale
-    )
+    const localizedBlogPosts =
+      result.data.allContentfulContentTypeBlogPost.nodes.filter(
+        (post) => post.locale === locale
+      )
     paginate({
       createPage,
       items: localizedBlogPosts,

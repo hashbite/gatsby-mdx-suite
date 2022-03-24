@@ -12,7 +12,7 @@ import MenuItem from './menu-item'
 export default function MenuLevel({ rootMenuItemId, level = 1 }) {
   const queryResult = useStaticQuery(graphql`
     query MenuLevelQuery {
-      allContentfulMenuItem {
+      allContentfulContentTypeMenuItem {
         nodes {
           ...MdxSuiteMenuItem
           subitems {
@@ -36,7 +36,7 @@ export default function MenuLevel({ rootMenuItemId, level = 1 }) {
     pageContext: { pageId: activePageId, locale: activeLocale },
   } = useContext(MdxSuiteContext)
 
-  const menuRoot = queryResult.allContentfulMenuItem.nodes.find(
+  const menuRoot = queryResult.allContentfulContentTypeMenuItem.nodes.find(
     ({ locale, menuItemId }) =>
       menuItemId === rootMenuItemId &&
       (!activeLocale || locale === activeLocale)

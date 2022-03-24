@@ -11,8 +11,10 @@ import { graphql } from 'gatsby'
 
 export const MdxSuiteContentfulAsset = graphql`
   fragment MdxSuiteContentfulAsset on ContentfulAsset {
-    assetId: contentful_id
-    locale: node_locale
+    sys {
+      assetId: id
+      locale: locale
+    }
     title
     description
     file {

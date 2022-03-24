@@ -184,7 +184,7 @@ function LiveEditorSidebar({ editorInstance, tab }) {
           />
           {filteredMedia.map((asset) => {
             const metadata = [
-              prettyBytes(asset.file.details.size),
+              prettyBytes(asset.size),
               asset?.videoH264 &&
                 `${asset.videoH264.width}×${asset.videoH264.height}`,
               asset?.videoH264?.aspectRatio &&
@@ -201,7 +201,7 @@ function LiveEditorSidebar({ editorInstance, tab }) {
                 alt={asset.title}
               />
             ) : (
-              <img src={asset.file.url} alt={asset.title} />
+              <img src={asset.url} alt={asset.title} />
             )
             return (
               <LiveEditorSidebarMediaAsset

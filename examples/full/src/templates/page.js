@@ -14,7 +14,8 @@ function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
   const MdxSuiteData = useContext(MdxSuiteContext)
 
-  const { title, content, metaDescription, metaImage } = data.contentfulPage
+  const { title, content, metaDescription, metaImage } =
+    data.contentfulContentTypePage
 
   // Set current i18next translation language based on page locale
   useEffect(() => {
@@ -33,10 +34,8 @@ function PageTemplate({ data, pageContext }) {
       <SEO
         title={title}
         description={metaDescription}
-        ogImage={metaImage && `${metaImage.file.url}?w=1200&h=630&fit=fill`}
-        twitterImage={
-          metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
-        }
+        ogImage={metaImage && `${metaImage.url}?w=1200&h=630&fit=fill`}
+        twitterImage={metaImage && `${metaImage.url}?w=1200&h=628&fit=fill`}
         language={pageContext.locale}
       />
       <MDXRenderer>{content.childMdx.body}</MDXRenderer>
@@ -53,9 +52,11 @@ export default PageTemplate
 
 export const pageQuery = graphql`
   query pageQuery($id: String!) {
-    contentfulPage(id: { eq: $id }) {
+    contentfulContentTypePage(id: { eq: $id }) {
       id
-      pageId: contentful_id
+      sys {
+        pageId: id
+      }
       slug
       title
       metaDescription

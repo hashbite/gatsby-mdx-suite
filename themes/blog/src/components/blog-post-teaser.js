@@ -44,7 +44,7 @@ const BlogPostTeaser = ({ blogPost, ...props }) => {
         </BlogPostTeaserDescription>
       )}
       <BlogPostTeaserFooter>
-        <Cta id={blogPost.pageId}>{t('newsReadMore')}</Cta>
+        <Cta id={blogPost.sys.pageId}>{t('newsReadMore')}</Cta>
       </BlogPostTeaserFooter>
     </BlogPostTeaserWrapper>
   )

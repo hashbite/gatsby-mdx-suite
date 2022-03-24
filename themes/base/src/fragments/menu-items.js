@@ -2,9 +2,11 @@ import { graphql } from 'gatsby'
 
 export const MdxSuiteMenuItemFragment = graphql`
   fragment MdxSuiteMenuItem on ContentfulMenuItem {
-    menuItemId: contentful_id
+    sys {
+      id
+      locale
+    }
     title
-    locale: node_locale
     internalTargetId
     internalSlug
     externalUri

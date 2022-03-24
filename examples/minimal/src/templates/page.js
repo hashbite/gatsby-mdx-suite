@@ -12,7 +12,7 @@ function PageTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
   const MdxSuiteData = useContext(MdxSuiteContext)
 
-  const { content } = data.contentfulPage
+  const { content } = data.contentfulContentTypePage
 
   // Set current i18next translation language based on page locale
   useEffect(() => {
@@ -42,9 +42,11 @@ export default PageTemplate
 
 export const pageQuery = graphql`
   query pageQuery($id: String!) {
-    contentfulPage(id: { eq: $id }) {
+    contentfulContentTypePage(id: { eq: $id }) {
       id
-      pageId: contentful_id
+      sys {
+        pageId: id
+      }
       slug
       title
       content {

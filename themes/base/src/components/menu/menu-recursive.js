@@ -12,7 +12,7 @@ import MenuItem from './menu-item'
 export default function MenuRecursive({ rootMenuItemId }) {
   const queryResult = useStaticQuery(graphql`
     query MenuRecursiveQuery {
-      allContentfulMenuItem {
+      allContentfulContentTypeMenuItem {
         nodes {
           ...MdxSuiteMenuItem
           subitems {
@@ -36,7 +36,7 @@ export default function MenuRecursive({ rootMenuItemId }) {
     pageContext: { pageId: activePageId, locale: activeLocale },
   } = useContext(MdxSuiteContext)
 
-  const menuRoot = queryResult.allContentfulMenuItem.nodes.find(
+  const menuRoot = queryResult.allContentfulContentTypeMenuItem.nodes.find(
     ({ locale, menuItemId }) =>
       menuItemId === rootMenuItemId &&
       (!activeLocale || locale === activeLocale)

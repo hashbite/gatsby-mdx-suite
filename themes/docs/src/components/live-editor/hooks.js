@@ -18,29 +18,21 @@ export const useMedia = () => {
   }, [docs])
 
   const images = useMemo(
-    () =>
-      uniqueMedia.filter(({ file: { contentType } }) => !isVideo(contentType)),
+    () => uniqueMedia.filter(({ contentType }) => !isVideo(contentType)),
     [uniqueMedia]
   )
 
   const pictures = useMemo(
-    () =>
-      images.filter(
-        ({ file: { contentType } }) => contentType.indexOf('jpeg') !== -1
-      ),
+    () => images.filter((contentType) => contentType.indexOf('jpeg') !== -1),
     [images]
   )
   const graphics = useMemo(
-    () =>
-      images.filter(
-        ({ file: { contentType } }) => contentType.indexOf('svg') !== -1
-      ),
+    () => images.filter(({ contentType }) => contentType.indexOf('svg') !== -1),
     [images]
   )
 
   const videos = useMemo(
-    () =>
-      uniqueMedia.filter(({ file: { contentType } }) => isVideo(contentType)),
+    () => uniqueMedia.filter(({ contentType }) => isVideo(contentType)),
     [uniqueMedia]
   )
 

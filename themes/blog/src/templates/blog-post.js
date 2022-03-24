@@ -17,7 +17,8 @@ function BlogPostTemplate({ data, pageContext }) {
   const { i18n } = useTranslation()
   const MdxSuiteData = useContext(MdxSuiteContext)
   const { locale } = pageContext
-  const { title, image, metaDescription, content } = data.contentfulBlogPost
+  const { title, image, metaDescription, content } =
+    data.contentfulContentTypeBlogPost
 
   // Set current i18next translation language based on page locale
   useEffect(() => {
@@ -36,8 +37,8 @@ function BlogPostTemplate({ data, pageContext }) {
       <SEO
         title={title}
         description={metaDescription}
-        ogImage={image && `${image.file.url}?w=1200&h=630&fit=fill`}
-        twitterImage={image && `${image.file.url}?w=1200&h=628&fit=fill`}
+        ogImage={image && `${image.url}?w=1200&h=630&fit=fill`}
+        twitterImage={image && `${image.url}?w=1200&h=628&fit=fill`}
         language={locale}
       />
       <NavBar />
@@ -58,9 +59,11 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query blogPostQuery($id: String!) {
-    contentfulBlogPost(id: { eq: $id }) {
+    contentfulContentTypeBlogPost(id: { eq: $id }) {
       id
-      pageId: contentful_id
+      sys {
+        pageId: id
+      }
       slug
       title
       metaDescription

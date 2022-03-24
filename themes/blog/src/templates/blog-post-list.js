@@ -25,9 +25,9 @@ const BlogPostList = ({ data, pageContext }) => {
   const MdxSuiteData = useContext(MdxSuiteContext)
   const { t } = useTranslation()
 
-  const blogPosts = data.allContentfulBlogPost.nodes.map((blogPost, i) => (
-    <BlogPostTeaser key={i} blogPost={blogPost} />
-  ))
+  const blogPosts = data.allContentfulContentTypeBlogPost.nodes.map(
+    (blogPost, i) => <BlogPostTeaser key={i} blogPost={blogPost} />
+  )
 
   const { title, content, metaDescription, metaImage } = data.contentfulPage
 
@@ -42,10 +42,8 @@ const BlogPostList = ({ data, pageContext }) => {
         title={title}
         description={metaDescription}
         language={pageContext.locale}
-        ogImage={metaImage && `${metaImage.file.url}?w=1200&h=630&fit=fill`}
-        twitterImage={
-          metaImage && `${metaImage.file.url}?w=1200&h=628&fit=fill`
-        }
+        ogImage={metaImage && `${metaImage.url}?w=1200&h=630&fit=fill`}
+        twitterImage={metaImage && `${metaImage.url}?w=1200&h=628&fit=fill`}
       />
       <MDXRenderer>{content && content.childMdx.body}</MDXRenderer>
       <Section>
@@ -82,7 +80,7 @@ BlogPostList.propTypes = {
 
 export const blogPostListQuery = graphql`
   query blogPostListQuery($skip: Int!, $limit: Int!, $locale: String!) {
-    contentfulPage(slug: { eq: "blog" }) {
+    contentfulContentTypePage(slug: { eq: "blog" }) {
       title
       metaDescription
       metaImage {
@@ -95,15 +93,17 @@ export const blogPostListQuery = graphql`
         }
       }
     }
-    allContentfulBlogPost(
+    allContentfulContentTypeBlogPost(
       sort: { fields: [publicationDate], order: DESC }
       filter: { node_locale: { eq: $locale } }
       limit: $limit
       skip: $skip
     ) {
       nodes {
-        pageId: contentful_id
-        locale: node_locale
+        sys {
+          pageId: contentful_id
+          locale
+        }
         title
         publicationDate
         image {

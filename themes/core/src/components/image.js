@@ -83,12 +83,10 @@ export default function Image({
   }
 
   if (!renderData?.gatsbyImageData) {
-    if (!renderData.file.url) {
+    if (!renderData.url) {
       throw new Error(`Invalid image rendering data found for ${id}`)
     }
-    return (
-      <StaticImage {...imgProps} style={imgStyle} src={renderData.file.url} />
-    )
+    return <StaticImage {...imgProps} style={imgStyle} src={renderData.url} />
   }
 
   return (
