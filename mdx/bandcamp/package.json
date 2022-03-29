@@ -21,7 +21,7 @@
   "peerDependencies": {
     "@emotion/styled": "^11.3.0",
     "prop-types": "^15.7.0",
-    "react": "^17.0.1"
+    "react": "^17.0.1 || ^18.0.0"
   },
   "publishConfig": {
     "access": "public"

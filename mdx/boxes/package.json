@@ -23,7 +23,7 @@
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "prop-types": "^15.7.0",
-    "react": "^17.0.1",
+    "react": "^17.0.1 || ^18.0.0",
     "twin.macro": "^1.10.0 || ^2.0.0"
   },
   "dependencies": {
