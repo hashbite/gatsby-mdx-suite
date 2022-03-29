@@ -19,8 +19,8 @@
     "gatsby-theme-mdx-suite-base": "^0.1.6",
     "gatsby-theme-mdx-suite-core": "^0.9.1",
     "prop-types": "^15.7.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.1 || ^18.0.0",
+    "react-dom": "^17.0.1 || ^18.0.0",
     "twin.macro": "^1.9.0 || ^2.0.0"
   },
   "dependencies": {
