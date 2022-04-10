@@ -35,7 +35,7 @@
     "@gatsby-mdx-suite/helpers": "^0.17.1",
     "@loadable/component": "^5.15.2",
     "gatsby-theme-mdx-suite-core": "^0.14.6",
-    "react-youtube": "7.14.0"
+    "react-youtube": "8.0.0"
   },
   "publishConfig": {
     "access": "public"
