@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 
 export const MdxSuiteMenuItemFragment = graphql`
-  fragment MdxSuiteMenuItem on ContentfulMenuItem {
+  fragment MdxSuiteMenuItem on ContentfulContentTypeMenuItem {
     sys {
       id
       locale

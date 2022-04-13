@@ -164,14 +164,6 @@ exports.createSchemaCustomization = ({ actions, store, schema }) => {
 
   const typeDefs = [
     `
-    type ContentfulMenuItem implements Node  @derivedTypes {
-      internalSlug: String
-      externalUri: String
-      openInNewTab: Boolean
-      hiddenOnMobile: Boolean
-    }
-    `,
-    `
     type SitePageContext implements Node @derivedTypes {
       pageNumber: Int
       title: String
