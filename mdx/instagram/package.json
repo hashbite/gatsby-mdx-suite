@@ -26,7 +26,7 @@
   "dependencies": {
     "@gatsby-mdx-suite/contexts": "^0.3.10",
     "@gatsby-mdx-suite/mdx-media-gallery": "^0.5.24",
-    "react-instagram-embed": "^1.5.0"
+    "react-instagram-embed": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"
