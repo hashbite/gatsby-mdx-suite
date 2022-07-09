@@ -1,3 +1,11 @@
+# Repository archived
+
+> This project was much fun to explore, but it is time to move on. I leave this available as a reference for using Gatsby with MDX v1 & Contentful.
+> If you want to implement MDX to a project, make sure to check out the Gatsby docs about MDX, which will stay up to date: https://www.gatsbyjs.com/docs/mdx/
+
+
+---
+
 # Gatsby MDX Suite
 
 > This collection of packages provides a drop in solution to support MDX in your GatsbyJS content workflow.
